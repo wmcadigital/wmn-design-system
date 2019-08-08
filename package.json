@@ -1,0 +1,80 @@
+{
+    "name": "west-midlands-network",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "buildDirs": {
+        "live": {
+            "baseUrl": "//beta.wmca.org.uk",
+            "cdn": "http://cdn.wmca.org.uk/wmca/web"
+        },
+        "staging": {
+            "baseUrl": "//beta.wmca.org.uk",
+            "cdn": "http://static.centro.org.uk/Staging/wmcaRedev/build"
+        },
+        "local": {
+            "baseUrl": "/",
+            "cdn": "/build"
+        }
+    },
+    "scripts": {
+        "upgrade-packages": "ncu -u",
+        "start": "gulp",
+        "fresh": "npm install && gulp",
+        "lint:scripts": "gulp lintScripts",
+        "lint:templates": "gulp lintTemplates",
+        "clean": "gulp clean",
+        "build:scripts": "gulp buildScripts",
+        "build:styles": "gulp buildStyles",
+        "build:templates": "gulp buildTemplates",
+        "build:config": "gulp buildConfig",
+        "build:images": "gulp minImages",
+        "build:all": "gulp buildAll",
+        "build:staging": "npm run build:all --build=staging",
+        "build:live": "npm run build:all --build=live"
+    },
+    "repository": {
+        "type": "git",
+        "url": "bitbucket.org/wmca/west-midlands-network.git"
+    },
+    "author": "nathan.rogan@wmca.org.uk, dayle.salmon@wmca.org.uk, shivdev.kang@wmca.org.uk",
+    "copyright": "West Midlands Network",
+    "homepage": "https://westmidlandsnetwork.co.uk/",
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "autoprefixer": "^9.6.0",
+        "babel-eslint": "^10.0.2",
+        "browser-sync": "^2.26.7",
+        "connect-ssi": "^1.1.1",
+        "del": "^4.1.1",
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^5.1.0",
+        "eslint-config-wesbos": "0.0.19",
+        "eslint-plugin-angular": "^4.0.1",
+        "eslint-plugin-html": "^5.0.5",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.2",
+        "eslint-plugin-react-hooks": "^1.6.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-cli": "^2.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^5.0.0",
+        "gulp-htmlhint": "^2.2.1",
+        "gulp-imagemin": "^6.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "node-sass": "^4.12.0",
+        "prettier": "^1.18.2",
+        "sass": "^1.22.0"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "short_name": "",
+    "name": "",
+    "icons": [
+        {
+            "src": "favicon.jpg",
+            "type": "image/jpg",
+            "sizes": "32x32"
+        }
+    ],
+    "start_url": "/?utm_source=homescreen",
+    "background_color": "#008FBF",
+    "theme_color": "#008FBF"
+}
