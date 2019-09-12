@@ -24,35 +24,16 @@ p {
 }
 
 // Headers
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $x-heading-font-family; // This font is used for headings
-  color: getColor(secondary);
-}
-// Mixin to control header sizes
-@mixin x-font-size($font-size, $font-multiplier) {
-  font-size: $font-size;
-  // On mobile devices, the header font will be reduced by * (x)
-  @media all and (max-width: 767px) {
-    font-size: $font-size * $font-multiplier;
+.pure-g {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $x-heading-font-family; // This font is used for headings
+    color: getColor(secondary);
   }
-}
-h1 {
-  @include x-font-size(48px, 0.7);
-}
-
-h2 {
-  @include x-font-size(32px, 0.8);
-}
-h3 {
-  @include x-font-size(23px, 0.8);
-}
-h4 {
-  @include x-font-size(18px, 0.9);
 }
 
 // Get rid of margin for the first header item in main content
