@@ -52,7 +52,7 @@ const paths = {
   },
   styles: {
     src: ['src/assets/sass/**/*.scss', 'src/components/**/*.scss', 'src/views/templates/**/*.scss'], // src of stlyes to watch
-    minifySrc: 'src/assets/sass/wmn.scss', // List of scss file(s) which should be processed, linted & minified
+    minifySrc: ['src/assets/sass/wmn.scss', 'src/views/styleguide/styleguide.scss'], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/' // output location of minified styles
   },
   scripts: {
@@ -65,7 +65,7 @@ const paths = {
         lint: true
       },
       { src: 'src/assets/js/vendor/**/*.js', minName: 'vendor.min.js', lint: false },
-      { src: 'src/assets/js/styleguide/**/*.js', minName: 'styleguide.min.js', lint: false }
+      { src: 'src/views/styleguide/**/*.js', minName: 'styleguide.min.js', lint: false }
     ],
     output: 'build/js/' // Output location of minified JS files
   },
@@ -73,7 +73,7 @@ const paths = {
     src: 'src/views/**/*.html',
     output: 'build/views/'
   },
-  widgets: {
+  components: {
     src: 'src/components/**/*.html',
     output: 'build/components/'
   },
@@ -162,7 +162,7 @@ function lintScripts() {
 
 // Lint Templates/HTML
 function lintTemplates() {
-  return src([paths.templates.src, paths.widgets.src])
+  return src([paths.templates.src, paths.components.src])
     .pipe(htmlHint('.htmlhintrc'))
     .pipe(htmlHint.reporter());
 }
@@ -173,10 +173,10 @@ function buildTemplates() {
     .pipe(dest(paths.templates.output));
 }
 
-function buildWidgets() {
-  return src(paths.widgets.src)
+function buildcomponents() {
+  return src(paths.components.src)
     .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest(paths.widgets.output));
+    .pipe(dest(paths.components.output));
 }
 
 // move config files to build
@@ -230,7 +230,7 @@ const buildAll = series(
   buildStyles,
   buildScripts,
   buildTemplates,
-  buildWidgets,
+  buildcomponents,
   buildConfig,
   minImages,
   lintScripts,
@@ -240,7 +240,7 @@ const buildAll = series(
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
-  watch(['./src/**/*.html'], series(lintTemplates, buildTemplates, buildWidgets, reload)); // Reload when html changes
+  watch(['./src/**/*.html'], series(lintTemplates, buildTemplates, buildcomponents, reload)); // Reload when html changes
   watch(paths.images.src, minImages);
   watch(paths.styles.src, buildStyles); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
@@ -248,7 +248,7 @@ function watchFiles() {
 const dev = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, buildTemplates, buildWidgets, buildConfig, minImages),
+  parallel(buildStyles, buildScripts, buildTemplates, buildcomponents, buildConfig, minImages),
   cacheBust,
   parallel(watchFiles, server)
 ); // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
@@ -259,7 +259,7 @@ exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;
-exports.buildTemplates = series(buildTemplates, buildWidgets, lintTemplates);
+exports.buildTemplates = series(buildTemplates, buildcomponents, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.minImages = minImages;
 exports.buildAll = buildAll;
