@@ -47,7 +47,7 @@ const paths = {
   output: 'build/', // Default output location for code build
   server: {
     port: 8080,
-    baseDir: './build/views/',
+    baseDir: './build/views/styleguide/',
     root: './build/'
   },
   styles: {
@@ -56,11 +56,11 @@ const paths = {
     output: 'build/css/' // output location of minified styles
   },
   scripts: {
-    src: ['src/assets/js/**/*.js', 'src/components/**/*.js'], // Src of JS files to watch
+    src: ['src/assets/js/**/*.js', 'src/views/components/**/*.js'], // Src of JS files to watch
     // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
     minifySrc: [
       {
-        src: ['src/assets/js/wmn.js', 'src/components/**/*.js'],
+        src: ['src/assets/js/wmn.js', 'src/views/components/**/*.js'],
         minName: 'wmn.min.js',
         lint: true
       },
