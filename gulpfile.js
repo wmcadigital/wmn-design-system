@@ -64,7 +64,8 @@ const paths = {
         minName: 'wmn.min.js',
         lint: true
       },
-      { src: 'src/assets/js/vendor/**/*.js', minName: 'vendor.min.js', lint: false }
+      { src: 'src/assets/js/vendor/**/*.js', minName: 'vendor.min.js', lint: false },
+      { src: 'src/assets/js/styleguide/**/*.js', minName: 'styleguide.min.js', lint: false }
     ],
     output: 'build/js/' // Output location of minified JS files
   },
