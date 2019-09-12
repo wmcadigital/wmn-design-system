@@ -9,8 +9,8 @@
       "cdn": "http://cdn.wmca.org.uk/wmca/web"
     },
     "staging": {
-      "baseUrl": "//beta.wmca.org.uk",
-      "cdn": "http://static.centro.org.uk/Staging/wmcaRedev/build"
+      "baseUrl": "//beta.wmn.co.uk",
+      "cdn": "http://static.centro.org.uk/Staging/wmn/build"
     },
     "local": {
       "baseUrl": "/",
