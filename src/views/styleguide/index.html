@@ -28,9 +28,9 @@
     </div>
 
     <!-- @@ Scripts -->
-    <!--# include file="../components/shared/scripts.html" -->
+    {{ fileInclude 'src/views/components/shared/scripts.html' }}
 
-    <link rel="stylesheet" href="/build/css/styleguide.css" />
-    <script src="/build/js/styleguide.min.js"></script>
+    <link rel="stylesheet" href="$*cdn/css/styleguide.css" />
+    <script src="$*cdn/js/styleguide.min.js"></script>
   </body>
 </html>
