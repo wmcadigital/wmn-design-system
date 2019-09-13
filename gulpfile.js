@@ -16,7 +16,7 @@ const imagemin = require('gulp-imagemin');
 // Live-reload server vars
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
-const ssi = require('connect-ssi');
+const gulpHandlebarsFileInclude = require('gulp-handlebars-file-include');
 // Other vars
 const del = require('del');
 const plumber = require('gulp-plumber');
@@ -73,10 +73,6 @@ const paths = {
     src: 'src/views/**/*.html',
     output: 'build/views/'
   },
-  components: {
-    src: 'src/components/**/*.html',
-    output: 'build/components/'
-  },
   images: {
     src: 'src/assets/img/**/*',
     dest: 'build/img/'
@@ -84,6 +80,10 @@ const paths = {
   config: {
     src: 'src/assets/config/**/*',
     output: 'build/config/'
+  },
+  styleguide: {
+    src: 'build/views/styleguide/**.html',
+    output: '/build/views/'
   }
 };
 
@@ -162,7 +162,7 @@ function lintScripts() {
 
 // Lint Templates/HTML
 function lintTemplates() {
-  return src([paths.templates.src, paths.components.src])
+  return src(paths.templates.src)
     .pipe(htmlHint('.htmlhintrc'))
     .pipe(htmlHint.reporter());
 }
@@ -170,14 +170,11 @@ function lintTemplates() {
 function buildTemplates() {
   return src(paths.templates.src)
     .pipe(replace('$*cdn', json.buildDirs[build].cdn))
+    .pipe(gulpHandlebarsFileInclude())
     .pipe(dest(paths.templates.output));
 }
 
-function buildcomponents() {
-  return src(paths.components.src)
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest(paths.components.output));
-}
+function buildNetlify() {}
 
 // move config files to build
 function buildConfig() {
@@ -208,11 +205,7 @@ function server(done) {
         '/build': './build/',
         '/_sourcemaps': './_sourcemaps/',
         '/components': './build/components/'
-      },
-      middleware: ssi({
-        baseDir: paths.server.baseDir,
-        ext: '.html'
-      })
+      }
     },
     port: paths.server.port
   });
@@ -230,7 +223,6 @@ const buildAll = series(
   buildStyles,
   buildScripts,
   buildTemplates,
-  buildcomponents,
   buildConfig,
   minImages,
   lintScripts,
@@ -240,7 +232,7 @@ const buildAll = series(
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
-  watch(['./src/**/*.html'], series(lintTemplates, buildTemplates, buildcomponents, reload)); // Reload when html changes
+  watch(['./src/**/*.html'], series(lintTemplates, buildTemplates, reload)); // Reload when html changes
   watch(paths.images.src, minImages);
   watch(paths.styles.src, buildStyles); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
@@ -248,7 +240,7 @@ function watchFiles() {
 const dev = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, buildTemplates, buildcomponents, buildConfig, minImages),
+  parallel(buildStyles, buildScripts, buildTemplates, buildConfig, minImages),
   cacheBust,
   parallel(watchFiles, server)
 ); // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
@@ -259,7 +251,8 @@ exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;
-exports.buildTemplates = series(buildTemplates, buildcomponents, lintTemplates);
+exports.buildTemplates = series(buildTemplates, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.minImages = minImages;
 exports.buildAll = buildAll;
+exports.buildNetlify = series(buildAll, buildNetlify);
