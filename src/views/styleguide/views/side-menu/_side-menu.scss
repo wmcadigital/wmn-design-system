@@ -1,7 +1,6 @@
 $sm-width: 300px;
 $sm-width-closed: 78px;
 $sm-bg: getColor(secondary);
-// $sm-hamburger-closed-color: getColor(secondary);
 $sm-hamburger-color: white;
 $sm-hamburger-line-height: 3px;
 $sm-hamburger-size: 30px;
@@ -28,21 +27,25 @@ $sm-color: white;
 }
 
 .side-menu--closed {
-    // left: -226px;
     width: $sm-width-closed;
 }
 
 .side-menu__hamburger {
     position: absolute;
     top: 30px;
-    left: $padding-md;
     width: $sm-hamburger-size;
     height: $sm-hamburger-size;
     cursor: pointer;
+    transition: all ease .4s;
 }
 
 .side-menu__hamburger--open {
     margin-top: 6px;
+    right: $padding-md;
+}
+
+.side-menu__hamburger--closed {
+    left: $padding-md;
 }
 
 .side-menu__hamburger__line {
@@ -119,6 +122,7 @@ $sm-color: white;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
+    color: $sm-color;
 }
 
 .side-menu__sub-menu__item__text {
@@ -128,6 +132,7 @@ $sm-color: white;
     top: 50%;
     transform: translateY(-50%);
     white-space: nowrap;
+    color: $sm-color;
 }
 
 .side-menu__sub-menu__item__text--closed {
