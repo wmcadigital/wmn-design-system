@@ -1,0 +1,87 @@
+/* INTERNAL VARS ------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- */
+// Internal Vars (Internal variables have one function, and that's to be 
+// assigned to other variables.)
+$x-palette-white:               #ffffff; // White
+/* -------------------------------------------------------------------------- */
+
+
+
+/* PALETTE COLOURS ---------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+// All of our palette colours with their respective tints (mix white in at 10% intervals)
+$palettes: (
+  // MAIN COLORS
+  primary:                      #f58025 /* WM Furnace Orange*/,
+  secondary:                    #54565b /* WM Gunmetal Grey*/,
+  black:                        #231f20 /* WM Carbon Black*/,
+  
+  // SECONDARY COLORS
+  green:                        #00a19c /* WM Green*/,
+  red:                          #d60037 /* WM Red*/,
+  purple:                       #94368d /* WM Purple*/,
+  blue:                         #008fbf /* WM Blue*/
+);
+
+// In SCSS a map == array
+$colors-map:                    (); // Set placeholder colors map
+/* -------------------------------------------------------------------------- */
+
+
+
+/* TEXT --------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+$text-color:                    getColor(secondary);
+$x-font-family:                 'Open Sans', sans-serif;
+$x-heading-font-family:         'Open Sans', sans-serif;
+$font-size:                     16px;
+
+// Base font size and line height
+$base-font-size:                1rem;
+$base-line-height:              $base-font-size * 1.5;
+
+// All values based on REM of 14px
+$type-settings: (
+  -1: (
+    font-size:                  0.875rem,
+    line-height:                $base-line-height
+  ),
+  0: (
+    font-size:                  1rem,
+    line-height:                $base-line-height
+  ),
+  1: (
+    font-size:                  1.125rem,
+    line-height:                $base-line-height * 2
+  ),
+  2: (
+    font-size:                  1.4375rem,
+    line-height:                $base-line-height * 2
+  ),
+  3: (
+    font-size:                  2rem,
+    line-height:                $base-line-height * 2
+  ),
+  4: (
+    font-size:                  3rem,
+    line-height:                $base-line-height * 3
+  )
+);
+/* -------------------------------------------------------------------------- */
+
+
+
+/* SPACING ------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- */
+// Padding
+$padding-sm:                   $base-line-height / 2;
+$padding-md:                   $base-line-height;
+$padding-lg:                   $base-line-height * 2;
+$padding-xl:                   $base-line-height * 3;
+
+// Margin
+$margin-sm:                    $base-line-height / 2;
+$margin-md:                    $base-line-height;
+$margin-lg:                    $base-line-height * 2;
+$margin-xl:                    $base-line-height * 3;
+/* -------------------------------------------------------------------------- */

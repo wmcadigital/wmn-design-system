@@ -1,0 +1,276 @@
+// Minimum width of website
+html {
+  min-width: 320px;
+  overflow: scroll;
+}
+
+
+// Set padding and borders to be contained within an elements size
+// instead of adding to it
+* {
+  box-sizing: border-box;
+}
+
+.pure-g {
+  & > * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  // How to align child flex items of a grid
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.justify-around {
+    justify-content: space-around;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.align-center {
+    align-items: center;
+  }
+}
+
+// Container sizes
+.container {
+  &-lg {
+    margin: auto;
+    max-width: 1280px;
+    @media screen and (max-width: 1280px) {
+      padding: 0 $padding-md;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0px;
+    }
+  }
+  &-sm {
+    margin: auto;
+    max-width: 904px;
+  }
+}
+
+// Floats
+.float {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+    @media screen and (max-width: 48em) {
+      float: left;
+    }
+  }
+}
+
+// Paddings
+// padding generator mixin
+@mixin x-padding($pad-size) {
+  padding: $pad-size;
+  &-left {
+    padding-left: $pad-size;
+  }
+  &-right {
+    padding-right: $pad-size;
+  }
+  &-top {
+    padding-top: $pad-size;
+  }
+  &-bottom {
+    padding-bottom: $pad-size;
+  }
+}
+.pad {
+  &-md {
+    @include x-padding($padding-md);
+  }
+  &-lg {
+    @include x-padding($padding-lg);
+  }
+  &-xl {
+    @include x-padding($padding-xl);
+  }
+}
+
+// Margins
+.mar {
+  &-md {
+    margin: $margin-md;
+  }
+  &-lg {
+    margin: $margin-lg;
+  }
+  &-xl {
+    margin: $margin-xl;
+  }
+  &-auto {
+    margin: auto;
+  }
+  &-remove {
+    margin: 0;
+  }
+
+  &-vertical {
+    &-md {
+      margin-top: $margin-md;
+      margin-bottom: $margin-md;
+    }
+    &-lg {
+      margin-top: $margin-lg;
+      margin-bottom: $margin-lg;
+    }
+  }
+
+  &-side {
+    &-xl {
+      margin-left: $margin-xl;
+      margin-right: $margin-xl;
+    }
+  }
+  // This mar-bot-md is mainly for sidebar widgets spacing
+  &-bot-md {
+    margin-bottom: $margin-md;
+  }
+}
+
+// Show/hide on desktop devices only
+.show-desktop {
+  @media screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @media screen and (min-width: 48em) {
+    display: none;
+  }
+}
+.hide-lg {
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
+  @media screen and (max-width: 1024px) {
+    display: inline-block;
+  }
+}
+
+// Background Colours
+.bg {
+  &-white {
+    background-color: $x-palette-white;
+  }
+  &-none {
+    background-color: transparent;
+  }
+  &-black {
+    background-color: getColor(black);
+  }
+}
+
+// Borders
+// Border generator mixin
+@mixin x-default-border($border-color) {
+  border: 2px solid $border-color;
+  &-left {
+    border-left: 2px solid $border-color;
+  }
+  &-right {
+    border-right: 2px solid $border-color;
+  }
+  &-bottom {
+    border-bottom: 2px solid $border-color;
+  }
+}
+.bdr {
+  &-primary {
+    @include x-default-border(getColor(primary));
+  }
+  &-white {
+    @include x-default-border($x-palette-white);
+  }
+  &-gray {
+    @include x-default-border(getColor(secondary));
+  }
+  &-transparent {
+    @include x-default-border(transparent);
+  }
+}
+
+// Animations
+
+/* Grow */
+.anim-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.anim-grow:hover,
+.anim-grow:focus,
+.anim-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Sweep To Right */
+.anim-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.anim-sweep-to-right:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: getColor(black);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.anim-sweep-to-right:hover,
+.anim-sweep-to-right:focus,
+.anim-sweep-to-right:active {
+  color: $x-palette-white;
+}
+.anim-sweep-to-right:hover:before,
+.anim-sweep-to-right:focus:before,
+.anim-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s cubic-bezier(0.6, 0, 0.6, 1);
+
+  &.show {
+    max-height: 99em;
+    transition: max-height 0.5s cubic-bezier(0.6, 0, 0.6, 1);
+  }
+}

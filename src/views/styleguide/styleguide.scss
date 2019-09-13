@@ -1,2 +1,10 @@
+// Vars
+@import '../../assets/sass/vars';
+
+// Mixins
+@import '../../assets/sass/mixins';
+
 // Styleguide only styles
-@import 'hello/hello';
+@import './views/side-menu/side-menu';
+@import './views/footer/footer';
+@import './views/header/header'

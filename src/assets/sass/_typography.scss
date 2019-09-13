@@ -1,0 +1,139 @@
+/*
+	When setting the primary font stack, apply it to the Pure grid units along
+	with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+	specific font stacks to ensure the greatest OS/browser compatibility.
+*/
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class*='pure-u'] {
+	-webkit-font-smoothing: antialiased;
+	font-family: $x-font-family;
+}
+
+html,
+body {
+  font-size: $font-size;
+  color: getColor(secondary);
+  line-height: $base-line-height;
+  @include type-setting(0);
+}
+
+
+// Get rid of margin for the first header item in main content
+#main-content {
+	h1:first-child,
+	h2:first-child,
+	h3:first-child,
+	h4:first-child {
+	  margin-top: 0;
+	}
+  }
+
+// Hyperlinks
+a {
+	@extend .text-color-primary;
+	cursor: pointer;
+}
+
+  // Text aligns
+.text {
+	&-right {
+	  text-align: right;
+	}
+	&-left {
+	  text-align: left;
+	}
+	&-center {
+	  text-align: center;
+	}
+}
+  
+.text-bold {
+	font-weight: 600;
+}
+  
+// Text colors
+.text-color {
+	&-primary {
+	  color: getColor(primary);
+	}
+	&-secondary {
+	  color: getColor(secondary);
+	}
+	&-white {
+	  color: $x-palette-white;
+	}
+	&-gray {
+	  color: getColor(secondary);
+	}
+}
+ 
+h1 {
+	@include type-setting(4);
+	margin: $margin-lg 0;
+}
+
+h2 {
+	@include type-setting(3);
+	margin: $margin-md 0;
+}
+h3 {
+	@include type-setting(2);
+	margin: $margin-md 0;
+}
+h4 {
+	@include type-setting(1);
+	margin: $margin-md 0;
+}
+
+div,
+span,
+li,
+ul,
+ol,
+p,
+a {
+  @include type-setting(0);
+}
+
+p {
+	margin: $margin-md 0;
+}
+
+// Material Icons
+[data-icon] {
+	&::before {
+		content: attr(data-icon);
+		font-family: 'Material Icons';
+		font-weight: normal;
+		font-style: normal;
+		font-size: 3rem; /* Preferred icon size */
+		display: inline-block;
+		vertical-align: middle;
+		width: 1rem;
+		height: 1rem;
+		line-height: 1;
+		text-transform: none;
+		letter-spacing: normal;
+		word-wrap: normal;
+		white-space: nowrap;
+
+		/* Support for all WebKit browsers. */
+		-webkit-font-smoothing: antialiased;
+
+		/* Support for Safari and Chrome. */
+		text-rendering: optimizeLegibility;
+
+		/* Support for Firefox. */
+		-moz-osx-font-smoothing: grayscale;
+
+		/* Support for IE. */
+		font-feature-settings: 'liga';
+	}
+	&:hover {
+		color: getColor(primary);
+	}
+}

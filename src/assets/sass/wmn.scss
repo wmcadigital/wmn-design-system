@@ -1,7 +1,13 @@
-// Layout Styles
-@import 'layout/vars';
-@import 'layout/utilities';
-@import 'layout/text-utilities';
+// Vars
+@import 'vars';
+
+// Mixins
+@import 'mixins';
+
+// Global styles
+@import 'utilities';
+@import 'typography';
+@import 'general';
 
 // Vendor Styles
 
