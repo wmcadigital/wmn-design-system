@@ -36,6 +36,9 @@ function determineBuild(done) {
     case 'live':
       build = 'live';
       break;
+    case 'netlify':
+      build = 'netlify';
+      break;
     default:
       build = 'local';
       break;
@@ -164,12 +167,10 @@ function lintTemplates() {
 
 function buildTemplates() {
   return src(paths.templates.src)
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
     .pipe(gulpHandlebarsFileInclude())
+    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
     .pipe(dest(paths.templates.output));
 }
-
-function buildNetlify() {}
 
 // move config files to build
 function buildConfig() {
@@ -250,4 +251,3 @@ exports.buildTemplates = series(buildTemplates, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.minImages = minImages;
 exports.buildAll = buildAll;
-exports.buildNetlify = series(buildAll, buildNetlify);

@@ -18,7 +18,7 @@
     },
     "netlify": {
       "baseUrl": "/",
-      "cdn": "/build"
+      "cdn": "https://wmn-styleguide.netlify.com"
     }
   },
   "scripts": {
@@ -36,7 +36,7 @@
     "build:all": "gulp buildAll",
     "build:staging": "npm run build:all --build=staging",
     "build:live": "npm run build:all --build=live",
-    "build:netlify": "gulp buildNetlify"
+    "build:netlify": "npm run build:all --build=netlify"
   },
   "repository": {
     "type": "git",
