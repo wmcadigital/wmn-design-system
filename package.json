@@ -15,6 +15,10 @@
     "local": {
       "baseUrl": "/",
       "cdn": "/build"
+    },
+    "netlify": {
+      "baseUrl": "/",
+      "cdn": "https://wmca.netlify.com"
     }
   },
   "scripts": {
@@ -31,7 +35,8 @@
     "build:images": "gulp minImages",
     "build:all": "gulp buildAll",
     "build:staging": "npm run build:all --build=staging",
-    "build:live": "npm run build:all --build=live"
+    "build:live": "npm run build:all --build=live",
+    "build:netlify": "npm run build:all --build=netlify"
   },
   "repository": {
     "type": "git",
@@ -51,7 +56,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.26.7",
-    "connect-ssi": "^1.1.1",
     "del": "^5.1.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -71,6 +75,7 @@
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
+    "gulp-handlebars-file-include": "^1.0.0",
     "gulp-htmlhint": "^2.2.1",
     "gulp-imagemin": "^6.1.0",
     "gulp-plumber": "^1.2.1",
