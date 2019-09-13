@@ -149,12 +149,7 @@ function buildScripts(done) {
 
 // Lint scripts/JS
 function lintScripts() {
-  // Loop through each minifySrc and check if it is to be linted
-  const lintSrc = paths.scripts.minifySrc.map(jsFile =>
-    jsFile.lint ? jsFile.src : '!' + jsFile.src
-  );
-
-  return src(['src/assets/js/wmn.js', 'src/components/**/*.js'])
+  return src(['src/assets/js/wmn.js', 'src/views/**/*.js'])
     .pipe(eslint({ configFile: '.eslintrc.json' })) // eslint() attaches the lint output to the "eslint" property of the file object so it can be used by other modules.
     .pipe(eslint.format()); // eslint.format() outputs the lint results to the console.
   // .pipe(eslint.failAfterError()); // Cause the stream to stop/fail before copying an invalid JS file to the output directory
