@@ -14,9 +14,13 @@
 
     <!-- @@ Side Menu -->
     <!--# include file="./views/side-menu/side-menu.html" -->
+    {{ fileInclude 'src/views/styleguide/side-menu/side-menu.html' }}
+
 
     <!-- @@ Header -->
     <!--# include file="./views/header/header.html" -->
+    {{ fileInclude 'src/views/styleguide/header/header.html' }}
+
 
     <div class="container-lg">
       <div class="pure-g">
@@ -37,6 +41,8 @@
 
     <!-- @@ Footer -->
     <!--# include file="./views/footer/footer.html" -->
+    {{ fileInclude 'src/views/styleguide/footer/footer.html' }}
+
 
     <!-- @@ Scripts -->
     {{ fileInclude 'src/views/components/shared/scripts.html' }}
