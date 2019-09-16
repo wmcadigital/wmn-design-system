@@ -5,6 +5,6 @@
 @import '../../assets/sass/mixins';
 
 // Styleguide only styles
-@import './views/side-menu/side-menu';
-@import './views/footer/footer';
-@import './views/header/header'
+@import 'side-menu/side-menu';
+@import 'footer/footer';
+@import 'header/header';
