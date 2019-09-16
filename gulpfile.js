@@ -54,7 +54,7 @@ const paths = {
     root: './build/'
   },
   styles: {
-    src: ['src/assets/sass/**/*.scss', 'src/components/**/*.scss', 'src/views/templates/**/*.scss'], // src of stlyes to watch
+    src: ['src/assets/sass/**/*.scss', 'src/views/**/*.scss'], // src of stlyes to watch
     minifySrc: ['src/assets/sass/wmn.scss', 'src/views/styleguide/styleguide.scss'], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/' // output location of minified styles
   },
