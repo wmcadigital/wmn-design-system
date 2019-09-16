@@ -2,6 +2,8 @@
 
 West Midlands Network
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
+
 ## Table of Contents
 
 - [Installation](#installation)
