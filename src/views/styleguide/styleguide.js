@@ -1,7 +1,7 @@
 /* eslint-disable no-loop-func */
 // Define DOM elements
 const iframe = document.getElementById('resizer');
-const logo = document.getElementById('header-logo');
+// const logo = document.getElementById('header-logo');
 const links = document.getElementsByClassName('side-menu__sub-menu__item-link');
 
 // Define url vars
@@ -59,8 +59,3 @@ for (let link = 0; link < links.length; link += 1) {
         }
     });
 }
-
-
-logo.addEventListener('click', () => {
-    LoadPage('');
-});

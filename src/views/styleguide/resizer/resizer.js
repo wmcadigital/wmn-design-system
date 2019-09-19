@@ -61,7 +61,7 @@ btnTablet.addEventListener('click', () => {
     btnLaptop.classList.remove(BTN_ACTIVE_CLASS);
     btnDesktop.classList.remove(BTN_ACTIVE_CLASS);
     btnTablet.classList.add(BTN_ACTIVE_CLASS);
-å
+
     resizer.classList.remove(DESKTOP_CLASS);
     resizer.classList.remove(LAPTOP_CLASS);
     resizer.classList.remove(MOB_CLASS);
