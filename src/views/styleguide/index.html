@@ -1,53 +1,26 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-  <!-- @@ Head -->
-  {{ fileInclude 'src/views/components/shared/head.html' }}
+	<!-- @@ Head -->
+	{{ fileInclude 'src/views/components/shared/head.html' }}
 
-  <body class="bg-white">
-    <!--[if IE]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
-        security.
-      </p>
-    <![endif]-->
+	<body class="bg-white">
+		<!--[if IE]>
+			<p class="browserupgrade">
+				You are using an <strong>outdated</strong> browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
+				security.
+			</p>
+		<![endif]-->
 
-    <!-- @@ Side Menu -->
-    <!--# include file="./views/side-menu/side-menu.html" -->
-    {{ fileInclude 'src/views/styleguide/side-menu/side-menu.html' }}
+		<!-- @@ Resizer buttons -->
+		{{ fileInclude 'src/views/styleguide/resizer/resizer.html' }}
 
+		<!-- @@ Side Menu -->
+		{{ fileInclude 'src/views/styleguide/side-menu/side-menu.html' }}
 
-    <!-- @@ Header -->
-    <!--# include file="./views/header/header.html" -->
-    {{ fileInclude 'src/views/styleguide/header/header.html' }}
+		<iframe id="resizer" class="resizer--desktop" src="pages/home.html" frameborder="0"></iframe>
 
-
-    <div class="container-lg">
-      <div class="pure-g">
-        <h1 class="pure-u-1 text-center">Hello world</h1>
-
-        <span class="pure-u-1 pure-u-sm-1-2 text-center pad-30"
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, iusto mollitia excepturi
-          nam sunt asperiores rem earum adipisci, voluptas facere deleniti eos blanditiis. Numquam
-          reprehenderit doloremque cumque iure repellendus suscipit!</span
-        >
-        <span class="pure-u-1 pure-u-sm-1-2 text-center pad-30"
-          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus omnis voluptas error
-          aspernatur voluptate alias ut praesentium veritatis! Quidem vero necessitatibus nihil
-          nulla ad reprehenderit architecto corporis laboriosam eum doloribus.</span
-        >
-      </div>
-    </div>
-
-    <!-- @@ Footer -->
-    <!--# include file="./views/footer/footer.html" -->
-    {{ fileInclude 'src/views/styleguide/footer/footer.html' }}
-
-
-    <!-- @@ Scripts -->
-    {{ fileInclude 'src/views/components/shared/scripts.html' }}
-
-    <link rel="stylesheet" href="$*cdn/css/styleguide.css" />
-    <script src="$*cdn/js/styleguide.min.js"></script>
-  </body>
+		<link rel="stylesheet" href="$*cdn/css/styleguide.css" />
+		<script src="$*cdn/js/styleguide.min.js"></script>
+	</body>
 </html>

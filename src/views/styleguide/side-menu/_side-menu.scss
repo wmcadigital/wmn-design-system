@@ -5,7 +5,8 @@ $sm-hamburger-color: white;
 $sm-hamburger-line-height: 3px;
 $sm-hamburger-size: 30px;
 $sm-hamburger-margin: 5px;
-$sm-icon-size: 30px;
+$sm-icon-size: 15px;
+$sm-icon-container-size: 30px;
 $sm-color: white;
 
 .side-menu {
@@ -36,12 +37,12 @@ $sm-color: white;
     width: $sm-hamburger-size;
     height: $sm-hamburger-size;
     cursor: pointer;
-    transition: all ease .4s;
+    transition: left ease .4s;
 }
 
 .side-menu__hamburger--open {
     margin-top: 6px;
-    right: $padding-md;
+    left: calc(#{$sm-width} - #{$padding-lg});
 }
 
 .side-menu__hamburger--closed {
@@ -111,8 +112,8 @@ $sm-color: white;
 .side-menu__sub-menu__item__icon-container {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, .5);
-    width: $sm-icon-size;
-    height: $sm-icon-size;
+    width: $sm-icon-container-size;
+    height: $sm-icon-container-size;
     display: inline-block;
     position: relative;
 }
@@ -123,6 +124,7 @@ $sm-color: white;
     transform: translate(-50%, -50%);
     position: absolute;
     color: $sm-color;
+    font-size: $sm-icon-size;
 }
 
 .side-menu__sub-menu__item__text {

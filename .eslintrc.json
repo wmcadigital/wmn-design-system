@@ -1,20 +1,6 @@
 {
     "extends": ["airbnb"],
     "rules": {
-        // "no-use-before-define": "off",
-        // "no-var": "off",
-        // "strict": "off",
-        // "object-shorthand": "off",
-        // "prefer-template": "off"
-        // "prettier/prettier": [
-        //     "error",
-        //     {
-        //         "tabWidth": 2,
-        //         "singleQuote": true,
-        //         "printWidth": 100
-        //     }
-        // ]
-        // Indent with 4 spaces
         "indent": ["error", 4]
     },
     "env": {

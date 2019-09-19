@@ -1,0 +1,91 @@
+$r-btn-size:        60px;
+$r-icon-size:       30px;
+$r-margin:          $margin-lg;
+$r-border-color:    getColor(secondary);
+
+.resizer-btn-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.resizer-btn-container__btn {
+    width: $r-btn-size;
+    height: $r-btn-size;
+    background-color: getColor(secondary);
+    color: white;
+    position: relative;
+    cursor: pointer;
+    transition: width ease .2s, border ease .2s, background-color ease .2s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.resizer-btn-container__btn--active {
+    background-color: getColor(primary);
+}
+
+.resizer-btn-container__btn__icon {
+    width: $r-icon-size;
+    height: $r-icon-size;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#resizer {
+    display: block;
+    margin: $r-margin auto;
+    min-height: calc(100vh - (#{$r-margin} * 2));
+    transition: width ease .5s;
+    border: 10px solid $r-border-color;
+    border-radius: 10px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &[seamless] {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    #resizer {
+        background: green !important;
+    }
+}
+
+.resizer--mob {
+    width: 568px;
+}
+
+.resizer--tablet {
+    width: 768px;
+}
+
+.resizer--laptop {
+    width: 1024px;
+}
+
+.resizer--desktop {
+    width: 100%;
+    border: 0px !important;
+    margin: 0 auto !important;
+    min-height: 100vh !important;
+    border-radius: 0px !important;
+    padding-left: 78px;
+}

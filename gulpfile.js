@@ -131,6 +131,7 @@ function minifyJS(jsFile) {
             }),
         )
         .pipe(sourcemaps.init())
+        .pipe(replace('$*cdn', json.buildDirs[build].cdn))
         .pipe(
             babel({
                 presets: ['@babel/env'],

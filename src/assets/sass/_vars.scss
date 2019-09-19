@@ -12,15 +12,44 @@ $x-palette-white:               #ffffff; // White
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
   // MAIN COLORS
-  primary:                      #f58025 /* WM Furnace Orange*/,
+  primary:                      #df1683 /* WM Pink*/,
   secondary:                    #54565b /* WM Gunmetal Grey*/,
   black:                        #231f20 /* WM Carbon Black*/,
   
   // SECONDARY COLORS
-  green:                        #00a19c /* WM Green*/,
-  red:                          #d60037 /* WM Red*/,
-  purple:                       #94368d /* WM Purple*/,
-  blue:                         #008fbf /* WM Blue*/
+  wmDarkPurple:                 #3c1053 /* WM Purple*/,
+  wmPurple:                     #84329b /* WM Purple */,
+  wmOrange:                     #ff8300 /* WM Orange */,
+  wmGreen:                      #93d500 /* WM Green */,
+
+  // TRANSPORT COLORS
+  // Rail Exec
+  railExecPrimary:              #3cbfae,
+  railExecSecondary:            #ff8300,
+  // Network
+  networkPrimary:               #3c1053,
+  networkSecondary:             #84329b,
+  // Coordination Center
+  coordPrimary:                 #3c1053,
+  coordSecondary:               #84329b,
+  // Railway
+  railwayPrimary:               #ff8300,
+  railwaySecondary:             #84329b,
+  // Bus
+  busPrimary:                   #ea0029,
+  busSecondary:                 #841922,
+  // Metro
+  metroPrimary:                 #0075c9,
+  metroSecondary:               #385d7f,
+  // Roads
+  roadsPrimary:                 #df1683,
+  roadsSecondary:               #3c1053,
+  // Cycle
+  cyclePrimary:                 #93d500,
+  cycleSecondary:               #84329b,
+  // Walking
+  walkingPrimary:               #93d500,
+  walkingSecondary:             #84329b,
 );
 
 // In SCSS a map == array
