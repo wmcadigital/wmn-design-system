@@ -50,11 +50,12 @@ $r-border-color:    getColor(secondary);
 
 #resizer {
     display: block;
-    margin: $r-margin auto;
-    min-height: calc(100vh - (#{$r-margin} * 2));
+    margin: 0 auto;
+    min-height: 100vh;
     transition: width ease .5s;
-    border: 10px solid $r-border-color;
-    border-radius: 10px;
+    outline-style: solid;
+    outline-width: 10px;
+    outline-color: $r-border-color;
 
     &:focus {
         outline: none;
@@ -65,22 +66,28 @@ $r-border-color:    getColor(secondary);
     }
 }
 
-@media only screen and (max-width: 568px) {
-    #resizer {
-        background: green !important;
+.resizer--mob {
+    width: 100%;
+
+    @media only screen and (min-width: 568px) {
+        width: 568px;
     }
 }
 
-.resizer--mob {
-    width: 568px;
-}
-
 .resizer--tablet {
-    width: 768px;
+    width: 100%;
+
+    @media only screen and (min-width: 768px) {
+        width: 768px;
+    }
 }
 
 .resizer--laptop {
-    width: 1024px;
+    width: 100%;
+
+    @media only screen and (min-width: 1024px) {
+        width: 1024px;
+    }
 }
 
 .resizer--desktop {

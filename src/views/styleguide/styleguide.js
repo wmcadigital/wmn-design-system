@@ -8,17 +8,17 @@ const links = document.getElementsByClassName('side-menu__sub-menu__item-link');
 let currentUrl;
 const pagesDir = 'pages/';
 const pages = {
-    Typography: {
-        title: 'typography',
-        link: `${pagesDir}/typography.html`,
+    Home: {
+        title: 'home',
+        link: `${pagesDir}/home.html`,
     },
     ColorPalette: {
         title: 'colorPalette',
         link: `${pagesDir}/colorPalette.html`,
     },
-    Home: {
-        title: 'home',
-        link: `${pagesDir}/home.html`,
+    Typography: {
+        title: 'typography',
+        link: `${pagesDir}/typography.html`,
     },
 };
 
@@ -27,15 +27,12 @@ function LoadPage(href) {
     switch (href) {
     case pages.Typography.title:
         iframe.setAttribute('src', pages.Typography.link);
-        // content.innerHTML = await fetchHtmlAsText(pages.Typography.link);
         break;
     case pages.ColorPalette.title:
         iframe.setAttribute('src', pages.ColorPalette.link);
-        // content.innerHTML = await fetchHtmlAsText(pages.ColorPalette.link);
         break;
     default:
         iframe.setAttribute('src', pages.Home.link);
-        // content.innerHTML = await fetchHtmlAsText(pages.Home.link);
         break;
     }
 }
