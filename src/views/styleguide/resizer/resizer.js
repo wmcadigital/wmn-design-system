@@ -26,8 +26,16 @@ const TABLET_CLASS = 'resizer--tablet';
 const MOB_CLASS = 'resizer--mob';
 const BTN_ACTIVE_CLASS = 'resizer-btn-container__btn--active';
 
-// // Update resizer to display desktop
-btnDesktop.addEventListener('click', () => {
+// Define breakpoints
+const BP_DESKTOP = 1200;
+const BP_LAPTOP = 1024;
+const BP_TABLET = 768;
+const BP_MOB = 568;
+
+// Define viewport width
+const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+function ResizerDesktop() {
     // Update classes on buttons to make desktop button show as active
     btnMob.classList.remove(BTN_ACTIVE_CLASS);
     btnTablet.classList.remove(BTN_ACTIVE_CLASS);
@@ -38,10 +46,9 @@ btnDesktop.addEventListener('click', () => {
     resizer.classList.remove(TABLET_CLASS);
     resizer.classList.remove(MOB_CLASS);
     resizer.classList.add(DESKTOP_CLASS);
-});
+}
 
-// // Update resizer to display laptop
-btnLaptop.addEventListener('click', () => {
+function ResizerLaptop() {
     // Update classes on buttons to make laptop button show as active
     btnMob.classList.remove(BTN_ACTIVE_CLASS);
     btnTablet.classList.remove(BTN_ACTIVE_CLASS);
@@ -52,10 +59,9 @@ btnLaptop.addEventListener('click', () => {
     resizer.classList.remove(TABLET_CLASS);
     resizer.classList.remove(MOB_CLASS);
     resizer.classList.add(LAPTOP_CLASS);
-});
+}
 
-// // Update resizer to display tablet
-btnTablet.addEventListener('click', () => {
+function ResizerTablet() {
     // Update classes on buttons to make tablet button show as active
     btnMob.classList.remove(BTN_ACTIVE_CLASS);
     btnLaptop.classList.remove(BTN_ACTIVE_CLASS);
@@ -66,10 +72,9 @@ btnTablet.addEventListener('click', () => {
     resizer.classList.remove(LAPTOP_CLASS);
     resizer.classList.remove(MOB_CLASS);
     resizer.classList.add(TABLET_CLASS);
-});
+}
 
-// // Update resizer to display mobile
-btnMob.addEventListener('click', () => {
+function ResizerMob() {
     // Update classes on buttons to make mob button show as active
     btnTablet.classList.remove(BTN_ACTIVE_CLASS);
     btnLaptop.classList.remove(BTN_ACTIVE_CLASS);
@@ -80,4 +85,39 @@ btnMob.addEventListener('click', () => {
     resizer.classList.remove(LAPTOP_CLASS);
     resizer.classList.remove(TABLET_CLASS);
     resizer.classList.add(MOB_CLASS);
+}
+
+// Set resizer type based on clients viewport size
+function SetResizer() {
+    if (viewportWidth >= BP_DESKTOP) {
+        ResizerDesktop();
+    } else if (viewportWidth >= BP_LAPTOP && viewportWidth < BP_DESKTOP) {
+        ResizerLaptop();
+    } else if (viewportWidth >= BP_TABLET && viewportWidth < BP_LAPTOP) {
+        ResizerTablet();
+    } else if (viewportWidth < BP_TABLET) {
+        ResizerMob();
+    }
+}
+
+// // Update resizer to display desktop
+btnDesktop.addEventListener('click', () => {
+    ResizerDesktop();
 });
+
+// // Update resizer to display laptop
+btnLaptop.addEventListener('click', () => {
+    ResizerLaptop();
+});
+
+// // Update resizer to display tablet
+btnTablet.addEventListener('click', () => {
+    ResizerTablet();
+});
+
+// // Update resizer to display mobile
+btnMob.addEventListener('click', () => {
+    ResizerMob();
+});
+
+SetResizer();
