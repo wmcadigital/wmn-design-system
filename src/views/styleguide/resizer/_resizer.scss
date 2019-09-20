@@ -1,7 +1,7 @@
 $r-btn-size:        60px;
 $r-icon-size:       30px;
 $r-margin:          $margin-lg;
-$r-border-color:    getColor(secondary);
+$r-border:          10px solid getColor(secondary);
 
 .resizer-btn-container {
     position: absolute;
@@ -53,9 +53,11 @@ $r-border-color:    getColor(secondary);
     margin: 0 auto;
     min-height: 100vh;
     transition: width ease .5s;
-    outline-style: solid;
-    outline-width: 10px;
-    outline-color: $r-border-color;
+    // outline-style: solid;
+    // outline-width: 10px;
+    // outline-color: $r-border-color;
+    border-left: $r-border;
+    border-right: $r-border;
 
     &:focus {
         outline: none;
