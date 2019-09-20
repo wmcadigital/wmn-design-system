@@ -1,9 +1,16 @@
+// Define elements in the DOM
 const sideMenu = document.getElementById('side-menu');
-const hamburger = document.getElementById('hamburger');
+let hamburger;
 const hamburgerLines = document.getElementsByClassName('side-menu__hamburger__line');
-// const items = document.getElementsByClassName('side-menu__sub-menu__item');
 const links = document.getElementsByClassName('side-menu__sub-menu__item__text');
+
+// Define whether or not the side menu is open
 let isOpen = true;
+
+// Check hamburger exists and asign it if it does
+if (document.getElementById('hamburger') !== (null || undefined)) {
+    hamburger = document.getElementById('hamburger');
+}
 
 function OpenMenu() {
     if (sideMenu) {
@@ -77,5 +84,15 @@ ToggleMenu();
 if (sideMenu) {
     hamburger.addEventListener('click', () => {
         ToggleMenu();
+
+        let resizer = document.getElementsByClassName('resizer--desktop');
+        
+        // Adjust left padding on desktop view to match width of the side menu
+        isOpen
+            ? resizer[0].setAttribute('style', 'padding-left: 300px !important') 
+            : resizer[0].setAttribute('style', 'padding-left: 78px !important');
+        // isOpen
+        //     ? resizer[0].classList.add('resizer--desktop--menu-open') 
+        //     : resizer[0].classList.remove('resizer--desktop--menu-open')
     });
 }

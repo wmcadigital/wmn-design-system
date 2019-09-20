@@ -52,10 +52,7 @@ $r-border:          10px solid getColor(secondary);
     display: block;
     margin: 0 auto;
     min-height: 100vh;
-    transition: width ease .5s;
-    // outline-style: solid;
-    // outline-width: 10px;
-    // outline-color: $r-border-color;
+    transition: width ease .5s, border ease .5s;
     border-left: $r-border;
     border-right: $r-border;
 
@@ -99,4 +96,18 @@ $r-border:          10px solid getColor(secondary);
     min-height: 100vh !important;
     border-radius: 0px !important;
     padding-left: 78px;
+    transition: padding-left 0.5s linear;
+    -moz-transition: padding-left 0.5s linear; /* Firefox 4 */
+    -webkit-transition: padding-left 0.5s linear; /* Safari and Chrome */
+    -o-transition: padding-left 0.5s linear; /* Opera */
+    -ms-transition: padding-left 0.5s linear; /* Explorer 10 */
+}
+
+.resizer--desktop--menu-open {
+    padding-left: 300px !important;
+    transition: padding-left 0.5s linear;
+    -moz-transition: padding-left 0.5s linear; /* Firefox 4 */
+    -webkit-transition: padding-left 0.5s linear; /* Safari and Chrome */
+    -o-transition: padding-left 0.5s linear; /* Opera */
+    -ms-transition: padding-left 0.5s linear; /* Explorer 10 */
 }

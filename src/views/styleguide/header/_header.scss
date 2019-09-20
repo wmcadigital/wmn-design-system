@@ -5,3 +5,7 @@ $h-bg: getColor(primary);
   padding: $padding-md;
   background-color: $h-bg;
 }
+
+#header-logo {
+  width: 100px;
+}
