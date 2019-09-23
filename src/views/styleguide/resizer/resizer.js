@@ -110,7 +110,7 @@ function SetResizer() {
         btnTablet.setAttribute('style', 'display: block');
         btnMob.setAttribute('style', 'display: block');
 
-        resizer.setAttribute('style', 'margin: 0 !important');
+        // resizer.setAttribute('style', 'margin: 0 !important'); 
 
         ResizerLaptop();
     } else if (viewportWidth >= BP_TABLET && viewportWidth < BP_LAPTOP) {
@@ -122,7 +122,7 @@ function SetResizer() {
         btnTablet.setAttribute('style', 'display: block');
         btnMob.setAttribute('style', 'display: block');
 
-        resizer.setAttribute('style', 'margin: 0 !important');
+        // resizer.setAttribute('style', 'margin: 0 !important');
 
         ResizerTablet();
     } else if (viewportWidth < BP_TABLET) {
@@ -132,7 +132,7 @@ function SetResizer() {
         btnTablet.setAttribute('style', 'display: none');
         btnMob.setAttribute('style', 'display: none');
 
-        resizer.setAttribute('style', 'margin: 0 !important');
+        // resizer.setAttribute('style', 'margin: 0 !important');
 
         ResizerMob();
     }

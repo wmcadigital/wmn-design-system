@@ -39,14 +39,13 @@ function LoadPage(href) {
 
 for (let link = 0; link < links.length; link += 1) {
     links[link].addEventListener('click', () => {
-        // get the anchor el that wraps around the link
+        // get the anchor element that wraps around the link
         const parent = links[link].parentElement.parentElement;
         let href;
 
         // check if parent element exists and if it does get the
-        // value of the href attribute
+        // value of the href attribute and remove any hashtags
         if (parent) {
-            // remove any hashtags if they exist
             href = parent.getAttribute('href').replace('#', '');
         }
 

@@ -1,7 +1,24 @@
 $h-bg: getColor(primary);
+$h-size-mob: 78px;
 
 .header {
   margin-bottom: $margin-xl;
   padding: $padding-md;
   background-color: $h-bg;
+
+  @media only screen and (max-width: 568px) { 
+    height: $h-size-mob;
+    padding: 0px;
+    position: relative;
+  }
+}
+
+#header-logo {
+  @media only screen and (max-width: 568px) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+    max-height: 2rem;
+  }
 }

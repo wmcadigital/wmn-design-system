@@ -52,18 +52,9 @@ $r-border-color:    getColor(secondary);
     display: block;
     margin: 0 auto;
     min-height: 100vh;
-    transition: width ease .5s;
-    outline-style: solid;
-    outline-width: 10px;
-    outline-color: $r-border-color;
-
-    &:focus {
-        outline: none;
-    }
-
-    &[seamless] {
-        display: block;
-    }
+    transition: width ease .5s, padding ease .5s;
+    border-right: 10px solid $r-border-color;
+    border-left: 10px solid $r-border-color;
 }
 
 .resizer--mob {
@@ -92,9 +83,9 @@ $r-border-color:    getColor(secondary);
 
 .resizer--desktop {
     width: 100%;
-    border: 0px !important;
+    // border: 0px !important;
     margin: 0 auto !important;
     min-height: 100vh !important;
     border-radius: 0px !important;
-    padding-left: 78px;
+    padding-left: 68px;
 }
