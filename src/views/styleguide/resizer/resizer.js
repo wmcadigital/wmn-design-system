@@ -1,5 +1,6 @@
 // Define DOM elements
 const resizer = document.getElementById('resizer');
+let hamburger;
 let btnMob;
 let btnTablet;
 let btnLaptop;

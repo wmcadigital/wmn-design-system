@@ -5,6 +5,7 @@ $h-size-mob: 78px;
   margin-bottom: $margin-xl;
   padding: $padding-md;
   background-color: $h-bg;
+<<<<<<< HEAD
 
   @media only screen and (max-width: 568px) { 
     height: $h-size-mob;
@@ -21,4 +22,10 @@ $h-size-mob: 78px;
     left: 100px;
     max-height: 2rem;
   }
+=======
+}
+
+#header-logo {
+  width: 100px;
+>>>>>>> bc276be9913329a5f5a05aaea1f9d24d512d77ac
 }
