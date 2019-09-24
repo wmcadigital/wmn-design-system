@@ -1,3 +1,26 @@
 .typography-characters {
     @include type-setting(3);
 }
+
+#form-label {
+    font-weight: bold;
+}
+
+#btn-light {
+    font-weight: bold;
+}
+
+#btn-secondary {
+    color: getColor(secondaryPurple);
+    font-weight: bold;
+}
+
+#btn-start {
+    color: getColor(success);
+    font-weight: bold;
+}
+
+#btn-destructive {
+    color: getColor(warning);
+    font-weight: bold;
+}

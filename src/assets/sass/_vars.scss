@@ -31,6 +31,10 @@ $palettes: (
   roads:                        #df1683 /* WMN Roads */,
   walkCycle:                    #679500 /* WMN Walk & Cycle */,
   taxi:                         #773dbe /* WMN Taxi */,
+
+  // ACTION COLORS
+  warning:                      #d4351c,
+  success:                      #00703c,
 );
 
 // In SCSS a map == array
@@ -61,20 +65,20 @@ $type-settings: (
     line-height:                $base-line-height
   ),
   1: (
-    font-size:                  1.125rem,
+    font-size:                  1.375rem,
     line-height:                $base-line-height * 2
   ),
   2: (
-    font-size:                  1.4375rem,
+    font-size:                  1.5rem,
     line-height:                $base-line-height * 2
   ),
   3: (
-    font-size:                  2rem,
+    font-size:                  2.125rem,
     line-height:                $base-line-height * 2
   ),
   4: (
-    font-size:                  3rem,
-    line-height:                $base-line-height * 3
+    font-size:                  3.75rem,
+    line-height:                $base-line-height * 4
   )
 );
 /* -------------------------------------------------------------------------- */
