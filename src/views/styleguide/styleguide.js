@@ -20,6 +20,14 @@ const pages = {
         title: 'typography',
         link: `${pagesDir}/typography.html`,
     },
+    Marks: {
+        title: 'marks',
+        link: `${pagesDir}/marks.html`,
+    },
+    Tables: {
+        title: 'tables',
+        link: `${pagesDir}/tables.html`,
+    },
 };
 
 function LoadPage(href) {
@@ -30,6 +38,12 @@ function LoadPage(href) {
         break;
     case pages.ColorPalette.title:
         iframe.setAttribute('src', pages.ColorPalette.link);
+        break;
+    case pages.Marks.title:
+        iframe.setAttribute('src', pages.Marks.link);
+        break;
+    case pages.Tables.title:
+        iframe.setAttribute('src', pages.Tables.link);
         break;
     default:
         iframe.setAttribute('src', pages.Home.link);

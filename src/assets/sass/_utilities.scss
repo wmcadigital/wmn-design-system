@@ -39,7 +39,7 @@ html {
     margin: auto;
     max-width: 1280px;
     @media screen and (max-width: 1280px) {
-      padding: 0 $padding-md;
+      padding: $padding-sm $padding-md;
     }
   }
   &-sm {
@@ -192,6 +192,12 @@ html {
   &-transparent {
     @include x-default-border(transparent);
   }
+}
+
+// Images
+img {
+  height: auto;
+  max-width: 100%;
 }
 
 // Animations

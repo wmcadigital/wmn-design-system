@@ -145,6 +145,8 @@ $sm-color: white;
     position: absolute;
     color: $sm-color;
     font-size: $sm-icon-size;
+    max-width: $sm-icon-size;
+    max-height: $sm-icon-size;
 }
 
 .side-menu__sub-menu__item__text {
