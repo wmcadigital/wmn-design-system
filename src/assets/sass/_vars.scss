@@ -11,46 +11,26 @@ $x-palette-white:               #ffffff; // White
 /* -------------------------------------------------------------------------- */
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
-  // MAIN COLORS
-  // primary:                      #df1683 /* WM Pink*/,
-  primary:                      #3c1053 /* WM Pink*/,
-  secondary:                    #54565b /* WM Gunmetal Grey*/,
-  black:                        #231f20 /* WM Carbon Black*/,
+  // WEB COLORS
+  primary:                      #3c1053 /* WMN Primary Purple */,
+  secondary:                    #6e407a /* WMN Secondary Purple */,
+  cta:                          #231f20 /* WMN CTA Blue */,
+  black:                        #231f20 /* WMN Text Black*/,
   
-  // SECONDARY COLORS
-  wmDarkPurple:                 #3c1053 /* WM Purple*/,
-  wmPurple:                     #84329b /* WM Purple */,
-  wmOrange:                     #ff8300 /* WM Orange */,
-  wmGreen:                      #93d500 /* WM Green */,
+  // BRAND COLORS
+  purple:                       #3c1053 /* WMN Primary Purple */,
+  secondaryPurple:              #6e407a /* WMN Secondary Purple */,
+  darkPurple:                   #1e082a /* WMN Dark Purple */,
+  coolGrey:                     #54565b /* WMN Cool Grey */,
+  yellow:                       #ffdd00 /* WMN Yellow */,
 
-  // TRANSPORT COLORS
-  // Rail Exec
-  railExecPrimary:              #3cbfae,
-  railExecSecondary:            #ff8300,
-  // Network
-  networkPrimary:               #3c1053,
-  networkSecondary:             #84329b,
-  // Coordination Center
-  coordPrimary:                 #3c1053,
-  coordSecondary:               #84329b,
-  // Railway
-  railwayPrimary:               #ff8300,
-  railwaySecondary:             #84329b,
-  // Bus
-  busPrimary:                   #ea0029,
-  busSecondary:                 #841922,
-  // Metro
-  metroPrimary:                 #0075c9,
-  metroSecondary:               #385d7f,
-  // Roads
-  roadsPrimary:                 #df1683,
-  roadsSecondary:               #3c1053,
-  // Cycle
-  cyclePrimary:                 #93d500,
-  cycleSecondary:               #84329b,
-  // Walking
-  walkingPrimary:               #93d500,
-  walkingSecondary:             #84329b,
+  // MODAL COLORS
+  railway:                      #ff8300 /* WMN Railway */,
+  bus:                          #ea0029 /* WMN Bus */,
+  metro:                        #0075c9 /* WMN Metro */,
+  roads:                        #df1683 /* WMN Roads */,
+  walkCycle:                    #679500 /* WMN Walk & Cycle */,
+  taxi:                         #773dbe /* WMN Taxi */,
 );
 
 // In SCSS a map == array

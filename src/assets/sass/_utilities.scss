@@ -271,3 +271,99 @@ html {
     transition: max-height 0.5s cubic-bezier(0.6, 0, 0.6, 1);
   }
 }
+
+
+/* COLOURS ------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------- */
+/* Web Colours ---------- */
+.color-primary {
+  color: getColor(primary);
+}
+
+.bg-color-primary {
+  background-color: getColor(primary);
+}
+
+.color-secondary {
+  color: getColor(secondary);
+}
+
+.bg-color-secondary {
+  background-color: getColor(secondary);
+}
+
+.color-cta {
+  color: getColor(cta);
+}
+
+.bg-color-cta {
+  background-color: getColor(cta);
+}
+
+.color-black {
+  color: getColor(black);
+}
+
+.bg-color-black {
+  background-color: getColor(black);
+}
+
+/* Brand Colours ---------- */
+.color-dark-purple {
+  color: getColor(darkPurple);
+}
+
+.bg-color-dark-purple {
+  background-color: getColor(darkPurple);
+}
+
+/* Modal Colours ---------- */
+.color-railway {
+  color: getColor(railway);
+}
+
+.bg-color-railway {
+  background-color: getColor(railway);
+}
+
+.color-bus {
+  color: getColor(bus);
+}
+
+.bg-color-bus {
+  background-color: getColor(bus);
+}
+
+.color-metro {
+  color: getColor(metro);
+}
+
+.bg-color-metro {
+  background-color: getColor(metro);
+}
+
+.color-roads {
+  color: getColor(roads);
+}
+
+.bg-color-roads {
+  background-color: getColor(roads);
+}
+
+.color-walk-cycle {
+  color: getColor(walkCycle);
+}
+
+.bg-color-walk-cycle {
+  background-color: getColor(walkCycle);
+}
+
+.color-taxi {
+  color: getColor(taxi);
+}
+
+.bg-color-taxi {
+  background-color: getColor(taxi);
+}
+
+/* -------------------------------------------------------------------------- */

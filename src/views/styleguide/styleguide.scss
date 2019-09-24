@@ -9,3 +9,37 @@
 @import 'footer/footer';
 @import 'header/header';
 @import 'resizer/resizer';
+
+// Styleguide page specific styles
+@import 'pages/colorPalette';
+
+/* Add a gutter to Pure's Columns */
+.pure-g {
+  margin: 0 -1em;
+}
+
+.pure-g > div {
+  padding: 0 1em;
+}
+
+.component-details {
+    padding-bottom: $padding-md;
+}
+
+.component-details__code {
+    background-color: #efefef;
+    padding: $padding-sm;
+    margin: $margin-sm 0;
+    border-radius: 4px;
+    border-left: 2px solid rgba(getColor(primary), .5);
+}
+
+.component-details__title {
+    @include type-setting(1);
+    font-weight: 700;
+}
+
+.component-details__text {
+    color: rgba(black, .5);
+    font-weight: 400;
+}

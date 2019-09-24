@@ -16,7 +16,7 @@ textarea,
 html,
 body {
   font-size: $font-size;
-  color: getColor(secondary);
+  color: getColor(black);
   line-height: $base-line-height;
   @include type-setting(0);
 }
@@ -100,7 +100,8 @@ a {
 }
 
 p {
-	margin: $margin-md 0;
+	margin: 0;
+	margin-bottom: $margin-md;
 }
 
 // Material Icons

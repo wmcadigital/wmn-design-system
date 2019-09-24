@@ -1,6 +1,5 @@
 // Define DOM elements
 const resizer = document.getElementById('resizer');
-let hamburger;
 let btnMob;
 let btnTablet;
 let btnLaptop;
@@ -111,23 +110,21 @@ function SetResizer() {
         btnTablet.setAttribute('style', 'display: block');
         btnMob.setAttribute('style', 'display: block');
 
-        // resizer.setAttribute('style', 'margin: 0 !important'); 
+        // resizer.setAttribute('style', 'margin: 0 !important');
 
         ResizerLaptop();
     } else if (viewportWidth >= BP_TABLET && viewportWidth < BP_LAPTOP) {
-        // Hide relevant buttons
+        // Hide resizer buttons
         btnDesktop.setAttribute('style', 'display: none');
         btnLaptop.setAttribute('style', 'display: none');
-
-        // Show relevant buttons
-        btnTablet.setAttribute('style', 'display: block');
-        btnMob.setAttribute('style', 'display: block');
+        btnTablet.setAttribute('style', 'display: none');
+        btnMob.setAttribute('style', 'display: none');
 
         // resizer.setAttribute('style', 'margin: 0 !important');
 
         ResizerTablet();
     } else if (viewportWidth < BP_TABLET) {
-        // Hide relevant buttons
+        // Hide resizer buttons
         btnDesktop.setAttribute('style', 'display: none');
         btnLaptop.setAttribute('style', 'display: none');
         btnTablet.setAttribute('style', 'display: none');
@@ -158,5 +155,8 @@ btnTablet.addEventListener('click', () => {
 btnMob.addEventListener('click', () => {
     ResizerMob();
 });
+
+document.onresize = SetResizer();
+
 
 SetResizer();
