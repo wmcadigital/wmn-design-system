@@ -14,9 +14,21 @@
         map-get($type-settings, $level), 'line-height');
 }
 
+@function letter-spacing($level) {
+  @return map-get(
+      map-get($type-settings, $level), 'letter-spacing');
+}
+
+@function word-spacing($level) {
+  @return map-get(
+      map-get($type-settings, $level), 'word-spacing');
+}
+
 @mixin type-setting($level) {
     font-size: type-scale($level);
     line-height: line-height($level);
+    letter-spacing: letter-spacing($level);
+    word-spacing: word-spacing($level);
 }
 
 // Mixin to control header sizes

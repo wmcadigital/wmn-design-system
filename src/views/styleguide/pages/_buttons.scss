@@ -1,0 +1,39 @@
+$btn-border-radius: 4px;
+
+.btn {
+    font-weight: bold;
+    border-radius: $btn-border-radius;
+    padding: $padding-sm;
+    cursor: pointer;
+}
+
+.btn__btn-cta {
+    background-color: getColor(cta);
+    color: white;
+}
+
+.btn__btn-primary {
+    background-color: getColor(primary);
+    color: white;
+}
+
+.btn__btn-secondary {
+    background-color: transparent;
+    color: getColor(primary);
+    border: 1px solid getColor(primary);
+}
+
+.btn__btn-destructive {
+    background-color: getColor(warning);
+    color: white;
+}
+
+.btn__btn-search {
+    background-color: getColor(search);
+    color: white;
+}
+
+.btn__btn-start {
+    background-color: getColor(success);
+    color: white;
+}

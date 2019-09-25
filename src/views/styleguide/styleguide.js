@@ -28,6 +28,10 @@ const pages = {
         title: 'tables',
         link: `${pagesDir}/tables.html`,
     },
+    Buttons: {
+        title: 'buttons',
+        link: `${pagesDir}/buttons.html`,
+    },
 };
 
 function LoadPage(href) {
@@ -44,6 +48,9 @@ function LoadPage(href) {
         break;
     case pages.Tables.title:
         iframe.setAttribute('src', pages.Tables.link);
+        break;
+    case pages.Buttons.title:
+        iframe.setAttribute('src', pages.Buttons.link);
         break;
     default:
         iframe.setAttribute('src', pages.Home.link);
