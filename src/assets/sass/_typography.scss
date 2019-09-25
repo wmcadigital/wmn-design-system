@@ -19,6 +19,7 @@ body {
   color: getColor(black);
   line-height: $base-line-height;
   @include type-setting(0);
+  font-family: $x-font-family;
 }
 
 
