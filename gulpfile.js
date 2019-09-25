@@ -13,6 +13,7 @@ const babel = require('gulp-babel');
 const htmlHint = require('gulp-htmlhint');
 // Image vars
 const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
 // Live-reload server vars
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -181,7 +182,10 @@ function buildConfig() {
 // Optimise images
 function minImages() {
     return src(paths.images.src)
-        .pipe(imagemin())
+        .pipe(changed(paths.images.dest))
+        .pipe(imagemin( {
+            verbose: true
+        }))
         .pipe(dest(paths.images.dest));
 }
 
