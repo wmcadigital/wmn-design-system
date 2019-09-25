@@ -85,14 +85,11 @@ if (sideMenu) {
     hamburger.addEventListener('click', () => {
         ToggleMenu();
 
-        let resizer = document.getElementsByClassName('resizer--desktop');
-        
-        // Adjust left padding on desktop view to match width of the side menu
-        // isOpen
-        //     ? resizer[0].setAttribute('style', 'padding-left: 300px !important') 
-        //     : resizer[0].setAttribute('style', 'padding-left: 78px !important');
+        const resizer = document.getElementsByClassName('resizer--desktop');
+
+        // eslint-disable-next-line no-unused-expressions
         isOpen
-            ? resizer[0].classList.add('resizer--desktop--menu-open') 
-            : resizer[0].classList.remove('resizer--desktop--menu-open')
+            ? resizer[0].classList.add('resizer--desktop--menu-open')
+            : resizer[0].classList.remove('resizer--desktop--menu-open');
     });
 }
