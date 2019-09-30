@@ -1,20 +1,77 @@
 $btn-border-radius: 4px;
+$btn-border-width: 2px;
 
 .btn {
     font-weight: bold;
     border-radius: $btn-border-radius;
     padding: $padding-sm;
     cursor: pointer;
+    display: inline-block;
+    transition: ease-in-out background-color .5s;
+}
+
+.btn-block {
+    display: block;
+}
+
+.btn-disabled {
+    background-color: getColor(btnDisabled);
+    color: white;
+
+    &:hover {
+        background-color: mix(getColor(btnDisabled), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(btnDisabled), black, 50);
+    }
 }
 
 .btn__btn-cta {
     background-color: getColor(cta);
     color: white;
+
+    &:hover {
+        background-color: mix(getColor(cta), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(cta), black, 50);
+    }
 }
 
 .btn__btn-primary {
+    background-color: getColor(cta);
+    color: white;
+    border: $btn-border-width solid getColor(cta);
+    padding: 0;
+
+    div {
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+    }
+
+    &:hover {
+        background-color: mix(getColor(cta), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(cta), black, 50);
+    }
+}
+
+.btn__btn-primary2 {
     background-color: getColor(primary);
     color: white;
+
+    &:hover {
+        background-color: mix(getColor(primary), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(primary), black, 50);
+    }
 }
 
 .btn__btn-secondary {
@@ -26,14 +83,42 @@ $btn-border-radius: 4px;
 .btn__btn-destructive {
     background-color: getColor(warning);
     color: white;
+
+    &:hover {
+        background-color: mix(getColor(warning), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(warning), black, 50);
+    }
 }
 
 .btn__btn-search {
     background-color: getColor(search);
     color: white;
+
+    &:hover {
+        background-color: mix(getColor(search), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(search), black, 50);
+    }
 }
 
 .btn__btn-start {
     background-color: getColor(success);
     color: white;
+
+    &:hover {
+        background-color: mix(getColor(success), black, 30);
+    }
+
+    &:active {
+        background-color: mix(getColor(success), black, 50);
+    }
+}
+
+.btn__icon {
+    padding-left: $padding-md;
 }

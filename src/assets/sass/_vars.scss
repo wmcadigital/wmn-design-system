@@ -35,6 +35,7 @@ $palettes: (
   warning:                      #d4351c,
   success:                      #00703c,
   search:                       #84329D,
+  btnDisabled:                  #676869,
 );
 
 // In SCSS a map == array
@@ -59,38 +60,38 @@ $type-settings: (
   -1: (
     font-size:                  0.875rem,
     line-height:                $base-line-height,
-    letter-spacing:             0.105rem,
-    word-spacing:               0.14rem,
+    letter-spacing:             0.02625rem,
+    word-spacing:               0.035rem,
   ),
   0: (
     font-size:                  1rem,
     line-height:                $base-line-height,
-    letter-spacing:             0.12rem,
-    word-spacing:               0.16rem,
+    letter-spacing:             0.03rem,
+    word-spacing:               0.04rem,
   ),
   1: (
     font-size:                  1.375rem,
     line-height:                $base-line-height * 2,
-    letter-spacing:             0.165rem,
-    word-spacing:               0.22rem,
+    letter-spacing:             0.04125rem,
+    word-spacing:               0.055rem,
   ),
   2: (
     font-size:                  1.5rem,
     line-height:                $base-line-height * 2,
-    letter-spacing:             0.18rem,
-    word-spacing:               0.24rem,
+    letter-spacing:             0.045rem,
+    word-spacing:               0.06rem,
   ),
   3: (
     font-size:                  2.125rem,
     line-height:                $base-line-height * 2,
-    letter-spacing:             0.255rem,
-    word-spacing:               0.3416rem,
+    letter-spacing:             0.061225rem,
+    word-spacing:               0.0854rem,
   ),
   4: (
     font-size:                  3.75rem,
     line-height:                $base-line-height * 4,
-    letter-spacing:             0.45rem,
-    word-spacing:               0.6rem,
+    letter-spacing:             0.1125rem,
+    word-spacing:               0.15rem,
   )
 );
 /* -------------------------------------------------------------------------- */
