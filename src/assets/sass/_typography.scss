@@ -75,24 +75,24 @@ a {
 }
  
 h1 {
-	@include type-setting(4);
+	@include type-setting(5);
 	margin: $margin-lg 0;
 	color: getColor(primary);
 }
 
 h2 {
-	@include type-setting(3);
+	@include type-setting(4);
 	margin: $margin-md 0;
 	color: getColor(primary);
 }
 
 h3 {
-	@include type-setting(2);
+	@include type-setting(3);
 	margin: $margin-md 0;
 }
 
 h4 {
-	@include type-setting(1);
+	@include type-setting(2);
 	margin: $margin-sm 0;
 }
 
