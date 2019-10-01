@@ -8,6 +8,7 @@ $btn-border-width: 2px;
     cursor: pointer;
     display: inline-block;
     transition: ease-in-out background-color .5s;
+    box-sizing: border-box;
 }
 
 .btn-block {
@@ -40,16 +41,18 @@ $btn-border-width: 2px;
     }
 }
 
-.btn__btn-primary {
+.btn-cta-primary {
     background-color: getColor(cta);
     color: white;
     border: $btn-border-width solid getColor(cta);
     padding: 0;
+    box-sizing: border-box;
 
     div {
         border: $btn-border-width solid white;
         padding: $padding-sm;
         border-radius: $btn-border-radius;
+        box-sizing: border-box;
     }
 
     &:hover {
