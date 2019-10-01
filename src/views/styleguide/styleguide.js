@@ -35,7 +35,7 @@ const pages = {
     FormElements: {
         title: 'formElements',
         link: `${pagesDir}/formElements.html`,
-    }
+    },
 };
 
 function LoadPage(href) {
