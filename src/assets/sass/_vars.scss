@@ -1,114 +1,106 @@
 /* INTERNAL VARS ------------------------------------------------------------ */
 /* -------------------------------------------------------------------------- */
-// Internal Vars (Internal variables have one function, and that's to be 
+// Internal Vars (Internal variables have one function, and that's to be
 // assigned to other variables.)
-$x-palette-white:               #ffffff; // White
+$x-palette-white: #ffffff; // White
 /* -------------------------------------------------------------------------- */
-
 
 /* PALETTE COLOURS ---------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
   // WEB COLORS
-  primary:                      #3c1053 /* WMN Primary Purple */,
-  secondary:                    #6e407a /* WMN Secondary Purple */,
-  cta:                          #02b5e3 /* WMN CTA Blue */,
-  black:                        #231f20 /* WMN Text Black*/,
-  
+    primary: #3c1053 /* WMN Primary Purple */,
+  secondary: #6e407a /* WMN Secondary Purple */,
+  cta: #02b5e3 /* WMN CTA Blue */,
+  black: #231f20 /* WMN Text Black*/,
   // BRAND COLORS
-  purple:                       #3c1053 /* WMN Primary Purple */,
-  secondaryPurple:              #6e407a /* WMN Secondary Purple */,
-  darkPurple:                   #1e082a /* WMN Dark Purple */,
-  coolGrey:                     #54565b /* WMN Cool Grey */,
-  yellow:                       #ffdd00 /* WMN Yellow */,
-
+    purple: #3c1053 /* WMN Primary Purple */,
+  secondaryPurple: #6e407a /* WMN Secondary Purple */,
+  darkPurple: #1e082a /* WMN Dark Purple */,
+  coolGrey: #54565b /* WMN Cool Grey */,
+  yellow: #ffdd00 /* WMN Yellow */,
   // MODAL COLORS
-  railway:                      #ff8300 /* WMN Railway */,
-  bus:                          #ea0029 /* WMN Bus */,
-  metro:                        #0075c9 /* WMN Metro */,
-  roads:                        #df1683 /* WMN Roads */,
-  walkCycle:                    #679500 /* WMN Walk & Cycle */,
-  taxi:                         #773dbe /* WMN Taxi */,
-
+    railway: #ff8300 /* WMN Railway */,
+  bus: #ea0029 /* WMN Bus */,
+  metro: #0075c9 /* WMN Metro */,
+  roads: #df1683 /* WMN Roads */,
+  walkCycle: #679500 /* WMN Walk & Cycle */,
+  taxi: #773dbe /* WMN Taxi */,
   // ACTION COLORS
-  warning:                      #d4351c,
-  success:                      #00703c,
-  search:                       #84329D,
-  btnDisabled:                  #676869,
+    warning: #d4351c,
+  success: #00703c,
+  search: #84329d,
+  btnDisabled: #676869
 );
 
 // In SCSS a map == array
-$colors-map:                    (); // Set placeholder colors map
+$colors-map: (); // Set placeholder colors map
 /* -------------------------------------------------------------------------- */
-
-
 
 /* TEXT --------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
-$text-color:                    getColor(black);
-$x-font-family:                 'Noto Sans', sans-serif;
-$x-heading-font-family:         'Noto Sans', sans-serif;
-$font-size:                     16px;
+$text-color: getColor(black);
+$x-font-family: 'Noto Sans', sans-serif;
+$x-heading-font-family: 'Noto Sans', sans-serif;
+$font-size: 16px;
 
 // Base font size and line height
-$base-font-size:                1rem;
-$base-line-height:              $base-font-size * 1.5;
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.5;
 
 // All values based on REM of 14px
 $type-settings: (
   -1: (
-    font-size:                  0.875rem,
-    line-height:                $base-line-height,
-    letter-spacing:             0.02625rem,
-    word-spacing:               0.035rem,
-  ),
+      font-size: 0.875rem,
+      line-height: $base-line-height,
+      letter-spacing: 0.02625rem,
+      word-spacing: 0.035rem
+    ),
   0: (
-    font-size:                  1rem,
-    line-height:                $base-line-height,
-    letter-spacing:             0.03rem,
-    word-spacing:               0.04rem,
+    font-size: 1rem,
+    line-height: $base-line-height,
+    letter-spacing: 0.03rem,
+    word-spacing: 0.04rem
   ),
   1: (
-    font-size:                  1.375rem,
-    line-height:                $base-line-height * 2,
-    letter-spacing:             0.04125rem,
-    word-spacing:               0.055rem,
+    font-size: 1.375rem,
+    line-height: $base-line-height * 2,
+    letter-spacing: 0.04125rem,
+    word-spacing: 0.055rem
   ),
   2: (
-    font-size:                  1.5rem,
-    line-height:                $base-line-height * 2,
-    letter-spacing:             0.045rem,
-    word-spacing:               0.06rem,
+    font-size: 1.5rem,
+    line-height: $base-line-height * 2,
+    letter-spacing: 0.045rem,
+    word-spacing: 0.06rem
   ),
   3: (
-    font-size:                  2.125rem,
-    line-height:                $base-line-height * 2,
-    letter-spacing:             0.061225rem,
-    word-spacing:               0.0854rem,
+    font-size: 2.125rem,
+    line-height: $base-line-height * 2,
+    letter-spacing: 0.061225rem,
+    word-spacing: 0.0854rem
   ),
   4: (
-    font-size:                  3.75rem,
-    line-height:                $base-line-height * 4,
-    letter-spacing:             0.1125rem,
-    word-spacing:               0.15rem,
+    font-size: 3.75rem,
+    line-height: $base-line-height * 4,
+    letter-spacing: 0.1125rem,
+    word-spacing: 0.15rem
   )
 );
 /* -------------------------------------------------------------------------- */
 
-
-
 /* SPACING ------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------- */
 // Padding
-$padding-sm:                   $base-line-height / 2;
-$padding-md:                   $base-line-height;
-$padding-lg:                   $base-line-height * 2;
-$padding-xl:                   $base-line-height * 3;
+$padding-sm: $base-line-height / 2;
+$padding-md: $base-line-height;
+$padding-lg: $base-line-height * 2;
+$padding-xl: $base-line-height * 3;
 
 // Margin
-$margin-sm:                    $base-line-height / 2;
-$margin-md:                    $base-line-height;
-$margin-lg:                    $base-line-height * 2;
-$margin-xl:                    $base-line-height * 3;
+$margin-sm: $base-line-height / 2;
+$margin-md: $base-line-height;
+$margin-lg: $base-line-height * 2;
+$margin-xl: $base-line-height * 3;
 /* -------------------------------------------------------------------------- */
