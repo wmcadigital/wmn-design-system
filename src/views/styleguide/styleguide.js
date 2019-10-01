@@ -32,6 +32,10 @@ const pages = {
         title: 'buttons',
         link: `${pagesDir}/buttons.html`,
     },
+    Header: {
+        title: 'header',
+        link: `${pagesDir}/header.html`,
+    },
 };
 
 function LoadPage(href) {
@@ -51,6 +55,9 @@ function LoadPage(href) {
         break;
     case pages.Buttons.title:
         iframe.setAttribute('src', pages.Buttons.link);
+        break;
+    case pages.Header.title:
+        iframe.setAttribute('src', pages.Header.link);
         break;
     default:
         iframe.setAttribute('src', pages.Home.link);
@@ -76,3 +83,5 @@ for (let link = 0; link < links.length; link += 1) {
         }
     });
 }
+
+// LoadPage(window)

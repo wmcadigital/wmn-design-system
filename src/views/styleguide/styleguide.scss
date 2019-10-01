@@ -15,6 +15,7 @@
 @import 'pages/typography';
 @import 'pages/marks';
 @import 'pages/buttons';
+@import 'pages/header';
 
 /* Add a gutter to Pure's Columns */
 .pure-g {
@@ -26,6 +27,7 @@
 }
 
 .component-details {
+    margin-top: $margin-md;
     margin-bottom: $margin-lg;
 }
 
