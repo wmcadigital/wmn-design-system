@@ -60,7 +60,7 @@ const paths = {
         output: 'build/css/', // output location of minified styles
     },
     scripts: {
-        src: ['src/assets/js/**/*.js', 'src/views/components/**/*.js'], // Src of JS files to watch
+        src: ['src/assets/js/**/*.js', 'src/views/components/**/*.js', './src/views/styleguide/**/*.js'], // Src of JS files to watch
         // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
         minifySrc: [
             {
