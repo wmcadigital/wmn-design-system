@@ -169,7 +169,7 @@ function lintTemplates() {
 
 function buildTemplates() {
     return src(paths.templates.src)
-        .pipe(gulpHandlebarsFileInclude())
+        .pipe(gulpHandlebarsFileInclude('',{maxRecursion: 20}))
         .pipe(replace('$*cdn', json.buildDirs[build].cdn))
         .pipe(dest(paths.templates.output));
 }
