@@ -33,7 +33,7 @@ $btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
     padding-left: $padding-md;
 }
 
-.btn-disabled {
+.btn--disabled {
     background-color: getColor(btnDisabled);
     color: white;
 
@@ -48,7 +48,7 @@ $btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
     }
 }
 
-.btn-cta {
+.btn__btn-cta {
     background-color: getColor(cta);
     color: white;
 
@@ -78,7 +78,7 @@ $btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
     }
 }
 
-.btn-primary {
+.btn__btn-primary {
     background-color: getColor(primary);
     color: white;
 
@@ -108,7 +108,7 @@ $btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
     }
 }
 
-.btn-secondary {
+.btn__btn-secondary {
     background-color: white;
     color: getColor(primary);
     border: $btn-border-width solid getColor(primary);
@@ -149,7 +149,7 @@ $btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
     }
 }
 
-.btn-start {
+.btn__btn-start {
     background-color: getColor(success);
     color: white;
 
@@ -180,7 +180,7 @@ $btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
 }
 
 
-.btn-destructive {
+.btn__btn-destructive {
     background-color: getColor(warning);
     color: white;
 

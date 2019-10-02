@@ -14,17 +14,16 @@
 @import 'pages/colorPalette';
 @import 'pages/typography';
 @import 'pages/marks';
-@import 'pages/buttons';
 @import 'pages/header';
 
 /* Add a gutter to Pure's Columns */
-.pure-g {
-  margin: 0 -1em;
-}
+// .pure-g {
+//   margin: 0 -1em;
+// }
 
-.pure-g > div {
-  padding: 0 1em;
-}
+// .pure-g > div {
+//   padding: 0 1em;
+// }
 
 .component-details {
     margin-top: $margin-md;
