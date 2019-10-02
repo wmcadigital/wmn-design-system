@@ -36,6 +36,10 @@ const pages = {
         title: 'header',
         link: `${pagesDir}/header.html`,
     },
+    FormElements: {
+        title: 'formElements',
+        link: `${pagesDir}/formElements.html`,
+    },
 };
 
 function LoadPage(href) {
@@ -58,6 +62,9 @@ function LoadPage(href) {
         break;
     case pages.Header.title:
         iframe.setAttribute('src', pages.Header.link);
+        break;
+    case pages.FormElements.title:
+        iframe.setAttribute('src', pages.FormElements.link);
         break;
     default:
         iframe.setAttribute('src', pages.Home.link);
