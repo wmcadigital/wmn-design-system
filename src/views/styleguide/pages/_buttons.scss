@@ -1,19 +1,27 @@
 $btn-border-radius: 4px;
 $btn-border-width: 2px;
+$btn-padding: 2px;
+$btn-transition: ease-in-out background-color .2s, ease-in-out border .2s;
 
 .btn {
     font-weight: bold;
     border-radius: $btn-border-radius;
     cursor: pointer;
     display: inline-block;
-    transition: ease-in-out background-color .5s;
+    transition: $btn-transition;
             box-sizing: border-box;
        -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    padding: 2px;
+    padding: $btn-padding;
 
     div {
         padding: $padding-sm;
+        pointer-events: none;
+        transition: $btn-transition;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
 
@@ -33,8 +41,10 @@ $btn-border-width: 2px;
         background-color: mix(getColor(btnDisabled), black, 30);
     }
 
-    &:active {
+    &:active,
+    &:target {
         background-color: mix(getColor(btnDisabled), black, 50);
+        -webkit-appearance: none;
     }
 }
 
@@ -46,16 +56,18 @@ $btn-border-width: 2px;
         border: $btn-border-width solid transparent;
     }
 
-    &:hover {
-        background-color: mix(getColor(cta), black, 30);
-    }
-
     &:visited {
         background-color: mix(getColor(cta), black, 50);
     }
 
-    &:active {
+    &:hover {
+        background-color: mix(getColor(cta), black, 30);
+    }
+
+    &:active,
+    &:target {
         div {
+            -webkit-appearance: none;
             border: $btn-border-width solid white;
             padding: $padding-sm;
             border-radius: $btn-border-radius;
@@ -73,17 +85,19 @@ $btn-border-width: 2px;
     div {
         border: $btn-border-width solid transparent;
     }
+    
+    &:visited {
+        background-color: mix(getColor(primary), black, 50);
+    }
 
     &:hover {
-        background-color: mix(getColor(primary), white, 30);
+        background-color: mix(getColor(primary), black, 30);
     }
 
-    &:visited {
-        background-color: mix(getColor(primary), white, 50);
-    }
-
-    &:active {
+    &:active,
+    &:target {
         div {
+            -webkit-appearance: none;
             border: $btn-border-width solid getColor(primary);
             padding: $padding-sm;
             border-radius: $btn-border-radius;
@@ -103,20 +117,28 @@ $btn-border-width: 2px;
         border: $btn-border-width solid transparent;
     }
 
-    &:hover {
-        div {
-            background-color: mix(getColor(primary), white, 50);
-        }
-    }
-
     &:visited {
+        background-color: mix(getColor(primary), white, 30);
+
         div {
             background-color: mix(getColor(primary), white, 30);
         }
     }
 
-    &:active {
+    &:hover {
+        background-color: mix(getColor(primary), white, 50);
+
         div {
+            background-color: mix(getColor(primary), white, 50);
+        }
+    }
+
+    &:active,
+    &:target {
+        background-color: white;
+
+        div {
+            -webkit-appearance: none;
             border: $btn-border-width solid getColor(primary);
             padding: $padding-sm;
             border-radius: $btn-border-radius;
@@ -135,16 +157,18 @@ $btn-border-width: 2px;
         border: $btn-border-width solid transparent;
     }
 
-    &:hover {
-        background-color: mix(getColor(success), black, 30);
-    }
-
     &:visited {
         background-color: mix(getColor(success), black, 50);
     }
 
-    &:active {
+    &:hover {
+        background-color: mix(getColor(success), black, 30);
+    }
+
+    &:active,
+    &:target {
         div {
+            -webkit-appearance: none;
             border: $btn-border-width solid white;
             padding: $padding-sm;
             border-radius: $btn-border-radius;
@@ -164,16 +188,18 @@ $btn-border-width: 2px;
         border: $btn-border-width solid transparent;
     }
 
-    &:hover {
-        background-color: mix(getColor(warning), black, 30);
-    }
-
     &:visited {
         background-color: mix(getColor(warning), black, 50);
     }
 
-    &:active {
+    &:hover {
+        background-color: mix(getColor(warning), black, 30);
+    }
+
+    &:active,
+    &:target {
         div {
+            -webkit-appearance: none;
             border: $btn-border-width solid white;
             padding: $padding-sm;
             border-radius: $btn-border-radius;
