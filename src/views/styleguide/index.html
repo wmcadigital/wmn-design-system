@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-	<!-- @@ Head -->
-	{{ fileInclude 'src/views/components/shared/head.html' }}
+  <!-- @@ Head -->
+  {{ fileInclude 'src/views/components/shared/head.html' }}
 
-	<body style="background-color: #ddd">
-		<!--[if IE]>
-			<p class="browserupgrade">
-				You are using an <strong>outdated</strong> browser. Please
-				<a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
-				security.
-			</p>
-		<![endif]-->
+  <body style="background-color: #ddd">
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
+        security.
+      </p>
+    <![endif]-->
 
-		<!-- @@ Resizer buttons -->
-		{{ fileInclude 'src/views/styleguide/resizer/resizer.html' }}
+    <!-- @@ Resizer buttons -->
+    {{ fileInclude 'src/views/styleguide/resizer/resizer.html' }}
 
-		<!-- @@ Side Menu -->
-		{{ fileInclude 'src/views/styleguide/side-menu/side-menu.html' }}
-		
-		<iframe id="resizer" class="resizer--desktop" src="pages/home.html" frameborder="0" style="background-color: white"></iframe>
+    <!-- @@ Side Menu -->
+    {{ fileInclude 'src/views/styleguide/side-menu/side-menu.html' }}
 
-		<link rel="stylesheet" href="$*cdn/css/styleguide.css" />
-		<script src="$*cdn/js/styleguide.min.js"></script>
-	</body>
+    <iframe
+      id="resizer"
+      class="resizer--desktop"
+      src="pages/home.html"
+      frameborder="0"
+      style="background-color: white"
+    ></iframe>
+
+    <link rel="stylesheet" href="$*cdn/css/styleguide.css" />
+    <script src="$*cdn/js/styleguide.min.js"></script>
+  </body>
 </html>
