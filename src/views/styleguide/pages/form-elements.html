@@ -7,22 +7,45 @@
 <div class="container-lg">
   <h1>Form Elements</h1>
 
+  <!-- Textarea -->
   <div class="pure-g justify-between">
-    <h2 class="pure-u-1">Inputs</h2>
+    <div class="pure-u-1">
+      <hr />
+      <h2>Checkboxes</h2>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1-2 pad-md">
+      {{ fileInclude 'src/views/components/form-elements/checkboxes/checkboxes.html' classes='pure-u-1' label='Checboxes label'}}
+      <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/checkboxes/checkboxes.html' classes='pure-u-1' label='Single line label'}}</code></pre>
+    </div>
+  </div>
+
+  <!-- Inputs -->
+  <div class="pure-g justify-between">
+    <div class="pure-u-1">
+      <hr />
+      <h2>Inputs</h2>
+    </div>
     <!-- Input normal -->
-    <div class="pure-u-1 pure-u-sm-1-3">
+    <div class="pure-u-1 pure-u-sm-1-2 pad-md">
       {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label'}}
+      <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label'}}</code></pre>
+    </div>
+    <!-- Input short -->
+    <div class="pure-u-1 pure-u-sm-1-2 pad-md">
+      {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' }}
+      <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' }}</code></pre>
+    </div>
+  </div>
 
-      <pre><code class="html hljs">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label'}}</code></pre>
-
-      <!-- Input short -->
-      <div class="pure-u-1 pure-u-sm-1-3">
-        {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' }}
-      </div>
-
-      <!-- Textarea -->
-      <div class="pure-u-1 pure-u-sm-1-2">
+  <!-- Textarea -->
+  <div class="pure-g justify-between">
+    <div class="pure-u-1">
+      <hr />
+      <h2>Textarea</h2>
+      <!-- Textarea default -->
+      <div class="pure-u-1 pure-u-sm-1-2 pad-md">
         {{ fileInclude 'src/views/components/form-elements/text-area/text-area.html' label='Text area label' }}
+        <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/text-area/text-area.html' label='Text area label' }}</code></pre>
       </div>
     </div>
   </div>
