@@ -16,18 +16,19 @@
 @import 'pages/marks';
 @import 'pages/header';
 
-<<<<<<< HEAD
 /* Add a gutter to Pure's Columns */
-// .pure-g {
-//   margin: 0 -1em;
-// }
+.pure-g {
+  margin: 0 -1em;
+}
 
-// .pure-g > div {
+// .container-lg > .pure-g > div {
 //   padding: 0 1em;
 // }
 
-=======
->>>>>>> dev
+.div[class*='pure-u'] {
+  padding: 0 1em;
+}
+
 .component-details {
   margin-top: $margin-md;
   margin-bottom: $margin-lg;
