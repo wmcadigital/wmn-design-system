@@ -1,61 +1,66 @@
-<!-- @@ Head -->
-{{ fileInclude 'src/views/components/shared/head.html' }}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- @@ Head -->
+  {{ fileInclude 'src/views/components/shared/head.html' }}
 
-<!-- @@ Header -->
-{{ fileInclude 'src/views/styleguide/header/header.html' }}
+  <body>
+    <!-- @@ Header -->
+    {{ fileInclude 'src/views/styleguide/header/header.html' }}
 
-<div class="container-lg">
-  <h1>Form Elements</h1>
+    <div class="container-lg">
+      <h1>Form Elements</h1>
 
-  <!-- Textarea -->
-  <div class="pure-g justify-between">
-    <div class="pure-u-1">
-      <hr />
-      <h2>Checkboxes</h2>
-    </div>
-    <div class="pure-u-1 pure-u-sm-1-2 pad-md">
-      {{ fileInclude 'src/views/components/form-elements/checkboxes/checkboxes.html' classes='pure-u-1' label='Checboxes label'}}
-      <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/checkboxes/checkboxes.html' classes='pure-u-1' label='Single line label'}}</code></pre>
-    </div>
-  </div>
-
-  <!-- Inputs -->
-  <div class="pure-g justify-between">
-    <div class="pure-u-1">
-      <hr />
-      <h2>Inputs</h2>
-    </div>
-    <!-- Input normal -->
-    <div class="pure-u-1 pure-u-sm-1-2 pad-md">
-      {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label'}}
-      <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label'}}</code></pre>
-    </div>
-    <!-- Input short -->
-    <div class="pure-u-1 pure-u-sm-1-2 pad-md">
-      {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' }}
-      <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' }}</code></pre>
-    </div>
-  </div>
-
-  <!-- Textarea -->
-  <div class="pure-g justify-between">
-    <div class="pure-u-1">
-      <hr />
-      <h2>Textarea</h2>
-      <!-- Textarea default -->
-      <div class="pure-u-1 pure-u-sm-1-2 pad-md">
-        {{ fileInclude 'src/views/components/form-elements/text-area/text-area.html' label='Text area label' }}
-        <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/text-area/text-area.html' label='Text area label' }}</code></pre>
+      <!-- Textarea -->
+      <div class="pure-g justify-between">
+        <div class="pure-u-1">
+          <hr />
+          <h2>Checkboxes</h2>
+        </div>
+        <div class="pure-u-1 pure-u-sm-1-2 pad-md">
+          {{ fileInclude 'src/views/components/form-elements/checkboxes/checkboxes.html' classes='pure-u-1' label='Checboxes label'}}
+          <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/checkboxes/checkboxes.html' classes='pure-u-1' label='Single line label'}}</code></pre>
+        </div>
       </div>
+
+      <!-- Inputs -->
+      <div class="pure-g justify-between">
+        <div class="pure-u-1">
+          <hr />
+          <h2>Inputs</h2>
+        </div>
+        <!-- Input normal -->
+        <div class="pure-u-1 pure-u-sm-1-2 pad-md">
+          {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label' for="singleLineInput" }}
+          <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1' label='Single line label' for="singleLineInput"}}</code></pre>
+        </div>
+        <!-- Input short -->
+        <div class="pure-u-1 pure-u-sm-1-2 pad-md">
+          {{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' for="shortLineInput" }}
+          <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/input/input.html' classes='pure-u-1-2' label='Short line label' for="shortLineInput" }}</code></pre>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="pure-g justify-between">
+        <div class="pure-u-1">
+          <hr />
+          <h2>Textarea</h2>
+          <!-- Textarea default -->
+          <div class="pure-u-1 pure-u-sm-1-2 pad-md">
+            {{ fileInclude 'src/views/components/form-elements/text-area/text-area.html' label='Text area label' }}
+            <pre><code class="html">{{ fileInclude 'src/views/components/form-elements/text-area/text-area.html' label='Text area label' }}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- @@ Footer -->
+      {{ fileInclude 'src/views/styleguide/footer/footer.html' }}
+
+      <!-- @@ Scripts -->
+      {{ fileInclude 'src/views/components/shared/scripts.html' }}
+
+      <link rel="stylesheet" href="$*cdn/css/styleguide.css" />
+      {{fileInclude 'src/views/styleguide/styleguide-scripts.html'}}
     </div>
-  </div>
-
-  <!-- @@ Footer -->
-  {{ fileInclude 'src/views/styleguide/footer/footer.html' }}
-
-  <!-- @@ Scripts -->
-  {{ fileInclude 'src/views/components/shared/scripts.html' }}
-
-  <link rel="stylesheet" href="$*cdn/css/styleguide.css" />
-  {{fileInclude 'src/views/styleguide/styleguide-scripts.html'}}
-</div>
+  </body>
+</html>
