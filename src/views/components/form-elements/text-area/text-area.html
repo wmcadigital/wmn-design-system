@@ -1,4 +1,4 @@
-<div class="pure-g formElements__textArea">
-  {{ fileInclude 'src/views/components/form-elements/label/label.html' label=label }}
-  <textarea type="text" name="genericInput" class="pure-u-1"></textarea>
+<div class="pure-g">
+  {{ fileInclude 'src/views/components/form-elements/label/label.html' label=label for=for }}
+  <textarea type="text" name="{{ eval "this.for || 'genericInput'" }}" class="pure-u-1"></textarea>
 </div>
