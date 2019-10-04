@@ -14,9 +14,9 @@
 @import 'pages/colorPalette';
 @import 'pages/typography';
 @import 'pages/marks';
-@import 'pages/header';
+// @import 'pages/header';
+@import 'pages/headerFooter';
 
-<<<<<<< HEAD
 /* Add a gutter to Pure's Columns */
 // .pure-g {
 //   margin: 0 -1em;
@@ -26,8 +26,6 @@
 //   padding: 0 1em;
 // }
 
-=======
->>>>>>> dev
 .component-details {
   margin-top: $margin-md;
   margin-bottom: $margin-lg;

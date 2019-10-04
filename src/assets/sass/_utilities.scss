@@ -373,3 +373,16 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
+
+
+.show-only-mob {
+  @media screen and (min-width: 568px) {
+    display: none;
+  }
+}
+
+.dont-show-mob {
+  @media screen and (max-width: 568px) {
+    display: none;
+  }
+}

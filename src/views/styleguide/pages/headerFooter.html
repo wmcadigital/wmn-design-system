@@ -1,0 +1,180 @@
+<!-- @@ Head -->
+{{ fileInclude 'src/views/components/shared/head.html' }}
+
+<!-- @@ Header -->
+{{ fileInclude 'src/views/styleguide/header/header.html' }}
+
+<div class="container-lg">
+
+    <h1>Header</h1>
+    
+    <div class="header">
+        <div class="container-lg">
+            <div class="pure-g">
+                <div class="pure-u-1-3">
+                    <img id="header-logo" class="logo" alt="West Midlands Network" src="$*cdn/img/logo.svg" />
+                    {{#if Beta}}
+                        <span class="header__version-icon">BETA</span>
+                    {{/if}}
+                    {{#if Alpha}}
+                        <span class="header__version-icon">ALPHA</span>
+                    {{/if}}
+                </div>
+                <div class="pure-u-2-3">
+                    <ul class="header__list">
+                        <li class="header__list__item"><a href="#">Plan a journey</a></li>
+                        <li class="header__list__item"><a href="#">Tickets</a></li>
+                        <li class="header__list__item"><a href="#">Get in touch</a></li>
+                        <li class="header__list__item"><a href="#"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-g pure-u-1">
+        <div class="f">
+            <div class="container-lg">
+                <div class="pure-g">
+                    <div class="pure-u-1-4 dont-show-mob">
+                        <h5>Stay up to date</h5>
+                        <hr class="f__hr">
+                        <p>
+                            Don&apos;t miss out on vital information.
+                            Sign up today and be in the know at all times.
+                        </p>
+                    </div>
+                    <div class="pure-u-3-4">
+                        <div class="pure-g">
+                            <div class="pure-u-1-3 dont-show-mob">
+                                <h5>Footer Header 1</h5>
+                                <hr class="f__hr">
+                                <ul class="f__list">
+                                    <li class="f__list__item">List item 1</li>
+                                    <li class="f__list__item">List item 2</li>
+                                    <li class="f__list__item">List item 3</li>
+                                    <li class="f__list__item">List item 4</li>
+                                    <li class="f__list__item">List item 5</li>
+                                </ul>
+                            </div>
+                            <div class="pure-u-1-3 dont-show-mob">
+                                <h5>Footer Header 2</h5>
+                                <hr class="f__hr">
+                                <ul class="f__list">
+                                    <li class="f__list__item">List item 1</li>
+                                    <li class="f__list__item">List item 2</li>
+                                    <li class="f__list__item">List item 3</li>
+                                    <li class="f__list__item">List item 4</li>
+                                    <li class="f__list__item">List item 5</li>
+                                </ul>
+                            </div>
+                            <div class="pure-u-1-3 dont-show-mob">
+                                <h5>Footer Header 3</h5>
+                                <hr class="f__hr">
+                                <ul class="f__list">
+                                    <li class="f__list__item">List item 1</li>
+                                    <li class="f__list__item">List item 2</li>
+                                    <li class="f__list__item">List item 3</li>
+                                    <li class="f__list__item">List item 4</li>
+                                    <li class="f__list__item">List item 5</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pure-g dont-show-mob">
+                            <div class="pure-u-1">
+                                <hr class="f__hr">
+                            </div>
+                        </div>
+                        <div class="pure-g f__base">
+                            <div class="pure-u-1-2">
+                                &copy; West Midlands Combined Authority 2019
+                            </div>
+                            <div class="pure-u-1-2">
+                                <ul class="f__base__list">
+                                    <li class="f__base__list__item"><a href='#'>Accessibility</a></li>
+                                    <li class="f__base__list__item"><a href='#'>Terms &amp; Conditions</a></li>
+                                    <li class="f__base__list__item"><a href='#'>Policies</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pb">
+        <div class="container-lg pb__container">
+            <div class="pure-g pure-u-1">
+                    {{#if Beta}}
+                        <span class="pb__container__icon">ALPHA</span>
+                    {{/if}}
+                    {{#if Beta}}
+                        <span class="pb__container__icon">BETA</span>
+                    {{/if}}
+                This is a new service - your <a href='#'>feedback</a> will help us improve it.
+            </div>
+        </div>
+    </div>
+
+    <div class="fl">
+        <div class="container-lg fl__container">
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <ul class="fl__container__list">
+                        <li class="fl__container__list__item">Is this page useful?</li>
+                        <li class="fl__container__list__item"><a href="#">Yes</a></li>
+                        <li class="fl__container__list__item"><a href="#">No</a></li>
+                    </ul>
+                </div>
+                <div class="pure-u-1-2 fl__container__right"><span><a href="#">Is there anything wrong with this page?</a></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="crumbs">
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <ul class="crumbs__list">
+                    <li class="crumbs__list__item">
+                        <a href="#">Link 1</a> &nbsp; <i class="fas fa-chevron-right crumbs__list__item__icon"></i>
+                        <a href="#">Link 2</a> &nbsp; <i class="fas fa-chevron-right crumbs__list__item__icon"></i>
+                        <a href="#">Link 3</a> &nbsp; <i class="fas fa-chevron-right crumbs__list__item__icon"></i>
+                        <a href="#">Link 4</a> &nbsp; <i class="fas fa-chevron-right crumbs__list__item__icon"></i>
+                        <a href="#">Link 5</a> &nbsp; <i class="fas fa-chevron-right crumbs__list__item__icon"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookies">
+        <div class="pure-g">
+            <div class="pure-u-1-2 cookes__disclaimer">West Midlands Network uses cookies to make the site simpler</div>
+            <div class="pure-u-1-2 cookies__buttons">
+                {{
+                    fileInclude
+                    'src/views/components/button/button.html'
+                    type='btn__btn-secondary'
+                    text="Accept cookies"
+                }}
+                {{
+                    fileInclude
+                    'src/views/components/button/button.html'
+                    type='btn__btn-secondary'
+                    text="Cookie settings"
+                }}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- @@ Footer -->
+{{ fileInclude 'src/views/styleguide/footer/footer.html' }}
+
+<!-- @@ Scripts -->
+{{ fileInclude 'src/views/components/shared/scripts.html' }}
+
+<link rel="stylesheet" href="$*cdn/css/styleguide.css" />
+<!-- <script src="$*cdn/js/styleguide.min.js"></script> -->

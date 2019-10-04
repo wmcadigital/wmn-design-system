@@ -96,6 +96,12 @@ h4 {
 	margin: $margin-sm 0;
 }
 
+h5 {
+	@include type-setting(1);
+	margin: 0;
+	margin: $margin-sm 0;
+}
+
 div,
 span,
 li,
