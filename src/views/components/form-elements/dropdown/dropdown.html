@@ -1,6 +1,10 @@
 <div class="fe-dropdown pure-g">
   {{ fileInclude 'src/views/components/form-elements/label/label.html' label=label for=for}}
-  <select name="{{ eval 'this.for || `genericInput`' }}" class="fe-dropdown__select pure-u-1">
+  <select
+    name="{{ eval 'this.for || `genericInput`' }}"
+    id="{{ eval 'this.for || `genericInput`' }}"
+    class="fe-dropdown__select pure-u-1"
+  >
     <option value="0">Choose from list</option>
     <option value="1">Option 1</option>
     <option value="2">Option 2</option>
