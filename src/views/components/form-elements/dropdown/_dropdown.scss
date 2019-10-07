@@ -1,0 +1,28 @@
+.fe-dropdown {
+  &__select-wrapper {
+    position: relative;
+  }
+  &__select {
+    padding-right: 40px;
+    width: 100%;
+    appearance: none;
+    border-radius: 0;
+    @include type-setting(0);
+    background: white
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAv0lEQVRIiWO0EQhmoBVgopnJo4YPiOEsMEbXysr/lm7GZBv049tPhqqYLobT+y8ywsTgLpdVkSLbYAYGBgYOLnYGMWlhFDG44SUhrQxvnr8j2/C1s7YxbF2yD7vhT++/YMjxriPLgrWztjFMKJ+HIY4SoeRYgMtgDMNJtQCfwVgNJ9YCQgbjNJyQBcQYjNdwXBYQazADAwMDI1KR+x+XImlFCYbq6TkM549cZZjdspygmdgMpzoYugXXqOH0NxwAjKdZfRshMZYAAAAASUVORK5CYII=)
+      no-repeat right 0.75rem center;
+  }
+  // &__icon {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   margin: auto;
+  //   width: 30px;
+  //   height: 100%;
+  //   background-color: getColor(primary);
+  //   color: white;
+  //   text-align: center;
+  //   font-size: 23px;
+  // }
+}
