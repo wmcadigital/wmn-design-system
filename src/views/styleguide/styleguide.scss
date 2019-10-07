@@ -54,3 +54,17 @@
   color: rgba(black, 0.5);
   font-weight: 400;
 }
+
+// Scrollbar styling for code previews of components
+.hljs {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 8px;
+    width: 100%;
+  }
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
