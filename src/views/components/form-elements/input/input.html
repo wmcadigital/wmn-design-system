@@ -1,4 +1,9 @@
 <div class="pure-g">
   {{ fileInclude 'src/views/components/form-elements/label/label.html' label=label for=for }}
-  <input type="text" name="{{ eval 'this.for || `genericInput`' }}" class="{{ classes }}" />
+  <input
+    type="text"
+    name="{{ eval 'this.for || `genericInput`' }}"
+    id="{{ eval 'this.for || `genericInput`' }}"
+    class="pure-u-1"
+  />
 </div>
