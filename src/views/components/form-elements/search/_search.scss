@@ -38,24 +38,20 @@
   margin-top: 0;
   transition: all 0.1s ease-in-out;
   -webkit-transition: all -webkit-transform 0.1s ease;
-  border: 1px solid getColor(primary);
-  border-top: none;
 }
 
 .autoComplete_result {
   @include type-setting(1);
   width: 100%;
   padding: $padding-sm;
-  border-bottom: 1px solid getColor(black);
+  border: 1px solid;
+  border-bottom-color: getColor(black);
+  border-top: 0;
   list-style: none;
   text-align: left;
   font-size: 1.1rem;
-  color: #7b7b7b;
   transition: all 0.1s ease-in-out;
-
-  &:last-child {
-    border-bottom: 0;
-  }
+  background-color: white;
 
   &.autoComplete_selected,
   &::selection,

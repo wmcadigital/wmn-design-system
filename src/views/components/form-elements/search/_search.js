@@ -22,7 +22,7 @@ new autoComplete({
     },
     placeHolder: "Tap to search",     // Place Holder text                 | (Optional)
     selector: "#autoComplete",           // Input field selector              | (Optional)
-    threshold: 3,                        // Min. Chars length to start Engine | (Optional)
+    threshold: 2,                        // Min. Chars length to start Engine | (Optional)
     debounce: 300,                       // Post duration for engine to start | (Optional)
     searchEngine: "strict",              // Search Engine type/mode           | (Optional)
     resultsList: {                       // Rendered results list object      | (Optional)
