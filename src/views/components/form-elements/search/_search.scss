@@ -1,10 +1,10 @@
-.fe-search {
+.fe-autocomplete {
   // The container for autocomplete
-  &__autocomplete {
+  &__wrapper {
     position: relative;
     display: inline-block;
     // Search icon embeded in container to overwrite FontAwesome defaults
-    .fe-search__icon {
+    .fe-autocomplete__icon {
       @include type-setting(1);
       position: absolute;
       display: block;
@@ -21,32 +21,54 @@
   &__input {
     padding-left: 40px;
     margin-right: 10px;
+
+    &::placeholder {
+      font-weight: bold;
+      color: getColor(black);
+    }
   }
 }
 
-.autocomplete-items {
+// AutoComplete Specific Styles
+#autoComplete_list {
   position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
+  z-index: 1000;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all -webkit-transform 0.1s ease;
+  border: 1px solid getColor(primary);
   border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
 }
-.autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
-}
-.autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
-}
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+
+.autoComplete_result {
+  @include type-setting(1);
+  width: 100%;
+  padding: $padding-sm;
+  border-bottom: 1px solid getColor(black);
+  list-style: none;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #7b7b7b;
+  transition: all 0.1s ease-in-out;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &.autoComplete_selected,
+  &::selection,
+  &:hover,
+  &:focus {
+    outline: 0;
+    cursor: pointer;
+    background-color: getColor(secondary, 30);
+  }
+
+  .autoComplete_highlighted {
+    opacity: 1;
+    color: getColor(primary);
+    font-weight: bold;
+  }
 }

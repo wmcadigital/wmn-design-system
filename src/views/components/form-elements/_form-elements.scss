@@ -1,7 +1,7 @@
 input,
 textarea,
 select {
-  padding: 10px;
+  padding: $padding-sm;
   color: getColor(black);
   border: 1px solid getColor(primary);
 }
