@@ -108,7 +108,7 @@ $type-settings: (
 /* SPACING ------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------- */
 // Padding
-$padding-sm: 10px;
+$padding-sm: $base-line-height / 2;
 $padding-md: $base-line-height;
 $padding-lg: $base-line-height * 2;
 $padding-xl: $base-line-height * 3;
