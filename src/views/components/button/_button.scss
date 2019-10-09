@@ -108,7 +108,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 
   &--input {
-    @include type-setting(0);
+    padding: $padding-sm;
   }
 }
 
