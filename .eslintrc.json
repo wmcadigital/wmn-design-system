@@ -1,13 +1,13 @@
 {
-    "extends": ["airbnb"],
-    "rules": {
-        "indent": ["error", 4]
-    },
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 6
-    }
+  "extends": ["airbnb"],
+  "rules": {
+    "indent": ["error", 2]
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
 }
