@@ -1,30 +1,34 @@
 const autoCompleteInputs = document.querySelectorAll(".fe-autocomplete__input");
 
-autoCompleteInputs.forEach(autoCompleteEle => {
+autoCompleteInputs.forEach((autoCompleteEle, i) => {
+
+    console.log(autoCompleteEle);
+
+    autoCompleteInputs[i].id = 'js-autoComplete-' + id;
+
+    const ds = autoCompleteEle.dataset;
+    const config = {
+        api: ds.api || null,
+        placeHolder: ds.placeholder || "Tap to search",
+    };
+
     new autoComplete({
-        data: {                              // Data src [Array, Function, Async] | (REQUIRED)
+        data: { // Data src [Array, Function, Async] | (REQUIRED)
           src: async () => {
-            // User search query
-            autoCompleteEle.value;
-            // Fetch External Data Source
-            const source = await fetch(`https://jsonplaceholder.typicode.com/users`);
-            // Format data into JSON
-            const data = await source.json();
-            // Return Fetched data
-            console.log(data);
-            return data;
+              if(config.api){
+                  const source = await fetch(config.api); // Fetch External Data Source
+                  const data = await source.json(); // Format data into JSON
+                  return data; // Return Fetched data
+              }else{
+                  return false; // Return nothing (fail silently)
+              }
           },
           key: ["name"],
           cache: true
         },
-        sort: (a, b) => {                    // Sort rendered results ascendingly | (Optional)
-            if (a.match < b.match) return -1;
-            if (a.match > b.match) return 1;
-            return 0;
-        },
-        placeHolder: "Tap to search",     // Place Holder text                 | (Optional)
-        selector: "#autoComplete",           // Input field selector              | (Optional)
-        threshold: 2,                        // Min. Chars length to start Engine | (Optional)
+        placeHolder: config.placeHolder,     // Place Holder text                 | (Optional)
+        selector: '#autComplete',           // Input field selector              | (Optional)
+        threshold: 3,                        // Min. Chars length to start Engine | (Optional)
         debounce: 300,                       // Post duration for engine to start | (Optional)
         searchEngine: "strict",              // Search Engine type/mode           | (Optional)
         resultsList: {                       // Rendered results list object      | (Optional)
