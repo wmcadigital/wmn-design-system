@@ -33,6 +33,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   padding-left: $padding-md;
 }
 
+.btn-small {
+  padding: $padding-sm !important;
+}
+
 .btn--disabled {
   background-color: getColor(btnDisabled);
   color: white;
