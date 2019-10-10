@@ -5,3 +5,8 @@ select {
   color: getColor(black);
   border: 1px solid getColor(primary);
 }
+
+@import 'label/label';
+@import 'checkboxes/checkboxes';
+@import 'dropdown/dropdown';
+@import 'search/search';
