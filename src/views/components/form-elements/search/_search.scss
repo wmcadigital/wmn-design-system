@@ -1,4 +1,4 @@
-.fe-autocomplete {
+.wmn-fe-autocomplete {
   // The container for autocomplete
   &__wrapper {
     position: relative;
@@ -7,7 +7,7 @@
     margin-right: $margin-sm;
 
     // Search icon embeded in container to overwrite FontAwesome defaults
-    .fe-autocomplete__icon {
+    .wmn-fe-autocomplete__icon {
       @include type-setting(1);
       position: absolute;
       display: block;
@@ -29,44 +29,43 @@
       color: getColor(black);
     }
   }
-}
 
-// AutoComplete Specific Styles
-#autoComplete_list {
-  position: absolute;
-  z-index: 1000;
-  width: 100%;
-  padding: 0;
-  margin-top: 0;
-  transition: all 0.1s ease-in-out;
-  -webkit-transition: all -webkit-transform 0.1s ease;
-}
-
-.autoComplete_result {
-  @include type-setting(1);
-  width: 100%;
-  padding: $padding-sm;
-  border: 1px solid;
-  border-bottom-color: getColor(black);
-  border-top: 0;
-  list-style: none;
-  text-align: left;
-  font-size: 1.1rem;
-  transition: all 0.1s ease-in-out;
-  background-color: white;
-
-  &.autoComplete_selected,
-  &::selection,
-  &:hover,
-  &:focus {
-    outline: 0;
-    cursor: pointer;
-    background-color: getColor(secondary, 30);
+  // AutoComplete Specific Styles
+  &__results-list {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    transition: all 0.1s ease-in-out;
+    -webkit-transition: all -webkit-transform 0.1s ease;
   }
+  &__result {
+    @include type-setting(1);
+    width: 100%;
+    padding: $padding-sm;
+    border: 1px solid;
+    border-bottom-color: getColor(black);
+    border-top: 0;
+    list-style: none;
+    text-align: left;
+    font-size: 1.1rem;
+    transition: all 0.1s ease-in-out;
+    background-color: white;
 
-  .autoComplete_highlighted {
-    opacity: 1;
-    color: getColor(primary);
-    font-weight: bold;
+    &.autoComplete_selected,
+    &::selection,
+    &:hover,
+    &:focus {
+      outline: 0;
+      cursor: pointer;
+      background-color: getColor(secondary, 30);
+    }
+
+    .autoComplete_highlighted {
+      opacity: 1;
+      color: getColor(primary);
+      font-weight: bold;
+    }
   }
 }
