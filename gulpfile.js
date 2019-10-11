@@ -98,7 +98,7 @@ const getRoot = path => '../'.repeat(path.match(/\//gi).length); // Function whi
 
 // Clean the current build & _sourcemaps dir
 function cleanBuild() {
-    return del([paths.output, '_sourcemaps']);
+    return del([paths.output, '_sourcemaps', '_accessibility-logs']);
 }
 
 // Process, lint, and minify Sass files
@@ -110,7 +110,7 @@ function buildStyles() {
                     console.log(error.message);
                     this.emit('end');
                 },
-            }),
+            })
         )
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError)) // Compile Sass
@@ -184,7 +184,7 @@ function lintTemplates() {
             extname: '.json'
         }))
         .pipe(jsonFormat(2))
-        .pipe(dest('./_accessibility-reports/json'));
+        .pipe(dest('./_accessibility-logs/json'));
 }
 
 function buildTemplates() {
