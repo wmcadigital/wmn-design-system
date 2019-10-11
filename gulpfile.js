@@ -11,6 +11,7 @@ const eslint = require('gulp-eslint');
 const babel = require('gulp-babel');
 // HTML vars
 const htmlHint = require('gulp-htmlhint');
+const access = require('gulp-accessibility');
 // Image vars
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
@@ -164,7 +165,15 @@ function lintScripts() {
 function lintTemplates() {
     return src(paths.templates.src)
         .pipe(htmlHint('.htmlhintrc'))
-        .pipe(htmlHint.reporter());
+        .pipe(htmlHint.reporter())
+        .pipe(access({
+            force:true
+        }))
+        .pipe(access.report({reportType: 'txt'}))
+
+        .pipe(dest(function(file){
+            return file.base + 'reports/txt';
+        }));
 }
 
 function buildTemplates() {

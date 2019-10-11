@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Support](#support)
 - [Contributing](#contributing)
@@ -11,15 +11,15 @@
 
 Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.com/).
 
-- Tailored for building Salesforce apps: Using the Lightning Design System markup and CSS framework results in UIs that reflect the Salesforce Lightning look and feel.
-- Continuously updated: As long as you’re using the latest version of the Lightning Design System, your pages are always up to date with Salesforce UI changes.
+- Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
+- Continuously updated: As long as you’re using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
 
 ## Quick start
 
-1. Clone the project with `git clone https://github.com/salesforce-ux/design-system.git`
-2. Run `npm install` in the root design-system folder.
-3. Run `npm start` to launch the Previewer.
-4. Visit http://localhost:3003/local/preview
+1. Clone the project with `git clone git@bitbucket.org:wmca/west-midlands-network.git`
+2. Run `npm install` in the root folder.
+3. Run `npm start` to launch the dev enviornment with hotreloading.
+4. Visit http://localhost:3000
 
 Having trouble getting these steps to work on your machine? Follow the [troubleshooting guide](guidelines/TROUBLESHOOTING.md).
 
@@ -47,22 +47,20 @@ See the <a href="guidelines/BLUEPRINT_DOCUMENTATION.md">blueprint documentation 
 
 ### `npm start`
 
-Start the Lightning Design System preview app.
+Start the WMN Design System web server.
 
-### `npm run gulp -- lint`
+### `npm run lint`
 
 Lint the code base for syntax and stylistic errors.
 
 ```bash
 # Lint indentation, Sass, JavaScript files
-npm run gulp -- lint
+npm run lint
 
 # Lint languages independently
-npm run gulp -- lint:sass
-npm run gulp -- lint:javascript
-npm run gulp -- lint:javascript:test
-npm run gulp -- lint:spaces
-npm run gulp -- lint:html
+npm run lint:styles
+npm run lint:templates
+npm run lint:scripts
 
 # HTML5 validation
 npm run gulp -- lint:vnu
