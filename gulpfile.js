@@ -184,7 +184,7 @@ function lintTemplates() {
             extname: '.json'
         }))
         .pipe(jsonFormat(2))
-        .pipe(dest('_accessibility-reports/json'));
+        .pipe(dest('./_accessibility-reports/json'));
 }
 
 function buildTemplates() {
