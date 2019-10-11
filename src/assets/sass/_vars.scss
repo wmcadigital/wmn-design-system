@@ -49,7 +49,7 @@ $font-size: 16px;
 $base-font-size: 1rem;
 $base-line-height: $base-font-size * 1.5;
 
-// All values based on REM of 14px
+// All values based on REM of 16px
 $type-settings: (
   -1: (
       font-size: 0.875rem,
@@ -108,7 +108,7 @@ $type-settings: (
 /* SPACING ------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------- */
 // Padding
-$padding-sm: 10px;
+$padding-sm: $base-line-height / 2;
 $padding-md: $base-line-height;
 $padding-lg: $base-line-height * 2;
 $padding-xl: $base-line-height * 3;
