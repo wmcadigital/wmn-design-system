@@ -24,6 +24,8 @@ const del = require('del');
 const plumber = require('gulp-plumber');
 const replace = require('gulp-replace');
 const fs = require('fs');
+const rename = require("gulp-rename");
+const jsonFormat = require('gulp-json-format');
 
 const json = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -75,7 +77,7 @@ const paths = {
         output: 'build/js/', // Output location of minified JS files
     },
     templates: {
-        src: 'src/views/**/*.html',
+        src: 'src/views/components/**/*.html',
         output: 'build/views/',
     },
     images: {
@@ -167,13 +169,22 @@ function lintTemplates() {
         .pipe(htmlHint('.htmlhintrc'))
         .pipe(htmlHint.reporter())
         .pipe(access({
-            force:true
+            force:true,
+            verbose:false,
+            accessibilityLevel: 'WCAG2AA',
+            ignore: [
+                'WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl',
+                'WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2',
+                'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage'
+            ]
         }))
-        .pipe(access.report({reportType: 'txt'}))
-
-        .pipe(dest(function(file){
-            return file.base + 'reports/txt';
-        }));
+        .on('error', console.log)
+        .pipe(access.report({reportType: 'json'}))
+        .pipe(rename({
+            extname: '.json'
+        }))
+        .pipe(jsonFormat(2))
+        .pipe(dest('_accessibility-reports/json'));
 }
 
 function buildTemplates() {
