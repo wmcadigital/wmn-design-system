@@ -2,17 +2,24 @@
 
 ## Table of Contents
 
+- [WMN Styleguide](#wmn-styleguide)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
-- [Support](#support)
-- [Contributing](#contributing)
+- [Tasks](#tasks)
+- [Troubleshooting](#troubleshooting)
+- [Contributing to the code base](#contributing-to-the-code-base)
+- [Got feedback](#got-feedback)
 
 ## WMN Styleguide [![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
 
 Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.com/).
 
+The WMN Styleguide is ran at the designated url on startup (usually http://localhost:3000) and is the primary means of viewing your work - it will live update as you make changes.
+
 - Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
 - Continuously updated: As long as you’re using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
+
+<img src="doc/preview.png" alt="previewer blueprint/variant/modifier selection" width="600px"/>
 
 ## Quick start
 
@@ -22,20 +29,6 @@ Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.c
 4. Visit http://localhost:3000
 
 Having trouble getting these steps to work on your machine? Follow the [troubleshooting guide](guidelines/TROUBLESHOOTING.md).
-
-## WMN Styleguide
-
-<img src="doc/preview.png" alt="previewer blueprint/variant/modifier selection" width="600px"/>
-
-The WMN Styleguide is ran at the designated url on startup (usually http://localhost:3000) and is the primary means of viewing your work - it will live update as you make changes.
-
-You can choose the blueprint, variant, and modifiers to preview as well as background color and screen size. It also previews the sass docs.
-
-Everything in the design system is driven by [annotations](guidelines/ANNOTATIONS.md) and the previewer is no different. **To see any work in the previewer, you must add annotations to your code.**
-
-## Annotations
-
-See the <a href="guidelines/ANNOTATIONS.md">annotations guide</a>.
 
 ## Tasks
 
