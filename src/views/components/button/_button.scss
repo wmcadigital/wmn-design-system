@@ -152,6 +152,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   // &:target {
   &.wmn-is-active {
     background-color: white;
+    background-color: mix(getColor(primary), white, 50);
 
     div {
       -webkit-appearance: none;
@@ -159,7 +160,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       padding: $padding-sm;
       border-radius: $btn-border-radius;
       box-sizing: border-box;
-      background-color: mix(getColor(primary), black, 50);
+      background-color: mix(getColor(primary), white, 50);
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
     }
