@@ -19,6 +19,7 @@
 
 // Template-specific Styles
 
-.icon {
-  fill: #ff0000;
+.pure-g .gutters > [class*=pure-u]{
+  box-sizing: border-box;
+  padding: 0em 0.5em;
 }
