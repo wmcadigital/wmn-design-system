@@ -1,0 +1,81 @@
+{
+  "/Users/markhughes/Documents/Work/wmn-styleguide/src/views/components/form-elements/search/search.html": {
+    "counters": {
+      "error": 2,
+      "notice": 2,
+      "warning": 1
+    },
+    "messageLog": [
+      {
+        "heading": "WARNING",
+        "issue": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.I",
+        "description": "Semantic markup should be used to mark emphasised or special text so that it can be programmatically determined.",
+        "position": {
+          "lineNumber": 3,
+          "columnNumber": 4
+        },
+        "element": {
+          "node": "<i class=\"wmn-fe-autocomplete__icon fas fa-search\"></i>",
+          "class": "wmn-fe-autocomplete__icon fas fa-search",
+          "id": ""
+        }
+      },
+      {
+        "heading": "ERROR",
+        "issue": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "description": "This text input element does not have a name available to an accessibility API. Valid names are: label element, title attribute, aria-label attribute, aria-labelledby attribute.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"text\" name=\"myCountry\" class=\"wmn-fe-autocomplete__input pure-u-1\" data-placeholder=\"Tap to search\" data-api=\"https://jsonplaceholder.typicode.com/users\" data-keys=\"name, email\">",
+          "class": "wmn-fe-autocomplete__input pure-u-1",
+          "id": ""
+        }
+      },
+      {
+        "heading": "ERROR",
+        "issue": "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        "description": "This form field should be labelled in some way. Use the label element (either with a \"for\" attribute or wrapped around the form field), or \"title\", \"aria-label\" or \"aria-labelledby\" attributes as appropriate.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"text\" name=\"myCountry\" class=\"wmn-fe-autocomplete__input pure-u-1\" data-placeholder=\"Tap to search\" data-api=\"https://jsonplaceholder.typicode.com/users\" data-keys=\"name, email\">",
+          "class": "wmn-fe-autocomplete__input pure-u-1",
+          "id": ""
+        }
+      },
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+        "description": "Check that a change of context does not occur when this input field receives focus.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"text\" name=\"myCountry\" class=\"wmn-fe-autocomplete__input pure-u-1\" data-placeholder=\"Tap to search\" data-api=\"https://jsonplaceholder.typicode.com/users\" data-keys=\"name, email\">",
+          "class": "wmn-fe-autocomplete__input pure-u-1",
+          "id": ""
+        }
+      },
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+        "description": "Check that a change of context does not occur when this input field receives focus.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"submit\" value=\"Go\" class=\"btn btn__btn-primary btn__btn-primary--input\">",
+          "class": "btn btn__btn-primary btn__btn-primary--input",
+          "id": ""
+        }
+      }
+    ]
+  }
+}

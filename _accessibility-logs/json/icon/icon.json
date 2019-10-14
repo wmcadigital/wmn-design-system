@@ -1,0 +1,25 @@
+{
+  "/Users/markhughes/Documents/Work/wmn-styleguide/src/views/components/icon/icon.html": {
+    "counters": {
+      "error": 0,
+      "notice": 0,
+      "warning": 1
+    },
+    "messageLog": [
+      {
+        "heading": "WARNING",
+        "issue": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.I",
+        "description": "Semantic markup should be used to mark emphasised or special text so that it can be programmatically determined.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<i class=\"{{ type }}\"></i>",
+          "class": "{{ type }}",
+          "id": ""
+        }
+      }
+    ]
+  }
+}

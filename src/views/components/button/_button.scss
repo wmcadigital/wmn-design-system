@@ -47,8 +47,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: mix(getColor(btnDisabled), black, 30);
   }
 
-  &:active,
-  &:target {
+  // &:active,
+  // &:target {
+  &.wmn-is-active {
     background-color: mix(getColor(btnDisabled), black, 50);
     -webkit-appearance: none;
   }
@@ -70,8 +71,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: mix(getColor(cta), black, 30);
   }
 
-  &:active,
-  &:target {
+  // &:active,
+  // &:target {
+  &.wmn-is-active {
     div {
       -webkit-appearance: none;
       border: $btn-border-width solid white;
@@ -100,8 +102,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: mix(getColor(primary), black, 30);
   }
 
-  &:active,
-  &:target {
+  // &:active,
+  // &:target {
+  &.wmn-is-active {
     div {
       -webkit-appearance: none;
       border: $btn-border-width solid getColor(primary);
@@ -143,8 +146,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
   }
 
-  &:active,
-  &:target {
+  // &:active,
+  // &:target {
+  &.wmn-is-active {
     background-color: white;
 
     div {
@@ -175,8 +179,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: mix(getColor(success), black, 30);
   }
 
-  &:active,
-  &:target {
+  // &:active,
+  // &:target {
+  &.wmn-is-active {
     div {
       -webkit-appearance: none;
       border: $btn-border-width solid white;
@@ -205,8 +210,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: mix(getColor(warning), black, 30);
   }
 
-  &:active,
-  &:target {
+  // &:active,
+  // &:target {
+  &.wmn-is-active {
     div {
       -webkit-appearance: none;
       border: $btn-border-width solid white;

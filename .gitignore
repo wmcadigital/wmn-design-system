@@ -1,6 +1,7 @@
 node_modules/
 _sourcemaps/
 _accessibility-reports/
+_accessibility-logs/
 build/
 !gitignore
 !package.json
