@@ -1,0 +1,25 @@
+{
+  "/Users/markhughes/Documents/Work/wmn-styleguide/src/views/components/form-elements/label/label.html": {
+    "counters": {
+      "error": 0,
+      "notice": 0,
+      "warning": 1
+    },
+    "messageLog": [
+      {
+        "heading": "WARNING",
+        "issue": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H44.NonExistentFragment",
+        "description": "This label's \"for\" attribute contains an ID that does not exist in the document fragment.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<label for=\"{{ eval 'this.for ",
+          "class": "",
+          "id": " `genericInput`' }}\" class=\"fe-title pure-u-1\">{{ eval \"this.label "
+        }
+      }
+    ]
+  }
+}

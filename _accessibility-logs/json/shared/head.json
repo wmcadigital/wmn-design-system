@@ -1,0 +1,25 @@
+{
+  "/Users/markhughes/Documents/Work/wmn-styleguide/src/views/components/shared/head.html": {
+    "counters": {
+      "error": 0,
+      "notice": 1,
+      "warning": 0
+    },
+    "messageLog": [
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.2",
+        "description": "Check that the title element describes the document.",
+        "position": {
+          "lineNumber": 3,
+          "columnNumber": 2
+        },
+        "element": {
+          "node": "<title>\n    West Midlands Network\n  </title>",
+          "class": "",
+          "id": ""
+        }
+      }
+    ]
+  }
+}

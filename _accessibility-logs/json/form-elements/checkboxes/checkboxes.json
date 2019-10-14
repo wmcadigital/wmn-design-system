@@ -1,0 +1,67 @@
+{
+  "/Users/markhughes/Documents/Work/wmn-styleguide/src/views/components/form-elements/checkboxes/checkboxes.html": {
+    "counters": {
+      "error": 0,
+      "notice": 4,
+      "warning": 0
+    },
+    "messageLog": [
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+        "description": "Check that a change of context does not occur when this input field receives focus.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"checkbox\" class=\"fe-checkboxes__input\" checked=\"checked\">",
+          "class": "fe-checkboxes__input",
+          "id": ""
+        }
+      },
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+        "description": "Check that a change of context does not occur when this input field receives focus.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"checkbox\" class=\"fe-checkboxes__input\">",
+          "class": "fe-checkboxes__input",
+          "id": ""
+        }
+      },
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+        "description": "Check that a change of context does not occur when this input field receives focus.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"checkbox\" class=\"fe-checkboxes__input\">",
+          "class": "fe-checkboxes__input",
+          "id": ""
+        }
+      },
+      {
+        "heading": "NOTICE",
+        "issue": "WCAG2AA.Principle3.Guideline3_2.3_2_1.G107",
+        "description": "Check that a change of context does not occur when this input field receives focus.",
+        "position": {
+          "lineNumber": 1,
+          "columnNumber": 0
+        },
+        "element": {
+          "node": "<input type=\"checkbox\" class=\"fe-checkboxes__input\">",
+          "class": "fe-checkboxes__input",
+          "id": ""
+        }
+      }
+    ]
+  }
+}
