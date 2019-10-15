@@ -2,17 +2,17 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
 
-- [WMCA Website Redevelopment](#wmca-website-redevelopment)
-    - [WMN Styleguide](#wmn-styleguide)
-    - [Quick start](#quick-start)
-    - [Tasks](#tasks)
-        - [`npm start`](#npm-start)
-        - [`npm run lint`](#npm-run-lint)
-        - [Compilation](#compilation)
-        - [Clean up](#clean-up)
-    - [Troubleshooting](#troubleshooting)
-    - [Contributing to the code base](#contributing-to-the-code-base)
-    - [Got feedback?](#got-feedback)
+-   [WMCA Website Redevelopment](#wmca-website-redevelopment)
+    -   [WMN Styleguide](#wmn-styleguide)
+    -   [Quick start](#quick-start)
+    -   [Tasks](#tasks)
+        -   [`npm start`](#npm-start)
+        -   [`npm run lint`](#npm-run-lint)
+        -   [Compilation](#compilation)
+        -   [Clean up](#clean-up)
+    -   [Troubleshooting](#troubleshooting)
+    -   [Contributing to the code base](#contributing-to-the-code-base)
+    -   [Got feedback?](#got-feedback)
 
 ## WMN Styleguide
 
@@ -20,8 +20,8 @@ Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.c
 
 The WMN Styleguide is ran at the designated url on startup (usually [http://localhost:3000](http://localhost:3000)) and is the primary means of viewing your work - it will live update as you make changes.
 
-- Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
-- Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
+-   Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
+-   Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
 
 ![West Midlands Network Styleguide example](doc/preview.png)
 
