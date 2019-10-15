@@ -1,17 +1,16 @@
 # WMCA Website Redevelopment
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
 
-- [WMCA Website Redevelopment](#WMCA-Website-Redevelopment)
-  - [WMN Styleguide](#WMN-Styleguide)
-  - [Quick start](#Quick-start)
-  - [Tasks](#Tasks)
-    - [`npm start`](#npm-start)
-    - [`npm run lint`](#npm-run-lint)
-    - [Compilation](#Compilation)
-    - [Clean up](#Clean-up)
-  - [Troubleshooting](#Troubleshooting)
-  - [Contributing to the code base](#Contributing-to-the-code-base)
-  - [Got feedback?](#Got-feedback)
+  - [WMN Styleguide](#markdown-header-WMN-Styleguide)
+  - [Quick start](#markdown-header-Quick-start)
+  - [Tasks](#markdown-header-Tasks)
+    - [`npm start`](#markdown-header-npm-start)
+    - [`npm run lint`](#markdown-header-npm-run-lint)
+    - [Compilation](#markdown-header-Compilation)
+    - [Clean up](#markdown-header-Clean-up)
+  - [Troubleshooting](#markdown-header-Troubleshooting)
+  - [Contributing to the code base](#markdown-header-Contributing-to-the-code-base)
+  - [Got feedback?](#markdown-header-Got-feedback)
 
 
 ## WMN Styleguide
