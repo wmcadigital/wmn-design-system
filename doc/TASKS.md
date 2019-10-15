@@ -1,6 +1,38 @@
 # Tasks guide
 
+- [Tasks guide](#tasks-guide)
+  - [Linting](#linting)
+    - [Scripts (Javascript)](#scripts-javascript)
+      - [Command](#command)
+      - [What it does](#what-it-does)
+      - [File(s) that are linted:](#files-that-are-linted)
+      - [Config](#config)
+    - [Templates (HTML)](#templates-html)
+      - [Command](#command-1)
+      - [What it does](#what-it-does-1)
+      - [File(s) that are linted:](#files-that-are-linted-1)
+      - [Config](#config-1)
+  - [Building](#building)
+    - [Scripts (Javascript)](#scripts-javascript-1)
+      - [Command](#command-2)
+      - [What it does](#what-it-does-2)
+    - [Styles (Sass)](#styles-sass)
+      - [Command](#command-3)
+      - [What it does](#what-it-does-3)
+    - [Templates (HTML)](#templates-html-1)
+      - [Command](#command-4)
+      - [What it does](#what-it-does-4)
+    - [Images](#images)
+      - [Command](#command-5)
+      - [What it does](#what-it-does-5)
+    - [Config](#config-2)
+      - [Command](#command-6)
+      - [What it does](#what-it-does-6)
+
+
 This is a more in depth guide of the tasks that can be used within this project. Below will explain the context of when each task should be called and what it does.
+
+All tasks are defined in `gulpfile.js`.
 
 When referring to `{root}` below, we are referring to the base root of the project.
 
@@ -8,9 +40,8 @@ When referring to `{root}` below, we are referring to the base root of the proje
 
 Linting is the process of analysing code for potential errors and flagging them to the developer.
 
-----
 
-### Scripts
+### Scripts (Javascript)
 
 #### Command
 
@@ -37,9 +68,8 @@ The config files are located at:
 - `{root}/.prettierrc` (general format of files e.g. spacing, single quotes/double quotes)
 - `{root}/.prettierignore` (files prettier should ignore)
 
-----
 
-### Templates
+### Templates (HTML)
 
 #### Command
 
@@ -47,7 +77,7 @@ The config files are located at:
 
 #### What it does
 
-- Lints html files via [htmlhint](https://github.com/htmlhint/HTMLHint).
+- Lints html files via [htmlhint](https://www.npmjs.com/package/gulp-htmlhint).
 - Flags errors up in terminal.
 - Lints html files to ensure correct accessibility tags are used, these are up to [WCAG2AA standards](https://www.w3.org/WAI/GL/WCAG20/).
 - Produces a folder at `{root}/\_accessibility-logs/` which contains a directory structure exactly the same as the projects `{root}src/views/` directory. Within these folders is a json file which shows the accessibility errors/warnings for the html file referenced at the top of the file.
@@ -60,10 +90,77 @@ The config files are located at:
 
 The config files are located at:
 
-- `{root}/.htmlhintrc` (general formatting of html files e.g. unique ids, attributes in lowercase, tag names match)
+- `{root}/.htmlhintrc` (general formatting of html files e.g. unique ids, attributes in lower case, tag names match)
 
 
 
 ## Building
 
-Build commands are used for when code is to be compiled for output in a certain type of environment.
+Build commands are used for when code is to be compiled to an output that is suitable for a particular environment.
+
+### Scripts (Javascript)
+
+#### Command
+
+`npm run build:scripts`
+
+#### What it does
+
+- [Lints scripts](#scripts-javascript)
+- Compiles javascript files with babel
+- Concatenates all smaller javascript files together into one file
+- Mangles and minifies the file
+- Creates three files in `{root}/build/js/`
+  - `styleguide.min.js`
+    - Created from any javascript files found in `{root}/src/views/styleguide/**/*.js`
+    - For styleguide specific items only
+  - `vendor.min.js`
+    - Created from any javascript files found in `{root}/src/assets/js/vendor/**/*.js`
+    - For any vendor/third-party scripts that are required for components
+  - `wmn.min.js`
+    - Created from any javascript files found in `['src/assets/js/wmn.js', 'src/views/components/**/*.js']`
+    -  For any custom javascript associated with a component
+- Creates sourcemaps in `{route}/_sourcemaps/`
+
+### Styles (Sass)
+
+#### Command
+`npm run build:styles`
+
+#### What it does
+- Compiles sass
+- Uses [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) to parse CSS and add vendor prefixes
+- Minifies CSS
+- Creates two files in `{root}/build/css/`
+  - `styleguide.css`
+    - For styleguide specific styling
+  - `wmn.css`
+    - For any styling related to WMN components
+- Creates sourcemaps in `{route}/_sourcemaps/`
+
+### Templates (HTML)
+
+#### Command
+`npm run build:templates`
+
+#### What it does
+- [Lint templates](#templates-html)
+- Compile all handlebar file includes using [gulp handlebars file include](https://www.npmjs.com/package/gulp-handlebars-file-include)
+- Outputs compiled files to `{route}/build/views/`
+
+### Images
+
+#### Command
+`npm run build:images`
+
+#### What it does
+- Minifies all images located in `{root}/src/assets/img/**/*`
+- Outputs the minified images to `{root}/build/img/` with the exact same file name
+
+### Config
+
+#### Command
+`npm run build:config`
+
+#### What it does
+- Moves `{root}/src/assets/config/**/*` to `{root}/build/config`
