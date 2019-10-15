@@ -2,107 +2,116 @@
 /* -------------------------------------------------------------------------- */
 // Internal Vars (Internal variables have one function, and that's to be
 // assigned to other variables.)
-$x-palette-white: 				#ffffff; // White
+$x-palette-white: #ffffff; // White
 /* -------------------------------------------------------------------------- */
 
 /* PALETTE COLOURS ---------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
-	// WEB COLORS
-	primary: 					#3c1053 /* WMN Primary Purple */,
-	primary30: 					#2a0b3a,
-	primary50: 					#1e082a,
-	secondary: 					#9d5baf /* WMN Secondary Purple */,
-	secondary30: 				#e2cee7,
-	secondary50: 				#ceadd7,
-	cta: 						#02b5e3 /* WMN CTA Blue */,
-	cta30:						#145889,
-	cta50:						#0f3f62,
-	black: 						#231f20 /* WMN Text Black*/,
-	// BRAND COLORS
-	purple: 					#3c1053 /* WMN Primary Purple */,
-	secondaryPurple: 			#9d5baf /* WMN Secondary Purple */,
-	darkPurple: 				#1e082a /* WMN Dark Purple */,
-	coolGrey: 					#54565b /* WMN Cool Grey */,
-	yellow: 					#ffdd00 /* WMN Yellow */,
-	// MODAL COLORS
-	railway: 					#ff8300 /* WMN Railway */,
-	bus: 						#ea0029 /* WMN Bus */,
-	metro: 						#0075c9 /* WMN Metro */,
-	roads: 						#df1683 /* WMN Roads */,
-	walkCycle: 					#679500 /* WMN Walk & Cycle */,
-	taxi: 						#773dbe /* WMN Taxi */,
-	// ACTION COLORS
-	warning: 					#cc6900,
-	error: 						#d4351c,
-	error30: 					#942514,
-	error50: 					#6a1b0e,
-	success: 					#00703c,
-	success30: 					#00381e,
-	success50: 					#004e2a,
-	search: 					#84329d,
-	disable: 					#676869
+  // WEB COLORS
+    primary: #3c1053 /* WMN Primary Purple */,
+  primary30: #2a0b3a,
+  primary50: #1e082a,
+  secondary: #9d5baf /* WMN Secondary Purple */,
+  secondary30: #e2cee7,
+  secondary50: #ceadd7,
+  cta: #02b5e3 /* WMN CTA Blue */,
+  cta30: #145889,
+  cta50: #0f3f62,
+  black: #231f20 /* WMN Text Black*/,
+  // BRAND COLORS
+    purple: #3c1053 /* WMN Primary Purple */,
+  secondaryPurple: #9d5baf /* WMN Secondary Purple */,
+  darkPurple: #1e082a /* WMN Dark Purple */,
+  coolGrey: #54565b /* WMN Cool Grey */,
+  yellow: #ffdd00 /* WMN Yellow */,
+  // MODAL COLORS
+    railway: #ff8300 /* WMN Railway */,
+  bus: #ea0029 /* WMN Bus */,
+  metro: #0075c9 /* WMN Metro */,
+  roads: #df1683 /* WMN Roads */,
+  walkCycle: #679500 /* WMN Walk & Cycle */,
+  taxi: #773dbe /* WMN Taxi */,
+  // ACTION COLORS
+    warning: #cc6900,
+  error: #d4351c,
+  error30: #942514,
+  error50: #6a1b0e,
+  success: #00703c,
+  success30: #00381e,
+  success50: #004e2a,
+  search: #84329d,
+  disable: #676869
 );
 
 // In SCSS a map == array
-$colors-map: 					(); // Set placeholder colors map
+$colors-map: (); // Set placeholder colors map
 /* -------------------------------------------------------------------------- */
 
 /* TEXT --------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
-$text-color: 					getColor(black);
-$x-font-family: 				'Noto Sans', sans-serif;
-$x-heading-font-family: 		'Noto Sans', sans-serif;
-$font-size: 					16px;
+$text-color: getColor(black);
+$x-font-family: 'Noto Sans', sans-serif;
+$x-heading-font-family: 'Noto Sans', sans-serif;
+$font-size: 16px;
 
 // Base font size and line height
-$base-font-size: 				1rem;
-$base-line-height: 				$base-font-size * 1.5;
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.5;
 
 // All values based on REM of 16px
 $type-settings: (
   -1: (
-	  	font-size: 				0.875rem, // 14px
-		line-height: 			$base-line-height,
-	  	letter-spacing: 		0.02625rem,
-	  	word-spacing: 			0.035rem
-	),
+      font-size: 0.875rem,
+      // 14px
+        line-height: $base-line-height,
+      letter-spacing: 0.02625rem,
+      word-spacing: 0.035rem
+    ),
   0: (
-		font-size: 				1rem, // 16px
-	  	line-height: 			$base-line-height,
-		letter-spacing: 		0.03rem,
-		word-spacing: 			0.04rem
+    font-size: 1rem,
+    // 16px
+      line-height: $base-line-height,
+    letter-spacing: 0.03rem,
+    word-spacing: 0.04rem
   ),
   1: (
-		font-size: 				1.125rem, // 18px
-		line-height: 			$base-line-height,
-		letter-spacing: 		0.03rem, // update
-		word-spacing: 			0.04rem, // update
+    font-size: 1.125rem,
+    // 18px
+      line-height: $base-line-height,
+    letter-spacing: 0.03rem,
+    // update
+      word-spacing: 0.04rem,
+    // update
   ),
   2: (
-		font-size: 				1.375rem, // 22px
-	  	line-height: 			$base-line-height * 2,
-		letter-spacing: 		0.04125rem,
-		word-spacing: 			0.055rem
+    font-size: 1.375rem,
+    // 22px
+      line-height: $base-line-height * 2,
+    letter-spacing: 0.04125rem,
+    word-spacing: 0.055rem
   ),
   3: (
-		font-size: 				1.5rem, // 24px
-	  	line-height: 			$base-line-height * 2,
-		letter-spacing: 		0.045rem,
-		word-spacing: 			0.06rem
+    font-size: 1.5rem,
+    // 24px
+      line-height: $base-line-height * 2,
+    letter-spacing: 0.045rem,
+    word-spacing: 0.06rem
   ),
   4: (
-		font-size: 				2.125rem, // 34px
-	  	line-height: 			$base-line-height * 2,
-		letter-spacing: 		0.061225rem,
-		word-spacing: 			0.0854rem
+    font-size: 2.125rem,
+    // 34px
+      line-height: $base-line-height * 2,
+    letter-spacing: 0.061225rem,
+    word-spacing: 0.0854rem
   ),
   5: (
-		font-size: 				3.75rem, // 60px
-	  	line-height: 			$base-line-height * 4,
-		letter-spacing: 		0.1125rem,
-		word-spacing: 			0.15rem
+    font-size: 3.75rem,
+    // 60px
+      line-height: $base-line-height * 4,
+    letter-spacing: 0.1125rem,
+    word-spacing: 0.15rem
   )
 );
 /* -------------------------------------------------------------------------- */
@@ -110,14 +119,15 @@ $type-settings: (
 /* SPACING ------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------- */
 // Padding
-$padding-sm: 					$base-line-height / 2;
-$padding-md: 					$base-line-height;
-$padding-lg: 					$base-line-height * 2;
-$padding-xl: 					$base-line-height * 3;
+$padding-xs: $base-line-height / 4.8;
+$padding-sm: $base-line-height / 2;
+$padding-md: $base-line-height;
+$padding-lg: $base-line-height * 2;
+$padding-xl: $base-line-height * 3;
 
 // Margin
-$margin-sm: 					$base-line-height / 2;
-$margin-md: 					$base-line-height;
-$margin-lg: 					$base-line-height * 2;
-$margin-xl: 					$base-line-height * 3;
+$margin-sm: $base-line-height / 2;
+$margin-md: $base-line-height;
+$margin-lg: $base-line-height * 2;
+$margin-xl: $base-line-height * 3;
 /* -------------------------------------------------------------------------- */

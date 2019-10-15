@@ -42,7 +42,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 .btn--disabled {
   background-color: getColor(disable);
   color: white;
-
+  div {
+    border: $btn-border-width solid transparent;
+  }
   &:hover {
     cursor: not-allowed;
   }
@@ -64,8 +66,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: getColor(cta30);
   }
 
-  // &:active,
-  // &:target {
+  &:active,
+  &:target,
+  &:focus,
   &.wmn-is-active {
     div {
       background-color: getColor(cta50);
@@ -89,19 +92,20 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 
   &:visited {
-    background-color: getColor(primary50)
+    background-color: getColor(primary50);
   }
 
   &:hover {
     background-color: getColor(primary30);
   }
 
-  // &:active,
-  // &:target {
+  &:active,
+  &:target,
+  &:focus,
   &.wmn-is-active {
     div {
       -webkit-appearance: none;
-      border: $btn-border-width solid getColor(primary);
+      border: $btn-border-width solid white;
       padding: $padding-sm;
       background-color: getColor(primary50);
       border-radius: $btn-border-radius;
@@ -141,12 +145,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
   }
 
-  // &:active,
-  // &:target {
+  &:active,
+  &:target,
+  &:focus,
   &.wmn-is-active {
     background-color: white;
-    background-color: getColor(secondary50);
-
     div {
       -webkit-appearance: none;
       border: $btn-border-width solid getColor(primary);
@@ -176,8 +179,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: getColor(success30);
   }
 
-  // &:active,
-  // &:target {
+  &:active,
+  &:target,
+  &:focus,
   &.wmn-is-active {
     div {
       -webkit-appearance: none;
@@ -208,8 +212,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: getColor(error30);
   }
 
-  // &:active,
-  // &:target {
+  &:active,
+  &:target,
+  &:focus,
   &.wmn-is-active {
     div {
       -webkit-appearance: none;
@@ -221,5 +226,42 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
     }
+  }
+}
+
+.btn {
+  &__btn-mode {
+    background-color: white;
+    color: getColor(primary);
+    border: $btn-border-width solid getColor(primary);
+    div {
+      padding: $padding-xs;
+      border: $btn-border-width solid transparent;
+    }
+    &:hover {
+      background-color: mix(getColor(primary), white, 20);
+      div {
+        background-color: mix(getColor(primary), white, 20);
+      }
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      background-color: white;
+      div {
+        -webkit-appearance: none;
+        border: $btn-border-width solid getColor(primary);
+        background-color: mix(getColor(primary), white, 30);
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+  &__icon-mode {
+    width: 25px;
+    vertical-align: bottom;
   }
 }
