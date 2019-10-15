@@ -1,35 +1,38 @@
 # Tasks guide
 
-- [Tasks guide](#tasks-guide)
-  - [Linting](#linting)
-    - [Scripts (Javascript)](#scripts-javascript)
-      - [Command](#command)
-      - [What it does](#what-it-does)
-      - [File(s) that are linted:](#files-that-are-linted)
-      - [Config](#config)
-    - [Templates (HTML)](#templates-html)
-      - [Command](#command-1)
-      - [What it does](#what-it-does-1)
-      - [File(s) that are linted:](#files-that-are-linted-1)
-      - [Config](#config-1)
-  - [Building](#building)
-    - [Scripts (Javascript)](#scripts-javascript-1)
-      - [Command](#command-2)
-      - [What it does](#what-it-does-2)
-    - [Styles (Sass)](#styles-sass)
-      - [Command](#command-3)
-      - [What it does](#what-it-does-3)
-    - [Templates (HTML)](#templates-html-1)
-      - [Command](#command-4)
-      - [What it does](#what-it-does-4)
-    - [Images](#images)
-      - [Command](#command-5)
-      - [What it does](#what-it-does-5)
-    - [Config](#config-2)
-      - [Command](#command-6)
-      - [What it does](#what-it-does-6)
-  - [Deploying and building for environments](#deploying-and-building-for-environments)
-    - [Localhost](#localhost)
+  - [Linting](#markdown-header-linting)
+    - [Scripts (Javascript)](#markdown-header-scripts-javascript)
+      - [Command](#markdown-header-command)
+      - [What it does](#markdown-header-what-it-does)
+      - [File(s) that are linted:](#markdown-header-files-that-are-linted)
+      - [Config](#markdown-header-config)
+    - [Templates (HTML)](#markdown-header-templates-html)
+      - [Command](#markdown-header-command-1)
+      - [What it does](#markdown-header-what-it-does-1)
+      - [File(s) that are linted:](#markdown-header-files-that-are-linted-1)
+      - [Config](#markdown-header-config-1)
+  - [Clean](#markdown-header-clean)
+      - [Command](#markdown-header-command-2)
+      - [What it does](#markdown-header-what-it-does-2)
+  - [Building](#markdown-header-building)
+    - [Scripts (Javascript)](#markdown-header-scripts-javascript-1)
+      - [Command](#markdown-header-command-3)
+      - [What it does](#markdown-header-what-it-does-3)
+    - [Styles (Sass)](#markdown-header-styles-sass)
+      - [Command](#markdown-header-command-4)
+      - [What it does](#markdown-header-what-it-does-4)
+    - [Templates (HTML)](#markdown-header-templates-html-1)
+      - [Command](#markdown-header-command-5)
+      - [What it does](#markdown-header-what-it-does-5)
+    - [Images](#markdown-header-images)
+      - [Command](#markdown-header-command-6)
+      - [What it does](#markdown-header-what-it-does-6)
+    - [Config](#markdown-header-config-2)
+      - [Command](#markdown-header-command-7)
+      - [What it does](#markdown-header-what-it-does-7)
+    - [Build all](#markdown-header-build-all)
+      - [Command](#markdown-header-command-8)
+      - [What it does](#markdown-header-what-it-does-8)
 
 
 This is a more in depth guide of the tasks that can be used within this project. Below will explain the context of when each task should be called and what it does.
@@ -94,7 +97,16 @@ The config files are located at:
 
 - `{root}/.htmlhintrc` (general formatting of html files e.g. unique ids, attributes in lower case, tag names match)
 
+## Clean
 
+#### Command
+`npm run clean`
+
+#### What it does
+- Cleans the compiled/built directory by:
+  - Deleting `{root}/_accessibility-logs/` directory
+  - Deleting `{root}/_sourcemaps/` directory
+  - Deleting `{root}/build/` directory
 
 ## Building
 
@@ -108,7 +120,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 
 #### What it does
 
-- [Lints scripts](#scripts-javascript)
+- [Lints scripts](#markdown-header-scripts-javascript)
 - Compiles javascript files with babel
 - Concatenates all smaller javascript files together into one file
 - Mangles and minifies the file
@@ -146,7 +158,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 `npm run build:templates`
 
 #### What it does
-- [Lint templates](#templates-html)
+- [Lint templates](#markdown-header-templates-html)
 - Compile all handlebar file includes using [gulp handlebars file include](https://www.npmjs.com/package/gulp-handlebars-file-include)
 - Outputs compiled files to `{route}/build/views/`
 
@@ -167,7 +179,19 @@ Build commands are used for when code is to be compiled to an output that is sui
 #### What it does
 - Moves `{root}/src/assets/config/**/*` to `{root}/build/config`
 
-## Deploying and building for environments
 
-### Localhost
+
+### Build all
+
+#### Command
 `npm run build:all`
+
+#### What it does
+ - [`npm run clean`](#markdown-header-clean) (cleans the directory)
+ - [`npm run build:images`](#markdown-header-images) (minifies images)
+ - [`npm run build:styles`](#markdown-header-styles-sass) (build styles)
+ - [`npm run build:scripts`](#markdown-header-scripts-javascript-1) (build scripts)
+ - [`npm run build:templates`](#markdown-header-templates-html-1) (build templates)
+ - [`npm run build:config`](#markdown-header-config-2) (build config)
+ - [`npm run lint:scripts`](#markdown-header-scripts-javascript) (lint scripts)
+ - [`npm run lint:templates`](#markdown-header-templates-html) (lint templates)

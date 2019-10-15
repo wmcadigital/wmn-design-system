@@ -258,7 +258,6 @@ const buildAll = series(
   buildScripts,
   buildTemplates,
   buildConfig,
-  minImages,
   lintScripts,
   lintTemplates
 );
