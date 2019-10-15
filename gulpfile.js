@@ -77,7 +77,7 @@ const paths = {
         output: 'build/js/', // Output location of minified JS files
     },
     templates: {
-        src: 'src/views/components/**/*.html',
+        src: 'src/views/**/*.html',
         output: 'build/views/',
     },
     images: {
@@ -88,17 +88,20 @@ const paths = {
         src: 'src/assets/config/**/*',
         output: 'build/config/',
     },
-    styleguide: {
-        src: 'build/views/styleguide/**.html',
-        output: '/build/views/',
+    components: {
+        src: 'build/views/components/**/*.html'
     },
+    logs: {
+        sourcemaps: './_sourcemaps/',
+        accessibility: './_accessibility-logs/'
+    }
 };
 
 const getRoot = path => '../'.repeat(path.match(/\//gi).length); // Function which takes in a path and back counts slashes to get to baseRoot dir
 
 // Clean the current build & _sourcemaps dir
 function cleanBuild() {
-    return del([paths.output, '_sourcemaps', '_accessibility-logs']);
+    return del([paths.output, paths.logs.sourcemaps, paths.logs.accessibility]);
 }
 
 // Process, lint, and minify Sass files
@@ -116,7 +119,7 @@ function buildStyles() {
         .pipe(sass().on('error', sass.logError)) // Compile Sass
         .pipe(autoprefixer()) // Prefix css with older browser support
         .pipe(cleanCSS({ level: 2 })) // Minify css
-        .pipe(sourcemaps.write(getRoot(paths.styles.output) + '_sourcemaps/'))
+        .pipe(sourcemaps.write(paths.logs.sourcemaps))
         .pipe(dest(paths.styles.output))
         .pipe(replace('$*cdn', json.buildDirs[build].cdn))
         .pipe(dest(paths.styles.output))
@@ -144,7 +147,7 @@ function minifyJS(jsFile) {
         )
         .pipe(concat(jsFile.minName)) // concat all js files in folder
         .pipe(uglify({ mangle: { reserved: ['jQuery'] } })) // Mangle var names etc.
-        .pipe(sourcemaps.write(`${getRoot(paths.scripts.output)}_sourcemaps/`))
+        .pipe(sourcemaps.write(paths.logs.sourcemaps))
         .pipe(plumber.stop())
         .pipe(dest(paths.scripts.output)); // Spit out concat + minified file in ./build/
 }
@@ -184,7 +187,7 @@ function lintTemplates() {
             extname: '.json'
         }))
         .pipe(jsonFormat(2))
-        .pipe(dest('./_accessibility-logs/json'));
+        .pipe(dest(paths.logs.accessibility));
 }
 
 function buildTemplates() {
@@ -253,7 +256,7 @@ const buildAll = series(
 function watchFiles() {
     // Lint, concat, minify JS then reload server
     watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
-    watch(['./src/**/*.html'], series(lintTemplates, buildTemplates, reload)); // Reload when html changes
+    watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
     watch(paths.images.src, minImages);
     watch(paths.styles.src, buildStyles); // run buildStyles function on scss change(s)
     watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
