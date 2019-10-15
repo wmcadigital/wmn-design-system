@@ -13,11 +13,11 @@ When referring to `{root}` below, we are referring to the base root of the proje
     -   [Templates (HTML)](#markdown-header-templates-html)
     -   [Cleaning](#markdown-header-clean)
 -   [Building](#markdown-header-building)
-    -   [Scripts (Javascript)](#markdown-header-scripts-javascript-1)
+    -   [Scripts (Javascript)](#markdown-header-scripts-javascript_1)
     -   [Styles (Sass)](#markdown-header-styles-sass)
-    -   [Templates (HTML)](#markdown-header-templates-html-1)
+    -   [Templates (HTML)](#markdown-header-templates-html_1)
     -   [Images](#markdown-header-images)
-    -   [Config](#markdown-header-config-2)
+    -   [Config](#markdown-header-config_2)
     -   [Build all](#markdown-header-build-all)
 
 ## Linting
