@@ -77,6 +77,7 @@ The config files are located at:
 ## Cleaning
 
 #### Command
+
 `npm run clean`
 
 #### What it does
@@ -117,6 +118,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 ### Styles (Sass)
 
 #### Command
+
 `npm run build:styles`
 
 #### What it does
@@ -134,6 +136,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 ### Templates (HTML)
 
 #### Command
+
 `npm run build:templates`
 
 #### What it does
@@ -145,6 +148,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 ### Images
 
 #### Command
+
 `npm run build:images`
 
 #### What it does
@@ -155,6 +159,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 ### Config
 
 #### Command
+
 `npm run build:config`
 
 #### What it does
@@ -164,6 +169,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 ### Build all
 
 #### Command
+
 `npm run build:all`
 
 #### What it does
