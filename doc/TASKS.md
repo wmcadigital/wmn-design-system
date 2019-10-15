@@ -28,6 +28,8 @@
     - [Config](#config-2)
       - [Command](#command-6)
       - [What it does](#what-it-does-6)
+  - [Deploying and building for environments](#deploying-and-building-for-environments)
+    - [Localhost](#localhost)
 
 
 This is a more in depth guide of the tasks that can be used within this project. Below will explain the context of when each task should be called and what it does.
@@ -164,3 +166,8 @@ Build commands are used for when code is to be compiled to an output that is sui
 
 #### What it does
 - Moves `{root}/src/assets/config/**/*` to `{root}/build/config`
+
+## Deploying and building for environments
+
+### Localhost
+`npm run build:all`
