@@ -34,11 +34,11 @@ You'll need [Git](https://help.github.com/articles/set-up-git/) and [Node.js](ht
 3. Run `npm start` to launch the dev environment with hot reloading.
 4. Visit [http://localhost:3000](http://localhost:3000)
 
-Having trouble getting these steps to work on your machine? Follow the [troubleshooting guide](guidelines/TROUBLESHOOTING.md).
+Having trouble getting these steps to work on your machine? Follow the [troubleshooting guide](guidelines/troubleshooting.md).
 
 ## Tasks
 
-For more in-depth information on what each task does, see [tasks guide](doc/TASKS.md).
+For more in-depth information on what each task does, see [tasks guide](doc/contributing/tasks.md).
 
 ### `npm start`
 
@@ -85,11 +85,11 @@ Also delete temporary build and local files.
 
 ## Troubleshooting
 
-See the [troubleshooting guide](doc/TROUBLESHOOTING.md).
+See the [troubleshooting guide](doc/troubleshooting.md).
 
 ## Contributing to the code base
 
-See the [contributing guide](doc/CONTRIBUTING.md).
+See the [contributing guide](doc/contributing.md).
 
 ## Got feedback?
 
