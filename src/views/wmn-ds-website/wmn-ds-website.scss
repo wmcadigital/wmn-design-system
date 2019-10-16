@@ -5,10 +5,10 @@
 @import '../../assets/sass/mixins';
 
 // Styleguide only styles
-@import 'side-menu/side-menu';
-@import 'footer/footer';
-@import 'header/header';
-@import 'resizer/resizer';
+@import 'shared/side-menu/side-menu';
+@import 'shared/footer/footer';
+@import 'shared/header/header';
+@import 'shared/resizer/resizer';
 
 // Styleguide page specific styles
 @import 'pages/colorPalette';
@@ -17,18 +17,14 @@
 // @import 'pages/header';
 @import 'pages/headerFooter';
 
-/* Add a gutter to Pure's Columns */
-// .pure-g {
-//   margin: 0 -1em;
-// }
-
-// .container-lg > .pure-g > div {
-//   padding: 0 1em;
-// }
-
-// .div[class*='pure-u'] {
-//   padding: 0 1em;
-// }
+html,
+body {
+  font-size: $font-size;
+  color: getColor(black);
+  line-height: $base-line-height;
+  @include type-setting(0);
+  font-family: $x-font-family;
+}
 
 .component-details {
   margin-top: $margin-md;
