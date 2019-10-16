@@ -7,7 +7,7 @@ function pageRouting() {
   const pagesDir = 'pages/';
 
   // Foreach link in links
-  links.forEach((link) => {
+  links.forEach(link => {
     const href = `${pagesDir + link.getAttribute('href').replace('#', '')}.html`; // Define the actual href of the page
     // On link click, inject the above href into iframe
     link.addEventListener('click', () => {
