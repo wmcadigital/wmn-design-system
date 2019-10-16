@@ -223,28 +223,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 }
 
-// .btn {
-//   font-weight: bold;
-//   border-radius: $btn-border-radius;
-//   cursor: pointer;
-//   display: inline-block;
-//   transition: $btn-transition;
-//   box-sizing: border-box;
-//   -moz-box-sizing: border-box;
-//   -webkit-box-sizing: border-box;
-//   padding: $btn-padding;
-
-//   div {
-//     padding: $padding-sm;
-//     pointer-events: none;
-//     transition: $btn-transition;
-//   }
-
-//   &:focus {
-//     outline: none;
-//   }
-// }
-
 .btn-block {
   display: block;
 }
@@ -309,10 +287,4 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       }
     }
   }
-}
-
-svg {
-  fill: currentColor;
-  width: 1.5rem;
-  height: 1.5rem;
 }
