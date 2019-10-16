@@ -1,12 +1,12 @@
-## Troubleshooting
+# Troubleshooting
 
-### npm and Node.js
+## npm and Node.js
 
 The West Midlands Network Styleguide uses `npm` to manage dependencies. Please [install Node.js](https://nodejs.org), and try running `npm install` again.
 
 If Node.js is already installed, make sure you’re running v8 or up.
 
-### JavaScript and compilation issues
+## JavaScript and compilation issues
 
 JavaScript dependencies sometimes get out of sync and inexplicable bugs start to happen. Follow these steps to give a fresh start to your development environment:
 
