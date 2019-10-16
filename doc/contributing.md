@@ -1,6 +1,6 @@
 # Contributing
 
-We love contributions! We've compiled these docs to help you understand our contribution guidelines. If you still have questions, please [contact us](https://design-system.service.gov.uk/#support), we'd be super happy to help.
+These docs are to help you understand our contribution guidelines and standards.
 
 ## Contents of this file
 

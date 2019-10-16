@@ -54,29 +54,36 @@ const paths = {
   output: 'build/', // Default output location for code build
   server: {
     port: 8080,
-    baseDir: './build/views/styleguide/',
+    baseDir: './build/views/wmn-ds-website/',
     root: './build/'
   },
   styles: {
-    src: ['src/assets/sass/**/*.scss', 'src/views/**/*.scss'], // src of stlyes to watch
-    minifySrc: ['src/assets/sass/wmn.scss', 'src/views/styleguide/styleguide.scss'], // List of scss file(s) which should be processed, linted & minified
+    src: ['src/assets/sass/**/*.scss', 'src/views/**/*.scss'], // src of styles to watch
+    minifySrc: [
+      'src/assets/sass/wmn-ds-components.scss',
+      'src/views/wmn-ds-website/wmn-ds-website.scss'
+    ], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/' // output location of minified styles
   },
   scripts: {
     src: [
-      'src/assets/js/**/*.js',
+      'src/assets/**/*.js',
       'src/views/components/**/*.js',
-      './src/views/styleguide/**/*.js'
+      './src/views/wmn-ds-website/**/*.js'
     ], // Src of JS files to watch
     // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
     minifySrc: [
       {
-        src: ['src/assets/js/wmn.js', 'src/views/components/**/*.js'],
-        minName: 'wmn.min.js',
+        src: 'src/views/components/**/*.js',
+        minName: 'wmn-ds-components.min.js',
         lint: true
       },
-      { src: 'src/assets/js/vendor/**/*.js', minName: 'vendor.min.js', lint: false },
-      { src: 'src/views/styleguide/**/*.js', minName: 'styleguide.min.js', lint: false }
+      { src: 'src/assets/vendor/js/**/*.js', minName: 'wmn-ds-vendor.min.js', lint: false },
+      {
+        src: 'src/views/wmn-ds-website/**/*.js',
+        minName: 'wmn-ds-website.min.js',
+        lint: false
+      }
     ],
     output: 'build/js/' // Output location of minified JS files
   },
@@ -164,7 +171,7 @@ function buildScripts(done) {
 
 // Lint scripts/JS
 function lintScripts() {
-  return src(['src/assets/js/wmn.js', 'src/views/**/*.js'])
+  return src('src/views/**/*.js')
     .pipe(eslint({ configFile: '.eslintrc.json' })) // eslint() attaches the lint output to the "eslint" property of the file object so it can be used by other modules.
     .pipe(eslint.format()); // eslint.format() outputs the lint results to the console.
   // .pipe(eslint.failAfterError()); // Cause the stream to stop/fail before copying an invalid JS file to the output directory
