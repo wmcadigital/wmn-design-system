@@ -34,18 +34,18 @@ let build = 'local';
 // This matches the buildDirs in package.json
 function determineBuild(done) {
   switch (process.env.npm_config_build) {
-  case 'staging':
-    build = 'staging';
-    break;
-  case 'live':
-    build = 'live';
-    break;
-  case 'netlify':
-    build = 'netlify';
-    break;
-  default:
-    build = 'local';
-    break;
+    case 'staging':
+      build = 'staging';
+      break;
+    case 'live':
+      build = 'live';
+      break;
+    case 'netlify':
+      build = 'netlify';
+      break;
+    default:
+      build = 'local';
+      break;
   }
   done();
 }
@@ -200,7 +200,7 @@ function lintTemplates() {
 
 function buildTemplates() {
   return src(paths.templates.src)
-    .pipe(gulpHandlebarsFileInclude('', { maxRecursion: 20 }))
+    .pipe(gulpHandlebarsFileInclude('', { maxRecursion: 50 }))
     .pipe(replace('$*cdn', json.buildDirs[build].cdn))
     .pipe(dest(paths.templates.output));
 }

@@ -4,12 +4,30 @@
 <!-- @@ Header -->
 {{ fileInclude 'src/views/styleguide/header/header.html' }}
 
-<div class="container-lg" style="background: black">
+<div class="container-lg">
+  <h1>Icons</h1>
 
-    <h1>Icons</h1>
+  <div class="pure-g">
+    <figure class="icon__type pure-u-1-12">
+      <span class="icon__type--bg">
+        {{
+          fileInclude 'src/views/components/icon/icon.html'
+          type='fas fa-heart fa-2x'
+        }}
+      </span>
+      <figcaption class="icon__type--caption">fa-heart</figcaption>
+    </figure>
+    <figure class="icon__type pure-u-1-12">
+      <span class="icon__type--bg">
+        {{
+          fileInclude 'src/views/components/icon/icon.html'
+          type='fas fa-chevron-right fa-2x'
+        }}
+      </span>
+      <figcaption class="icon__type--caption">fa-chevron-right</figcaption>
+    </figure>
 
-    <div class="pure-g">
-        <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
+    <!-- <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
             <img class="icon" src="$*cdn/img/icon/Arrow.svg">
         </div>
         <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
@@ -38,14 +56,14 @@
         </div>
         <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
             <img class="icon" src="$*cdn/img/icon/Warning Triangle.svg">
-        </div>
-        <!-- <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
+        </div> -->
+    <!-- <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
             <img class="icon" src="$*cdn/img/icon/Arrow.svg">
         </div>
         <div class="pure-sm-1-2 pure-md-1-4 pure-lg-1-8">
             <img class="icon" src="$*cdn/img/icon/Arrow.svg">
         </div> -->
-    </div>
+  </div>
 </div>
 
 <!-- @@ Footer -->
