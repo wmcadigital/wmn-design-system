@@ -18,7 +18,7 @@
     },
     "netlify": {
       "baseUrl": "/",
-      "cdn": "../../"
+      "cdn": "https://wmnetwork.netlify.com"
     }
   },
   "scripts": {
