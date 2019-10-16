@@ -24,6 +24,7 @@ body {
   line-height: $base-line-height;
   @include type-setting(0);
   font-family: $x-font-family;
+  margin: 0;
 }
 
 html {
