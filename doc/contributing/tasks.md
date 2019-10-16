@@ -132,7 +132,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 -   Concatenates all smaller javascript files together into one file
 -   Mangles and minifies the file
 -   Creates three files in `{root}/build/js/`
-    -   `styleguide.min.js`
+    -   `wmn-ds-website.min.js`
         -   Created from any javascript files found in `{root}/src/views/wmn-ds-website/**/*.js`
         -   For styleguide specific items only
     -   `vendor.min.js`
@@ -155,7 +155,7 @@ Build commands are used for when code is to be compiled to an output that is sui
 -   Uses [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) to parse CSS and add vendor prefixes
 -   Minifies CSS
 -   Creates two files in `{root}/build/css/`
-    -   `styleguide.css`
+    -   `wmn-ds-website.css`
         -   For styleguide specific styling
     -   `wmn.css`
         -   For any styling related to WMN components
