@@ -1,0 +1,70 @@
+// Vars
+@import '../../assets/sass/vars';
+
+// Mixins
+@import '../../assets/sass/mixins';
+
+// Styleguide only styles
+@import 'side-menu/side-menu';
+@import 'footer/footer';
+@import 'header/header';
+@import 'resizer/resizer';
+
+// Styleguide page specific styles
+@import 'pages/colorPalette';
+@import 'pages/typography';
+@import 'pages/marks';
+// @import 'pages/header';
+@import 'pages/headerFooter';
+
+/* Add a gutter to Pure's Columns */
+// .pure-g {
+//   margin: 0 -1em;
+// }
+
+// .container-lg > .pure-g > div {
+//   padding: 0 1em;
+// }
+
+// .div[class*='pure-u'] {
+//   padding: 0 1em;
+// }
+
+.component-details {
+  margin-top: $margin-md;
+  margin-bottom: $margin-lg;
+}
+
+.component-details__code {
+  background-color: #efefef;
+  padding: $padding-sm;
+  margin: $margin-sm 0;
+  border-radius: 4px;
+  border-left: 2px solid rgba(getColor(primary), 0.5);
+  display: inline-block;
+  width: 100%;
+}
+
+.component-details__title {
+  @include type-setting(2);
+  font-weight: 700;
+}
+
+.component-details__text {
+  color: rgba(black, 0.5);
+  font-weight: 400;
+}
+
+// Scrollbar styling for code previews of components
+.hljs {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 8px;
+    width: 100%;
+  }
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
