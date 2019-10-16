@@ -26,6 +26,10 @@ body {
   font-family: $x-font-family;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .component-details {
   margin-top: $margin-md;
   margin-bottom: $margin-lg;
@@ -63,4 +67,28 @@ body {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+// icons background colour
+.icon__type {
+  text-align: center;
+  &--bg {
+    background-color: getColor(secondary);
+    padding: $padding-sm;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  &--caption {
+    padding-top: $padding-sm;
+  }
 }

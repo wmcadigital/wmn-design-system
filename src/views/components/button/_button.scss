@@ -3,7 +3,7 @@ $btn-border-width: 1px;
 $btn-padding: 2px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
-.btn {
+.wmn-btn {
   font-weight: bold;
   border-radius: $btn-border-radius;
   cursor: pointer;
@@ -13,6 +13,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   padding: $btn-padding;
+  border: none;
 
   div {
     padding: $padding-sm;
@@ -25,211 +26,168 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 }
 
-.btn-block {
-  display: block;
-}
-
-.btn__icon {
-  padding-left: $padding-md;
-}
-
-.btn-small {
-  div {
-    padding: 2px !important;
-  }
-}
-
-.btn--disabled {
-  background-color: getColor(disable);
-  color: white;
-  div {
-    border: $btn-border-width solid transparent;
-  }
-  &:hover {
-    cursor: not-allowed;
-  }
-}
-
-.btn__btn-cta {
-  background-color: getColor(cta);
-  color: white;
-
-  div {
-    border: $btn-border-width solid transparent;
-  }
-
-  &:visited {
-    background-color: getColor(cta50);
-  }
-
-  &:hover {
-    background-color: getColor(cta30);
-  }
-
-  &:active,
-  &:target,
-  &:focus,
-  &.wmn-is-active {
-    div {
-      background-color: getColor(cta50);
-      -webkit-appearance: none;
-      border: $btn-border-width solid white;
-      padding: $padding-sm;
-      border-radius: $btn-border-radius;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-    }
-  }
-}
-
-.btn__btn-primary {
-  background-color: getColor(primary);
-  color: white;
-
-  div {
-    border: $btn-border-width solid transparent;
-  }
-
-  &:visited {
-    background-color: getColor(primary50);
-  }
-
-  &:hover {
-    background-color: getColor(primary30);
-  }
-
-  &:active,
-  &:target,
-  &:focus,
-  &.wmn-is-active {
-    div {
-      -webkit-appearance: none;
-      border: $btn-border-width solid white;
-      padding: $padding-sm;
-      background-color: getColor(primary50);
-      border-radius: $btn-border-radius;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-    }
-  }
-
-  &--input {
-    padding: $padding-sm;
-  }
-}
-
-.btn__btn-secondary {
-  background-color: white;
-  color: getColor(primary);
-  border: $btn-border-width solid getColor(primary);
-
-  div {
-    border: $btn-border-width solid transparent;
-  }
-
-  &:visited {
-    background-color: getColor(secondary30);
-
-    div {
-      background-color: getColor(secondary30);
-    }
-  }
-
-  &:hover {
-    background-color: getColor(secondary50);
-
-    div {
-      background-color: getColor(secondary50);
-    }
-  }
-
-  &:active,
-  &:target,
-  &:focus,
-  &.wmn-is-active {
-    background-color: white;
-    div {
-      -webkit-appearance: none;
-      border: $btn-border-width solid getColor(primary);
-      padding: $padding-sm;
-      border-radius: $btn-border-radius;
-      box-sizing: border-box;
-      background-color: getColor(secondary50);
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-    }
-  }
-}
-
-.btn__btn-start {
-  background-color: getColor(success);
-  color: white;
-
-  div {
-    border: $btn-border-width solid transparent;
-  }
-
-  &:visited {
-    background-color: getColor(success50);
-  }
-
-  &:hover {
-    background-color: getColor(success30);
-  }
-
-  &:active,
-  &:target,
-  &:focus,
-  &.wmn-is-active {
-    div {
-      -webkit-appearance: none;
-      border: $btn-border-width solid white;
-      padding: $padding-sm;
-      background-color: getColor(success50);
-      border-radius: $btn-border-radius;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-    }
-  }
-}
-
-.btn__btn-destructive {
-  background-color: getColor(error);
-  color: white;
-
-  div {
-    border: $btn-border-width solid transparent;
-  }
-
-  &:visited {
-    background-color: getColor(error50);
-  }
-
-  &:hover {
-    background-color: getColor(error30);
-  }
-
-  &:active,
-  &:target,
-  &:focus,
-  &.wmn-is-active {
-    div {
-      -webkit-appearance: none;
-      border: $btn-border-width solid white;
-      background-color: getColor(error50);
-      padding: $padding-sm;
-      border-radius: $btn-border-radius;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-    }
-  }
-}
-
 .btn {
+  &__btn-primary {
+    background-color: getColor(primary);
+    color: white;
+    div {
+      border: $btn-border-width solid transparent;
+    }
+    &:visited {
+      background-color: getColor(primary50);
+    }
+    &:hover {
+      background-color: getColor(primary30);
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      background-color: getColor(primary);
+      div {
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        background-color: getColor(primary50);
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+    &--input {
+      padding: $padding-sm;
+    }
+  }
+  &__btn-secondary {
+    background-color: white;
+    color: getColor(primary);
+    border: $btn-border-width solid getColor(primary);
+    div {
+      border: $btn-border-width solid transparent;
+    }
+    &:visited {
+      background-color: getColor(secondary30);
+      div {
+        background-color: getColor(secondary30);
+      }
+    }
+    &:hover {
+      background-color: getColor(secondary30);
+      div {
+        background-color: getColor(secondary30);
+      }
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      background-color: white;
+      div {
+        -webkit-appearance: none;
+        border: $btn-border-width solid getColor(primary);
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        background-color: getColor(secondary50);
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+  &__btn-cta {
+    background-color: getColor(cta);
+    color: white;
+    div {
+      border: $btn-border-width solid transparent;
+    }
+    &:visited {
+      background-color: getColor(cta50);
+    }
+    &:hover {
+      background-color: getColor(cta30);
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      background-color: getColor(cta);
+      div {
+        background-color: getColor(cta50);
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+  &__btn-destructive {
+    background-color: getColor(error);
+    color: white;
+
+    div {
+      border: $btn-border-width solid transparent;
+    }
+
+    &:visited {
+      background-color: getColor(error50);
+    }
+
+    &:hover {
+      background-color: getColor(error30);
+    }
+
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      div {
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        background-color: getColor(error50);
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+  &__btn-start {
+    background-color: getColor(success);
+    color: white;
+
+    div {
+      border: $btn-border-width solid transparent;
+    }
+
+    &:visited {
+      background-color: getColor(success50);
+    }
+
+    &:hover {
+      background-color: getColor(success30);
+    }
+
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      div {
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        background-color: getColor(success50);
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
   &__btn-mode {
     background-color: white;
     color: getColor(primary);
@@ -261,7 +219,72 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
   }
   &__icon-mode {
-    width: 25px;
     vertical-align: bottom;
+  }
+}
+
+.btn-block {
+  display: block;
+}
+
+.btn__icon {
+  padding-left: $padding-md;
+}
+
+.btn-small {
+  div {
+    padding: 2px !important;
+  }
+}
+
+.btn--disabled {
+  &:disabled {
+    background-color: getColor(disable);
+    color: white;
+    div {
+      border: $btn-border-width solid transparent;
+      &:hover {
+        background-color: getColor(disable);
+      }
+    }
+    &:hover {
+      cursor: not-allowed;
+      background-color: getColor(disable);
+      div {
+        background-color: getColor(disable);
+      }
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmn-is-active {
+      div {
+        background-color: getColor(disable);
+      }
+    }
+  }
+  &--light {
+    &:disabled {
+      color: getColor(disable);
+      border: $btn-border-width solid getColor(disable);
+      div {
+        border: $btn-border-width solid transparent;
+      }
+      &:hover {
+        cursor: not-allowed;
+        background-color: transparent;
+        div {
+          background-color: transparent;
+        }
+      }
+      &:active,
+      &:target,
+      &:focus,
+      &.wmn-is-active {
+        div {
+          background-color: transparent;
+        }
+      }
+    }
   }
 }

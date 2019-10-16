@@ -6,240 +6,372 @@
 
 <div class="container-lg">
   <h1>Buttons</h1>
+  <hr />
+  <div class="pure-g justify-between">
+    <div class="pure-u-1" id="wmn-buttons">
+      <h3>Buttons</h3>
+      <p>
+        <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
+        page
+      </p>
+      <p>
+        It's important to know when to use a <strong>button</strong> or went to use a
+        <strong><a href="#wmn-links">link</a></strong>
+      </p>
+      <p>
+        <strong>Buttons</strong> should be used in situations where a user might need to preform an
+        action, such as:
+      </p>
+      <ul>
+        <li>Submitting a form</li>
+        <li>Uploading</li>
+        <li>Specify a next or previous step in a process</li>
+        <li>Begin a new task</li>
+      </ul>
+      <!-- primary buttons -->
+      <div>
+        <h4>Primary buttons</h4>
+        <span>
+          {{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-primary'
+            text='Primary button'
+          }}
+        </span>
+        <span>
+          {{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-primary btn--disabled'
+            disabled='disabled'
+            text='Primary disabled button'
+          }}
+        </span>
+        <span>
+          {{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-primary'
+            iconRight='fas fa-chevron-right'
+            text='Primary icon button'
+          }}
+        </span>
+        <span>
+          {{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-primary btn--disabled'
+            disabled='disabled'
+            iconRight='fas fa-chevron-right'
+            text='Primary icon disabled button'
+          }}
+        </span>
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html">{{
+            fileInclude 'src/views/components/button/button.html'
+            type='btn__btn-primary'
+            text="Primary button"
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-primary btn--disabled'
+            disabled='disabled'
+            text='Primary disabled button'
+          }}{{
+            fileInclude 'src/views/components/button/button.html'
+            type='btn__btn-primary'
+            iconRight='fas fa-chevron-right'
+            text="Primary icon disabled button"
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-primary btn--disabled'
+            disabled='disabled'
+            iconRight='fas fa-chevron-right'
+            text='Primary icon button'
+          }}</code></pre>
+      </div>
+      <!-- end: primary buttons -->
+      <!-- secondary buttons -->
+      <div>
+        <p><strong>Secondary buttons</strong></p>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary'
+              text="Secondary button"
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary btn--disabled--light'
+              disabled='disabled'
+              text='Secondary disabled button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary'
+              iconRight="fas fa-chevron-right"
+              text="Secondary icon button"
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary btn--disabled--light'
+              disabled='disabled'
+              iconRight="fas fa-chevron-right"
+              text='Secondary icon disabled button'
+          }}
+        </span>
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html">{{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary'
+              text="Secondary button"
+            }}{{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary btn--disabled--light'
+              disabled='disabled'
+              text='Secondary disabled button'
+            }}{{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary'
+              iconRight="fas fa-chevron-right"
+              text="Secondary Icon button"
+            }}{{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-secondary btn--disabled--light'
+              disabled='disabled'
+              iconRight="fas fa-chevron-right"
+              text='Secondary icon disabled button'
+            }}</code></pre>
+      </div>
+      <!-- end: secondary buttons -->
+      <!-- call to action buttons -->
+      <div>
+        <p><strong>Call to action buttons</strong></p>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-cta'
+              text='Call to action button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-cta'
+              iconRight="fas fa-chevron-right"
+              text="Call to action icon button"
+          }}
+        </span>
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html">{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-cta'
+            text='Call to action button'
+            }}{{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-cta'
+              iconRight="fas fa-chevron-right"
+              text="Call to action icon button"
+            }}</code></pre>
+      </div>
+      <!-- end: call to action buttons -->
+      <!-- destructive buttons -->
+      <div>
+        <p><strong>Destructive buttons</strong></p>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-destructive'
+              text='Destructive button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-destructive btn--disabled'
+              disabled='disabled'
+              text='Destructive disabled button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-destructive'
+              iconRight='fas fa-chevron-right'
+              text='Destructive icon button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-destructive btn--disabled'
+              disabled='disabled'
+              iconRight='fas fa-chevron-right'
+              text='Destructive icon disabled button'
+          }}
+        </span>
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html">{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-destructive btn--disabled'
+            disabled='disabled'
+            text='Destructive disabled button'
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-destructive btn--disabled'
+            disabled='disabled'
+            text='Destructive disabled button'
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-destructive'
+            iconRight='fas fa-chevron-right'
+            text='Destructive icon button'
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-destructive btn--disabled'
+            disabled='disabled'
+            iconRight='fas fa-chevron-right'
+            text='Destructive icon disabled button'
+          }}</code></pre>
+      </div>
+      <!-- end: destructive buttons -->
+      <!-- start buttons -->
+      <div>
+        <p><strong>Start buttons</strong></p>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-start'
+              text='Start button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-start btn--disabled'
+              disabled='disabled'
+              text='Start disabled button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-start'
+              iconRight='fas fa-chevron-right'
+              text='Start icon button'
+          }}
+        </span>
+        <span>
+          {{
+              fileInclude
+              'src/views/components/button/button.html'
+              type='btn__btn-start btn--disabled'
+              disabled='disabled'
+              iconRight='fas fa-chevron-right'
+              text='Start icon disabled button'
+          }}
+        </span>
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html">{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-start'
+            text='Start button'
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-start btn--disabled'
+            disabled='disabled'
+            text='Start disabled button'
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-start'
+            iconRight='fas fa-chevron-right'
+            text='Start icon button'
+          }}{{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-start btn--disabled'
+            disabled='disabled'
+            iconRight='fas fa-chevron-right'
+            text='Start icon disabled button'
+          }}</code></pre>
+      </div>
+      <!-- end: start buttons -->
+      <!-- mode buttons -->
+      <div>
+        <p><strong>Mode buttons</strong></p>
+        <span>
+          {{
+            fileInclude
+            'src/views/components/button/button.html'
+            type='btn__btn-mode'
+            iconLeft='$*cdn/img/Modes/Isolated/purple/Metro.svg#Icon-/-Modes-/-Isolated-/-Metro'
+            text='Mode'
+          }}
+        </span>
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html"></code></pre>
+      </div>
+      <!-- end: mode buttons -->
+    </div>
 
+    <!-- links -->
+    <div class="pure-u-1" id="wmn-links">
+      <h4>Links</h4>
+      <p>
+        It's important to know when to use a <strong><a href="#wmn-buttons">button</a></strong> or
+        went to use a
+        <strong>link</strong>
+      </p>
+      <p>
+        <strong>Buttons</strong> should be used in situations where a user might need to preform an
+        action such as:
+      </p>
+      <ul>
+        <li>Submitting a form</li>
+        <li>Uploading</li>
+        <li>Specify a next or previous step in a process</li>
+        <li>Begin a new task</li>
+      </ul>
+      <h4>HTML Markup</h4>
+    </div>
+  </div>
+
+  <!-- to replace -->
   <div class="pure-g">
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-          fileInclude
-          'src/views/components/button/button.html'
-          type='btn__btn-cta'
-          text='CTA button'
-      }}
-      <div class="pure-u-1 component-details">
-        <strong>Class names</strong>
-        <br />
-        .btn<br />
-        .btn__btn-cta<br /><br />
-        <strong>HTML Markup</strong><br />
-
-        <pre>
-          <code class="html">{{
-  fileInclude
-  'src/views/components/button/button.html'
-  type='btn__btn-cta'
-  text="[INSERT TEXT HERE]"
-}}</code>
-        </pre>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-cta'
-        icon="fas fa-chevron-right"
-        text="CTA Icon Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn__btn-cta<br />
-          .icon<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-cta'
-    icon="fas fa-chevron-right"
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-primary'
-        text="Primary Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-primary<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-primary'
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-primary'
-        icon="fas fa-chevron-right"
-        text="Primary Icon Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-primary<br />
-          .icon<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-primary'
-    icon="fas fa-chevron-right"
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-secondary'
-        text="Secondary Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-secondary<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-secondary'
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-secondary'
-        icon="fas fa-chevron-right"
-        text="Secondary Icon Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-secondary<br />
-          .icon<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-secondary'
-    icon="fas fa-chevron-right"
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-start'
-        icon="fas fa-chevron-right"
-        text="Start Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-start<br />
-          .icon<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-start'
-    icon="fas fa-chevron-right"
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-destructive'
-        text="Destructive Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-destructive<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-destructive'
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude
-        'src/views/components/button/button.html'
-        type='btn__btn-destructive'
-        icon="fas fa-chevron-right"
-        text="Destructive Icon Button"
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-destructive<br />
-          .icon<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/button.html'
-    type='btn__btn-destructive'
-    icon="fas fa-chevron-right"
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
-    </div>
-
     <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
       {{
         fileInclude
@@ -267,10 +399,10 @@
       </div>
     </div>
   </div>
+
+  <!-- @@ Footer -->
+  {{ fileInclude 'src/views/wmn-ds-website/shared/footer/footer.html' }}
+
+  <!-- @@ Scripts -->
+  {{fileInclude 'src/views/wmn-ds-website/shared/scripts.html'}}
 </div>
-
-<!-- @@ Footer -->
-{{ fileInclude 'src/views/wmn-ds-website/shared/footer/footer.html' }}
-
-<!-- @@ Scripts -->
-{{fileInclude 'src/views/wmn-ds-website/shared/scripts.html'}}
