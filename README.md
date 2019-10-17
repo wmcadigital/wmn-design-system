@@ -1,44 +1,59 @@
-# WMCA Website Redevelopment
+# 1. WMCA Website Redevelopment
 
-## Table of Contents
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
 
-- [WMN Styleguide](#wmn-styleguide)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Tasks](#tasks)
-- [Troubleshooting](#troubleshooting)
-- [Contributing to the code base](#contributing-to-the-code-base)
-- [Got feedback](#got-feedback)
+## 1.1. Table of contents
 
-## WMN Styleguide [![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
+<!-- TOC -->
+
+-   [1. WMCA Website Redevelopment](#markdown-header-1-wmca-website-redevelopment)
+    -   [1.1. Table of contents](#markdown-header-11-table-of-contents)
+    -   [1.2. WMN Styleguide](#markdown-header-12-wmn-styleguide)
+    -   [1.3. Quick start](#markdown-header-13-quick-start)
+    -   [1.4. Tasks](#markdown-header-14-tasks)
+        -   [1.4.1. Starting web server](#markdown-header-141-starting-web-server)
+        -   [1.4.2. Linting](#markdown-header-142-linting)
+        -   [1.4.3. Compilation](#markdown-header-143-compilation)
+        -   [1.4.4. Clean up](#markdown-header-144-clean-up)
+    -   [1.5. Troubleshooting](#markdown-header-15-troubleshooting)
+    -   [1.6. Contributing to the code base](#markdown-header-16-contributing-to-the-code-base)
+    -   [1.7. Got feedback?](#markdown-header-17-got-feedback)
+
+<!-- /TOC -->
+
+## 1.2. WMN Styleguide
 
 Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.com/).
 
-The WMN Styleguide is ran at the designated url on startup (usually http://localhost:3000) and is the primary means of viewing your work - it will live update as you make changes.
+The WMN Styleguide is ran at the designated url on startup (usually [http://localhost:3000](http://localhost:3000)) and is the primary means of viewing your work - it will live update as you make changes.
 
-- Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
-- Continuously updated: As long as you’re using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
+-   Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
+-   Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
 
-<img src="doc/preview.png" alt="previewer blueprint/variant/modifier selection" width="600px"/>
+![West Midlands Network Styleguide example](doc/preview.png)
 
-## Quick start
+## 1.3. Quick start
+
+You'll need [Git](https://help.github.com/articles/set-up-git/) and [Node.js](https://nodejs.org/en/) installed to get this project running.
 
 1. Clone the project with `git clone git@bitbucket.org:wmca/west-midlands-network.git`
 2. Run `npm install` in the root folder.
-3. Run `npm start` to launch the dev enviornment with hot reloading.
-4. Visit http://localhost:3000
+3. Run `npm start` to launch the dev environment with hot reloading.
+4. Visit [http://localhost:3000](http://localhost:3000)
 
-Having trouble getting these steps to work on your machine? Follow the [troubleshooting guide](guidelines/TROUBLESHOOTING.md).
+Having trouble getting these steps to work on your machine? Follow the [troubleshooting guide](doc/troubleshooting.md).
 
-## Tasks
+## 1.4. Tasks
 
-For more in-depth information on what each task does, see [tasks guide](doc/tasks.md).
+For more in-depth information on what each task does, see [tasks guide](doc/contributing/tasks.md).
 
-### `npm start`
+### 1.4.1. Starting web server
 
 Start the WMN Design System web server.
 
-### `npm run lint`
+`npm start`
+
+### 1.4.2. Linting
 
 Lint the code base for syntax and stylistic errors.
 
@@ -52,15 +67,13 @@ npm run lint:templates
 npm run lint:scripts
 ```
 
-### Compilation
+### 1.4.3. Compilation
 
-Build the styleguide for various enviornments
+Build the styleguide for various environments
 
 ```bash
 # Build Sass, JavaScript, HTML files
 npm run build:all
-npm run buid:staging
-npm run build:live
 
 # Build languages/assets independently
 npm run build:styles
@@ -70,21 +83,20 @@ npm run build:images
 npm run build:config
 ```
 
-### Clean up
+### 1.4.4. Clean up
 
-Delete all built languages/assets
+Delete all built languages/assets including temporary build and local files.
+
 `npm run clean`
 
-Also delete temporary build and local files.
+## 1.5. Troubleshooting
 
-## Troubleshooting
+See the [troubleshooting guide](doc/troubleshooting.md).
 
-See the [troubleshooting guide](doc/TROUBLESHOOTING.md)</a>.
+## 1.6. Contributing to the code base
 
-## Contributing to the code base
+See the [contributing guide](doc/contributing.md).
 
-See the <a href="CONTRIBUTING.md">contributing guide</a>.
+## 1.7. Got feedback?
 
-## Got feedback?
-
-Please open a new [Bitbucket Issue](https://bitbucket.org/wmca/west-midlands-network/issues?status=new&status=open)</>.
+Please open a new [Bitbucket Issue](https://bitbucket.org/wmca/west-midlands-network/issues?status=new&status=open).

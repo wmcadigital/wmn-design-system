@@ -1,0 +1,23 @@
+<script src="$*cdn/js/wmn-ds-vendor.min.js"></script>
+<script src="$*cdn/js/wmn-ds-components.min.js"></script>
+
+<!-- Highlight JS - display HTML blocks as coloured text -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>
+  function highlightJS() {
+    const { hljs } = window; //declare higlightJS as global var
+
+    document.querySelectorAll('pre code').forEach(element => {
+      // for each pre code tag, replace special html with unicode
+      element.innerHTML = element.innerHTML
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+      hljs.highlightBlock(element); // Run highlightJS for each pre code element found
+    });
+  }
+  window.addEventListener('DOMContentLoaded', highlightJS); // Run highlightJS function when DOM is ready
+</script>

@@ -10,16 +10,10 @@
   <div class="header">
     <div class="container-lg">
       <div class="pure-g">
-        <div class="pure-u-1-3">
+        <div class="pure-u-1-2">
           <img id="header-logo" class="logo" alt="West Midlands Network" src="$*cdn/img/logo.svg" />
-          {{#if Beta}}
-          <span class="header__version-icon">BETA</span>
-          {{/if}}
-          {{#if Alpha}}
-          <span class="header__version-icon">ALPHA</span>
-          {{/if}}
         </div>
-        <div class="pure-u-2-3">
+        <div class="pure-u-1-2">
           <ul class="header__list">
             <li class="header__list__item"><a href="#">Plan a journey</a></li>
             <li class="header__list__item"><a href="#">Tickets</a></li>
@@ -38,6 +32,3 @@
 {{ fileInclude 'src/views/wmn-ds-website/shared/footer/footer.html' }}
 
 <!-- @@ Scripts -->
-
-<link rel="stylesheet" href="$*cdn/css/wmn-ds-website.css" />
-<!-- <script src="$*cdn/js/wmn-ds-website.min.js"></script> -->

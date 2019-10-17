@@ -168,3 +168,24 @@ hr {
   color: white;
   background: getColor(primary);
 }
+
+$icon-base-width: 25px;
+$icon-base-width-sm: $icon-base-width;
+$icon-base-width-md: $icon-base-width * 1.5;
+$icon-base-width-lg: $icon-base-width * 2;
+$icon-base-width-xl: $icon-base-width * 2.5;
+
+.icon {
+  &--sm {
+    width: $icon-base-width-sm;
+  }
+  &--md {
+    width: $icon-base-width-md;
+  }
+  &--lg {
+    width: $icon-base-width-lg;
+  }
+  &--xl {
+    width: $icon-base-width-xl;
+  }
+}

@@ -1,13 +1,15 @@
-<!-- <div class="pure-g pure-u-1"> -->
-    <div class="btn {{ type }}" tabindex="0">
-        <div>
-            {{#if text}}
-                {{ text }}
-            {{/if}}
-            {{#if icon}}
-                <i class="{{ icon }} btn__icon"></i>
-            {{/if}}
-        </div>
-    </div>
-<!-- </div> -->
-
+<button class="wmn-btn {{ type }}" tabindex="0" {{ disabled }}>
+  <div>
+    {{#if iconLeft}}
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <use xlink:href="{{ iconLeft }}" />
+    </svg>
+    {{/if}}
+    {{#if text}}
+    {{ text }}
+    {{/if}}
+    {{#if iconRight}}
+    <i class="{{ iconRight }} btn__icon"></i>
+    {{/if}}
+  </div>
+</button>
