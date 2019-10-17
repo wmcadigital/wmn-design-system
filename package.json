@@ -32,6 +32,7 @@
     "build:styles": "gulp buildStyles",
     "build:templates": "gulp buildTemplates",
     "build:config": "gulp buildConfig",
+    "build:sprite": "gulp spriteSvgs",
     "build:images": "gulp minImages",
     "build:all": "gulp buildAll",
     "build:staging": "npm run build:all --build=staging",
@@ -68,6 +69,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-changed": "^4.0.2",
+    "gulp-cheerio": "^0.6.3",
     "gulp-clean-css": "^4.2.0",
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
@@ -81,9 +83,12 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-svgmin": "^2.2.0",
     "gulp-uglify": "^3.0.2",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "sass": "^1.23.0"
-  }
+  },
+  "dependencies": {}
 }
