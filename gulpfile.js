@@ -38,18 +38,18 @@ let build = 'local';
 // This matches the buildDirs in package.json
 function determineBuild(done) {
   switch (process.env.npm_config_build) {
-    case 'staging':
-      build = 'staging';
-      break;
-    case 'live':
-      build = 'live';
-      break;
-    case 'netlify':
-      build = 'netlify';
-      break;
-    default:
-      build = 'local';
-      break;
+  case 'staging':
+    build = 'staging';
+    break;
+  case 'live':
+    build = 'live';
+    break;
+  case 'netlify':
+    build = 'netlify';
+    break;
+  default:
+    build = 'local';
+    break;
   }
   done();
 }
@@ -235,7 +235,8 @@ function spriteSvgs() {
         svg: {
           symbols: 'svg-sprite.svg'
         },
-        cssFile: 'svg/sprite.css'
+        cssFile: 'svg/sprite.css',
+        baseSize: 60
         // preview: false
       })
     )
