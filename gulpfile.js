@@ -15,6 +15,10 @@ const access = require('gulp-accessibility');
 // Image vars
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
+// svg sprite
+const svgSprite = require('gulp-svg-sprites');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
 // Live-reload server vars
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -34,18 +38,18 @@ let build = 'local';
 // This matches the buildDirs in package.json
 function determineBuild(done) {
   switch (process.env.npm_config_build) {
-    case 'staging':
-      build = 'staging';
-      break;
-    case 'live':
-      build = 'live';
-      break;
-    case 'netlify':
-      build = 'netlify';
-      break;
-    default:
-      build = 'local';
-      break;
+  case 'staging':
+    build = 'staging';
+    break;
+  case 'live':
+    build = 'live';
+    break;
+  case 'netlify':
+    build = 'netlify';
+    break;
+  default:
+    build = 'local';
+    break;
   }
   done();
 }
@@ -91,8 +95,12 @@ const paths = {
     src: 'src/views/**/*.html',
     output: 'build/views/'
   },
+  svgs: {
+    src: 'src/assets/img/svgs/*.svg',
+    dest: 'build/img/'
+  },
   images: {
-    src: 'src/assets/img/**/*',
+    src: ['src/assets/img/**/*', '!src/assets/img/svgs/*'],
     dest: 'build/img/'
   },
   config: {
@@ -217,6 +225,24 @@ function buildConfig() {
   return src(paths.config.src).pipe(dest(paths.config.output));
 }
 
+// svg sprite
+function spriteSvgs() {
+  return src(paths.svgs.src)
+    .pipe(
+      svgSprite({
+        mode: 'sprite',
+        common: 'wmn-icon',
+        svg: {
+          symbols: 'svg-sprite.svg'
+        },
+        cssFile: 'svg/sprite.css',
+        baseSize: 60
+        // preview: false
+      })
+    )
+    .pipe(dest(paths.svgs.dest));
+}
+
 // Optimise images
 function minImages() {
   return src(paths.images.src)
@@ -260,6 +286,7 @@ function reload(done) {
 const buildAll = series(
   determineBuild,
   cleanBuild,
+  spriteSvgs,
   minImages,
   buildStyles,
   buildScripts,
@@ -274,13 +301,14 @@ function watchFiles() {
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
   watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
   watch(paths.images.src, minImages);
+  watch(paths.svgs.src, spriteSvgs);
   watch(paths.styles.src, buildStyles); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
 }
 const dev = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, buildTemplates, buildConfig, minImages),
+  parallel(buildStyles, buildScripts, buildTemplates, buildConfig, spriteSvgs, minImages),
   cacheBust,
   parallel(watchFiles, server)
 ); // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
@@ -293,5 +321,6 @@ exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;
 exports.buildTemplates = series(buildTemplates, lintTemplates);
 exports.buildConfig = buildConfig;
+exports.spriteSvgs = spriteSvgs;
 exports.minImages = minImages;
 exports.buildAll = buildAll;

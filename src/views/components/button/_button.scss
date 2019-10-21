@@ -207,10 +207,12 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmn-is-active {
       background-color: white;
+      background-color: getColor(primary30);
+
       div {
         -webkit-appearance: none;
         border: $btn-border-width solid getColor(primary);
-        background-color: mix(getColor(primary), white, 30);
+        background-color: getColor(primary30);
         border-radius: $btn-border-radius;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
