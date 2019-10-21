@@ -5,11 +5,43 @@
 {{ fileInclude 'src/views/wmn-ds-website/shared/header/header.html' }}
 
 <div class="container-lg pure-g">
-  <h1 class="pure-u-1 pure-u-md-1-2">West Midlands Network <br />Design System</h1>
-  <strong>Trooper #81512</strong> "This isn't the app I'm looking for!"
+  <h1 class="pure-u-1">West Midlands Network <br />Design System</h1>
+  <h2 class="pure-u-1">Overview</h2>
+  <p class="pure-u-1 pure-u-md-1-2">
+    The West Midlands Network Design System is a library of typography, visual styles and user
+    interface components which are documented and updated continuously.
+  </p>
+  <p class="pure-u-1 pure-u-md-1-2">
+    Use the WMN Design System to make your service/application consistent with West Midlands Network
+    design and styles.
+  </p>
+  <p class="pure-u-1 pure-u-md-1-2">
+    Our design system aims to be platform/framework agnostic as much as possible. This allows
+    designers/developers from all practices to utilise our design system and avoid repeating work
+    that's already been done.
+  </p>
+  <h2 class="pure-u-1">
+    Quick start
+  </h2>
+  <p class="pure-u-1 pure-u-md-3-4">
+    Include the below files in your service/application to quickly get started with our design
+    system.
+  </p>
+  <div class="pure-u-1">
+    <pre>
+      <code class="html">
+        <!-- CSS for WMN Design System -->
+        <link rel="stylesheet" href="https://wmnetwork.netlify.com/css/wmn-ds-components.css" />
+        <!-- JS for WMN Design System -->
+        <script src="https://wmnetwork.netlify.com/js/wmn-ds-components.min.js"></script>
+        <script src="https://wmnetwork.netlify.com/js/wmn-ds-vendor.min.js"></script>
+      </code>
+    </pre>
+  </div>
 </div>
 
 <!-- @@ Footer -->
 {{ fileInclude 'src/views/wmn-ds-website/shared/footer/footer.html' }}
 
 <!-- @@ Scripts -->
+{{fileInclude 'src/views/wmn-ds-website/shared/scripts.html'}}
