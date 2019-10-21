@@ -336,33 +336,49 @@
         <span>
           {{ 
             fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
-            iconLeft='wmn-icon isolated-bus'
+            iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-bus'
             text='Bus'
           }}
         </span>
         <span>
           {{
             fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
-            iconLeft='wmn-icon isolated-railway'
+            iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-railway'
             text='Train'
           }}
         </span>
         <span>
           {{
             fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
-            iconLeft='wmn-icon isolated-metro'
+            iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-metro'
             text='Metro'
           }}
         </span>
         <span>
           {{
             fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
-            iconLeft='wmn-icon isolated-roads'
+            iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-roads'
             text='road'
           }}
         </span>
         <h4>HTML Markup</h4>
-        <pre class=""><code class="html"></code></pre>
+        <pre class=""><code class="html">{{ 
+          fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
+          iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-bus'
+          text='Bus'
+        }}{{
+          fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
+          iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-railway'
+          text='Train'
+        }}{{
+          fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
+          iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-metro'
+          text='Metro'
+        }}{{
+          fileInclude 'src/views/components/button/button.html' type='btn__btn-mode'
+          iconLeft='$*cdn/img/svg-sprite.svg#wmn-isolated-roads'
+          text='road'
+        }}</code></pre>
       </div>
       <!-- end: mode buttons -->
     </div>
@@ -386,35 +402,6 @@
         <li>Begin a new task</li>
       </ul>
       <h4>HTML Markup</h4>
-    </div>
-  </div>
-
-  <!-- to replace -->
-  <div class="pure-g">
-    <div class="pure-u-1 pure-u-md-1-2 comnponent-details">
-      {{
-        fileInclude 'src/views/components/button/button.html'
-        type='btn__btn-mode'
-        iconLeft='fas fa-bus-school'
-        text='Bus'
-      }}
-      <div class="pure-g component-details">
-        <div class="pure-u-1">
-          <strong>Class names</strong><br />
-          .btn<br />
-          .btn-mode<br />
-          .icon<br /><br />
-          <strong>HTML Markup</strong><br />
-
-          <pre><code class="html">{{
-    fileInclude
-    'src/views/components/button/buttonMode.html'
-    type='btn__btn-mode'
-    icon='$*cdn/img/Modes/Isolated/Metro.svg'
-    text="[INSERT TEXT HERE]"
-}}</code></pre>
-        </div>
-      </div>
     </div>
   </div>
 

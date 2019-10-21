@@ -26,6 +26,12 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 }
 
+.wmn-icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+}
+
 .btn {
   &__btn-primary {
     background-color: getColor(primary);

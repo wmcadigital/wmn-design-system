@@ -16,9 +16,8 @@ const access = require('gulp-accessibility');
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 // svg sprite
-const svgSprite = require('gulp-svg-sprites');
+const svgStore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
-const cheerio = require('gulp-cheerio');
 // Live-reload server vars
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -30,6 +29,7 @@ const replace = require('gulp-replace');
 const fs = require('fs');
 const rename = require('gulp-rename');
 const jsonFormat = require('gulp-json-format');
+const path = require('path');
 
 const json = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -100,7 +100,7 @@ const paths = {
     dest: 'build/img/'
   },
   images: {
-    src: ['src/assets/img/**/*', '!src/assets/img/svgs/*'],
+    src: ['src/assets/img/**/*'],
     dest: 'build/img/'
   },
   config: {
@@ -227,20 +227,26 @@ function buildConfig() {
 
 // svg sprite
 function spriteSvgs() {
-  return src(paths.svgs.src)
-    .pipe(
-      svgSprite({
-        mode: 'sprite',
-        common: 'wmn-icon',
-        svg: {
-          symbols: 'svg-sprite.svg'
-        },
-        cssFile: 'svg/sprite.css',
-        baseSize: 60
-        // preview: false
-      })
-    )
-    .pipe(dest(paths.svgs.dest));
+  return (
+    src(paths.svgs.src)
+      // .pipe(
+      //   svgmin(file => {
+      //     const prefix = path.basename(file.relative, path.extname(file.relative));
+      //     return {
+      //       plugins: [
+      //         {
+      //           cleanupIDs: `${prefix} -`,
+      //           minify: true
+      //         }
+      //       ]
+      //     };
+      //   })
+      // )
+      .pipe(rename({ prefix: 'wmn-' }))
+      .pipe(svgStore())
+      .pipe(rename({ basename: 'svg-sprite' }))
+      .pipe(dest(paths.svgs.dest))
+  );
 }
 
 // Optimise images
