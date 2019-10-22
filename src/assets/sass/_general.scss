@@ -189,3 +189,9 @@ $icon-base-width-xl: $icon-base-width * 2.5;
     width: $icon-base-width-xl;
   }
 }
+
+.wmn-display {
+  &--block {
+    display: block !important;
+  }
+}

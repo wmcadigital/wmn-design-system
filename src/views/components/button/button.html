@@ -1,7 +1,7 @@
 <button class="wmn-btn {{ type }}" tabindex="0" {{ disabled }}>
   <div>
     {{#if iconLeft}}
-    <svg class="wmn-icon">
+    <svg class="wmn-btn__icon--left">
       <use xlink:href="{{ iconLeft }}"></use>
     </svg>
     {{/if}}
@@ -9,7 +9,7 @@
     {{ text }}
     {{/if}}
     {{#if iconRight}}
-    <i class="{{ iconRight }} btn__icon"></i>
+    <i class="wmn-btn__icon--right {{ iconRight }}"></i>
     {{/if}}
   </div>
 </button>

@@ -227,26 +227,11 @@ function buildConfig() {
 
 // svg sprite
 function spriteSvgs() {
-  return (
-    src(paths.svgs.src)
-      // .pipe(
-      //   svgmin(file => {
-      //     const prefix = path.basename(file.relative, path.extname(file.relative));
-      //     return {
-      //       plugins: [
-      //         {
-      //           cleanupIDs: `${prefix} -`,
-      //           minify: true
-      //         }
-      //       ]
-      //     };
-      //   })
-      // )
-      .pipe(rename({ prefix: 'wmn-' }))
-      .pipe(svgStore())
-      .pipe(rename({ basename: 'svg-sprite' }))
-      .pipe(dest(paths.svgs.dest))
-  );
+  return src(paths.svgs.src)
+    .pipe(rename({ prefix: 'wmn-' }))
+    .pipe(svgStore())
+    .pipe(rename({ basename: 'svg-sprite' }))
+    .pipe(dest(paths.svgs.dest));
 }
 
 // Optimise images
