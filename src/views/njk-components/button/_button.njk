@@ -1,5 +1,5 @@
-{% macro button(type, iconLeft, text, iconRight, disabled=false) %}
-<button class="wmn-btn {{ type }}" tabindex="0" {{ disabled }}>
+{% macro button(type, iconLeft, text, iconRight) %}
+<button class="wmn-btn {{ type }}" tabindex="0">
   <span>
     {%if iconLeft %}
     <svg class="wmn-btn__icon--left">

@@ -37,18 +37,18 @@ let build = 'local';
 // This matches the buildDirs in package.json
 function determineBuild(done) {
   switch (process.env.npm_config_build) {
-  case 'staging':
-    build = 'staging';
-    break;
-  case 'live':
-    build = 'live';
-    break;
-  case 'netlify':
-    build = 'netlify';
-    break;
-  default:
-    build = 'local';
-    break;
+    case 'staging':
+      build = 'staging';
+      break;
+    case 'live':
+      build = 'live';
+      break;
+    case 'netlify':
+      build = 'netlify';
+      break;
+    default:
+      build = 'local';
+      break;
   }
   done();
 }
@@ -91,7 +91,7 @@ const paths = {
     output: 'build/js/' // Output location of minified JS files
   },
   templates: {
-    src: 'src/views/**/*.+(html|njk)',
+    src: 'src/views/**/*.+(html)',
     output: 'build/views/'
   },
   svgs: {
@@ -214,24 +214,24 @@ function lintTemplates() {
 
 // build nunjucks
 function nunjucks() {
-  return (
-    src('src/views/**/*.njk')
-      .pipe(
-        nunjucksRender({
-          path: 'src',
-          watch: true
-        })
-      )
-      // .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-      .pipe(dest('src/views'))
-  );
+  return src('src/views/**/*.njk')
+    .pipe(
+      nunjucksRender({
+        path: 'src',
+        watch: true
+      })
+    )
+    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
+    .pipe(dest('build/views'));
 }
 
 function buildTemplates() {
-  return src(paths.templates.src)
-    .pipe(gulpHandlebarsFileInclude('', { maxRecursion: 50 }))
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest(paths.templates.output));
+  return (
+    src(paths.templates.src)
+      // .pipe(gulpHandlebarsFileInclude('', { maxRecursion: 50 }))
+      .pipe(replace('$*cdn', json.buildDirs[build].cdn))
+      .pipe(dest(paths.templates.output))
+  );
 }
 
 // move config files to build
