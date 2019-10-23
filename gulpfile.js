@@ -1,9 +1,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
+const plugins = require('gulp-load-plugins')();
 // SASS vars
-const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
-const cleanCSS = require('gulp-clean-css');
-const autoprefixer = require('gulp-autoprefixer');
+
 // JS vars
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
@@ -127,27 +125,7 @@ function cleanBuild() {
   return del([paths.output, paths.logs.sourcemaps, paths.logs.accessibility]);
 }
 
-// Process, lint, and minify Sass files
-function buildStyles() {
-  return src(paths.styles.minifySrc)
-    .pipe(
-      plumber({
-        errorHandler(error) {
-          console.log(error.message);
-          this.emit('end');
-        }
-      })
-    )
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError)) // Compile Sass
-    .pipe(autoprefixer()) // Prefix css with older browser support
-    .pipe(cleanCSS({ level: 2 })) // Minify css
-    .pipe(sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
-    .pipe(dest(paths.styles.output))
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest(paths.styles.output))
-    .pipe(browserSync.stream()); // Push new CSS to server without reload
-}
+const buildStyles = require('./gulp-tasks/build-styles');
 
 // Placeholder function for buildScripts to loop through
 function minifyJS(jsFile) {
