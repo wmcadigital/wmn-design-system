@@ -3,14 +3,12 @@ const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 
 const paths = require('./config.js');
-
-const getRoot = path => '../'.repeat(path.match(/\//gi).length); // Function which takes in a path and back counts slashes to get to baseRoot dir
+const getRoot = require('./getRoot');
 
 const build = 'local';
 
 // Process, lint, and minify Sass files
 module.exports = () => {
-  console.log('hit');
   return src(paths.styles.minifySrc)
     .pipe(
       plugins.plumber({
