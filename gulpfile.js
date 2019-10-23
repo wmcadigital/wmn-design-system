@@ -12,12 +12,12 @@ const babel = require('gulp-babel');
 // HTML vars
 const htmlHint = require('gulp-htmlhint');
 const access = require('gulp-accessibility');
+const nunjucksRender = require('gulp-nunjucks-render');
 // Image vars
 const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 // svg sprite
 const svgStore = require('gulp-svgstore');
-const svgmin = require('gulp-svgmin');
 // Live-reload server vars
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -29,7 +29,6 @@ const replace = require('gulp-replace');
 const fs = require('fs');
 const rename = require('gulp-rename');
 const jsonFormat = require('gulp-json-format');
-const path = require('path');
 
 const json = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -213,6 +212,18 @@ function lintTemplates() {
     .pipe(dest(paths.logs.accessibility));
 }
 
+// build nunjucks
+function nunjucks() {
+  return src('src/views/**/*.+(html|njk)')
+    .pipe(
+      nunjucksRender({
+        path: 'src/views/'
+      })
+    )
+    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
+    .pipe(dest('build/views/'));
+}
+
 function buildTemplates() {
   return src(paths.templates.src)
     .pipe(gulpHandlebarsFileInclude('', { maxRecursion: 50 }))
@@ -281,6 +292,7 @@ const buildAll = series(
   minImages,
   buildStyles,
   buildScripts,
+  nunjucks,
   buildTemplates,
   buildConfig,
   lintScripts,
@@ -290,7 +302,7 @@ const buildAll = series(
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
-  watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
+  watch(paths.templates.src, series(lintTemplates, nunjucks, buildTemplates, reload)); // Reload when html changes
   watch(paths.images.src, minImages);
   watch(paths.svgs.src, spriteSvgs);
   watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
@@ -299,7 +311,7 @@ function watchFiles() {
 const dev = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, buildTemplates, buildConfig, spriteSvgs, minImages),
+  parallel(buildStyles, buildScripts, nunjucks, buildTemplates, buildConfig, spriteSvgs, minImages),
   cacheBust,
   parallel(watchFiles, server)
 ); // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
@@ -310,6 +322,7 @@ exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;
+exports.buildNunjucks = series(nunjucks, lintTemplates);
 exports.buildTemplates = series(buildTemplates, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.spriteSvgs = spriteSvgs;
