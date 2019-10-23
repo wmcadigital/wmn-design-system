@@ -214,10 +214,11 @@ function lintTemplates() {
 
 // build nunjucks
 function nunjucks() {
-  return src('src/views/**/*.+(html|njk)')
+  return src('src/views/wmn-ds-website/*.+(html|njk)')
     .pipe(
       nunjucksRender({
-        path: 'src/views/'
+        path: 'src/views',
+        watch: true
       })
     )
     .pipe(replace('$*cdn', json.buildDirs[build].cdn))
