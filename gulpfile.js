@@ -62,7 +62,7 @@ const paths = {
     root: './build/'
   },
   styles: {
-    src: ['src/assets/sass/**/*.scss', 'src/views/**/*.scss'], // src of styles to watch
+    src: ['src/assets/sass/**/*.scss', 'src/views/**/**/*.scss'], // src of styles to watch
     minifySrc: [
       'src/assets/sass/wmn-ds-components.scss',
       'src/views/wmn-ds-website/wmn-ds-website.scss'
@@ -293,7 +293,7 @@ function watchFiles() {
   watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
   watch(paths.images.src, minImages);
   watch(paths.svgs.src, spriteSvgs);
-  watch(paths.styles.src, buildStyles); // run buildStyles function on scss change(s)
+  watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
 }
 const dev = series(

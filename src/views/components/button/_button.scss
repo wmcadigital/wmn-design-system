@@ -16,7 +16,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     -webkit-box-sizing: border-box;
     padding: $btn-padding;
     border: none;
-    div {
+    position: relative;
+    span {
+      display: inline-block;
       padding: $padding-sm;
       pointer-events: none;
       transition: $btn-transition;
@@ -25,7 +27,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       outline: none;
     }
     &--small {
-      div {
+      span {
         padding: 2px !important;
       }
     }
@@ -47,7 +49,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   &-btn__primary {
     background-color: getColor(primary);
     color: white;
-    div {
+    span {
       border: $btn-border-width solid transparent;
     }
     &:visited {
@@ -61,7 +63,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmn-is-active {
       background-color: getColor(primary);
-      div {
+      span {
         -webkit-appearance: none;
         border: $btn-border-width solid white;
         padding: $padding-sm;
@@ -82,18 +84,18 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: white;
     color: getColor(primary);
     border: $btn-border-width solid getColor(primary);
-    div {
+    span {
       border: $btn-border-width solid transparent;
     }
     &:visited {
       background-color: getColor(secondary30);
-      div {
+      span {
         background-color: getColor(secondary30);
       }
     }
     &:hover {
       background-color: getColor(secondary30);
-      div {
+      span {
         background-color: getColor(secondary30);
       }
     }
@@ -102,7 +104,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmn-is-active {
       background-color: white;
-      div {
+      span {
         -webkit-appearance: none;
         border: $btn-border-width solid getColor(primary);
         padding: $padding-sm;
@@ -119,7 +121,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   &-btn__cta {
     background-color: getColor(cta);
     color: white;
-    div {
+    span {
       border: $btn-border-width solid transparent;
     }
     &:visited {
@@ -133,7 +135,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmn-is-active {
       background-color: getColor(cta);
-      div {
+      span {
         background-color: getColor(cta50);
         -webkit-appearance: none;
         border: $btn-border-width solid white;
@@ -151,7 +153,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: getColor(error);
     color: white;
 
-    div {
+    span {
       border: $btn-border-width solid transparent;
     }
 
@@ -167,7 +169,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:target,
     &:focus,
     &.wmn-is-active {
-      div {
+      span {
         -webkit-appearance: none;
         border: $btn-border-width solid white;
         background-color: getColor(error50);
@@ -184,7 +186,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: getColor(success);
     color: white;
 
-    div {
+    span {
       border: $btn-border-width solid transparent;
     }
 
@@ -200,7 +202,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:target,
     &:focus,
     &.wmn-is-active {
-      div {
+      span {
         -webkit-appearance: none;
         border: $btn-border-width solid white;
         padding: $padding-sm;
@@ -218,7 +220,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: white;
     color: getColor(primary);
     border: $btn-border-width solid getColor(primary);
-    div {
+    span {
       padding: $padding-xs;
       border: $btn-border-width solid transparent;
     }
@@ -228,7 +230,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmn-is-active {
       background-color: mix(getColor(primary), white, 20);
-      div {
+      span {
         background-color: mix(getColor(primary), white, 20);
       }
     }
@@ -239,7 +241,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:disabled {
       background-color: getColor(disable);
       color: white;
-      div {
+      span {
         border: $btn-border-width solid transparent;
         &:hover {
           background-color: getColor(disable);
@@ -248,7 +250,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       &:hover {
         cursor: not-allowed;
         background-color: getColor(disable);
-        div {
+        span {
           background-color: getColor(disable);
         }
       }
@@ -256,7 +258,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       &:target,
       &:focus,
       &.wmn-is-active {
-        div {
+        span {
           background-color: getColor(disable);
         }
       }
@@ -265,13 +267,13 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       &:disabled {
         color: getColor(disable);
         border: $btn-border-width solid getColor(disable);
-        div {
+        span {
           border: $btn-border-width solid transparent;
         }
         &:hover {
           cursor: not-allowed;
           background-color: transparent;
-          div {
+          span {
             background-color: transparent;
           }
         }
@@ -279,15 +281,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         &:target,
         &:focus,
         &.wmn-is-active {
-          div {
+          span {
             background-color: transparent;
           }
         }
       }
     }
   }
-}
-
-.btn-block {
-  display: block;
 }
