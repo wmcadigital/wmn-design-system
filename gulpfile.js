@@ -57,7 +57,7 @@ const paths = {
   output: 'build/', // Default output location for code build
   server: {
     port: 8080,
-    baseDir: './build/views/wmn-ds-website/',
+    baseDir: './build/views/njk-wmn-ds-website/',
     root: './build/'
   },
   styles: {
@@ -91,7 +91,7 @@ const paths = {
     output: 'build/js/' // Output location of minified JS files
   },
   templates: {
-    src: 'src/views/**/*.html',
+    src: 'src/views/**/*.+(html|njk)',
     output: 'build/views/'
   },
   svgs: {
@@ -214,15 +214,17 @@ function lintTemplates() {
 
 // build nunjucks
 function nunjucks() {
-  return src('src/views/wmn-ds-website/*.+(html|njk)')
-    .pipe(
-      nunjucksRender({
-        path: 'src/views',
-        watch: true
-      })
-    )
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest('build/views/'));
+  return (
+    src('src/views/**/*.njk')
+      .pipe(
+        nunjucksRender({
+          path: 'src',
+          watch: true
+        })
+      )
+      // .pipe(replace('$*cdn', json.buildDirs[build].cdn))
+      .pipe(dest('src/views'))
+  );
 }
 
 function buildTemplates() {
