@@ -1,4 +1,5 @@
 {% extends "_layout.njk" %}
+{% set pageTitle="West Midlands Network Design Sytem | Buttons" %}
 
 {% block content %}
 <div class="container-lg">
@@ -27,24 +28,69 @@
       </ul>
       
       <!-- primary buttons -->
-      {% from "views/njk-components/button/_button.njk" import button as primary %}
-      {{
-        primary({
-          classNames: "test another"
-        })
-      }}
-      {# {{ 
-        primary({
-          type: "wmn-btn__primary",
-          text: "This is a button",
-          iconRight: "fas fa-chevron-right"
-        })
-      }} #}
-
-      {# {% from "views/njk-components/button/_button.njk" import button as primary %}
-      {{ primary.type("wmn-btn__primary") }}
-      {{ primary.text("This is a button") }}
-      {{ primary.iconRight("fas fa-chevron-right") }} #}
+      <div>
+        <h4>Primary buttons</h4>
+        {% from "views/njk-components/button/_button.njk" import wmnButton as primary %}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary button"
+          })
+        }}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary disabled button",
+            disabled: true
+          })
+        }}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary icon button",
+            iconRight: "fas fa-chevron-right"
+          })
+        }}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary icon disabled button",
+            iconRight: "fas fa-chevron-right",
+            disabled: true
+          })
+        }}
+        <h4>HTML Markup</h4>
+        <pre class=""><code class="html">{% from "views/njk-components/button/_button.njk" import wmnButton as primary %}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary button"
+          })
+        }}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary disabled button",
+            disabled: true
+          })
+        }}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary icon button",
+            iconRight: "fas fa-chevron-right"
+          })
+        }}
+        {{
+          primary({
+            classNames: "wmn-btn__primary",
+            text: "Primary icon disabled button",
+            iconRight: "fas fa-chevron-right",
+            disabled: true
+          })
+        }}</code>
+        </pre>
+      </div>
       <!-- end: primary buttons -->
     </div>
   </div>

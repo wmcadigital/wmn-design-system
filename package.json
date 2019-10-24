@@ -1,100 +1,100 @@
 {
-    "name": "west-midlands-network",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.html",
-    "buildDirs": {
-        "live": {
-            "baseUrl": "//beta.wmca.org.uk",
-            "cdn": "http://cdn.wmca.org.uk/wmca/web"
-        },
-        "staging": {
-            "baseUrl": "//beta.wmn.co.uk",
-            "cdn": "http://static.centro.org.uk/Staging/wmn/build"
-        },
-        "local": {
-            "baseUrl": "/",
-            "cdn": "/build"
-        },
-        "netlify": {
-            "baseUrl": "/",
-            "cdn": "https://wmnetwork.netlify.com"
-        }
+  "name": "west-midlands-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "buildDirs": {
+    "live": {
+      "baseUrl": "//beta.wmca.org.uk",
+      "cdn": "http://cdn.wmca.org.uk/wmca/web"
     },
-    "scripts": {
-        "upgrade-packages": "ncu -u",
-        "start": "gulp",
-        "fresh": "npm install && gulp",
-        "lint:scripts": "gulp lintScripts",
-        "lint:templates": "gulp lintTemplates",
-        "clean": "gulp clean",
-        "build:scripts": "gulp buildScripts",
-        "build:styles": "gulp buildStyles",
-        "build:nunjucks": "gulp buildNunjucks",
-        "build:templates": "gulp buildTemplates",
-        "build:config": "gulp buildConfig",
-        "build:sprite": "gulp spriteSvgs",
-        "build:images": "gulp minImages",
-        "build:all": "gulp buildAll",
-        "build:staging": "npm run build:all --build=staging",
-        "build:live": "npm run build:all --build=live",
-        "build:netlify": "npm run build:all --build=netlify"
+    "staging": {
+      "baseUrl": "//beta.wmn.co.uk",
+      "cdn": "http://static.centro.org.uk/Staging/wmn/build"
     },
-    "repository": {
-        "type": "git",
-        "url": "bitbucket.org/wmca/west-midlands-network.git"
+    "local": {
+      "baseUrl": "/",
+      "cdn": "/build"
     },
-    "author": "dayle.salmon@wmca.org.uk, mark.hughes@wmca.org.uk",
-    "copyright": "West Midlands Network",
-    "homepage": "https://westmidlandsnetwork.co.uk/",
-    "devDependencies": {
-        "@babel/core": "^7.6.3",
-        "@babel/preset-env": "^7.6.3",
-        "autoprefixer": "^9.6.4",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^10.0.3",
-        "babel-loader": "^8.0.6",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-es2015": "^6.24.1",
-        "babel-preset-stage-0": "^6.24.1",
-        "browser-sync": "^2.26.7",
-        "del": "^5.1.0",
-        "eslint": "^6.1.0",
-        "eslint-config-airbnb-base": "^14.0.0",
-        "eslint-config-prettier": "^6.4.0",
-        "eslint-plugin-html": "^6.0.0",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-prettier": "^3.1.1",
-        "glob": "^7.1.5",
-        "gulp": "^4.0.2",
-        "gulp-accessibility": "^3.1.1",
-        "gulp-autoprefixer": "^7.0.1",
-        "gulp-babel": "^8.0.0",
-        "gulp-changed": "^4.0.2",
-        "gulp-clean-css": "^4.2.0",
-        "gulp-cli": "^2.2.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-eslint": "^6.0.0",
-        "gulp-handlebars-file-include": "^1.0.0",
-        "gulp-htmlhint": "^2.2.1",
-        "gulp-imagemin": "^6.1.1",
-        "gulp-json-format": "^2.0.0",
-        "gulp-load-plugins": "^2.0.1",
-        "gulp-nunjucks": "^5.0.1",
-        "gulp-nunjucks-render": "^2.2.3",
-        "gulp-plumber": "^1.2.1",
-        "gulp-rename": "^1.4.0",
-        "gulp-replace": "^1.0.0",
-        "gulp-sass": "^4.0.2",
-        "gulp-sourcemaps": "^2.6.5",
-        "gulp-svgstore": "^7.0.1",
-        "gulp-uglify": "^3.0.2",
-        "node-sass": "^4.12.0",
-        "nunjucks": "^3.2.0",
-        "prettier": "^1.18.2",
-        "sass": "^1.23.0"
-    },
-    "dependencies": {
-        "path": "^0.12.7"
+    "netlify": {
+      "baseUrl": "/",
+      "cdn": "https://wmnetwork.netlify.com"
     }
+  },
+  "scripts": {
+    "upgrade-packages": "ncu -u",
+    "start": "gulp",
+    "fresh": "npm install && gulp",
+    "lint:scripts": "gulp lintScripts",
+    "lint:templates": "gulp lintTemplates",
+    "clean": "gulp clean",
+    "build:scripts": "gulp buildScripts",
+    "build:styles": "gulp buildStyles",
+    "build:nunjucks": "gulp buildNunjucks",
+    "build:templates": "gulp buildTemplates",
+    "build:config": "gulp buildConfig",
+    "build:sprite": "gulp spriteSvgs",
+    "build:images": "gulp minImages",
+    "build:all": "gulp buildAll",
+    "build:staging": "npm run build:all --build=staging",
+    "build:live": "npm run build:all --build=live",
+    "build:netlify": "npm run build:all --build=netlify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bitbucket.org/wmca/west-midlands-network.git"
+  },
+  "author": "dayle.salmon@wmca.org.uk, mark.hughes@wmca.org.uk",
+  "copyright": "West Midlands Network",
+  "homepage": "https://westmidlandsnetwork.co.uk/",
+  "devDependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "autoprefixer": "^9.6.4",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "glob": "^7.1.5",
+    "gulp": "^4.0.2",
+    "gulp-accessibility": "^3.1.1",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-handlebars-file-include": "^1.0.0",
+    "gulp-htmlhint": "^2.2.1",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-json-format": "^2.0.0",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.12.0",
+    "nunjucks": "^3.2.0",
+    "prettier": "^1.18.2",
+    "sass": "^1.23.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
 }
