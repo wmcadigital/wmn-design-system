@@ -2,7 +2,6 @@ const { src, dest } = require('gulp');
 const fs = require('fs');
 const plugins = require('gulp-load-plugins')();
 
-
 const paths = require('./config.js');
 const getRoot = require('./getRoot');
 
