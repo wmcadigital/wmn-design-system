@@ -1,3 +1,4 @@
+// Local requires
 const del = require('del');
 const paths = require('./config.js');
 
