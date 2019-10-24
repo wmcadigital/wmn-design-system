@@ -24,6 +24,20 @@ const cacheBust = require('./gulp-tasks/cache-bust'); // This function checks in
 
 const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // BrowserSync server
 
+// WATCHERS
+function watchFiles() {
+  // Lint, concat, minify JS then reload server
+  watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
+  watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
+  watch(paths.images.src, minImages);
+  watch(paths.svgs.src, spriteSvgs);
+  watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
+  watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
+}
+
+// EXPORTS/GULP TASKS
+
+// Used to build everything out for use on staging/live
 const buildAll = series(
   cleanBuild,
   spriteSvgs,
@@ -36,21 +50,6 @@ const buildAll = series(
   lintScripts,
   lintTemplates
 );
-
-// Watch files for changes
-function watchFiles() {
-  // Lint, concat, minify JS then reload server
-  watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
-  watch(
-    [paths.templates.src, paths.nunjucks.src],
-    series(lintTemplates, buildTemplates, nunjucks, reload)
-  ); // Reload when html changes
-  watch(paths.images.src, minImages);
-  watch(paths.svgs.src, spriteSvgs);
-  watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
-  watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
-}
-
 // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
 const dev = series(
   lintScripts,
