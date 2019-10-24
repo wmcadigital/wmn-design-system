@@ -1,21 +1,4 @@
 const { src, dest, watch, series, parallel } = require('gulp');
-const plugins = require('gulp-load-plugins')();
-// SASS vars
-
-// JS vars
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
-const eslint = require('gulp-eslint');
-const babel = require('gulp-babel');
-// HTML vars
-const htmlHint = require('gulp-htmlhint');
-const access = require('gulp-accessibility');
-// Image vars
-const imagemin = require('gulp-imagemin');
-const changed = require('gulp-changed');
-// svg sprite
-const svgStore = require('gulp-svgstore');
-const svgmin = require('gulp-svgmin');
 // Live-reload server vars
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -27,12 +10,6 @@ const fs = require('fs');
 const rename = require('gulp-rename');
 const jsonFormat = require('gulp-json-format');
 const path = require('path');
-
-const json = JSON.parse(fs.readFileSync('./package.json'));
-
-const build = require('./gulp-tasks/determine-build');
-// Function that is ran when buildAll is called to determine buildEnv
-// This matches the buildDirs in package.json
 
 const paths = {
   output: 'build/', // Default output location for code build
@@ -107,14 +84,7 @@ const buildTemplates = require('./gulp-tasks/build-templates');
 
 const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output)); // move config files to build
 
-// svg sprite
-function spriteSvgs() {
-  return src(paths.svgs.src)
-    .pipe(rename({ prefix: 'wmn-' }))
-    .pipe(svgStore())
-    .pipe(rename({ basename: 'svg-sprite' }))
-    .pipe(dest(paths.svgs.dest));
-}
+const spriteSvgs = require('./gulp-tasks/sprite-svgs'); // svg sprite
 
 const minImages = require('./gulp-tasks/min-images'); // Optimise images
 
