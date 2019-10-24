@@ -3,9 +3,7 @@ const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
 const paths = require('./config.js');
-const packageJson = require('./get-package-json');
-
-const build = require('./determine-build');
+const { packageJson, build } = require('./utils');
 
 module.exports = () => {
   return src(paths.templates.src)
