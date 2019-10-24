@@ -10,6 +10,7 @@ const concat = require('gulp-concat');
 const eslint = require('gulp-eslint');
 const babel = require('gulp-babel');
 // HTML vars
+require('nunjucks');
 const htmlHint = require('gulp-htmlhint');
 const access = require('gulp-accessibility');
 const nunjucksRender = require('gulp-nunjucks-render');
@@ -91,7 +92,11 @@ const paths = {
     output: 'build/js/' // Output location of minified JS files
   },
   templates: {
-    src: 'src/views/**/*.+(html)',
+    src: 'src/views/**/*.html',
+    output: 'build/views/'
+  },
+  nunjucks: {
+    src: 'src/views/**/*.njk',
     output: 'build/views/'
   },
   svgs: {
@@ -214,7 +219,7 @@ function lintTemplates() {
 
 // build nunjucks
 function nunjucks() {
-  return src('src/views/**/*.njk')
+  return src(paths.nunjucks.src)
     .pipe(
       nunjucksRender({
         path: 'src',
@@ -222,7 +227,7 @@ function nunjucks() {
       })
     )
     .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest('build/views'));
+    .pipe(dest(paths.nunjucks.output));
 }
 
 function buildTemplates() {
@@ -276,7 +281,8 @@ function server(done) {
       routes: {
         '/build': './build/',
         '/_sourcemaps': './_sourcemaps/',
-        '/components': './build/components/'
+        '/components': './build/components/',
+        '/njk-components': './build/njk-components/'
       }
     },
     port: paths.server.port
@@ -305,7 +311,10 @@ const buildAll = series(
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
-  watch(paths.templates.src, series(lintTemplates, nunjucks, buildTemplates, reload)); // Reload when html changes
+  watch(
+    [paths.templates.src, paths.nunjucks.src],
+    series(lintTemplates, buildTemplates, nunjucks, reload)
+  ); // Reload when html changes
   watch(paths.images.src, minImages);
   watch(paths.svgs.src, spriteSvgs);
   watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)

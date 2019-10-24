@@ -1,17 +1,16 @@
-{% macro button(type, iconLeft, text, iconRight) %}
-<button class="wmn-btn {{ type }}" tabindex="0">
-  <span>
-    {%if iconLeft %}
+{% macro button(params) %}
+{# set class names #}
+{% if params.classNames %}
+  {% set classNames = " " + classNames %}
+{% endif %}
+
+<button class="wmn-btn {{ classNames }}" tabindex="0">
+  {# <span>
     <svg class="wmn-btn__icon--left">
       <use xlink:href="{{ iconLeft }}"></use>
     </svg>
-    {% endif %}
-    {%if text %}
-      {{ text }}
-    {% endif %}
-    {%if iconRight %}
-      <i class="wmn-btn__icon--right {{ iconRight }}"></i>
-    {% endif %}
-  </span>
+    {{ text }}
+    <i class="wmn-btn__icon--right {{ iconRight }}"></i>
+  </span> #}
 </button>
 {% endmacro %}

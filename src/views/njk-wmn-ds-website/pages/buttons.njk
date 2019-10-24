@@ -1,3 +1,6 @@
+{% extends "_layout.njk" %}
+
+{% block content %}
 <div class="container-lg">
   <h1>Buttons</h1>
   <hr />
@@ -24,11 +27,27 @@
       </ul>
       
       <!-- primary buttons -->
-      {# {% from "src/views/njk-components/button/_button.html" import button as primary %}
-      {{primary.type('wmn-btn__primary')}}
-      {{primary.text('This is a button')}}
-      {{primary.iconRight('fas fa-chevron-right')}} #}
+      {% from "views/njk-components/button/_button.njk" import button as primary %}
+      {{
+        primary({
+          classNames: "test"
+          
+        })
+      }}
+      {# {{ 
+        primary({
+          type: "wmn-btn__primary",
+          text: "This is a button",
+          iconRight: "fas fa-chevron-right"
+        })
+      }} #}
+
+      {# {% from "views/njk-components/button/_button.njk" import button as primary %}
+      {{ primary.type("wmn-btn__primary") }}
+      {{ primary.text("This is a button") }}
+      {{ primary.iconRight("fas fa-chevron-right") }} #}
       <!-- end: primary buttons -->
     </div>
   </div>
 </div>
+{% endblock %}
