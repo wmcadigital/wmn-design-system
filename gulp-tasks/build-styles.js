@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 
