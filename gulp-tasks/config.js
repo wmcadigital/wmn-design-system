@@ -39,6 +39,10 @@ module.exports = {
     src: 'src/views/**/*.html',
     output: 'build/views/'
   },
+  nunjucks: {
+    src: 'src/views/**/*.njk',
+    output: 'build/views/'
+  },
   svgs: {
     src: 'src/assets/img/svgs/*.svg',
     dest: 'build/img/'
