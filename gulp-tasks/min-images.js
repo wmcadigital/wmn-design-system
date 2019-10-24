@@ -4,13 +4,15 @@ const plugins = require('gulp-load-plugins')();
 // Local requires
 const paths = require('./config.js');
 
-module.exports = () => {
+module.exports.minImages = () => {
   return src(paths.images.src)
-    .pipe(plugins.changed(paths.images.dest))
+    .pipe(plugins.changed(paths.images.src))
     .pipe(
       plugins.imagemin({
         verbose: true
       })
     )
-    .pipe(dest(paths.images.dest));
+    .pipe(dest(file => file.base));
 };
+
+module.exports.moveImages = () => src(paths.images.src).pipe(dest(paths.images.dest));
