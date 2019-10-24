@@ -1,6 +1,6 @@
 const { src, dest, watch, series, parallel } = require('gulp');
-// Live-reload server vars
-// Other vars
+
+
 const replace = require('gulp-replace');
 
 const paths = require('./gulp-tasks/config.js'); // List of all paths in a config

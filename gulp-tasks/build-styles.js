@@ -3,10 +3,7 @@ const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
 const paths = require('./config.js');
-const getRoot = require('./getRoot');
-const packageJson = require('./get-package-json');
-
-const build = require('./determine-build');
+const { getRoot, packageJson, build } = require('./utils');
 
 // Process, lint, and minify Sass files
 module.exports = () => {
