@@ -100,20 +100,13 @@ const paths = {
   }
 };
 
-const getRoot = path => '../'.repeat(path.match(/\//gi).length); // Function which takes in a path and back counts slashes to get to baseRoot dir
-
 const cleanBuild = require('./gulp-tasks/clean'); // Clean the current build & _sourcemaps dir
+
 const buildStyles = require('./gulp-tasks/build-styles');
-const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and concatenate scripts
 
 const lintScripts = require('./gulp-tasks/lint-scripts'); // Lint scripts/JS
+const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and concatenate scripts
 const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint Templates/HTML
-
-// Lint scripts/JS
-const lintScripts = require('./gulp-tasks/lint-scripts');
-
-// Lint Templates/HTML
-const lintTemplates = require('./gulp-tasks/lint-templates');
 
 // build nunjucks
 function nunjucks() {
@@ -129,9 +122,7 @@ function nunjucks() {
 }
 const buildTemplates = require('./gulp-tasks/build-templates');
 
-// move config files to build
-const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output));
-
+const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output)); // move config files to build
 
 // svg sprite
 function spriteSvgs() {
@@ -142,17 +133,7 @@ function spriteSvgs() {
     .pipe(dest(paths.svgs.dest));
 }
 
-// Optimise images
-function minImages() {
-  return src(paths.images.src)
-    .pipe(changed(paths.images.dest))
-    .pipe(
-      imagemin({
-        verbose: true
-      })
-    )
-    .pipe(dest(paths.images.dest));
-}
+const minImages = require('./gulp-tasks/min-images'); // Optimise images
 
 // This function checks index.html for cb=123 and replaces with current dateTime to bust cache
 function cacheBust() {
