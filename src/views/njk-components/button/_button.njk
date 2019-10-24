@@ -1,7 +1,7 @@
 {% macro button(params) %}
 {# set class names #}
 {% if params.classNames %}
-  {% set classNames = " " + classNames %}
+  {% set classNames = params.classNames + " " %}
 {% endif %}
 
 <button class="wmn-btn {{ classNames }}" tabindex="0">
