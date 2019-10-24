@@ -15,4 +15,4 @@ module.exports = () => {
     )
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(dest(paths.nunjucks.output));
-}
+};
