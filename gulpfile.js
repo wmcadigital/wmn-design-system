@@ -108,9 +108,8 @@ const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint Templates/
 const buildTemplates = require('./gulp-tasks/build-templates');
 
 // move config files to build
-function buildConfig() {
-  return src(paths.config.src).pipe(dest(paths.config.output));
-}
+const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output));
+
 
 // svg sprite
 function spriteSvgs() {
