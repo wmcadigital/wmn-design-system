@@ -120,37 +120,8 @@ const cleanBuild = require('./gulp-tasks/clean');
 
 const buildStyles = require('./gulp-tasks/build-styles');
 
-// Placeholder function for buildScripts to loop through
-function minifyJS(jsFile) {
-  return src(jsFile.src)
-    .pipe(
-      plumber({
-        errorHandler(error) {
-          console.log(error.message);
-          this.emit('end');
-        }
-      })
-    )
-    .pipe(sourcemaps.init())
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(
-      babel({
-        presets: ['@babel/env'],
-        ignore: ['**/*.min.js']
-      })
-    )
-    .pipe(concat(jsFile.minName)) // concat all js files in folder
-    .pipe(uglify({ mangle: { reserved: ['jQuery'] } })) // Mangle var names etc.
-    .pipe(sourcemaps.write(getRoot(paths.scripts.output) + paths.logs.sourcemaps))
-    .pipe(plumber.stop())
-    .pipe(dest(paths.scripts.output)); // Spit out concat + minified file in ./build/
-}
-
 // Minify, and concatenate scripts
-function buildScripts(done) {
-  paths.scripts.minifySrc.map(jsFile => minifyJS(jsFile));
-  done();
-}
+const buildScripts = require('./gulp-tasks/build-scripts');
 
 // Lint scripts/JS
 function lintScripts() {
