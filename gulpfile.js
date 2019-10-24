@@ -21,7 +21,6 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const gulpHandlebarsFileInclude = require('gulp-handlebars-file-include');
 // Other vars
-const del = require('del');
 const plumber = require('gulp-plumber');
 const replace = require('gulp-replace');
 const fs = require('fs');
@@ -117,9 +116,7 @@ const paths = {
 const getRoot = path => '../'.repeat(path.match(/\//gi).length); // Function which takes in a path and back counts slashes to get to baseRoot dir
 
 // Clean the current build & _sourcemaps dir
-function cleanBuild() {
-  return del([paths.output, paths.logs.sourcemaps, paths.logs.accessibility]);
-}
+const cleanBuild = require('./gulp-tasks/clean');
 
 const buildStyles = require('./gulp-tasks/build-styles');
 
