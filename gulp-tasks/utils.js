@@ -1,5 +1,6 @@
 // Gulp requires
 const fs = require('fs');
+const { src, dest } = require('gulp');
 
 let build = 'local';
 // Function that is ran when buildAll is called to determine buildEnv
