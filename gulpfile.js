@@ -1,80 +1,9 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 // Live-reload server vars
-const browserSync = require('browser-sync').create();
-const sourcemaps = require('gulp-sourcemaps');
-const gulpHandlebarsFileInclude = require('gulp-handlebars-file-include');
 // Other vars
-const plumber = require('gulp-plumber');
 const replace = require('gulp-replace');
-const fs = require('fs');
-const rename = require('gulp-rename');
-const jsonFormat = require('gulp-json-format');
 
-const paths = {
-  output: 'build/', // Default output location for code build
-  server: {
-    port: 8080,
-    baseDir: './build/views/njk-wmn-ds-website/',
-    root: './build/'
-  },
-  styles: {
-    src: ['src/assets/sass/**/*.scss', 'src/views/**/**/*.scss'], // src of styles to watch
-    minifySrc: [
-      'src/assets/sass/wmn-ds-components.scss',
-      'src/views/wmn-ds-website/wmn-ds-website.scss'
-    ], // List of scss file(s) which should be processed, linted & minified
-    output: 'build/css/' // output location of minified styles
-  },
-  scripts: {
-    src: [
-      'src/assets/**/*.js',
-      'src/views/components/**/*.js',
-      './src/views/wmn-ds-website/**/*.js'
-    ], // Src of JS files to watch
-    // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
-    minifySrc: [
-      {
-        src: 'src/views/components/**/*.js',
-        minName: 'wmn-ds-components.min.js',
-        lint: true
-      },
-      { src: 'src/assets/vendor/js/**/*.js', minName: 'wmn-ds-vendor.min.js', lint: false },
-      {
-        src: 'src/views/wmn-ds-website/**/*.js',
-        minName: 'wmn-ds-website.min.js',
-        lint: false
-      }
-    ],
-    output: 'build/js/' // Output location of minified JS files
-  },
-  templates: {
-    src: 'src/views/**/*.html',
-    output: 'build/views/'
-  },
-  nunjucks: {
-    src: 'src/views/**/*.njk',
-    output: 'build/views/'
-  },
-  svgs: {
-    src: 'src/assets/img/svgs/*.svg',
-    dest: 'build/img/'
-  },
-  images: {
-    src: ['src/assets/img/**/*'],
-    dest: 'build/img/'
-  },
-  config: {
-    src: 'src/assets/config/**/*',
-    output: 'build/config/'
-  },
-  components: {
-    src: 'build/views/components/**/*.html'
-  },
-  logs: {
-    sourcemaps: '_sourcemaps/',
-    accessibility: './_accessibility-logs/'
-  }
-};
+const paths = require('./gulp-tasks/config.js'); // List of all paths in a config
 
 const cleanBuild = require('./gulp-tasks/clean'); // Clean the current build & _sourcemaps dir
 
@@ -112,27 +41,8 @@ function cacheBust() {
     .pipe(dest('.'));
 }
 
-// Server
-function server(done) {
-  browserSync.init({
-    server: {
-      baseDir: paths.server.baseDir,
-      routes: {
-        '/build': './build/',
-        '/_sourcemaps': './_sourcemaps/',
-        '/components': './build/components/',
-        '/njk-components': './build/njk-components/'
-      }
-    },
-    port: paths.server.port
-  });
-  done();
-}
+const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // BrowserSync server
 
-function reload(done) {
-  browserSync.reload();
-  done();
-}
 const buildAll = series(
   cleanBuild,
   spriteSvgs,
@@ -163,7 +73,7 @@ const dev = series(
   lintTemplates,
   parallel(buildStyles, buildScripts, nunjucks, buildTemplates, buildConfig, spriteSvgs, minImages),
   cacheBust,
-  parallel(watchFiles, server)
+  parallel(watchFiles, browserSync)
 ); // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
 // Export items to be used in terminal
 exports.default = dev;
