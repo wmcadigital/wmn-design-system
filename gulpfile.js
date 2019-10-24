@@ -131,32 +131,7 @@ const buildScripts = require('./gulp-tasks/build-scripts');
 const lintScripts = require('./gulp-tasks/lint-scripts');
 
 // Lint Templates/HTML
-function lintTemplates() {
-  return src(paths.templates.src)
-    .pipe(htmlHint('.htmlhintrc'))
-    .pipe(htmlHint.reporter())
-    .pipe(
-      access({
-        force: true,
-        verbose: false,
-        accessibilityLevel: 'WCAG2AA',
-        ignore: [
-          'WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl',
-          'WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2',
-          'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage'
-        ]
-      })
-    )
-    .on('error', console.log)
-    .pipe(access.report({ reportType: 'json' }))
-    .pipe(
-      rename({
-        extname: '.json'
-      })
-    )
-    .pipe(jsonFormat(2))
-    .pipe(dest(paths.logs.accessibility));
-}
+const lintTemplates = require('./gulp-tasks/lint-templates');
 
 // build nunjucks
 function nunjucks() {
