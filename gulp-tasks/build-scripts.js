@@ -1,10 +1,10 @@
 // Gulp requires
-import { src, dest } from 'gulp';
+const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
-import { scripts, logs } from './config.js';
-import getRoot from './getRoot';
-import { buildDirs } from './get-package-json';
+const paths = require('./config.js');
+const getRoot = require('./getRoot');
+const packageJson = require('./get-package-json');
 
 const build = 'local';
 
@@ -20,7 +20,7 @@ function minifyJS(jsFile) {
       })
     )
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.replace('$*cdn', buildDirs[build].cdn))
+    .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(
       plugins.babel({
         presets: ['@babel/env'],
@@ -29,13 +29,13 @@ function minifyJS(jsFile) {
     )
     .pipe(plugins.concat(jsFile.minName)) // concat all js files in folder
     .pipe(plugins.uglify({ mangle: { reserved: ['jQuery'] } })) // Mangle var names etc.
-    .pipe(plugins.sourcemaps.write(getRoot(scripts.output) + logs.sourcemaps))
+    .pipe(plugins.sourcemaps.write(getRoot(paths.scripts.output) + paths.logs.sourcemaps))
     .pipe(plugins.plumber.stop())
-    .pipe(dest(scripts.output)); // Spit out concat + minified file in ./build/
+    .pipe(dest(paths.scripts.output)); // Spit out concat + minified file in ./build/
 }
 
 // Minify, and concatenate scripts
-export default done => {
-  scripts.minifySrc.map(jsFile => minifyJS(jsFile));
+module.exports = done => {
+  paths.scripts.minifySrc.map(jsFile => minifyJS(jsFile));
   done();
 };
