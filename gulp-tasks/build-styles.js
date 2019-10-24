@@ -6,7 +6,7 @@ const paths = require('./config.js');
 const getRoot = require('./getRoot');
 const packageJson = require('./get-package-json');
 
-const build = 'local';
+const build = require('./determine-build');
 
 // Process, lint, and minify Sass files
 module.exports = () => {

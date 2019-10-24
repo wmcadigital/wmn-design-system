@@ -5,8 +5,7 @@ const plugins = require('gulp-load-plugins')();
 const paths = require('./config.js');
 const getRoot = require('./getRoot');
 const packageJson = require('./get-package-json');
-
-const build = 'local';
+const build = require('./determine-build');
 
 // Placeholder function for buildScripts to loop through
 function minifyJS(jsFile) {
