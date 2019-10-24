@@ -1,8 +1,10 @@
+// Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
-
+// Local requires
 const paths = require('./config.js');
 const getRoot = require('./getRoot');
+const packageJson = require('./get-package-json');
 
 const build = 'local';
 
@@ -23,7 +25,6 @@ module.exports = () => {
     .pipe(plugins.cleanCss({ level: 2 })) // Minify css
     .pipe(plugins.sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
     .pipe(dest(paths.styles.output))
-    .pipe(plugins.replace('$*cdn', build))
+    .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(dest(paths.styles.output));
-  // Push new CSS to server without reload
 };
