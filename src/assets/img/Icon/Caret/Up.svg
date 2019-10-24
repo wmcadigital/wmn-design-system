@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
-    <title>Icon / Caret / Up</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Icon-/-Caret-/-Up" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M40.5245071,71 L214.475493,71 C226.509413,71 232.526372,85.5330566 224.00798,94.0501038 L137.06629,181.045657 C131.792999,186.318114 123.207001,186.318114 117.93371,181.045657 L30.9920201,94.0501038 C22.4736275,85.5330566 28.4905874,71 40.5245071,71 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(127.500000, 128.000000) rotate(-180.000000) translate(-127.500000, -128.000000) "></path>
-    </g>
-</svg>
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg"><path d="M214.475 185H40.525c-12.034 0-18.051-14.533-9.533-23.05l86.942-86.996c5.273-5.272 13.859-5.272 19.132 0l86.942 86.996c8.518 8.517 2.501 23.05-9.533 23.05z" fill="#FFF"/></svg>
