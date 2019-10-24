@@ -30,26 +30,9 @@ const path = require('path');
 
 const json = JSON.parse(fs.readFileSync('./package.json'));
 
-let build = 'local';
+const build = require('./gulp-tasks/determine-build');
 // Function that is ran when buildAll is called to determine buildEnv
 // This matches the buildDirs in package.json
-function determineBuild(done) {
-  switch (process.env.npm_config_build) {
-  case 'staging':
-    build = 'staging';
-    break;
-  case 'live':
-    build = 'live';
-    break;
-  case 'netlify':
-    build = 'netlify';
-    break;
-  default:
-    build = 'local';
-    break;
-  }
-  done();
-}
 
 const paths = {
   output: 'build/', // Default output location for code build
@@ -115,26 +98,14 @@ const paths = {
 
 const getRoot = path => '../'.repeat(path.match(/\//gi).length); // Function which takes in a path and back counts slashes to get to baseRoot dir
 
-// Clean the current build & _sourcemaps dir
-const cleanBuild = require('./gulp-tasks/clean');
-
+const cleanBuild = require('./gulp-tasks/clean'); // Clean the current build & _sourcemaps dir
 const buildStyles = require('./gulp-tasks/build-styles');
+const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and concatenate scripts
 
-// Minify, and concatenate scripts
-const buildScripts = require('./gulp-tasks/build-scripts');
+const lintScripts = require('./gulp-tasks/lint-scripts'); // Lint scripts/JS
+const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint Templates/HTML
 
-// Lint scripts/JS
-const lintScripts = require('./gulp-tasks/lint-scripts');
-
-// Lint Templates/HTML
-const lintTemplates = require('./gulp-tasks/lint-templates');
-
-function buildTemplates() {
-  return src(paths.templates.src)
-    .pipe(gulpHandlebarsFileInclude('', { maxRecursion: 50 }))
-    .pipe(replace('$*cdn', json.buildDirs[build].cdn))
-    .pipe(dest(paths.templates.output));
-}
+const buildTemplates = require('./gulp-tasks/build-templates');
 
 // move config files to build
 function buildConfig() {
@@ -191,7 +162,6 @@ function reload(done) {
   done();
 }
 const buildAll = series(
-  determineBuild,
   cleanBuild,
   spriteSvgs,
   minImages,
