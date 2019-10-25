@@ -4,14 +4,13 @@ html {
   overflow: scroll;
 }
 
-
 // Set padding and borders to be contained within an elements size
 // instead of adding to it
 * {
   box-sizing: border-box;
 }
 
-.pure-g {
+.wmnds-grid {
   & > * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -278,7 +277,6 @@ img {
   }
 }
 
-
 /* COLOURS ------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------- */
 /* Web Colours ---------- */
@@ -373,7 +371,6 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
-
 
 .show-only-mob {
   @media screen and (min-width: 568px) {
