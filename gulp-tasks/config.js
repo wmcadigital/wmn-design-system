@@ -2,7 +2,7 @@ module.exports = {
   output: 'build/', // Default output location for code build
   server: {
     port: 8080,
-    baseDir: './build/njk-wmn-ds-website/',
+    baseDir: './build/views/njk-wmn-ds-website/',
     root: './build/'
   },
   styles: {
@@ -44,7 +44,7 @@ module.exports = {
     output: 'build/views/'
   },
   svgs: {
-    src: 'src/assets/img/svgs/*.svg',
+    src: 'src/assets/img/svgs/**/*.svg',
     dest: 'build/img/'
   },
   images: {
