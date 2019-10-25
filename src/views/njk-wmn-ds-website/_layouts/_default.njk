@@ -3,18 +3,23 @@
   <!-- Head -->
   {% include "njk-wmn-ds-website/shared/_head.njk" %}
   <!-- end: Head -->
-  <body style="background-color: #ddd">
+  <body>
     <!--[if IE]> <p class="browserupgrade"> You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. </p> <![endif]-->
 
     <!-- header -->
     {% include "njk-wmn-ds-website/shared/header/_header.njk" %}
     <!-- header -->
-    <div class="wmnds-grid">
-      <div class="wmnds-col-1 wmnds-col-md-1-4">
-        Nav to go here
+
+    <div class="container-lg">
+      <div class="wmnds-grid">
+        <div class="wmnds-col-1 wmnds-col-md-1-4">
+          Nav to go here
+        </div>
+        <div class="wmnds-col-1 wmnds-col-md-3-4">
+          {% block content %}{% endblock %}
+        </div>
       </div>
     </div>
-    {% block content %}{% endblock %}
 
     <!-- footer -->
     {% include "njk-wmn-ds-website/shared/footer/_footer.njk" %}
