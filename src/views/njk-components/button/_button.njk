@@ -1,42 +1,42 @@
-{% macro wmnButton(params) %}
-  {# set class names #}
-  {% if params.classNames %}
-    {% set classNames = params.classNames + " " %}
-  {% endif %}
-  {# set button text #}
-  {% if params.text %}
-    {% set text = params.text %}
-  {% endif %}
-  {# set icon right classes #}
-  {% if params.iconRight %}
-    {% set iconRight = params.iconRight + "" %}
-  {% endif %}
-  {# set svg left reference #}
-  {% if params.iconLeft %}
-    {% set iconLeft = params.iconLeft %}
-  {% endif %}
-  {# set true for button disabled #}
-  {% if params.disabled %}
-    {% set classNames = params.ClassNames + " wmn-btn__disabled" %}
-  {% endif %}
+{%- macro wmnButton(params) -%}
+{# set class names #}
+{%- if params.classNames -%}
+  {%- set classNames = params.classNames + " " -%}
+{%- endif -%}
+{# set button text #}
+{%- if params.text -%}
+  {%- set text = params.text -%}
+{%- endif -%}
+{# set icon right classes #}
+{%- if params.iconRight -%}
+  {%- set iconRight = params.iconRight + "" -%}
+{%- endif -%}
+{# set svg left reference #}
+{%- if params.iconLeft -%}
+  {%- set iconLeft = params.iconLeft -%}
+{%- endif -%}
+{# set true for button disabled #}
+{%- if params.disabled -%}
+  {%- set classNames = params.ClassNames + " wmn-btn__disabled" -%}
+{%- endif -%}
 
-  <button 
-    class="wmn-btn {{ classNames }}"
-    tabindex="0"
-    {% if params.disabled %} disabled {% endif %}
-  >
-    <span>
-      {% if iconLeft %}
-      <svg class="wmn-btn__icon--left">
-        <use xlink:href="{{ iconLeft }}"></use>
-      </svg>
-      {% endif %}
+<button 
+  class="wmn-btn {{ classNames }}"
+  tabindex="0"
+  {%- if params.disabled -%} disabled {%- endif -%}
+>
+  <span>
+    {%- if iconLeft -%}
+    <svg class="wmn-btn__icon--left">
+      <use xlink:href="{{ iconLeft }}"></use>
+    </svg>
+    {%- endif -%}
 
-      {{ text }}
+    {{ text }}
 
-      {% if iconRight %}
-      <i class="wmn-btn__icon--right {{ iconRight }}"></i>
-      {% endif %}
-    </span>
-  </button>
-{% endmacro %}
+    {%- if iconRight -%}
+    <i class="wmn-btn__icon--right {{ iconRight }}"></i>
+    {%- endif -%}
+  </span>
+</button>
+{%- endmacro -%}
