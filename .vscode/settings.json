@@ -1,3 +1,7 @@
 {
-  "eslint.enable": true
+  "eslint.enable": true,
+  "emmet.includeLanguages": {
+    "nunjucks": "html",
+    "njk": "html"
+  }
 }
