@@ -9,7 +9,7 @@ module.exports = () => {
   return src(paths.nunjucks.src)
     .pipe(
       plugins.nunjucksRender({
-        path: 'src',
+        path: 'src/views/',
         watch: true
       })
     )

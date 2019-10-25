@@ -9,6 +9,6 @@
   "id-unique": true,
   "spec-char-escape": true,
   "tagname-lowercase": true,
-  "attr-lowercase": true,
+  "attr-lowercase": false,
   "alt-require": true
 }
