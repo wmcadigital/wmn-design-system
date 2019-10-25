@@ -27,9 +27,9 @@ const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // Browser
 // WATCHERS
 function watchFiles() {
   // Lint, concat, minify JS then reload server
-  watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload));
+  watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload)); // lint and build scripts
   watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
-  watch(paths.images.src, series(minImages, moveImages));
+  watch(paths.images.src, series(moveImages)); // If new images are found, move to build folder
   watch(paths.svgs.src, spriteSvgs);
   watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
@@ -52,7 +52,7 @@ const buildAll = series(
   lintTemplates
 );
 // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
-const dev = series(
+const serve = series(
   lintScripts,
   lintTemplates,
   parallel(
@@ -62,14 +62,13 @@ const dev = series(
     buildTemplates,
     buildConfig,
     spriteSvgs,
-    minImages,
     moveImages
   ),
   cacheBust,
   parallel(watchFiles, browserSync)
 );
 // Export items to be used in terminal
-exports.default = dev;
+exports.default = serve;
 exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
