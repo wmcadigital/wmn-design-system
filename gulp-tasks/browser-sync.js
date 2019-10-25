@@ -16,6 +16,7 @@ module.exports.browserSync = () => {
   });
 };
 
-module.exports.reload = () => {
-  return browserSync.reload();
+module.exports.reload = done => {
+  browserSync.reload();
+  done();
 };
