@@ -8,9 +8,12 @@ const paths = require('./config.js');
 const { packageJson, build } = require('./utils');
 
 function getDataForFile(file) {
+  // Foreach njk file, try...
   try {
-    // If filename-data.json exists then use it below for nunjucks file's data
-    return JSON.parse(fs.readFileSync(`${path.parse(file.path).name}-data.json`));
+    // Use nodes path method to help with getting path structure (https://nodejs.org/api/path.html)
+    const parseFile = path.parse(file.path); // Get the file's path
+    const pathy = path.format({ dir: parseFile.dir, base: `${parseFile.name}.json` }); // Then check that same path for {njk-filename}.json
+    return JSON.parse(fs.readFileSync(pathy)); // If {njk-filename}.json exists then use it below for nunjucks file's data
   } catch (err) {
     // console.log(err);
     return false;
