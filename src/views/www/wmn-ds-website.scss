@@ -5,17 +5,14 @@
 @import '../../assets/sass/mixins';
 
 // Styleguide only styles
-@import 'shared/side-menu/side-menu';
 @import '_partials/footer/footer';
 @import '_partials/header/header';
-@import 'shared/resizer/resizer';
 
 // Styleguide page specific styles
-@import 'pages/colorPalette';
-@import 'pages/typography';
-@import 'pages/marks';
+// @import 'pages/colorPalette';
+// @import 'pages/typography';
+// @import 'pages/marks';
 // @import 'pages/header';
-@import 'pages/headerFooter';
 
 html,
 body {

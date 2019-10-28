@@ -7,18 +7,11 @@ module.exports = {
   },
   styles: {
     src: ['src/assets/sass/**/*.scss', 'src/views/**/**/*.scss'], // src of styles to watch
-    minifySrc: [
-      'src/assets/sass/wmn-ds-components.scss',
-      'src/views/wmn-ds-website/wmn-ds-website.scss'
-    ], // List of scss file(s) which should be processed, linted & minified
+    minifySrc: ['src/assets/sass/wmn-ds-components.scss', 'src/views/www/wmn-ds-website.scss'], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/' // output location of minified styles
   },
   scripts: {
-    src: [
-      'src/assets/**/*.js',
-      'src/views/components/**/*.js',
-      './src/views/wmn-ds-website/**/*.js'
-    ], // Src of JS files to watch
+    src: ['src/assets/**/*.js', 'src/views/components/**/*.js', './src/views/www/**/*.js'], // Src of JS files to watch
     // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
     minifySrc: [
       {
@@ -28,7 +21,7 @@ module.exports = {
       },
       { src: 'src/assets/vendor/js/**/*.js', minName: 'wmn-ds-vendor.min.js', lint: false },
       {
-        src: 'src/views/wmn-ds-website/**/*.js',
+        src: 'src/views/www/**/*.js',
         minName: 'wmn-ds-website.min.js',
         lint: false
       }
