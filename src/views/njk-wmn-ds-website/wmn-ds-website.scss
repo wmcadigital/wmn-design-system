@@ -6,8 +6,8 @@
 
 // Styleguide only styles
 @import 'shared/side-menu/side-menu';
-@import 'shared/footer/footer';
-@import 'shared/header/header';
+@import '_partials/footer/footer';
+@import '_partials/header/header';
 @import 'shared/resizer/resizer';
 
 // Styleguide page specific styles
