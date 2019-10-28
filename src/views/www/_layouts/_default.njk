@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <!-- Head -->
-  {% include "njk-wmn-ds-website/_partials/_head.njk" %}
+  {% include "www/_partials/_head.njk" %}
   <!-- end: Head -->
   <body>
     <!--[if IE]> <p class="browserupgrade"> You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. </p> <![endif]-->
 
     <!-- header -->
-    {% include "njk-wmn-ds-website/_partials/header/_header.njk" %}
+    {% include "www/_partials/header/_header.njk" %}
     <!-- header -->
 
     <div class="container-lg">
       <div class="wmnds-grid">
         <div class="wmnds-col-1 wmnds-col-md-1-4">
-          {% include "njk-wmn-ds-website/_partials/_nav.njk" %}
+          {% include "www/_partials/_nav.njk" %}
         </div>
         <div class="wmnds-col-1 wmnds-col-md-3-4">
           {% block content %}{% endblock %}
@@ -22,11 +22,11 @@
     </div>
 
     <!-- footer -->
-    {% include "njk-wmn-ds-website/_partials/footer/_footer.njk" %}
+    {% include "www/_partials/footer/_footer.njk" %}
     <!-- footer -->
 
     <!-- Scripts -->
-    {% include  "njk-wmn-ds-website/_partials/_scripts.njk" %}
+    {% include  "www/_partials/_scripts.njk" %}
     <!-- end: Scripts -->
 
     {# <script src="$*cdn/js/wmn-ds-website.min.js"></script> #}

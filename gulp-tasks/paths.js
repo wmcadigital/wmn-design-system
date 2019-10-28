@@ -37,7 +37,7 @@ module.exports = {
   },
   nunjucks: {
     src: 'src/views/**/*.njk',
-    websiteSrc: 'src/views/njk-wmn-ds-website/pages/**/*.njk',
+    websiteSrc: 'src/views/www/pages/**/*.njk',
     output: 'build/'
   },
   svgs: {
