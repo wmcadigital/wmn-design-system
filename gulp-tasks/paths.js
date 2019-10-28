@@ -35,10 +35,6 @@ module.exports = {
     ],
     output: 'build/js/' // Output location of minified JS files
   },
-  templates: {
-    src: 'src/views/**/*.html',
-    output: 'build/views/'
-  },
   nunjucks: {
     src: 'src/views/**/*.njk',
     websiteSrc: 'src/views/njk-wmn-ds-website/pages/**/*.njk',

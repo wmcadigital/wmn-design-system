@@ -11,8 +11,7 @@ const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and conca
 
 // TEMPLATES
 const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint templates/HTML
-const buildTemplates = require('./gulp-tasks/build-templates'); // Build templates/HTML
-const nunjucks = require('./gulp-tasks/nunjucks'); // build nunjucks
+const nunjucks = require('./gulp-tasks/build-nunjucks'); // build nunjucks
 
 // OTHER
 const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output)); // move config files to build
@@ -28,7 +27,6 @@ const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // Browser
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload)); // lint and build scripts
-  watch(paths.templates.src, series(lintTemplates, buildTemplates, reload)); // Reload when html changes
   watch(paths.nunjucks.src, series(lintTemplates, nunjucks, reload)); // Rebuild and reload when .njk files change
   watch(paths.images.src, series(moveImages)); // If new images are found, move to build folder
   watch(paths.svgs.src, spriteSvgs);
@@ -67,7 +65,6 @@ exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;
 exports.buildNunjucks = series(nunjucks, lintTemplates);
-exports.buildTemplates = series(buildTemplates, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.spriteSvgs = spriteSvgs;
 exports.minImages = series(minImages, moveImages);
