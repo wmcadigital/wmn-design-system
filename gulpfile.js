@@ -1,6 +1,6 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
-const paths = require('./gulp-tasks/config.js'); // List of all paths in a config
+const paths = require('./gulp-tasks/paths.js'); // List of all paths in a config
 
 // STYLES
 const buildStyles = require('./gulp-tasks/build-styles'); // Build Styles

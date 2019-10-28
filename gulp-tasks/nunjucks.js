@@ -2,7 +2,7 @@
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
-const paths = require('./config.js');
+const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
 const njkData = require('../src/views/njk-wmn-ds-website/data.njk.json');
 
