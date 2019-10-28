@@ -3,7 +3,7 @@ $btn-border-width: 1px;
 $btn-padding: 2px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
-.wmn {
+.wmnds {
   // default button styles
   &-btn {
     font-weight: bold;
@@ -63,7 +63,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmn-is-active {
+    &.wmnds-is-active {
       background-color: getColor(primary);
       span {
         -webkit-appearance: none;
@@ -104,7 +104,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmn-is-active {
+    &.wmnds-is-active {
       background-color: white;
       span {
         -webkit-appearance: none;
@@ -135,7 +135,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmn-is-active {
+    &.wmnds-is-active {
       background-color: getColor(cta);
       span {
         background-color: getColor(cta50);
@@ -170,7 +170,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmn-is-active {
+    &.wmnds-is-active {
       span {
         -webkit-appearance: none;
         border: $btn-border-width solid white;
@@ -203,7 +203,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmn-is-active {
+    &.wmnds-is-active {
       span {
         -webkit-appearance: none;
         border: $btn-border-width solid white;
@@ -230,7 +230,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmn-is-active {
+    &.wmnds-is-active {
       background-color: mix(getColor(primary), white, 20);
       span {
         background-color: mix(getColor(primary), white, 20);
@@ -259,7 +259,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       &:active,
       &:target,
       &:focus,
-      &.wmn-is-active {
+      &.wmnds-is-active {
         span {
           background-color: getColor(disable);
         }
@@ -282,7 +282,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         &:active,
         &:target,
         &:focus,
-        &.wmn-is-active {
+        &.wmnds-is-active {
           span {
             background-color: transparent;
           }

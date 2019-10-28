@@ -17,17 +17,17 @@
 {%- endif -%}
 {# set true for button disabled #}
 {%- if params.disabled -%}
-  {%- set classNames = params.ClassNames + " wmn-btn__disabled" -%}
+  {%- set classNames = params.ClassNames + " wmnds-btn__disabled" -%}
 {%- endif -%}
 
-<button 
-  class="wmn-btn {{ classNames }} mar-bot-md"
+<button
+  class="wmnds-btn {{ classNames }} mar-bot-md"
   tabindex="0"
   {%- if params.disabled -%} disabled {%- endif -%}
 >
   <span>
     {%- if iconLeft -%}
-    <svg class="wmn-btn__icon--left">
+    <svg class="wmnds-btn__icon--left">
       <use xlink:href="{{ iconLeft }}"></use>
     </svg>
     {%- endif -%}
@@ -35,7 +35,7 @@
     {{ text }}
 
     {%- if iconRight -%}
-    <i class="wmn-btn__icon--right {{ iconRight }}"></i>
+    <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
     {%- endif -%}
   </span>
 </button>

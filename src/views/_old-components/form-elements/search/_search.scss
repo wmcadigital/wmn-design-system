@@ -1,4 +1,4 @@
-.wmn-fe-autocomplete {
+.wmnds-fe-autocomplete {
   // The container for autocomplete
   &__wrapper {
     position: relative;
@@ -7,7 +7,7 @@
     margin-right: $margin-sm;
 
     // Search icon embeded in container to overwrite FontAwesome defaults
-    .wmn-fe-autocomplete__icon {
+    .wmnds-fe-autocomplete__icon {
       @include type-setting(1);
       position: absolute;
       display: block;
