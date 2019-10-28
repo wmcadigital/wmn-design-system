@@ -1,23 +1,22 @@
 {% extends "www/_layouts/_default.njk" %}
-{% set pageTitle="West Midlands Network Design Sytem | Buttons" %}
+{% set pageTitle="West Midlands Network Design Sytem | Links" %}
 
 {% block content %}
 <div class="container-lg">
-  <h1>Buttons</h1>
+  <h1>Links</h1>
   <hr />
   <div class="wmnds-grid justify-between">
-    <div class="wmnds-col-1" id="wmnds-buttons">
-      <h3>Buttons</h3>
+    <div class="wmnds-col-1">
       <p>
         <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
         page
       </p>
       <p>
-        It's important to know when to use a <strong>button</strong> or went to use a
-        <strong><a href="#wmnds-links">link</a></strong>
+        It's important to know when to use a <strong>link</strong> or went to use a
+        <strong><a href="/components/buttons/buttons.html">button</a></strong>
       </p>
       <p>
-        <strong>Buttons</strong> should be used in situations where a user might need to preform an
+        <strong>Links</strong> should be used in situations where a user might need to preform an
         action, such as:
       </p>
       <ul>
@@ -30,7 +29,7 @@
       <!-- primary buttons -->
       <div>
         <h4>Primary buttons</h4>
-        {%- from "components/button/_button.njk" import wmnButton as primary -%}
+        {%- from "components/button/_buttonLink.njk" import wmnButton as primary -%}
         {{
           primary({
             classNames: "wmnds-btn__primary",
@@ -60,7 +59,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/button/_button.njk" import wmnButton as primary -%}
+<pre class=""><code class="html">{%- from "components/button/_buttonLink.njk" import wmnButton as primary -%}
 {{
   primary({
     classNames: "wmnds-btn__primary",
@@ -97,7 +96,7 @@
       <!-- secondary buttons -->
       <div>
         <h4>Secondary buttons</h4>
-        {%- from "components/button/_button.njk" import wmnButton as secondary -%}
+        {%- from "components/button/_buttonLink.njk" import wmnButton as secondary -%}
         {{
           secondary({
             classNames: "wmnds-btn__secondary",
@@ -127,7 +126,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/button/_button.njk" import wmnButton as secondary -%}
+<pre class=""><code class="html">{%- from "components/button/_buttonLink.njk" import wmnButton as secondary -%}
 {{
   secondary({
     classNames: "wmnds-btn__secondary",
@@ -164,7 +163,7 @@
       <!-- call to action buttons -->
       <div>
         <h4>Call to action buttons</h4>
-        {%- from "components/button/_button.njk" import wmnButton as cta %}
+        {%- from "components/button/_buttonLink.njk" import wmnButton as cta %}
         {{
           cta({
             classNames: "wmnds-btn__cta",
@@ -179,7 +178,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/button/_button.njk" import wmnButton as cta -%}
+<pre class=""><code class="html">{%- from "components/button/_buttonLink.njk" import wmnButton as cta -%}
 {{
   cta({
     classNames: "wmnds-btn__cta",
@@ -199,7 +198,7 @@
       <!-- destructive buttons -->
       <div>
         <h4>Destructive buttons</h4>
-        {%- from "components/button/_button.njk" import wmnButton as destructive -%}
+        {%- from "components/button/_buttonLink.njk" import wmnButton as destructive -%}
         {{
           destructive({
             classNames: "wmnds-btn__destructive",
@@ -229,7 +228,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/button/_button.njk" import wmnButton as destructive -%}
+<pre class=""><code class="html">{%- from "components/button/_buttonLink.njk" import wmnButton as destructive -%}
 {{
   destructive({
     classNames: "wmnds-btn__destructive",
@@ -266,7 +265,7 @@
       <!-- start buttons -->
       <div>
         <h4>Start buttons</h4>
-        {%- from "components/button/_button.njk" import wmnButton as start -%}
+        {%- from "components/button/_buttonLink.njk" import wmnButton as start -%}
         {{
           start({
             classNames: "wmnds-btn__start",
@@ -296,7 +295,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/button/_button.njk" import wmnButton as start -%}
+<pre class=""><code class="html">{%- from "components/button/_buttonLink.njk" import wmnButton as start -%}
 {{
   start({
     classNames: "wmnds-btn__start",
@@ -333,7 +332,7 @@
       <!-- mode buttons -->
       <div>
         <h4>mode buttons</h4>
-        {%- from "components/button/_button.njk" import wmnButton as mode -%}
+        {%- from "components/button/_buttonLink.njk" import wmnButton as mode -%}
         {{
           mode({
             classNames: "wmnds-btn--small wmnds-btn__mode",
@@ -363,7 +362,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/button/_button.njk" import wmnButton as mode -%}
+<pre class=""><code class="html">{%- from "components/button/_buttonLink.njk" import wmnButton as mode -%}
 {{
   mode({
     classNames: "wmnds-btn--small wmnds-btn__mode",
