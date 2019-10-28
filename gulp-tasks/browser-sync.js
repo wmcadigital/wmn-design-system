@@ -7,9 +7,7 @@ module.exports.browserSync = () => {
     server: {
       baseDir: paths.server.baseDir,
       routes: {
-        '/build': './build/',
-        '/_sourcemaps': './_sourcemaps/',
-        '/components': './build/components/'
+        '/_sourcemaps': './_sourcemaps/'
       }
     },
     port: paths.server.port

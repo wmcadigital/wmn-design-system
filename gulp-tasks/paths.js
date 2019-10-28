@@ -2,7 +2,7 @@ module.exports = {
   output: 'build/', // Default output location for code build
   server: {
     port: 8080,
-    baseDir: './build/views/',
+    baseDir: './build/',
     root: './build/'
   },
   styles: {
