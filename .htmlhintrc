@@ -1,5 +1,5 @@
 {
-  "doctype-first": false,
+  "doctype-first": true,
   "tag-pair": true,
   "src-not-empty": true,
   "title-require": true,

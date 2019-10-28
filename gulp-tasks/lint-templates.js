@@ -5,7 +5,7 @@ const plugins = require('gulp-load-plugins')();
 const paths = require('./config.js');
 
 module.exports = () => {
-  return src(paths.nunjucks.src)
+  return src(`${paths.nunjucks.output}**/*.html`)
     .pipe(plugins.htmlhint('.htmlhintrc'))
     .pipe(plugins.htmlhint.reporter())
     .pipe(
