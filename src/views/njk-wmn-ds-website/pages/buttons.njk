@@ -30,7 +30,7 @@
       <!-- primary buttons -->
       <div>
         <h4>Primary buttons</h4>
-        {%- from "views/njk-components/button/_button.njk" import wmnButton as primary -%}
+        {%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as primary -%}
         {{
           primary({
             classNames: "wmn-btn__primary",
@@ -60,7 +60,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "views/njk-components/button/_button.njk" import wmnButton as primary -%}
+<pre class=""><code class="html">{%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as primary -%}
 {{
   primary({
     classNames: "wmn-btn__primary",
@@ -96,8 +96,8 @@
       <!-- end: primary buttons -->
       <!-- secondary buttons -->
       <div>
-        <h4>Primary buttons</h4>
-        {%- from "views/njk-components/button/_button.njk" import wmnButton as secondary %}
+        <h4>Secondary buttons</h4>
+        {%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as secondary -%}
         {{
           secondary({
             classNames: "wmn-btn__secondary",
@@ -127,7 +127,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "views/njk-components/button/_button.njk" import wmnButton as cta -%}
+<pre class=""><code class="html">{%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as secondary -%}
 {{
   secondary({
     classNames: "wmn-btn__secondary",
@@ -164,7 +164,7 @@
       <!-- call to action buttons -->
       <div>
         <h4>Call to action buttons</h4>
-        {%- from "views/njk-components/button/_button.njk" import wmnButton as cta %}
+        {%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as cta %}
         {{
           cta({
             classNames: "wmn-btn__cta",
@@ -179,7 +179,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "views/njk-components/button/_button.njk" import wmnButton as cta -%}
+<pre class=""><code class="html">{%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as cta -%}
 {{
   cta({
     classNames: "wmn-btn__cta",
@@ -199,7 +199,7 @@
       <!-- destructive buttons -->
       <div>
         <h4>Destructive buttons</h4>
-        {%- from "views/njk-components/button/_button.njk" import wmnButton as destructive %}
+        {%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as destructive -%}
         {{
           destructive({
             classNames: "wmn-btn__destructive",
@@ -229,7 +229,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "views/njk-components/button/_button.njk" import wmnButton as cta -%}
+<pre class=""><code class="html">{%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as destructive -%}
 {{
   destructive({
     classNames: "wmn-btn__destructive",
@@ -266,7 +266,7 @@
       <!-- start buttons -->
       <div>
         <h4>Start buttons</h4>
-        {%- from "views/njk-components/button/_button.njk" import wmnButton as start -%}
+        {%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as start -%}
         {{
           start({
             classNames: "wmn-btn__start",
@@ -296,7 +296,7 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "views/njk-components/button/_button.njk" import wmnButton as cta -%}
+<pre class=""><code class="html">{%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as start -%}
 {{
   start({
     classNames: "wmn-btn__start",
@@ -330,7 +330,74 @@
 }}</code></pre>
       </div>
       <!-- end: start buttons -->
+      <!-- mode buttons -->
+      <div>
+        <h4>mode buttons</h4>
+        {%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as mode -%}
+        {{
+          mode({
+            classNames: "wmn-btn--small wmn-btn__mode",
+            text: "Bus",
+            iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-bus"
+          })
+        }}
+        {{
+          mode({
+            classNames: "wmn-btn--small wmn-btn__mode",
+            text: "Train",
+            iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-railway"
+          })
+        }}
+        {{
+          mode({
+            classNames: "wmn-btn--small wmn-btn__mode",
+            text: "Metro",
+            iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-metro"
+          })
+        }}
+        {{
+          mode({
+            classNames: "wmn-btn--small wmn-btn__mode",
+            text: "Road",
+            iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-roads"
+          })
+        }}
+        <h4>HTML Markup</h4>
+<pre class=""><code class="html">{%- from "views/njk-wmn-ds-website/components/button/_button.njk" import wmnButton as mode -%}
+{{
+  mode({
+    classNames: "wmn-btn--small wmn-btn__mode",
+    text: "Bus",
+    iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-bus"
+  })
+}}
+
+{{
+  mode({
+    classNames: "wmn-btn--small wmn-btn__mode",
+    text: "Train",
+    iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-railway"
+  })
+}}
+
+{{
+  mode({
+    classNames: "wmn-btn--small wmn-btn__mode",
+    text: "Metro",
+    iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-metro"
+  })
+}}
+
+{{
+  mode({
+    classNames: "wmn-btn--small wmn-btn__mode",
+    text: "Road",
+    iconLeft: "$*cdn/img/svg-sprite.svg#wmn-isolated-roads"
+  })
+}}</code></pre>
+      </div>
+      <!-- end: mode buttons -->
     </div>
   </div>
 </div>
-{%- endblock %}
+{% endblock %}

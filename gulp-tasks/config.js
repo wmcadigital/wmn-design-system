@@ -48,7 +48,8 @@ module.exports = {
     dest: 'build/img/'
   },
   images: {
-    src: 'src/assets/img/**/*',
+    src: ['src/assets/img/**/*', '!src/assets/img/svgs/*'],
+    output: 'src/assets/img/**/*',
     dest: 'build/img/'
   },
   config: {
