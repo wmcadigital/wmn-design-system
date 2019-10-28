@@ -1,28 +1,14 @@
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
-const fs = require('fs');
 // Local requires
-const path = require('path');
 const paths = require('./config.js');
 const { packageJson, build } = require('./utils');
-
-function getDataForFile(file) {
-  // Foreach njk file, try...
-  try {
-    // Use nodes path method to help with getting path structure (https://nodejs.org/api/path.html)
-    const parseFile = path.parse(file.path); // Get the file's path
-    const pathy = path.format({ dir: parseFile.dir, base: `${parseFile.name}.json` }); // Then check that same path for {njk-filename}.json
-    return JSON.parse(fs.readFileSync(pathy)); // If {njk-filename}.json exists then use it below for nunjucks file's data
-  } catch (err) {
-    // console.log(err);
-    return false;
-  }
-}
+const njkData = require('../src/views/njk-wmn-ds-website/data.njk.json');
 
 module.exports = () => {
-  return src(paths.nunjucks.src)
-    .pipe(plugins.data(getDataForFile))
+  return src(paths.nunjucks.websiteSrc)
+    .pipe(plugins.data(() => njkData))
     .pipe(
       plugins.nunjucksRender({
         path: 'src/views/',
