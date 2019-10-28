@@ -7,7 +7,7 @@ module.exports = {
   },
   styles: {
     src: ['src/assets/sass/**/*.scss', 'src/views/**/**/*.scss'], // src of styles to watch
-    minifySrc: ['src/assets/sass/wmn-ds-components.scss', 'src/views/www/wmn-ds-website.scss'], // List of scss file(s) which should be processed, linted & minified
+    minifySrc: ['src/assets/sass/wmnds-components.scss', 'src/views/www/wmnds-website.scss'], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/' // output location of minified styles
   },
   scripts: {
@@ -16,13 +16,13 @@ module.exports = {
     minifySrc: [
       {
         src: 'src/views/components/**/*.js',
-        minName: 'wmn-ds-components.min.js',
+        minName: 'wmnds-components.min.js',
         lint: true
       },
-      { src: 'src/assets/vendor/js/**/*.js', minName: 'wmn-ds-vendor.min.js', lint: false },
+      { src: 'src/assets/vendor/js/**/*.js', minName: 'wmnds-vendor.min.js', lint: false },
       {
         src: 'src/views/www/**/*.js',
-        minName: 'wmn-ds-website.min.js',
+        minName: 'wmnds-website.min.js',
         lint: false
       }
     ],

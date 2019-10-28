@@ -22,11 +22,11 @@
 
                 -   `js/`
 
-                Any javascript files located in here will be concatenated and compiled into `build/js/wmn-ds-vendor.min.js` via the [javascript build task](tasks.md#markdown-header-141-scripts-javascript).
+                Any javascript files located in here will be concatenated and compiled into `build/js/wmnds-vendor.min.js` via the [javascript build task](tasks.md#markdown-header-141-scripts-javascript).
 
                 -   `css/`
 
-                Any CSS that is from a vendor should be placed in here and then referenced in `src/assets/sass/wmn-ds.scss`
+                Any CSS that is from a vendor should be placed in here and then referenced in `src/assets/sass/wmnds.scss`
 
 
     -   `views/`
@@ -37,7 +37,7 @@
 
             Examples of components usage in various contexts. See [README.md](../../src/views/components/README.md) in the components directory for more details. You can access these examples from the home page of the [WMN Design System](http://localhost:3000).
 
-        -   `wmn-ds-website/`
+        -   `wmnds-website/`
 
             Anything that is specific for the [WMN Design System website](http://localhost:3000) goes in this folder. It also contains generic layout templates used to render preview and content pages.
 
