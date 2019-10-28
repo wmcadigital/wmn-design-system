@@ -6,7 +6,7 @@ const paths = require('./paths.js');
 
 module.exports.minImages = () => {
   return src(paths.images.src)
-    .pipe(plugins.changed(paths.images.src))
+    .pipe(plugins.changed(paths.images.output))
     .pipe(
       plugins.imagemin({
         verbose: true
@@ -15,4 +15,4 @@ module.exports.minImages = () => {
     .pipe(dest(file => file.base));
 };
 
-module.exports.moveImages = () => src(paths.images.src).pipe(dest(paths.images.dest));
+module.exports.moveImages = () => src(paths.images.output).pipe(dest(paths.images.dest));

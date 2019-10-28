@@ -38,6 +38,8 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     width: 25px;
     height: 25px;
     vertical-align: top;
+    padding-right: $btn-padding;
+    box-sizing: border-box;
   }
 
   // button icon right style
