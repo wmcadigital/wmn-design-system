@@ -8,7 +8,7 @@
 
 -   [1. WMCA Website Redevelopment](#markdown-header-1-wmca-website-redevelopment)
     -   [1.1. Table of contents](#markdown-header-11-table-of-contents)
-    -   [1.2. WMN Styleguide](#markdown-header-12-wmn-styleguide)
+    -   [1.2. WMN Styleguide](#markdown-header-12-wmnds-styleguide)
     -   [1.3. Quick start](#markdown-header-13-quick-start)
     -   [1.4. Tasks](#markdown-header-14-tasks)
         -   [1.4.1. Starting web server](#markdown-header-141-starting-web-server)
