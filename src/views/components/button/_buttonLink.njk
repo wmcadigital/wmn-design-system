@@ -22,7 +22,10 @@
   {%- set classNames = params.classNames + "" -%}
 {%- endif -%}
 
-<button
+<a
+  {% if params.link %} href="{{ link }}" {% endif %}
+  {%- if params.linkTitle -%} title="{{ linkTitle }}" {%- endif -%}
+  {% if params.linkTarget %} target="{{ linkTarget }}" {% endif %}
   class="wmnds-btn {% if params.classNames %} {{ classNames }} {% endif %} mar-bot-md"
   tabindex="0"
   {%- if params.disabled -%} disabled {%- endif -%}
@@ -40,5 +43,5 @@
     <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
     {%- endif -%}
   </span>
-</button>
+</a>
 {%- endmacro -%}
