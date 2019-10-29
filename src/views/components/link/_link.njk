@@ -1,7 +1,7 @@
-{%- macro wmnButton(params) -%}
+{%- macro wmnLink(params) -%}
 {# set class names #}
 {%- if params.classNames -%}
-  {%- set classNames = classNames + " " + params.classNames -%}
+  {%- set classNames = params.classNames -%}
 {%- endif -%}
 {# set button text #}
 {%- if params.text -%}
@@ -15,20 +15,25 @@
 {%- if params.iconLeft -%}
   {%- set iconLeft = params.iconLeft -%}
 {%- endif -%}
-{# set true for button disabled #}
-{%- if params.disabled -%}
-  {%- set classNames = params.classNames + " wmnds-btn__disabled" -%}
-{%- else -%}
-  {%- set classNames = params.classNames + "" -%}
+{# set link url #}
+{%- if params.link -%}
+  {%- set link = params.link -%}
+{%- endif -%}
+{# set link title #}
+{%- if params.linkTitle -%}
+  {%- set linkTitle = params.linkTitle -%}
+{%- endif -%}
+{# set link target #}
+{%- if params.linkTarget -%}
+  {%- set linkTarget = params.linkTarget -%}
 {%- endif -%}
 
 <a
   {% if params.link %} href="{{ link }}" {% endif %}
-  {%- if params.linkTitle -%} title="{{ linkTitle }}" {%- endif -%}
+  {% if params.linkTitle %} title="{{ linkTitle }}" {% endif %}
   {% if params.linkTarget %} target="{{ linkTarget }}" {% endif %}
   class="wmnds-btn {% if params.classNames %} {{ classNames }} {% endif %} mar-bot-md"
   tabindex="0"
-  {%- if params.disabled -%} disabled {%- endif -%}
 >
   <span>
     {%- if iconLeft -%}
@@ -37,7 +42,7 @@
     </svg>
     {%- endif -%}
 
-    {{ text }}
+    {{ text }} 
 
     {%- if iconRight -%}
     <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
