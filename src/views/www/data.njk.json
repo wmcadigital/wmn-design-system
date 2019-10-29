@@ -7,10 +7,10 @@
       "name": "Components",
       "subnavItems": [
         {
-          "name": "buttons"
+          "name": "Buttons"
         },
         {
-          "name": "form-elements"
+          "name": "Form Elements"
         }
       ]
     },
