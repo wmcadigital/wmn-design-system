@@ -4,7 +4,15 @@
       "name": "Styles"
     },
     {
-      "name": "Components"
+      "name": "Components",
+      "subnavItems": [
+        {
+          "name": "buttons"
+        },
+        {
+          "name": "form-elements"
+        }
+      ]
     },
     {
       "name": "Patterns"
