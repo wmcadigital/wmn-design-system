@@ -1,0 +1,19 @@
+{# {% set navItems = [
+    {
+      "menu_item": "Index"
+    },
+    {
+      "menu_item": "Page 1"
+    },
+    {
+      "menu_item": "Page 2"
+    }
+  ] %} #}
+
+<nav class="nav navbar-nav">
+Nav
+  {% for item in navItems %}
+    <a class="nav-item nav-link" href="{{ item.menu_item | lower | replace(" ", "") }}.html">{{ item.menu_item }}</a>
+  {% endfor %}
+
+</nav>
