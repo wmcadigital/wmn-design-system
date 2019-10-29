@@ -1,19 +1,5 @@
-{# {% set navItems = [
-    {
-      "menu_item": "Index"
-    },
-    {
-      "menu_item": "Page 1"
-    },
-    {
-      "menu_item": "Page 2"
-    }
-  ] %} #}
-
-<nav class="nav navbar-nav">
-Nav
-  {% for item in navItems %}
-    <a class="nav-item nav-link" href="{{ item.menu_item | lower | replace(" ", "") }}.html">{{ item.menu_item }}</a>
+<nav class="wmnds-grid">
+  {% for navItem in navItems %}
+    <a class="wmnds-col-1 wmnds-col-md-1-3" href="/{{ navItem.name | lower | replace(" ", "-") }}/">{{ navItem.name}}</a>
   {% endfor %}
-
 </nav>
