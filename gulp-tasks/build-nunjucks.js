@@ -16,11 +16,6 @@ module.exports = () => {
       })
     )
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
-    .pipe(
-      plugins.rename({
-        extname: '.html'
-      })
-    )
     .pipe(plugins.htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(plugins.formatHtml())
     .pipe(dest(paths.nunjucks.output));
