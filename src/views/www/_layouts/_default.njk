@@ -11,14 +11,9 @@
     <!-- header -->
 
     <div class="container-lg">
-      <div class="wmnds-grid">
-        <div class="wmnds-col-1 wmnds-col-md-1-4">
-          {% include "www/_partials/nav/_nav.njk" %}
-        </div>
-        <div class="wmnds-col-1 wmnds-col-md-3-4">
-          {% block content %}{% endblock %}
-        </div>
-      </div>
+        {% include "www/_partials/nav/_nav.njk" %}
+
+        {% block body %}{% endblock %}
     </div>
 
     <!-- footer -->
@@ -28,7 +23,5 @@
     <!-- Scripts -->
     {% include  "www/_partials/_scripts.njk" %}
     <!-- end: Scripts -->
-
-    {# <script src="$*cdn/js/wmnds-website.min.js"></script> #}
   </body>
 </html>

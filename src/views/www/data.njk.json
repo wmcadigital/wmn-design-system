@@ -1,13 +1,13 @@
 {
   "navItems": [
     {
-      "menu_item": "Index"
+      "name": "Styles"
     },
     {
-      "menu_item": "Page 1"
+      "name": "Components"
     },
     {
-      "menu_item": "Page 2"
+      "name": "Patterns"
     }
   ]
 }

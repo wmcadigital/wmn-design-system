@@ -1,0 +1,13 @@
+{% extends "www/_layouts/_default.njk" %}
+
+{% block body %}
+  <div class="wmnds-grid">
+    <div class="wmnds-col-1 wmnds-col-md-1-4">
+
+    </div>
+    <div class="wmnds-col-1 wmnds-col-md-3-4">
+      {% block content %}{% endblock content %}
+    </div>
+  </div>
+
+{% endblock body%}
