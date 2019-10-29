@@ -1,16 +1,12 @@
-{# If no pageName has been set then default to Components node #}
-{% if pageName|length < 1 %}
-  {% set pageName = "Components" %}
-{% endif %}
-
 <ul>
   {# Foreach navItems #}
   {% for navItem in navItems %}
     {# If the name is equal to var #}
-    {% if navItem.name == pageName %}
-      {% for subNavItem in navItem.subnavItems %}
+    {% if (navItem.name | lower) == ((section if section else "Components") |lower) %}
+    {# If no section has been set then default to Components node #}
+      {% for sectionItem in navItem.subnavItems | sort(attribute='name') %}
       <li>
-        <a class="wmnds-col-1" href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subNavItem.name | lower | replace(" ", "-") }}/">{{ subNavItem.name}}</a>
+        <a class="wmnds-col-1" href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ sectionItem.name | lower | replace(" ", "-") }}/">{{ sectionItem.name}}</a>
       </li>
       {% endfor %}
     {% endif %}
