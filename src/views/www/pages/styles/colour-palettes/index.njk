@@ -1,0 +1,328 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Colour Palettes" %}
+{% set section="Styles" %}
+
+{% block content %}
+  <p>Below are the list of WMCA's colour palettes and the various tints.
+  </p>
+
+  <p>Each colour has 10 tints, starting from the full colour and decreasing in 10% intervals.</p>
+
+  <p>You can find the RGB and HEX values for reference.</p>
+
+  <p>If using the colours in development, you shouldn't use the HEX and RGB values!</p>
+
+  <p>You can use the class names suggested which will give the HTML element either a 'color' or 'background-color' CSS property.
+  </p>
+
+  <p>Alternatively you can use a colour in a SCSS file by using the SCSS VAR provided. For example, "color: $getColor(primary, 30);".
+  </p>
+</div>
+</div>
+<h2>Web Colour's</h2>
+<div class="wmnds-grid">
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #3C1053"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Primary Purple</strong><br />
+        <strong>HEX</strong> #3C1053<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(primary)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-primary<br />
+          .bg-color-primary
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #6E407A"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Secondary Purple</strong><br />
+        <strong>HEX</strong> #6E407A<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(secondary)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-secondary<br />
+          .bg-color-secondary
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #1D7EC4"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>CTA Blue</strong><br />
+        <strong>HEX</strong> #1D7EC4<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(cta)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-cta<br />
+          .bg-color-cta
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #231F20"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Text Black</strong><br />
+        <strong>HEX</strong> #231F20<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(black)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-black<br />
+          .bg-color-black
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<hr />
+<h2>Brand Colour's</h2>
+<div class="wmnds-grid">
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #3C1053"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Purple</strong><br />
+        <strong>HEX</strong> #3C1053<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(primary)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-primary<br />
+          .bg-color-primary
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #6E407A"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Secondary Purple</strong><br />
+        <strong>HEX</strong> #6E407A<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(secondary)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-secondary<br />
+          .bg-color-secondary
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #1e082a"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Dark Purple</strong><br />
+        <strong>HEX</strong> #1E082A<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(darkPurple) $getColor(darken(primary, 50%))
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-dark-purple<br />
+          .bg-color-dark-purple
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<hr />
+<h2>Modal Colour's</h2>
+<div class="wmnds-grid">
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #ff8300"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Railway</strong><br />
+        <strong>HEX</strong> #FF8300<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(railway)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-railway<br />
+          .bg-color-railway
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #ea0029"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Bus</strong><br />
+        <strong>HEX</strong> #EA0029<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(bus)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-bus<br />
+          .bg-color-bus
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #0075c9"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Metro</strong><br />
+        <strong>HEX</strong> #0075C9<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(metro)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-metro<br />
+          .bg-color-metro
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #df1683"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Roads</strong><br />
+        <strong>HEX</strong> #DF1683<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(roads)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-roads<br />
+          .bg-color-roads
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #679500"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Walk &amp; Cycle</strong><br />
+        <strong>HEX</strong> #679500<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(walkCycle)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-walk-cycle<br />
+          .bg-color-walk-cycle
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-md-1-4 color">
+  <span class="color__swatch" style="background-color: #773dbe"></span>
+  <div class="wmnds-grid component-details">
+    <div class="wmnds-col-1">
+      <p>
+        <strong>Taxi</strong><br />
+        <strong>HEX</strong> #773DBE<br />
+      </p>
+      <div class="component-details__code">
+        <p>
+          <strong>SCSS VAR</strong><br />
+          $getColor(taxi)
+        </p>
+        <p>
+          <strong>Class names</strong><br />
+          .color-taxi<br />
+          .bg-color-taxi
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
