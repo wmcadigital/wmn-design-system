@@ -1,13 +1,21 @@
 {
   "navItems": [
     {
-      "name": "Styles"
+      "name": "Styles",
+      "subnavItems": [
+        {
+          "name": "Colour Palettes"
+        }
+      ]
     },
     {
       "name": "Components",
       "subnavItems": [
         {
           "name": "Buttons"
+        },
+        {
+          "name": "Links"
         },
         {
           "name": "Form Elements"
