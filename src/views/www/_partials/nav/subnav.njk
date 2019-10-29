@@ -1,0 +1,18 @@
+{# If no pageName has been set then default to Components node #}
+{% if pageName|length < 1 %}
+  {% set pageName = "Components" %}
+{% endif %}
+
+<ul>
+  {# Foreach navItems #}
+  {% for navItem in navItems %}
+    {# If the name is equal to var #}
+    {% if navItem.name == pageName %}
+      {% for subNavItem in navItem.subnavItems %}
+      <li>
+        <a class="wmnds-col-1" href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subNavItem.name | lower | replace(" ", "-") }}/">{{ subNavItem.name}}</a>
+      </li>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</ul>
