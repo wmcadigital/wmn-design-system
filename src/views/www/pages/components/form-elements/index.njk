@@ -10,6 +10,7 @@
     compExample([wmndsLabel()])
   }}
   {# End label #}
+
   {# Checkboxes #}
   <h2>Checkboxes</h2>
   {% from "components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
@@ -18,4 +19,13 @@
     compExample([wmndsCheckboxes()])
   }}
   {# End Checkboxes #}
+
+  {# Dropdown #}
+  <h2>Dropdown</h2>
+  {% from "components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
+  {% from "www/_partials/_component-example.njk" import compExample %}
+  {{
+    compExample([wmndsDropdown()])
+  }}
+  {# End Dropdown #}
 {% endblock %}
