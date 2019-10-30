@@ -28,7 +28,8 @@ const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // Browser
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload)); // lint and build scripts
-  watch(paths.nunjucks.src, series(formatNjk, nunjucks, lintTemplates, reload)); // Rebuild and reload when .njk files change
+  watch(paths.nunjucks.src, series(nunjucks, lintTemplates, reload)); // Rebuild and reload when .njk files change
+  // watch(paths.nunjucks.output, formatNjk); // Format Nunjucks src files if change is detected in build folder (this is to stop watch looping, if inserted in above watcher)
   watch(paths.images.src, series(moveImages)); // If new images are found, move to build folder
   watch(paths.svgs.src, spriteSvgs);
   watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
