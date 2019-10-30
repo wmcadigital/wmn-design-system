@@ -38,6 +38,15 @@
   }}
   {# End Input #}
 
+  {# Search #}
+  <h2>Search</h2>
+  {% from "components/form-elements/search/_search.njk" import wmndsSearch %}
+  {% from "www/_partials/_component-example.njk" import compExample %}
+  {{
+    compExample([wmndsSearch()])
+  }}
+  {# End Textarea #}
+
   {# Textarea #}
   <h2>Textarea</h2>
   {% from "components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}

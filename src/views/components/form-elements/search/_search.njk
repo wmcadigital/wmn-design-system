@@ -1,0 +1,11 @@
+{% macro wmndsSearch(params) %}
+
+<div class="wmnds-fe-autocomplete wmnds-grid">
+  <div class="wmnds-fe-autocomplete__wrapper wmnds-col-1">
+    <i class="wmnds-fe-autocomplete__icon fas fa-search"></i>
+    <input type="text" name="searchExample" class="wmnds-fe-autocomplete__input wmnds-col-1" data-placeholder="Tap to search" data-api="https://jsonplaceholder.typicode.com/users" data-keys="name, email" />
+  </div>
+  <input type="submit" value="Go" class="wmnds-btn wmnds-btn__primary wmnds-btn__primary--input" />
+</div>
+
+{% endmacro %}
