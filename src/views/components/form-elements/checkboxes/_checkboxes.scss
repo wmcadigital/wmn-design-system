@@ -1,4 +1,4 @@
-.fe-checkboxes {
+.wmnds-fe-checkboxes {
   &__desc {
     margin-bottom: $margin-sm;
   }
@@ -15,7 +15,7 @@
     -ms-user-select: none;
     user-select: none;
     /* On mouse-over, add a grey background color */
-    &:hover .fe-checkboxes__checkmark {
+    &:hover .wmnds-fe-checkboxes__checkmark {
       background-color: getColor(secondary, 30);
     }
   }
@@ -26,7 +26,7 @@
     height: 0;
     width: 0;
     /* Show the checkmark when checked */
-    &:checked ~ .fe-checkboxes__checkmark {
+    &:checked ~ .wmnds-fe-checkboxes__checkmark {
       display: block;
       /* Style the checkmark/indicator */
       &:after {
