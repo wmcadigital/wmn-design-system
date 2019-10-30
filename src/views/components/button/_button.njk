@@ -1,28 +1,27 @@
-{%- macro wmnButton(params) -%}
+{% macro wmnButton(params) %}
 {# set class names #}
-{%- if params.classNames -%}
-{%- set classNames = classNames + " " + params.classNames -%}
-{%- endif -%}
+{% if params.classNames %}
+{% set classNames = classNames + " " + params.classNames %}
+{% endif %}
 {# set button text #}
-{%- if params.text -%}
-{%- set text = params.text -%}
-{%- endif -%}
+{% if params.text %}
+{% set text = params.text %}
+{% endif %}
 {# set icon right classes #}
-{%- if params.iconRight -%}
-{%- set iconRight = params.iconRight + "" -%}
-{%- endif -%}
+{% if params.iconRight %}
+{% set iconRight = params.iconRight + "" %}
+{% endif %}
 {# set svg left reference #}
-{%- if params.iconLeft -%}
-{%- set iconLeft = params.iconLeft -%}
-{%- endif -%}
+{% if params.iconLeft %}
+{% set iconLeft = params.iconLeft %}
+{% endif %}
 {# set true for button disabled #}
-{%- if params.disabled -%}
-{%- set classNames = params.classNames + " wmnds-btn__disabled" -%}
-{%- else -%}
-{%- set classNames = params.classNames + "" -%}
-{%- endif -%}
-<button class="wmnds-btn {% if params.classNames %} {{ classNames }} {% endif %} mar-bot-md"
-  tabindex="0" {%- if params.disabled -%} disabled {%- endif -%}>
+{% if params.disabled %}
+{% set classNames = params.classNames + " wmnds-btn__disabled" %}
+{% else %}
+{% set classNames = params.classNames + "" %}
+{% endif %}
+<button class="wmnds-btn {% if params.classNames %}{{ classNames }}{% endif %} mar-bot-md" tabindex="0" {% if params.disabled %} disabled {% endif %}>
   <span>
     {%- if iconLeft -%}
     <svg class="wmnds-btn__icon--left">
@@ -30,11 +29,11 @@
     </svg>
     {%- endif -%}
 
-    {{ text }}
+    {{- text -}}
 
-    {%- if iconRight -%}
-    <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
+    {%- if iconRight %}
+      <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
     {%- endif -%}
   </span>
 </button>
-{%- endmacro -%}
+{% endmacro %}

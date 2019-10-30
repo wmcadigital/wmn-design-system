@@ -24,345 +24,166 @@
 </ul>
 
 <!-- primary buttons -->
-<div>
-  <h4>Primary buttons</h4>
-  {%- from "components/button/_button.njk" import wmnButton as primary -%}
-  {% from "www/_partials/_component-example.njk" import example as example %}
-  {{
-    example([
-      primary({
-        classNames: "wmnds-btn__primary",
-        text: "Primary button"
-      }),
-      primary({
-        classNames: "wmnds-btn__primary",
-        text: "Primary disabled button",
-        disabled: true
-      }),
-      primary({
-        classNames: "wmnds-btn__primary",
-        text: "Primary icon button",
-        iconRight: "fas fa-chevron-right"
-      }),
-      primary({
-        classNames: "wmnds-btn__primary",
-        text: "Primary icon disabled button",
-        iconRight: "fas fa-chevron-right",
-        disabled: true
-      })
-    ])
-  }}
-</div>
+<h2>Primary buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as primary -%}
+{% from "www/_partials/_component-example.njk" import compExample as compExample %}
+{{
+  compExample([
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary button"
+    }),
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary disabled button",
+      disabled: true
+    }),
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
+}}
 <!-- end: primary buttons -->
 <!-- secondary buttons -->
-<div>
-  <h4>Secondary buttons</h4>
-  {%- from "components/button/_button.njk" import wmnButton as secondary -%}
-  {{
-          secondary({
-            classNames: "wmnds-btn__secondary",
-            text: "Secondary button"
-          })
-        }}
-  {{
-          secondary({
-            classNames: "wmnds-btn__secondary",
-            text: "Secondary disabled button",
-            disabled: true
-          })
-        }}
-  {{
-          secondary({
-            classNames: "wmnds-btn__secondary",
-            text: "Secondary icon button",
-            iconRight: "fas fa-chevron-right"
-          })
-        }}
-  {{
-          secondary({
-            classNames: "wmnds-btn__secondary",
-            text: "Secondary icon disabled button",
-            iconRight: "fas fa-chevron-right",
-            disabled: true
-          })
-        }}
-  <h4>HTML Markup</h4>
-  <pre class=""><code
-      class="html">{%- from "components/button/_button.njk" import wmnButton as secondary -%}
-      {{
-  secondary({
-    classNames: "wmnds-btn__secondary",
-    text: "Secondary button"
-  })
+<h2>Secondary buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as secondary -%}
+{% from "www/_partials/_component-example.njk" import compExample as compExample %}
+{{
+  compExample([
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary button"
+    }),
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary disabled button",
+      disabled: true
+    }),
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
 }}
-
-      {{
-  secondary({
-    classNames: "wmnds-btn__secondary",
-    text: "Secondary disabled button",
-    disabled: true
-  })
-}}
-
-      {{
-  secondary({
-    classNames: "wmnds-btn__secondary",
-    text: "Secondary icon button",
-    iconRight: "fas fa-chevron-right"
-  })
-}}
-
-      {{
-  secondary({
-    classNames: "wmnds-btn__secondary",
-    text: "Secondary icon disabled button",
-    iconRight: "fas fa-chevron-right",
-    disabled: true
-  })
-}}</code></pre>
-</div>
 <!-- end: secondary buttons -->
 <!-- call to action buttons -->
-<div>
-  <h4>Call to action buttons</h4>
-  {%- from "components/button/_button.njk" import wmnButton as cta %}
-  {{
-          cta({
-            classNames: "wmnds-btn__cta",
-            text: "Call to action button"
-          })
-        }}
-  {{
-          cta({
-            classNames: "wmnds-btn__cta",
-            text: "Call to action icon button",
-            iconRight: "fas fa-chevron-right"
-          })
-        }}
-  <h4>HTML Markup</h4>
-  <pre class=""><code
-      class="html">{%- from "components/button/_button.njk" import wmnButton as cta -%}
-      {{
-  cta({
-    classNames: "wmnds-btn__cta",
-    text: "Call to action button"
-  })
+<h2>Call to action buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as cta %}
+{% from "www/_partials/_component-example.njk" import compExample as compExample %}
+{{
+  compExample([
+    cta({
+      classNames: "wmnds-btn__cta",
+      text: "Call to action button"
+    }),
+    cta({
+      classNames: "wmnds-btn__cta",
+      text: "Call to action icon button",
+      iconRight: "fas fa-chevron-right"
+    })
+  ])
 }}
-
-      {{
-  cta({
-    classNames: "wmnds-btn__cta",
-    text: "Call to action icon button",
-    iconRight: "fas fa-chevron-right"
-  })
-}}</code></pre>
-</div>
 <!-- end: call to action buttons -->
 <!-- destructive buttons -->
-<div>
-  <h4>Destructive buttons</h4>
-  {%- from "components/button/_button.njk" import wmnButton as destructive -%}
-  {{
-          destructive({
-            classNames: "wmnds-btn__destructive",
-            text: "Destructive button"
-          })
-        }}
-  {{
-          destructive({
-            classNames: "wmnds-btn__destructive",
-            text: "Destructive disabled button",
-            disabled: true
-          })
-        }}
-  {{
-          destructive({
-            classNames: "wmnds-btn__destructive",
-            text: "Destructive icon button",
-            iconRight: "fas fa-chevron-right"
-          })
-        }}
-  {{
-          destructive({
-            classNames: "wmnds-btn__destructive",
-            text: "Destructive icon disabled button",
-            iconRight: "fas fa-chevron-right",
-            disabled: true
-          })
-        }}
-  <h4>HTML Markup</h4>
-  <pre class=""><code
-      class="html">{%- from "components/button/_button.njk" import wmnButton as destructive -%}
-      {{
-  destructive({
-    classNames: "wmnds-btn__destructive",
-    text: "Destructive button"
-  })
+<h2>Destructive buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as destructive -%}
+{% from "www/_partials/_component-example.njk" import compExample as compExample %}
+{{
+  compExample([
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive button"
+    }),
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive disabled button",
+      disabled: true
+    }),
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
 }}
-
-      {{
-  destructive({
-    classNames: "wmnds-btn__destructive",
-    text: "Destructive disabled button",
-    disabled: true
-  })
-}}
-
-      {{
-  destructive({
-    classNames: "wmnds-btn__destructive",
-    text: "Destructive icon button",
-    iconRight: "fas fa-chevron-right"
-  })
-}}
-
-      {{
-  destructive({
-    classNames: "wmnds-btn__destructive",
-    text: "Destructive icon disabled button",
-    iconRight: "fas fa-chevron-right",
-    disabled: true
-  })
-}}</code></pre>
-</div>
 <!-- end: destructive buttons -->
 <!-- start buttons -->
-<div>
-  <h4>Start buttons</h4>
-  {%- from "components/button/_button.njk" import wmnButton as start -%}
-  {{
-          start({
-            classNames: "wmnds-btn__start",
-            text: "Start button"
-          })
-        }}
-  {{
-          start({
-            classNames: "wmnds-btn__start",
-            text: "Start disabled button",
-            disabled: true
-          })
-        }}
-  {{
-          start({
-            classNames: "wmnds-btn__start",
-            text: "Start icon button",
-            iconRight: "fas fa-chevron-right"
-          })
-        }}
-  {{
-          start({
-            classNames: "wmnds-btn__start",
-            text: "Start icon disabled button",
-            iconRight: "fas fa-chevron-right",
-            disabled: true
-          })
-        }}
-  <h4>HTML Markup</h4>
-  <pre class=""><code
-      class="html">{%- from "components/button/_button.njk" import wmnButton as start -%}
-      {{
-  start({
-    classNames: "wmnds-btn__start",
-    text: "Start button"
-  })
+<h2>Start buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as start -%}
+{% from "www/_partials/_component-example.njk" import compExample as compExample %}
+{{
+  compExample([
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start button"
+    }),
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start disabled button",
+      disabled: true
+    }),
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
 }}
-
-      {{
-  start({
-    classNames: "wmnds-btn__start",
-    text: "Start disabled button",
-    disabled: true
-  })
-}}
-
-      {{
-  start({
-    classNames: "wmnds-btn__start",
-    text: "Start icon button",
-    iconRight: "fas fa-chevron-right"
-  })
-}}
-
-      {{
-  start({
-    classNames: "wmnds-btn__start",
-    text: "Start icon disabled button",
-    iconRight: "fas fa-chevron-right",
-    disabled: true
-  })
-}}</code></pre>
-</div>
 <!-- end: start buttons -->
 <!-- mode buttons -->
-<div>
-  <h4>mode buttons</h4>
-  {%- from "components/button/_button.njk" import wmnButton as mode -%}
-  {{
-          mode({
-            classNames: "wmnds-btn--small wmnds-btn__mode",
-            text: "Bus",
-            iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-bus"
-          })
-        }}
-  {{
-          mode({
-            classNames: "wmnds-btn--small wmnds-btn__mode",
-            text: "Train",
-            iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-railway"
-          })
-        }}
-  {{
-          mode({
-            classNames: "wmnds-btn--small wmnds-btn__mode",
-            text: "Metro",
-            iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-metro"
-          })
-        }}
-  {{
-          mode({
-            classNames: "wmnds-btn--small wmnds-btn__mode",
-            text: "Road",
-            iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-roads"
-          })
-        }}
-  <h4>HTML Markup</h4>
-  <pre class=""><code
-      class="html">{%- from "components/button/_button.njk" import wmnButton as mode -%}
-      {{
-  mode({
-    classNames: "wmnds-btn--small wmnds-btn__mode",
-    text: "Bus",
-    iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-bus"
-  })
+<h2>Mode buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as mode -%}
+{% from "www/_partials/_component-example.njk" import compExample as compExample %}
+{{
+  compExample([
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Bus",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-bus"
+    }),
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Train",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-railway"
+    }),
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Metro",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-metro"
+    }),
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Road",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-roads"
+    })
+  ])
 }}
-
-      {{
-  mode({
-    classNames: "wmnds-btn--small wmnds-btn__mode",
-    text: "Train",
-    iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-railway"
-  })
-}}
-
-      {{
-  mode({
-    classNames: "wmnds-btn--small wmnds-btn__mode",
-    text: "Metro",
-    iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-metro"
-  })
-}}
-
-      {{
-  mode({
-    classNames: "wmnds-btn--small wmnds-btn__mode",
-    text: "Road",
-    iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-roads"
-  })
-}}</code></pre>
-</div>
 <!-- end: mode buttons -->
-</div>
-</div>
-</div>
 {% endblock %}
