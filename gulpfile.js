@@ -46,7 +46,6 @@ const buildAll = series(
   moveImages,
   buildStyles,
   buildScripts,
-  formatNjk,
   nunjucks,
   buildConfig,
   lintScripts,
@@ -56,7 +55,7 @@ const buildAll = series(
 const serve = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, formatNjk, nunjucks, buildConfig, spriteSvgs, moveImages),
+  parallel(buildStyles, buildScripts, nunjucks, buildConfig, spriteSvgs, moveImages),
   cacheBust,
   parallel(watchFiles, browserSync)
 );
@@ -64,7 +63,6 @@ const serve = series(
 exports.default = serve;
 exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
-exports.formatNjk = formatNjk;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;
