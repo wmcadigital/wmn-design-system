@@ -4,5 +4,10 @@
     "nunjucks": "html",
     "njk": "html"
   },
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,njk}",
+  "files.associations": {
+    "*.njk": "jinja-html"
+  },
+  "vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
   "files.eol": "\n"
 }
