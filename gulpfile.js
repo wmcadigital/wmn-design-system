@@ -11,6 +11,7 @@ const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and conca
 
 // TEMPLATES
 const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint templates/HTML
+const formatNjk = require('./gulp-tasks/format-njk'); // Format njk files correctly
 const nunjucks = require('./gulp-tasks/build-nunjucks'); // build nunjucks
 
 // OTHER
@@ -27,7 +28,7 @@ const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // Browser
 function watchFiles() {
   // Lint, concat, minify JS then reload server
   watch(paths.scripts.src, series(lintScripts, buildScripts, cacheBust, reload)); // lint and build scripts
-  watch(paths.nunjucks.src, series(nunjucks, lintTemplates, reload)); // Rebuild and reload when .njk files change
+  watch(paths.nunjucks.src, series(formatNjk, nunjucks, lintTemplates, reload)); // Rebuild and reload when .njk files change
   watch(paths.images.src, series(moveImages)); // If new images are found, move to build folder
   watch(paths.svgs.src, spriteSvgs);
   watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
@@ -44,6 +45,7 @@ const buildAll = series(
   moveImages,
   buildStyles,
   buildScripts,
+  formatNjk,
   nunjucks,
   buildConfig,
   lintScripts,
@@ -53,7 +55,7 @@ const buildAll = series(
 const serve = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, nunjucks, buildConfig, spriteSvgs, moveImages),
+  parallel(buildStyles, buildScripts, formatNjk, nunjucks, buildConfig, spriteSvgs, moveImages),
   cacheBust,
   parallel(watchFiles, browserSync)
 );
@@ -61,6 +63,7 @@ const serve = series(
 exports.default = serve;
 exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
+exports.formatNjk = formatNjk;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = buildStyles;

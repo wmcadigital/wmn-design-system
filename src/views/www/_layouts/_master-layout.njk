@@ -3,6 +3,7 @@
   <!-- Head -->
   {% include "www/_partials/_head.njk" %}
   <!-- end: Head -->
+
   <body>
     <!--[if IE]> <p class="browserupgrade"> You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. </p> <![endif]-->
 
@@ -11,9 +12,9 @@
     <!-- header -->
 
     <div class="container-lg">
-        {% include "www/_partials/nav/nav.njk" %}
+      {% include "www/_partials/nav/nav.njk" %}
 
-        {% block body %}{% endblock %}
+      {% block body %}{% endblock %}
     </div>
 
     <!-- footer -->
@@ -24,4 +25,5 @@
     {% include  "www/_partials/_scripts.njk" %}
     <!-- end: Scripts -->
   </body>
+
 </html>

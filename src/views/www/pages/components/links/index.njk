@@ -14,7 +14,9 @@
         <strong><a href="/components/buttons/">button</a></strong>
       </p>
       <p>
-        <strong>Links</strong> should be used when a users action won’t affect the website at all, examples of these are:
+        <strong>Links</strong> should be used when a users action won’t affect the website at all,
+        examples of these
+        are:
       </p>
       <ul>
         <li>Certain call to actions</li>
@@ -23,13 +25,20 @@
 
       <h3>What do the <strong>link</strong> attritubes mean?</h3>
       <p>The <strong>href</strong> attritube is used to define the link address</p>
-      <p>The <strong>target</strong> attritube is used to define where to open the linked document. See below to find out more about the <strong>target</strong> attritube</p>
-      <p>The <strong>title</strong> attritube is used to define additional information about the link. It's useful for your users and accessibility. Try not to duplicate your link text- this hurts usability as hard of sight users using screen readers will here the same text twice.</p>
+      <p>The <strong>target</strong> attritube is used to define where to open the linked document.
+        See below to find
+        out more about the <strong>target</strong> attritube</p>
+      <p>The <strong>title</strong> attritube is used to define additional information about the
+        link. It's useful for
+        your users and accessibility. Try not to duplicate your link text- this hurts usability as
+        hard of sight users
+        using screen readers will here the same text twice.</p>
 
       <p><strong>Target</strong> attritube values:</p>
       <ul>
         <li><strong>_blank</strong>: Will load clicked link in a new window</li>
-        <li><strong>_self</strong>: Will load clicked link in the same frame as it was clicked in</li>
+        <li><strong>_self</strong>: Will load clicked link in the same frame as it was clicked in
+        </li>
         <li><strong>_parent</strong>: Will load clicked link in the parent frameset</li>
         <li><strong>_top</strong>: Will load clicked link in the full body of the window</li>
         <li><strong>framename</strong>: Will load clicked link in a named frame</li>
@@ -59,8 +68,9 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/link/_link.njk" import wmnLink as primary -%}
-{{
+        <pre class=""><code
+            class="html">{%- from "components/link/_link.njk" import wmnLink as primary -%}
+            {{
   primary({
     classNames: "wmnds-btn__primary",
     text: "Primary button",
@@ -70,7 +80,7 @@
   })
 }}
 
-{{
+            {{
   primary({
     classNames: "wmnds-btn__primary",
     text: "Primary icon button",
@@ -106,8 +116,9 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/link/_link.njk" import wmnLink as secondary -%}
-{{
+        <pre class=""><code
+            class="html">{%- from "components/link/_link.njk" import wmnLink as secondary -%}
+            {{
   secondary({
     classNames: "wmnds-btn__secondary",
     text: "Secondary button",
@@ -117,7 +128,7 @@
   })
 }}
 
-{{
+            {{
   secondary({
     classNames: "wmnds-btn__secondary",
     text: "Secondary icon button",
@@ -153,8 +164,9 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/link/_link.njk" import wmnLink as cta -%}
-{{
+        <pre class=""><code
+            class="html">{%- from "components/link/_link.njk" import wmnLink as cta -%}
+            {{
   cta({
     classNames: "wmnds-btn__cta",
     text: "Call to action button",
@@ -164,7 +176,7 @@
   })
 }}
 
-{{
+            {{
   cta({
     classNames: "wmnds-btn__cta",
     text: "Call to action icon button",
@@ -200,8 +212,9 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/link/_link.njk" import wmnLink as destructive -%}
-{{
+        <pre class=""><code
+            class="html">{%- from "components/link/_link.njk" import wmnLink as destructive -%}
+            {{
   destructive({
     classNames: "wmnds-btn__destructive",
     text: "Destructive button",
@@ -211,7 +224,7 @@
   })
 }}
 
-{{
+            {{
   destructive({
     classNames: "wmnds-btn__destructive",
     text: "Destructive icon button",
@@ -247,8 +260,9 @@
           })
         }}
         <h4>HTML Markup</h4>
-<pre class=""><code class="html">{%- from "components/link/_link.njk" import wmnLink as start -%}
-{{
+        <pre class=""><code
+            class="html">{%- from "components/link/_link.njk" import wmnLink as start -%}
+            {{
   start({
     classNames: "wmnds-btn__start",
     text: "Start button",
@@ -258,7 +272,7 @@
   })
 }}
 
-{{
+            {{
   start({
     classNames: "wmnds-btn__start",
     text: "Start icon button",
