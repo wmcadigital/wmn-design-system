@@ -1,0 +1,16 @@
+{% macro example(componentPath, classNames) %}
+
+<div class="wmnds-col-1 {{classNames}}">
+  {%- for item in componentPath %}
+    {{ item }}
+  {% endfor -%}
+</div>
+
+<h4>HTML Markup</h4>
+<pre><code class="html">
+{%- for item in componentPath %}
+  {{- item | forceescape }}
+{% endfor -%}
+</code></pre>
+
+{% endmacro %}
