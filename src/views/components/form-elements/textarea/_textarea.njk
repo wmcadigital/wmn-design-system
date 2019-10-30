@@ -1,0 +1,17 @@
+{% macro wmndsTextarea(params) %}
+
+{# Imports #}
+{% from "components/form-elements/label/_label.njk" import wmndsLabel %}
+
+
+<div class="wmnds-grid">
+  {{
+    wmndsLabel({
+      label: 'Textarea label',
+      for: 'textarea'
+    }) | trim
+  }}
+  <textarea type="text" name="textarea" id="textarea" class="wmnds-col-1"></textarea>
+</div>
+
+{% endmacro %}
