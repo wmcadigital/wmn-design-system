@@ -2,289 +2,162 @@
 {% set pageTitle="Links" %}
 
 {% block content %}
-<div class="container-lg">
-  <div class="wmnds-grid justify-between">
-    <div class="wmnds-col-1">
-      <p>
-        <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
-        page
-      </p>
-      <p>
-        It's important to know when to use a <strong>link</strong> or went to use a
-        <strong><a href="/components/buttons/">button</a></strong>
-      </p>
-      <p>
-        <strong>Links</strong> should be used when a users action won’t affect the website at all,
-        examples of these
-        are:
-      </p>
-      <ul>
-        <li>Certain call to actions</li>
-        <li>Links to internal or external pages</li>
-      </ul>
+  <p>
+    <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
+    page
+  </p>
+  <p>
+    It's important to know when to use a <strong>link</strong> or went to use a
+    <strong><a href="/components/buttons/">button</a></strong>
+  </p>
+  <p>
+    <strong>Links</strong> should be used when a users action won’t affect the website at all,
+    examples of these
+    are:
+  </p>
+  <ul>
+    <li>Certain call to actions</li>
+    <li>Links to internal or external pages</li>
+  </ul>
 
-      <h3>What do the <strong>link</strong> attritubes mean?</h3>
-      <p>The <strong>href</strong> attritube is used to define the link address</p>
-      <p>The <strong>target</strong> attritube is used to define where to open the linked document.
-        See below to find
-        out more about the <strong>target</strong> attritube</p>
-      <p>The <strong>title</strong> attritube is used to define additional information about the
-        link. It's useful for
-        your users and accessibility. Try not to duplicate your link text- this hurts usability as
-        hard of sight users
-        using screen readers will here the same text twice.</p>
+  <h3>What do the <strong>link</strong> attritubes mean?</h3>
+  <p>The <strong>href</strong> attritube is used to define the link address</p>
+  <p>The <strong>target</strong> attritube is used to define where to open the linked document.
+    See below to find
+    out more about the <strong>target</strong> attritube</p>
+  <p>The <strong>title</strong> attritube is used to define additional information about the
+    link. It's useful for
+    your users and accessibility. Try not to duplicate your link text- this hurts usability as
+    hard of sight users
+    using screen readers will here the same text twice.</p>
 
-      <p><strong>Target</strong> attritube values:</p>
-      <ul>
-        <li><strong>_blank</strong>: Will load clicked link in a new window</li>
-        <li><strong>_self</strong>: Will load clicked link in the same frame as it was clicked in
-        </li>
-        <li><strong>_parent</strong>: Will load clicked link in the parent frameset</li>
-        <li><strong>_top</strong>: Will load clicked link in the full body of the window</li>
-        <li><strong>framename</strong>: Will load clicked link in a named frame</li>
-      </ul>
-
-      <!-- primary buttons -->
-      <div>
-        <h4>Primary buttons</h4>
-        {%- from "components/link/_link.njk" import wmnLink as primary -%}
-        {{
-          primary({
-            classNames: "wmnds-btn__primary",
-            text: "Primary button",
-            link: "javascript:void(0);",
-            linkTitle: "This is a primary link",
-            linkTarget: "_self"
-          })
-        }}
-        {{
-          primary({
-            classNames: "wmnds-btn__primary",
-            text: "Primary icon button",
-            iconRight: "fas fa-chevron-right",
-            link: "javascript:void(0);",
-            linkTitle: "This is a primary link",
-            linkTarget: "_self"
-          })
-        }}
-        <h4>HTML Markup</h4>
-        <pre class=""><code
-            class="html">{%- from "components/link/_link.njk" import wmnLink as primary -%}
-            {{
-  primary({
-    classNames: "wmnds-btn__primary",
-    text: "Primary button",
-    link: "javascript:void(0);",
-    linkTitle: "This is a primary link",
-    linkTarget: "_self"
-  })
-}}
-
-            {{
-  primary({
-    classNames: "wmnds-btn__primary",
-    text: "Primary icon button",
-    iconRight: "fas fa-chevron-right",
-    link: "javascript:void(0);",
-    linkTitle: "This is a primary link",
-    linkTarget: "_self"
-  })
-}}</code></pre>
-      </div>
-      <!-- end: primary buttons -->
-      <!-- secondary buttons -->
-      <div>
-        <h4>Secondary buttons</h4>
-        {%- from "components/link/_link.njk" import wmnLink as secondary -%}
-        {{
-          secondary({
-            classNames: "wmnds-btn__secondary",
-            text: "Secondary button",
-            link: "javascript:void(0);",
-            linkTitle: "This is a secondary link",
-            linkTarget: "_self"
-          })
-        }}
-        {{
-          secondary({
-            classNames: "wmnds-btn__secondary",
-            text: "Secondary icon button",
-            iconRight: "fas fa-chevron-right",
-            link: "javascript:void(0);",
-            linkTitle: "This is a secondary link",
-            linkTarget: "_self"
-          })
-        }}
-        <h4>HTML Markup</h4>
-        <pre class=""><code
-            class="html">{%- from "components/link/_link.njk" import wmnLink as secondary -%}
-            {{
-  secondary({
-    classNames: "wmnds-btn__secondary",
-    text: "Secondary button",
-    link: "javascript:void(0);",
-    linkTitle: "This is a secondary link ",
-    linkTarget: "_self"
-  })
-}}
-
-            {{
-  secondary({
-    classNames: "wmnds-btn__secondary",
-    text: "Secondary icon button",
-    iconRight: "fas fa-chevron-right",
-    link: "javascript:void(0);",
-    linkTitle: "This is a secondary link",
-    linkTarget: "_self"
-  })
-}}</code></pre>
-      </div>
-      <!-- end: secondary buttons -->
-      <!-- call to action buttons -->
-      <div>
-        <h4>Call to action buttons</h4>
-        {%- from "components/link/_link.njk" import wmnLink as cta %}
-        {{
-          cta({
-            classNames: "wmnds-btn__cta",
-            text: "Call to action button",
-            link: "javascript:void(0);",
-            linkTitle: "This is a call to action link",
-            linkTarget: "_self"
-          })
-        }}
-        {{
-          cta({
-            classNames: "wmnds-btn__cta",
-            text: "Call to action icon button",
-            iconRight: "fas fa-chevron-right",
-            link: "javascript:void(0);",
-            linkTitle: "This is a call to action link",
-            linkTarget: "_self"
-          })
-        }}
-        <h4>HTML Markup</h4>
-        <pre class=""><code
-            class="html">{%- from "components/link/_link.njk" import wmnLink as cta -%}
-            {{
-  cta({
-    classNames: "wmnds-btn__cta",
-    text: "Call to action button",
-    link: "javascript:void(0);",
-    linkTitle: "This is a call to action link",
-    linkTarget: "_self"
-  })
-}}
-
-            {{
-  cta({
-    classNames: "wmnds-btn__cta",
-    text: "Call to action icon button",
-    iconRight: "fas fa-chevron-right",
-    link: "javascript:void(0);",
-    linkTitle: "This is a call to action link",
-    linkTarget: "_self"
-  })
-}}</code></pre>
-      </div>
-      <!-- end: call to action buttons -->
-      <!-- destructive buttons -->
-      <div>
-        <h4>Destructive buttons</h4>
-        {%- from "components/link/_link.njk" import wmnLink as destructive -%}
-        {{
-          destructive({
-            classNames: "wmnds-btn__destructive",
-            text: "Destructive button",
-            link: "javascript:void(0);",
-            linkTitle: "This is a destructive link",
-            linkTarget: "_self"
-          })
-        }}
-        {{
-          destructive({
-            classNames: "wmnds-btn__destructive",
-            text: "Destructive icon button",
-            iconRight: "fas fa-chevron-right",
-            link: "javascript:void(0);",
-            linkTitle: "This is a destructive link",
-            linkTarget: "_self"
-          })
-        }}
-        <h4>HTML Markup</h4>
-        <pre class=""><code
-            class="html">{%- from "components/link/_link.njk" import wmnLink as destructive -%}
-            {{
-  destructive({
-    classNames: "wmnds-btn__destructive",
-    text: "Destructive button",
-    link: "javascript:void(0);",
-    linkTitle: "This is a destructive link",
-    linkTarget: "_self"
-  })
-}}
-
-            {{
-  destructive({
-    classNames: "wmnds-btn__destructive",
-    text: "Destructive icon button",
-    iconRight: "fas fa-chevron-right",
-    link: "javascript:void(0);",
-    linkTitle: "This is a destructive link",
-    linkTarget: "_self"
-  })
-}}</code></pre>
-      </div>
-      <!-- end: destructive buttons -->
-      <!-- start buttons -->
-      <div>
-        <h4>Start buttons</h4>
-        {%- from "components/link/_link.njk" import wmnLink as start -%}
-        {{
-          start({
-            classNames: "wmnds-btn__start",
-            text: "Start button",
-            link: "javascript:void(0);",
-            linkTitle: "This is a start link",
-            linkTarget: "_self"
-          })
-        }}
-        {{
-          start({
-            classNames: "wmnds-btn__start",
-            text: "Start icon button",
-            iconRight: "fas fa-chevron-right",
-            link: "javascript:void(0);",
-            linkTitle: "This is a start link",
-            linkTarget: "_self"
-          })
-        }}
-        <h4>HTML Markup</h4>
-        <pre class=""><code
-            class="html">{%- from "components/link/_link.njk" import wmnLink as start -%}
-            {{
-  start({
-    classNames: "wmnds-btn__start",
-    text: "Start button",
-    link: "javascript:void(0);",
-    linkTitle: "This is a start link",
-    linkTarget: "_self"
-  })
-}}
-
-            {{
-  start({
-    classNames: "wmnds-btn__start",
-    text: "Start icon button",
-    iconRight: "fas fa-chevron-right",
-    link: "javascript:void(0);",
-    linkTitle: "This is a start link",
-    linkTarget: "_self"
-  })
-}}</code></pre>
-      </div>
-      <!-- end: start buttons -->
-    </div>
-  </div>
-</div>
+  <p><strong>Target</strong> attritube values:</p>
+  <ul>
+    <li><strong>_blank</strong>: Will load clicked link in a new window</li>
+    <li><strong>_self</strong>: Will load clicked link in the same frame as it was clicked in
+    </li>
+    <li><strong>_parent</strong>: Will load clicked link in the parent frameset</li>
+    <li><strong>_top</strong>: Will load clicked link in the full body of the window</li>
+    <li><strong>framename</strong>: Will load clicked link in a named frame</li>
+  </ul>
+  <!-- primary buttons -->
+  <h2>Primary buttons</h2>
+  {%- from "components/link/_link.njk" import wmnLink as primary -%}
+  {% from "www/_partials/_component-example.njk" import compExample as compExample %}
+  {{
+    compExample([
+      primary({
+        classNames: "wmnds-btn__primary",
+        text: "Primary button",
+        link: "javascript:void(0);",
+        linkTitle: "This is a primary link",
+        linkTarget: "_self"
+      }),
+      primary({
+        classNames: "wmnds-btn__primary",
+        text: "Primary icon button",
+        iconRight: "fas fa-chevron-right",
+        link: "javascript:void(0);",
+        linkTitle: "This is a primary link",
+        linkTarget: "_self"
+      })
+    ])
+  }}
+  <!-- end: primary buttons -->
+  <!-- secondary buttons -->
+  <h2>Secondary buttons</h2>
+  {%- from "components/link/_link.njk" import wmnLink as secondary -%}
+  {% from "www/_partials/_component-example.njk" import compExample as compExample %}
+  {{
+    compExample([
+      secondary({
+        classNames: "wmnds-btn__secondary",
+        text: "Secondary button",
+        link: "javascript:void(0);",
+        linkTitle: "This is a secondary link",
+        linkTarget: "_self"
+      }),
+      secondary({
+        classNames: "wmnds-btn__secondary",
+        text: "Secondary icon button",
+        iconRight: "fas fa-chevron-right",
+        link: "javascript:void(0);",
+        linkTitle: "This is a secondary link",
+        linkTarget: "_self"
+      })
+    ])
+  }}
+  <!-- end: secondary buttons -->
+  <!-- call to action buttons -->
+  <h2>Call to action buttons</h2>
+  {%- from "components/link/_link.njk" import wmnLink as cta %}
+  {% from "www/_partials/_component-example.njk" import compExample as compExample %}
+  {{
+    compExample([
+      cta({
+        classNames: "wmnds-btn__cta",
+        text: "Call to action button",
+        link: "javascript:void(0);",
+        linkTitle: "This is a call to action link",
+        linkTarget: "_self"
+      }),
+      cta({
+        classNames: "wmnds-btn__cta",
+        text: "Call to action icon button",
+        iconRight: "fas fa-chevron-right",
+        link: "javascript:void(0);",
+        linkTitle: "This is a call to action link",
+        linkTarget: "_self"
+      })
+    ])
+  }}
+  <!-- end: call to action buttons -->
+  <!-- destructive buttons -->
+  <h2>Destructive buttons</h2>
+  {%- from "components/link/_link.njk" import wmnLink as destructive -%}
+  {% from "www/_partials/_component-example.njk" import compExample as compExample %}
+  {{
+    compExample([
+      destructive({
+        classNames: "wmnds-btn__destructive",
+        text: "Destructive button",
+        link: "javascript:void(0);",
+        linkTitle: "This is a destructive link",
+        linkTarget: "_self"
+      }),
+      destructive({
+        classNames: "wmnds-btn__destructive",
+        text: "Destructive icon button",
+        iconRight: "fas fa-chevron-right",
+        link: "javascript:void(0);",
+        linkTitle: "This is a destructive link",
+        linkTarget: "_self"
+      })
+    ])
+  }}
+  <!-- end: destructive buttons -->
+  <!-- start buttons -->
+  <h2>Start buttons</h2>
+  {%- from "components/link/_link.njk" import wmnLink as start -%}
+  {% from "www/_partials/_component-example.njk" import compExample as compExample %}
+  {{
+    compExample([
+      start({
+        classNames: "wmnds-btn__start",
+        text: "Start button",
+        link: "javascript:void(0);",
+        linkTitle: "This is a start link",
+        linkTarget: "_self"
+      }),
+      start({
+        classNames: "wmnds-btn__start",
+        text: "Start icon button",
+        iconRight: "fas fa-chevron-right",
+        link: "javascript:void(0);",
+        linkTitle: "This is a start link",
+        linkTarget: "_self"
+      })
+    ])
+  }}
+  <!-- end: start buttons -->
 {% endblock %}
