@@ -1,32 +1,32 @@
-{%- macro wmnLink(params) -%}
+{% macro wmnLink(params) %}
 {# set class names #}
-{%- if params.classNames -%}
-{%- set classNames = params.classNames -%}
-{%- endif -%}
+{% if params.classNames %}
+{% set classNames = params.classNames %}
+{% endif %}
 {# set button text #}
-{%- if params.text -%}
-{%- set text = params.text -%}
-{%- endif -%}
+{% if params.text %}
+{% set text = params.text %}
+{% endif %}
 {# set icon right classes #}
-{%- if params.iconRight -%}
-{%- set iconRight = params.iconRight + "" -%}
-{%- endif -%}
+{% if params.iconRight %}
+{% set iconRight = params.iconRight + "" %}
+{% endif %}
 {# set svg left reference #}
-{%- if params.iconLeft -%}
-{%- set iconLeft = params.iconLeft -%}
-{%- endif -%}
+{% if params.iconLeft %}
+{% set iconLeft = params.iconLeft %}
+{% endif %}
 {# set link url #}
-{%- if params.link -%}
-{%- set link = params.link -%}
-{%- endif -%}
+{% if params.link %}
+{% set link = params.link %}
+{% endif %}
 {# set link title #}
-{%- if params.linkTitle -%}
-{%- set linkTitle = params.linkTitle -%}
-{%- endif -%}
+{% if params.linkTitle %}
+{% set linkTitle = params.linkTitle %}
+{% endif %}
 {# set link target #}
-{%- if params.linkTarget -%}
-{%- set linkTarget = params.linkTarget -%}
-{%- endif -%}
+{% if params.linkTarget %}
+{% set linkTarget = params.linkTarget %}
+{% endif %}
 
 <a {% if params.link %} href="{{ link }}" {% endif %} {% if params.linkTitle %}
   title="{{ linkTitle }}" {% endif %} {% if params.linkTarget %} target="{{ linkTarget }}"
@@ -34,16 +34,16 @@
   tabindex="0">
   <span>
     {%- if iconLeft -%}
-    <svg class="wmnds-btn__icon--left">
-      <use xlink:href="{{ iconLeft }}"></use>
-    </svg>
+      <svg class="wmnds-btn__icon--left">
+        <use xlink:href="{{ iconLeft }}"></use>
+      </svg>
     {%- endif -%}
 
     {{ text }}
 
     {%- if iconRight -%}
-    <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
+      <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
     {%- endif -%}
   </span>
 </a>
-{%- endmacro -%}
+{% endmacro %}
