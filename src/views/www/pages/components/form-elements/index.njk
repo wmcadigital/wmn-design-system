@@ -28,4 +28,13 @@
     compExample([wmndsDropdown()])
   }}
   {# End Dropdown #}
+
+  {# Input #}
+  <h2>Input</h2>
+  {% from "components/form-elements/input/_input.njk" import wmndsInput %}
+  {% from "www/_partials/_component-example.njk" import compExample %}
+  {{
+    compExample([wmndsInput()])
+  }}
+  {# End Input #}
 {% endblock %}
