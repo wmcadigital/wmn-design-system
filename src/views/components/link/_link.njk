@@ -28,12 +28,9 @@
 {% set linkTarget = params.linkTarget %}
 {% endif %}
 
-<a {% if params.link %} href="{{ link }}" {% endif %} {% if params.linkTitle %}
-  title="{{ linkTitle }}" {% endif %} {% if params.linkTarget %} target="{{ linkTarget }}"
-  {% endif %} class="wmnds-btn {% if params.classNames %} {{ classNames }} {% endif %} mar-bot-md"
-  tabindex="0">
+<a {% if params.link -%} href="{{ link }}" {%- endif %} {% if params.linkTitle -%} title="{{ linkTitle }}" {%- endif %} {% if params.linkTarget -%} target="{{ linkTarget }}" {%- endif %} class="wmnds-btn {% if params.classNames %} {{ classNames }} {% endif %} mar-bot-md" tabindex="0">
   <span>
-    {%- if iconLeft -%}
+    {%- if iconLeft %}
       <svg class="wmnds-btn__icon--left">
         <use xlink:href="{{ iconLeft }}"></use>
       </svg>
@@ -41,9 +38,9 @@
 
     {{ text }}
 
-    {%- if iconRight -%}
+    {%- if iconRight %}
       <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
-    {%- endif -%}
+    {%- endif %}
   </span>
 </a>
 {% endmacro %}
