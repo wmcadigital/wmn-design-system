@@ -23,17 +23,17 @@
 {% endif %}
 <button class="wmnds-btn {% if params.classNames %}{{ classNames }}{% endif %} mar-bot-md" tabindex="0" {% if params.disabled %} disabled {% endif %}>
   <span>
-    {%- if iconLeft -%}
+    {%- if iconLeft %}
     <svg class="wmnds-btn__icon--left">
       <use xlink:href="{{ iconLeft }}"></use>
     </svg>
     {%- endif -%}
 
-    {{- text -}}
+    {{ text }}
 
     {%- if iconRight %}
       <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
-    {%- endif -%}
+    {%- endif %}
   </span>
 </button>
 {% endmacro %}
