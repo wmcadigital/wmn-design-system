@@ -1,9 +1,0 @@
-{% macro codePreview(codeString) %}
-
-{# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
-<pre><code class="html">
-{%- for item in codeString -%}{{ item | forceescape | trim }}
-{% endfor -%}
-</code></pre>
-
-{% endmacro %}

@@ -2,7 +2,8 @@
   "eslint.enable": true,
   "emmet.includeLanguages": {
     "nunjucks": "html",
-    "njk": "html"
+    "njk": "html",
+    "jinja-html": "html"
   },
   "html-css-class-completion.includeGlobPattern": "**/*.{css,html,njk}",
   "files.associations": {

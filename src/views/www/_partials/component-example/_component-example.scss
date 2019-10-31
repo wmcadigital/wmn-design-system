@@ -1,0 +1,7 @@
+.code-example {
+  border: 1px solid getColor(primary, 20);
+  padding: $padding-md;
+  code {
+    padding: $padding-md;
+  }
+}
