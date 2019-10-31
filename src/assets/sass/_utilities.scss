@@ -78,6 +78,9 @@ html {
   }
 }
 .pad {
+  &-sm {
+    @include x-padding($padding-sm);
+  }
   &-md {
     @include x-padding($padding-md);
   }

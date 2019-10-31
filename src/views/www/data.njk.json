@@ -25,5 +25,32 @@
     {
       "name": "Patterns"
     }
-  ]
+  ],
+  "colors": {
+    "brand": [
+      { "varName": "primary", "name": "Primary Purple" },
+      { "varName": "secondary", "name": "Seconday Purple" }
+    ],
+    "modal": [
+      { "varName": "bus", "name": "Bus" },
+      { "varName": "metro", "name": "Metro" },
+      { "varName": "railway", "name": "WM Railway" },
+      { "varName": "susTravel", "name": "Sustainable Travel" },
+      { "varName": "roads", "name": "Roads" },
+      { "varName": "taxi", "name": "Taxi" }
+    ],
+    "web": [
+      { "varName": "text", "name": "Text" },
+      { "varName": "cta", "name": "Call to Action" },
+      { "varName": "error", "name": "Error" },
+      { "varName": "warning", "name": "Warning" },
+      { "varName": "success", "name": "Success" },
+      { "varName": "information", "name": "Information" }
+    ],
+    "backgroundOnly": [
+      { "varName": "plannedDisruption", "name": "Planned Disruption" },
+      { "varName": "disable", "name": "Disabled Elements" },
+      { "varName": "background", "name": "Background" }
+    ]
+  }
 }
