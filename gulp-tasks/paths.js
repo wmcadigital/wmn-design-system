@@ -6,9 +6,10 @@ module.exports = {
     root: './build/'
   },
   styles: {
-    src: ['src/assets/sass/**/*.scss', 'src/views/**/**/*.scss'], // src of styles to watch
+    src: ['src/assets/sass/**/*.scss', 'src/views/**/*.scss'], // src of styles to watch
     minifySrc: ['src/assets/sass/wmnds-components.scss', 'src/views/www/wmnds-website.scss'], // List of scss file(s) which should be processed, linted & minified
-    output: 'build/css/' // output location of minified styles
+    output: 'build/css/', // output location of minified styles
+    reactNativeSrc: 'src/assets/sass/wmnds-components.scss'
   },
   scripts: {
     src: ['src/assets/**/*.js', 'src/views/components/**/*.js', './src/views/www/**/*.js'], // Src of JS files to watch

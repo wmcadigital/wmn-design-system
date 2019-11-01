@@ -6,7 +6,7 @@ const paths = require('./paths.js');
 const { getRoot, packageJson, build } = require('./utils');
 
 // Process, lint, and minify Sass files
-module.exports = () => {
+module.exports.buildStyles = () => {
   return src(paths.styles.minifySrc)
     .pipe(
       plugins.plumber({
@@ -24,4 +24,19 @@ module.exports = () => {
     .pipe(dest(paths.styles.output))
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(dest(paths.styles.output));
+};
+
+module.exports.buildReactNativeStyles = () => {
+  return src(paths.styles.reactNativeSrc)
+    .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
+    .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
+    .pipe(plugins.autoprefixer()) // Prefix css with older browser support
+    .pipe(plugins.reactNativeStylesheetCss()) // Converts CSS to React Native stylesheet
+    .pipe(
+      plugins.babel({
+        presets: ['@babel/env']
+      })
+    ) // Compiles ES6 down to older javascript
+    .pipe(plugins.uglify()) // Mangle var names etc.
+    .pipe(dest(`${paths.styles.output}/react-native/`));
 };

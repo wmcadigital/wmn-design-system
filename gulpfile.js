@@ -3,7 +3,7 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const paths = require('./gulp-tasks/paths.js'); // List of all paths in a config
 
 // STYLES
-const buildStyles = require('./gulp-tasks/build-styles'); // Build Styles
+const { buildStyles, buildReactNativeStyles } = require('./gulp-tasks/build-styles'); // Build Styles
 
 // SCRIPTS
 const lintScripts = require('./gulp-tasks/lint-scripts'); // Lint scripts/JS
@@ -31,7 +31,7 @@ function watchFiles() {
   // watch(paths.nunjucks.output, formatNjk); // Format Nunjucks src files if change is detected in build folder (this is to stop watch looping, if inserted in above watcher)
   watch(paths.images.src, series(moveImages)); // If new images are found, move to build folder
   watch(paths.svgs.src, spriteSvgs);
-  watch(paths.styles.src, series(buildStyles, reload)); // run buildStyles function on scss change(s)
+  watch(paths.styles.src, series(buildStyles, buildReactNativeStyles, reload)); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
 }
 
@@ -44,6 +44,7 @@ const buildAll = series(
   minImages,
   moveImages,
   buildStyles,
+  buildReactNativeStyles,
   buildScripts,
   nunjucks,
   buildConfig,
@@ -54,7 +55,15 @@ const buildAll = series(
 const serve = series(
   lintScripts,
   lintTemplates,
-  parallel(buildStyles, buildScripts, nunjucks, buildConfig, spriteSvgs, moveImages),
+  parallel(
+    buildStyles,
+    buildReactNativeStyles,
+    buildScripts,
+    nunjucks,
+    buildConfig,
+    spriteSvgs,
+    moveImages
+  ),
   cacheBust,
   parallel(watchFiles, browserSync)
 );
@@ -64,7 +73,7 @@ exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
-exports.buildStyles = buildStyles;
+exports.buildStyles = series(buildStyles, buildReactNativeStyles);
 exports.buildNunjucks = series(nunjucks, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.spriteSvgs = spriteSvgs;
