@@ -34,7 +34,7 @@ module.exports.buildReactNativeStyles = () => {
     .pipe(plugins.reactNativeStylesheetCss()) // Converts CSS to React Native stylesheet
     .pipe(
       plugins.babel({
-        presets: ['@babel/env']
+        presets: [['babel-preset-env']]
       })
     ) // Compiles ES6 down to older javascript
     .pipe(plugins.uglify()) // Mangle var names etc.

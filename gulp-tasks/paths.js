@@ -22,7 +22,7 @@ module.exports = {
       // },
       // { src: 'src/assets/vendor/js/**/*.js', minName: 'wmnds-vendor.min.js', lint: false },
       {
-        src: ['node_modules/babel-polyfill/dist/polyfill.js', 'src/views/www/**/*.js'],
+        src: 'src/views/www/**/*.js',
         minName: 'wmnds-website.min.js',
         lint: true
       }

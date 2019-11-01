@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
+  "browserslist": [
+    "last 2 versions",
+    "ie 8",
+    "ie 9",
+    "iOS 9"
+  ],
   "buildDirs": {
     "live": {
       "baseUrl": "//beta.wmca.org.uk",
@@ -48,15 +54,10 @@
   "copyright": "West Midlands Network",
   "homepage": "https://westmidlandsnetwork.co.uk/",
   "devDependencies": {
-    "@babel/core": "^7.6.3",
-    "@babel/preset-env": "^7.6.3",
     "autoprefixer": "^9.6.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "eslint": "^6.1.0",
@@ -69,7 +70,7 @@
     "gulp": "^4.0.2",
     "gulp-accessibility": "^3.1.1",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^8.0.0",
+    "gulp-babel": "^7.0.1",
     "gulp-changed": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-cli": "^2.2.0",
@@ -98,6 +99,7 @@
     "sass": "^1.23.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "path": "^0.12.7"
   }
 }
