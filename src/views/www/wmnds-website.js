@@ -1,5 +1,3 @@
-import '@babel/polyfill';
-
 function colorPalettes() {
   const colors = document.querySelectorAll('.color__swatch');
 

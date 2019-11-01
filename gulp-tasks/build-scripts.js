@@ -20,7 +20,7 @@ function minifyJS(jsFile) {
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(
       plugins.babel({
-        presets: [['babel-preset-env']],
+        presets: ['babel-preset-env'],
         ignore: ['**/*.min.js']
       })
     )
