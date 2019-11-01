@@ -11,7 +11,6 @@ const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and conca
 
 // TEMPLATES
 const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint templates/HTML
-const formatNjk = require('./gulp-tasks/format-njk'); // Format njk files correctly
 const nunjucks = require('./gulp-tasks/build-nunjucks'); // build nunjucks
 
 // OTHER
