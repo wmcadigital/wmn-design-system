@@ -125,10 +125,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       border: $btn-border-width solid transparent;
     }
     &:visited {
-      background-color: getColor(cta50);
+      background-color: getColor(cta, 50);
     }
     &:hover {
-      background-color: getColor(cta30);
+      background-color: getColor(cta, 30);
     }
     &:active,
     &:target,
@@ -136,7 +136,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-is-active {
       background-color: getColor(cta);
       span {
-        background-color: getColor(cta50);
+        background-color: getColor(cta, 50);
         -webkit-appearance: none;
         border: $btn-border-width solid white;
         padding: $padding-sm;
