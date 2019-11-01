@@ -53,10 +53,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       border: $btn-border-width solid transparent;
     }
     &:visited {
-      background-color: getColor(primary50);
+      background-color: getColor(primary, 50);
     }
     &:hover {
-      background-color: getColor(primary30);
+      background-color: getColor(primary, 30);
     }
     &:active,
     &:target,
@@ -67,7 +67,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         -webkit-appearance: none;
         border: $btn-border-width solid white;
         padding: $padding-sm;
-        background-color: getColor(primary50);
+        background-color: getColor(primary, 50);
         border-radius: $btn-border-radius;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -88,15 +88,15 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       border: $btn-border-width solid transparent;
     }
     &:visited {
-      background-color: getColor(secondary30);
+      background-color: getColor(secondary, 30);
       span {
-        background-color: getColor(secondary30);
+        background-color: getColor(secondary, 30);
       }
     }
     &:hover {
-      background-color: getColor(secondary30);
+      background-color: getColor(secondary, 30);
       span {
-        background-color: getColor(secondary30);
+        background-color: getColor(secondary, 30);
       }
     }
     &:active,
@@ -110,7 +110,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         padding: $padding-sm;
         border-radius: $btn-border-radius;
         box-sizing: border-box;
-        background-color: getColor(secondary50);
+        background-color: getColor(secondary, 50);
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
       }
