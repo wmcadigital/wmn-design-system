@@ -9,30 +9,27 @@ $x-palette-white: #ffffff; // White
 /* -------------------------------------------------------------------------- */
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
-  // WEB COLORS
+  // BRAND COLORS
     primary: #3c1053 /* WMN Primary Purple */,
   secondary: #9d5baf /* WMN Secondary Purple */,
-  cta: #02b5e3 /* WMN CTA Blue */,
-  text: #231f20 /* WMN Text Black*/,
-  // BRAND COLORS
-    purple: #3c1053 /* WMN Primary Purple */,
-  secondaryPurple: #9d5baf /* WMN Secondary Purple */,
-  darkPurple: #1e082a /* WMN Dark Purple */,
-  coolGrey: #54565b /* WMN Cool Grey */,
-  yellow: #ffdd00 /* WMN Yellow */,
   // MODAL COLORS
-    railway: #ff8300 /* WMN Railway */,
-  bus: #ea0029 /* WMN Bus */,
+    bus: #ea0029 /* WMN Bus */,
   metro: #0075c9 /* WMN Metro */,
+  railway: #ff8300 /* WMN Railway */,
+  susTravel: #679500 /* WMN Walk & Cycle */,
   roads: #df1683 /* WMN Roads */,
-  walkCycle: #679500 /* WMN Walk & Cycle */,
   taxi: #773dbe /* WMN Taxi */,
-  // ACTION COLORS
-    warning: #cc6900,
+  // WEB
+    text: #231f20 /* WMN Text Black*/,
+  cta: #1d7ec4 /* WMN CTA Blue */,
   error: #d4351c,
+  warning: #cc6900,
   success: #00703c,
-  search: #84329b,
-  disable: #676869
+  information: #84329b,
+  // BACKGROUND ONLY
+    disable: #676869 /* Disabled elements */,
+  plannedDisruption: #ffdd00 /* WMN Planned Disruption */,
+  background: #f3f2f1 /* Background colour */
 );
 
 /* -------------------------------------------------------------------------- */
