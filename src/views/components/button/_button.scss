@@ -158,11 +158,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
 
     &:visited {
-      background-color: getColor(error50);
+      background-color: getColor(error, 50);
     }
 
     &:hover {
-      background-color: getColor(error30);
+      background-color: getColor(error, 30);
     }
 
     &:active,
@@ -172,7 +172,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       span {
         -webkit-appearance: none;
         border: $btn-border-width solid white;
-        background-color: getColor(error50);
+        background-color: getColor(error, 50);
         padding: $padding-sm;
         border-radius: $btn-border-radius;
         box-sizing: border-box;
@@ -191,11 +191,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
 
     &:visited {
-      background-color: getColor(success50);
+      background-color: getColor(success, 50);
     }
 
     &:hover {
-      background-color: getColor(success30);
+      background-color: getColor(success, 30);
     }
 
     &:active,
@@ -206,7 +206,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         -webkit-appearance: none;
         border: $btn-border-width solid white;
         padding: $padding-sm;
-        background-color: getColor(success50);
+        background-color: getColor(success, 50);
         border-radius: $btn-border-radius;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
