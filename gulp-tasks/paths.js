@@ -15,16 +15,16 @@ module.exports = {
     src: ['src/assets/**/*.js', 'src/views/components/**/*.js', './src/views/www/**/*.js'], // Src of JS files to watch
     // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
     minifySrc: [
+      // {
+      //   src: 'src/views/components/**/*.js',
+      //   minName: 'wmnds-components.min.js',
+      //   lint: true
+      // },
+      // { src: 'src/assets/vendor/js/**/*.js', minName: 'wmnds-vendor.min.js', lint: false },
       {
-        src: 'src/views/components/**/*.js',
-        minName: 'wmnds-components.min.js',
-        lint: true
-      },
-      { src: 'src/assets/vendor/js/**/*.js', minName: 'wmnds-vendor.min.js', lint: false },
-      {
-        src: 'src/views/www/**/*.js',
+        src: ['node_modules/babel-polyfill/dist/polyfill.js', 'src/views/www/**/*.js'],
         minName: 'wmnds-website.min.js',
-        lint: false
+        lint: true
       }
     ],
     output: 'build/js/' // Output location of minified JS files
