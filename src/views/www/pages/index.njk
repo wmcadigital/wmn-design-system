@@ -54,13 +54,19 @@
     Include the below files in your service/application to quickly get started with our design
     system.
   </p>
+  <h3>Web projects</h3>
   <pre>
     <code class="html">
-      {% filter forceescape %}<!-- css for wmn design system -->
+      {% filter forceescape %}<!-- CSS for WMN Design System -->
       <link rel="stylesheet" href="$*cdn/css/wmnds-components.css" />
-      {#- <!-- js for wmn design system -->
-      <script src="https://wmnetwork.netlify.com/js/wmnds-components.min.js"></script>
-      <script src="https://wmnetwork.netlify.com/js/wmnds-vendor.min.js"></script> #}
+      {%- endfilter %}
+    </code>
+  </pre>
+  <h3>Mobile app projects (react native)</h3>
+  <pre>
+    <code class="javascript">
+      {% filter forceescape %}<!-- Import react native styles for WMN Design System -->
+      import wmndsStyles from "$*cdn/css/react-native/wmnds-components.js"
       {%- endfilter %}
     </code>
   </pre>
