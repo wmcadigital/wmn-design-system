@@ -26,7 +26,7 @@
 
     &::placeholder {
       font-weight: bold;
-      color: getColor(black);
+      color: getColor(text);
     }
   }
 
@@ -45,7 +45,7 @@
     width: 100%;
     padding: $padding-sm;
     border: 1px solid;
-    border-bottom-color: getColor(black);
+    border-bottom-color: getColor(text);
     border-top: 0;
     list-style: none;
     text-align: left;

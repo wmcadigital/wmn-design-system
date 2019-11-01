@@ -1,7 +1,7 @@
 html,
 body {
   font-size: $font-size;
-  color: getColor(black);
+  color: getColor(text);
   line-height: $base-line-height;
   @include type-setting(0);
   font-family: $x-font-family;

@@ -79,7 +79,7 @@ $btn-material-size: 60px;
     right: $btn-material-size;
     //border-radius: 100%;
     box-sizing: border-box;
-    background: getColor(black);
+    background: getColor(text);
     outline: 0;
     transform-origin: 50%;
     transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
