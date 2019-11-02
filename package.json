@@ -54,15 +54,13 @@
   "copyright": "West Midlands Network",
   "homepage": "https://westmidlandsnetwork.co.uk/",
   "devDependencies": {
-    "autoprefixer": "^9.6.4",
-    "babel-core": "^6.26.3",
+    "autoprefixer": "^9.7.1",
     "babel-eslint": "^10.0.3",
-    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
-    "eslint": "^6.1.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
@@ -70,7 +68,6 @@
     "gulp": "^4.0.2",
     "gulp-accessibility": "^3.1.1",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^7.0.1",
     "gulp-changed": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-cli": "^2.2.0",
@@ -93,13 +90,14 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.12.0",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.13.0",
     "nunjucks": "^3.2.0",
     "prettier": "^1.18.2",
-    "sass": "^1.23.0"
+    "sass": "^1.23.3",
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
     "path": "^0.12.7"
   }
 }

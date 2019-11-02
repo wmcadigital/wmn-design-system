@@ -1,6 +1,7 @@
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
+
 // Local requires
 const paths = require('./paths.js');
 const { getRoot, packageJson, build } = require('./utils');
@@ -32,11 +33,6 @@ module.exports.buildReactNativeStyles = () => {
     .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
     .pipe(plugins.autoprefixer()) // Prefix css with older browser support
     .pipe(plugins.reactNativeStylesheetCss()) // Converts CSS to React Native stylesheet
-    .pipe(
-      plugins.babel({
-        presets: [['babel-preset-env']]
-      })
-    ) // Compiles ES6 down to older javascript
-    .pipe(plugins.uglify()) // Mangle var names etc.
-    .pipe(dest(`${paths.styles.output}/react-native/`));
+    .pipe(plugins.uglifyEs.default()) // Mangle var names etc.
+    .pipe(dest(`${paths.styles.output}react-native/`));
 };
