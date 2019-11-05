@@ -52,9 +52,9 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     span {
       border: $btn-border-width solid transparent;
     }
-    &:visited {
-      background-color: getColor(primary, 50);
-    }
+    // &:visited {
+    //   background-color: getColor(primary, 50);
+    // }
     &:hover {
       background-color: getColor(primary, 30);
     }
