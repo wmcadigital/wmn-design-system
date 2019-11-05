@@ -8,7 +8,7 @@ body {
 }
 
 // Get rid of margin for the first header item in main content
-#main-content {
+* {
   h1:first-child,
   h2:first-child,
   h3:first-child,
@@ -56,6 +56,14 @@ a {
   &-gray {
     color: getColor(secondary);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $x-heading-font-family;
 }
 
 h1 {
