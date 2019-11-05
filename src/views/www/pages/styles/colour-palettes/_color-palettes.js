@@ -10,7 +10,7 @@ function colorPalettes() {
     return `#${hex(newRGB[1])}${hex(newRGB[2])}${hex(newRGB[3])}`;
   }
 
-  colors.forEach(function(swatch) {
+  colors.forEach(swatch => {
     const ele = swatch;
     const rgbColor = getComputedStyle(swatch).backgroundColor;
     const hexColor = rgb2hex(rgbColor);
