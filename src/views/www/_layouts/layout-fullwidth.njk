@@ -1,7 +1,7 @@
 {% extends "www/_layouts/_master-layout.njk" %}
 
 {% block body %}
-<h1>{{ pageTitle }}</h1>
+<h1>{{ pageTitle | safe}}</h1>
 <hr>
 <div class="wmnds-grid">
   <div class="wmnds-col-1">
