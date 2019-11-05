@@ -18,8 +18,8 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     border: none;
     position: relative;
     span {
-      display: inline-block;
       padding: $padding-sm;
+      display: inline-block;
       pointer-events: none;
       transition: $btn-transition;
     }
@@ -52,9 +52,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     span {
       border: $btn-border-width solid transparent;
     }
-    // &:visited {
-    //   background-color: getColor(primary, 50);
-    // }
     &:hover {
       background-color: getColor(primary, 30);
     }
@@ -87,12 +84,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     span {
       border: $btn-border-width solid transparent;
     }
-    &:visited {
-      background-color: getColor(secondary, 30);
-      span {
-        background-color: getColor(secondary, 30);
-      }
-    }
     &:hover {
       background-color: getColor(secondary, 30);
       span {
@@ -124,9 +115,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     span {
       border: $btn-border-width solid transparent;
     }
-    &:visited {
-      background-color: getColor(cta, 50);
-    }
     &:hover {
       background-color: getColor(cta, 30);
     }
@@ -157,10 +145,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       border: $btn-border-width solid transparent;
     }
 
-    &:visited {
-      background-color: getColor(error, 50);
-    }
-
     &:hover {
       background-color: getColor(error, 30);
     }
@@ -188,10 +172,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
     span {
       border: $btn-border-width solid transparent;
-    }
-
-    &:visited {
-      background-color: getColor(success, 50);
     }
 
     &:hover {
