@@ -22,6 +22,11 @@ module.exports.buildStyles = () => {
     .pipe(plugins.autoprefixer()) // Prefix css with older browser support
     .pipe(plugins.cleanCss({ level: 2 })) // Minify css
     .pipe(plugins.sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
+    .pipe(
+      plugins.rename({
+        extname: '.min.css'
+      })
+    )
     .pipe(dest(paths.styles.output))
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(dest(paths.styles.output));
@@ -34,5 +39,10 @@ module.exports.buildReactNativeStyles = () => {
     .pipe(plugins.autoprefixer()) // Prefix css with older browser support
     .pipe(plugins.reactNativeStylesheetCss()) // Converts CSS to React Native stylesheet
     .pipe(plugins.uglifyEs.default()) // Mangle var names etc.
+    .pipe(
+      plugins.rename({
+        extname: '.min.js'
+      })
+    )
     .pipe(dest(`${paths.styles.output}react-native/`));
 };
