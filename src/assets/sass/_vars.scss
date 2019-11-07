@@ -26,6 +26,7 @@ $palettes: (
   warning: #cc6900,
   success: #00703c,
   information: #84329b,
+  white: #ffffff,
   // BACKGROUND ONLY
     disable: #676869 /* Disabled elements */,
   plannedDisruption: #ffdd00 /* WMN Planned Disruption */,
@@ -116,3 +117,15 @@ $margin-md: $base-line-height;
 $margin-lg: $base-line-height * 2;
 $margin-xl: $base-line-height * 3;
 /* -------------------------------------------------------------------------- */
+
+// Breakpoints
+// Extra small screen / phone
+$breakpoint-xs: 0;
+// Small screen / phone
+$breakpoint-sm: 568px;
+// Medium screen / tablet
+$breakpoint-md: 768px;
+// Large screen / desktop
+$breakpoint-lg: 1024px;
+// Extra large screen / wide desktop
+$breakpoint-xl: 1280px;
