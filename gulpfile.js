@@ -3,6 +3,7 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const paths = require('./gulp-tasks/paths.js'); // List of all paths in a config
 
 // STYLES
+const lintStyles = require('./gulp-tasks/lint-styles'); // Lint styles
 const { buildStyles, buildReactNativeStyles } = require('./gulp-tasks/build-styles'); // Build Styles
 
 // SCRIPTS
@@ -69,6 +70,7 @@ const serve = series(
 );
 // Export items to be used in terminal
 exports.default = serve;
+exports.lintStyles = lintStyles;
 exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
