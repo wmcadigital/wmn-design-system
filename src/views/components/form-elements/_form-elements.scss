@@ -2,11 +2,11 @@ input,
 textarea,
 select {
   padding: $padding-sm;
-  color: get-color(text);
   border: 1px solid get-color(primary);
+  color: get-color(text);
 }
 
-@import 'label/label';
-@import 'checkboxes/checkboxes';
-@import 'dropdown/dropdown';
-@import 'search/search';
+@import "label/label";
+@import "checkboxes/checkboxes";
+@import "dropdown/dropdown";
+@import "search/search";
