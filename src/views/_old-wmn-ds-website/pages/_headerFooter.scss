@@ -1,18 +1,18 @@
 
 .header {
     margin-bottom: $margin-xl;
-    background-color: getColor(primary);
+    background-color: get-color(primary);
     position: relative;
-  
-    @media only screen and (max-width: 568px) { 
+
+    @media only screen and (max-width: 568px) {
       height: 78px;
       padding: 0px;
     }
   }
-  
+
   #header-logo {
     width: 100px;
-  
+
     @media only screen and (max-width: 568px) {
       position: absolute;
       top: 50%;
@@ -34,7 +34,7 @@
   display: inline-block;
   line-height: 2rem;
   margin-left: $margin-lg;
-  
+
   a {
       color: white;
       text-decoration: underline;
@@ -43,7 +43,7 @@
 
 .header__version-icon {
     border-radius: 6px;
-    background-color: getColor(secondary);
+    background-color: get-color(secondary);
     color: white;
     padding: 5px;
     position: absolute;
@@ -59,14 +59,14 @@
 
 .pb__container__icon {
     border-radius: 6px;
-    background-color: getColor(secondary);
+    background-color: get-color(secondary);
     color: white;
     margin-right: $margin-sm;
     padding: $padding-sm;
 }
 
 .f {
-    background-color: getColor(primary);
+    background-color: get-color(primary);
     color: white;
     padding: $padding-sm;
 }
@@ -115,7 +115,7 @@
 
 .fl {
     color: white;
-    border-bottom: 3px solid getColor(cta);
+    border-bottom: 3px solid get-color(cta);
 
     a {
         color: white;
@@ -123,7 +123,7 @@
 }
 
 .fl__container {
-    background-color: getColor(cta);
+    background-color: get-color(cta);
 }
 
 .fl__container__list__item {
@@ -160,7 +160,7 @@
 
 .cookies {
     padding: $padding-sm;
-    border: 1px solid getColor(primary);
+    border: 1px solid get-color(primary);
 
     .btn {
         display: inline-block;

@@ -11,6 +11,6 @@ module.exports = () => {
         configFile: '.sass-lint.yml'
       })
     )
-    .pipe(plugins.sassLint.format())
-    .pipe(plugins.sassLint.failOnError());
+    .pipe(plugins.sassLint.format());
+    // .pipe(plugins.sassLint.failOnError());
 };

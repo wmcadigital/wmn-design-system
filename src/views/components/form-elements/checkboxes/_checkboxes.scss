@@ -2,65 +2,68 @@
   &__desc {
     margin-bottom: $margin-sm;
   }
-  /* Customize the label (the container) */
+
+  // Customize the label (the container)
   &__container {
     @include type-setting(0);
     display: block;
     position: relative;
-    padding-left: 60px;
     margin-bottom: $margin-md;
+    padding-left: 60px;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-    /* On mouse-over, add a grey background color */
+
+    // On mouse-over, add a grey background color
     &:hover .wmnds-fe-checkboxes__checkmark {
-      background-color: getColor(secondary, 30);
+      background-color: get-color(secondary, 30);
     }
   }
-  /* Hide the browser's default checkbox */
+
+  // Hide the browser's default checkbox
   &__input {
     position: absolute;
-    opacity: 0;
-    height: 0;
     width: 0;
-    /* Show the checkmark when checked */
+    height: 0;
+    opacity: 0;
+    // Show the checkmark when checked
+
     &:checked ~ .wmnds-fe-checkboxes__checkmark {
       display: block;
-      /* Style the checkmark/indicator */
+
+      // Style the checkmark/indicator
       &:after {
-        content: '\f00c';
+        content: "\f00c";
         display: block;
-        font-family: 'Font Awesome 5 Pro';
-        font-weight: bold;
-        font-size: 25px;
-        width: 25px;
-        height: 22px;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        width: 25px;
+        height: 22px;
         margin: auto;
+        font-family: "Font Awesome 5 Pro";
+        font-size: 25px;
+        font-weight: bold;
       }
     }
   }
-  /* Create a custom checkbox */
+
+  // Create a custom checkbox
   &__checkmark {
     position: absolute;
     top: 0;
     left: 0;
-    height: 35px;
     width: 35px;
-    border: 1px solid getColor(primary);
-    color: getColor(primary);
-    background: white;
+    height: 35px;
+    border: 1px solid get-color(primary);
+    color: get-color(primary);
+    background: $white;
 
-    /* Create the checkmark/indicator (hidden when not checked) */
+    // Create the checkmark/indicator (hidden when not checked)
     &:after {
-      content: '';
-      position: absolute;
+      content: "";
       display: none;
+      position: absolute;
     }
   }
 }

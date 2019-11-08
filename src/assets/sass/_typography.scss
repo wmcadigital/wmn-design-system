@@ -1,7 +1,7 @@
 html,
 body {
   font-size: $font-size;
-  color: getColor(text);
+  color: get-color(text);
   line-height: $base-line-height;
   @include type-setting(0);
   font-family: $x-font-family;
@@ -45,16 +45,16 @@ a {
 // Text colors
 .text-color {
   &-primary {
-    color: getColor(primary);
+    color: get-color(primary);
   }
   &-secondary {
-    color: getColor(secondary);
+    color: get-color(secondary);
   }
   &-white {
     color: $x-palette-white;
   }
   &-gray {
-    color: getColor(secondary);
+    color: get-color(secondary);
   }
 }
 
@@ -69,13 +69,13 @@ h5 {
 h1 {
   @include type-setting(5);
   margin: $margin-lg 0;
-  color: getColor(primary);
+  color: get-color(primary);
 }
 
 h2 {
   @include type-setting(4);
   margin: $margin-md 0;
-  color: getColor(primary);
+  color: get-color(primary);
 }
 
 h3 {
@@ -140,6 +140,6 @@ p {
     font-feature-settings: 'liga';
   }
   &:hover {
-    color: getColor(primary);
+    color: get-color(primary);
   }
 }

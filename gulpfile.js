@@ -32,7 +32,7 @@ function watchFiles() {
   // watch(paths.nunjucks.output, formatNjk); // Format Nunjucks src files if change is detected in build folder (this is to stop watch looping, if inserted in above watcher)
   watch(paths.images.src, series(moveImages)); // If new images are found, move to build folder
   watch(paths.svgs.src, spriteSvgs);
-  watch(paths.styles.src, series(buildStyles, buildReactNativeStyles, reload)); // run buildStyles function on scss change(s)
+  watch(paths.styles.src, series(buildStyles, buildReactNativeStyles, lintStyles, reload)); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
 }
 
@@ -50,11 +50,13 @@ const buildAll = series(
   nunjucks,
   buildConfig,
   lintScripts,
+  lintStyles,
   lintTemplates
 );
 // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
 const serve = series(
   lintScripts,
+  lintStyles,
   lintTemplates,
   parallel(
     buildStyles,
@@ -75,7 +77,7 @@ exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
 exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
-exports.buildStyles = series(buildStyles, buildReactNativeStyles);
+exports.buildStyles = series(lintStyles, buildStyles, buildReactNativeStyles);
 exports.buildNunjucks = series(nunjucks, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.spriteSvgs = spriteSvgs;

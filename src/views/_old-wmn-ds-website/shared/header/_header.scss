@@ -1,4 +1,4 @@
-$h-bg: getColor(primary);
+$h-bg: get-color(primary);
 $h-size-mob: 78px;
 
 .header {
@@ -6,7 +6,7 @@ $h-size-mob: 78px;
   padding: $padding-md;
   background-color: $h-bg;
 
-  @media only screen and (max-width: 568px) { 
+  @media only screen and (max-width: 568px) {
     height: $h-size-mob;
     padding: 0px;
     position: relative;

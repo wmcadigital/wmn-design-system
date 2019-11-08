@@ -11,16 +11,16 @@
 }
 
 #btn-secondary {
-    color: getColor(secondaryPurple);
+    color: get-color(secondaryPurple);
     font-weight: bold;
 }
 
 #btn-start {
-    color: getColor(success);
+    color: get-color(success);
     font-weight: bold;
 }
 
 #btn-destructive {
-    color: getColor(error);
+    color: get-color(error);
     font-weight: bold;
 }

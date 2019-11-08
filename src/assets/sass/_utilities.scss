@@ -180,13 +180,13 @@ html {
 }
 .bdr {
   &-primary {
-    @include x-default-border(getColor(primary));
+    @include x-default-border(get-color(primary));
   }
   &-white {
     @include x-default-border($x-palette-white);
   }
   &-gray {
-    @include x-default-border(getColor(secondary));
+    @include x-default-border(get-color(secondary));
   }
   &-transparent {
     @include x-default-border(transparent);

@@ -1,17 +1,17 @@
 .header {
     margin-bottom: $margin-xl;
-    background-color: getColor(primary);
+    background-color: get-color(primary);
     position: relative;
-  
-    @media only screen and (max-width: 568px) { 
+
+    @media only screen and (max-width: 568px) {
       height: 78px;
       padding: 0px;
     }
   }
-  
+
   #header-logo {
     width: 100px;
-  
+
     @media only screen and (max-width: 568px) {
       position: absolute;
       top: 50%;
@@ -33,7 +33,7 @@
   display: inline-block;
   line-height: 2rem;
   margin-left: $margin-lg;
-  
+
   a {
       color: white;
       text-decoration: underline;
@@ -42,7 +42,7 @@
 
 .header__version-icon {
     border-radius: 6px;
-    background-color: getColor(secondary);
+    background-color: get-color(secondary);
     color: white;
     padding: 5px;
     position: absolute;

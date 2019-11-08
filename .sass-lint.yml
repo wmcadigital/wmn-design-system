@@ -118,7 +118,7 @@ rules:
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/leading-zero.md
   leading-zero:
     - 2
-    - include: false
+    - include: true
 
   # Rule mixin-name-format will enforce a convention for mixin names.
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/mixin-name-format.md

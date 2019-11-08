@@ -26,20 +26,21 @@ $palettes: (
   warning: #cc6900,
   success: #00703c,
   information: #84329b,
-  white: #ffffff,
   // BACKGROUND ONLY
     disable: #676869 /* Disabled elements */,
   plannedDisruption: #ffdd00 /* WMN Planned Disruption */,
   background: #f3f2f1 /* Background colour */
 );
 
+$white: #ffffff;
+
 /* -------------------------------------------------------------------------- */
 
 /* TEXT --------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
-$text-color: getColor(black);
-$x-font-family: 'Noto Sans', sans-serif;
-$x-heading-font-family: 'DM Sans', sans-serif;
+$text-color: get-color(black);
+$x-font-family: "Noto Sans", sans-serif;
+$x-heading-font-family: "DM Sans", sans-serif;
 $font-size: 16px;
 
 // Base font size and line height
