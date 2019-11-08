@@ -9,7 +9,7 @@ $h-size-mob: 78px;
   @media only screen and (max-width: 568px) {
     position: relative;
     height: $h-size-mob;
-    padding: 0px;
+    padding: 0;
   }
 }
 
@@ -22,6 +22,5 @@ $h-size-mob: 78px;
     left: 100px;
     max-height: 2rem;
     transform: translateY(-50%);
-    padding: 0px;
   }
 }

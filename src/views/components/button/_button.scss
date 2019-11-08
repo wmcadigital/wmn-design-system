@@ -6,26 +6,27 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 .wmnds {
   // default button styles
   &-btn {
-    font-weight: bold;
-    border-radius: $btn-border-radius;
-    cursor: pointer;
-    display: inline-block;
-    transition: $btn-transition;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    padding: $btn-padding;
-    border: none;
+    display: inline-block;
     position: relative;
+    padding: $btn-padding;
+    transition: $btn-transition;
+    border: 0;
+    border-radius: $btn-border-radius;
+    font-weight: bold;
+    cursor: pointer;
+
     span {
-      padding: $padding-sm;
       display: inline-block;
-      pointer-events: none;
+      padding: $padding-sm;
       transition: $btn-transition;
+      pointer-events: none;
     }
+
     &:focus {
       outline: none;
     }
+
     &--small {
       span {
         padding: 2px !important;
@@ -47,30 +48,33 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
   // button primary styles
   &-btn__primary {
+    color: $white;
     background-color: get-color(primary);
-    color: white;
+
     span {
       border: $btn-border-width solid transparent;
     }
+
     &:hover {
       background-color: get-color(primary, 30);
     }
+
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
       background-color: get-color(primary);
+
       span {
-        -webkit-appearance: none;
-        border: $btn-border-width solid white;
-        padding: $padding-sm;
-        background-color: get-color(primary, 50);
-        border-radius: $btn-border-radius;
         box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
+        padding: $padding-sm;
+        border: $btn-border-width solid $white;
+        border-radius: $btn-border-radius;
+        background-color: get-color(primary, 50);
+        -webkit-appearance: none;
       }
     }
+
     &--input {
       padding: $padding-sm;
     }
@@ -78,68 +82,73 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
   // button secondary styles
   &-btn__secondary {
-    background-color: white;
-    color: get-color(primary);
     border: $btn-border-width solid get-color(primary);
+    color: get-color(primary);
+    background-color: $white;
+
     span {
       border: $btn-border-width solid transparent;
     }
+
     &:hover {
       background-color: get-color(secondary, 30);
+
       span {
         background-color: get-color(secondary, 30);
       }
     }
+
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: white;
+      background-color: $white;
+
       span {
-        -webkit-appearance: none;
-        border: $btn-border-width solid get-color(primary);
-        padding: $padding-sm;
-        border-radius: $btn-border-radius;
         box-sizing: border-box;
+        padding: $padding-sm;
+        border: $btn-border-width solid get-color(primary);
+        border-radius: $btn-border-radius;
         background-color: get-color(secondary, 50);
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
+        -webkit-appearance: none;
       }
     }
   }
 
   // button cta styles
   &-btn__cta {
+    color: $white;
     background-color: get-color(cta);
-    color: white;
+
     span {
       border: $btn-border-width solid transparent;
     }
+
     &:hover {
       background-color: get-color(cta, 30);
     }
+
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
       background-color: get-color(cta);
+
       span {
+        box-sizing: border-box;
+        padding: $padding-sm;
+        border: $btn-border-width solid $white;
+        border-radius: $btn-border-radius;
         background-color: get-color(cta, 50);
         -webkit-appearance: none;
-        border: $btn-border-width solid white;
-        padding: $padding-sm;
-        border-radius: $btn-border-radius;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
       }
     }
   }
 
   // button destructive styles
   &-btn__destructive {
+    color: $white;
     background-color: get-color(error);
-    color: white;
 
     span {
       border: $btn-border-width solid transparent;
@@ -154,21 +163,19 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmnds-is-active {
       span {
-        -webkit-appearance: none;
-        border: $btn-border-width solid white;
-        background-color: get-color(error, 50);
-        padding: $padding-sm;
-        border-radius: $btn-border-radius;
         box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
+        padding: $padding-sm;
+        border: $btn-border-width solid $white;
+        border-radius: $btn-border-radius;
+        background-color: get-color(error, 50);
+        -webkit-appearance: none;
       }
     }
   }
 
   &-btn__start {
+    color: $white;
     background-color: get-color(success);
-    color: white;
 
     span {
       border: $btn-border-width solid transparent;
@@ -183,35 +190,36 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmnds-is-active {
       span {
-        -webkit-appearance: none;
-        border: $btn-border-width solid white;
-        padding: $padding-sm;
-        background-color: get-color(success, 50);
-        border-radius: $btn-border-radius;
         box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
+        padding: $padding-sm;
+        border: $btn-border-width solid $white;
+        border-radius: $btn-border-radius;
+        background-color: get-color(success, 50);
+        -webkit-appearance: none;
       }
     }
   }
 
   // button mode toggle
   &-btn__mode {
-    background-color: white;
-    color: get-color(primary);
     border: $btn-border-width solid get-color(primary);
+    color: get-color(primary);
+    background-color: $white;
+
     span {
       padding: $padding-xs;
       border: $btn-border-width solid transparent;
     }
+
     &:hover,
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: mix(get-color(primary), white, 20);
+      background-color: mix(get-color(primary), $white, 20);
+
       span {
-        background-color: mix(get-color(primary), white, 20);
+        background-color: mix(get-color(primary), $white, 20);
       }
     }
   }
@@ -219,21 +227,26 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   // button disabled styles
   &-btn__disabled {
     &:disabled {
+      color: $white;
       background-color: get-color(disable);
-      color: white;
+
       span {
         border: $btn-border-width solid transparent;
+
         &:hover {
           background-color: get-color(disable);
         }
       }
+
       &:hover {
-        cursor: not-allowed;
         background-color: get-color(disable);
+        cursor: not-allowed;
+
         span {
           background-color: get-color(disable);
         }
       }
+
       &:active,
       &:target,
       &:focus,
@@ -243,20 +256,25 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         }
       }
     }
+
     &--light {
       &:disabled {
-        color: get-color(disable);
         border: $btn-border-width solid get-color(disable);
+        color: get-color(disable);
+
         span {
           border: $btn-border-width solid transparent;
         }
+
         &:hover {
-          cursor: not-allowed;
           background-color: transparent;
+          cursor: not-allowed;
+
           span {
             background-color: transparent;
           }
         }
+
         &:active,
         &:target,
         &:focus,
