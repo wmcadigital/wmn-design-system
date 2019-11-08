@@ -1,0 +1,15 @@
+<ul>
+  {# Foreach navItems #}
+  {% for navItem in navItems %}
+  {# If the name is equal to var #}
+  {% if (navItem.name | lower) == ((section if section else "Components") |lower) %}
+  {# If no section has been set then default to Components node #}
+  {% for sectionItem in navItem.subnavItems | sort(attribute='name') %}
+  <li>
+    <a class="wmnds-col-1"
+      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ sectionItem.name | lower | replace(" ", "-") }}/">{{ sectionItem.name}}</a>
+  </li>
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+// footer
+.footer {
+  margin-top: $margin-xl;
+  padding: $padding-lg;
+  color: $white;
+  box-shadow: 0 100vh 0 100vh #231f20;
+}
+
+.logo {
+  max-height: $base-line-height * 2;
+}

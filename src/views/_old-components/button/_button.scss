@@ -1,0 +1,293 @@
+$btn-border-radius: 4px;
+$btn-border-width: 1px;
+$btn-padding: 2px;
+$btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
+
+.wmnds {
+  // default button styles
+  &-btn {
+    font-weight: bold;
+    border-radius: $btn-border-radius;
+    cursor: pointer;
+    display: inline-block;
+    transition: $btn-transition;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: $btn-padding;
+    border: none;
+    position: relative;
+    span {
+      display: inline-block;
+      padding: $padding-sm;
+      pointer-events: none;
+      transition: $btn-transition;
+    }
+    &:focus {
+      outline: none;
+    }
+    &--small {
+      span {
+        padding: 2px !important;
+      }
+    }
+  }
+
+  // button icon left styles
+  &-btn__icon--left {
+    width: 25px;
+    height: 25px;
+    vertical-align: top;
+    padding-right: $btn-padding;
+    box-sizing: border-box;
+  }
+
+  // button icon right style
+  &-btn__icon--right {
+    padding-left: $padding-md;
+  }
+
+  // button primary styles
+  &-btn__primary {
+    background-color: get-color(primary);
+    color: white;
+    span {
+      border: $btn-border-width solid transparent;
+    }
+    &:visited {
+      background-color: get-color(primary50);
+    }
+    &:hover {
+      background-color: get-color(primary30);
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      background-color: get-color(primary);
+      span {
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        background-color: get-color(primary50);
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+    &--input {
+      padding: $padding-sm;
+    }
+  }
+
+  // button secondary styles
+  &-btn__secondary {
+    background-color: white;
+    color: get-color(primary);
+    border: $btn-border-width solid get-color(primary);
+    span {
+      border: $btn-border-width solid transparent;
+    }
+    &:visited {
+      background-color: get-color(secondary30);
+      span {
+        background-color: get-color(secondary30);
+      }
+    }
+    &:hover {
+      background-color: get-color(secondary30);
+      span {
+        background-color: get-color(secondary30);
+      }
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      background-color: white;
+      span {
+        -webkit-appearance: none;
+        border: $btn-border-width solid get-color(primary);
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        background-color: get-color(secondary50);
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+
+  // button cta styles
+  &-btn__cta {
+    background-color: get-color(cta);
+    color: white;
+    span {
+      border: $btn-border-width solid transparent;
+    }
+    &:visited {
+      background-color: get-color(cta50);
+    }
+    &:hover {
+      background-color: get-color(cta30);
+    }
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      background-color: get-color(cta);
+      span {
+        background-color: get-color(cta50);
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+
+  // button destructive styles
+  &-btn__destructive {
+    background-color: get-color(error);
+    color: white;
+
+    span {
+      border: $btn-border-width solid transparent;
+    }
+
+    &:visited {
+      background-color: get-color(error50);
+    }
+
+    &:hover {
+      background-color: get-color(error30);
+    }
+
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      span {
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        background-color: get-color(error50);
+        padding: $padding-sm;
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+
+  &-btn__start {
+    background-color: get-color(success);
+    color: white;
+
+    span {
+      border: $btn-border-width solid transparent;
+    }
+
+    &:visited {
+      background-color: get-color(success50);
+    }
+
+    &:hover {
+      background-color: get-color(success30);
+    }
+
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      span {
+        -webkit-appearance: none;
+        border: $btn-border-width solid white;
+        padding: $padding-sm;
+        background-color: get-color(success50);
+        border-radius: $btn-border-radius;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+    }
+  }
+
+  // button mode toggle
+  &-btn__mode {
+    background-color: white;
+    color: get-color(primary);
+    border: $btn-border-width solid get-color(primary);
+    span {
+      padding: $padding-xs;
+      border: $btn-border-width solid transparent;
+    }
+    &:hover,
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      background-color: mix(get-color(primary), white, 20);
+      span {
+        background-color: mix(get-color(primary), white, 20);
+      }
+    }
+  }
+
+  // button disabled styles
+  &-btn__disabled {
+    &:disabled {
+      background-color: get-color(disable);
+      color: white;
+      span {
+        border: $btn-border-width solid transparent;
+        &:hover {
+          background-color: get-color(disable);
+        }
+      }
+      &:hover {
+        cursor: not-allowed;
+        background-color: get-color(disable);
+        span {
+          background-color: get-color(disable);
+        }
+      }
+      &:active,
+      &:target,
+      &:focus,
+      &.wmnds-is-active {
+        span {
+          background-color: get-color(disable);
+        }
+      }
+    }
+    &--light {
+      &:disabled {
+        color: get-color(disable);
+        border: $btn-border-width solid get-color(disable);
+        span {
+          border: $btn-border-width solid transparent;
+        }
+        &:hover {
+          cursor: not-allowed;
+          background-color: transparent;
+          span {
+            background-color: transparent;
+          }
+        }
+        &:active,
+        &:target,
+        &:focus,
+        &.wmnds-is-active {
+          span {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

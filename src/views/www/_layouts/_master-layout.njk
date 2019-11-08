@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Head -->
+  {% include "www/_partials/_head.njk" %}
+  <!-- end: Head -->
+
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
+        security.
+      </p>
+    <![endif]-->
+
+    <!-- header -->
+    {% include "www/_partials/header/_header.njk" %}
+    <!-- header -->
+
+    <div class="container-lg">
+      {% include "www/_partials/nav/nav.njk" %}
+      {% block body %}{% endblock %}
+    </div>
+
+    <!-- footer -->
+    {% include "www/_partials/footer/_footer.njk" %}
+    <!-- footer -->
+
+    <!-- Scripts -->
+    {% include "www/_partials/_scripts.njk" %}
+    <!-- end: Scripts -->
+  </body>
+
+</html>

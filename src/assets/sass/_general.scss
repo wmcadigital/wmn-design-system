@@ -1,25 +1,26 @@
 $color-header: #22313f;
 $color-button: #e91e63;
-$color-placeholder: #eee;
+$color-placeholder: #eeeeee;
 $btn-material-size: 60px;
 
-/* Close Icon */
+// Close Icon
 .icon-close {
   position: fixed;
+  z-index: 101;
   top: 30px;
   right: 30px;
-  color: $x-palette-white;
-  cursor: pointer;
-  font-size: 70px;
-  opacity: 0;
   transition: all 0.3s ease-in-out;
+  opacity: 0;
+  color: $x-palette-white;
+  font-size: 70px;
+  cursor: pointer;
+
   &:hover {
     transform: rotate(0);
   }
-  z-index: 101;
 }
 
-/* Search Input */
+// Search Input
 .search-input {
   height: 80px;
   position: absolute;
@@ -32,7 +33,7 @@ $btn-material-size: 60px;
   transition: all 0.3s ease-in-out;
   z-index: 101;
   input {
-    color: getColor(primary);
+    color: get-color(primary);
     font-size: 54px;
     border: 0;
     background: transparent;
@@ -57,7 +58,7 @@ $btn-material-size: 60px;
   }
 }
 
-/* Container */
+// Container
 .container {
   padding-right: $padding-xl;
   padding-left: $padding-xl;
@@ -68,7 +69,7 @@ $btn-material-size: 60px;
   }
 }
 
-/* Control btn */
+//Control btn
 .control {
   cursor: pointer;
   .btn-material {
@@ -79,7 +80,7 @@ $btn-material-size: 60px;
     right: $btn-material-size;
     //border-radius: 100%;
     box-sizing: border-box;
-    background: getColor(black);
+    background: get-color(text);
     outline: 0;
     transform-origin: 50%;
     transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -97,7 +98,7 @@ $btn-material-size: 60px;
   }
 }
 
-/* Visually hide elements such as form labels */
+// Visually hide elements such as form labels
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -110,11 +111,11 @@ $btn-material-size: 60px;
 }
 
 .mobile-search {
-  background: getColor(secondary);
+  background: get-color(secondary);
   padding: 10px 5px;
   margin: $margin-md 0 0 0;
   input {
-    color: getColor(primary);
+    color: get-color(primary);
     border: transparent !important;
     background: 0 0;
     -webkit-appearance: none;
@@ -159,14 +160,14 @@ hr {
 
 // Text highlighting color
 ::-moz-selection {
-  /* Code for Firefox */
+  // Code for Firefox
   color: white;
-  background: getColor(primary);
+  background: get-color(primary);
 }
 
 ::selection {
   color: white;
-  background: getColor(primary);
+  background: get-color(primary);
 }
 
 $icon-base-width: 25px;
@@ -190,7 +191,7 @@ $icon-base-width-xl: $icon-base-width * 2.5;
   }
 }
 
-.wmn-display {
+.wmnds-display {
   &--block {
     display: block !important;
   }

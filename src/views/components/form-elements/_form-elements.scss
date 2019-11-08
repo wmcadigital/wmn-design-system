@@ -2,8 +2,8 @@ input,
 textarea,
 select {
   padding: $padding-sm;
-  color: getColor(black);
-  border: 1px solid getColor(primary);
+  color: get-color(text);
+  border: 1px solid get-color(primary);
 }
 
 @import 'label/label';

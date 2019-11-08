@@ -1,0 +1,26 @@
+{% macro wmndsCheckboxes(params) %}
+
+{# Imports #}
+{% from "components/form-elements/label/_label.njk" import wmndsLabel %}
+
+
+<div class="wmnds-fe-checkboxes wmnds-grid">
+  {{
+    wmndsLabel({
+      label: 'Checkboxes label',
+      for: 'checkboxes'
+    }) | trim
+  }}
+  <span class="wmnds-fe-checkboxes__desc wmnds-col-1">
+    Select all options that apply
+  </span>
+  {%- for i in range(1,4) %}
+  <label class="wmnds-fe-checkboxes__container wmnds-col-1">
+    Option {{i}}
+    <input type="checkbox" class="wmnds-fe-checkboxes__input" {{"checked" if i === 1}} />
+    <span class="wmnds-fe-checkboxes__checkmark"></span>
+  </label>
+  {%- endfor %}
+</div>
+
+{% endmacro %}

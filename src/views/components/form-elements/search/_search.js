@@ -1,9 +1,9 @@
 // Library from: https://github.com/TarekRaafat/autoComplete.js
-const autoCompleteInputs = document.querySelectorAll(".wmn-fe-autocomplete__input");
+const autoCompleteInputs = document.querySelectorAll(".wmnds-fe-autocomplete__input");
 
 autoCompleteInputs.forEach((autoCompleteEle, i) => {
 
-    autoCompleteEle.id = 'wmn-js-autoComplete-' + i; // Foreach autoCompleteEle, generate unique id to be used elsewhere
+    autoCompleteEle.id = 'wmnds-js-autoComplete-' + i; // Foreach autoCompleteEle, generate unique id to be used elsewhere
     const ds = autoCompleteEle.dataset; // Get all datasets from said input
     // Set configs to use below
     const config = {
@@ -35,7 +35,7 @@ autoCompleteInputs.forEach((autoCompleteEle, i) => {
                 container: (source) => {
                     const resultsListID = 'results_list' + i; // Set ID to unique
                     source.id = resultsListID; // Set above
-                    source.classList.add('wmn-fe-autocomplete__results-list'); // Add correct BEM class to results
+                    source.classList.add('wmnds-fe-autocomplete__results-list'); // Add correct BEM class to results
                     return resultsListID;
                 },
                 destination: document.querySelector('#' + autoCompleteEle.id)
@@ -44,7 +44,7 @@ autoCompleteInputs.forEach((autoCompleteEle, i) => {
             // Rendered result item
             resultItem: {
                 content: (data, source) => {
-                    source.classList.add('wmn-fe-autocomplete__result'); // Add correct BEM class to results
+                    source.classList.add('wmnds-fe-autocomplete__result'); // Add correct BEM class to results
                     source.innerHTML = data.match;
                 }
             },

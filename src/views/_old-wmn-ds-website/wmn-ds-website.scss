@@ -1,0 +1,97 @@
+// Vars
+@import "../../assets/sass/vars";
+
+// Mixins
+@import "../../assets/sass/mixins";
+
+// Styleguide only styles
+@import "shared/side-menu/side-menu";
+@import "shared/footer/footer";
+@import "shared/header/header";
+@import "shared/resizer/resizer";
+
+// Styleguide page specific styles
+@import "pages/colorPalette";
+@import "pages/marks";
+// @import 'pages/header';
+@import "pages/headerFooter";
+
+html,
+body {
+  margin: 0;
+  color: get-color(text);
+  font-family: $x-font-family;
+  font-size: $font-size;
+  line-height: $base-line-height;
+  @include type-setting(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.component-details {
+  margin-top: $margin-md;
+  margin-bottom: $margin-lg;
+}
+
+.component-details__code {
+  display: inline-block;
+  width: 100%;
+  margin: $margin-sm 0;
+  padding: $padding-sm;
+  border-left: 2px solid rgba(get-color(primary), 0.5);
+  border-radius: 4px;
+  background-color: #efefef;
+}
+
+.component-details__title {
+  @include type-setting(2);
+  font-weight: 700;
+}
+
+.component-details__text {
+  color: rgba(black, 0.5);
+  font-weight: 400;
+}
+
+// Scrollbar styling for code previews of components
+.hljs {
+  &::-webkit-scrollbar {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+  }
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+// icons background colour
+.icon__type {
+  text-align: center;
+
+  &--bg {
+    display: inline-block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    padding: $padding-sm;
+    border-radius: 50%;
+    background-color: get-color(secondary);
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+  }
+
+  &--caption {
+    padding-top: $padding-sm;
+  }
+}

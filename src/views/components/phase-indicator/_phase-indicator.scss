@@ -1,0 +1,12 @@
+.wmnds-phase-indicator {
+  padding: $padding-xs;
+  border-radius: 4px;
+  color: $white;
+  background-color: get-color(secondary);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @media screen and(min-width: $breakpoint-md) {
+    padding: $padding-xs $padding-sm;
+  }
+}

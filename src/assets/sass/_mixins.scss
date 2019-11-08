@@ -1,34 +1,28 @@
-/* TYPE --------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/*
-    This is to get the size of the font to be used,
-    and to scale the line heights based on the font size
-*/
+// TYPE
+// This is to get the size of the font to be used,
+// and to scale the line heights based on the font size
+
 @function type-scale($level) {
-    @return map-get(
-        map-get($type-settings, $level), 'font-size');
+  @return map-get(map-get($type-settings, $level), "font-size");
 }
 
 @function line-height($level) {
-    @return map-get(
-        map-get($type-settings, $level), 'line-height');
+  @return map-get(map-get($type-settings, $level), "line-height");
 }
 
 @function letter-spacing($level) {
-  @return map-get(
-      map-get($type-settings, $level), 'letter-spacing');
+  @return map-get(map-get($type-settings, $level), "letter-spacing");
 }
 
 @function word-spacing($level) {
-  @return map-get(
-      map-get($type-settings, $level), 'word-spacing');
+  @return map-get(map-get($type-settings, $level), "word-spacing");
 }
 
 @mixin type-setting($level) {
-    font-size: type-scale($level);
-    line-height: line-height($level);
-    // letter-spacing: letter-spacing($level);
-    // word-spacing: word-spacing($level);
+  font-size: type-scale($level);
+  line-height: line-height($level);
+  // letter-spacing: letter-spacing($level);
+  // word-spacing: word-spacing($level);
 }
 
 // Mixin to control header sizes
@@ -41,78 +35,76 @@
 //   }
 /* -------------------------------------------------------------------------- */
 
-
 /* COLOUR ------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 // This is to get one of the brand colors above
-// Use it like so... getColor(primary);
+// Use it like so... get-color(primary);
 // If you'd like to get a tint of a color, use it like so...
-// getColor(primary, 50);
-@function getColor($color, $percent: null) {
-    @if ($percent != null) {
-      @return map-get(map-get($colors-map, $color), $percent);
-    } @else {
-      @return map-get(map-get($colors-map, $color), 100);
-    }
+// get-color(primary, 50);
+@function get-color($color, $percent: null) {
+  @if ($percent != null) {
+    @return map-get(map-get($colors-map, $color), $percent);
+  } @else {
+    @return map-get(map-get($colors-map, $color), 100);
   }
-  
-  // In SCSS a map == array
-  $colors-map: (); // Set placeholder colors map
-  
-  // Function for defining our tints later on
-  @function create_colour_map($color) {
-    $map: (
-      100: $color,
-      90: mix($color, white, 90),
-      80: mix($color, white, 80),
-      70: mix($color, white, 70),
-      60: mix($color, white, 60),
-      50: mix($color, white, 50),
-      40: mix($color, white, 40),
-      30: mix($color, white, 30),
-      20: mix($color, white, 20),
-      10: mix($color, white, 10)
-    );
-    @return $map;
-  }
+}
 
+// In SCSS a map == array
+$colors-map: (); // Set placeholder colors map
+
+// Function for defining our tints later on
+@function create-colour-map($color) {
+  $map: (
+    100: $color,
+    90: mix($color, $white, 90),
+    80: mix($color, $white, 80),
+    70: mix($color, $white, 70),
+    60: mix($color, $white, 60),
+    50: mix($color, $white, 50),
+    40: mix($color, $white, 40),
+    30: mix($color, $white, 30),
+    20: mix($color, $white, 20),
+    10: mix($color, $white, 10)
+  );
+  @return $map;
+}
 
 // Foreach key: color(val) in the $palettes list/array
 @each $key, $value in $palettes {
-    $map: (); // Set placeholder map
-    // Using the function above, generate all our tints as new key:vals in a new map
-    $map: map-merge(
-      $map,
-      (
-        $key: create_colour_map($value)
-      )
-    );
-    $colors-map: map-merge($colors-map, $map); // Then merge all our tints in to a map
-  }
-  
-  // Foreach key: color(val) in the $colors-map list/array
-  @each $key, $color in $colors-map {
-    // Then foreach key: color in that key(list of tints)
-    @each $k, $c in map-get($colors-map, $key) {
-      @if ($k == 100) {
-        // Create default color class (E.g. color-primary)
-        .color-#{$key} {
-          color: $c;
-        }
-        // Create default bg-color class (E.g. bg-color-secondary)
-        .bg-color-#{$key} {
-          background-color: $c;
-        }
-      } @else {
-        // Generate a color class (E.g. .color-primary-60)
-        .color-#{$key}-#{$k} {
-          color: $c;
-        }
-        // Generate a bg color class (E.g. .bg-color-secondary-40)
-        .bg-color-#{$key}-#{$k} {
-          background-color: $c;
-        }
+  $map: (); // Set placeholder map
+  // Using the function above, generate all our tints as new key:vals in a new map
+  $map: map-merge(
+    $map,
+    (
+      $key: create-colour-map($value)
+    )
+  );
+  $colors-map: map-merge($colors-map, $map); // Then merge all our tints in to a map
+}
+
+// Foreach key: color(val) in the $colors-map list/array
+@each $key, $color in $colors-map {
+  // Then foreach key: color in that key(list of tints)
+  @each $k, $c in map-get($colors-map, $key) {
+    @if ($k == 100) {
+      // Create default color class (E.g. color-primary)
+      .color-#{$key} {
+        color: $c;
+      }
+      // Create default bg-color class (E.g. bg-color-secondary)
+      .bg-color-#{$key} {
+        background-color: $c;
+      }
+    } @else {
+      // Generate a color class (E.g. .color-primary-60)
+      .color-#{$key}-#{$k} {
+        color: $c;
+      }
+      // Generate a bg color class (E.g. .bg-color-secondary-40)
+      .bg-color-#{$key}-#{$k} {
+        background-color: $c;
       }
     }
   }
+}
 /* -------------------------------------------------------------------------- */

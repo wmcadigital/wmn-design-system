@@ -1,0 +1,80 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Colour Palettes" %}
+{% set section="Styles" %}
+{% from "www/pages/styles/colour-palettes/_color-palette-macro.njk" import colorPalette %}
+
+{% block content %}
+<p>Below are the list of WMCA's colour palettes and the various tints.</p>
+
+<p>Each colour has 10 tints, starting from the full colour and decreasing in 10% intervals.</p>
+
+<p>You can find the RGB and HEX values for reference.</p>
+
+<p>If using the colours in development, you shouldn't use the HEX and RGB values!</p>
+
+<p>You can use the class names suggested which will give the HTML element either a 'color' or
+  'background-color' CSS
+  property.
+</p>
+<p>Alternatively you can use a colour in a SCSS file by using the SCSS VAR provided. For example,
+  "color:
+  $get-color(primary, 30);".
+</p>
+
+{# Brand colours #}
+<hr>
+<h2>Brand colours</h2>
+<div class="wmnds-grid">
+  {% for color in colors.brand %}
+    {{
+      colorPalette({
+        varName: color.varName,
+        name: color.name
+      })
+    }}
+  {% endfor %}
+</div>
+
+{# Modal colours #}
+<hr>
+<h2>Modal colours</h2>
+<div class="wmnds-grid">
+  {% for color in colors.modal %}
+    {{
+      colorPalette({
+        varName: color.varName,
+        name: color.name
+      })
+    }}
+  {% endfor %}
+</div>
+
+{# Web colours #}
+<hr>
+<h2>Web colours</h2>
+<div class="wmnds-grid">
+  {% for color in colors.web %}
+    {{
+      colorPalette({
+        varName: color.varName,
+        name: color.name
+      })
+    }}
+  {% endfor %}
+</div>
+
+{# Background Only colours #}
+<hr>
+<h2>Background only colours</h2>
+<div class="wmnds-grid">
+  {% for color in colors.backgroundOnly %}
+    {{
+      colorPalette({
+        varName: color.varName,
+        name: color.name
+      })
+    }}
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+.brand-mark {
+    position: relative;
+    height: 350px;
+}
+
+.brand-mark__img-container {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border: 1px solid rgba(get-color(primary), .25);
+    padding: $padding-sm;
+    width: calc(100% - #{$padding-sm});
+}
+
+.brand-mark__img-container--white {
+    background-color: rgba((#eee), .75);
+}
+
+.brand-mark__img {
+
+}
+
+.brand-mark__text {
+    bottom: 0;
+    left: 50%;
+    transform: TranslateX(-50%);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}

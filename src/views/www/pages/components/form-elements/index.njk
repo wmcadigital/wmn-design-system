@@ -1,0 +1,100 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Form elements" %}
+
+{% block content %}
+  {# Label #}
+  <h2>Label</h2>
+  {% from "components/form-elements/label/_label.njk" import wmndsLabel %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsLabel()])
+  }}
+  {# End label #}
+
+  {# Checkboxes #}
+  <h2>Checkboxes</h2>
+  <h3>What does it do?</h3>
+  <p>
+    Allows users select one or more options by clicking the box.
+  </p>
+  <h3>When to use it?</h3>
+  <ul>
+    <li>When user can select multiple options from the list</li>
+    <li>When user wants to toggle option on or off</li>
+  </ul>
+  <h3>When not to use it?</h3>
+  <ul>
+    <li>When user needs to add a lot of text that might go over multiple lines</li>
+    <li>Use fixed width inputs for content that has known length, e.g. postcode.</li>
+  </ul>
+  {% from "components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsCheckboxes()])
+  }}
+  {# End Checkboxes #}
+
+  {# Dropdown #}
+  <h2>Dropdown</h2>
+  <h3>What does it do?</h3>
+  <p>
+    Navigation expands when user hovers or clicks on it revealing options to select.
+  </p>
+  <h3>When to use it?</h3>
+  <ul>
+    <li>When there is limited space and you need to reduce the space taken on the page</li>
+    <li>When an input is nonessential, e.g. sorting list</li>
+    <li>When you need flexibility because you do not know how many options there will be. All options are contained within the drop down component. </li>
+  </ul>
+  <h3>When not to use it?</h3>
+  <ul>
+    <li>Drop down creates more work for your user because it is a multi-step process, they hide available options and they slow users down by defaults therefore if possible use another component to display options e.g. radio buttons, text field, input selector</li>
+    <li>Do not use when drop down option has more than 36 characters because users will not be able to read them on some mobile devices</li>
+  </ul>
+  {% from "components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsDropdown()])
+  }}
+  {# End Dropdown #}
+
+  {# Input #}
+  <h2>Input</h2>
+  <h3>What does it do?</h3>
+  <p>
+    Allows users to enter text.
+  </p>
+  <h3>When to use it?</h3>
+  <ul>
+    <li>When user needs to enter short amount of text, e.g. name, email.</li>
+  </ul>
+  <h3>When not to use it?</h3>
+  <ul>
+    <li>When user needs to add a lot of text that might go over multiple lines</li>
+    <li>Use fixed width inputs for content that has known length, e.g. postcode.</li>
+  </ul>
+  {% from "components/form-elements/input/_input.njk" import wmndsInput %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsInput()])
+  }}
+  {# End Input #}
+
+  {# Search #}
+  <h2>Search</h2>
+  {% from "components/form-elements/search/_search.njk" import wmndsSearch %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsSearch()])
+  }}
+  {# End Textarea #}
+
+  {# Textarea #}
+  <h2>Textarea</h2>
+  {% from "components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsTextarea()])
+  }}
+  {# End Textarea #}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% macro wmnButton(params) %}
+
+{% set text = params.text if params.text else "Button text" %} {# set button text #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{# set true for button disabled #}
+{% if params.disabled %}
+  {% set classNames = params.classNames + " wmnds-btn__disabled" %}
+{% else %}
+  {% set classNames = params.classNames + "" %}
+{% endif %}
+
+<button class="wmnds-btn {% if params.classNames %}{{ classNames }}{% endif %} mar-bot-md" tabindex="0" {% if params.disabled %} disabled {% endif %}>
+  <span>
+    {%- if iconLeft %}
+    <svg class="wmnds-btn__icon--left">
+      <use xlink:href="{{ iconLeft }}"></use>
+    </svg>
+    {%- endif -%}
+
+    {{ text }}
+
+    {%- if iconRight %}
+      <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
+    {%- endif %}
+  </span>
+</button>
+
+{% endmacro %}

@@ -1,0 +1,10 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Phase indicators" %}
+
+{% block content %}
+  {% from "components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([wmndsPhaseIndicator()])
+  }}
+{% endblock %}

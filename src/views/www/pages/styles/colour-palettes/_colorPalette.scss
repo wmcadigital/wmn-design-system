@@ -1,0 +1,8 @@
+$cp-swatch-height: 50px;
+
+.color__swatch {
+  display: inline-block;
+  width: 100%;
+  height: $cp-swatch-height;
+  margin-bottom: $margin-sm;
+}

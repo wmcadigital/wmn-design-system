@@ -1,5 +1,5 @@
 {
-  "doctype-first": false,
+  "doctype-first": true,
   "tag-pair": true,
   "src-not-empty": true,
   "title-require": true,
@@ -9,6 +9,6 @@
   "id-unique": true,
   "spec-char-escape": true,
   "tagname-lowercase": true,
-  "attr-lowercase": true,
+  "attr-lowercase": false,
   "alt-require": true
 }

@@ -1,0 +1,9 @@
+.code-example {
+  margin-top: $margin-lg;
+  padding: $padding-md;
+  border: 1px solid get-color(primary, 20);
+
+  code {
+    padding: $padding-md;
+  }
+}

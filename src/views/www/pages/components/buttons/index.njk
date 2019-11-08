@@ -1,0 +1,189 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Buttons" %}
+
+{% block content %}
+<p>
+  <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
+  page
+</p>
+<p>
+  It's important to know when to use a <strong>button</strong> or went to use a
+  <strong>
+    <a href="/components/links/">link</a>
+  </strong>
+</p>
+<p>
+  <strong>Buttons</strong> should be used in situations where a user might need to preform an
+  action, such as:
+</p>
+<ul>
+  <li>Submitting a form</li>
+  <li>Uploading</li>
+  <li>Specify a next or previous step in a process</li>
+  <li>Begin a new task</li>
+</ul>
+
+<!-- primary buttons -->
+<h2>Primary buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as primary -%}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{{
+  compExample([
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary button"
+    }),
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary disabled button",
+      disabled: true
+    }),
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    primary({
+      classNames: "wmnds-btn__primary",
+      text: "Primary icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
+}}
+<!-- end: primary buttons -->
+<!-- secondary buttons -->
+<h2>Secondary buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as secondary -%}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{{
+  compExample([
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary button"
+    }),
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary disabled button",
+      disabled: true
+    }),
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    secondary({
+      classNames: "wmnds-btn__secondary",
+      text: "Secondary icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
+}}
+<!-- end: secondary buttons -->
+<!-- call to action buttons -->
+<h2>Call to action buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as cta %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{{
+  compExample([
+    cta({
+      classNames: "wmnds-btn__cta",
+      text: "Call to action button"
+    }),
+    cta({
+      classNames: "wmnds-btn__cta",
+      text: "Call to action icon button",
+      iconRight: "fas fa-chevron-right"
+    })
+  ])
+}}
+<!-- end: call to action buttons -->
+<!-- destructive buttons -->
+<h2>Destructive buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as destructive -%}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{{
+  compExample([
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive button"
+    }),
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive disabled button",
+      disabled: true
+    }),
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    destructive({
+      classNames: "wmnds-btn__destructive",
+      text: "Destructive icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
+}}
+<!-- end: destructive buttons -->
+<!-- start buttons -->
+<h2>Start buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as start -%}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{{
+  compExample([
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start button"
+    }),
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start disabled button",
+      disabled: true
+    }),
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start icon button",
+      iconRight: "fas fa-chevron-right"
+    }),
+    start({
+      classNames: "wmnds-btn__start",
+      text: "Start icon disabled button",
+      iconRight: "fas fa-chevron-right",
+      disabled: true
+    })
+  ])
+}}
+<!-- end: start buttons -->
+<!-- mode buttons -->
+<h2>Mode buttons</h2>
+{%- from "components/button/_button.njk" import wmnButton as mode -%}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{{
+  compExample([
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Bus",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-bus"
+    }),
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Train",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-railway"
+    }),
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Metro",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-metro"
+    }),
+    mode({
+      classNames: "wmnds-btn--small wmnds-btn__mode",
+      text: "Road",
+      iconLeft: "$*cdn/img/svg-sprite.svg#wmnds-isolated-roads"
+    })
+  ])
+}}
+<!-- end: mode buttons -->
+{% endblock %}

@@ -1,0 +1,15 @@
+<button class="wmnds-btn {{ type }}" tabindex="0" {{ disabled }}>
+  <span>
+    {{#if iconLeft}}
+    <svg class="wmnds-btn__icon--left">
+      <use xlink:href="{{ iconLeft }}"></use>
+    </svg>
+    {{/if}}
+    {{#if text}}
+    {{ text }}
+    {{/if}}
+    {{#if iconRight}}
+    <i class="wmnds-btn__icon--right {{ iconRight }}"></i>
+    {{/if}}
+  </span>
+</button>
