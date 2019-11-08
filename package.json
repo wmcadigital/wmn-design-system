@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
+  "sasslintConfig": ".sass-lint.yml",
   "browserslist": [
     "last 2 versions",
     "ie 8",
@@ -97,6 +98,7 @@
     "nunjucks": "^3.2.0",
     "prettier": "^1.18.2",
     "sass": "^1.23.3",
+    "sass-lint": "^1.13.1",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
