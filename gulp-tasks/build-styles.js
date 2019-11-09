@@ -19,16 +19,15 @@ module.exports.buildStyles = () => {
     )
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
+    .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(plugins.autoprefixer()) // Prefix css with older browser support
     .pipe(plugins.cleanCss({ level: 2 })) // Minify css
-    .pipe(plugins.sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
     .pipe(
       plugins.rename({
         extname: '.min.css'
       })
     )
-    .pipe(dest(paths.styles.output))
-    .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
+    .pipe(plugins.sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
     .pipe(dest(paths.styles.output));
 };
 
