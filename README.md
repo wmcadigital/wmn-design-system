@@ -6,18 +6,18 @@
 
 <!-- TOC -->
 
--   [1. WMCA Website Redevelopment](#markdown-header-1-wmca-website-redevelopment)
-    -   [1.1. Table of contents](#markdown-header-11-table-of-contents)
-    -   [1.2. WMN Styleguide](#markdown-header-12-wmnds-styleguide)
-    -   [1.3. Quick start](#markdown-header-13-quick-start)
-    -   [1.4. Tasks](#markdown-header-14-tasks)
-        -   [1.4.1. Starting web server](#markdown-header-141-starting-web-server)
-        -   [1.4.2. Linting](#markdown-header-142-linting)
-        -   [1.4.3. Compilation](#markdown-header-143-compilation)
-        -   [1.4.4. Clean up](#markdown-header-144-clean-up)
-    -   [1.5. Troubleshooting](#markdown-header-15-troubleshooting)
-    -   [1.6. Contributing to the code base](#markdown-header-16-contributing-to-the-code-base)
-    -   [1.7. Got feedback?](#markdown-header-17-got-feedback)
+- [1. WMCA Website Redevelopment](#1-wmca-website-redevelopment)
+  - [1.1. Table of contents](#11-table-of-contents)
+  - [1.2. WMN Styleguide](#12-wmn-styleguide)
+  - [1.3. Quick start](#13-quick-start)
+  - [1.4. Tasks](#14-tasks)
+    - [1.4.1. Starting web server](#141-starting-web-server)
+    - [1.4.2. Linting](#142-linting)
+    - [1.4.3. Compilation](#143-compilation)
+    - [1.4.4. Clean up](#144-clean-up)
+  - [1.5. Troubleshooting](#15-troubleshooting)
+  - [1.6. Contributing to the code base](#16-contributing-to-the-code-base)
+  - [1.7. Got feedback?](#17-got-feedback)
 
 <!-- /TOC -->
 
@@ -27,8 +27,8 @@ Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.c
 
 The WMN Styleguide is ran at the designated url on startup (usually [http://localhost:3000](http://localhost:3000)) and is the primary means of viewing your work - it will live update as you make changes.
 
--   Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
--   Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
+- Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
+- Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
 
 ![West Midlands Network Styleguide example](doc/preview.png)
 

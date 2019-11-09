@@ -6,26 +6,26 @@ These docs are to help you understand our contribution guidelines and standards.
 
 ### For contributors
 
--   [Code of conduct](#code-of-conduct)
--   [Application architecture](#application-architecture)
--   [Running locally](#running-locally)
--   [Conventions to follow](#conventions-to-follow)
-    -   [Indentation and whitespace](#indentation-and-whitespace)
-    -   [CSS](#css)
-    -   [JavaScript](#javascript)
-    -   [Components and Nunjucks API](#components-and-nunjucks-api)
--   [Testing and linting](#testing-and-linting)
--   [Supported browsers](#supported-browsers)
--   [Commit hygiene](#commit-hygiene)
--   [Updating Changelog](#updating-changelog)
--   [Testing a release](#testing-a-release)
+- [Code of conduct](#code-of-conduct)
+- [Application architecture](#application-architecture)
+- [Running locally](#running-locally)
+- [Conventions to follow](#conventions-to-follow)
+  - [Indentation and whitespace](#indentation-and-whitespace)
+  - [CSS](#css)
+  - [JavaScript](#javascript)
+  - [Components and Nunjucks API](#components-and-nunjucks-api)
+- [Testing and linting](#testing-and-linting)
+- [Supported browsers](#supported-browsers)
+- [Commit hygiene](#commit-hygiene)
+- [Updating Changelog](#updating-changelog)
+- [Testing a release](#testing-a-release)
 
 ### For maintainers
 
--   [Application tasks](#running-application-tasks)
--   [Deploying](#deploying)
--   [Versioning](#versioning)
--   [Releasing a new version](#releasing-a-new-version)
+- [Application tasks](#running-application-tasks)
+- [Deploying](#deploying)
+- [Versioning](#versioning)
+- [Releasing a new version](#releasing-a-new-version)
 
 ## Code of Conduct
 

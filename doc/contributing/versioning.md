@@ -16,18 +16,18 @@ But we should make sure that we only make breaking changes when we have a good r
 
 Good examples of such situations would be:
 
--   issues that are barriers for end-users (users of services) based on evidence (for example user research)
--   issues that are barriers for users (users of GOV.UK Frontend) based on evidence
--   accessibility issues
--   security issues
--   performance issues
+- issues that are barriers for end-users (users of services) based on evidence (for example user research)
+- issues that are barriers for users (users of GOV.UK Frontend) based on evidence
+- accessibility issues
+- security issues
+- performance issues
 
 We would not make breaking changes for:
 
--   thinking you can sneak a change in with other breaking changes
--   changing the name of an API, based on a hunch
--   adopting a technology based on popularity and not because of the problems they solve
--   changing a component's interface without a good reason to do so
+- thinking you can sneak a change in with other breaking changes
+- changing the name of an API, based on a hunch
+- adopting a technology based on popularity and not because of the problems they solve
+- changing a component's interface without a good reason to do so
 
 This is similar to how we try to tackle most problems, by focusing on user needs first.
 
@@ -87,9 +87,9 @@ One of ways users interact with GOV.UK Frontend is through the [GOV.UK Design Sy
 
 This includes:
 
--   HTML - Documented in examples (for example, the [buttons code example](https://design-system.service.gov.uk/components/button/))
--   Nunjucks - Documented in examples (for example, the buttons code example)
--   SCSS - for example [colours variables](https://design-system.service.gov.uk/styles/colour/)
+- HTML - Documented in examples (for example, the [buttons code example](https://design-system.service.gov.uk/components/button/))
+- Nunjucks - Documented in examples (for example, the buttons code example)
+- SCSS - for example [colours variables](https://design-system.service.gov.uk/styles/colour/)
 
 ### npm package
 
@@ -97,9 +97,9 @@ The other primary way is through what is [published to npm](https://github.com/a
 
 This includes:
 
--   [JavaScript](https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md#using-javascript)
--   SCSS - https://govuk-frontend-review.herokuapp.com/docs/
--   Nunjucks Macros (Templates)
+- [JavaScript](https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md#using-javascript)
+- SCSS - https://govuk-frontend-review.herokuapp.com/docs/
+- Nunjucks Macros (Templates)
 
 ## Updating Changelog
 
@@ -111,9 +111,9 @@ Internal changes to the project that are not part of the public API do not need 
 
 These sections follow [semantic versioning](https://semver.org/), where:
 
--   `Breaking changes` corresponds to a `major` (1.X.X) change.
--   `New features` corresponds to a `minor` (X.1.X) change.
--   `Fixes` corresponds to a `patch` (X.X.1) change.
+- `Breaking changes` corresponds to a `major` (1.X.X) change.
+- `New features` corresponds to a `minor` (X.1.X) change.
+- `Fixes` corresponds to a `patch` (X.X.1) change.
 
 See the [`CHANGELOG_TEMPLATE.md`](/docs/contributing/CHANGELOG_TEMPLATE.md) for an example for how this looks.
 
