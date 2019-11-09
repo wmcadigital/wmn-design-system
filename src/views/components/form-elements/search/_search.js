@@ -1,4 +1,6 @@
 // Library from: https://github.com/TarekRaafat/autoComplete.js
+import autoComplete from "./autoComplete.min.js";
+
 const autoCompleteInputs = document.querySelectorAll(".wmnds-fe-autocomplete__input");
 
 autoCompleteInputs.forEach((autoCompleteEle, i) => {
