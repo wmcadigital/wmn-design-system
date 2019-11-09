@@ -17,7 +17,7 @@ But we should make sure that we only make breaking changes when we have a good r
 Good examples of such situations would be:
 
 - issues that are barriers for end-users (users of services) based on evidence (for example user research)
-- issues that are barriers for users (users of GOV.UK Frontend) based on evidence
+- issues that are barriers for users (users of WMN Design System Frontend) based on evidence
 - accessibility issues
 - security issues
 - performance issues
@@ -35,7 +35,7 @@ Whenever we decide to make a breaking change we must ensure we do our best to tr
 
 ## Proposal
 
-Some breaking changes that need discussion may first be proposed in the [GOV.UK Design System architecture repository](https://github.com/alphagov/govuk-design-system-architecture/blob/master/proposals/README.md).
+Some breaking changes that need discussion may first be proposed in the [WMN Design System Design System architecture repository](https://github.com/alphagov/wmnds-design-system-architecture/blob/master/proposals/README.md).
 
 This is to ensure the community can get involved with the decision.
 
@@ -51,8 +51,8 @@ Note: Our users may not know what 'deprecation' means, so it's important to also
 
 Example 1: Fixing a typo in a CSS class name.
 
-1. We discover the class name `.govuk-visually-hidden-focussable` includes the typo 'focussable'
-2. We raise a pull request that renames the class to `.govuk-visually-hidden-focusable` while keeping
+1. We discover the class name `.wmnds-visually-hidden-focussable` includes the typo 'focussable'
+2. We raise a pull request that renames the class to `.wmnds-visually-hidden-focusable` while keeping
    the previous class available.
 3. We add a comment to the source code that indicates this is deprecated, and raise an issue to remove it in a future breaking release.
 4. When releasing the change we include a clear summary that indicates what was the problem, what we've changed and how a user can migrate before the future breaking release.
@@ -65,7 +65,7 @@ When deprecating Sass, you can use the [deprecated annotation](http://sassdoc.co
 
 If there is an alias, for example if you are renaming something, you can use the [alias annotation](http://sassdoc.com/annotations/#alias).
 
-See [an example of deprecating a Sass mixin on GitHub](https://github.com/alphagov/govuk-frontend/blob/9424d87ed54764d2d8afe35d6e0077ee43d231e1/src/helpers/_grid.scss#L20-L26).
+See [an example of deprecating a Sass mixin on GitHub](https://github.com/alphagov/wmnds-frontend/blob/9424d87ed54764d2d8afe35d6e0077ee43d231e1/src/helpers/_grid.scss#L20-L26).
 
 ## Migration
 
@@ -83,22 +83,22 @@ The [Semantic Versioning specification](https://semver.org/) requires a public A
 
 ### Design System Website
 
-One of ways users interact with GOV.UK Frontend is through the [GOV.UK Design System website](https://design-system.service.gov.uk/).
+One of ways users interact with WMN Design System Frontend is through the [WMN Design System Design System website](https://design-system.service.WMN Design System/).
 
 This includes:
 
-- HTML - Documented in examples (for example, the [buttons code example](https://design-system.service.gov.uk/components/button/))
+- HTML - Documented in examples (for example, the [buttons code example](https://design-system.service.WMN Design System/components/button/))
 - Nunjucks - Documented in examples (for example, the buttons code example)
-- SCSS - for example [colours variables](https://design-system.service.gov.uk/styles/colour/)
+- SCSS - for example [colours variables](https://design-system.service.WMN Design System/styles/colour/)
 
 ### npm package
 
-The other primary way is through what is [published to npm](https://github.com/alphagov/govuk-frontend/tree/master/package).
+The other primary way is through what is [published to npm](https://github.com/alphagov/wmnds-frontend/tree/master/package).
 
 This includes:
 
-- [JavaScript](https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md#using-javascript)
-- SCSS - https://govuk-frontend-review.herokuapp.com/docs/
+- [JavaScript](https://github.com/alphagov/wmnds-frontend/blob/master/docs/installation/installing-with-npm.md#using-javascript)
+- SCSS - https://wmnds-frontend-review.herokuapp.com/docs/
 - Nunjucks Macros (Templates)
 
 ## Updating Changelog

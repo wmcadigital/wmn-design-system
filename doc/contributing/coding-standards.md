@@ -1,10 +1,10 @@
 # Components
 
-Find components in `src/govuk/components`.
+Find components in `src/wmnds/components`.
 
-Components must use the `.govuk-` namespace.
+Components must use the `.wmnds-` namespace.
 
-For example, `.govuk-button`.
+For example, `.wmnds-button`.
 
 ## Writing CSS for components
 

@@ -2,9 +2,9 @@
 
 ## Class naming convention
 
-## `govuk` namespacing
+## `wmnds` namespacing
 
-All class names start with a `.govuk-` namespace to reduce the likelihood of
+All class names start with a `.wmnds-` namespace to reduce the likelihood of
 conflicting with existing classes in your application. It also helps to identify
 where the styling for a particular element is coming from.
 
@@ -13,7 +13,7 @@ use a different prefix, for example `.app-` or the initials of your department.
 
 ## Block Element Modifier (BEM)
 
-GOV.UK Frontend uses the Block Element Modifier (BEM) methodology when naming
+WMN Design System Frontend uses the Block Element Modifier (BEM) methodology when naming
 CSS classes. This is designed to help developers understand how the different
 classes relate to each other.
 
@@ -24,9 +24,9 @@ The naming convention follows this pattern:
 .block__element {}
 .block--modifier {}
 
-.govuk-card               // Block - the root of a component
-.govuk-card__body         // Element - a part of the block
-.govuk-card--active       // Modifier - a variant of the block
+.wmnds-card               // Block - the root of a component
+.wmnds-card__body         // Element - a part of the block
+.wmnds-card--active       // Modifier - a variant of the block
 ```
 
 It uses double hyphens (`--`) and underscores (`__`) so that the block, element
@@ -35,16 +35,16 @@ or modifiers themselves can be hyphen delimited without causing ambiguity.
 For example:
 
 ```scss
-.govuk-phase-banner
-.govuk-phase-banner__phase-tag
-.govuk-phase-banner__phase-tag--light-blue
+.wmnds-phase-banner
+.wmnds-phase-banner__phase-tag
+.wmnds-phase-banner__phase-tag--light-blue
 ```
 
 ### Further reading:
 
--   [Get BEM](http://getbem.com/introduction/)
--   [BEM Resources](https://github.com/sturobson/BEM-resources)
--   [Harry Roberts - BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
+- [Get BEM](http://getbem.com/introduction/)
+- [BEM Resources](https://github.com/sturobson/BEM-resources)
+- [Harry Roberts - BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
 
 ## Nesting
 
@@ -57,7 +57,7 @@ given class name. It also discourages excessive nesting.
 Bad:
 
 ```
-.govuk-breadcrumb {
+.wmnds-breadcrumb {
   ...
   &__item {
     ...
@@ -68,11 +68,11 @@ Bad:
 Good:
 
 ```
-.govuk-breadcrumb {
+.wmnds-breadcrumb {
   ...
 }
 
-.govuk-breadcrumb__item {
+.wmnds-breadcrumb__item {
   ...
 }
 ```
@@ -98,11 +98,11 @@ other components.
 
 Keep all of the variants of a component in the same place.
 
-`.govuk-error-summary` modifies the `.govuk-list` component.
+`.wmnds-error-summary` modifies the `.wmnds-list` component.
 
 Component modifiers use an extra class, scoped to the component:
 
-`.govuk-error-summary__list`
+`.wmnds-error-summary__list`
 
 This class is part of the component, rather than a parent of a component.
 
@@ -165,7 +165,7 @@ Good:
 
 ```
 .selector {
-  color: $govuk-blue;
+  color: $wmnds-blue;
 }
 ```
 
@@ -214,7 +214,7 @@ Bad:
 Good:
 
 ```
-.govuk-wrapper {
+.wmnds-wrapper {
   ...
 }
 ```
@@ -256,7 +256,7 @@ a {
 Bad:
 
 ```
-.govuk-breadcrumb {
+.wmnds-breadcrumb {
   ...
   &__item {
     ...
@@ -267,11 +267,11 @@ Bad:
 Good:
 
 ```
-.govuk-breadcrumb {
+.wmnds-breadcrumb {
   ...
 }
 
-.govuk-breadcrumb__item {
+.wmnds-breadcrumb__item {
   ...
 }
 ```
@@ -420,7 +420,7 @@ Bad:
 
 ```
 @mixin FONT_STACK() {
-  font-family: $govuk-font-stack;
+  font-family: $wmnds-font-stack;
 }
 ```
 
@@ -428,7 +428,7 @@ Good:
 
 ```
 @mixin font-stack() {
-  font-family: $govuk-font-stack;
+  font-family: $wmnds-font-stack;
 }
 ```
 
@@ -498,6 +498,6 @@ More write up on [supported rules](https://github.com/sasstools/sass-lint/tree/m
 
 We document SCSS using [SassDoc](http://sassdoc.com/file-level-annotations/). This includes most of the settings, helpers and tools layers, with variables, functions and mixins being marked as private or public.
 
-The syntax is used to generate a [SassDoc application](http://govuk-frontend-review.herokuapp.com/docs/) that documents SCSS in a readable format.
+The syntax is used to generate a [SassDoc application](http://wmnds-frontend-review.herokuapp.com/docs/) that documents SCSS in a readable format.
 
-See [colour.scss](../../../src/govuk/helpers/_colour.scss) for an example of SassDoc syntax.
+See [colour.scss](../../../src/wmnds/helpers/_colour.scss) for an example of SassDoc syntax.

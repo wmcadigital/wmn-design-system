@@ -80,7 +80,7 @@ See the versioning documentation for [updating the changelog](/docs/contributing
 
 ## Testing a release
 
-If you need to test a release, for example if you're contributing a new component see [Publishing pre-release of GOV.UK Frontend](/docs/contributing/publishing-a-pre-release.md).
+If you need to test a release, for example if you're contributing a new component see [Publishing pre-release of WMN Design System Frontend](/docs/contributing/publishing-a-pre-release.md).
 
 ## Application tasks
 
