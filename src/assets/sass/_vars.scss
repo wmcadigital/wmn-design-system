@@ -42,9 +42,10 @@ $palettes: (
 );
 
 $white: #ffffff;
+$black: #000000;
 
 // TEXT
-$text-color: get-color(black);
+$text-color: get-color($black);
 $x-font-family: "Noto Sans", sans-serif;
 $x-heading-font-family: "DM Sans", sans-serif;
 $font-size: 16px;
