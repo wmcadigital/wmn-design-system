@@ -51,6 +51,7 @@
     font-size: 1.1rem;
     text-align: left;
 
+    // sass-lint:disable-all - These are disabled due to being javascript classes
     &.autoComplete_selected,
     &::selection,
     &:hover,
