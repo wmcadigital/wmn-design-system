@@ -1,43 +1,49 @@
-/* INTERNAL VARS ------------------------------------------------------------ */
-/* -------------------------------------------------------------------------- */
+// INTERNAL VARS
 // Internal Vars (Internal variables have one function, and that's to be
 // assigned to other variables.)
 $x-palette-white: #ffffff; // White
-/* -------------------------------------------------------------------------- */
 
-/* PALETTE COLOURS ---------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
+// PALETTE COLOURS
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
   // BRAND COLORS
-    primary: #3c1053 /* WMN Primary Purple */,
-  secondary: #9d5baf /* WMN Secondary Purple */,
-  // MODAL COLORS
-    bus: #ea0029 /* WMN Bus */,
-  metro: #0075c9 /* WMN Metro */,
-  railway: #ff8300 /* WMN Railway */,
-  susTravel: #679500 /* WMN Walk & Cycle */,
-  roads: #df1683 /* WMN Roads */,
-  taxi: #773dbe /* WMN Taxi */,
-  // WEB
-    text: #231f20 /* WMN Text Black*/,
-  cta: #1d7ec4 /* WMN CTA Blue */,
-  error: #d4351c,
+    // WMN Primary Purple
+    primary: #3c1053,
+  secondary: #9d5baf,
+  // WMN Secondary Purple
+    // MODAL COLORS
+    bus: #ea0029,
+  // WMN Bus
+    metro: #0075c9,
+  // WMN Metro
+    railway: #ff8300,
+  // WMN Railway
+    susTravel: #679500,
+  // WMN Walk & Cycle
+    roads: #df1683,
+  // WMN Roads
+    taxi: #773dbe,
+  // WMN Taxi
+    // WEB
+    text: #231f20,
+  // WMN Text Black
+    cta: #1d7ec4,
+  // WMN CTA Blue
+    error: #d4351c,
   warning: #cc6900,
   success: #00703c,
   information: #84329b,
   // BACKGROUND ONLY
-    disable: #676869 /* Disabled elements */,
-  plannedDisruption: #ffdd00 /* WMN Planned Disruption */,
-  background: #f3f2f1 /* Background colour */
+    disable: #676869,
+  // Disabled elements
+    plannedDisruption: #ffdd00,
+  // WMN Planned Disruption
+    background: #f3f2f1 // Background colour
 );
 
 $white: #ffffff;
 
-/* -------------------------------------------------------------------------- */
-
-/* TEXT --------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
+// TEXT
 $text-color: get-color(black);
 $x-font-family: "Noto Sans", sans-serif;
 $x-heading-font-family: "DM Sans", sans-serif;
@@ -101,10 +107,8 @@ $type-settings: (
     word-spacing: 0.15rem
   )
 );
-/* -------------------------------------------------------------------------- */
 
-/* SPACING ------------------------------------------------------------------ */
-/* -------------------------------------------------------------------------- */
+// SPACING
 // Padding
 $padding-xs: $base-line-height / 4.8;
 $padding-sm: $base-line-height / 2;
@@ -117,16 +121,10 @@ $margin-sm: $base-line-height / 2;
 $margin-md: $base-line-height;
 $margin-lg: $base-line-height * 2;
 $margin-xl: $base-line-height * 3;
-/* -------------------------------------------------------------------------- */
 
 // Breakpoints
-// Extra small screen / phone
-$breakpoint-xs: 0;
-// Small screen / phone
-$breakpoint-sm: 568px;
-// Medium screen / tablet
-$breakpoint-md: 768px;
-// Large screen / desktop
-$breakpoint-lg: 1024px;
-// Extra large screen / wide desktop
-$breakpoint-xl: 1280px;
+$breakpoint-xs: 0; // Extra small screen / phone
+$breakpoint-sm: 568px; // Small screen / phone
+$breakpoint-md: 768px; // Medium screen / tablet
+$breakpoint-lg: 1024px; // Large screen / desktop
+$breakpoint-xl: 1280px; // Extra large screen / wide desktop
