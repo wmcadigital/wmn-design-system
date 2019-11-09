@@ -36,7 +36,7 @@ The WMN Styleguide is ran at the designated url on startup (usually [http://loca
 
 You'll need [Git](https://help.github.com/articles/set-up-git/) and [Node.js](https://nodejs.org/en/) installed to get this project running.
 
-1. Clone the project with `git clone git@bitbucket.org:wmca/west-midlands-network.git`
+1. Clone the project with `git clone https://github.com/wmcadigital/wmn-design-system.git`
 2. Run `npm install` in the root folder.
 3. Run `npm start` to launch the dev environment with hot reloading.
 4. Visit [http://localhost:3000](http://localhost:3000)
@@ -99,4 +99,4 @@ See the [contributing guide](doc/contributing.md).
 
 ## 1.7. Got feedback?
 
-Please open a new [Bitbucket Issue](https://bitbucket.org/wmca/west-midlands-network/issues?status=new&status=open).
+Please open a new [Github Issue](https://github.com/wmcadigital/wmn-design-system/issues).

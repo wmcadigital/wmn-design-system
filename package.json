@@ -50,7 +50,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "bitbucket.org/wmca/west-midlands-network.git"
+    "url": "https://github.com/wmcadigital/wmn-design-system.git"
   },
   "author": "dayle.salmon@wmca.org.uk, mark.hughes@wmca.org.uk, shivdev.kang@wmca.org.uk",
   "copyright": "West Midlands Network",
