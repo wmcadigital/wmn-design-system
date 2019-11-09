@@ -3,7 +3,7 @@
   margin-top: $margin-xl;
   padding: $padding-lg;
   color: $white;
-  box-shadow: 0 100vh 0 100vh #231f20;
+  background-color: get-color(primary);
 }
 
 .logo {
