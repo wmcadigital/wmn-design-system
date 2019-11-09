@@ -1,6 +1,7 @@
 # 1. WMCA Website Redevelopment
 
 [![Netlify Status](https://img.shields.io/netlify/dff99875-8f09-42b9-bb99-3a43f8c0e697?style=flat-square)](https://app.netlify.com/sites/wmca/deploys)
+![David](https://img.shields.io/david/dev/wmcadigital/wmn-design-system?style=flat-square)
 ![Last commit](https://img.shields.io/github/last-commit/wmcadigital/wmn-design-system?style=flat-square)
 ![Open Github issues](https://img.shields.io/github/issues-raw/wmcadigital/wmn-design-system?style=flat-square)
 
