@@ -33,10 +33,8 @@
 //       font-size: $font-size * $font-multiplier;
 //     }
 //   }
-/* -------------------------------------------------------------------------- */
 
-/* COLOUR ------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
+// COLOUR
 // This is to get one of the brand colors above
 // Use it like so... get-color(primary);
 // If you'd like to get a tint of a color, use it like so...
@@ -91,6 +89,7 @@ $colors-map: (); // Set placeholder colors map
       .color-#{$key} {
         color: $c;
       }
+
       // Create default bg-color class (E.g. bg-color-secondary)
       .bg-color-#{$key} {
         background-color: $c;
@@ -100,6 +99,7 @@ $colors-map: (); // Set placeholder colors map
       .color-#{$key}-#{$k} {
         color: $c;
       }
+
       // Generate a bg color class (E.g. .bg-color-secondary-40)
       .bg-color-#{$key}-#{$k} {
         background-color: $c;
@@ -107,4 +107,3 @@ $colors-map: (); // Set placeholder colors map
     }
   }
 }
-/* -------------------------------------------------------------------------- */
