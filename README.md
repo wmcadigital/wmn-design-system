@@ -1,6 +1,8 @@
 # 1. WMCA Website Redevelopment
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dff99875-8f09-42b9-bb99-3a43f8c0e697/deploy-status)](https://app.netlify.com/sites/wmca/deploys)
+[![Netlify Status](https://img.shields.io/netlify/dff99875-8f09-42b9-bb99-3a43f8c0e697?style=flat-square)](https://app.netlify.com/sites/wmca/deploys)
+![Last commit](https://img.shields.io/github/last-commit/wmcadigital/wmn-design-system?style=flat-square)
+![Open Github issues](https://img.shields.io/github/issues-raw/wmcadigital/wmn-design-system?style=flat-square)
 
 ## 1.1. Table of contents
 
