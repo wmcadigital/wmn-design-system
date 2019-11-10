@@ -1,17 +1,17 @@
-# 1. WMCA Website Redevelopment
+# 1. WMN Design System
 
 [![Netlify Status](https://img.shields.io/netlify/dff99875-8f09-42b9-bb99-3a43f8c0e697?style=flat-square)](https://app.netlify.com/sites/wmca/deploys)
-![David](https://img.shields.io/david/dev/wmcadigital/wmn-design-system?style=flat-square)
-![Last commit](https://img.shields.io/github/last-commit/wmcadigital/wmn-design-system?style=flat-square)
-![Open Github issues](https://img.shields.io/github/issues-raw/wmcadigital/wmn-design-system?style=flat-square)
+[![David](https://img.shields.io/david/dev/wmcadigital/wmn-design-system?style=flat-square)](https://github.com/wmcadigital/wmn-design-system/blob/master/package.json)
+[![Last commit](https://img.shields.io/github/last-commit/wmcadigital/wmn-design-system?style=flat-square)](https://github.com/wmcadigital/wmn-design-system/commits/master)
+[![Open Github issues](https://img.shields.io/github/issues-raw/wmcadigital/wmn-design-system?style=flat-square)](https://github.com/wmcadigital/wmn-design-system/issues)
 
 ## 1.1. Table of contents
 
 <!-- TOC -->
 
-- [1. WMCA Website Redevelopment](#1-wmca-website-redevelopment)
+- [1. WMN Design System](#1-wmn-design-system)
   - [1.1. Table of contents](#11-table-of-contents)
-  - [1.2. WMN Styleguide](#12-wmn-styleguide)
+  - [1.2. Overview](#12-overview)
   - [1.3. Quick start](#13-quick-start)
   - [1.4. Tasks](#14-tasks)
     - [1.4.1. Starting web server](#141-starting-web-server)
@@ -24,16 +24,16 @@
 
 <!-- /TOC -->
 
-## 1.2. WMN Styleguide
+## 1.2. Overview
 
 Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.com/).
 
-The WMN Styleguide is ran at the designated url on startup (usually [http://localhost:3000](http://localhost:3000)) and is the primary means of viewing your work - it will live update as you make changes.
+The WMN design system is ran at the designated url on startup (usually [http://localhost:3000](http://localhost:3000)) and is the primary means of viewing your work - it will live update as you make changes.
 
 - Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
 - Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
 
-![West Midlands Network Styleguide example](doc/preview.png)
+![West Midlands Network design system example](doc/preview.png)
 
 ## 1.3. Quick start
 
@@ -72,7 +72,7 @@ npm run lint:scripts
 
 ### 1.4.3. Compilation
 
-Build the styleguide for various environments
+Build the design system for various environments
 
 ```bash
 # Build Sass, JavaScript, HTML files
@@ -83,6 +83,7 @@ npm run build:styles
 npm run build:templates
 npm run build:scripts
 npm run build:images
+npm run build:sprites
 npm run build:config
 ```
 
