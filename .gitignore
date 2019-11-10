@@ -6,3 +6,4 @@ build/
 !gitignore
 !package.json
 !package-lock.json
+**/a11y-report.json

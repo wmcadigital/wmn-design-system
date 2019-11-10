@@ -53,7 +53,7 @@ module.exports = {
     output: 'build/config/'
   },
   components: {
-    src: 'build/views/components/**/*.html'
+    src: 'src/views/components/**/*.njk'
   },
   logs: {
     sourcemaps: '_sourcemaps/',
