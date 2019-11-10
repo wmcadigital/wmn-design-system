@@ -46,24 +46,24 @@ const buildAll = series(
   moveImages,
   buildStyles,
   buildReactNativeStyles,
-  buildScripts,
   buildTemplates,
+  buildScripts,
   buildConfig,
-  lintScripts,
   lintStyles,
-  lintTemplates
+  lintTemplates,
+  lintScripts
 );
 
 // run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
 const serve = series(
-  lintScripts,
   lintStyles,
   lintTemplates,
+  lintScripts,
   parallel(
     buildStyles,
     buildReactNativeStyles,
-    buildScripts,
     buildTemplates,
+    buildScripts,
     buildConfig,
     buildSprites,
     moveImages
@@ -77,7 +77,7 @@ exports.default = serve;
 exports.lintStyles = lintStyles;
 exports.lintScripts = lintScripts;
 exports.lintTemplates = lintTemplates;
-exports.lintAll = series(lintScripts, lintStyles, lintTemplates);
+exports.lintAll = series(lintStyles, lintTemplates, lintScripts);
 // Cleaning
 exports.clean = cleanBuild;
 // Building

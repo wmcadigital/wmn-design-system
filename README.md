@@ -60,6 +60,8 @@ Start the WMN Design System web server.
 
 Lint the code base for syntax and stylistic errors.
 
+See [Linting](./doc/contributing/tasks/linting.md) for more details.
+
 ```bash
 # Lint indentation, Sass, JavaScript files, html
 npm run lint:all
@@ -73,6 +75,8 @@ npm run lint:scripts
 ### 1.4.3. Compilation
 
 Build the design system for various environments
+
+See [Building](./doc/contributing/tasks/building.md) for more details.
 
 ```bash
 # Build Sass, JavaScript, HTML files
