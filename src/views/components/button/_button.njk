@@ -10,7 +10,7 @@
   {% set classNames = params.classNames + "" %}
 {% endif %}
 
-<button class="wmnds-btn {% if params.classNames %}{{ classNames }}{% endif %} mar-bot-md" tabindex="0" {% if params.disabled %} disabled {% endif %}>
+<button class="wmnds-btn {% if params.classNames %}{{ classNames }}{% endif %} mar-bot-md" tabindex="0" {% if params.disabled %} disabled="disabled" {% endif %}>
   <span>
     {%- if iconLeft %}
     <svg class="wmnds-btn__icon--left">
