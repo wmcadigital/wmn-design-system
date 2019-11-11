@@ -57,6 +57,9 @@ module.exports = {
   },
   logs: {
     sourcemaps: '_sourcemaps/',
-    accessibility: './_accessibility-logs/'
+  },
+  clean: {
+    a11y: './src/views/www/pages/**/a11y-report.json',
+    tmp: './src/views/www/pages/**/.tmp'
   }
 };
