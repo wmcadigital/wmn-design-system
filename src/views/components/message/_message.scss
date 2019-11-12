@@ -1,0 +1,13 @@
+.wmnds-message {
+  padding: $padding-sm;
+  border: 1px solid;
+  border-color: get-color(success);
+
+  svg {
+    background-color: get-color(success);
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+}

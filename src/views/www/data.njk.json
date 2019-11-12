@@ -25,6 +25,9 @@
         },
         {
           "name": "Phase indicator"
+        },
+        {
+          "name": "Messages"
         }
       ]
     },

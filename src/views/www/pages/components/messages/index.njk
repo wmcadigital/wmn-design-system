@@ -1,0 +1,18 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Messages" %}
+
+{% block content %}
+
+<!-- primary buttons -->
+  <h2>Primary buttons</h2>
+  {% from "components/message/_message.njk" import wmndsMessage %}
+  {% from "www/_partials/component-example/component-example.njk" import compExample %}
+  {{
+    compExample([
+      wmndsMessage()
+    ])
+  }}
+  <!-- end: primary buttons -->
+  <!-- secondary buttons -->
+
+{% endblock %}
