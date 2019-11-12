@@ -1,4 +1,5 @@
 .fe-title {
+  display: block;
   margin-bottom: $margin-sm;
   font-weight: bold;
   @include type-setting(1);
