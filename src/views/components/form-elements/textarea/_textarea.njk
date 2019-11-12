@@ -4,14 +4,14 @@
 {% from "components/form-elements/label/_label.njk" import wmndsLabel %}
 
 
-<div class="wmnds-grid">
+<div class="wmnds-fe-textarea">
   {{
     wmndsLabel({
       label: 'Textarea label',
       for: 'textarea'
     }) | trim
   }}
-  <textarea type="text" name="textarea" id="textarea" class="wmnds-col-1"></textarea>
+  <textarea type="text" name="textarea" id="textarea" class="wmnds-fe-textarea__textarea" rows="5"></textarea>
 </div>
 
 {% endmacro %}
