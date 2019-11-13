@@ -3,13 +3,14 @@ const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const del = require('del');
 // Local requires
+const nodePath = require('path');
 const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
 const njkData = require('../src/views/www/data.njk.json');
 
 module.exports = () => {
   return (
-    src(paths.nunjucks.websiteSrc)
+    src(paths.nunjucks.websiteSrc, { base: '.' })
       // Build nunjucks files into HTML so we can run a11y checker on them later
       .pipe(plugins.data(() => njkData))
       .pipe(
@@ -42,10 +43,11 @@ module.exports = () => {
       .pipe(plugins.accessibility.report({ reportType: 'json' }))
       // Name all reports a11y-report.json and stick them in same dir as the file effected
       .pipe(
-        plugins.rename({
-          dirname: '../',
-          basename: 'a11y-report',
-          extname: '.json'
+        plugins.rename(path => {
+          const filepath = path; // set var to path
+          filepath.dirname = nodePath.join(filepath.dirname, '..'); // Then go to the parent directory
+          filepath.basename = 'a11y-report';
+          filepath.extname = '.json';
         })
       )
       .pipe(plugins.jsonFormat(2))
