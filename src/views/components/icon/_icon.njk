@@ -1,7 +1,7 @@
 {% macro wmndsIcon(params) %}
 
-<svg class="get-svg">
-  <use xlink:href="$*cdn/img/svg-sprite.min.svg#wmnds-{{params}}" ></use>
+<svg class="get-svg" style="width: 40px; height: 40px;"  preserveAspectRatio="none">
+  <use xlink:href="$*cdn/img/svg-sprite.min.svg#wmnds-{{params}}" href="$*cdn/img/svg-sprite.min.svg#wmnds-{{params}}"></use>
 </svg>
 
 {% endmacro %}

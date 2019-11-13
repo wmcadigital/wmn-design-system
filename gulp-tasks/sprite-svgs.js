@@ -22,6 +22,9 @@ module.exports = () => {
         return {
           plugins: [
             {
+              removeViewBox: false
+            },
+            {
               cleanupIDs: {
                 prefix: `${prefix}-`,
                 minify: true
