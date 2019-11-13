@@ -16,10 +16,9 @@ options:
   formatter: stylish
   merge-default-rules: true
 rules:
-
   # Rule bem-depth will enforce how many elements a BEM selector can contain.
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/bem-depth.md
-  bem-depth: 0
+  bem-depth: 1
 
   # Rule border-zero will enforce whether one should use 0 or none when specifying a zero border value
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/border-zero.md
@@ -408,15 +407,7 @@ rules:
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/property-units.md
   property-units:
     - 2
-    - global: [
-        'cm',
-        'em',
-        'pt',
-        'px',
-        'rem',
-        'vh',
-        'ex'
-      ]
+    - global: ['cm', 'em', 'pt', 'px', 'rem', 'vh', 'ex']
 
   # Rule pseudo-element will enforce that:
   # - pseudo-elements must start with double colons
