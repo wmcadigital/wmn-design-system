@@ -1,7 +1,7 @@
-{% macro wmndsMessage(params) %}
+{% macro wmndsIcon(params) %}
 
 <svg>
-  <use xlink:href="$*cdn/img/svg-sprite.svg#wmnds-Arrow"></use>
+  <use xlink:href="$*cdn/img/svg-sprite.svg#wmnds-{{params}}"></use>
 </svg>
 
 {% endmacro %}
