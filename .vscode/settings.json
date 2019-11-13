@@ -7,8 +7,22 @@
   },
   "html-css-class-completion.includeGlobPattern": "**/*.{css,html,njk}",
   "files.associations": {
-    "*.njk": "jinja-html"
+    "*.njk": ["jinja-html", "html"]
   },
-  "vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
-  "files.eol": "\n"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vsicons.associations.files": [
+    {
+      "icon": "nunjucks",
+      "extensions": ["njk"],
+      "format": "svg"
+    }
+  ],
+  "files.eol": "\n",
+  "beautify.language": {
+    "html": ["jinja-html"]
+  },
+  "[jinja-html]": {
+    "editor.defaultFormatter": "HookyQR.beautify",
+    "editor.formatOnSave": true
+  }
 }
