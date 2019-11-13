@@ -40,7 +40,7 @@ module.exports = {
     output: 'build/'
   },
   svgs: {
-    src: 'src/assets/img/svgs/**/*.svg',
+    src: 'src/assets/icon/**/*.svg',
     dest: 'build/img/'
   },
   images: {
