@@ -31,7 +31,7 @@ function watchFiles() {
   watch(paths.nunjucks.src, series(buildTemplates, lintTemplates, reload)); // Rebuild and reload when .njk files change
   // watch(paths.nunjucks.output, formatNjk); // Format Nunjucks src files if change is detected in build folder (this is to stop watch looping, if inserted in above watcher)
   watch(paths.images.src, series(moveImages, reload)); // If new images are found, move to build folder
-  watch(path.svgs.src , series(buildSprites, reload));
+  watch(paths.svgs.src, series(buildSprites, reload));
   watch(paths.styles.src, series(buildStyles, buildReactNativeStyles, lintStyles, reload)); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
 }
