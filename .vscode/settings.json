@@ -17,12 +17,5 @@
       "format": "svg"
     }
   ],
-  "files.eol": "\n",
-  "beautify.language": {
-    "html": ["jinja-html"]
-  },
-  "[jinja-html]": {
-    "editor.defaultFormatter": "HookyQR.beautify",
-    "editor.formatOnSave": true
-  }
+  "files.eol": "\n"
 }
