@@ -1,12 +1,30 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Icons" %}
 {% set section = "Styles" %}
+{% set icons = [
+  "Arrow",
+  "Checkmark"
+] %}
 
 {% block content %}
+{# How to use #}
 <h2>How to use</h2>
 
-
+{# Icons #}
+<h2>Icons</h2>
 {% from "components/icon/_icon.njk" import wmndsIcon %}
-{{wmndsIcon('Arrow')}}
+
+<div class="wmnds-grid">
+  {% for icon in icons  %}
+    <div class="wmnds-col-1-2 wmnds-col-sm-1-6">
+      {{wmndsIcon(icon)}}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .get-svg{width:40px;height:40px;}
+</style>
+
 
 {% endblock %}
