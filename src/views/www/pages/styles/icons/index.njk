@@ -1,37 +1,110 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Icons" %}
 {% set section = "Styles" %}
-{% set icons = [
-  "Arrow",
-  "Checkmark",
-  "colour-bus",
-  "Search",
-  "Down"
+{# The icon vars are an array that match the folders they come from in src/assets/icon/{foldername} #}
+{% set iconGeneral = [
+  "icon-arrow",
+  "icon-caret-down",
+  "icon-caret-up",
+  "icon-checkmark",
+  "icon-chevron-right",
+  "icon-clock",
+  "icon-current-location",
+  "icon-expand",
+  "icon-favourite",
+  "icon-filter",
+  "icon-hollow-circle",
+  "icon-id-card",
+  "icon-location-arrow",
+  "icon-location-pin",
+  "icon-minimise",
+  "icon-paperclip",
+  "icon-search",
+  "icon-solid-circle",
+  "icon-success",
+  "icon-swap",
+  "icon-trash",
+  "icon-warning-circle",
+  "icon-warning-triangle"
 ] %}
+
+{% set iconSwift = [
+  "icon-swift-card-full-logo",
+  "icon-swift-card-purple",
+  "icon-swift-card-white",
+  "icon-swift"
+] %}
+
+{% set iconModes = [
+  "bus",
+  "coach",
+  "cycle",
+  "metro",
+  "plane",
+  "rail"
+] %}
+
+{% from "components/icon/_icon.njk" import wmndsIcon %}
 
 {% block content %}
 {# How to use #}
 <h2>How to use</h2>
 
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Icons are images used in context to communicate a meaning (a visual representation of an object, action, or idea).
+  </li>
+</ul>
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    Only use icons and images if there’s a real user need.
+  </li>
+</ul>
+<h3>When not to use it?</h3>
+<ul>
+  <li>
+    Do not use it for unnecessary decoration.
+  </li>
+</ul>
+
+<hr>
+
 {# Icons #}
 <h2>Icons</h2>
-{% from "components/icon/_icon.njk" import wmndsIcon %}
 
-<div class="wmnds-grid">
-  {% for icon in icons  %}
+
+<h3>General</h3>
+<div class="wmnds-grid website-icons">
+  {% for icon in iconGeneral %}
     <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
-      {{wmndsIcon(icon)}}
+      {{wmndsIcon('general-' + icon)}}
       <p>{{icon}}</p>
     </div>
   {% endfor %}
 </div>
 
-<style>
-svg {
-  width: 100px;
-  height: 100px;
-}
-</style>
+{# Swift #}
+<h3>Swift</h3>
+<div class="wmnds-grid website-icons">
+  {% for icon in iconSwift %}
+    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+      {{wmndsIcon('swift-' + icon)}}
+      <p>{{icon}}</p>
+    </div>
+  {% endfor %}
+</div>
 
+{# Modal #}
+<h3>Modal</h3>
+<div class="wmnds-grid website-icons">
+  {% for icon in iconModes %}
+    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+      {{wmndsIcon('modes-white-' + icon)}}
+      <p>{{icon}}</p>
+    </div>
+  {% endfor %}
+</div>
 
 {% endblock %}

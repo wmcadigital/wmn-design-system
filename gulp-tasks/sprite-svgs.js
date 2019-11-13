@@ -7,7 +7,15 @@ const paths = require('./paths.js');
 
 module.exports = () => {
   return src(paths.svgs.src)
-    .pipe(plugins.rename({ prefix: 'wmnds-' }))
+    .pipe(
+      plugins.rename(file => {
+        const newName = file;
+        const name = file.dirname.split(path.sep);
+        name.push(file.basename);
+        name.unshift('wmnds');
+        newName.basename = name.join('-');
+      })
+    )
     .pipe(
       plugins.cheerio({
         run: $ => {
@@ -17,18 +25,11 @@ module.exports = () => {
       })
     )
     .pipe(
-      plugins.svgmin(file => {
-        const prefix = path.basename(file.relative, path.extname(file.relative));
+      plugins.svgmin(() => {
         return {
           plugins: [
             {
               removeViewBox: false
-            },
-            {
-              cleanupIDs: {
-                prefix: `${prefix}-`,
-                minify: true
-              }
             }
           ]
         };
