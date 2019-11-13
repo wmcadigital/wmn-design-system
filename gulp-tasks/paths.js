@@ -56,7 +56,7 @@ module.exports = {
     src: 'src/views/components/**/*.njk'
   },
   logs: {
-    sourcemaps: '_sourcemaps/',
+    sourcemaps: '_sourcemaps/'
   },
   clean: {
     a11y: './src/views/www/pages/**/a11y-report.json',
