@@ -3,99 +3,86 @@ $btn-border-width: 1px;
 $btn-padding: 2px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
-.wmnds {
-  // default button styles
-  &-btn {
-    box-sizing: border-box;
-    display: inline-block;
-    position: relative;
-    padding: $btn-padding;
-    transition: $btn-transition;
-    border: 0;
-    border-radius: $btn-border-radius;
-    font-weight: bold;
-    cursor: pointer;
+// default button styles aka primary btn
+.wmnds-btn {
+  box-sizing: border-box;
+  position: relative;
+  padding: $padding-sm;
+  transition: $btn-transition;
+  border: 0;
+  border-radius: $btn-border-radius;
+  color: $white;
+  background-color: get-color(primary);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
 
-    span {
-      display: inline-block;
-      padding: $padding-sm;
-      transition: $btn-transition;
-      pointer-events: none;
-    }
+  &:hover {
+    background-color: get-color(primary, 30);
+  }
 
-    &:focus {
-      outline: none;
-    }
+  &:active,
+  &:target,
+  &:focus,
+  &.wmnds-is-active {
+    border: $btn-border-width solid $white;
+    outline: none;
+    background-color: get-color(primary, 50);
+    -webkit-appearance: none;
+  }
 
-    &--small {
-      span {
-        padding: 2px !important;
-      }
-    }
+  &--input {
+    padding: $padding-sm;
+  }
+
+  &--small {
+    padding: 2px !important;
   }
 
   // button icon left styles
-  &-btn__icon--left {
-    width: 25px;
-    height: 25px;
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: $white;
     vertical-align: top;
   }
 
   // button icon right style
-  &-btn__icon--right {
-    padding-left: $padding-md;
+  &__icon--right {
+    margin-left: $margin-sm;
   }
 
-  // button primary styles
-  &-btn__primary {
-    color: $white;
-    background-color: get-color(primary);
+  // Disabled modifier for default btn
+  &--disabled {
+    &:disabled {
+      background-color: get-color(disable);
+      cursor: not-allowed;
 
-    span {
-      border: $btn-border-width solid transparent;
-    }
-
-    &:hover {
-      background-color: get-color(primary, 30);
-    }
-
-    &:active,
-    &:target,
-    &:focus,
-    &.wmnds-is-active {
-      background-color: get-color(primary);
-
-      span {
-        box-sizing: border-box;
-        padding: $padding-sm;
-        border: $btn-border-width solid $white;
-        border-radius: $btn-border-radius;
-        background-color: get-color(primary, 50);
-        -webkit-appearance: none;
+      .wmnds-btn__icon {
+        fill: $white;
       }
-    }
 
-    &--input {
-      padding: $padding-sm;
+      &:active,
+      &:target,
+      &:focus,
+      &.wmnds-is-active {
+        background-color: get-color(disable);
+      }
     }
   }
 
   // button secondary styles
-  &-btn__secondary {
+  &--secondary {
     border: $btn-border-width solid get-color(primary);
     color: get-color(primary);
     background-color: $white;
 
-    span {
-      border: $btn-border-width solid transparent;
+    .wmnds-btn__icon {
+      fill: get-color(secondary);
     }
 
     &:hover {
       background-color: get-color(secondary, 30);
-
-      span {
-        background-color: get-color(secondary, 30);
-      }
     }
 
     &:active,
@@ -103,26 +90,23 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmnds-is-active {
       background-color: $white;
+    }
 
-      span {
-        box-sizing: border-box;
-        padding: $padding-sm;
-        border: $btn-border-width solid get-color(primary);
-        border-radius: $btn-border-radius;
-        background-color: get-color(secondary, 50);
-        -webkit-appearance: none;
+    // Secondary (disabled)
+    &.wmnds-btn--disabled {
+      border-color: get-color(disable);
+      color: get-color(disable);
+      background: $white;
+
+      .wmnds-btn__icon {
+        fill: get-color(disable);
       }
     }
   }
 
   // button cta styles
-  &-btn__cta {
-    color: $white;
+  &--cta {
     background-color: get-color(cta);
-
-    span {
-      border: $btn-border-width solid transparent;
-    }
 
     &:hover {
       background-color: get-color(cta, 30);
@@ -133,26 +117,12 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmnds-is-active {
       background-color: get-color(cta);
-
-      span {
-        box-sizing: border-box;
-        padding: $padding-sm;
-        border: $btn-border-width solid $white;
-        border-radius: $btn-border-radius;
-        background-color: get-color(cta, 50);
-        -webkit-appearance: none;
-      }
     }
   }
 
   // button destructive styles
-  &-btn__destructive {
-    color: $white;
+  &--destructive {
     background-color: get-color(error);
-
-    span {
-      border: $btn-border-width solid transparent;
-    }
 
     &:hover {
       background-color: get-color(error, 30);
@@ -162,15 +132,19 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:target,
     &:focus,
     &.wmnds-is-active {
-      span {
-        box-sizing: border-box;
-        padding: $padding-sm;
-        border: $btn-border-width solid $white;
-        border-radius: $btn-border-radius;
-        background-color: get-color(error, 50);
-        -webkit-appearance: none;
-      }
+      background-color: get-color(error, 50);
     }
+
+    // // Destructive (disabled)
+    // &.wmnds-btn--disabled {
+    //   border-color: get-color(disable);
+    //   color: get-color(disable);
+    //   background: $white;
+
+    //   .wmnds-btn__icon {
+    //     fill: get-color(disable);
+    //   }
+    // }
   }
 
   &-btn__start {
@@ -225,25 +199,41 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 
   // button disabled styles
-  &-btn__disabled {
+  // &--disabled {
+  //   &:disabled {
+  //     color: $white;
+  //     background-color: get-color(disable);
+  //     cursor: not-allowed;
+
+  //     .wmnds-btn__icon {
+  //       fill: $white;
+  //     }
+
+  //     &:active,
+  //     &:target,
+  //     &:focus,
+  //     &.wmnds-is-active {
+  //       span {
+  //         background-color: get-color(disable);
+  //       }
+  //     }
+  //   }
+
+  &--light {
     &:disabled {
-      color: $white;
-      background-color: get-color(disable);
+      border: $btn-border-width solid get-color(disable);
+      color: get-color(disable);
 
       span {
         border: $btn-border-width solid transparent;
-
-        &:hover {
-          background-color: get-color(disable);
-        }
       }
 
       &:hover {
-        background-color: get-color(disable);
+        background-color: transparent;
         cursor: not-allowed;
 
         span {
-          background-color: get-color(disable);
+          background-color: transparent;
         }
       }
 
@@ -252,36 +242,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       &:focus,
       &.wmnds-is-active {
         span {
-          background-color: get-color(disable);
-        }
-      }
-    }
-
-    &--light {
-      &:disabled {
-        border: $btn-border-width solid get-color(disable);
-        color: get-color(disable);
-
-        span {
-          border: $btn-border-width solid transparent;
-        }
-
-        &:hover {
           background-color: transparent;
-          cursor: not-allowed;
-
-          span {
-            background-color: transparent;
-          }
-        }
-
-        &:active,
-        &:target,
-        &:focus,
-        &.wmnds-is-active {
-          span {
-            background-color: transparent;
-          }
         }
       }
     }
