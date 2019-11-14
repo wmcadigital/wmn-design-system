@@ -79,7 +79,11 @@
 <div class="wmnds-grid website-icons">
   {% for icon in iconGeneral %}
     <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
-      {{wmndsIcon('general-' + icon)}}
+      {{
+        wmndsIcon({
+          icon: 'general-' + icon
+        })
+      }}
       <p>{{icon}}</p>
     </div>
   {% endfor %}
@@ -90,7 +94,11 @@
 <div class="wmnds-grid website-icons">
   {% for icon in iconSwift %}
     <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
-      {{wmndsIcon('swift-' + icon)}}
+      {{
+        wmndsIcon({
+          icon: 'swift-' + icon
+        })
+      }}
       <p>{{icon}}</p>
     </div>
   {% endfor %}
@@ -101,7 +109,11 @@
 <div class="wmnds-grid website-icons">
   {% for icon in iconModes %}
     <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
-      {{wmndsIcon('modes-white-' + icon)}}
+      {{
+        wmndsIcon({
+          icon: 'modes-white-' + icon
+        })
+      }}
       <p>{{icon}}</p>
     </div>
   {% endfor %}
