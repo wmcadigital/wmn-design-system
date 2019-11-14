@@ -1,7 +1,6 @@
 .wmnds-message {
   padding: $padding-sm;
-  border: 1px solid;
-  border-color: get-color(success);
+  border: 1px solid get-color(information);
 
   &__header {
     display: block;
@@ -10,7 +9,7 @@
   &__icon {
     width: 35px;
     height: 35px;
-    fill: get-color(success);
+    fill: get-color(information);
   }
 
   &__title {
@@ -22,5 +21,34 @@
   &__title {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  // MESSAGE MODIFIERS - info is the default (above)
+
+  // Success
+  &--success {
+    border-color: get-color(success);
+
+    .wmnds-message__icon {
+      fill: get-color(success);
+    }
+  }
+
+  // Warning
+  &--warning {
+    border-color: get-color(warning);
+
+    .wmnds-message__icon {
+      fill: get-color(warning);
+    }
+  }
+
+  // Warning
+  &--error {
+    border-color: get-color(error);
+
+    .wmnds-message__icon {
+      fill: get-color(error);
+    }
   }
 }

@@ -1,17 +1,42 @@
-{% macro wmndsMessage(params) -%}
+{% macro wmndsMessage(params) %}
+{# Set vars and defaults #}
+
+{# Success #}
+{% if params.type === "success" %}
+  {% set iconType = {
+    icon: 'general-icon-success',
+    class: 'wmnds-message__icon'
+  } %}
+{# Warning #}
+{% elseif params.type === "warning" %}
+  {% set iconType = {
+    icon: 'general-icon-warning-circle',
+    class: 'wmnds-message__icon'
+  } %}
+{# Error #}
+{% elseif params.type === "error" %}
+  {% set iconType = {
+    icon: 'general-icon-warning-triangle',
+    class: 'wmnds-message__icon'
+  } %}
+{# Info (default) #}
+{% else %}
+  {% set iconType = {
+    icon: 'general-icon-info',
+    class: 'wmnds-message__icon'
+  } %}
+{% endif %}
+
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 
-<div class="wmnds-message">
+<div class="wmnds-message wmnds-message--{{ params.type }}">
   <div class="wmnds-message__header">
     {{
-      wmndsIcon({
-        icon: 'general-icon-success',
-        class: 'wmnds-message__icon'
-      }) | indent | trim
+      wmndsIcon(iconType) | indent | trim
     }}
-    <h3 class="wmnds-message__title">Success confirmation</h3>
+    <h3 class="wmnds-message__title">{{ params.title }}</h3>
   </div>
-  <p>Details added if needed to confirm action.</p>
+  {{ params.message | safe }}
 </div>
 
-{%- endmacro %}
+{% endmacro %}
