@@ -1,16 +1,17 @@
-{% macro wmndsMessage(params) %}
+{% macro wmndsMessage(params) -%}
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-message">
   <div class="wmnds-message__header">
-    {{ wmndsIcon({
-      icon: 'general-icon-success',
-      class: 'wmnds-message__icon'
-      })
-    | trim}}
+    {{
+      wmndsIcon({
+        icon: 'general-icon-success',
+        class: 'wmnds-message__icon'
+      }) | indent | trim
+    }}
     <h3 class="wmnds-message__title">Success confirmation</h3>
   </div>
   <p>Details added if needed to confirm action.</p>
 </div>
 
-{% endmacro %}
+{%- endmacro %}
