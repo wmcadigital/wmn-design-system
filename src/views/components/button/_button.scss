@@ -52,25 +52,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     margin-left: $margin-sm;
   }
 
-  // Disabled modifier for default btn
-  &--disabled {
-    &:disabled {
-      background-color: get-color(disable);
-      cursor: not-allowed;
-
-      .wmnds-btn__icon {
-        fill: $white;
-      }
-
-      &:active,
-      &:target,
-      &:focus,
-      &.wmnds-is-active {
-        background-color: get-color(disable);
-      }
-    }
-  }
-
   // button secondary styles
   &--secondary {
     border: $btn-border-width solid get-color(primary);
@@ -93,7 +74,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
 
     // Secondary (disabled)
-    &.wmnds-btn--disabled {
+    &.wmnds-btn--disabled:disabled {
       border-color: get-color(disable);
       color: get-color(disable);
       background: $white;
@@ -147,7 +128,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     // }
   }
 
-  &-btn__start {
+  &--start {
     color: $white;
     background-color: get-color(success);
 
@@ -163,26 +144,18 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:target,
     &:focus,
     &.wmnds-is-active {
-      span {
-        box-sizing: border-box;
-        padding: $padding-sm;
-        border: $btn-border-width solid $white;
-        border-radius: $btn-border-radius;
-        background-color: get-color(success, 50);
-        -webkit-appearance: none;
-      }
+      background-color: get-color(success, 50);
     }
   }
 
   // button mode toggle
-  &-btn__mode {
+  &--mode {
     border: $btn-border-width solid get-color(primary);
     color: get-color(primary);
     background-color: $white;
 
-    span {
-      padding: $padding-xs;
-      border: $btn-border-width solid transparent;
+    .wmnds-btn__icon {
+      fill: get-color(primary);
     }
 
     &:hover,
@@ -191,10 +164,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:focus,
     &.wmnds-is-active {
       background-color: mix(get-color(primary), $white, 20);
-
-      span {
-        background-color: mix(get-color(primary), $white, 20);
-      }
     }
   }
 
@@ -245,6 +214,23 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
           background-color: transparent;
         }
       }
+    }
+  }
+
+  // Disabled modifier for default btn
+  &--disabled:disabled {
+    background-color: get-color(disable);
+    cursor: not-allowed;
+
+    .wmnds-btn__icon {
+      fill: $white;
+    }
+
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is-active {
+      background-color: get-color(disable);
     }
   }
 }
