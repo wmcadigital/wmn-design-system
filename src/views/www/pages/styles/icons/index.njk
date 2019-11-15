@@ -63,7 +63,7 @@
 
 {% block content %}
 {# How to use #}
-<h2>How to use</h2>
+<h2>About</h2>
 
 <h3>What does it do?</h3>
 <ul>
@@ -83,13 +83,26 @@
     Do not use it for unnecessary decoration.
   </li>
 </ul>
+<hr>
 
+{# Using Icons #}
+<h2>Using icons</h2>
+<p>WMN Design System icons are available as an SVG sprite to include in your HTML page.</p>
+<p>To display an icon or glyph, use an svg tag with a href attribute and xlink:href (as a fallback).</p>
+<pre>
+  <code class="html">
+    {{-
+      wmndsIcon({
+        icon: 'ICON-TAG-NAME'
+      }) | forceescape | trim
+    -}}
+  </code>
+</pre>
 <hr>
 
 {# Icons #}
 <h2>Icons</h2>
-
-
+<p>Find below a list of all our icons and their tags below. To use, don't forget to prefix the tag with 'wmnds-'</p>
 <h3>General</h3>
 <div class="wmnds-grid website-icons">
   {% for icon in iconGeneral %}
