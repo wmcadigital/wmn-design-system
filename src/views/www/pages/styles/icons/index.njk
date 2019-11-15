@@ -3,40 +3,50 @@
 {% set section = "Styles" %}
 {# The icon vars are an array that match the folders they come from in src/assets/icon/{foldername} #}
 {% set iconGeneral = [
-  "icon-arrow",
-  "icon-caret-down",
-  "icon-caret-up",
-  "icon-checkmark",
-  "icon-chevron-right",
-  "icon-clock",
-  "icon-current-location",
-  "icon-expand",
-  "icon-favourite",
-  "icon-filter",
-  "icon-hollow-circle",
-  "icon-info",
-  "icon-id-card",
-  "icon-location-arrow",
-  "icon-location-pin",
-  "icon-minimise",
-  "icon-paperclip",
-  "icon-search",
-  "icon-solid-circle",
-  "icon-success",
-  "icon-swap",
-  "icon-trash",
-  "icon-warning-circle",
-  "icon-warning-triangle"
+  "arrow",
+  "caret-down",
+  "caret-up",
+  "checkmark",
+  "chevron-right",
+  "clock",
+  "current-location",
+  "expand",
+  "favourite",
+  "filter",
+  "hollow-circle",
+  "info",
+  "id-card",
+  "location-arrow",
+  "location-pin",
+  "minimise",
+  "paperclip",
+  "search",
+  "solid-circle",
+  "success",
+  "swap",
+  "trash",
+  "warning-circle",
+  "warning-triangle"
 ] %}
 
 {% set iconSwift = [
-  "icon-swift-card-full-logo",
-  "icon-swift-card-purple",
-  "icon-swift-card-white",
-  "icon-swift"
+  "bird-icon",
+  "card",
+  "card-full-logo"
 ] %}
 
-{% set iconModes = [
+{% set iconModesIsolated = [
+  "bus",
+  "coach",
+  "cycle",
+  "metro",
+  "plane",
+  "rail",
+  "roads",
+  "walk"
+] %}
+
+{% set iconModesBackground = [
   "bus",
   "coach",
   "cycle",
@@ -115,7 +125,7 @@
 <strong>Isolated</strong>
 <br><br>
 <div class="wmnds-grid website-icons">
-  {% for icon in iconModes %}
+  {% for icon in iconModesIsolated %}
     <div class="wmnds-col-1-2 wmnds-col-lg-1-4 text-center">
       {{
         wmndsIcon({
@@ -130,14 +140,14 @@
 <strong>With background</strong>
 <br><br>
 <div class="wmnds-grid website-icons">
-  {% for icon in iconModes %}
+  {% for icon in iconModesBackground %}
     <div class="wmnds-col-1-2 wmnds-col-lg-1-4 text-center">
       {{
         wmndsIcon({
-          icon: 'modes-background-' + icon
+          icon: 'modes-bg-' + icon
         })
       }}
-      <p>{{ 'modes-background-' + icon }}</p>
+      <p>{{ 'modes-bg-' + icon }}</p>
     </div>
   {% endfor %}
 </div>
