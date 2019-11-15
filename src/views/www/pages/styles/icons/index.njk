@@ -41,8 +41,12 @@
   "coach",
   "cycle",
   "metro",
+  "p-r",
   "plane",
-  "rail"
+  "rail-nr",
+  "rail",
+  "roads",
+  "walk"
 ] %}
 
 {% from "components/icon/_icon.njk" import wmndsIcon %}
@@ -85,7 +89,7 @@
           icon: 'general-' + icon
         })
       }}
-      <p>{{icon}}</p>
+      <p>{{ 'general-' + icon }}</p>
     </div>
   {% endfor %}
 </div>
@@ -100,22 +104,40 @@
           icon: 'swift-' + icon
         })
       }}
-      <p>{{icon}}</p>
+      <p>{{ 'swift-' + icon }}</p>
     </div>
   {% endfor %}
 </div>
 
 {# Modal #}
 <h3>Modal</h3>
+
+<strong>Isolated</strong>
+<br><br>
 <div class="wmnds-grid website-icons">
   {% for icon in iconModes %}
-    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+    <div class="wmnds-col-1-2 wmnds-col-lg-1-4 text-center">
       {{
         wmndsIcon({
-          icon: 'modes-white-' + icon
+          icon: 'modes-isolated-' + icon
         })
       }}
-      <p>{{icon}}</p>
+      <p>{{ 'modes-isolated-' + icon }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<strong>With background</strong>
+<br><br>
+<div class="wmnds-grid website-icons">
+  {% for icon in iconModes %}
+    <div class="wmnds-col-1-2 wmnds-col-lg-1-4 text-center">
+      {{
+        wmndsIcon({
+          icon: 'modes-background-' + icon
+        })
+      }}
+      <p>{{ 'modes-background-' + icon }}</p>
     </div>
   {% endfor %}
 </div>
