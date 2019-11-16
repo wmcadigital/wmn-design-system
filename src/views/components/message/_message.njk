@@ -3,36 +3,28 @@
 
 {# Success #}
 {% if params.type === "success" %}
-  {% set iconType = {
-    icon: 'general-icon-success',
-    class: 'wmnds-message__icon'
-  } %}
+  {% set iconName = 'general-success' %}
 {# Warning #}
 {% elseif params.type === "warning" %}
-  {% set iconType = {
-    icon: 'general-icon-warning-circle',
-    class: 'wmnds-message__icon'
-  } %}
+  {% set iconName = 'general-warning-circle' %}
 {# Error #}
 {% elseif params.type === "error" %}
-  {% set iconType = {
-    icon: 'general-icon-warning-triangle',
-    class: 'wmnds-message__icon'
-  } %}
+  {% set iconName = 'general-warning-triangle' %}
 {# Info (default) #}
 {% else %}
-  {% set iconType = {
-    icon: 'general-icon-info',
-    class: 'wmnds-message__icon'
-  } %}
+  {% set iconName = 'general-info' %}
 {% endif %}
 
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-message wmnds-message--{{ params.type }}">
   <div class="wmnds-message__header">
-    {{
-      wmndsIcon(iconType) | indent | trim
+    {# Get SVG icon and pass #}
+    {{-
+      wmndsIcon({
+        icon: iconName,
+        class: 'wmnds-message__icon'
+      }) | indent | trim
     }}
     <h3 class="wmnds-message__title">{{ params.title }}</h3>
   </div>
