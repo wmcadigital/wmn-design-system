@@ -1,5 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Buttons" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
 
 {% block content %}
 <p>
@@ -26,7 +28,6 @@
 <!-- primary buttons -->
 <h2>Primary buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as primary -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {{
   compExample([
     primary({
@@ -51,7 +52,6 @@
 <!-- secondary buttons -->
 <h2>Secondary buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as secondary -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {{
   compExample([
     secondary({
@@ -80,7 +80,6 @@
 <!-- call to action buttons -->
 <h2>Call to action buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as cta %}
-{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {{
   compExample([
     cta({
@@ -98,7 +97,6 @@
 <!-- destructive buttons -->
 <h2>Destructive buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as destructive -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {{
   compExample([
     destructive({
@@ -127,7 +125,6 @@
 <!-- start buttons -->
 <h2>Start buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as start -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {{
   compExample([
     start({
@@ -156,7 +153,6 @@
 <!-- mode buttons -->
 <h2>Mode buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as mode -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {{
   compExample([
     mode({
