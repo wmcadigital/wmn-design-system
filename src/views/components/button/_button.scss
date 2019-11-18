@@ -31,12 +31,8 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     -webkit-appearance: none;
   }
 
-  &--input {
-    padding: $padding-sm;
-  }
-
   &--small {
-    padding: 2px !important;
+    padding: $padding-xs;
   }
 
   // button icon left styles
@@ -167,57 +163,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
   }
 
-  // button disabled styles
-  // &--disabled {
-  //   &:disabled {
-  //     color: $white;
-  //     background-color: get-color(disable);
-  //     cursor: not-allowed;
-
-  //     .wmnds-btn__icon {
-  //       fill: $white;
-  //     }
-
-  //     &:active,
-  //     &:target,
-  //     &:focus,
-  //     &.wmnds-is-active {
-  //       span {
-  //         background-color: get-color(disable);
-  //       }
-  //     }
-  //   }
-
-  &--light {
-    &:disabled {
-      border: $btn-border-width solid get-color(disable);
-      color: get-color(disable);
-
-      span {
-        border: $btn-border-width solid transparent;
-      }
-
-      &:hover {
-        background-color: transparent;
-        cursor: not-allowed;
-
-        span {
-          background-color: transparent;
-        }
-      }
-
-      &:active,
-      &:target,
-      &:focus,
-      &.wmnds-is-active {
-        span {
-          background-color: transparent;
-        }
-      }
-    }
-  }
-
-  // Disabled modifier for default btn
+  // Disabled modifier (goes last to override above classes) for default btn
   &--disabled:disabled {
     background-color: get-color(disable);
     cursor: not-allowed;
