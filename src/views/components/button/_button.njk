@@ -13,24 +13,29 @@
 {% endif %}
 
 <button class="wmnds-btn {% if classNames %}{{ classNames }}{% endif %}" tabindex="0" {% if params.disabled %} disabled="disabled" {% endif %}>
-    {%- if iconLeft %}
-      {{
-        wmndsIcon({
-          icon: iconLeft,
-          class: 'wmnds-btn__icon'
-        }) | indent | trim
-      }}
-    {%- endif -%}
+    {#- iconLeft -#}
+    {% if iconLeft %}
+    {{
+      wmndsIcon({
+        icon: iconLeft,
+        class: 'wmnds-btn__icon'
+      }) | indent | trim
+    }}
+    {{ text -}}
 
+    {#- iconRight -#}
+    {% elseif iconRight %}
     {{ text }}
+    {{
+      wmndsIcon({
+        icon: iconRight,
+        class: 'wmnds-btn__icon wmnds-btn__icon--right'
+      }) | indent | trim
+    }}
 
-    {%- if iconRight %}
-      {{
-        wmndsIcon({
-          icon: iconRight,
-          class: 'wmnds-btn__icon wmnds-btn__icon--right'
-        }) | indent | trim
-      }}
+    {#- noIcon -#}
+    {% else %}
+    {{text}}
     {%- endif %}
 </button>
 
