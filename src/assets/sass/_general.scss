@@ -19,10 +19,11 @@ hr {
 }
 
 // Controls how elements look when focused (helps with accesibility/keyboard-only users)
-*:target,
-*:focus {
+*:focus,
+*::-moz-focus-inner {
+  border: 0;
   outline: none;
-  box-shadow: 0 0 0 2px $white, 0 0 0 5px get-color(secondary);
+  box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
 }
 
 .wmnds-display {

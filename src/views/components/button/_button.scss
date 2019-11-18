@@ -8,7 +8,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   position: relative;
   padding: $padding-sm;
   transition: $btn-transition;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: $btn-border-radius;
   color: $white;
   background-color: get-color(primary);
@@ -21,10 +21,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 
   &:active,
+  &:target,
+  &:focus,
   &.wmnds-is-active {
-    border: $btn-border-width solid $white;
     outline: none;
-    background-color: get-color(primary, 50);
+    background-color: get-color(primary, 50, dark);
     -webkit-appearance: none;
   }
 
@@ -48,18 +49,18 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: $white;
 
     .wmnds-btn__icon {
-      fill: get-color(secondary);
+      fill: get-color(primary);
     }
 
     &:hover {
-      background-color: get-color(secondary, 30);
+      background-color: get-color(secondary, 70);
     }
 
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: $white;
+      background-color: get-color(secondary, 50);
     }
 
     // Secondary (disabled)
@@ -79,14 +80,14 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: get-color(cta);
 
     &:hover {
-      background-color: get-color(cta, 30);
+      background-color: get-color(cta, 30, dark);
     }
 
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: get-color(cta);
+      background-color: get-color(cta, 50, dark);
     }
   }
 
@@ -95,19 +96,18 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: get-color(error);
 
     &:hover {
-      background-color: get-color(error, 30);
+      background-color: get-color(error, 30, dark);
     }
 
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: get-color(error, 50);
+      background-color: get-color(error, 50, dark);
     }
   }
 
   &--start {
-    color: $white;
     background-color: get-color(success);
 
     span {
@@ -115,14 +115,14 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
 
     &:hover {
-      background-color: get-color(success, 30);
+      background-color: get-color(success, 30, dark);
     }
 
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: get-color(success, 50);
+      background-color: get-color(success, 50, dark);
     }
   }
 
@@ -137,12 +137,15 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       fill: get-color(primary);
     }
 
-    &:hover,
+    &:hover {
+      background-color: get-color(secondary, 70);
+    }
+
     &:active,
     &:target,
     &:focus,
     &.wmnds-is-active {
-      background-color: mix(get-color(primary), $white, 20);
+      background-color: get-color(secondary, 50);
     }
   }
 
