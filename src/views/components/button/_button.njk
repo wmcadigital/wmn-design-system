@@ -5,14 +5,15 @@
 {% set text = params.text if params.text else "Button text" %} {# set button text #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
-{# set true for button disabled #}
+{% set paramClass = " " + params.classNames if params.classNames %} {# set paramClass to params.classNames if any #}
+{# if button disabled is true #}
 {% if params.disabled %}
-  {% set classNames = params.classNames + " wmnds-btn--disabled" %}
+  {% set classNames = paramClass + " wmnds-btn--disabled" %}
 {% else %}
-  {% set classNames = params.classNames + "" %}
+  {% set classNames = paramClass if paramClass %}
 {% endif %}
 
-<button class="wmnds-btn {% if classNames %}{{ classNames }}{% endif %}" tabindex="0" {% if params.disabled %} disabled="disabled" {% endif %}>
+<button class="wmnds-btn{{ classNames }}" tabindex="0" {% if params.disabled %} disabled="disabled" {% endif %}>
     {#- iconLeft -#}
     {% if iconLeft %}
     {{
