@@ -5,6 +5,10 @@ $h-size-mob: 78px;
   margin-bottom: $margin-xl;
   padding: $padding-md;
   background-color: $h-bg;
+
+  a:first-child {
+    margin-right: $margin-md;
+  }
 }
 
 .header-logo {

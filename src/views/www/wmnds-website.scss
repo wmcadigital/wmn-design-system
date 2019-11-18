@@ -98,3 +98,12 @@ html {
     padding-top: $padding-sm;
   }
 }
+
+.vertical-align-mid {
+  display: block;
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
