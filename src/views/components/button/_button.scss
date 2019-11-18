@@ -133,13 +133,14 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
   }
 
-  // button mode toggle
+  // button mode
   &--mode {
     border: $btn-border-width solid get-color(primary);
     color: get-color(primary);
     background-color: $white;
 
     .wmnds-btn__icon {
+      margin-right: $margin-xs;
       fill: get-color(primary);
     }
 
