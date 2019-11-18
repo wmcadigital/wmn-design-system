@@ -41,13 +41,10 @@
 // get-color(primary, 50); by default it mixes with white
 // If you add dark to the end it will mix black instead of white
 // e.g. get-color(primary, 50, dark);
-@function get-color($color, $percent: 100, $shade: $white) {
-  $shade: if(
-    $shade == dark,
-    $black,
-    $white
-  ); // If shade is null, then by default set to white else set to shade selected
+@function get-color($color, $percent: 0, $shade: $white) {
+  // If shade is null, then by default set to white else set to shade selected
+  $shade: if($shade == dark, $black, $white);
   $color: map-get($palettes, $color);
 
-  @return mix($color, $shade, $percent);
+  @return mix($shade, $color, $percent);
 }

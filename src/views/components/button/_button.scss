@@ -1,6 +1,5 @@
 $btn-border-radius: 5px;
 $btn-border-width: 1px;
-$btn-padding: 2px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
 // default button styles aka primary btn
@@ -18,7 +17,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   cursor: pointer;
 
   &:hover {
-    background-color: get-color(primary, 30);
+    background-color: get-color(primary, 30, dark);
   }
 
   &:active,
@@ -29,10 +28,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     outline: none;
     background-color: get-color(primary, 50);
     -webkit-appearance: none;
-  }
-
-  &--small {
-    padding: $padding-xs;
   }
 
   // button icon left styles
@@ -168,5 +163,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-is-active {
       background-color: get-color(disable);
     }
+  }
+
+  // button small modifier
+  &--small {
+    padding: $padding-xs;
   }
 }
