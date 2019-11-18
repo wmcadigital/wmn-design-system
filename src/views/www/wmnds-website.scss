@@ -16,6 +16,8 @@
 // @import 'pages/marks';
 // @import 'pages/header';
 
+$component-code-bg: #efefef;
+
 html,
 body {
   margin: 0;
@@ -42,7 +44,7 @@ html {
   padding: $padding-sm;
   border-left: 2px solid rgba(get-color(primary), 0.5);
   border-radius: 4px;
-  background-color: #efefef;
+  background-color: $component-code-bg;
 }
 
 .component-details__title {
@@ -51,7 +53,7 @@ html {
 }
 
 .component-details__text {
-  color: rgba(#000000, 0.5);
+  color: rgba($black, 0.5);
   font-weight: 400;
 }
 
@@ -66,8 +68,8 @@ html {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  background-color: rgba($black, 0.3);
+  box-shadow: 0 0 1px rgba($white, 0.5);
 }
 
 // icons background colour
