@@ -1,5 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Links" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
 
 {% block content %}
 <p>
@@ -40,124 +42,97 @@
   <li><strong>_top</strong>: Will load clicked link in the full body of the window</li>
   <li><strong>framename</strong>: Will load clicked link in a named frame</li>
 </ul>
-<!-- primary buttons -->
+{# primary buttons #}
 <h2>Primary buttons</h2>
 {%- from "components/link/_link.njk" import wmnLink as primary -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample as compExample %}
 {{
-    compExample([
-      primary({
-        classNames: "wmnds-btn__primary",
-        text: "Primary button",
-        link: "javascript:void(0);",
-        linkTitle: "This is a primary link",
-        linkTarget: "_self"
-      }),
-      primary({
-        classNames: "wmnds-btn__primary",
-        text: "Primary icon button",
-        iconRight: "fas fa-chevron-right",
-        link: "javascript:void(0);",
-        linkTitle: "This is a primary link",
-        linkTarget: "_self"
-      })
-    ])
-  }}
-<!-- end: primary buttons -->
-<!-- secondary buttons -->
+  compExample([
+    primary({
+      text: "Primary button",
+      linkTitle: "This is a primary link"
+    }),
+    primary({
+      text: "Primary icon button",
+      iconRight: "general-chevron-right",
+      linkTitle: "This is a primary link"
+    })
+  ])
+}}
+{# end: primary buttons #}
+{# secondary buttons #}
 <h2>Secondary buttons</h2>
 {%- from "components/link/_link.njk" import wmnLink as secondary -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample as compExample %}
 {{
-    compExample([
-      secondary({
-        classNames: "wmnds-btn__secondary",
-        text: "Secondary button",
-        link: "javascript:void(0);",
-        linkTitle: "This is a secondary link",
-        linkTarget: "_self"
-      }),
-      secondary({
-        classNames: "wmnds-btn__secondary",
-        text: "Secondary icon button",
-        iconRight: "fas fa-chevron-right",
-        link: "javascript:void(0);",
-        linkTitle: "This is a secondary link",
-        linkTarget: "_self"
-      })
-    ])
-  }}
-<!-- end: secondary buttons -->
-<!-- call to action buttons -->
+  compExample([
+    secondary({
+      classNames: "wmnds-btn--secondary",
+      text: "Secondary button",
+      linkTitle: "This is a secondary link"
+    }),
+    secondary({
+      classNames: "wmnds-btn--secondary",
+      text: "Secondary icon button",
+      iconRight: "general-chevron-right",
+      linkTitle: "This is a secondary link"
+    })
+  ])
+}}
+{# end: secondary buttons #}
+{# call to action buttons #}
 <h2>Call to action buttons</h2>
 {%- from "components/link/_link.njk" import wmnLink as cta %}
-{% from "www/_partials/component-example/component-example.njk" import compExample as compExample %}
 {{
-    compExample([
-      cta({
-        classNames: "wmnds-btn__cta",
-        text: "Call to action button",
-        link: "javascript:void(0);",
-        linkTitle: "This is a call to action link",
-        linkTarget: "_self"
-      }),
-      cta({
-        classNames: "wmnds-btn__cta",
-        text: "Call to action icon button",
-        iconRight: "fas fa-chevron-right",
-        link: "javascript:void(0);",
-        linkTitle: "This is a call to action link",
-        linkTarget: "_self"
-      })
-    ])
-  }}
-<!-- end: call to action buttons -->
-<!-- destructive buttons -->
+  compExample([
+    cta({
+      classNames: "wmnds-btn--cta",
+      text: "Call to action button",
+      linkTitle: "This is a call to action link"
+    }),
+    cta({
+      classNames: "wmnds-btn--cta",
+      text: "Call to action icon button",
+      iconRight: "general-chevron-right",
+      linkTitle: "This is a call to action link"
+    })
+  ])
+}}
+{# end: call to action buttons #}
+{# destructive buttons #}
 <h2>Destructive buttons</h2>
 {%- from "components/link/_link.njk" import wmnLink as destructive -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample as compExample %}
 {{
-    compExample([
-      destructive({
-        classNames: "wmnds-btn__destructive",
-        text: "Destructive button",
-        link: "javascript:void(0);",
-        linkTitle: "This is a destructive link",
-        linkTarget: "_self"
-      }),
-      destructive({
-        classNames: "wmnds-btn__destructive",
-        text: "Destructive icon button",
-        iconRight: "fas fa-chevron-right",
-        link: "javascript:void(0);",
-        linkTitle: "This is a destructive link",
-        linkTarget: "_self"
-      })
-    ])
-  }}
-<!-- end: destructive buttons -->
-<!-- start buttons -->
+  compExample([
+    destructive({
+      classNames: "wmnds-btn--destructive",
+      text: "Destructive button",
+      linkTitle: "This is a destructive link"
+    }),
+    destructive({
+      classNames: "wmnds-btn--destructive",
+      text: "Destructive icon button",
+      iconRight: "general-chevron-right",
+      linkTitle: "This is a destructive link"
+    })
+  ])
+}}
+{# end: destructive buttons #}
+{# start buttons #}
 <h2>Start buttons</h2>
 {%- from "components/link/_link.njk" import wmnLink as start -%}
-{% from "www/_partials/component-example/component-example.njk" import compExample as compExample %}
 {{
-    compExample([
-      start({
-        classNames: "wmnds-btn__start",
-        text: "Start button",
-        link: "javascript:void(0);",
-        linkTitle: "This is a start link",
-        linkTarget: "_self"
-      }),
-      start({
-        classNames: "wmnds-btn__start",
-        text: "Start icon button",
-        iconRight: "fas fa-chevron-right",
-        link: "javascript:void(0);",
-        linkTitle: "This is a start link",
-        linkTarget: "_self"
-      })
-    ])
-  }}
-<!-- end: start buttons -->
+  compExample([
+    start({
+      classNames: "wmnds-btn--start",
+      text: "Start button",
+      linkTitle: "This is a start link"
+    }),
+    start({
+      classNames: "wmnds-btn--start",
+      text: "Start icon button",
+      iconRight: "general-chevron-right",
+      linkTitle: "This is a start link"
+    })
+  ])
+}}
+{# end: start buttons #}
 {% endblock %}

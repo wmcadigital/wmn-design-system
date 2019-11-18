@@ -5,6 +5,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 // default button styles aka primary btn
 .wmnds-btn {
   box-sizing: border-box;
+  display: inline-block;
   position: relative;
   padding: $padding-sm;
   transition: $btn-transition;
@@ -14,6 +15,8 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   background-color: get-color(primary);
   font-size: 1rem;
   font-weight: bold;
+  text-align: left;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
@@ -40,6 +43,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   // button icon right style
   &__icon--right {
     margin-left: $margin-sm;
+    float: right;
   }
 
   // button secondary styles

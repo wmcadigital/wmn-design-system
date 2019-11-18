@@ -25,7 +25,7 @@
   <li>Begin a new task</li>
 </ul>
 
-<!-- primary buttons -->
+{# primary buttons #}
 <h2>Primary buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as primary -%}
 {{
@@ -48,8 +48,8 @@
     })
   ])
 }}
-<!-- end: primary buttons -->
-<!-- secondary buttons -->
+{# end: primary buttons #}
+{# secondary buttons #}
 <h2>Secondary buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as secondary -%}
 {{
@@ -76,8 +76,8 @@
     })
   ])
 }}
-<!-- end: secondary buttons -->
-<!-- call to action buttons -->
+{# end: secondary buttons #}
+{# call to action buttons #}
 <h2>Call to action buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as cta %}
 {{
@@ -93,8 +93,8 @@
     })
   ])
 }}
-<!-- end: call to action buttons -->
-<!-- destructive buttons -->
+{# end: call to action buttons #}
+{# destructive buttons #}
 <h2>Destructive buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as destructive -%}
 {{
@@ -121,8 +121,8 @@
     })
   ])
 }}
-<!-- end: destructive buttons -->
-<!-- start buttons -->
+{# end: destructive buttons #}
+{# start buttons #}
 <h2>Start buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as start -%}
 {{
@@ -149,8 +149,8 @@
     })
   ])
 }}
-<!-- end: start buttons -->
-<!-- mode buttons -->
+{# end: start buttons #}
+{# mode buttons #}
 <h2>Mode buttons</h2>
 {%- from "components/button/_button.njk" import wmnButton as mode -%}
 {{
@@ -177,5 +177,5 @@
     })
   ])
 }}
-<!-- end: mode buttons -->
+{# end: mode buttons #}
 {% endblock %}
