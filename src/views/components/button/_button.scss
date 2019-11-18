@@ -111,17 +111,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-is-active {
       background-color: get-color(error, 50);
     }
-
-    // // Destructive (disabled)
-    // &.wmnds-btn--disabled {
-    //   border-color: get-color(disable);
-    //   color: get-color(disable);
-    //   background: $white;
-
-    //   .wmnds-btn__icon {
-    //     fill: get-color(disable);
-    //   }
-    // }
   }
 
   &--start {

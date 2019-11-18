@@ -5,6 +5,9 @@
   <div class="wmnds-col-1 {{classNames}}">
     {%- for item in componentPath %}
       {{ item }}
+      {% if loop.last == false %}
+        <br/><br/>
+      {% endif %}
     {% endfor -%}
   </div>
 
