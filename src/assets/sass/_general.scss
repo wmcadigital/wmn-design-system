@@ -18,28 +18,11 @@ hr {
   background: get-color(primary);
 }
 
-$icon-base-width: 25px;
-$icon-base-width-sm: $icon-base-width;
-$icon-base-width-md: $icon-base-width * 1.5;
-$icon-base-width-lg: $icon-base-width * 2;
-$icon-base-width-xl: $icon-base-width * 2.5;
-
-.icon {
-  &--sm {
-    width: $icon-base-width-sm;
-  }
-
-  &--md {
-    width: $icon-base-width-md;
-  }
-
-  &--lg {
-    width: $icon-base-width-lg;
-  }
-
-  &--xl {
-    width: $icon-base-width-xl;
-  }
+// Controls how elements look when focused (helps with accesibility/keyboard-only users)
+*:target,
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px $white, 0 0 0 5px get-color(secondary);
 }
 
 .wmnds-display {
