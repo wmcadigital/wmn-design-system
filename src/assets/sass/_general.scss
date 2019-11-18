@@ -19,11 +19,14 @@ hr {
 }
 
 // Controls how elements look when focused (helps with accesibility/keyboard-only users)
-*:focus,
-*::-moz-focus-inner {
-  border: 0;
+*:focus {
   outline: none;
   box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+}
+
+// This gets rid of firefox default focus dash-border
+*::-moz-focus-inner {
+  border: 0;
 }
 
 .wmnds-display {
