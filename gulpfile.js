@@ -42,8 +42,8 @@ function watchFiles() {
 const buildAll = series(
   cleanBuild,
   buildSprites,
-  minImages,
   moveImages,
+  minImages,
   buildStyles,
   buildReactNativeStyles,
   buildTemplates,
@@ -68,6 +68,7 @@ const serve = series(
     buildSprites,
     moveImages
   ),
+  minImages,
   cacheBust,
   parallel(watchFiles, browserSync)
 );
