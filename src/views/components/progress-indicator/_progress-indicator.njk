@@ -1,0 +1,70 @@
+{% macro wmndsProgressIndicator(params) %}
+
+{# Imports #}
+{% from "components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
+
+<ul class="wmnds-progress-indicator wmnds-grid wmnds-grid--justify-between">
+  <!-- #1 Completed step -->
+  <div class="wmnds-col-1 wmnds-col-md-1-5">
+    <li class="wmnds-progress-indicator__item wmnds-progress-indicator__item--success">
+      {{
+        wmndsIcon({
+          icon: 'general-success',
+          class: 'wmnds-progress-indicator__icon'
+        }) | indent | trim
+      }}
+      <span class="wmnds-progress-indicator__title">#1 Completed step</span>
+    </li>
+  </div>
+  <!-- #2 Completed step -->
+  <div class="wmnds-col-1 wmnds-col-md-1-5">
+    <li class="wmnds-progress-indicator__item wmnds-progress-indicator__item--success">
+      {{
+        wmndsIcon({
+          icon: 'general-success',
+          class: 'wmnds-progress-indicator__icon'
+        }) | indent | trim
+      }}
+      <span class="wmnds-progress-indicator__title">#2 Completed step</span>
+    </li>
+  </div>
+  <!-- #3 Current step -->
+  <div class="wmnds-col-1 wmnds-col-md-1-5">
+    <li class="wmnds-progress-indicator__item wmnds-progress-indicator__item--current">
+      {{
+        wmndsIcon({
+          icon: 'general-solid-circle',
+          class: 'wmnds-progress-indicator__icon'
+        }) | indent | trim
+      }}
+      <span class="wmnds-progress-indicator__title">#3 Current step</span>
+    </li>
+  </div>
+  <!-- #4 Step to complete -->
+  <div class="wmnds-col-1 wmnds-col-md-1-5">
+    <li class="wmnds-progress-indicator__item">
+      {{
+        wmndsIcon({
+          icon: 'general-hollow-circle',
+          class: 'wmnds-progress-indicator__icon'
+        }) | indent | trim
+      }}
+      <span class="wmnds-progress-indicator__title">#4 Step to complete</span>
+    </li>
+  </div>
+  <!-- #5 Step to complete -->
+  <div class="wmnds-col-1 wmnds-col-md-1-5">
+    <li class="wmnds-progress-indicator__item">
+      {{
+        wmndsIcon({
+          icon: 'general-hollow-circle',
+          class: 'wmnds-progress-indicator__icon'
+        }) | indent | trim
+      }}
+      <span class="wmnds-progress-indicator__title">#5 Step to complete</span>
+    </li>
+  </div>
+</ul>
+
+{% endmacro %}

@@ -35,7 +35,12 @@
       ]
     },
     {
-      "name": "Patterns"
+      "name": "Patterns",
+      "subnavItems": [
+        {
+          "name": "Progress indicator"
+        }
+      ]
     }
   ],
   "colors": {

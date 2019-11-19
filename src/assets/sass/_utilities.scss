@@ -15,19 +15,19 @@ html {
   }
 
   // How to align child flex items of a grid
-  &.justify-between {
+  &.wmnds-grid--justify-between {
     justify-content: space-between;
   }
 
-  &.justify-around {
+  &.wmnds-grid--justify-around {
     justify-content: space-around;
   }
 
-  &.justify-end {
+  &.wmnds-grid--justify-end {
     justify-content: flex-end;
   }
 
-  &.align-center {
+  &.wmnds-grid--align-center {
     align-items: center;
   }
 }
