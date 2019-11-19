@@ -30,15 +30,17 @@
           "name": "Phase indicator"
         },
         {
-          "name": "Progress indicator"
-        },
-        {
           "name": "Message"
         }
       ]
     },
     {
-      "name": "Patterns"
+      "name": "Patterns",
+      "subnavItems": [
+        {
+          "name": "Progress indicator"
+        }
+      ]
     }
   ],
   "colors": {
