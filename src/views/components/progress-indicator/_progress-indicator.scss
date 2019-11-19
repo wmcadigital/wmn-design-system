@@ -3,14 +3,48 @@
   list-style: none;
 
   &__item {
+    display: block;
     margin-bottom: $margin-xs;
     padding-left: $padding-sm;
     border-left: 5px solid get-color(disable, 70);
+
+    @media all and (min-width: $breakpoint-md) {
+      margin: 0 $margin-xs $margin-xs $margin-xs;
+      padding-top: $padding-sm;
+      padding-left: 0;
+      border-top: 5px solid get-color(disable, 70);
+      border-left: 0;
+    }
+
+    &--success {
+      color: get-color(success);
+      font-weight: bold;
+
+      .wmnds-progress-indicator__icon {
+        fill: get-color(success);
+      }
+    }
+
+    &--current,
+    &--success {
+      border-color: get-color(success);
+    }
   }
 
   &__icon {
     width: 25px;
     height: 25px;
+    margin-right: $margin-xs;
     fill: get-color(disable, 70);
+  }
+
+  &__title,
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    @media all and (min-width: $breakpoint-md) {
+      display: inline;
+    }
   }
 }
