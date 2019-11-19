@@ -1,3 +1,5 @@
 .wmnds-msg-help {
-  background-color: get-color(secondary);
+  display: inline-block;
+  padding: $padding-sm;
+  background-color: get-color(secondary, 70);
 }
