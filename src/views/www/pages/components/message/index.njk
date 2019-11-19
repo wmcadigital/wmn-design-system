@@ -1,6 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Message" %}
-{% from "components/message/_message.njk" import wmndsMessage %}
+{% from "components/message/summary/_summary.njk" import wmndsMsgSummary %}
+{% from "components/message/help/_help.njk" import wmndsMsgHelp %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -36,7 +37,7 @@
 <h2>Information</h2>
 {{
   compExample([
-    wmndsMessage({
+    wmndsMsgSummary({
       type: 'info',
       title: 'Information about xx',
       message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
@@ -49,7 +50,7 @@
 <h2>Success</h2>
 {{
   compExample([
-    wmndsMessage({
+    wmndsMsgSummary({
       type: 'success',
       title: 'Success confirmation',
       message: 'Details added if needed to confirm action.'
@@ -62,7 +63,7 @@
 <h2>Warning</h2>
 {{
   compExample([
-    wmndsMessage({
+    wmndsMsgSummary({
       type: 'warning',
       title: 'Warning message',
       message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
@@ -75,7 +76,7 @@
 <h2>Error</h2>
 {{
   compExample([
-    wmndsMessage({
+    wmndsMsgSummary({
       type: 'error',
       title: 'Error message',
       message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
@@ -83,6 +84,17 @@
   ])
 }}
 {# End error message #}
+
+{# Help message #}
+<h2>Help</h2>
+{{
+  compExample([
+    wmndsMsgHelp({
+      message: 'Details added what happened and what to do next.<br/> Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+    })
+  ])
+}}
+{# End Help message #}
 
 
 {% endblock %}

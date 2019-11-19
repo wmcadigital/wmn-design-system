@@ -1,0 +1,65 @@
+// These vars control icon size and the margin right from the icon. By setting here we can ensure the message_info stays indented by same amount as title.
+$wmnds-msg-icon-size: 35px;
+$wmnds-msg-icon-margin-right: $margin-sm;
+
+.wmnds-msg-summary {
+  padding: $padding-sm;
+  border: 1px solid get-color(information);
+
+  &__header {
+    display: block;
+  }
+
+  &__icon {
+    width: $wmnds-msg-icon-size;
+    height: $wmnds-msg-icon-size;
+    margin-right: $wmnds-msg-icon-margin-right;
+    fill: get-color(information);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__icon,
+  &__title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__info {
+    display: block;
+    @media all and (min-width: $breakpoint-md) {
+      padding-left: calc(#{$wmnds-msg-icon-size} + #{$wmnds-msg-icon-margin-right});
+    }
+  }
+
+  // MESSAGE MODIFIERS - info is the default (above)
+
+  // Success
+  &--success {
+    border-color: get-color(success);
+
+    .wmnds-msg-summary__icon {
+      fill: get-color(success);
+    }
+  }
+
+  // Warning
+  &--warning {
+    border-color: get-color(warning);
+
+    .wmnds-msg-summary__icon {
+      fill: get-color(warning);
+    }
+  }
+
+  // Warning
+  &--error {
+    border-color: get-color(error);
+
+    .wmnds-msg-summary__icon {
+      fill: get-color(error);
+    }
+  }
+}

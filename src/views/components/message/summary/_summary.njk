@@ -1,4 +1,4 @@
-{% macro wmndsMessage(params) %}
+{% macro wmndsMsgSummary(params) %}
 {# Set vars and defaults #}
 
 {# Success #}
@@ -17,19 +17,19 @@
 
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 
-<div class="wmnds-message wmnds-message--{{ params.type }}">
-  <div class="wmnds-message__header">
+<div class="wmnds-msg-summary wmnds-msg-summary--{{ params.type }}">
+  <div class="wmnds-msg-summary__header">
     {# Get SVG icon and pass #}
     {{-
       wmndsIcon({
         icon: iconName,
-        class: 'wmnds-message__icon'
+        class: 'wmnds-msg-summary__icon'
       }) | indent | trim
     }}
-    <h3 class="wmnds-message__title">{{ params.title }}</h3>
+    <h3 class="wmnds-msg-summary__title">{{ params.title }}</h3>
   </div>
 
-  <div class="wmnds-message__info">
+  <div class="wmnds-msg-summary__info">
     {{ params.message | safe }}
   </div>
 </div>
