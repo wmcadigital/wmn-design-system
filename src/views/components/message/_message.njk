@@ -28,7 +28,10 @@
     }}
     <h3 class="wmnds-message__title">{{ params.title }}</h3>
   </div>
-  {{ params.message | safe }}
+
+  <div class="wmnds-message__info">
+    {{ params.message | safe }}
+  </div>
 </div>
 
 {% endmacro %}

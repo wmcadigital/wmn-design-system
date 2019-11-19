@@ -1,3 +1,7 @@
+// These vars control icon size and the margin right from the icon. By setting here we can ensure the message_info stays indented by same amount as title.
+$wmnds-message-icon-size: 35px;
+$wmnds-message-icon-margin-right: $margin-sm;
+
 .wmnds-message {
   padding: $padding-sm;
   border: 1px solid get-color(information);
@@ -7,20 +11,27 @@
   }
 
   &__icon {
-    width: 35px;
-    height: 35px;
+    width: $wmnds-message-icon-size;
+    height: $wmnds-message-icon-size;
+    margin-right: $wmnds-message-icon-margin-right;
     fill: get-color(information);
   }
 
   &__title {
     margin: 0;
-    padding-left: $padding-sm;
   }
 
   &__icon,
   &__title {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  &__info {
+    display: block;
+    @media all and (min-width: $breakpoint-md) {
+      padding-left: calc(#{$wmnds-message-icon-size} + #{$wmnds-message-icon-margin-right});
+    }
   }
 
   // MESSAGE MODIFIERS - info is the default (above)
