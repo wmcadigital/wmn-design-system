@@ -1,0 +1,16 @@
+.wmnds-progress-indicator {
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    margin-bottom: $margin-xs;
+    padding-left: $padding-sm;
+    border-left: 5px solid get-color(disable, 70);
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    fill: get-color(disable, 70);
+  }
+}

@@ -1,0 +1,55 @@
+{% macro wmndsProgressIndicator(params) %}
+
+{# Imports #}
+{% from "components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
+
+<ul  class="wmnds-progress-indicator wmnds-grid align-center">
+  <li class="wmnds-progress-indicator__item wmnds-col-1 wmnds-col-sm-1-5">
+    {{
+      wmndsIcon({
+        icon: 'general-hollow-circle',
+        class: 'wmnds-progress-indicator__icon'
+      }) | indent | trim
+    }}
+    Step heading #1
+  </li>
+  <li class="wmnds-progress-indicator__item wmnds-col-1 wmnds-col-sm-1-5">
+    {{
+      wmndsIcon({
+        icon: 'general-hollow-circle',
+        class: 'wmnds-progress-indicator__icon'
+      }) | indent | trim
+    }}
+    Step heading #2
+  </li>
+  <li class="wmnds-progress-indicator__item wmnds-col-1 wmnds-col-sm-1-5">
+    {{
+      wmndsIcon({
+        icon: 'general-hollow-circle',
+        class: 'wmnds-progress-indicator__icon'
+      }) | indent | trim
+    }}
+    Step heading #3
+  </li>
+  <li class="wmnds-progress-indicator__item wmnds-col-1 wmnds-col-sm-1-5">
+    {{
+      wmndsIcon({
+        icon: 'general-hollow-circle',
+        class: 'wmnds-progress-indicator__icon'
+      }) | indent | trim
+    }}
+    Step heading #4
+  </li>
+  <li class="wmnds-progress-indicator__item wmnds-col-1 wmnds-col-sm-1-5">
+    {{
+      wmndsIcon({
+        icon: 'general-hollow-circle',
+        class: 'wmnds-progress-indicator__icon'
+      }) | indent | trim
+    }}
+    Step heading #5
+  </li>
+</ul>
+
+{% endmacro %}
