@@ -16,8 +16,22 @@
 
     // On mouse-over, add a grey background color
     &:hover .wmnds-fe-checkboxes__checkmark {
-      background-color: get-color(secondary, 30);
+      background-color: get-color(secondary, 70);
     }
+  }
+
+  // The svg checkmark styling
+  &__icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 26px;
+    height: 23px;
+    margin: auto;
+    fill: get-color(primary);
   }
 
   // Hide the browser's default checkbox
@@ -26,45 +40,21 @@
     width: 0;
     height: 0;
     opacity: 0;
+
     // Show the checkmark when checked
-
-    &:checked ~ .wmnds-fe-checkboxes__checkmark {
+    &:checked ~ .wmnds-fe-checkboxes__checkmark > .wmnds-fe-checkboxes__icon {
       display: block;
-
-      // Style the checkmark/indicator
-      &:after {
-        content: "\f00c";
-        display: block;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 25px;
-        height: 22px;
-        margin: auto;
-        font-family: "Font Awesome 5 Pro";
-        font-size: 25px;
-        font-weight: bold;
-      }
     }
   }
 
-  // Create a custom checkbox
+  // Create a custom checkbox box
   &__checkmark {
     position: absolute;
     top: 0;
     left: 0;
     width: 35px;
     height: 35px;
-    border: 1px solid get-color(primary);
-    color: get-color(primary);
+    border: 2px solid get-color(primary);
     background: $white;
-
-    // Create the checkmark/indicator (hidden when not checked)
-    &:after {
-      content: "";
-      display: none;
-      position: absolute;
-    }
   }
 }
