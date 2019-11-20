@@ -4,22 +4,32 @@
 {% from "www/pages/styles/colour-palettes/_color-palette-macro.njk" import colorPalette %}
 
 {% block content %}
-<p>Below are the list of WMCA's colour palettes and the various tints.</p>
-
-<p>Each colour has 10 tints, starting from the full colour and decreasing in 10% intervals.</p>
-
-<p>You can find the RGB and HEX values for reference.</p>
-
-<p>If using the colours in development, you shouldn't use the HEX and RGB values!</p>
-
-<p>You can use the class names suggested which will give the HTML element either a 'color' or
-  'background-color' CSS
-  property.
+{# About #}
+<h2>About</h2>
+<p>Below are the list of West Midlands Network colour palettes.</p>
+<p>
+  We have tested our colours against the three most prevalent colour blind anomalies: protanopia, deuteranopia and tritanopia. While in some circumstances, particularly protanopia, colours can appear to be relatively similar.
 </p>
-<p>Alternatively you can use a colour in a SCSS file by using the SCSS VAR provided. For example,
-  "color:
-  $get-color(primary, 30);".
+<p>
+  These issues can be circumvented by not referring to specific colours. For instance, when referring to a green button with the word 'start' in, the phrase 'click the green button to start' would not be helpful. Instead, use 'click the start button', without a colour reference.
 </p>
+<p>
+  <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" title="W3C AA Accessibilty colour contrast" target="_blank">W3C AA Accessibility criteria</a> requires the contrast of test to be enhanced, with a contrast ratio upwards of 3:1.
+</p>
+<p>
+  All brand/web colours meet this criteria, though the modal colour 'WM Railway' must only be used for iconography and graphical devices.
+</p>
+<p>The background only colours can only be used as a background colour and they are not intended for any other use.</p>
+<hr>
+
+{# Using in development #}
+<h2>Using in development</h2>
+<h3>WMNDS SCSS</h3>
+<p>If you are using WMN Design System's SCSS in development, you shouldn't use the HEX values! Instead you should always use the scss variables instead, for example use <code class="wmnds-website-inline-code">get-color(primary)</code> instead of <code class="wmnds-website-inline-code">#3c1053</code>. This ensures you are always using the most up-to-date colour. To find out more on how to use the <code class="wmnds-website-inline-code">get-color()</code> function in SCSS, please refer to the notes for <code class="wmnds-website-inline-code">@function get-color()</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/assets/sass/_mixins.scss" target="_blank">_mixins.scss</a>.</p>
+
+<h3>Without WMNDS SCSS</h3>
+<p>If you are not using WMN Design System's SCSS then it is recommended to use the hex values below. It is highly adviseable to set these up as variables in your development enviornment, this ensures that you can easily change them to keep up-to-date with our colour palettes.</p>
+<p>If you'd like to see how we have set the variables up, you can check out <code class="wmnds-website-inline-code">$palettes</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/assets/sass/_vars.scss" target="_blank">_vars.scss</a> and <code class="wmnds-website-inline-code">@function get-color()</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/assets/sass/_mixins.scss" target="_blank">_mixins.scss</a>.</p>
 
 {# Brand colours #}
 <hr>

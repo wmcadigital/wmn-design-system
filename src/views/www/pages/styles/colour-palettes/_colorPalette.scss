@@ -1,8 +1,14 @@
 $cp-swatch-height: 50px;
 
-.color__swatch {
+.wmnds-website-color-swatch {
   display: inline-block;
   width: 100%;
   height: $cp-swatch-height;
   margin-bottom: $margin-sm;
+}
+
+@each $color, $hex in $palettes {
+  .wmnds-website-bg-color-#{$color} {
+    background-color: $hex;
+  }
 }
