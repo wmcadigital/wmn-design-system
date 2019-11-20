@@ -1,7 +1,31 @@
 {% macro wmndsDisruptionMapPin(params) %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
 
-<div class="wmnds-disruption-map-pin">
+{# Error #}
+{% if params.type === "error" %}
+  {% set iconName = 'general-warning-triangle' %}
+  {% set className = ' wmnds-disruption-map-pin--error' %} {# if type is error then append modifier class #}
+{# Warning #}
+{% else %}
+  {% set iconName = 'general-warning-circle' %}
+{% endif %}
 
-</div>
+<!-- map pin for {{params.mode}} -->
+<span class="wmnds-disruption-map-pin{{className}}">
+  {# Get SVG icon for mode #}
+  {{-
+    wmndsIcon({
+      icon: 'modes-isolated-' + params.mode,
+      class: 'wmnds-disruption-map-pin__icon'
+    }) | indent(2) | trim
+  }}
+  {# Get SVG icon for type #}
+  {{-
+    wmndsIcon({
+      icon: iconName,
+      class: 'wmnds-disruption-map-pin__icon'
+    }) | indent(2) | trim
+  }}
+</span>
 
 {% endmacro %}

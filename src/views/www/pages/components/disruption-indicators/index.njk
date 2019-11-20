@@ -1,17 +1,90 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Disruption indicators" %}
+{# Get macros #}
 {% from "components/disruption-indicators/map-pin/_map-pin.njk" import wmndsDisruptionMapPin %}
-
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% set modes = [
+  "bus",
+  "coach",
+  "cycle",
+  "metro",
+  "plane",
+  "rail",
+  "roads",
+  "walk"
+] %}
 
 {% block content %}
-  {# Map pin #}
-  <h2>Map pin</h2>
-  {{
+{# Map pin #}
+<h2>Map pin</h2>
+{# Warning #}
+<h3>Warning</h3>
+{{
   compExample([
     wmndsDisruptionMapPin({
-
+      mode: 'bus'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'coach'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'cycle'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'metro'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'plane'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'rail'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'roads'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'walk'
     })
   ])
 }}
+
+{# Warning #}
+<h3>Warning</h3>
+{{
+  compExample([
+    wmndsDisruptionMapPin({
+      mode: 'bus',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'coach',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'cycle',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'metro',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'plane',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'rail',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'roads',
+      type: 'error'
+    }),
+    wmndsDisruptionMapPin({
+      mode: 'walk',
+      type: 'error'
+    })
+  ])
+}}
+
 {% endblock %}
