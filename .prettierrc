@@ -6,7 +6,7 @@
   "useTabs": false,
   "semi": true,
   "singleQuote": true,
-  "printWidth": 100,
+  "printWidth": 120,
   "endOfLine": "auto",
   "overrides": [
     {
