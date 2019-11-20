@@ -107,3 +107,10 @@ html {
     vertical-align: middle;
   }
 }
+
+.wmnds-website-inline-code {
+  padding: $padding-xs;
+  color: get-color(primary);
+  background: get-color(background);
+  @include type-setting(1);
+}
