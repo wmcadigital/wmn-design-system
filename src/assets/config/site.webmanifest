@@ -1,14 +1,14 @@
 {
-    "short_name": "",
-    "name": "",
-    "icons": [
-        {
-            "src": "favicon.jpg",
-            "type": "image/jpg",
-            "sizes": "32x32"
-        }
-    ],
-    "start_url": "/?utm_source=homescreen",
-    "background_color": "#008FBF",
-    "theme_color": "#008FBF"
+  "short_name": "WMNDS",
+  "name": "West Midlands Network Design System",
+  "icons": [
+    {
+      "src": "config/favicon/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#3c1053",
+  "theme_color": "#3c1053"
 }

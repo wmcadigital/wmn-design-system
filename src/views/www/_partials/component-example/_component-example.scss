@@ -1,9 +1,21 @@
-.code-example {
+.wmnds-website-code-example {
   margin-top: $margin-lg;
   padding: $padding-md;
   border: 1px solid get-color(primary, 20);
 
   code {
     padding: $padding-md;
+  }
+}
+
+// These classes are used to display components better
+.wmnds-website-mar {
+  display: block;
+  margin-bottom: 16px;
+
+  &--right {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
   }
 }

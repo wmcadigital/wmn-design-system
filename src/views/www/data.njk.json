@@ -21,16 +21,19 @@
           "name": "Buttons"
         },
         {
-          "name": "Links"
+          "name": "Disruption indicators"
         },
         {
           "name": "Form elements"
         },
         {
-          "name": "Phase indicator"
+          "name": "Links"
         },
         {
           "name": "Message"
+        },
+        {
+          "name": "Phase indicator"
         }
       ]
     },

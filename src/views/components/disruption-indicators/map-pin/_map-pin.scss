@@ -1,0 +1,18 @@
+.wmnds-disruption-map-pin {
+  display: inline-block;
+  padding: 3px;
+  border-radius: 2px;
+  background-color: get-color(warning);
+  line-height: 1;
+
+  &__icon {
+    max-width: 22px;
+    height: 100%;
+    max-height: 22px;
+    fill: $white;
+  }
+
+  &--error {
+    background-color: get-color(error);
+  }
+}
