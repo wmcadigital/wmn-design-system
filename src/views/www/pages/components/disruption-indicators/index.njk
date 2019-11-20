@@ -1,0 +1,17 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Disruption indicators" %}
+{% from "components/disruption-indicators/map-pin/_map-pin.njk" import wmndsDisruptionMapPin %}
+
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+  {# Map pin #}
+  <h2>Map pin</h2>
+  {{
+  compExample([
+    wmndsDisruptionMapPin({
+
+    })
+  ])
+}}
+{% endblock %}
