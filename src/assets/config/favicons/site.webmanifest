@@ -1,0 +1,19 @@
+{
+    "name": "WMN Design System",
+    "short_name": "WMN Design System",
+    "icons": [
+        {
+            "src": "/config/favicons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/config/favicons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#3c1053",
+    "background_color": "#3c1053",
+    "display": "standalone"
+}
