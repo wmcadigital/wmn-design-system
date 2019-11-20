@@ -1,12 +1,16 @@
-{% macro compExample(componentPath, classNames) %}
+{% macro compExample(componentPath, params) %}
 
-<div class="code-example">
+<div class="wmnds-website-code-example">
   <h3>Component example</h3>
-  <div class="wmnds-col-1 {{classNames}}">
+  <div class="wmnds-col-1 {{params.classNames}}">
     {%- for item in componentPath %}
       {{ item }}
       {% if loop.last == false %}
-        <div class="mar-bot-md"></div>
+        {% if params.displayInline %}
+          <div class="wmnds-website-mar wmnds-website-mar--right"></div>
+        {% else %}
+          <div class="wmnds-website-mar"></div>
+        {% endif %}
       {% endif %}
     {% endfor -%}
   </div>
