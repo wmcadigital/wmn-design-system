@@ -1,5 +1,5 @@
 function colorPalettes() {
-  const colors = document.querySelectorAll('.color__swatch');
+  const colors = document.querySelectorAll('.wmnds-website-color-swatch');
 
   // Function to convert rgb to hex
   function rgb2hex(rgb) {
@@ -19,4 +19,4 @@ function colorPalettes() {
   });
 }
 
-export default colorPalettes;
+export default colorPalettes();
