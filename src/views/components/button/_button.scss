@@ -50,7 +50,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   &--secondary {
     border: $btn-border-width solid get-color(primary);
     color: get-color(primary);
-    background-color: $white;
+    background-color: transparent;
 
     .wmnds-btn__icon {
       fill: get-color(primary);
@@ -71,7 +71,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-btn--disabled:disabled {
       border-color: get-color(disable);
       color: get-color(disable);
-      background: $white;
+      background: transparent;
 
       .wmnds-btn__icon {
         fill: get-color(disable);

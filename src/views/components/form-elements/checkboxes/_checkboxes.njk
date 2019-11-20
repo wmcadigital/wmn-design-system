@@ -2,7 +2,7 @@
 
 {# Imports #}
 {% from "components/form-elements/label/_label.njk" import wmndsLabel %}
-
+{% from "components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-fe-checkboxes">
   {{
@@ -18,7 +18,15 @@
   <label class="wmnds-fe-checkboxes__container">
     Option {{i}}
     <input type="checkbox" class="wmnds-fe-checkboxes__input" {{'checked=\"checked\"' if i === 1}} />
-    <span class="wmnds-fe-checkboxes__checkmark"></span>
+    <span class="wmnds-fe-checkboxes__checkmark">
+      {# Get SVG icon and pass class #}
+      {{-
+        wmndsIcon({
+          icon: 'general-checkmark',
+          class: 'wmnds-fe-checkboxes__icon'
+        }) | indent(6) | trim
+      }}
+    </span>
   </label>
   {%- endfor %}
 </div>

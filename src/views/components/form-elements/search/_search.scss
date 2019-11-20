@@ -8,21 +8,19 @@
 
     // Search icon embeded in container to overwrite FontAwesome defaults
     .wmnds-fe-autocomplete__icon {
-      @include type-setting(1);
       display: block;
       position: absolute;
-      top: 11px;
-      bottom: 11px;
-      left: 11px;
+      top: calc(#{$padding-sm} + 1px);
+      bottom: calc(#{$padding-sm} + 1px);
+      left: calc(#{$padding-sm} + 1px);
       width: 22px;
       height: 22px;
-      color: get-color(disable);
-      text-align: center;
+      fill: get-color(disable);
     }
   }
 
   &__input {
-    padding-left: 40px;
+    padding-left: 45px;
 
     &::placeholder {
       color: get-color(text);
