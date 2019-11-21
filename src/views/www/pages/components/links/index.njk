@@ -41,8 +41,19 @@
   <li><strong>_top</strong>: Will load clicked link in the full body of the window</li>
   <li><strong>framename</strong>: Will load clicked link in a named frame</li>
 </ul>
-{# primary buttons #}
-<h2>Primary buttons</h2>
+
+{# Text link #}
+<h2>Default link</h2>
+{% from "components/link/link/_link.njk" import wmndsLink %}
+{{
+  compExample([
+    wmndsLink()
+  ])
+}}
+
+
+{# primary button as link #}
+<h2>Primary button as link</h2>
 {%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as primary -%}
 {{
   compExample([
@@ -57,9 +68,9 @@
     })
   ])
 }}
-{# end: primary buttons #}
-{# secondary buttons #}
-<h2>Secondary buttons</h2>
+{# end: primary button as link #}
+{# secondary button as link #}
+<h2>Secondary button as link</h2>
 {%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as secondary -%}
 {{
   compExample([
@@ -76,9 +87,9 @@
     })
   ])
 }}
-{# end: secondary buttons #}
-{# call to action buttons #}
-<h2>Call to action buttons</h2>
+{# end: secondary button as link #}
+{# call to action button as link #}
+<h2>Call to action button as link</h2>
 {%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
 {{
   compExample([
@@ -95,9 +106,9 @@
     })
   ])
 }}
-{# end: call to action buttons #}
-{# destructive buttons #}
-<h2>Destructive buttons</h2>
+{# end: call to action button as link #}
+{# destructive button as link #}
+<h2>Destructive button as link</h2>
 {%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as destructive -%}
 {{
   compExample([
@@ -114,9 +125,9 @@
     })
   ])
 }}
-{# end: destructive buttons #}
-{# start buttons #}
-<h2>Start buttons</h2>
+{# end: destructive button as link #}
+{# start button as link #}
+<h2>Start button as link</h2>
 {%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as start -%}
 {{
   compExample([
@@ -133,5 +144,5 @@
     })
   ])
 }}
-{# end: start buttons #}
+{# end: start button as link #}
 {% endblock %}

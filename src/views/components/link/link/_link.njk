@@ -1,0 +1,13 @@
+{% macro wmndsLink(params) %}
+{# Set vars #}
+{% set text = params.text if params.text else "link text" %} {# set link text #}
+{% set link = params.link if params.link else "#" %} {# set link url #}
+{% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
+{% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
+
+
+<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-link">
+  {{text}}
+</a>
+
+{% endmacro %}
