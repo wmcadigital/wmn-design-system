@@ -17,14 +17,6 @@ body {
   }
 }
 
-// Hyperlinks
-a {
-  color: get-color(primary);
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 // Text aligns
 .text {
   &-right {
