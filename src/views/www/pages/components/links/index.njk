@@ -2,7 +2,6 @@
 {% set pageTitle="Links" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
-
 {% block content %}
 <p>
   <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
@@ -44,7 +43,7 @@
 </ul>
 {# primary buttons #}
 <h2>Primary buttons</h2>
-{%- from "components/link/_link.njk" import wmnLink as primary -%}
+{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as primary -%}
 {{
   compExample([
     primary({
@@ -61,7 +60,7 @@
 {# end: primary buttons #}
 {# secondary buttons #}
 <h2>Secondary buttons</h2>
-{%- from "components/link/_link.njk" import wmnLink as secondary -%}
+{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as secondary -%}
 {{
   compExample([
     secondary({
@@ -80,7 +79,7 @@
 {# end: secondary buttons #}
 {# call to action buttons #}
 <h2>Call to action buttons</h2>
-{%- from "components/link/_link.njk" import wmnLink as cta %}
+{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
 {{
   compExample([
     cta({
@@ -99,7 +98,7 @@
 {# end: call to action buttons #}
 {# destructive buttons #}
 <h2>Destructive buttons</h2>
-{%- from "components/link/_link.njk" import wmnLink as destructive -%}
+{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as destructive -%}
 {{
   compExample([
     destructive({
@@ -118,7 +117,7 @@
 {# end: destructive buttons #}
 {# start buttons #}
 <h2>Start buttons</h2>
-{%- from "components/link/_link.njk" import wmnLink as start -%}
+{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as start -%}
 {{
   compExample([
     start({
