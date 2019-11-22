@@ -1,0 +1,27 @@
+{% macro wmndsDisruptionServiceRoute(params) %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
+
+<div class="wmnds-disruption-service-route">
+  {# Get SVG icon for mode #}
+  {{-
+    wmndsIcon({
+      icon: 'general-warning-circle',
+      class: 'wmnds-disruption-service-route__icon'
+    }) | indent(2) | trim
+  }}
+  <span class="wmnds-disruption-service-route__text">
+    <strong>Cross city line</strong><br>
+    Minor disruption
+  </span>
+  <button class="wmnds-disruption-service-route__btn">
+    {# Get SVG icon for mode #}
+    {{-
+      wmndsIcon({
+        icon: 'general-star-empty',
+        class: 'wmnds-disruption-service-route__icon'
+      }) | indent(2) | trim
+    }}
+  </button>
+</div>
+
+{% endmacro %}

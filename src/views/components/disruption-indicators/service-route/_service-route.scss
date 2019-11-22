@@ -1,0 +1,37 @@
+.wmnds-disruption-service-route {
+  display: block;
+  position: relative;
+  padding: $padding-sm;
+  color: $white;
+  background-color: get-color(warning);
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    fill: $white;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: $padding-sm;
+    bottom: 0;
+    width: 36px;
+    height: 36px;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 0 $margin-sm;
+  }
+
+  &__text,
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
