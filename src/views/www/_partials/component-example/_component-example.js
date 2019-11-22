@@ -1,6 +1,9 @@
 function showCode() {
+  // for each button we create below
   document.querySelectorAll('.wmnds-js-show-code').forEach(ele => {
+    // when clicked
     ele.addEventListener('click', e => {
+      // expand code height to 100%
       e.target.parentElement.querySelector('.hljs').style.maxHeight = '100%';
     });
   });
