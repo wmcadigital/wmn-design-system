@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Disruption indicators (homepage)" %}
 {# Get macros #}
-{% from "components/disruption-indicators/service-route/_service-route.njk" import wmndsDisruptionServiceRoute %}
+{% from "components/disruption-indicators/service-route-large/_service-route-large.njk" import wmndsDisruptionServiceRouteLarge %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -12,7 +12,7 @@
 {{
   compExample(
     [
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Train (good service) -->',
         mode: 'Train',
         strongText: 'Good service',
@@ -20,7 +20,7 @@
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-success'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Train (major disruption) -->',
         classModifier: 'error',
         mode: 'Train',
@@ -29,7 +29,7 @@
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Train (minor disruption) -->',
         classModifier: 'warning',
         mode: 'Train',
@@ -38,7 +38,7 @@
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-circle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Train (severe disruption) -->',
         classModifier: 'severe',
         mode: 'Train',
@@ -47,7 +47,7 @@
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Train (delete) -->',
         classModifier: 'error',
         mode: 'Train',
@@ -66,14 +66,14 @@
 {{
   compExample(
     [
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Tram (good service) -->',
         mode: 'Tram',
         strongText: 'Good service',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-success'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Tram (major disruption) -->',
         classModifier: 'error',
         mode: 'Tram',
@@ -82,7 +82,7 @@
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Tram (minor disruption) -->',
         classModifier: 'warning',
         mode: 'Tram',
@@ -91,7 +91,7 @@
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-circle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Tram (severe disruption) -->',
         classModifier: 'severe',
         mode: 'Tram',
@@ -100,7 +100,7 @@
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Tram (delete) -->',
         classModifier: 'error',
         mode: 'Tram',
@@ -119,7 +119,7 @@
 {{
   compExample(
     [
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Roads (good service) -->',
         mode: 'Roads',
         strongText: 'Usual traffic',
@@ -127,7 +127,7 @@
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-success'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Roads (major disruption) -->',
         classModifier: 'error',
         mode: 'Roads',
@@ -136,7 +136,7 @@
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Roads (minor disruption) -->',
         classModifier: 'warning',
         mode: 'Roads',
@@ -145,7 +145,7 @@
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-circle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Roads (severe disruption) -->',
         classModifier: 'severe',
         mode: 'Roads',
@@ -154,7 +154,7 @@
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionServiceRoute({
+      wmndsDisruptionServiceRouteLarge({
         comment: '<!-- Roads (delete) -->',
         classModifier: 'error',
         mode: 'Roads',
