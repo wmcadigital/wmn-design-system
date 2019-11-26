@@ -1,2 +1,37 @@
-.wmnds-disruption-serivce-route {
+.wmnds-disruption-service-route {
+  display: inline-block;
+  padding: $padding-sm $padding-md;
+  border-radius: 5px;
+  color: $white;
+  background-color: get-color(information);
+  font-weight: bold;
+
+  &--with-icon {
+    padding: $padding-sm;
+  }
+
+  &--warning {
+    background-color: get-color(warning);
+  }
+
+  &--error {
+    background-color: get-color(error);
+  }
+
+  &--severe {
+    background-color: $black;
+  }
+
+  &--success {
+    background-color: get-color(success);
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: $margin-sm;
+    fill: $white;
+    vertical-align: sub;
+  }
 }

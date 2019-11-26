@@ -100,7 +100,23 @@
 <h2>General</h2>
 {{
   compExample([
-    wmndsDisruptionServiceRoute()
+    wmndsDisruptionServiceRoute(),
+    wmndsDisruptionServiceRoute({
+      classModifier: 'warning',
+      iconRight: 'general-warning-circle'
+    }),
+    wmndsDisruptionServiceRoute({
+      classModifier: 'severe',
+      iconRight: 'general-warning-triangle'
+    }),
+    wmndsDisruptionServiceRoute({
+      classModifier: 'success',
+      iconRight: 'general-success'
+    }),
+    wmndsDisruptionServiceRoute({
+      classModifier: 'error',
+      iconRight: 'general-warning-triangle'
+    })
   ])
 }}
 
