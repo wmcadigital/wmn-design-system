@@ -5,9 +5,12 @@
   {% if (navItem.name | lower) == ((section if section else "Components") |lower) %}
   {# If no section has been set then default to Components node #}
   {% for sectionItem in navItem.subnavItems | sort(attribute='name') %}
+
+  {% set endUrl = sectionItem.url if sectionItem.url else sectionItem.name | lower | replace(" ", "-") %}
+
   <li>
     <a class="wmnds-col-1"
-      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ sectionItem.name | lower | replace(" ", "-") }}/">{{ sectionItem.name}}</a>
+      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{endUrl}}/">{{ sectionItem.name}}</a>
   </li>
   {% endfor %}
   {% endif %}

@@ -1,0 +1,49 @@
+{% macro wmndsDisruptionServiceRoute(params) %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
+
+{% set strongText = params.strongText if params.strongText else "Indicator text" %} {# set button text #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+
+{{params.comment | safe}}
+<div class="wmnds-disruption-service-route{{' wmnds-disruption-service-route--' + params.classModifier}}">
+  <div class="wmnds-disruption-service-route__left-wrapper">
+    <span class="wmnds-disruption-service-route__left-icon-wrapper">
+      {# Get SVG icon for mode #}
+      {{-
+        wmndsIcon({
+          icon: iconLeft,
+          class: 'wmnds-disruption-service-route__icon'
+        }) | indent(2) | trim
+      }} <br>{{params.mode}}
+    </span>
+    <span class="wmnds-disruption-service-route__text">
+      <strong>{{strongText}}</strong><br>
+      {{- params.text }}
+    </span>
+  </div>
+
+  {#- If params.iconRightBtn is true -#}
+  {% if params.iconRightBtn %}
+  <button class="wmnds-disruption-service-route__btn">
+    {# Get SVG icon #}
+    {{-
+      wmndsIcon({
+        icon: iconRight,
+        class: 'wmnds-disruption-service-route__icon'
+      }) | indent(4) | trim
+    }}
+  </button>
+  {#- else -#}
+  {% else %}
+  {#- Get SVG icon #}
+  {{
+    wmndsIcon({
+      icon: iconRight,
+      class: 'wmnds-disruption-service-route__icon wmnds-disruption-service-route__icon--right'
+    }) | indent(2) | trim
+  -}}
+  {% endif %}
+</div>
+
+{% endmacro %}
