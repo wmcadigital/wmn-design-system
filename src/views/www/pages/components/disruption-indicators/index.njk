@@ -2,6 +2,7 @@
 {% set pageTitle = "Disruption indicators" %}
 {# Get macros #}
 {% from "components/disruption-indicators/map-pin/_map-pin.njk" import wmndsDisruptionMapPin %}
+{% from "components/disruption-indicators/service-route/_service-route.njk" import wmndsDisruptionServiceRoute %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% set modes = [
@@ -18,6 +19,7 @@
 {% block content %}
 {# Map pin #}
 <h2>Map pin</h2>
+<p>Intended to be used on a map</p>
 {# Minor disruptions #}
 <h3>Minor disruption</h3>
 {{
@@ -92,6 +94,14 @@
   {
     displayInline: true
   })
+}}
+
+{# General #}
+<h2>General</h2>
+{{
+  compExample([
+    wmndsDisruptionServiceRoute()
+  ])
 }}
 
 {% endblock %}

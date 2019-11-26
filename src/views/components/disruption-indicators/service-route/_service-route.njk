@@ -1,0 +1,14 @@
+{% macro wmndsDisruptionServiceRoute(params) %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
+
+{% set strongText = params.strongText if params.strongText else "Indicator text" %} {# set button text #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+
+{{params.comment | safe}}
+
+<div class="wmnds-disruption-service-indicator">
+  47
+</div>
+
+{% endmacro %}
