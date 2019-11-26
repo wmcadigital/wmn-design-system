@@ -1,10 +1,8 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Disruption indicators" %}
 {# Get macros #}
-{% from "components/disruption-indicators/service-route/_service-route.njk" import wmndsDisruptionServiceRoute %}
 {% from "components/disruption-indicators/map-pin/_map-pin.njk" import wmndsDisruptionMapPin %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-
 
 {% set modes = [
   "bus",
@@ -18,14 +16,6 @@
 ] %}
 
 {% block content %}
-{# Service route #}
-<h2>Service route</h2>
-{{
-  compExample([
-    wmndsDisruptionServiceRoute()
-  ])
-}}
-
 {# Map pin #}
 <h2>Map pin</h2>
 {# Minor disruptions #}
