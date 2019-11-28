@@ -26,7 +26,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   &:active,
   &:target,
   &:focus,
-  &.wmnds-is-active {
+  &.wmnds-is--active {
     outline: none;
     background-color: get-color(primary, 50, dark);
     -webkit-appearance: none;
@@ -63,7 +63,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmnds-is-active {
+    &.wmnds-is--active {
       background-color: get-color(secondary, 50);
     }
 
@@ -90,7 +90,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmnds-is-active {
+    &.wmnds-is--active {
       background-color: get-color(cta, 50, dark);
     }
   }
@@ -106,7 +106,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmnds-is-active {
+    &.wmnds-is--active {
       background-color: get-color(error, 50, dark);
     }
   }
@@ -125,7 +125,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmnds-is-active {
+    &.wmnds-is--active {
       background-color: get-color(success, 50, dark);
     }
   }
@@ -148,7 +148,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmnds-is-active {
+    &.wmnds-is--active {
       background-color: get-color(secondary, 50);
     }
   }
@@ -165,7 +165,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &:active,
     &:target,
     &:focus,
-    &.wmnds-is-active {
+    &.wmnds-is--active {
       background-color: get-color(disable);
     }
   }
