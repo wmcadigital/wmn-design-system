@@ -1,10 +1,14 @@
 .wmnds-disruption-service-route {
-  display: block;
-  position: relative;
-  padding: $padding-sm calc(#{$padding-sm} + 36px) $padding-sm $padding-sm;
-  border-radius: 2px;
+  display: inline-block;
+  padding: $padding-sm $padding-md;
+  border-radius: 5px;
   color: $white;
-  background-color: get-color(success);
+  background-color: get-color(information);
+  font-weight: bold;
+
+  &--with-icon {
+    padding: $padding-sm;
+  }
 
   &--warning {
     background-color: get-color(warning);
@@ -18,49 +22,16 @@
     background-color: $black;
   }
 
-  &__left-wrapper {
-    display: block;
-  }
-
-  &__left-icon-wrapper {
-    display: inline-block;
-    width: 47px;
-    text-align: center;
-    vertical-align: middle;
+  &--success {
+    background-color: get-color(success);
   }
 
   &__icon {
-    width: 36px;
-    height: 36px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: $margin-sm;
     fill: $white;
-  }
-
-  &__btn {
-    padding: 0;
-    border: 0;
-    background: none;
-    cursor: pointer;
-  }
-
-  &__icon--right,
-  &__btn {
-    position: absolute;
-    top: 0;
-    right: $padding-sm;
-    bottom: 0;
-    width: 36px;
-    height: 36px;
-    margin: auto;
-  }
-
-  &__text {
-    width: calc(100% - (47px + (#{$padding-sm} * 2)));
-    margin: 0 $margin-sm;
-  }
-
-  &__text,
-  &__icon {
-    display: inline-block;
-    vertical-align: middle;
+    vertical-align: sub;
   }
 }
