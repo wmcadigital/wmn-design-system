@@ -1,4 +1,4 @@
-.wmnds-disruption-service-route {
+.wmnds-disruption-indicator-medium {
   display: inline-block;
   padding: $padding-sm $padding-md;
   border-radius: 5px;
@@ -26,12 +26,23 @@
     background-color: get-color(success);
   }
 
+  &--narrow {
+    padding: $padding-xs;
+  }
+
   &__icon {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: $margin-sm;
+    width: 25px;
+    height: 25px;
     fill: $white;
-    vertical-align: sub;
+    vertical-align: middle;
+
+    &--left {
+      margin-right: $margin-sm;
+    }
+
+    &--right {
+      margin-left: $margin-sm;
+    }
   }
 }

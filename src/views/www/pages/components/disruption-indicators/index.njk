@@ -1,8 +1,8 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Disruption indicators" %}
 {# Get macros #}
-{% from "components/disruption-indicators/map-pin/_map-pin.njk" import wmndsDisruptionMapPin %}
-{% from "components/disruption-indicators/service-route/_service-route.njk" import wmndsDisruptionServiceRoute %}
+{% from "components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
+{% from "components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% set modes = [
@@ -24,28 +24,28 @@
 <h3>Minor disruption</h3>
 {{
   compExample([
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'bus'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'coach'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'cycle'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'metro'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'plane'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'rail'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'roads'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'walk'
     })
   ],
@@ -58,35 +58,35 @@
 <h3>Major disruption</h3>
 {{
   compExample([
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'bus',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'coach',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'cycle',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'metro',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'plane',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'rail',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'roads',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'walk',
       type: 'error'
     })
@@ -100,22 +100,35 @@
 <h2>General</h2>
 {{
   compExample([
-    wmndsDisruptionServiceRoute(),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'warning',
+    wmndsDisruptionIndicatorMedium(),
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--warning',
       iconRight: 'general-warning-circle'
     }),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'severe',
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'success',
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--success',
       iconRight: 'general-success'
     }),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'error',
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--error',
       iconRight: 'general-warning-triangle'
+    })
+  ])
+}}
+
+{# Narrow #}
+{% from "components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %}
+<h2>Narrow</h2>
+{{
+  compExample([
+    wmndsDisruptionIndicatorNarrow({
+      classModifiers: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
+      iconLeft: 'modes-isolated-bus',
+      iconRight: 'general-warning-circle'
     })
   ])
 }}
