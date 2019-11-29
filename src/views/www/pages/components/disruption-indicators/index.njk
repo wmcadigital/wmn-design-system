@@ -1,8 +1,9 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Disruption indicators" %}
 {# Get macros #}
-{% from "components/disruption-indicators/map-pin/_map-pin.njk" import wmndsDisruptionMapPin %}
-{% from "components/disruption-indicators/service-route/_service-route.njk" import wmndsDisruptionServiceRoute %}
+{% from "components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
+{% from "components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium %}
+{% from "components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% set modes = [
@@ -18,34 +19,34 @@
 
 {% block content %}
 {# Map pin #}
-<h2>Map pin</h2>
-<p>Intended to be used on a map</p>
+<h2>Small</h2>
+
 {# Minor disruptions #}
 <h3>Minor disruption</h3>
 {{
   compExample([
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'bus'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'coach'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'cycle'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'metro'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'plane'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'rail'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'roads'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'walk'
     })
   ],
@@ -58,35 +59,35 @@
 <h3>Major disruption</h3>
 {{
   compExample([
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'bus',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'coach',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'cycle',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'metro',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'plane',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'rail',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'roads',
       type: 'error'
     }),
-    wmndsDisruptionMapPin({
+    wmndsDisruptionIndicatorSmall({
       mode: 'walk',
       type: 'error'
     })
@@ -96,28 +97,207 @@
   })
 }}
 
-{# General #}
-<h2>General</h2>
+{# Medium #}
+<h2>Medium</h2>
+
+<h3>Normal</h3>
 {{
   compExample([
-    wmndsDisruptionServiceRoute(),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'warning',
+    wmndsDisruptionIndicatorMedium(),
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--warning',
       iconRight: 'general-warning-circle'
     }),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'severe',
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'success',
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--success',
       iconRight: 'general-success'
     }),
-    wmndsDisruptionServiceRoute({
-      classModifier: 'error',
+    wmndsDisruptionIndicatorMedium({
+      classModifiers: 'wmnds-disruption-indicator-medium--error',
       iconRight: 'general-warning-triangle'
     })
   ])
 }}
+
+{# Narrow #}
+{% from "components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %}
+<h3>Narrow</h3>
+{{
+  compExample([
+    wmndsDisruptionIndicatorNarrow({
+      classModifiers: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
+      iconLeft: 'modes-isolated-bus',
+      iconRight: 'general-warning-circle'
+    })
+  ])
+}}
+
+
+{# LARGE #}
+<h2>Large</h2>
+<h3>Train</h3>
+{{
+  compExample(
+    [
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Train (good service) -->',
+        mode: 'Train',
+        strongText: 'Good service',
+        text: 'Cross City Line',
+        iconLeft: 'modes-isolated-rail',
+        iconRight: 'general-success'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Train (major disruption) -->',
+        classModifier: 'error',
+        mode: 'Train',
+        strongText: 'Major disruption',
+        text: 'Cross City Line',
+        iconLeft: 'modes-isolated-rail',
+        iconRight: 'general-warning-triangle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Train (minor disruption) -->',
+        classModifier: 'warning',
+        mode: 'Train',
+        strongText: 'Minor disruption',
+        text: 'Cross City Line',
+        iconLeft: 'modes-isolated-rail',
+        iconRight: 'general-warning-circle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Train (severe disruption) -->',
+        classModifier: 'severe',
+        mode: 'Train',
+        strongText: 'Severe disruption',
+        text: 'Cross City Line',
+        iconLeft: 'modes-isolated-rail',
+        iconRight: 'general-warning-triangle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Train (delete) -->',
+        classModifier: 'error',
+        mode: 'Train',
+        strongText: 'Major disruption',
+        text: 'Cross City Line',
+        iconLeft: 'modes-isolated-rail',
+        iconRight: 'general-trash',
+        iconRightBtn: true
+      })
+    ]
+  )
+}}
+
+{# Tram #}
+<h3>Tram</h3>
+{{
+  compExample(
+    [
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Tram (good service) -->',
+        mode: 'Tram',
+        strongText: 'Good service',
+        iconLeft: 'modes-isolated-metro',
+        iconRight: 'general-success'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Tram (major disruption) -->',
+        classModifier: 'error',
+        mode: 'Tram',
+        strongText: 'Major disruption',
+        text: 'Between Jewellery Quarter and Wolverhampton',
+        iconLeft: 'modes-isolated-metro',
+        iconRight: 'general-warning-triangle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Tram (minor disruption) -->',
+        classModifier: 'warning',
+        mode: 'Tram',
+        strongText: 'Minor disruption',
+        text: 'Between Jewellery Quarter and Wolverhampton',
+        iconLeft: 'modes-isolated-metro',
+        iconRight: 'general-warning-circle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Tram (severe disruption) -->',
+        classModifier: 'severe',
+        mode: 'Tram',
+        strongText: 'Severe disruption',
+        text: 'Between Jewellery Quarter and Wolverhampton',
+        iconLeft: 'modes-isolated-metro',
+        iconRight: 'general-warning-triangle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Tram (delete) -->',
+        classModifier: 'error',
+        mode: 'Tram',
+        strongText: 'Major disruption',
+        text: 'Between Jewellery Quarter and Wolverhampton',
+        iconLeft: 'modes-isolated-metro',
+        iconRight: 'general-trash',
+        iconRightBtn: true
+      })
+    ]
+  )
+}}
+
+{# Roads #}
+<h3>Roads</h3>
+{{
+  compExample(
+    [
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Roads (good service) -->',
+        mode: 'Roads',
+        strongText: 'Usual traffic',
+        text: 'A38',
+        iconLeft: 'modes-isolated-roads',
+        iconRight: 'general-success'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Roads (major disruption) -->',
+        classModifier: 'error',
+        mode: 'Roads',
+        strongText: 'Major disruption',
+        text: 'A38',
+        iconLeft: 'modes-isolated-roads',
+        iconRight: 'general-warning-triangle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Roads (minor disruption) -->',
+        classModifier: 'warning',
+        mode: 'Roads',
+        strongText: 'Minor disruption',
+        text: 'A38',
+        iconLeft: 'modes-isolated-roads',
+        iconRight: 'general-warning-circle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Roads (severe disruption) -->',
+        classModifier: 'severe',
+        mode: 'Roads',
+        strongText: 'Severe disruption',
+        text: 'A38',
+        iconLeft: 'modes-isolated-roads',
+        iconRight: 'general-warning-triangle'
+      }),
+      wmndsDisruptionIndicatorLarge({
+        comment: '<!-- Roads (delete) -->',
+        classModifier: 'error',
+        mode: 'Roads',
+        strongText: 'Major disruption',
+        text: 'A38',
+        iconLeft: 'modes-isolated-roads',
+        iconRight: 'general-trash',
+        iconRightBtn: true
+      })
+    ]
+  )
+}}
+
 
 {% endblock %}

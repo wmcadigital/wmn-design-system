@@ -21,18 +21,7 @@
 @mixin type-setting($level) {
   font-size: type-scale($level);
   line-height: line-height($level);
-  // letter-spacing: letter-spacing($level);
-  // word-spacing: word-spacing($level);
 }
-
-// Mixin to control header sizes
-// @mixin x-font-size($font-size, $font-multiplier) {
-//     font-size: $font-size;
-//     // On mobile devices, the header font will be reduced by * (x)
-//     @media all and (max-width: 767px) {
-//       font-size: $font-size * $font-multiplier;
-//     }
-//   }
 
 // get-color() notes
 //

@@ -1,4 +1,4 @@
-{% macro wmndsDisruptionServiceRouteLarge(params) %}
+{% macro wmndsDisruptionIndicatorLarge(params) %}
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 
 {% set strongText = params.strongText if params.strongText else "Indicator text" %} {# set button text #}
@@ -6,18 +6,18 @@
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
 
 {{params.comment | safe}}
-<div class="wmnds-disruption-service-route-large{{' wmnds-disruption-service-route-large--' + params.classModifier}}">
-  <div class="wmnds-disruption-service-route-large__left-wrapper">
-    <span class="wmnds-disruption-service-route-large__left-icon-wrapper">
+<div class="wmnds-disruption-indicator-large{{' wmnds-disruption-indicator-large--' + params.classModifier}}">
+  <div class="wmnds-disruption-indicator-large__left-wrapper">
+    <span class="wmnds-disruption-indicator-large__left-icon-wrapper">
       {# Get SVG icon for mode #}
       {{-
         wmndsIcon({
           icon: iconLeft,
-          class: 'wmnds-disruption-service-route-large__icon'
+          class: 'wmnds-disruption-indicator-large__icon'
         }) | indent(2) | trim
       }} <br>{{params.mode}}
     </span>
-    <span class="wmnds-disruption-service-route-large__text">
+    <span class="wmnds-disruption-indicator-large__text">
       <strong>{{strongText}}</strong><br>
       {{- params.text }}
     </span>
@@ -25,12 +25,12 @@
 
   {#- If params.iconRightBtn is true -#}
   {% if params.iconRightBtn %}
-  <button class="wmnds-disruption-service-route-large__btn">
+  <button class="wmnds-disruption-indicator-large__btn">
     {# Get SVG icon #}
     {{-
       wmndsIcon({
         icon: iconRight,
-        class: 'wmnds-disruption-service-route-large__icon'
+        class: 'wmnds-disruption-indicator-large__icon'
       }) | indent(4) | trim
     }}
   </button>
@@ -40,7 +40,7 @@
   {{
     wmndsIcon({
       icon: iconRight,
-      class: 'wmnds-disruption-service-route-large__icon wmnds-disruption-service-route-large__icon--right'
+      class: 'wmnds-disruption-indicator-large__icon wmnds-disruption-indicator-large__icon--right'
     }) | indent(2) | trim
   -}}
   {% endif %}
