@@ -4,6 +4,7 @@
 {% set strongText = params.strongText if params.strongText else "Indicator text" %} {# set button text #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set text = params.text if params.text else 'X15' %} {# set text, or default to X15 #}
 
 {% set class = ' ' + params.classModifiers if params.classModifiers %}
 {% set iconClassModifier = ' wmnds-disruption-indicator-medium--with-icon' if ( params.iconLeft or params.iconRight ) %}
@@ -11,7 +12,7 @@
 {{params.comment | safe}}
 
 <div class="wmnds-disruption-indicator-medium{{iconClassModifier}}{{class}}">
-  {% if iconLeft%}
+  {%- if iconLeft %}
     {#- Get SVG icon -#}
     {{
       wmndsIcon({
@@ -19,9 +20,9 @@
         class: 'wmnds-disruption-indicator-medium__icon wmnds-disruption-indicator-medium__icon--left'
       }) | indent(2) | trim
     }}
-  {% endif %}
-  47
-  {% if iconRight%}
+  {%- endif %}
+  {{ text }}
+  {% if iconRight -%}
     {#- Get SVG icon -#}
     {{
       wmndsIcon({
@@ -29,7 +30,7 @@
         class: 'wmnds-disruption-indicator-medium__icon wmnds-disruption-indicator-medium__icon--right'
       }) | indent(2) | trim
     }}
-  {% endif %}
+  {%- endif %}
 </div>
 
 {% endmacro %}

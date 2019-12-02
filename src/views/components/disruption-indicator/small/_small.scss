@@ -1,4 +1,4 @@
-.wmnds-disruption-map-pin {
+.wmnds-disruption-indicator-small {
   display: inline-block;
   padding: 3px;
   border-radius: 2px;
@@ -14,5 +14,9 @@
 
   &--error {
     background-color: get-color(error);
+  }
+
+  &--severe {
+    background-color: $black;
   }
 }
