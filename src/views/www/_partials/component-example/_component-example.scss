@@ -1,6 +1,7 @@
 .wmnds-website-code-example {
   margin-top: $margin-lg;
   padding: $padding-md;
+  overflow: hidden;
   border: 1px solid get-color(primary, 20);
 }
 
@@ -33,4 +34,8 @@
     margin-right: 10px;
     margin-bottom: 0;
   }
+}
+
+.wmnds-js-show-code {
+  float: right;
 }
