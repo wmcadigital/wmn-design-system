@@ -3,9 +3,10 @@
 {% set section="Patterns" %}
 
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "components/header/_header.njk" import wmndsHeader %}
 
 {% block content %}
   {{
-    compExample([])
+    compExample([wmndsHeader()])
   }}
 {% endblock %}

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-gb">
+  {% from "components/header/_header.njk" import wmndsHeader %}
+
   <!-- Head -->
   {% include "www/_partials/_head.njk" %}
   <!-- end: Head -->
@@ -14,7 +16,7 @@
     <![endif]-->
 
     <!-- header -->
-    {% include "components/header/_header.njk" %}
+      {{ wmndsHeader()}}
     <!-- header -->
 
     <div class="wmnds-container--lg">
