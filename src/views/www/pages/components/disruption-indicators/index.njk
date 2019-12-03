@@ -187,11 +187,29 @@
 {{
   compExample([
     wmndsDisruptionIndicatorNarrow({
+      classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow',
+      iconLeft: 'modes-isolated-bus',
+      iconRight: 'general-success'
+    }),
+    wmndsDisruptionIndicatorNarrow({
       classModifiers: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-circle'
+    }),
+    wmndsDisruptionIndicatorNarrow({
+      classModifiers: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
+      iconLeft: 'modes-isolated-bus',
+      iconRight: 'general-warning-triangle'
+    }),
+    wmndsDisruptionIndicatorNarrow({
+      classModifiers: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow',
+      iconLeft: 'modes-isolated-bus',
+      iconRight: 'general-warning-triangle'
     })
-  ])
+  ],
+  {
+    displayInline: true
+  })
 }}
 
 
