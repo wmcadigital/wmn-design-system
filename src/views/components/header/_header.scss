@@ -1,16 +1,13 @@
-$h-bg: get-color(primary);
-$h-size-mob: 78px;
-
-.header {
+.wmnds-header {
   margin-bottom: $margin-xl;
   padding: $padding-md;
-  background-color: $h-bg;
+  background-color: get-color(primary);
+
+  &__logo {
+    width: 100px;
+  }
 
   a:first-child {
     margin-right: $margin-md;
   }
-}
-
-.header-logo {
-  width: 100px;
 }
