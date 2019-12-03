@@ -1,9 +1,0 @@
-<nav class="wmnds-grid wmnds-grid--justify-around wmnds-grid--justify-between text-center">
-  {% for navItem in navItems %}
-    <div class="wmnds-col-1 wmnds-col-md-1-4">
-      <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-btn mar-bot-md" >
-        <span>{{ navItem.name}}</span>
-      </a>
-    </div>
-  {% endfor %}
-</nav>
