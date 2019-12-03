@@ -1,4 +1,5 @@
 .wmnds-header {
+  display: block;
   margin-bottom: $margin-xl;
   padding: $padding-md;
   background-color: get-color(primary);
@@ -7,7 +8,13 @@
     width: 100px;
   }
 
-  a:first-child {
+  &__logo-link {
+    display: inline-block;
     margin-right: $margin-md;
+    vertical-align: middle;
+  }
+
+  .wmnds-phase-indicator {
+    display: inline-block;
   }
 }
