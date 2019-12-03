@@ -1,0 +1,11 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Header and footer" %}
+{% set section="Patterns" %}
+
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+  {{
+    compExample([])
+  }}
+{% endblock %}
