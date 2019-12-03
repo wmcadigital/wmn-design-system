@@ -1,4 +1,6 @@
 {% macro wmndsHeader(params) %}
+{# Set navItems #}
+{% set navItems = params.navItems %}
 
 <header class="wmnds-header">
   <div class="wmnds-container--lg">
@@ -8,6 +10,16 @@
     <a href="/" title="West Midlands Network Design System Alpha" class="wmnds-phase-indicator">
       Alpha
     </a>
+
+    <div class="wmnds-header__right-side">
+      <nav class="wmnds-header__links">
+        {% for navItem in navItems %}
+          <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-link" >
+            <span>{{ navItem.name}}</span>
+          </a>
+        {% endfor %}
+      </nav>
+    </div>
   </div>
 </header>
 

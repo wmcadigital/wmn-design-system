@@ -17,4 +17,13 @@
   .wmnds-phase-indicator {
     display: inline-block;
   }
+
+  &__right-side {
+    float: right;
+  }
+
+  &__links .wmnds-link {
+    margin: 0 $margin-sm;
+    color: $white;
+  }
 }
