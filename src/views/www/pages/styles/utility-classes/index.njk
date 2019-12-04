@@ -1,0 +1,70 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Utility classes" %}
+{% set section = "Styles" %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+  <p>
+    There are a variety of utility classes that can be used with the existing components and styles on.
+  </p>
+
+<hr>
+{# Containers #}
+<h2>Containers</h2>
+<p>
+  Containers are used to wrap content in a 'container'. The container will have a fixed max size and be centered on the page, it will adjust to 100% width when the page width is less than the container size.
+</p>
+
+<pre class="wmnds-col-1">
+  <code class="scss">
+    .wmnds-container--lg /* Container with max-width of 1280px */
+  </code>
+</pre>
+
+<hr>
+{# Grid #}
+<h2>Grid</h2>
+<p>
+  The WMN Design System uses its own custom syntax grid system adopted from <a href="https://purecss.io/grids/" target="_blank" class="wmnds-link">Pure CSS Grid</a>. The grid system is already included in the bundled wmnds-components.min.css file so you don't need to include it seperately.
+</p>
+
+<p>
+  You can Refer to the <a href="https://purecss.io/grids/" target="_blank" class="wmnds-link">Pure CSS Grid documentation</a> for reference on how to use our grid system, but bear in mind that:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">.pure-g</code> becomes <code class="wmnds-website-inline-code">.wmnds-grid</code> in our design system</li>
+  <br>
+  <li>
+    <code class="wmnds-website-inline-code">.pure-u-*</code> becomes <code class="wmnds-website-inline-code">.wmnds-col-*</code> in our design system</li>
+</ul>
+
+
+<p>You can also use the below modifier classes on the same element where the class <code class="wmnds-website-inline-code">.wmnds-grid</code> is being used.</p>
+<pre class="wmnds-col-1">
+  <code class="scss">
+    .wmnds-grid--justify-between
+    .wmnds-grid--justify-around
+    .wmnds-grid--justify-end
+    .wmnds-grid--justify-center
+  </code>
+</pre>
+
+<hr>
+{# Floats #}
+<h2>Floats</h2>
+<p>
+  Floats an element in the intended direction.
+</p>
+
+<pre class="wmnds-col-1 wmnds-col-md-1-2">
+  <code class="scss">
+    .wmnds-float--left
+    .wmnds-float--right
+  </code>
+</pre>
+
+
+
+{% endblock %}
