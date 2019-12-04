@@ -42,6 +42,9 @@
       "subnavItems": [
         {
           "name": "Progress indicator"
+        },
+        {
+          "name": "Header and footer"
         }
       ]
     }
