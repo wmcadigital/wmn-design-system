@@ -3,27 +3,57 @@
   margin-bottom: $margin-xl;
   padding: $padding-md;
   background-color: get-color(primary);
+  text-align: center;
 
-  &__logo {
-    width: 100px;
+  @media screen and(min-width: $breakpoint-md) {
+    text-align: left;
   }
 
+  // Logo styles
   &__logo-link {
     display: inline-block;
     margin-right: $margin-md;
     vertical-align: middle;
   }
 
-  .wmnds-phase-indicator {
+  &__logo {
+    width: 100px;
+  }
+
+  // To vertical align the logo's and nav
+  &__vertical-align {
+    vertical-align: middle;
+
+    &:last-child {
+      margin-top: $margin-sm;
+
+      @media screen and(min-width: $breakpoint-md) {
+        margin: 0;
+      }
+    }
+  }
+
+  // Nav links
+  &__links {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    @media screen and(min-width: $breakpoint-md) {
+      text-align: right;
+    }
+  }
+
+  &__link {
     display: inline-block;
-  }
+    margin: 0 $margin-xs;
 
-  &__right-side {
-    float: right;
-  }
+    @media screen and(min-width: $breakpoint-sm) {
+      margin: 0 $margin-sm;
+    }
 
-  &__links .wmnds-link {
-    margin: 0 $margin-sm;
-    color: $white;
+    .wmnds-link {
+      color: $white;
+    }
   }
 }

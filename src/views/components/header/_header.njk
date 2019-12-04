@@ -2,25 +2,29 @@
 {# Set navItems #}
 {% set navItems = params.navItems %}
 
-<header class="wmnds-header">
-  <div class="wmnds-container--lg">
+<header class="wmnds-header wmnds-grid">
+  {# Core logo #}
+  <div class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-1-3">
     <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
       <img class="wmnds-header__logo" alt="West Midlands Network" src="$*cdn/img/logo.svg" />
     </a>
     <a href="/" title="West Midlands Network Design System Alpha" class="wmnds-phase-indicator">
       Alpha
     </a>
-
-    <div class="wmnds-header__right-side">
-      <nav class="wmnds-header__links">
-        {% for navItem in navItems %}
-          <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-link" >
-            <span>{{ navItem.name}}</span>
-          </a>
-        {% endfor %}
-      </nav>
-    </div>
   </div>
+
+  {# Nav items #}
+  <nav class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-2-3">
+    <ul class="wmnds-header__links">
+      {% for navItem in navItems %}
+      <li class="wmnds-header__link">
+        <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-link" >
+          {{ navItem.name}}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
 </header>
 
 {% endmacro %}
