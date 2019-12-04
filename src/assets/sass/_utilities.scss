@@ -50,12 +50,12 @@ html {
 }
 
 // Floats
-.float {
-  &-left {
+.wmnds-float {
+  &--left {
     float: left;
   }
 
-  &-right {
+  &--right {
     float: right;
   }
 }
