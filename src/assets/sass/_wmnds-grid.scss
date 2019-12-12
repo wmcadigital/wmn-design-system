@@ -159,6 +159,7 @@ textarea,
   width: 100%;
 }
 
+.wmnds-col-auto,
 .wmnds-col-1,
 .wmnds-col-1-1,
 .wmnds-col-1-12,
@@ -214,6 +215,7 @@ textarea,
 }
 
 @media screen and (min-width: 35.5em) {
+  .wmnds-col-sm-auto,
   .wmnds-col-sm-1,
   .wmnds-col-sm-1-1,
   .wmnds-col-sm-1-2,
@@ -266,6 +268,10 @@ textarea,
     word-spacing: normal;
     text-rendering: auto;
     vertical-align: top;
+  }
+
+  .wmnds-col-sm-auto {
+    width: auto;
   }
 
   .wmnds-col-sm-1-24 {
@@ -400,6 +406,7 @@ textarea,
 }
 
 @media screen and (min-width: 48em) {
+  .wmnds-col-md-auto,
   .wmnds-col-md-1,
   .wmnds-col-md-1-1,
   .wmnds-col-md-1-2,
@@ -452,6 +459,10 @@ textarea,
     word-spacing: normal;
     text-rendering: auto;
     vertical-align: top;
+  }
+
+  .wmnds-col-md-auto {
+    width: auto;
   }
 
   .wmnds-col-md-1-24 {
@@ -586,6 +597,7 @@ textarea,
 }
 
 @media screen and (min-width: 64em) {
+  .wmnds-col-lg-auto,
   .wmnds-col-lg-1,
   .wmnds-col-lg-1-1,
   .wmnds-col-lg-1-2,
@@ -638,6 +650,10 @@ textarea,
     word-spacing: normal;
     text-rendering: auto;
     vertical-align: top;
+  }
+
+  .wmnds-col-lg-auto {
+    width: auto;
   }
 
   .wmnds-col-lg-1-24 {
@@ -772,6 +788,7 @@ textarea,
 }
 
 @media screen and (min-width: 80em) {
+  .wmnds-col-xl-auto,
   .wmnds-col-xl-1,
   .wmnds-col-xl-1-1,
   .wmnds-col-xl-1-2,
@@ -824,6 +841,10 @@ textarea,
     word-spacing: normal;
     text-rendering: auto;
     vertical-align: top;
+  }
+
+  .wmnds-col-xl-auto {
+    width: auto;
   }
 
   .wmnds-col-xl-1-24 {
