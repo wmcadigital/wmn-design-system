@@ -4,10 +4,20 @@
   "components": [
     {
       "path": "src/views/components/phase-indicator/_phase-indicator.njk",
-      "zeplinNames": ["Phase indicator / Mobile", "Phase indicator / Desktop"]
+      "zeplinNames": ["Phase indicator / Mobile", "Phase indicator / Desktop"],
+      "wmnds": {
+        "urlPath": "components/phase-indicator/"
+      }
     }
   ],
   "github": {
     "repository": "wmcadigital/wmn-design-system"
-  }
+  },
+  "links": [
+    {
+      "name": "West Midlands Network Design System",
+      "type": "wmnds",
+      "url": "https://wmnetwork.netlify.com/"
+    }
+  ]
 }
