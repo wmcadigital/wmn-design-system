@@ -1,8 +1,10 @@
 // Library from: https://github.com/TarekRaafat/autoComplete.js
 import AutoComplete from './autoComplete.min';
 
-export default () => {
+function search() {
   const autoCompleteInputs = document.querySelectorAll('.wmnds-fe-autocomplete__input');
+
+  console.log('hello');
 
   autoCompleteInputs.forEach((_autoCompleteEle, i) => {
     const autoCompleteEle = _autoCompleteEle;
@@ -65,3 +67,5 @@ export default () => {
     }
   });
 };
+
+export default search();
