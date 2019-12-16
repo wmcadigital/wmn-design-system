@@ -1,0 +1,13 @@
+{
+  "projects": ["5d95c0263689f402745a6e3a"],
+  "styleguides": ["5d95b0aaad77af16c796a476"],
+  "components": [
+    {
+      "path": "src/views/components/phase-indicator/_phase-indicator.njk",
+      "zeplinNames": ["Phase indicator / Mobile", "Phase indicator / Desktop"]
+    }
+  ],
+  "github": {
+    "repository": "wmcadigital/wmn-design-system"
+  }
+}
