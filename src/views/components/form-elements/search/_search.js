@@ -66,6 +66,6 @@ function search() {
       initAutoComplete();
     }
   });
-};
+}
 
 export default search();
