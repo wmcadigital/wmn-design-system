@@ -5,6 +5,7 @@
   color: $white;
   background-color: get-color(information);
   font-weight: bold;
+  text-transform: capitalize;
 
   &--with-icon {
     padding: $padding-sm;
@@ -32,8 +33,8 @@
 
   &__icon {
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     fill: $white;
     vertical-align: middle;
 
