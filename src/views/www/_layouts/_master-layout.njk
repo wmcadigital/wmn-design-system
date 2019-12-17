@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-gb">
+<html lang="en-gb">
   {% from "components/header/_header.njk" import wmndsHeader %}
 
   <!-- Head -->
@@ -23,9 +23,9 @@
     }}
     <!-- header -->
 
-    <div class="wmnds-container--lg">
+    <main class="wmnds-container--lg">
       {% block body %}{% endblock %}
-    </div>
+    </main>
 
     <!-- footer -->
     {% include "www/_partials/footer/_footer.njk" %}
