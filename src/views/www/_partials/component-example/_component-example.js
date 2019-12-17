@@ -1,8 +1,7 @@
 function showCode() {
   // for each button we create below
   document.querySelectorAll('.wmnds-js-show-code').forEach(ele => {
-    // when clicked
-    ele.addEventListener('click', e => {
+    function showMore(e) {
       const btn = e.target || e.srcElement; // Set btn to the element from which the click came
 
       // if the btn clicked contains this class, then it must be active, so reset it back to the norm
@@ -16,6 +15,18 @@ function showCode() {
         btn.classList.add('wmnds-js-show-code--active');
         btn.innerText = 'Show less code';
       }
+    }
+
+    // when clicked
+    ele.addEventListener('click', e => {
+      showMore(e);
+    });
+
+    // When keyboard "enter" pressed
+    ele.addEventListener('keydown', e => {
+      if (e.keyCode === 13) {
+        showMore(e);
+      }
     });
   });
 }
@@ -27,7 +38,7 @@ export default () => {
     hljs.highlightBlock(element);
     // If the code preview is 192 height (without padding) then we need to display the 'show more code' button
     if (element.clientHeight >= 192) {
-      const htmlString = '<span class="wmnds-link wmnds-js-show-code">Show more code</span>';
+      const htmlString = '<span class="wmnds-link wmnds-js-show-code" tabindex="0">Show more code</span>';
 
       element.parentElement.insertAdjacentHTML('afterend', htmlString);
     }
