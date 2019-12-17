@@ -4,16 +4,8 @@
 
 
 {% block content %}
-<p>
-  <strong>Buttons</strong> and <strong>links</strong> are items used to perform an action on a
-  page
-</p>
-<p>
-  It's important to know when to use a <strong>button</strong> or when to use a
-  <strong>
-    <a href="/components/links/">link</a>
-  </strong>
-</p>
+{# About #}
+<h2>About</h2>
 <p>
   <strong>Buttons</strong> should be used in situations where a user might need to preform an
   action, such as:
@@ -25,8 +17,34 @@
   <li>Begin a new task</li>
 </ul>
 
+<p>There are two types of button used in this design system - buttons and <a href="/components/links/">link buttons</a>:</p>
+<ul>
+  <li>A <strong>button</strong> performs an action on a page</li>
+  <li>A <a href="/components/links/">link button</a> takes the user to a different page</li>
+</ul>
+<p>Icons should only be used where it is deemed absolutely necessary to communicate the meaning of an action.</p>
+<hr>
+<br><br>
+
+
 {# primary buttons #}
 <h2>Primary buttons</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Not sure yet</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>Not sure yet</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>Not sure yet</li>
+</ul>
+
 {%- from "components/button/_button.njk" import wmnButton as primary -%}
 {{
   compExample([
@@ -49,8 +67,29 @@
   ])
 }}
 {# end: primary buttons #}
+
+
+<br><br>
 {# secondary buttons #}
 <h2>Secondary buttons</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Highlights an inessential action</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When a button is inessential for continuing the user journey</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a button is essential for continuing the user journey</li>
+  <li>When a button is a destructive action</li>
+  <li>When a button starts a process or journey</li>
+</ul>
+
 {%- from "components/button/_button.njk" import wmnButton as secondary -%}
 {{
   compExample([
@@ -77,8 +116,29 @@
   ])
 }}
 {# end: secondary buttons #}
+<br><br>
+
+
 {# call to action buttons #}
 <h2>Call to action buttons</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Attracts attention on the page</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When a button is essential to continuing the user journey</li>
+  <li>When attracting attention to another page</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a button is a destructive action</li>
+  <li>When a button starts a process or journey</li>
+</ul>
+
 {%- from "components/button/_button.njk" import wmnButton as cta %}
 {{
   compExample([
@@ -94,8 +154,29 @@
   ])
 }}
 {# end: call to action buttons #}
+<br><br>
+
+
 {# destructive buttons #}
 <h2>Destructive buttons</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Shows that the button's action deletes or removes something</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When an action is destructive</li>
+  <li>Example: deleting a favourite route, removing a swift card, deleting an account</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a button starts a process or journey</li>
+  <li>When a button is trying to attract the user's attention</li>
+</ul>
+
 {%- from "components/button/_button.njk" import wmnButton as destructive -%}
 {{
   compExample([
@@ -122,8 +203,29 @@
   ])
 }}
 {# end: destructive buttons #}
+<br><br>
+
+
 {# start buttons #}
 <h2>Start buttons</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Shows that the button starts a process or journey</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When a button starts a process or journey</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a button is a destructive action</li>
+  <li>When a button is trying to attract the user's attention</li>
+  <li>When the button is inessential for continuing the user journey</li>
+</ul>
+
 {%- from "components/button/_button.njk" import wmnButton as start -%}
 {{
   compExample([
@@ -150,8 +252,29 @@
   ])
 }}
 {# end: start buttons #}
+<br><br>
+
+
 {# mode buttons #}
 <h2>Mode buttons</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Lets the user select a mode of transport by which to filter</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>Filtering results or data by mode</li>
+  <li>Filtering a map by mode</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a button is essential for continuing the user journey</li>
+  <li>When a button is a destructive action</li>
+  <li>When a button starts a process or journey</li>
+</ul>
 {%- from "components/button/_button.njk" import wmnButton as mode -%}
 {{
   compExample([

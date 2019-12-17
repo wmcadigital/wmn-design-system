@@ -2,6 +2,33 @@
 {% set pageTitle="Phase indicators" %}
 
 {% block content %}
+{# About #}
+<h2>About</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Helps users to identify when a service is in a development phase
+  </li>
+</ul>
+
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    Every service that has not passed its public beta service assessment must have a phase indicator
+    <li>
+      Within the header pattern
+    </li>
+    <li>
+      Within the phase banner pattern
+    </li>
+  </li>
+</ul>
+<p>
+  A service can either be in Alpha (prototype stage) or Beta (when it is on a publicly accessible website).
+</p>
+
   {% from "components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
