@@ -5,7 +5,7 @@
   color: $white;
   background-color: get-color(information);
   font-weight: bold;
-  text-transform: capitalize;
+  text-transform: uppercase;
 
   &--with-icon {
     padding: $padding-sm;
