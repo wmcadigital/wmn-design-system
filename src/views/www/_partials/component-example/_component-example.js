@@ -19,12 +19,14 @@ function showCode() {
 
     // when clicked
     ele.addEventListener('click', e => {
+      e.preventDefault();
       showMore(e);
     });
 
     // When keyboard "enter" pressed
     ele.addEventListener('keydown', e => {
       if (e.keyCode === 13) {
+        e.preventDefault();
         showMore(e);
       }
     });
@@ -38,7 +40,7 @@ export default () => {
     hljs.highlightBlock(element);
     // If the code preview is 192 height (without padding) then we need to display the 'show more code' button
     if (element.clientHeight >= 192) {
-      const htmlString = '<span class="wmnds-link wmnds-js-show-code" tabindex="0">Show more code</span>';
+      const htmlString = '<a href="#" class="wmnds-link wmnds-js-show-code">Show more code</a>';
 
       element.parentElement.insertAdjacentHTML('afterend', htmlString);
     }

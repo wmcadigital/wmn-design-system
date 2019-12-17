@@ -7,29 +7,38 @@ $x-palette-white: #ffffff; // White
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
 $palettes: (
   // BRAND COLORS
-  primary: #3c1053, // WMN Primary Purple
-  secondary: #9d5baf, // WMN Secondary Purple
-
-  // MODAL COLORS
-  bus: #ea0029, // WMN Bus
-  metro: #0075c9, // WMN Metro
-  railway: #ff8300, // WMN Railway
-  susTravel: #679500, // WMN Walk & Cycle
-  roads: #df1683, // WMN Roads
-  taxi: #773dbe,  // WMN Taxi
-
-  // WEB
-  text: #231f20, // WMN Text Black
-  cta: #1d7bbf, // WMN CTA Blue
-  error: #d4351c,
-  warning: #cc6900,
+    primary: #3c1053,
+  // WMN Primary Purple
+    secondary: #9d5baf,
+  // WMN Secondary Purple
+    // MODAL COLORS
+    bus: #ea0029,
+  // WMN Bus
+    metro: #0075c9,
+  // WMN Metro
+    railway: #ff8300,
+  // WMN Railway
+    susTravel: #679500,
+  // WMN Walk & Cycle
+    roads: #df1683,
+  // WMN Roads
+    taxi: #773dbe,
+  // WMN Taxi
+    // WEB
+    text: #231f20,
+  // WMN Text Black
+    cta: #1d7bbf,
+  // WMN CTA Blue
+    error: #d4351c,
+  warning: #b75e00,
   success: #00703c,
   information: #84329b,
-
   // BACKGROUND ONLY
-  disable: #676869, // Disabled elements
-  plannedDisruption: #ffdd00, // WMN Planned Disruption
-  background: #f3f2f1 // Background colour
+    disable: #676869,
+  // Disabled elements
+    plannedDisruption: #ffdd00,
+  // WMN Planned Disruption
+    background: #f3f2f1 // Background colour
 );
 
 $white: #ffffff;
@@ -47,51 +56,51 @@ $base-line-height: $base-font-size * 1.5;
 
 // All values based on REM of 16px
 $type-settings: (
-  - 1: (
-    // 14px
-    font-size: 0.875rem,
-    line-height: $base-line-height,
-    letter-spacing: 0.02625rem,
-    word-spacing: 0.035rem
+  -1: (
+      // 14px
+        font-size: 0.875rem,
+      line-height: $base-line-height,
+      letter-spacing: 0.02625rem,
+      word-spacing: 0.035rem
     ),
   0: (
     // 16px
-    font-size: 1rem,
+      font-size: 1rem,
     line-height: $base-line-height,
     letter-spacing: 0.03rem,
     word-spacing: 0.04rem
   ),
   1: (
     // 18px
-    font-size: 1.125rem,
+      font-size: 1.125rem,
     line-height: $base-line-height,
     letter-spacing: 0.03rem,
-    word-spacing: 0.04rem,
+    word-spacing: 0.04rem
   ),
   2: (
     // 22px
-    font-size: 1.375rem,
+      font-size: 1.375rem,
     line-height: $base-line-height * 2,
     letter-spacing: 0.04125rem,
     word-spacing: 0.055rem
   ),
   3: (
     // 24px
-    font-size: 1.5rem,
+      font-size: 1.5rem,
     line-height: $base-line-height * 2,
     letter-spacing: 0.045rem,
     word-spacing: 0.06rem
   ),
   4: (
     // 34px
-    font-size: 2.125rem,
+      font-size: 2.125rem,
     line-height: $base-line-height * 2,
     letter-spacing: 0.061225rem,
     word-spacing: 0.0854rem
   ),
   5: (
     // 60px
-    font-size: 3.75rem,
+      font-size: 3.75rem,
     line-height: $base-line-height * 4,
     letter-spacing: 0.1125rem,
     word-spacing: 0.15rem

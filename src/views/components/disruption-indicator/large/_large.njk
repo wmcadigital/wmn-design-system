@@ -25,7 +25,7 @@
 
   {#- If params.iconRightBtn is true -#}
   {% if params.iconRightBtn %}
-  <button class="wmnds-disruption-indicator-large__btn">
+  <button class="wmnds-disruption-indicator-large__btn" aria-label="Delete favourite - {{params.mode}} - {{ params.text }}">
     {# Get SVG icon #}
     {{-
       wmndsIcon({
