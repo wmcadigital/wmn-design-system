@@ -61,7 +61,7 @@ pre,
 table,
 blockquote {
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: $base-line-height;
 }
 
 ul ul,
@@ -73,12 +73,6 @@ ol ul {
 }
 
 // Let's make sure all's aligned
-hr,
-.hr {
-  margin: -1px 0;
-  border: 1px solid;
-}
-
 sub,
 sup {
   position: relative;

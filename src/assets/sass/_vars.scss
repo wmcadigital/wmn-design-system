@@ -1,44 +1,24 @@
-// INTERNAL VARS
-// Internal Vars (Internal variables have one function, and that's to be
-// assigned to other variables.)
-$x-palette-white: #ffffff; // White
-
 // PALETTE COLOURS
 // All of our palette colours with their respective tints (mix white in at 10% intervals)
+// All brand colours, see styles/colour-palettes page for more...
 $palettes: (
-  // BRAND COLORS
-    primary: #3c1053,
-  // WMN Primary Purple
-    secondary: #9d5baf,
-  // WMN Secondary Purple
-    // MODAL COLORS
-    bus: #ea0029,
-  // WMN Bus
-    metro: #0075c9,
-  // WMN Metro
-    railway: #ff8300,
-  // WMN Railway
-    susTravel: #679500,
-  // WMN Walk & Cycle
-    roads: #df1683,
-  // WMN Roads
-    taxi: #773dbe,
-  // WMN Taxi
-    // WEB
-    text: #231f20,
-  // WMN Text Black
-    cta: #1d7bbf,
-  // WMN CTA Blue
-    error: #d4351c,
+  primary: #3c1053,
+  secondary: #9d5baf,
+  bus: #ea0029,
+  metro: #0075c9,
+  railway: #ff8300,
+  susTravel: #679500,
+  roads: #df1683,
+  taxi: #773dbe,
+  text: #231f20,
+  cta: #1d7bbf,
+  error: #d4351c,
   warning: #b75e00,
   success: #00703c,
   information: #84329b,
-  // BACKGROUND ONLY
-    disable: #676869,
-  // Disabled elements
-    plannedDisruption: #ffdd00,
-  // WMN Planned Disruption
-    background: #f3f2f1 // Background colour
+  disable: #676869,
+  plannedDisruption: #ffdd00,
+  background: #f3f2f1
 );
 
 $white: #ffffff;
@@ -50,11 +30,11 @@ $x-font-family: "Noto Sans", sans-serif;
 $x-heading-font-family: "DM Sans", sans-serif;
 
 // Base font size and line height
-$base-font-size: 16px;
+$base-font-size: 16px; // 16px
 $base-line-height: 1.5rem; // 24px
 
-// SPACING
-// Padding
+// Sizing (used for margin, padding, line heights etc.)
+// [DON'T TOUCH EXISTING, ONLY ADD NEW ONES]
 $size-xs: 0.25rem; // 4px
 $size-sm: 0.75rem; // 12px
 $size-md: 1rem; // 16px

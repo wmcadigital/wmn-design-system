@@ -60,93 +60,6 @@ html {
   }
 }
 
-// Paddings
-// padding generator mixin
-@mixin x-padding($pad-size) {
-  padding: $pad-size;
-
-  &-left {
-    padding-left: $pad-size;
-  }
-
-  &-right {
-    padding-right: $pad-size;
-  }
-
-  &-top {
-    padding-top: $pad-size;
-  }
-
-  &-bottom {
-    padding-bottom: $pad-size;
-  }
-}
-
-.pad {
-  &-sm {
-    @include x-padding($size-sm);
-  }
-
-  &-md {
-    @include x-padding($size-md);
-  }
-
-  &-lg {
-    @include x-padding($size-lg);
-  }
-
-  &-xl {
-    @include x-padding($size-xl);
-  }
-}
-
-// Margins
-.mar {
-  &-md {
-    margin: $size-md;
-  }
-
-  &-lg {
-    margin: $size-lg;
-  }
-
-  &-xl {
-    margin: $size-xl;
-  }
-
-  &-auto {
-    margin: auto;
-  }
-
-  &-remove {
-    margin: 0;
-  }
-
-  &-vertical {
-    &-md {
-      margin-top: $size-md;
-      margin-bottom: $size-md;
-    }
-
-    &-lg {
-      margin-top: $size-lg;
-      margin-bottom: $size-lg;
-    }
-  }
-
-  &-side {
-    &-xl {
-      margin-right: $size-xl;
-      margin-left: $size-xl;
-    }
-  }
-
-  // This mar-bot-md is mainly for sidebar widgets spacing
-  &-bot-md {
-    margin-bottom: $size-md;
-  }
-}
-
 // Show/hide on desktop devices only
 .show-desktop {
   @media screen and (max-width: 767px) {
@@ -172,7 +85,7 @@ html {
 // Background Colours
 .bg {
   &-white {
-    background-color: $x-palette-white;
+    background-color: $white;
   }
 
   &-none {
@@ -204,7 +117,7 @@ html {
   }
 
   &-white {
-    @include x-default-border($x-palette-white);
+    @include x-default-border($white);
   }
 
   &-gray {

@@ -1,14 +1,12 @@
 // TYPE
 // This is to get the size of the font to be used,
 // and to scale the line heights based on the font size
-
 @mixin type-setting($level) {
   // Default
   @if $level == 0 {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-
   // Heading 1
   @if $level == 1 {
     margin-top: 1.5rem;
