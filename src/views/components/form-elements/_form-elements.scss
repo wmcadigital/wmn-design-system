@@ -2,7 +2,7 @@ input,
 textarea,
 select {
   @include type-setting(0);
-  padding: $padding-sm;
+  padding: $size-sm;
   border: 1px solid get-color(primary);
   color: get-color(text);
 }

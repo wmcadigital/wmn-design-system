@@ -37,9 +37,9 @@ html {
   &--lg {
     max-width: 1280px;
     margin: auto;
-    padding: 0 $padding-sm;
+    padding: 0 $size-sm;
     @media screen and (min-width: $breakpoint-md) {
-      padding: 0 $padding-md;
+      padding: 0 $size-md;
     }
   }
 
@@ -84,34 +84,34 @@ html {
 
 .pad {
   &-sm {
-    @include x-padding($padding-sm);
+    @include x-padding($size-sm);
   }
 
   &-md {
-    @include x-padding($padding-md);
+    @include x-padding($size-md);
   }
 
   &-lg {
-    @include x-padding($padding-lg);
+    @include x-padding($size-lg);
   }
 
   &-xl {
-    @include x-padding($padding-xl);
+    @include x-padding($size-xl);
   }
 }
 
 // Margins
 .mar {
   &-md {
-    margin: $margin-md;
+    margin: $size-md;
   }
 
   &-lg {
-    margin: $margin-lg;
+    margin: $size-lg;
   }
 
   &-xl {
-    margin: $margin-xl;
+    margin: $size-xl;
   }
 
   &-auto {
@@ -124,26 +124,26 @@ html {
 
   &-vertical {
     &-md {
-      margin-top: $margin-md;
-      margin-bottom: $margin-md;
+      margin-top: $size-md;
+      margin-bottom: $size-md;
     }
 
     &-lg {
-      margin-top: $margin-lg;
-      margin-bottom: $margin-lg;
+      margin-top: $size-lg;
+      margin-bottom: $size-lg;
     }
   }
 
   &-side {
     &-xl {
-      margin-right: $margin-xl;
-      margin-left: $margin-xl;
+      margin-right: $size-xl;
+      margin-left: $size-xl;
     }
   }
 
   // This mar-bot-md is mainly for sidebar widgets spacing
   &-bot-md {
-    margin-bottom: $margin-md;
+    margin-bottom: $size-md;
   }
 }
 

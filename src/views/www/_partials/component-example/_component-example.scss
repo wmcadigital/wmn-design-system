@@ -1,6 +1,6 @@
 .wmnds-website-code-example {
-  margin-top: $margin-lg;
-  padding: $padding-md;
+  margin-top: $size-lg;
+  padding: $size-md;
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
 }
@@ -8,7 +8,7 @@
 // Scrollbar styling for code previews of components
 .hljs {
   max-height: 200px;
-  padding: $padding-md;
+  padding: $size-md;
   overflow-y: hidden;
 
   &::-webkit-scrollbar {

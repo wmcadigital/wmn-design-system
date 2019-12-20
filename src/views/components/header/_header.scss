@@ -1,7 +1,7 @@
 .wmnds-header {
   display: block;
-  margin-bottom: $margin-xl;
-  padding: $padding-md;
+  margin-bottom: $size-xl;
+  padding: $size-md;
   background-color: get-color(primary);
   text-align: center;
 
@@ -12,7 +12,7 @@
   // Logo styles
   &__logo-link {
     display: inline-block;
-    margin-right: $margin-md;
+    margin-right: $size-md;
     vertical-align: middle;
   }
 
@@ -25,7 +25,7 @@
     vertical-align: middle;
 
     &:last-child {
-      margin-top: $margin-sm;
+      margin-top: $size-sm;
 
       @media screen and(min-width: $breakpoint-md) {
         margin: 0;
@@ -46,10 +46,10 @@
 
   &__link {
     display: inline-block;
-    margin: 0 $margin-xs;
+    margin: 0 $size-xs;
 
     @media screen and(min-width: $breakpoint-sm) {
-      margin: 0 $margin-sm;
+      margin: 0 $size-sm;
     }
 
     .wmnds-link {
