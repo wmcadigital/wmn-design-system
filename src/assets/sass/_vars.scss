@@ -48,79 +48,25 @@ $black: #000000;
 $text-color: get-color($black);
 $x-font-family: "Noto Sans", sans-serif;
 $x-heading-font-family: "DM Sans", sans-serif;
-$font-size: 16px;
 
 // Base font size and line height
-$base-font-size: 1rem;
-$base-line-height: $base-font-size * 1.5;
-
-// All values based on REM of 16px
-$type-settings: (
-  -1: (
-      // 14px
-        font-size: 0.875rem,
-      line-height: $base-line-height,
-      letter-spacing: 0.02625rem,
-      word-spacing: 0.035rem
-    ),
-  0: (
-    // 16px
-      font-size: 1rem,
-    line-height: $base-line-height,
-    letter-spacing: 0.03rem,
-    word-spacing: 0.04rem
-  ),
-  1: (
-    // 18px
-      font-size: 1.125rem,
-    line-height: $base-line-height,
-    letter-spacing: 0.03rem,
-    word-spacing: 0.04rem
-  ),
-  2: (
-    // 22px
-      font-size: 1.125rem,
-    line-height: $base-line-height * 2,
-    letter-spacing: 0.04125rem,
-    word-spacing: 0.055rem
-  ),
-  3: (
-    // 22px
-      font-size: 1.375rem,
-    line-height: $base-line-height * 2,
-    letter-spacing: 0.045rem,
-    word-spacing: 0.06rem
-  ),
-  4: (
-    // 32px
-      font-size: 2rem,
-    line-height: $base-line-height * 2,
-    letter-spacing: 0.061225rem,
-    word-spacing: 0.0854rem
-  ),
-  5: (
-    // 44px
-      font-size: 2.75rem,
-    line-height: $base-line-height * 4,
-    letter-spacing: 0.1125rem,
-    word-spacing: 0.15rem
-  )
-);
+$base-font-size: 16px;
+$base-line-height: 1.5rem; // 24px
 
 // SPACING
 // Padding
-$padding-xs: $base-line-height / 4.8;
-$padding-sm: $base-line-height / 2;
-$padding-md: $base-line-height;
-$padding-lg: $base-line-height * 2;
-$padding-xl: $base-line-height * 3;
+$padding-xs: 0.25rem; // 4px
+$padding-sm: 0.75rem; // 12px
+$padding-md: 1rem; // 16px
+$padding-lg: 2rem; // 32px
+$padding-xl: 3rem; // 48px
 
 // Margin
-$margin-xs: $base-line-height / 4.8;
-$margin-sm: $base-line-height / 2;
-$margin-md: $base-line-height;
-$margin-lg: $base-line-height * 2;
-$margin-xl: $base-line-height * 3;
+$margin-xs: 0.25rem; // 4px
+$margin-sm: 0.75rem; // 12px
+$margin-md: 1rem; // 16px
+$margin-lg: 2rem; // 32px
+$margin-xl: 3rem; // 48px
 
 // Breakpoints
 $breakpoint-xs: 0; // Extra small screen / phone

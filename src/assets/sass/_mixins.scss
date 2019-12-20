@@ -2,25 +2,43 @@
 // This is to get the size of the font to be used,
 // and to scale the line heights based on the font size
 
-@function type-scale($level) {
-  @return map-get(map-get($type-settings, $level), "font-size");
-}
-
-@function line-height($level) {
-  @return map-get(map-get($type-settings, $level), "line-height");
-}
-
-@function letter-spacing($level) {
-  @return map-get(map-get($type-settings, $level), "letter-spacing");
-}
-
-@function word-spacing($level) {
-  @return map-get(map-get($type-settings, $level), "word-spacing");
-}
-
 @mixin type-setting($level) {
-  font-size: type-scale($level);
-  line-height: line-height($level);
+  // Default
+  @if $level == 0 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  // Heading 1
+  @if $level == 1 {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    color: get-color(primary);
+    font-size: 2.875rem;
+    line-height: 3rem;
+  }
+  // Heading 2
+  @if $level == 2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: get-color(primary);
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  // Heading 3
+  @if $level == 3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4375rem;
+    line-height: 1.5rem;
+  }
+  // Heading 4
+  @if $level == 4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
 }
 
 // get-color() notes
