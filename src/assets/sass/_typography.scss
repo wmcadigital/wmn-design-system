@@ -1,11 +1,11 @@
-html,
-body {
-  color: get-color(text);
-  font-family: $x-font-family;
-  font-size: $font-size;
-  line-height: $base-line-height;
-  @include type-setting(0);
-}
+// html,
+// body {
+//   color: get-color(text);
+//   font-family: $x-font-family;
+//   font-size: $font-size;
+//   line-height: $base-line-height;
+//   @include type-setting(0);
+// }
 
 // Get rid of margin for the first header item in main content
 * {
@@ -17,43 +17,43 @@ body {
   }
 }
 
-// Text aligns
-.text {
-  &-right {
-    text-align: right;
-  }
+// // Text aligns
+// .text {
+//   &-right {
+//     text-align: right;
+//   }
 
-  &-left {
-    text-align: left;
-  }
+//   &-left {
+//     text-align: left;
+//   }
 
-  &-center {
-    text-align: center;
-  }
-}
+//   &-center {
+//     text-align: center;
+//   }
+// }
 
-.text-bold {
-  font-weight: 600;
-}
+// .text-bold {
+//   font-weight: 600;
+// }
 
-// Text colors
-.text-color {
-  &-primary {
-    color: get-color(primary);
-  }
+// // Text colors
+// .text-color {
+//   &-primary {
+//     color: get-color(primary);
+//   }
 
-  &-secondary {
-    color: get-color(secondary);
-  }
+//   &-secondary {
+//     color: get-color(secondary);
+//   }
 
-  &-white {
-    color: $x-palette-white;
-  }
+//   &-white {
+//     color: $x-palette-white;
+//   }
 
-  &-gray {
-    color: get-color(secondary);
-  }
-}
+//   &-gray {
+//     color: get-color(secondary);
+//   }
+// }
 
 h1,
 h2,
@@ -63,44 +63,159 @@ h5 {
   font-family: $x-heading-font-family;
 }
 
-h1 {
-  @include type-setting(5);
-  margin: $margin-lg 0;
+// h1 {
+//   @include type-setting(5);
+//   margin: $margin-lg 0;
+//   color: get-color(primary);
+//   // Desktop
+//   @media screen and(min-width: $breakpoint-md) {
+//     @include type-setting(5);
+//   }
+// }
+
+// h2 {
+//   @include type-setting(4);
+//   margin: $margin-md 0;
+//   color: get-color(primary);
+//   // Desktop
+//   @media screen and(min-width: $breakpoint-md) {
+//     @include type-setting(4);
+//   }
+// }
+
+// h3 {
+//   @include type-setting(3);
+//   margin: $margin-md 0;
+//   // Desktop
+//   @media screen and(min-width: $breakpoint-md) {
+//   }
+// }
+
+// h4 {
+//   @include type-setting(2);
+//   margin: $margin-sm 0;
+//   // Desktop
+//   @media screen and(min-width: $breakpoint-md) {
+//   }
+// }
+
+// h5 {
+//   @include type-setting(1);
+//   margin: $margin-sm 0;
+//   // Desktop
+//   @media screen and(min-width: $breakpoint-md) {
+//   }
+// }
+
+// div,
+// span,
+// li,
+// ul,
+// ol,
+// p,
+// a {
+//   @include type-setting(0);
+// }
+
+// p {
+//   margin: 0;
+//   margin-bottom: $margin-md;
+// }
+
+html,
+.root {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+body,
+.article {
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 0.75rem;
+}
+
+h1,
+.h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
   color: get-color(primary);
+  font-size: 2.875rem;
+  line-height: 3rem;
 }
 
-h2 {
-  @include type-setting(4);
-  margin: $margin-md 0;
+h2,
+.h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   color: get-color(primary);
+  font-size: 2rem;
+  line-height: 3rem;
 }
 
-h3 {
-  @include type-setting(3);
-  margin: $margin-md 0;
+h3,
+.h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4375rem;
+  line-height: 1.5rem;
 }
 
-h4 {
-  @include type-setting(2);
-  margin: $margin-sm 0;
+h4,
+.h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
-h5 {
-  @include type-setting(1);
-  margin: $margin-sm 0;
-}
-
-div,
-span,
-li,
+p,
 ul,
 ol,
-p,
-a {
-  @include type-setting(0);
+pre,
+table,
+blockquote {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
-p {
-  margin: 0;
-  margin-bottom: $margin-md;
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Let's make sure all's aligned
+hr,
+.hr {
+  margin: -1px 0;
+  border: 1px solid;
+}
+
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+  line-height: 0;
+}
+
+sub,
+sup {
+  position: relative;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
 }
