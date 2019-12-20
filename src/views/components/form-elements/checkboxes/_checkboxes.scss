@@ -1,7 +1,7 @@
 .wmnds-fe-checkboxes {
   &__desc {
     display: block;
-    margin-bottom: $margin-sm;
+    margin-bottom: $size-sm;
   }
 
   // Customize the label (the container)
@@ -9,7 +9,7 @@
     @include type-setting(0);
     display: block;
     position: relative;
-    margin-bottom: $margin-md;
+    margin-bottom: $size-md;
     padding-left: 60px;
     cursor: pointer;
     user-select: none;

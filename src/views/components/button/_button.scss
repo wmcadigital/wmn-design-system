@@ -7,7 +7,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   box-sizing: border-box;
   display: inline-block;
   position: relative;
-  padding: $padding-sm;
+  padding: $size-sm;
   transition: $btn-transition;
   border: 1px solid transparent;
   border-radius: $btn-border-radius;
@@ -42,7 +42,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
   // button icon right style
   &__icon--right {
-    margin-left: $margin-sm;
+    margin-left: $size-sm;
     float: right;
   }
 
@@ -137,7 +137,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: $white;
 
     .wmnds-btn__icon {
-      margin-right: $margin-xs;
+      margin-right: $size-xs;
       fill: get-color(primary);
     }
 
@@ -172,6 +172,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
   // button small modifier
   &--small {
-    padding: $padding-xs;
+    padding: $size-xs;
   }
 }

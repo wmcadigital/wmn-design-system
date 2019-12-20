@@ -1,9 +1,9 @@
 // These vars control icon size and the margin right from the icon. By setting here we can ensure the message_info stays indented by same amount as title.
 $wmnds-msg-icon-size: 35px;
-$wmnds-msg-icon-margin-right: $margin-sm;
+$wmnds-msg-icon-margin-right: $size-sm;
 
 .wmnds-msg-summary {
-  padding: $padding-sm;
+  padding: $size-sm;
   border: 1px solid get-color(information);
 
   &__header {

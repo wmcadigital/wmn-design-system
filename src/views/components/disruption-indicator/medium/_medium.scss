@@ -1,6 +1,6 @@
 .wmnds-disruption-indicator-medium {
   display: inline-block;
-  padding: $padding-sm $padding-md;
+  padding: $size-sm $size-md;
   border-radius: 5px;
   color: $white;
   background-color: get-color(information);
@@ -8,7 +8,7 @@
   text-transform: uppercase;
 
   &--with-icon {
-    padding: $padding-sm;
+    padding: $size-sm;
   }
 
   &--warning {
@@ -28,7 +28,7 @@
   }
 
   &--narrow {
-    padding: $padding-xs;
+    padding: $size-xs;
   }
 
   &__icon {
@@ -39,11 +39,11 @@
     vertical-align: middle;
 
     &--left {
-      margin-right: $margin-sm;
+      margin-right: $size-sm;
     }
 
     &--right {
-      margin-left: $margin-sm;
+      margin-left: $size-sm;
     }
   }
 }

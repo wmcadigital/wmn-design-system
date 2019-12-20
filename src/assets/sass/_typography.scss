@@ -1,9 +1,9 @@
 html,
 body {
+  margin: 0;
+  padding: 0;
   color: get-color(text);
   font-family: $x-font-family;
-  font-size: $font-size;
-  line-height: $base-line-height;
   @include type-setting(0);
 }
 
@@ -17,77 +17,11 @@ body {
   }
 }
 
-// Text aligns
-.text {
-  &-right {
-    text-align: right;
-  }
-
-  &-left {
-    text-align: left;
-  }
-
-  &-center {
-    text-align: center;
-  }
-}
-
-.text-bold {
-  font-weight: 600;
-}
-
-// Text colors
-.text-color {
-  &-primary {
-    color: get-color(primary);
-  }
-
-  &-secondary {
-    color: get-color(secondary);
-  }
-
-  &-white {
-    color: $x-palette-white;
-  }
-
-  &-gray {
-    color: get-color(secondary);
-  }
-}
-
 h1,
 h2,
 h3,
-h4,
-h5 {
-  font-family: $x-heading-font-family;
-}
-
-h1 {
-  @include type-setting(5);
-  margin: $margin-lg 0;
-  color: get-color(primary);
-}
-
-h2 {
-  @include type-setting(4);
-  margin: $margin-md 0;
-  color: get-color(primary);
-}
-
-h3 {
-  @include type-setting(3);
-  margin: $margin-md 0;
-}
-
 h4 {
-  @include type-setting(2);
-  margin: $margin-sm 0;
-}
-
-h5 {
-  @include type-setting(1);
-  margin: $margin-sm 0;
+  font-family: $x-heading-font-family;
 }
 
 div,
@@ -100,7 +34,56 @@ a {
   @include type-setting(0);
 }
 
-p {
-  margin: 0;
-  margin-bottom: $margin-md;
+h1,
+.h1 {
+  @include type-setting(1);
+}
+
+h2,
+.h2 {
+  @include type-setting(2);
+}
+
+h3,
+.h3 {
+  @include type-setting(3);
+}
+
+h4,
+.h4 {
+  @include type-setting(4);
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: 0;
+  margin-bottom: $base-line-height;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Let's make sure all's aligned
+sub,
+sup {
+  position: relative;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
 }

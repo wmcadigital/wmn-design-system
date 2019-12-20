@@ -37,9 +37,9 @@ html {
   &--lg {
     max-width: 1280px;
     margin: auto;
-    padding: 0 $padding-sm;
+    padding: 0 $size-sm;
     @media screen and (min-width: $breakpoint-md) {
-      padding: 0 $padding-md;
+      padding: 0 $size-md;
     }
   }
 
@@ -57,93 +57,6 @@ html {
 
   &--right {
     float: right;
-  }
-}
-
-// Paddings
-// padding generator mixin
-@mixin x-padding($pad-size) {
-  padding: $pad-size;
-
-  &-left {
-    padding-left: $pad-size;
-  }
-
-  &-right {
-    padding-right: $pad-size;
-  }
-
-  &-top {
-    padding-top: $pad-size;
-  }
-
-  &-bottom {
-    padding-bottom: $pad-size;
-  }
-}
-
-.pad {
-  &-sm {
-    @include x-padding($padding-sm);
-  }
-
-  &-md {
-    @include x-padding($padding-md);
-  }
-
-  &-lg {
-    @include x-padding($padding-lg);
-  }
-
-  &-xl {
-    @include x-padding($padding-xl);
-  }
-}
-
-// Margins
-.mar {
-  &-md {
-    margin: $margin-md;
-  }
-
-  &-lg {
-    margin: $margin-lg;
-  }
-
-  &-xl {
-    margin: $margin-xl;
-  }
-
-  &-auto {
-    margin: auto;
-  }
-
-  &-remove {
-    margin: 0;
-  }
-
-  &-vertical {
-    &-md {
-      margin-top: $margin-md;
-      margin-bottom: $margin-md;
-    }
-
-    &-lg {
-      margin-top: $margin-lg;
-      margin-bottom: $margin-lg;
-    }
-  }
-
-  &-side {
-    &-xl {
-      margin-right: $margin-xl;
-      margin-left: $margin-xl;
-    }
-  }
-
-  // This mar-bot-md is mainly for sidebar widgets spacing
-  &-bot-md {
-    margin-bottom: $margin-md;
   }
 }
 
@@ -172,7 +85,7 @@ html {
 // Background Colours
 .bg {
   &-white {
-    background-color: $x-palette-white;
+    background-color: $white;
   }
 
   &-none {
@@ -204,7 +117,7 @@ html {
   }
 
   &-white {
-    @include x-default-border($x-palette-white);
+    @include x-default-border($white);
   }
 
   &-gray {
