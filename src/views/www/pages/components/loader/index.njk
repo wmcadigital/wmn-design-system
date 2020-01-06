@@ -1,0 +1,16 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Loader" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# Loader #}
+<h2>Loader</h2>
+{% from "components/loader/_loader.njk" import wmndsLoader %}
+{{
+  compExample([
+    wmndsLoader()
+  ])
+}}
+
+
+{% endblock %}

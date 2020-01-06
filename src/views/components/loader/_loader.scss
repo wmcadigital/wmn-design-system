@@ -1,0 +1,58 @@
+$loading-time: 1.5s;
+$loading-time2: 1125ms;
+
+.wmnds-loader,
+.wmnds-loader:before,
+.wmnds-loader:after {
+  border-radius: 50%;
+}
+
+.wmnds-loader {
+  position: relative;
+  width: 10em;
+  height: 10em;
+  margin: 55px auto;
+  transform: translateZ(0);
+  color: get-color(primary);
+  box-shadow: inset 0 0 0 1em;
+  font-size: 11px;
+  text-indent: -99999em;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+  }
+
+  &:before {
+    top: -0.1em;
+    left: -0.1em;
+    width: 5.2em;
+    height: 10.2em;
+    animation: load2 $loading-time infinite ease $loading-time2;
+    border-radius: 10.2em 0 0 10.2em;
+    background: $white;
+    transform-origin: 5.1em 5.1em;
+  }
+
+  &:after {
+    top: -0.1em;
+    left: 4.9em;
+    width: 5.2em;
+    height: 10.2em;
+    animation: load2 $loading-time infinite ease;
+    border-radius: 0 10.2em 10.2em 0;
+    background: $white;
+    transform-origin: 0.1em 5.1em;
+  }
+}
+
+@keyframes load2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
