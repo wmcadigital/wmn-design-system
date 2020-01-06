@@ -96,5 +96,5 @@ html {
   padding: $size-xs;
   color: get-color(primary);
   background: get-color(background);
-  @include type-setting(1);
+  @include type-setting(4);
 }
