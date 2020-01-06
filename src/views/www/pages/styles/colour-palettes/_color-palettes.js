@@ -1,5 +1,5 @@
 function colorPalettes() {
-  const colors = document.querySelectorAll('.wmnds-website-color-swatch');
+  const colors = document.querySelectorAll('.wmnds-website-color-swatch__inner');
 
   // Function to convert rgb to hex
   function rgb2hex(rgb) {
