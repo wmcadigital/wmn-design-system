@@ -1,11 +1,12 @@
 // footer
-.footer {
+.wmnds-footer {
   margin-top: $size-xl;
   padding: $size-lg;
   color: $white;
   background-color: get-color(primary);
-}
 
-.logo {
-  max-height: $base-line-height * 2;
+  .wmnds-footer &__link {
+    float: right;
+    color: $white;
+  }
 }
