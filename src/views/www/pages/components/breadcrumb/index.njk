@@ -1,0 +1,16 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Breadcrumb" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# Breadcrumb #}
+<h2>Breadcrumb</h2>
+
+{% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+{{
+  compExample([
+    wmndsBreadcrumb()
+  ])
+}}
+
+{% endblock %}
