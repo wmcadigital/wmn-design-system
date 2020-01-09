@@ -2,6 +2,7 @@
   padding: $size-sm;
   background: transparent;
 
+  // outer list item (ol element)
   &__list {
     margin: 0;
     padding-left: 0;
@@ -9,7 +10,7 @@
   }
 
   &__list-item {
-    display: inline;
+    display: inline-block;
 
     // Put ">" before every list item other than first one
     & + &::before {
@@ -21,6 +22,7 @@
     }
   }
 
+  // Style a tag within breadcrumb
   &__link {
     color: get-color(text);
 
