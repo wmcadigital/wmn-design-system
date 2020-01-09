@@ -5,6 +5,50 @@
 {% block content %}
 {# Loader #}
 <h2>Loader</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Helps users to understand they need to wait for something to finish happening
+  </li>
+  <li>
+    Continues to play the animation until the action is complete
+  </li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    When you are calling an API
+  </li>
+  <li>
+    In there area of the page that the action is occurring
+  </li>
+  <li>
+    Example: within a search box
+  </li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>
+    A service should not go live if there is a whole-page loading spinner
+  </li>
+  <li>
+    Try to avoid using a loading spinner, our services should respond quickly
+  </li>
+  <li>
+    If an action takes a long time, users will lose trust in the service
+  </li>
+</ul>
+
+<p>
+  <strong>By default you should aim to use the 'normal sized loader'.</strong> <br>
+  Only when the normal sized loader is not fit for purpose should you use the large or small sized loader.
+</p>
+
+<p>Change the text within <code class="wmnds-website-inline-code">.wmnds-loader__content</code> from 'Content is loading...' to something that describes what it is you are loading, this will help with accessibility.</p>
+
 {% from "components/loader/_loader.njk" import wmndsLoader %}
 {{
   compExample([
