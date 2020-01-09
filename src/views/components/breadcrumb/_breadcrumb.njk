@@ -1,25 +1,25 @@
 {% macro wmndsBreadcrumb(params) %}
 
-<nav aria-label="Breadcrumb" class="breadcrumb">
-  <ol>
-    <li>
-      <a href="../../">
-        WAI-ARIA Authoring Practices 1.1
+<nav aria-label="Breadcrumb" class="wmnds-breadcrumb">
+  <ol class="wmnds-breadcrumb__list">
+    <li class="wmnds-breadcrumb__list-item">
+      <a href="../../" class="wmnds-breadcrumb__link">
+        Home
       </a>
     </li>
-    <li>
-      <a href="../../#aria_ex">
-        Design Patterns
+    <li class="wmnds-breadcrumb__list-item">
+      <a href="../../#aria_ex" class="wmnds-breadcrumb__link">
+        Sub page
       </a>
     </li>
-    <li>
-      <a href="../../#breadcrumb">
-        Breadcrumb Pattern
+    <li class="wmnds-breadcrumb__list-item">
+      <a href="../../#breadcrumb" class="wmnds-breadcrumb__link">
+        Sub sub page
       </a>
     </li>
-    <li>
-      <a href="./index.html" aria-current="page">
-        Breadcrumb Example
+    <li class="wmnds-breadcrumb__list-item">
+      <a href="./index.html" class="wmnds-breadcrumb__link wmnds-breadcrumb__link--current" aria-current="page">
+        Current page
       </a>
     </li>
   </ol>

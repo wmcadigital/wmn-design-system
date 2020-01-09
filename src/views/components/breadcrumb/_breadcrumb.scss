@@ -1,0 +1,35 @@
+.wmnds-breadcrumb {
+  padding: $size-sm;
+  background: transparent;
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__list-item {
+    display: inline;
+
+    // Put ">" before every list item other than first one
+    & + &::before {
+      content: ">";
+      display: inline-block;
+      height: 0.8em;
+      margin: 0 $size-xs;
+      color: get-color(information);
+    }
+  }
+
+  &__link {
+    color: get-color(text);
+
+    &--current {
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: get-color(text, 30, dark);
+    }
+  }
+}
