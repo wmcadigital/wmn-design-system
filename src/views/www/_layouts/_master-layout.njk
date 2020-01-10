@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  {% from "components/header/_header.njk" import wmndsHeader %}
-
   <!-- Head -->
   {% include "www/_partials/_head.njk" %}
   <!-- end: Head -->
@@ -15,15 +13,24 @@
       </p>
     <![endif]-->
 
-    <!-- header -->
+    {# header #}
+    {% from "components/header/_header.njk" import wmndsHeader %}
     {{
       wmndsHeader ({
         navItems: navItems
       })
     }}
-    <!-- header -->
+    {# header #}
+
 
     <main class="wmnds-container--lg">
+      {# Breadcrumb #}
+      {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+      {{
+          wmndsBreadcrumb()
+      }}
+      {# Breadcrumb #}
+
       {% block body %}{% endblock %}
     </main>
 
