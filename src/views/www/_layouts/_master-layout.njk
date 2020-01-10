@@ -25,7 +25,7 @@
     {# Breadcrumb #}
     {# Don't display breadcrumb on homepage #}
     {% if section != 'Home' %}
-      <div class="wmnds-container--lg">
+      <div class="wmnds-container">
         {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
         {{
             wmndsBreadcrumb({
@@ -37,7 +37,7 @@
     {% endif %}
     {# Breadcrumb #}
 
-    <main class="wmnds-container--lg">
+    <main class="wmnds-container">
       {% block body %}{% endblock %}
     </main>
 

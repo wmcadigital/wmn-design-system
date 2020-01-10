@@ -34,13 +34,11 @@ html {
 
 // Container sizes
 .wmnds-container {
-  &--lg {
-    max-width: 1280px;
-    margin: auto;
-    padding: 0 $size-sm;
-    @media screen and (min-width: $breakpoint-md) {
-      padding: 0 $size-md;
-    }
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 $size-sm;
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 0 $size-md;
   }
 }
 
