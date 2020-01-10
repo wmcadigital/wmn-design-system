@@ -24,12 +24,18 @@
 
 
     <main class="wmnds-container--lg">
-      {# Breadcrumb #}
-      {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
-      {{
-          wmndsBreadcrumb()
-      }}
-      {# Breadcrumb #}
+      {# Don't display breadcrumb on homepage #}
+      {% if section != 'Home' %}
+        {# Breadcrumb #}
+        {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+        {{
+            wmndsBreadcrumb({
+              section: (section if section else "Components"),
+              pageTitle: pageTitle
+            })
+        }}
+        {# Breadcrumb #}
+      {% endif %}
 
       {% block body %}{% endblock %}
     </main>
