@@ -1,0 +1,68 @@
+.wmnds-fe-autocomplete {
+  // The container for autocomplete
+  &__wrapper {
+    display: inline-block;
+    position: relative;
+    width: calc(100% - 60px);
+    margin-right: $size-sm;
+
+    // Search icon embeded in container to overwrite FontAwesome defaults
+    .wmnds-fe-autocomplete__icon {
+      display: block;
+      position: absolute;
+      top: calc(#{$size-sm} + 1px);
+      bottom: calc(#{$size-sm} + 1px);
+      left: calc(#{$size-sm} + 1px);
+      width: 22px;
+      height: 22px;
+      fill: get-color(disable);
+    }
+  }
+
+  &__input {
+    padding-left: 45px;
+
+    &::placeholder {
+      color: get-color(text);
+      font-weight: bold;
+    }
+  }
+
+  // AutoComplete Specific Styles
+  &__results-list {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  &__result {
+    @include type-setting(1);
+    width: 100%;
+    padding: $size-sm;
+    list-style: none;
+    border: 1px solid;
+    border-top: 0;
+    border-bottom-color: get-color(text);
+    background-color: $white;
+    font-size: 1.1rem;
+    text-align: left;
+
+    // sass-lint:disable-all - These are disabled due to being javascript classes
+    &.autoComplete_selected,
+    &::selection,
+    &:hover,
+    &:focus {
+      outline: 0;
+      background-color: get-color(secondary, 30);
+      cursor: pointer;
+    }
+
+    .autoComplete_highlighted {
+      opacity: 1;
+      color: get-color(primary);
+      font-weight: bold;
+    }
+  }
+}

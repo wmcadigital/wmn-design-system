@@ -3,7 +3,6 @@
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-fe-autocomplete wmnds-grid">
-  <div class="wmnds-fe-autocomplete__wrapper wmnds-col-1">
       {# Get SVG icon and pass class #}
       {{-
         wmndsIcon({
@@ -11,9 +10,40 @@
           class: 'wmnds-fe-autocomplete__icon'
         }) | indent(6) | trim
       }}
-    <input type="text" name="searchExample" aria-label="search for..." class="wmnds-fe-autocomplete__input wmnds-col-1" data-placeholder="Tap to search" data-api="https://jsonplaceholder.typicode.com/users" data-keys="name, email" />
-  </div>
-  <input type="submit" value="Go" class="wmnds-btn wmnds-btn__primary" />
+    <input type="text" name="searchExample" aria-label="search for..." class="wmnds-fe-autocomplete__input wmnds-col-1" data-placeholder="Tap to search" data-api="https://jsonplaceholder.typicode.com/users" data-keys="name, email" value="12" />
 </div>
+
+<ul class="wmnds-fe-autocomplete-results">
+  <li class="wmnds-grid" title="Good service on 12a">
+    <div class="bus_indicator__1zdUw wmnds-col-auto">
+      <div class="wmnds-disruption-indicator-medium wmnds-disruption-indicator-medium--with-icon wmnds-disruption-indicator-medium--success">
+        12a
+        {# Get SVG icon and pass class #}
+        {{-
+          wmndsIcon({
+            icon: 'general-checkmark',
+            class: 'wmnds-disruption-indicator-medium__icon wmnds-disruption-indicator-medium__icon--right'
+          }) | indent(6) | trim
+        }}
+      </div>
+    </div>
+    <div class="wmnds-col-1-2 wmnds-col-sm-2-3">
+      <strong>Oldbury to Dudley</strong><br>and return journey
+    </div>
+  </li>
+  <li class="wmnds-grid" title="Good service on 12a">
+    <div class="bus_indicator__1zdUw wmnds-col-auto">
+      <div class="wmnds-disruption-indicator-medium wmnds-disruption-indicator-medium--with-icon wmnds-disruption-indicator-medium--success">
+        12a<svg class="wmnds-disruption-indicator-medium__icon wmnds-disruption-indicator-medium__icon--right"><use xlink:href="/static/media/svg-sprite.min.b4f5fbe2.svg#wmnds-general-success" href="/static/media/svg-sprite.min.b4f5fbe2.svg#wmnds-general-success"></use></svg>
+      </div>
+    </div>
+    <div class="wmnds-col-1-2 wmnds-col-sm-2-3">
+      <strong>Oldbury to Dudley</strong><br>and return journey
+    </div>
+  </li>
+</ul>
+
+
+
 
 {% endmacro %}
