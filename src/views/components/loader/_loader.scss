@@ -1,8 +1,10 @@
+$wmnds-loader-animation-speed: 1s;
+
 .wmnds-loader {
   width: 100px;
   height: 100px;
   margin: auto;
-  animation: spin 1s linear infinite;
+  animation: spin $wmnds-loader-animation-speed linear infinite;
   border: 10px solid get-color(background);
   border-top: 10px solid get-color(primary);
   border-radius: 50%;
