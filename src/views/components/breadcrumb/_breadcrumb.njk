@@ -4,8 +4,10 @@ As the design system only uses a 2 deep navigation we just show/hide the 'sectio
 And we show the current page breadcrumb at all times.
 #}
 
+{% set section = params.section if params.section else "Components" %} {# default to Components section if one isn't available #}
+
 {# Set sectionUrl and pageUrl #}
-{% set sectionUrl =  params.section | lower | replace(" ", "-") %}
+{% set sectionUrl =  section | lower | replace(" ", "-") %}
 {% set pageUrl =  params.pageTitle | lower | replace(" ", "-") %}
 
 <nav aria-label="Breadcrumb" class="wmnds-breadcrumb">
@@ -17,10 +19,10 @@ And we show the current page breadcrumb at all times.
       </a>
     </li>
     {# If pageTitle != same as section, then we can show section breadcrumb #}
-    {% if params.pageTitle != params.section %}
+    {% if params.pageTitle != section %}
       <li class="wmnds-breadcrumb__list-item">
         <a href="{{ '/' + sectionUrl + '/' }}" class="wmnds-breadcrumb__link">
-          {{ params.section}}
+          {{ section }}
         </a>
       </li>
     {% endif %}

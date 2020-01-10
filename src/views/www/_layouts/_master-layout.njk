@@ -30,7 +30,7 @@
         {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
         {{
             wmndsBreadcrumb({
-              section: (section if section else "Components"),
+              section: section,
               pageTitle: pageTitle
             })
         }}
