@@ -40,6 +40,10 @@ html {
   @media screen and (min-width: $breakpoint-md) {
     padding: 0 $size-md;
   }
+
+  &--main {
+    margin-top: $size-md;
+  }
 }
 
 // Floats
