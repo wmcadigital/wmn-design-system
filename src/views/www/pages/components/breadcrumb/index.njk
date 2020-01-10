@@ -35,7 +35,10 @@
 {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 {{
   compExample([
-    wmndsBreadcrumb()
+    wmndsBreadcrumb({
+      section: section,
+      pageTitle: pageTitle
+    }) | trim
   ])
 }}
 

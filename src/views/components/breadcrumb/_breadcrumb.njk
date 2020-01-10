@@ -12,21 +12,21 @@ And we show the current page breadcrumb at all times.
 
 <nav aria-label="Breadcrumb" class="wmnds-breadcrumb">
   <ol class="wmnds-breadcrumb__list">
-    {# Link back to homepage #}
+    {#- Link back to homepage #}
     <li class="wmnds-breadcrumb__list-item">
       <a href="/" class="wmnds-breadcrumb__link">
         Home
       </a>
     </li>
-    {# If pageTitle != same as section, then we can show section breadcrumb #}
-    {% if params.pageTitle != section %}
-      <li class="wmnds-breadcrumb__list-item">
-        <a href="{{ '/' + sectionUrl + '/' }}" class="wmnds-breadcrumb__link">
-          {{ section }}
-        </a>
-      </li>
-    {% endif %}
-    {# Show the curent page in the breadcrumb #}
+    {#- If pageTitle != same as section, then we can show section breadcrumb #}
+    {% if params.pageTitle != section -%}
+    <li class="wmnds-breadcrumb__list-item">
+      <a href="{{ '/' + sectionUrl + '/' }}" class="wmnds-breadcrumb__link">
+        {{ section }}
+      </a>
+    </li>
+    {%- endif %}
+    {#- Show the curent page in the breadcrumb #}
     <li class="wmnds-breadcrumb__list-item">
       <a href="{{ '/' + sectionUrl + '/' + pageUrl + '/' }}" class="wmnds-breadcrumb__link wmnds-breadcrumb__link--current" aria-current="page">
         {{params.pageTitle}}

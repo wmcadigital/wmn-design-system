@@ -22,11 +22,10 @@
     }}
     {# header #}
 
-
-    <main class="wmnds-container--lg">
-      {# Don't display breadcrumb on homepage #}
-      {% if section != 'Home' %}
-        {# Breadcrumb #}
+    {# Breadcrumb #}
+    {# Don't display breadcrumb on homepage #}
+    {% if section != 'Home' %}
+      <div class="wmnds-container--lg">
         {% from "components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
         {{
             wmndsBreadcrumb({
@@ -34,9 +33,11 @@
               pageTitle: pageTitle
             })
         }}
-        {# Breadcrumb #}
-      {% endif %}
+      </div>
+    {% endif %}
+    {# Breadcrumb #}
 
+    <main class="wmnds-container--lg">
       {% block body %}{% endblock %}
     </main>
 
