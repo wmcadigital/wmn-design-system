@@ -9,7 +9,7 @@
   {% from "components/form-elements/search/_search.njk" import wmndsSearch %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
-    compExample([wmndsSearch()])
+    compExample([wmndsSearch()]) | trim
   }}
   {# End Search #}
 
