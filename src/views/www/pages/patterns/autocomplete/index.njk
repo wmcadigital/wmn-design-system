@@ -10,8 +10,22 @@
   {% from "components/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
-    compExample([wmndsAutocomplete()]) | trim
+    compExample([
+      wmndsAutocomplete({
+        query: ''
+      })
+    ]) | trim
   }}
   {# End Search #}
+
+
+  {{
+    compExample([
+      wmndsAutocomplete({
+        showResults: true,
+        query: 'x20'
+      })
+    ]) | trim
+  }}
 
 {% endblock %}
