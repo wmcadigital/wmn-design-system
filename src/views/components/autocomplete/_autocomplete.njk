@@ -18,7 +18,11 @@
   }}
   {# Loading spinner #}
   {% from "components/loader/_loader.njk" import wmndsLoader %}
-  {{wmndsLoader()}}
+  {{
+    wmndsLoader({
+      customClass: 'wmnds-autocomplete__icon'
+    })
+  }}
 
 
   <input type="text" name="searchExample" aria-label="{{ placeholder }}" class="wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}"/>
