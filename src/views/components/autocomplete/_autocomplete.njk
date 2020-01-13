@@ -1,3 +1,5 @@
+{# Uses the components: wmnds-loader, wmnds-icon #}
+
 {% macro wmndsAutocomplete(params) %}
 {# Imports #}
 {% from "components/icon/_icon.njk" import wmndsIcon %}
@@ -36,7 +38,7 @@
 {% if params.textResults -%}
   {%- for i in range(1,4) %}
   <li class="wmnds-autocomplete-results__li" title="Search result {{i}}" tabindex="0">
-    This is <strong>Search</strong> result {{i}}
+    This is <strong>my query</strong> result {{i}}
   </li>
   {%- endfor %}
 {% else -%}

@@ -6,21 +6,8 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
+{# Default #}
 <h2>Default</h2>
-{{
-  compExample([
-    wmndsAutocomplete({
-      showResults: true,
-      textResults: true,
-      query: 'search'
-    })
-  ]) | trim
-}}
-
-{# With disruption indicator #}
-<hr><br><br>
-<h2>With disruption indicator</h2>
-<h3>Default</h3>
 {{
   compExample([
     wmndsAutocomplete({
@@ -29,19 +16,36 @@
   ]) | trim
 }}
 
+
+<br><br>
 {# Loading #}
-<h3>Loading</h3>
+<h2>Loading</h2>
 {{
   compExample([
     wmndsAutocomplete({
-      query: 'x15',
+      query: 'My query',
       loading: true
     })
   ]) | trim
 }}
 
+
+<br><br>
 {# Results #}
-<h3>Results</h3>
+<h2>Results</h2>
+<h3>Default (text)</h3>
+{{
+  compExample([
+    wmndsAutocomplete({
+      showResults: true,
+      textResults: true,
+      query: 'My query'
+    })
+  ]) | trim
+}}
+
+{# With disruption indicator #}
+<h3>With disruption indicator</h3>
 {{
   compExample([
     wmndsAutocomplete({
