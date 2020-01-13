@@ -3,10 +3,10 @@
   display: inline-block;
   position: relative;
   width: 100%;
-  @extend .wmnds-grid;
 
   // autocomplete icon embeded in container to overwrite FontAwesome defaults
-  .wmnds-autocomplete__icon {
+  .wmnds-autocomplete__icon,
+  .wmnds-loader {
     display: block;
     position: absolute;
     top: calc(#{$size-sm} + 1px);
@@ -35,46 +35,18 @@
     padding: 0;
   }
 
-  &__result {
-    @include type-setting(1);
-    width: 100%;
-    padding: $size-sm;
-    list-style: none;
-    border: 1px solid;
-    border-top: 0;
-    border-bottom-color: get-color(text);
-    background-color: $white;
-    font-size: 1.1rem;
-    text-align: left;
-
-    // sass-lint:disable-all - These are disabled due to being javascript classes
-    &.autocomplete_selected,
-    &::selection,
-    &:hover,
-    &:focus {
-      outline: 0;
-      background-color: get-color(secondary, 30);
-      cursor: pointer;
-    }
-
-    .autocomplete_highlighted {
-      opacity: 1;
-      color: get-color(primary);
-      font-weight: bold;
-    }
-  }
-
   // Loading state
   .wmnds-loader {
     display: none;
     border-width: 3px;
-    @extend .wmnds-autocomplete__icon;
   }
+
   // When loading class is added, show wmnds-loader but hide normal icon
   &.wmnds-is--loading {
     .wmnds-autocomplete__icon {
       display: none;
     }
+
     .wmnds-loader {
       display: inline-block;
     }
@@ -82,22 +54,23 @@
 }
 
 .wmnds-autocomplete-results {
-  padding: 0;
-  margin-top: 0;
   max-height: 300px;
+  margin-top: 0;
+  padding: 0;
   overflow-y: scroll;
 
   &__li {
-    list-style: none;
     padding: 10px;
-    border-bottom: 1px solid #3c1053;
-    border-left: 1px solid #3c1053;
-    border-right: 1px solid #3c1053;
+    list-style: none;
+    border-right: 1px solid get-color(primary);
+    border-bottom: 1px solid get-color(primary);
+    border-left: 1px solid get-color(primary);
     cursor: pointer;
-    @extend .wmnds-grid;
 
-    &:hover {
-      background-color: #e6d6eb;
+    &:hover,
+    &:focus {
+      background-color: get-color(information, 80);
+      box-shadow: none;
     }
 
     .wmnds-disruption-indicator-medium {

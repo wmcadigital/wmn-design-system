@@ -9,7 +9,7 @@
 
 {# params.showResults #}
 
-<div class="wmnds-autocomplete{{isLoading}}">
+<div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
   {% from "components/loader/_loader.njk" import wmndsLoader %}
   {#- Get SVG icon and pass class -#}
   <!-- Search icon -->
@@ -32,8 +32,8 @@
   <!-- Autcomplete results -->
   <ul class="wmnds-autocomplete-results">
     {%- for i in range(1,4) %}
-    <li class="wmnds-autocomplete-results__li" title="Good service on X15">
-      <div class="wmnds-col-auto">
+    <li class="wmnds-autocomplete-results__li wmnds-grid" title="Good service on X15" tabindex="0">
+      <div class="wmnds-col-auto" >
         {{
           wmndsDisruptionIndicatorMedium({
             classModifiers: 'wmnds-disruption-indicator-medium',
