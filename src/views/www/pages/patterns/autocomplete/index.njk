@@ -1,42 +1,54 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Autocomplete" %}
 {% set section="Patterns" %}
+{# Imports #}
+{% from "components/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
+<h2>Default</h2>
+{{
+  compExample([
+    wmndsAutocomplete({
+      showResults: true,
+      textResults: true,
+      query: 'search'
+    })
+  ]) | trim
+}}
 
-  <br><br>
-  {# With disruption indicator #}
-  <h2>Default</h2>
-  {% from "components/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
-  {{
-    compExample([
-      wmndsAutocomplete({
-        query: ''
-      })
-    ]) | trim
-  }}
+{# With disruption indicator #}
+<hr><br><br>
+<h2>With disruption indicator</h2>
+<h3>Default</h3>
+{{
+  compExample([
+    wmndsAutocomplete({
+      query: ''
+    })
+  ]) | trim
+}}
 
-  {# Loading #}
-  <h2>Loading</h2>
-  {{
-    compExample([
-      wmndsAutocomplete({
-        query: 'x15',
-        loading: true
-      })
-    ]) | trim
-  }}
+{# Loading #}
+<h3>Loading</h3>
+{{
+  compExample([
+    wmndsAutocomplete({
+      query: 'x15',
+      loading: true
+    })
+  ]) | trim
+}}
 
-  {# Autocomplete results #}
-  <h2>Autocomplete results</h2>
-  {{
-    compExample([
-      wmndsAutocomplete({
-        showResults: true,
-        query: 'x15'
-      })
-    ]) | trim
-  }}
+{# Results #}
+<h3>Results</h3>
+{{
+  compExample([
+    wmndsAutocomplete({
+      showResults: true,
+      query: 'x15'
+    })
+  ]) | trim
+}}
 
 {% endblock %}
