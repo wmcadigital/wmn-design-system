@@ -5,26 +5,26 @@
 {# Params #}
 {% set query = params.query if params.query else "" %} {# default to x15 as query text if one isn't available #}
 {% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
+{% set isLoading = " wmnds-is--loading" if params.loading %}
 
 {# params.showResults #}
 
-<div class="wmnds-autocomplete wmnds-grid">
-  {# Get SVG icon and pass class #}
-  {{-
+<div class="wmnds-autocomplete{{isLoading}}">
+  {% from "components/loader/_loader.njk" import wmndsLoader %}
+  {#- Get SVG icon and pass class -#}
+  <!-- Search icon -->
+  {{
     wmndsIcon({
       icon: 'general-search',
       class: 'wmnds-autocomplete__icon'
-    }) | indent(6) | trim
-  }}
+    }) | indent(2) | trim
+  -}}
+
   {# Loading spinner #}
-  {% from "components/loader/_loader.njk" import wmndsLoader %}
   {{
-    wmndsLoader({
-      customClass: 'wmnds-autocomplete__icon'
-    })
+    wmndsLoader() | indent(2) | trim
   }}
-
-
+  <!-- Autocomplete input box -->
   <input type="text" name="searchExample" aria-label="{{ placeholder }}" class="wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}"/>
 </div>
 

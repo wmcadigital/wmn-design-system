@@ -3,6 +3,7 @@
   display: inline-block;
   position: relative;
   width: 100%;
+  @extend .wmnds-grid;
 
   // autocomplete icon embeded in container to overwrite FontAwesome defaults
   .wmnds-autocomplete__icon {
@@ -63,8 +64,20 @@
     }
   }
 
-  // loading state
+  // Loading state
   .wmnds-loader {
+    display: none;
+    border-width: 3px;
+    @extend .wmnds-autocomplete__icon;
+  }
+  // When loading class is added, show wmnds-loader but hide normal icon
+  &.wmnds-is--loading {
+    .wmnds-autocomplete__icon {
+      display: none;
+    }
+    .wmnds-loader {
+      display: inline-block;
+    }
   }
 }
 
