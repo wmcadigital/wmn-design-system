@@ -6,7 +6,7 @@
 
   <br><br>
   {# With disruption indicator #}
-  <h2>With disruption indicator</h2>
+  <h2>Default</h2>
   {% from "components/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
@@ -17,6 +17,8 @@
     ]) | trim
   }}
 
+  {# Loading #}
+  <h2>Loading</h2>
   {{
     compExample([
       wmndsAutocomplete({
@@ -25,9 +27,9 @@
       })
     ]) | trim
   }}
-  {# End Search #}
 
-
+  {# Autocomplete results #}
+  <h2>Autocomplete results</h2>
   {{
     compExample([
       wmndsAutocomplete({
