@@ -1,15 +1,16 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Autocomplete" %}
+{% set section="Patterns" %}
 
 {% block content %}
 
   <br><br>
   {# With disruption indicator #}
   <h2>With disruption indicator</h2>
-  {% from "components/form-elements/search/_search.njk" import wmndsSearch %}
+  {% from "components/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
-    compExample([wmndsSearch()]) | trim
+    compExample([wmndsAutocomplete()]) | trim
   }}
   {# End Search #}
 

@@ -50,10 +50,13 @@
       "name": "Patterns",
       "subnavItems": [
         {
-          "name": "Progress indicator"
+          "name": "Autocomplete"
         },
         {
           "name": "Header and footer"
+        },
+        {
+          "name": "Progress indicator"
         }
       ]
     }
