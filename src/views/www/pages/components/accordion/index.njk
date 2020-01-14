@@ -1,0 +1,49 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Accordion" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Allows users to reveal or hide related content on a page
+  </li>
+</ul>
+
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    When users need only a few key pieces of content on a single page.
+  </li>
+  <li>
+    When you want users to have control over the content by expanding it or hiding it (progressive disclosure).
+  </li>
+  <li>
+    When you have long, content rich pages and you need to simplify and reduce the amount of content or keep the content on the single page separated by headings.
+  </li>
+  <li>
+    When you want users to use headings to navigate quickly to specific sections of the page (Information architecture).
+  </li>
+</ul>
+
+<h3>When not to use it?</h3>
+<ul>
+  <li>
+    When you are presenting essential information and users care about many topics on the page. If users need to open majority of subtopics to have their questions answered, it will require extra effort and click. Hiding content behind navigation diminishes user's awareness of it.
+  </li>
+</ul>
+
+<p>
+
+</p>
+
+{% from "components/accordion/_accordion.njk" import wmndsAccordion %}
+{{
+  compExample([
+    wmndsAccordion() | trim
+  ])
+}}
+
+{% endblock %}
