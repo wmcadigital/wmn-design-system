@@ -6,6 +6,31 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
+{# About #}
+<h2>About</h2>
+{# What #}
+<h3>What does it do?</h3>
+<p>
+  The autocomplete component is an input field that offers the user text suggestions as they type.<br/>
+  This is often done by hitting an API endpoint with the users query when the user has finished typing.
+</p>
+<p>
+  The autocomplete pattern is a combination of the input, loader components.
+</p>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When user can select multiple options from the list</li>
+  <li>When user wants to toggle option on or off</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When user needs to add a lot of text that might go over multiple lines</li>
+  <li>Use fixed width inputs for content that has known length, e.g. postcode.</li>
+</ul>
+
+<hr><br><br>
 {# Default #}
 <h2>Default</h2>
 {{
