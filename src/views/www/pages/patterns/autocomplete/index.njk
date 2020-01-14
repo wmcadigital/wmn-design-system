@@ -54,7 +54,7 @@
   We do this by adding the class <code class="wmnds-website-inline-code">wmnds--is-loading</code> to the top level of the autocomplete (this is the only difference between the loading state and default state code snippets).
 </p>
 <p>As mentioned in the previous section, there is  a <code class="wmnds-website-inline-code">wmnds-loader</code> component nested in the autocomplete.<br/> When adding the <code class="wmnds-website-inline-code">wmnds--is-loading</code> class, it will hide the search icon and show the loading spinner in it's place.</p>
-<p>Below is an example of how the autocomplete looks when a user has typed in 'My query' and is waiting for autocomplete suggestions to load.
+<p>Below is an example of how the autocomplete looks when a user has typed in 'My query' and is waiting for autocomplete suggestions to load.</p>
 
 <p><strong>It is good practice to:</strong></p>
 <ul>
@@ -74,13 +74,30 @@
 
 <br><br>
 {# Results #}
-<h2>Results</h2>
+<h2>Suggestions</h2>
+<p>The final state of the autocomplete is showing the suggestions.</p>
+<p>You'll notice there is a new section in the code snippet called <code class="wmnds-website-inline-code">wmnds-autocomplete-suggestions</code>, this should be shown/visible when your API/data has loaded the suggestions.</p>
+<p><strong>It's good practice to:</strong></p>
+<ul>
+  <li>Show the suggestions in an unordered list</li>
+  <li>Ensure there is a title tag on the <code class="wmnds-website-inline-code">.wmnds-autocomplete-suggestions__li</code> describing further information about the suggestion</li>
+  <li>Ensure there is a <code class="wmnds-website-inline-code">tabindex="0"</code> attribute on the <code class="wmnds-website-inline-code">.wmnds-autocomplete-suggestions__li</code> to allow users to tab through the results with a keyboard</li>
+</ul>
+
 <h3>Default (text)</h3>
+<p>The most commonly used suggestions will be displayed as text only.</p>
+<p>
+  <strong>It is good practice to:</strong>
+</p>
+<ul>
+  <li>Bold characters that match the users query</li>
+</ul>
+
 {{
   compExample([
     wmndsAutocomplete({
-      showResults: true,
-      textResults: true,
+      showSuggestions: true,
+      textSuggestions: true,
       query: 'My query'
     })
   ]) | trim
@@ -88,13 +105,26 @@
 
 {# With disruption indicator #}
 <h3>With disruption indicator</h3>
+<p>
+  This autocomplete is combined with the <a href="/components/disruption-indicators/" title="Disruption indicator component" target="_self" class="wmnds-link">medium / normal - disruption indicator component</a>.
+</p>
+<p>You will notice that the suggestions are much bigger than text only results, and have an overflow scrollbar. This scrollbar will appear if the height of the suggestion container goes over a certain height.</p>
+<p>
+  As you can see from the code snippet, the main <code class="wmnds-website-inline-code">wmnds-autocomplete-suggestions</code> and <code class="wmnds-website-inline-code">wmnds-autocomplete-suggestions__li</code> classes are prevelant on the ul and li elements. Within the li element we have nested the disruption indicator component whilst also using the <a href="/styles/utility-classes/" title="WMNDS grid system" target="_self" class="wmnds-link">WMNDS grid</a>. This gives enough flexibility to style the suggestions to how we want, find out more in the next section.
+</p>
 {{
   compExample([
     wmndsAutocomplete({
-      showResults: true,
+      showSuggestions: true,
       query: 'x15'
     })
   ]) | trim
 }}
+
+<h3>Customising suggestions</h3>
+<p>There are many ways in which you can show the suggestions, as the autocomplete component has been built in a way that the suggestion results can be custom styled to how you like.</p>
+<p>
+  As long as you have the ul element with the class <code class="wmnds-website-inline-code">wmnds-autocomplete-suggestions</code> which contains a direct child li element that has the class <code class="wmnds-website-inline-code">wmnds-autocomplete-suggestions__li</code> then you can fully customise how you want the suggestions to look.
+</p>
 
 {% endblock %}

@@ -9,8 +9,6 @@
 {% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
 {% set isLoading = " wmnds-is--loading" if params.loading %}
 
-{# params.showResults #}
-
 <div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
   {% from "components/loader/_loader.njk" import wmndsLoader %}
   {#- Get SVG icon and pass class -#}
@@ -30,21 +28,21 @@
   <input type="text" name="searchExample" aria-label="{{ placeholder }}" class="wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}"/>
 </div>
 
-{#- If showResults is true #}
-{% if params.showResults %}
-<!-- Autcomplete results -->
-<ul class="wmnds-autocomplete-results">
-{#- If textOnly results -#}
-{% if params.textResults -%}
+{#- If showSuggestions is true #}
+{% if params.showSuggestions %}
+<!-- Autocomplete suggestions -->
+<ul class="wmnds-autocomplete-suggestions">
+{#- If textOnly suggestions -#}
+{% if params.textSuggestions -%}
   {%- for i in range(1,4) %}
-  <li class="wmnds-autocomplete-results__li" title="Search result {{i}}" tabindex="0">
+  <li class="wmnds-autocomplete-suggestions__li" title="Search result {{i}}" tabindex="0">
     This is <strong>my query</strong> result {{i}}
   </li>
   {%- endfor %}
 {% else -%}
-  {# Disruption indicator results #}
-  {%- for i in range(1,4) %}
-  <li class="wmnds-autocomplete-results__li wmnds-grid" title="Good service on X15" tabindex="0">
+  {# Disruption indicator suggestions #}
+  {%- for i in range(1,6) %}
+  <li class="wmnds-autocomplete-suggestions__li wmnds-grid" title="Good service on X15" tabindex="0">
     <div class="wmnds-col-auto" >
       {{
         wmndsDisruptionIndicatorMedium({
