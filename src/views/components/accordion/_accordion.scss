@@ -1,2 +1,44 @@
 .wmnds-accordion {
+  display: block;
+
+  &__summary {
+    display: block;
+    width: 100%;
+    padding: $size-md;
+    border: 0;
+    background: none;
+    text-align: left;
+    @include type-setting(0);
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    float: right;
+    fill: get-color(secondary);
+  }
+
+  &__content {
+    padding: $size-md;
+  }
+
+  // By default accordion content and minus icon should be hidden
+  &__content,
+  &__icon--minimise {
+    display: none;
+  }
+
+  // When accordion open
+  &.wmnds-is--open {
+    // hide + icon
+    .wmnds-accordion__icon {
+      display: none;
+    }
+
+    // show - icon and content
+    .wmnds-accordion__content,
+    .wmnds-accordion__icon--minimise {
+      display: block;
+    }
+  }
 }

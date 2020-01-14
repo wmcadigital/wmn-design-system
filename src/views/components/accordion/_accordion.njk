@@ -1,7 +1,29 @@
 {% macro wmndsAccordion(params) %}
+{# Imports #}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-accordion">
-  Accordion
+  <button aria-controls="accordion-details-01" class="wmnds-accordion__summary" aria-expanded="false">
+    Accordion
+    <!-- plus icon -->
+    {{
+      wmndsIcon({
+        icon: 'general-expand',
+        class: 'wmnds-accordion__icon'
+      }) | indent(4) | trim
+    }}
+    <!-- minus icon -->
+    {{
+      wmndsIcon({
+        icon: 'general-minimise',
+        class: 'wmnds-accordion__icon wmnds-accordion__icon--minimise'
+      }) | indent(4) | trim
+    }}
+  </button>
+  <!-- Accordion content -->
+  <div class="wmnds-accordion__content" id="accordion-details-01">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, eius repellat dolor vel corporis eos fugiat. Ut totam, incidunt sequi iusto nesciunt illum natus, dolores velit cumque, excepturi labore!
+  </div>
 </div>
 
 {% endmacro %}
