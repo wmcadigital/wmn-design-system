@@ -52,7 +52,13 @@
 {% from "components/loader/_loader.njk" import wmndsLoader %}
 {{
   compExample([
-    wmndsLoader()
+    wmndsLoader({
+      size: 'small'
+    }),
+    wmndsLoader(),
+    wmndsLoader({
+      size: 'large'
+    })
   ])
 }}
 

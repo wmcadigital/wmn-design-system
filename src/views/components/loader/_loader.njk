@@ -1,17 +1,14 @@
+{# THIS IS USED BY 'AUTOCOMPLETE' COMPONENT/PATTERN, ANY CHANGES TO THIS COMPONENT COULD EFFECT IT. #}
 {% macro wmndsLoader(params) %}
 
-<!-- Large sized loader -->
-<div class="wmnds-loader wmnds-loader--large" role="alert" aria-live="assertive">
-  <p class="wmnds-loader__content">Content is loading...</p>
-</div>
+{# If size is defined then append that to the class modifier and use below.
+Only two size modifiers are 'large' and 'small' #}
+{% set size = " wmnds-loader--" + params.size if params.size %}
+{% set commentSize = params.size if params.size else "normal" %}
+{% set customClass = " " + params.customClass if params.customClass %} {# Allows custom classes to be added to loader #}
 
-<!-- Normal sized loader -->
-<div class="wmnds-loader" role="alert" aria-live="assertive">
-  <p class="wmnds-loader__content">Content is loading...</p>
-</div>
-
-<!-- Small sized loader -->
-<div class="wmnds-loader wmnds-loader--small" role="alert" aria-live="assertive">
+<!-- {{commentSize}} sized loader -->
+<div class="wmnds-loader{{size}}{{customClass}}" role="alert" aria-live="assertive">
   <p class="wmnds-loader__content">Content is loading...</p>
 </div>
 
