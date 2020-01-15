@@ -1,5 +1,6 @@
 .wmnds-accordion {
   display: block;
+  border: 1px solid get-color(primary);
 
   &__summary {
     display: block;
