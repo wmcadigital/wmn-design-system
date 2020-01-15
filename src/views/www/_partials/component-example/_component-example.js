@@ -6,12 +6,12 @@ function showCode() {
 
       // if the btn clicked contains this class, then it must be active, so reset it back to the norm
       if (btn.classList.contains('wmnds-js-show-code--active')) {
-        btn.parentElement.querySelector('.hljs').style.maxHeight = '200px';
+        btn.previousSibling.querySelector('.hljs').style.maxHeight = '200px';
         btn.classList.remove('wmnds-js-show-code--active');
         btn.innerText = 'Show more code';
       } else {
         // Else expand the code preview to 100%
-        btn.parentElement.querySelector('.hljs').style.maxHeight = '100%';
+        btn.previousSibling.querySelector('.hljs').style.maxHeight = '100%';
         btn.classList.add('wmnds-js-show-code--active');
         btn.innerText = 'Show less code';
       }
