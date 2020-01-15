@@ -57,6 +57,78 @@ html {
   }
 }
 
+// MARGINS AND PADDINGS
+// Helper mixin used to generate various sizes of margin/padding
+@mixin x-mar-pad($position, $type: "margin") {
+  &-xs {
+    #{$type}#{$position}: $size-xs;
+  }
+
+  &-sm {
+    #{$type}#{$position}: $size-sm;
+  }
+
+  &-md {
+    #{$type}#{$position}: $size-md;
+  }
+
+  &-lg {
+    #{$type}#{$position}: $size-lg;
+  }
+
+  &-xl {
+    #{$type}#{$position}: $size-xl;
+  }
+
+  &-none {
+    #{$type}#{$position}: 0;
+  }
+}
+
+.wmnds {
+  // Generate all margin classes
+  &-m {
+    @include x-mar-pad("");
+
+    &-t {
+      @include x-mar-pad("-top");
+    }
+
+    &-r {
+      @include x-mar-pad("-right");
+    }
+
+    &-b {
+      @include x-mar-pad("-bottom");
+    }
+
+    &-l {
+      @include x-mar-pad("-left");
+    }
+  }
+
+  // Generate all padding classes
+  &-p {
+    @include x-mar-pad("", "padding");
+
+    &-t {
+      @include x-mar-pad("-top", "padding");
+    }
+
+    &-r {
+      @include x-mar-pad("-right", "padding");
+    }
+
+    &-b {
+      @include x-mar-pad("-bottom", "padding");
+    }
+
+    &-l {
+      @include x-mar-pad("-left", "padding");
+    }
+  }
+}
+
 // Show/hide on desktop devices only
 .show-desktop {
   @media screen and (max-width: 767px) {
@@ -76,17 +148,6 @@ html {
   }
   @media screen and (max-width: 1024px) {
     display: inline-block;
-  }
-}
-
-// Background Colours
-.bg {
-  &-white {
-    background-color: $white;
-  }
-
-  &-none {
-    background-color: transparent;
   }
 }
 
