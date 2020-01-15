@@ -1,10 +1,28 @@
 {% macro wmndsAccordion(params) %}
 {# Imports #}
 {% from "components/icon/_icon.njk" import wmndsIcon %}
+{% from "components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
+{# Params #}
+{% set isOpen = " wmnds-is--open" if params.isOpen %}
 
-<div class="wmnds-accordion">
-  <button aria-controls="accordion-details-01" class="wmnds-accordion__summary" aria-expanded="false">
-    Accordion
+
+<div class="wmnds-accordion{{isOpen}}">
+  <button aria-controls="accordion-details-{{isOpen}}-01" class="wmnds-accordion__summary-wrapper" aria-expanded="false">
+    <div class="wmnds-accordion__summary">
+      {# <h4>Accordion</h4> #}
+      <div class="wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
+        <div class="wmnds-col-auto">
+          {{
+            wmndsDisruptionIndicatorSmall({
+              mode: 'bus'
+            })
+          }}
+        </div>
+        <div class="wmnds-col-auto">
+          Resurfacing Works at <strong>Abbey Street, Lower Gornal</strong>
+        </div>
+      </div>
+    </div>
     <!-- plus icon -->
     {{
       wmndsIcon({
@@ -21,8 +39,13 @@
     }}
   </button>
   <!-- Accordion content -->
-  <div class="wmnds-accordion__content" id="accordion-details-01">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, eius repellat dolor vel corporis eos fugiat. Ut totam, incidunt sequi iusto nesciunt illum natus, dolores velit cumque, excepturi labore!
+  <div class="wmnds-accordion__content" id="accordion-details-{{isOpen}}-01">
+    <p>
+      <strong>Some random subtitle</strong>
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, eius repellat dolor vel corporis eos fugiat. Ut totam, incidunt sequi iusto nesciunt illum natus, dolores velit cumque, excepturi labore!
+    </p>
   </div>
 </div>
 

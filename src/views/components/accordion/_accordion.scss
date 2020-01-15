@@ -2,7 +2,7 @@
   display: block;
   border: 1px solid get-color(primary);
 
-  &__summary {
+  &__summary-wrapper {
     display: block;
     width: 100%;
     padding: $size-md;
@@ -10,6 +10,13 @@
     background: none;
     text-align: left;
     @include type-setting(0);
+  }
+
+  &__summary {
+    display: inline-block;
+    width: calc(100% - 32px);
+    padding-right: $size-md;
+    vertical-align: middle;
   }
 
   &__icon {
