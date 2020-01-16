@@ -81,7 +81,7 @@ html {
   }
 
   &-none {
-    #{$type}#{$side}: 0;
+    #{$type}#{$side}: 0 !important;
   }
 }
 
