@@ -68,50 +68,69 @@
 
 
 <hr>
-<h2>Margins</h2>
-<pre class="wmnds-col-1">
-  <code class="scss" tabindex="0">
-    /* Margin: all sides */
-    .wmnds-mar-xs           // margin: .25rem
-    .wmnds-mar-sm           // margin: .75rem
-    .wmnds-mar-md           // margin: 1rem
-    .wmnds-mar-lg           // margin: 2rem
-    .wmnds-mar-xl           // margin: 3rem
-    .wmnds-mar-none         // margin: 0
+<h2>Spacing</h2>
+<p>
+  The spacing utility classes are used to adjust whitespace for an element via padding and margins.
+</p>
+<p>
+  The classes are named using the format <code class="wmnds-website-inline-code">.wmnds-{type}-{side}-{size}</code>.
+</p>
+{# type #}
+<p>
+  Where <code class="wmnds-website-inline-code">{type}</code> is one of:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">m</code> - for classes that set <code class="wmnds-website-inline-code">margin</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">p</code> - for classes that set <code class="wmnds-website-inline-code">padding</code>
+  </li>
+</ul>
+{# side #}
+<p>
+  Where <code class="wmnds-website-inline-code">{side}</code> is one of:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">t</code> - for classes that set <code class="wmnds-website-inline-code">margin-top</code> or <code class="wmnds-website-inline-code">padding-top</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">r</code> - for classes that set <code class="wmnds-website-inline-code">margin-right</code> or <code class="wmnds-website-inline-code">padding-right</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">b</code> - for classes that set <code class="wmnds-website-inline-code">margin-bottom</code> or <code class="wmnds-website-inline-code">padding-bottom</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">l</code> - for classes that set <code class="wmnds-website-inline-code">margin-left</code> or <code class="wmnds-website-inline-code">padding-left</code>
+  </li>
+  <li>
+    blank - for classes that set a <code class="wmnds-website-inline-code">margin</code> or <code class="wmnds-website-inline-code">padding</code> on all 4 sides of the element
+  </li>
+</ul>
+{# size #}
+<p>
+Where <code class="wmnds-website-inline-code">{size}</code> is one of:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">xs</code> - set size to
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">sm</code> - set size to
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">md</code> - set size to
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">lg</code> - set size to
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">xl</code> - set size to
+  </li>
+</ul>
 
-    /* Margin top */
-    .wmnds-mar-top-xs       // margin-top: .25rem
-    .wmnds-mar-top-sm       // margin-top: .75rem
-    .wmnds-mar-top-md       // margin-top: 1rem
-    .wmnds-mar-top-lg       // margin-top: 2rem
-    .wmnds-mar-top-xl       // margin-top: 3rem
-    .wmnds-mar-top-none     // margin-top: 0
 
-    /* Margin right */
-    .wmnds-mar-right-xs     // margin-right: .25rem
-    .wmnds-mar-right-sm     // margin-right: .75rem
-    .wmnds-mar-right-md     // margin-right: 1rem
-    .wmnds-mar-right-lg     // margin-right: 2rem
-    .wmnds-mar-right-xl     // margin-right: 3rem
-    .wmnds-mar-right-none   // margin-right: 0
-
-    /* Margin bottom */
-    .wmnds-mar-bottom-xs    // margin-bottom: .25rem
-    .wmnds-mar-bottom-sm    // margin-bottom: .75rem
-    .wmnds-mar-bottom-md    // margin-bottom: 1rem
-    .wmnds-mar-bottom-lg    // margin-bottom: 2rem
-    .wmnds-mar-bottom-xl    // margin-bottom: 3rem
-    .wmnds-mar-bottom-none  // margin-bottom: 0
-
-    /* Margin left */
-    .wmnds-mar-left-xs      // margin-left: .25rem
-    .wmnds-mar-left-sm      // margin-left: .75rem
-    .wmnds-mar-left-md      // margin-left: 1rem
-    .wmnds-mar-left-lg      // margin-left: 2rem
-    .wmnds-mar-left-xl      // margin-left: 3rem
-    .wmnds-mar-left-none    // margin-left: 0
-  </code>
-</pre>
 
 
 {% endblock %}

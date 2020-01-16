@@ -59,29 +59,29 @@ html {
 
 // MARGINS AND PADDINGS
 // Helper mixin used to generate various sizes of margin/padding
-@mixin x-mar-pad($position, $type: "margin") {
+@mixin x-mar-pad($side, $type: "margin") {
   &-xs {
-    #{$type}#{$position}: $size-xs;
+    #{$type}#{$side}: $size-xs;
   }
 
   &-sm {
-    #{$type}#{$position}: $size-sm;
+    #{$type}#{$side}: $size-sm;
   }
 
   &-md {
-    #{$type}#{$position}: $size-md;
+    #{$type}#{$side}: $size-md;
   }
 
   &-lg {
-    #{$type}#{$position}: $size-lg;
+    #{$type}#{$side}: $size-lg;
   }
 
   &-xl {
-    #{$type}#{$position}: $size-xl;
+    #{$type}#{$side}: $size-xl;
   }
 
   &-none {
-    #{$type}#{$position}: 0;
+    #{$type}#{$side}: 0;
   }
 }
 
