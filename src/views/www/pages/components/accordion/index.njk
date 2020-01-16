@@ -38,18 +38,28 @@
 <p>
 
 </p>
-
+<h2>Closed</h2>
 {% from "components/accordion/_accordion.njk" import wmndsAccordion %}
 {{
   compExample([
     wmndsAccordion() | trim
   ])
 }}
-
+<h2>Open</h2>
 {{
   compExample([
     wmndsAccordion({
       isOpen: true
+    }) | trim
+  ])
+}}
+
+<h2>Custom</h2>
+{{
+  compExample([
+    wmndsAccordion({
+      isOpen: true,
+      customSummary: true
     }) | trim
   ])
 }}

@@ -2,26 +2,31 @@
 {# Imports #}
 {% from "components/icon/_icon.njk" import wmndsIcon %}
 {% from "components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
+{% from "components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %}
+{% from "components/icon/_icon.njk" import wmndsIcon %}
 {# Params #}
 {% set isOpen = " wmnds-is--open" if params.isOpen %}
 
-
 <div class="wmnds-accordion{{isOpen}}">
   <button aria-controls="accordion-details-{{isOpen}}-01" class="wmnds-accordion__summary-wrapper" aria-expanded="false">
+    <!-- accordion summary -->
     <div class="wmnds-accordion__summary">
-      {# <h4>Accordion</h4> #}
+      {% if params.customSummary -%}
+      <!-- custom summary using grid -->
       <div class="wmnds-grid wmnds-grid--align-center">
-        <div class="wmnds-col-auto wmnds-m-r-md">
-          {{
-            wmndsDisruptionIndicatorSmall({
-              mode: 'bus'
-            })
-          }}
-        </div>
+        {{
+          wmndsDisruptionIndicatorSmall({
+            classModifiers: 'wmnds-col-auto wmnds-m-r-md',
+            mode: 'bus'
+          }) | indent(10) | trim
+        }}
         <div class="wmnds-col-auto">
           Resurfacing Works at <strong>Abbey Street, Lower Gornal</strong>
         </div>
       </div>
+      {%- else -%}
+        <h4>Accordion</h4>
+      {%- endif %}
     </div>
     <!-- plus icon -->
     {{
@@ -38,7 +43,8 @@
       }) | indent(4) | trim
     }}
   </button>
-  <!-- Accordion content -->
+
+  <!-- accordion content -->
   <div class="wmnds-accordion__content" id="accordion-details-{{isOpen}}-01">
     <p>
       <strong>Some random subtitle</strong>
