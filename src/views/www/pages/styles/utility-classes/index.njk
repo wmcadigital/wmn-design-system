@@ -67,5 +67,86 @@
 </pre>
 
 
+<hr>
+<h2>Spacing</h2>
+<p>
+  The spacing utility classes are used to adjust whitespace for an element via padding and margins.
+</p>
+<p>Before using the spacing utility classes, please consider:</p>
+<ul>
+  <li>Most components already come with defined spacing. This spacing shouldn't be overwritten.</li>
+  <li>Spacing should be used as a last resort to help layout components on a page.</li>
+  <li>You can use <code class="wmnds-website-inline-code">none</code> as a size to enforce zero margin or padding.</li>
+</ul>
+
+<p>
+  The classes are named using the format <code class="wmnds-website-inline-code">.wmnds-{type}-{side}-{size}</code>.
+</p>
+{# type #}
+<p>
+  Where <code class="wmnds-website-inline-code">{type}</code> is one of:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">m</code> - for classes that set <code class="wmnds-website-inline-code">margin</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">p</code> - for classes that set <code class="wmnds-website-inline-code">padding</code>
+  </li>
+</ul>
+{# side #}
+<p>
+  Where <code class="wmnds-website-inline-code">{side}</code> is one of:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">t</code> - for classes that set <code class="wmnds-website-inline-code">margin-top</code> or <code class="wmnds-website-inline-code">padding-top</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">r</code> - for classes that set <code class="wmnds-website-inline-code">margin-right</code> or <code class="wmnds-website-inline-code">padding-right</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">b</code> - for classes that set <code class="wmnds-website-inline-code">margin-bottom</code> or <code class="wmnds-website-inline-code">padding-bottom</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">l</code> - for classes that set <code class="wmnds-website-inline-code">margin-left</code> or <code class="wmnds-website-inline-code">padding-left</code>
+  </li>
+  <li>
+    blank - for classes that set a <code class="wmnds-website-inline-code">margin</code> or <code class="wmnds-website-inline-code">padding</code> on all 4 sides of the element
+  </li>
+</ul>
+{# size #}
+<p>
+Where <code class="wmnds-website-inline-code">{size}</code> is one of:
+</p>
+<ul>
+  <li>
+    <code class="wmnds-website-inline-code">xs</code> - set size to <code class="wmnds-website-inline-code">0.25rem</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">sm</code> - set size to <code class="wmnds-website-inline-code">0.75rem</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">md</code> - set size to <code class="wmnds-website-inline-code">1rem</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">lg</code> - set size to <code class="wmnds-website-inline-code">2rem</code>
+  </li>
+  <li>
+    <code class="wmnds-website-inline-code">xl</code> - set size to <code class="wmnds-website-inline-code">3rem</code>
+  </li>
+</ul>
+
+<p>Some examples of using these utility classes...</p>
+<pre>
+  <code>
+    .wmnds-m-xs // applies a margin of 0.25rem to all sides
+    .wmnds-p-b-lg // applies a padding-bottom of 2rem
+    .wmnds-m-l-none // sets left margin to 0
+  </code>
+</pre>
+
+
+
 
 {% endblock %}

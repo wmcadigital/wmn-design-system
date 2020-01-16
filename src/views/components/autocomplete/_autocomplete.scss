@@ -26,15 +26,6 @@
     }
   }
 
-  // autocomplete Specific Styles
-  &__results-list {
-    position: absolute;
-    z-index: 1000;
-    width: 100%;
-    margin-top: 0;
-    padding: 0;
-  }
-
   // Loading state
   .wmnds-loader {
     display: none;
@@ -53,6 +44,7 @@
   }
 }
 
+// Autocomplete suggestions/results styling
 .wmnds-autocomplete-suggestions {
   max-height: 300px;
   margin-top: 0;

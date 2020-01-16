@@ -21,6 +21,9 @@
       "name": "Components",
       "subnavItems": [
         {
+          "name": "Accordion"
+        },
+        {
           "name": "Breadcrumb"
         },
         {

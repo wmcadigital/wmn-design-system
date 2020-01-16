@@ -1,0 +1,68 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Accordion" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Allows users to reveal or hide related content on a page
+  </li>
+</ul>
+
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    When users need only a few key pieces of content on a single page.
+  </li>
+  <li>
+    When you want users to have control over the content by expanding it or hiding it (progressive disclosure).
+  </li>
+  <li>
+    When you have long, content rich pages and you need to simplify and reduce the amount of content or keep the content on the single page separated by headings.
+  </li>
+  <li>
+    When you want users to use headings to navigate quickly to specific sections of the page (Information architecture).
+  </li>
+</ul>
+
+<h3>When not to use it?</h3>
+<ul>
+  <li>
+    When you are presenting essential information and users care about many topics on the page. If users need to open majority of subtopics to have their questions answered, it will require extra effort and click. Hiding content behind navigation diminishes user's awareness of it.
+  </li>
+</ul>
+
+<hr><br><br>
+{# Closed #}
+<h2>Closed</h2>
+<p>In its closed state, the accordions <code class="wmnds-website-inline-code">.wmnds-accordion__content</code> is hidden from view.</p>
+<p>Everything you can see whilst the accordion is in this state is nested within the <code class="wmnds-website-inline-code">button.wmnds-accordion-summary-wrapper</code> element.</p>
+{% from "components/accordion/_accordion.njk" import wmndsAccordion %}
+{{
+  compExample([
+    wmndsAccordion() | trim
+  ])
+}}
+<h2>Open</h2>
+{{
+  compExample([
+    wmndsAccordion({
+      isOpen: true
+    }) | trim
+  ])
+}}
+
+<h2>Custom</h2>
+{{
+  compExample([
+    wmndsAccordion({
+      isOpen: true,
+      customSummary: true
+    }) | trim
+  ])
+}}
+
+{% endblock %}
