@@ -12,7 +12,7 @@ module.exports = {
     reactNativeSrc: 'src/views/wmnds/assets/sass/wmnds-components.scss'
   },
   scripts: {
-    src: ['src/assets/**/*.js', 'src/views/components/**/*.js', './src/views/www/**/*.js'], // Src of JS files to watch
+    src: ['src/views/**/*.js'], // Src of JS files to watch
     // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
     minifySrc: [
       {
@@ -29,7 +29,7 @@ module.exports = {
     output: 'build/'
   },
   svgs: {
-    src: 'src/assets/icon/**/*.svg',
+    src: 'src/views/wmnds/assets/icon/**/*.svg',
     dest: 'build/img/'
   },
   images: {
@@ -38,7 +38,7 @@ module.exports = {
     dest: 'build/img/'
   },
   config: {
-    src: 'src/assets/config/**/*',
+    src: 'src/views/www/assets/config/**/*',
     output: 'build/config/'
   },
   logs: {
