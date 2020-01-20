@@ -14,18 +14,7 @@
 @import "wmnds-grid";
 
 // Component Styles
-@import "../../views/wmnds/components/accordion/accordion"; // accordion
-@import "../../views/wmnds/components/breadcrumb/breadcrumb"; // breadcrumb
-@import "../../views/wmnds/components/button/button"; // buttons
-@import "../../views/wmnds/components/disruption-indicator/disruption-indicator"; // Disruption indicators
-@import "../../views/wmnds/components/form-elements/form-elements"; // Form elements
-@import "../../views/wmnds//components/link/link"; // Link elements
-@import "../../views/wmnds//components/loader/loader"; // Loader
-@import "../../views/wmnds/components/message/message"; // Messages
-@import "../../views/wmnds/components/phase-indicator/phase-indicator"; // Phase indicator
+@import "../../views/wmnds/components/components"; // Import all pattern styles
 
-// Patter Styles
-@import "../../views/wmnds/components/autocomplete/autocomplete"; // Autocomplete
-@import "../../views/wmnds/components/feedback-loop/feedback-loop"; // Feedback loop
-@import "../../views/wmnds/components/progress-indicator/progress-indicator"; // Progress indicator
-@import "../../views/wmnds/components/header/header"; // Header styles
+// Pattern Styles
+@import "../../views/wmnds/patterns/patterns"; // Import all pattern styles
