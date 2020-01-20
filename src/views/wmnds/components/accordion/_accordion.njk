@@ -6,10 +6,11 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Params #}
 {% set isOpen = " wmnds-is--open" if params.isOpen %}
+{% set isExpanded = "true" if params.isOpen else "false" %}
 {% set id = params.id if params.id else "accordion-01" %}
 
 <div class="wmnds-accordion{{isOpen}}">
-  <button aria-controls="{{id}}" class="wmnds-accordion__summary-wrapper" aria-expanded="false">
+  <button aria-controls="{{id}}" class="wmnds-accordion__summary-wrapper" aria-expanded="{{isExpanded}}">
     <!-- accordion summary -->
     <div class="wmnds-accordion__summary">
       {% if params.customSummary -%}
