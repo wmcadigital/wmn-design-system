@@ -4,14 +4,14 @@ const plugins = require('gulp-load-plugins')();
 // Local requires
 const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
-const njkData = require('../src/views/www/data.njk.json');
+const njkData = require('../src/www/data.njk.json');
 
 module.exports = () => {
   return src(paths.nunjucks.websiteSrc)
     .pipe(plugins.data(() => njkData))
     .pipe(
       plugins.nunjucksRender({
-        path: 'src/views/',
+        path: 'src/',
         watch: true
       })
     )

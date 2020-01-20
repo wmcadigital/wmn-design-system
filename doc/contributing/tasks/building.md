@@ -75,13 +75,13 @@ Build commands are used for when code is to be compiled to an output that is sui
 - Mangles and minifies the file
 - Creates three files in `{root}/build/js/`
   - `wmnds-website.min.js`
-    - Created from any javascript files found in `{root}/src/views/wmnds-website/**/*.js`
+    - Created from any javascript files found in `{root}/src/wmnds-website/**/*.js`
     - For styleguide specific items only
   - `vendor.min.js`
     - Created from any javascript files found in `{root}/src/assets/js/vendor/**/*.js`
     - For any vendor/third-party scripts that are required for components
   - `wmn.min.js`
-    - Created from any javascript files found in `['src/assets/js/wmn.js', 'src/views/components/**/*.js']`
+    - Created from any javascript files found in `['src/assets/js/wmn.js', 'src/components/**/*.js']`
     - For any custom javascript associated with a component
 - Creates sourcemaps in `{route}/_sourcemaps/`
 
