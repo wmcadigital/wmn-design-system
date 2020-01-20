@@ -44,7 +44,7 @@ Linting is the process of analysing code for potential errors and flagging them 
 ### 1.2.3. File(s) that are linted
 
 - `{root}/src/assets/sass/**/*.scss`
-- `{root}/src/views/**/*.scss`
+- `{root}/src/**/*.scss`
 
 ### 1.2.4. Config
 
@@ -64,7 +64,7 @@ The config files are located at:
 - Lints html files via [htmlhint](https://www.npmjs.com/package/gulp-htmlhint).
 - Flags errors up in terminal.
 - Lints html files to ensure correct accessibility tags are used, these are up to [WCAG2AA standards](https://www.w3.org/WAI/GL/WCAG20/).
-- Produces a folder at `{root}/\_accessibility-logs/` which contains a directory structure exactly the same as the projects `{root}src/views/` directory. Within these folders is a json file which shows the accessibility errors/warnings for the html file referenced at the top of the file.
+- Produces a folder at `{root}/\_accessibility-logs/` which contains a directory structure exactly the same as the projects `{root}src/` directory. Within these folders is a json file which shows the accessibility errors/warnings for the html file referenced at the top of the file.
 
 ### 1.3.3. File(s) that are linted:
 
@@ -91,7 +91,7 @@ The config files are located at:
 ### 1.4.3. File(s) that are linted
 
 - `{root}/src/assets/js/wmn.js`
-- `{root}/src/views/**/*.js`
+- `{root}/src/**/*.js`
 
 `**/*.min.js` are ignored for linting as these files are presumed to have already been linted, mangled and minified.
 

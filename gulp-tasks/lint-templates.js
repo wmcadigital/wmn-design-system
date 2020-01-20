@@ -6,7 +6,7 @@ const del = require('del');
 const nodePath = require('path');
 const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
-const njkData = require('../src/views/www/data.njk.json');
+const njkData = require('../src/www/data.njk.json');
 
 module.exports = () => {
   return (
@@ -15,7 +15,7 @@ module.exports = () => {
       .pipe(plugins.data(() => njkData))
       .pipe(
         plugins.nunjucksRender({
-          path: 'src/views/',
+          path: 'src/',
           watch: true
         })
       )

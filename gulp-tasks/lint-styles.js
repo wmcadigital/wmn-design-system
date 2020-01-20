@@ -12,5 +12,4 @@ module.exports = () => {
       })
     )
     .pipe(plugins.sassLint.format());
-    // .pipe(plugins.sassLint.failOnError());
 };

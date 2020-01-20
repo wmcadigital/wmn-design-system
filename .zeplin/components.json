@@ -3,7 +3,7 @@
   "styleguides": ["5d95b0aaad77af16c796a476"],
   "components": [
     {
-      "path": "src/views/components/phase-indicator/_phase-indicator.njk",
+      "path": "src/components/phase-indicator/_phase-indicator.njk",
       "zeplinNames": ["Phase indicator / Mobile", "Phase indicator / Desktop"],
       "wmnds": {
         "urlPath": "components/phase-indicator/"

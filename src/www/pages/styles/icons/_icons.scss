@@ -1,0 +1,12 @@
+.website-icons {
+  svg {
+    width: 60px;
+    height: 60px;
+    padding: $size-sm;
+    fill: get-color(primary);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+}

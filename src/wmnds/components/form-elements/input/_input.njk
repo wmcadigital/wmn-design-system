@@ -1,0 +1,17 @@
+{% macro wmndsInput(params) %}
+
+{# Imports #}
+{% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+
+
+<div class="wmnds-fe-input">
+  {{
+    wmndsLabel({
+      label: 'Input label',
+      for: 'input'
+    }) | trim
+  }}
+  <input type="text" name="input" id="input" class="wmnds-col-1"/>
+</div>
+
+{% endmacro %}

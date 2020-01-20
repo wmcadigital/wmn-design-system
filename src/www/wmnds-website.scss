@@ -1,0 +1,91 @@
+// Vars
+@import "../wmnds/assets/sass/vars";
+
+// Mixins
+@import "../wmnds/assets/sass/mixins";
+
+// Styleguide only styles
+@import "_partials/footer/footer";
+
+@import "_partials/component-example/component-example";
+
+// Styleguide page specific styles
+@import "pages/home";
+@import "pages/styles/colour-palettes/colorPalette";
+@import "pages/styles/icons/icons";
+// @import 'pages/marks';
+// @import 'pages/header';
+
+$component-code-bg: #efefef;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.component-details {
+  margin-top: $size-md;
+  margin-bottom: $size-lg;
+}
+
+.component-details__code {
+  display: inline-block;
+  width: 100%;
+  margin: $size-sm 0;
+  padding: $size-sm;
+  border-left: 2px solid rgba(get-color(primary), 0.5);
+  border-radius: 4px;
+  background-color: $component-code-bg;
+}
+
+.component-details__title {
+  @include type-setting(2);
+  font-weight: 700;
+}
+
+.component-details__text {
+  color: rgba($black, 0.5);
+  font-weight: 400;
+}
+
+// icons background colour
+.icon__type {
+  text-align: center;
+
+  &--bg {
+    display: inline-block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    padding: $size-sm;
+    border-radius: 50%;
+    background-color: get-color(secondary);
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+  }
+
+  &--caption {
+    padding-top: $size-sm;
+  }
+}
+
+.vertical-align-mid {
+  display: block;
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.wmnds-website-inline-code {
+  padding: $size-xs;
+  color: get-color(primary);
+  background: get-color(background);
+  @include type-setting(4);
+}

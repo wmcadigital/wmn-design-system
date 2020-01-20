@@ -4,42 +4,45 @@
 
   Source files. See [README.md](../../src/README.md) in the src directory for details.
 
-  - `assets/`
+  - `wmnds/`
 
-    App-specific assets.
+    This is where the core library of all components/patterns are built using nunjucks for the WMN Design System. These are then referenced by the Design System Website to show examples to other collaborators.
 
-    - `config/`
+    - `assets/`
 
-      Browserconfig and webmanifest configs for the WMN Design System.
+      App-specific assets.
 
-    - `img/`
+      - `img/`
 
-      Images that are used in components or the design system.
+        Images that are used in components or the design system.
 
-    - `vendor/`
+      - `sass/`
 
-      Contains any CSS/Sass and JS files for third-party vendors which is used in WMN components.
+        Any core SASS/SCSS that is used for styling components/patterns etc. should be placed in here and then referenced in `src/wmnds/assets/sass/wmnds.scss`. Note: Anything referenced will appear in the live build.
 
-      - `css/`
+        - `components/`
 
-      Any CSS that is from a vendor should be placed in here and then referenced in `src/assets/sass/wmnds.scss`
+          Examples of components usage in various contexts. See [README.md](../../src/components/README.md) in the components directory for more details. You can access these examples from [WMN Design System components](http://localhost:3000/components/).
 
-      - `js/`
+        - `patterns/`
 
-        Any javascript files located in here will be concatenated and compiled into `build/js/wmnds-vendor.min.js` via the [javascript build task](tasks.md#markdown-header-141-scripts-javascript).
+          Examples of pattern usage in various contexts. See [README.md](../../src/components/README.md) in the components directory for more details. You can access these examples from [WMN Design System patterns](http://localhost:3000/patterns/).
 
+    - `www/`
 
-    -   `views/`
+      Anything that is specific for the [WMN Design System website](http://localhost:3000) goes in this folder. It also contains generic layout templates used to render preview and content pages.
 
-        Various html, sass and js files for generation of components and styleguide.
+      - `assets/`
 
-        -   `components/`
+        Design System website-specific assets.
 
-            Examples of components usage in various contexts. See [README.md](../../src/views/components/README.md) in the components directory for more details. You can access these examples from the home page of the [WMN Design System](http://localhost:3000).
+        - `config/`
 
-        -   `www/`
+          Browserconfig and webmanifest configs for the WMN Design System website.
 
-            Anything that is specific for the [WMN Design System website](http://localhost:3000) goes in this folder. It also contains generic layout templates used to render preview and content pages.
+        - `js/`
+
+          Any javascript files located in here will be concatenated and compiled into `build/js/wmnds-vendor.min.js` via the [javascript build task](tasks.md#markdown-header-141-scripts-javascript).
 
 - `build/` **contains auto-generated files**
 
