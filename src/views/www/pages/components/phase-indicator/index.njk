@@ -29,7 +29,7 @@
   A service can either be in Alpha (prototype stage) or Beta (when it is on a publicly accessible website).
 </p>
 
-  {% from "components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+  {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsPhaseIndicator()])

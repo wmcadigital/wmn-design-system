@@ -1,6 +1,6 @@
 {% macro wmnButton(params) %}
 {# Imports #}
-{% from "components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Set #}
 {% set text = params.text if params.text else "Button text" %} {# set button text #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}

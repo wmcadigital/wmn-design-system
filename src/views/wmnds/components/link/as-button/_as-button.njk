@@ -1,6 +1,6 @@
 {% macro wmndsLinkAsButton(params) %}
 {# Imports #}
-{% from "components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Set vars #}
 {% set classNames = " " + params.classNames if params.classNames %} {# set params.classNames if any #}
 {% set text = params.text if params.text else "Button text" %} {# set button text #}

@@ -66,7 +66,7 @@
   <li>The start of a process</li>
   <li>When the link is a destructive action</li>
 </ul>
-{% from "components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {{
   compExample([
     wmndsLink()
@@ -92,7 +92,7 @@
 <ul>
   <li>Not sure yet</li>
 </ul>
-{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as primary -%}
+{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as primary -%}
 {{
   compExample([
     primary({
@@ -129,7 +129,7 @@
   <li>When a button is a destructive action</li>
   <li>When a button starts a process or journey</li>
 </ul>
-{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as secondary -%}
+{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as secondary -%}
 {{
   compExample([
     secondary({
@@ -167,7 +167,7 @@
   <li>When a button is a destructive action</li>
   <li>When a button starts a process or journey</li>
 </ul>
-{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
+{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
 {{
   compExample([
     cta({
@@ -206,7 +206,7 @@
   <li>When a button starts a process or journey</li>
   <li>When a button is trying to attract the user's attention</li>
 </ul>
-{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as destructive -%}
+{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as destructive -%}
 {{
   compExample([
     destructive({
@@ -245,7 +245,7 @@
   <li>When a button is trying to attract the user's attention</li>
   <li>When the button is inessential for continuing the user journey</li>
 </ul>
-{%- from "components/link/as-button/_as-button.njk" import wmndsLinkAsButton as start -%}
+{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as start -%}
 {{
   compExample([
     start({

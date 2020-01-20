@@ -47,7 +47,7 @@
   <li>The attribute <code class="wmnds-website-inline-code">aria-expanded</code> is set to "false" when in the closed state. Again, this helps with accessibility.</li>
   <li>The only thing not visible in the <code class="wmnds-website-inline-code">button.wmnds-accordion-summary-wrapper</code> is the minimise icon.</li>
 </ul>
-{% from "components/accordion/_accordion.njk" import wmndsAccordion %}
+{% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
 {{
   compExample([
     wmndsAccordion() | trim
