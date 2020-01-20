@@ -14,7 +14,7 @@
     <![endif]-->
 
     {# header #}
-    {% from "wmnds/components/header/_header.njk" import wmndsHeader %}
+    {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
     {{
       wmndsHeader ({
         navItems: navItems
@@ -42,7 +42,7 @@
     </main>
 
     {# Feedback #}
-    {% from "wmnds/components/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
+    {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
     {{
       wmndsFeedbackLoop()
     }}

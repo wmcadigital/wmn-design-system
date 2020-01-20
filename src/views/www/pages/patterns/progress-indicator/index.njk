@@ -1,6 +1,9 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Progress indicator" %}
 {% set section="Patterns" %}
+{# Imports #}
+{% from "wmnds/patterns/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
   <h2>About</h2>
@@ -22,8 +25,6 @@
     <li>If the process is a single step</li>
   </ul>
 
-  {% from "wmnds/components/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsProgressIndicator()])
   }}

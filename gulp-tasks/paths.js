@@ -47,9 +47,6 @@ module.exports = {
     src: 'src/assets/config/**/*',
     output: 'build/config/'
   },
-  components: {
-    src: 'src/views/components/**/*.njk'
-  },
   logs: {
     sourcemaps: '_sourcemaps/'
   },

@@ -59,15 +59,7 @@ const serve = series(
   lintStyles,
   lintTemplates,
   lintScripts,
-  parallel(
-    buildStyles,
-    buildReactNativeStyles,
-    buildTemplates,
-    buildScripts,
-    buildConfig,
-    buildSprites,
-    moveImages
-  ),
+  parallel(buildStyles, buildReactNativeStyles, buildTemplates, buildScripts, buildConfig, buildSprites, moveImages),
   minImages,
   cacheBust,
   parallel(watchFiles, browserSync)
