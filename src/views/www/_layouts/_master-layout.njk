@@ -41,6 +41,12 @@
       {% block body %}{% endblock %}
     </main>
 
+    {# Feedback #}
+    {% from "components/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
+    {{
+      wmndsFeedbackLoop()
+    }}
+
     <!-- footer -->
     {% include "www/_partials/footer/_footer.njk" %}
     <!-- footer -->

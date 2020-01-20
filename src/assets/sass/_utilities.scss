@@ -34,7 +34,7 @@ html {
 
 // Container sizes
 .wmnds-container {
-  max-width: 1280px;
+  max-width: $breakpoint-xl;
   margin: auto;
   padding: 0 $size-sm;
   @media screen and (min-width: $breakpoint-md) {
@@ -43,6 +43,7 @@ html {
 
   &--main {
     margin-top: $size-md;
+    margin-bottom: $size-lg;
   }
 }
 

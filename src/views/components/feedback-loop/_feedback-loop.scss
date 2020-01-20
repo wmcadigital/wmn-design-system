@@ -1,0 +1,37 @@
+.wmnds-feedback-loop {
+  // Add full-width blue border on desktop large display
+  @media all and(min-width: $breakpoint-xl) {
+    border-bottom: $size-sm solid get-color(cta);
+  }
+
+  .wmnds-link {
+    color: $white;
+  }
+
+  // Override container defaults
+  .wmnds-container {
+    padding: $size-md;
+    overflow: hidden;
+    color: $white;
+    background-color: get-color(cta);
+  }
+
+  // A bite more spacing on mobile
+  &__useful {
+    margin-bottom: $size-md;
+  }
+}
+
+// When on desktop then the feedback-loop should appear on one line
+@media all and(min-width: $breakpoint-md) {
+  .wmnds-feedback-loop {
+    &__useful {
+      margin: 0;
+      float: left;
+    }
+
+    &__wrong {
+      float: right;
+    }
+  }
+}
