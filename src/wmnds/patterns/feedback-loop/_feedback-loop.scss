@@ -10,7 +10,7 @@
 
   // Override container defaults
   .wmnds-container {
-    padding: $size-md;
+    padding: $size-xs $size-md;
     overflow: hidden;
     color: $white;
     background-color: get-color(cta);
