@@ -2,7 +2,7 @@ $btn-border-radius: 5px;
 $btn-border-width: 1px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
-// default button styles aka primary btn
+// default button styles aka cta btn
 .wmnds-btn {
   box-sizing: border-box;
   display: inline-block;
@@ -12,7 +12,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   border: 1px solid transparent;
   border-radius: $btn-border-radius;
   color: $white;
-  background-color: get-color(primary);
+  background-color: get-color(cta);
   font-size: 1rem;
   font-weight: bold;
   text-align: left;
@@ -20,7 +20,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   cursor: pointer;
 
   &:hover {
-    background-color: get-color(primary, 30, dark);
+    background-color: get-color(cta, 30, dark);
   }
 
   &:active,
@@ -28,7 +28,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   &:focus,
   &.wmnds-is--active {
     outline: none;
-    background-color: get-color(primary, 50, dark);
+    background-color: get-color(cta, 50, dark);
     -webkit-appearance: none;
   }
 
@@ -44,6 +44,22 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   &__icon--right {
     margin-left: $size-sm;
     float: right;
+  }
+
+  // button primary styles
+  &--primary {
+    background-color: get-color(primary);
+
+    &:hover {
+      background-color: get-color(primary, 30, dark);
+    }
+
+    &:active,
+    &:target,
+    &:focus,
+    &.wmnds-is--active {
+      background-color: get-color(primary, 50, dark);
+    }
   }
 
   // button secondary styles
@@ -76,22 +92,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       .wmnds-btn__icon {
         fill: get-color(disable);
       }
-    }
-  }
-
-  // button cta styles
-  &--cta {
-    background-color: get-color(cta);
-
-    &:hover {
-      background-color: get-color(cta, 30, dark);
-    }
-
-    &:active,
-    &:target,
-    &:focus,
-    &.wmnds-is--active {
-      background-color: get-color(cta, 50, dark);
     }
   }
 
