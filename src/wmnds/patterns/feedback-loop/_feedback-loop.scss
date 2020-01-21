@@ -20,6 +20,35 @@
   &__useful {
     margin-bottom: $size-md;
   }
+
+  &__form {
+    display: none;
+  }
+
+  &.wmnds-is-open {
+    .wmnds-container {
+      padding: $size-md;
+      border-top: $size-sm solid get-color(cta);
+      border-right: 1px solid get-color(cta);
+      border-left: 1px solid get-color(cta);
+      color: initial;
+      background-color: $white;
+    }
+
+    .wmnds-link {
+      color: get-color(cta);
+    }
+
+    .wmnds-feedback-loop {
+      &__questions {
+        display: none;
+      }
+
+      &__form {
+        display: block;
+      }
+    }
+  }
 }
 
 // When on desktop then the feedback-loop should appear on one line
