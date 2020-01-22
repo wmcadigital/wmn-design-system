@@ -3,14 +3,17 @@
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 
+{# Params #}
+{% set id = params.id if params.id else "dropdown" %}
+
 <div class="wmnds-fe-dropdown">
   {{
     wmndsLabel({
       label: 'Dropdown label',
-      for: 'dropdown'
+      for: id
     }) | trim
   }}
-  <select name="dropdown" id="dropdown" class="wmnds-fe-dropdown__select">
+  <select name="{{id}}" id="{{id}}" class="wmnds-fe-dropdown__select">
     <option value="" selected="selected">Choose from list</option>
     {%- for i in range(1,6) %}
     <option value="{{i}}">Option {{i}}</option>
