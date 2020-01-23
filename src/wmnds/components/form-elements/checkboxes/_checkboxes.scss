@@ -37,9 +37,13 @@
   // Hide the browser's default checkbox
   &__input {
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 35px;
+    height: 35px;
     opacity: 0;
+
+    &:focus ~ .wmnds-fe-checkboxes__checkmark {
+      background-color: get-color(secondary, 70);
+    }
 
     // Show the checkmark when checked
     &:checked ~ .wmnds-fe-checkboxes__checkmark > .wmnds-fe-checkboxes__icon {
