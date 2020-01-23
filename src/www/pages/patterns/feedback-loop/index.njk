@@ -24,7 +24,9 @@
 
 {{
   compExample([
-    wmndsFeedbackLoop()
+    wmndsFeedbackLoop({
+      id: 'fb'
+    })
   ])
 }}
 
@@ -33,7 +35,8 @@
 {{
   compExample([
     wmndsFeedbackLoop({
-      isOpen: true
+      isOpen: true,
+      id: 'fb-open'
     })
   ])
 }}
