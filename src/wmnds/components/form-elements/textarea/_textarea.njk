@@ -3,15 +3,17 @@
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 
+{# Params #}
+{% set id = params.id if params.id else "textarea" %}
 
 <div class="wmnds-fe-textarea">
   {{
     wmndsLabel({
       label: 'Textarea label',
-      for: 'textarea'
+      for: id
     }) | trim
   }}
-  <textarea type="text" name="textarea" id="textarea" class="wmnds-fe-textarea__textarea" rows="5"></textarea>
+  <textarea type="text" name="{{id}}" id="{{id}}" class="wmnds-fe-textarea__textarea" rows="3"></textarea>
 </div>
 
 {% endmacro %}
