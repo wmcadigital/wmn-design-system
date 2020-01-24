@@ -65,6 +65,10 @@ html {
     #{$type}#{$side}: $size-xs;
   }
 
+  &-xsm {
+    #{$type}#{$side}: $size-xsm;
+  }
+
   &-sm {
     #{$type}#{$side}: $size-sm;
   }
@@ -86,46 +90,48 @@ html {
   }
 }
 
-.wmnds {
-  // Generate all margin classes
-  &-m {
-    @include x-mar-pad("");
+body {
+  .wmnds {
+    // Generate all margin classes
+    &-m {
+      @include x-mar-pad("");
 
-    &-t {
-      @include x-mar-pad("-top");
+      &-t {
+        @include x-mar-pad("-top");
+      }
+
+      &-r {
+        @include x-mar-pad("-right");
+      }
+
+      &-b {
+        @include x-mar-pad("-bottom");
+      }
+
+      &-l {
+        @include x-mar-pad("-left");
+      }
     }
 
-    &-r {
-      @include x-mar-pad("-right");
-    }
+    // Generate all padding classes
+    &-p {
+      @include x-mar-pad("", "padding");
 
-    &-b {
-      @include x-mar-pad("-bottom");
-    }
+      &-t {
+        @include x-mar-pad("-top", "padding");
+      }
 
-    &-l {
-      @include x-mar-pad("-left");
-    }
-  }
+      &-r {
+        @include x-mar-pad("-right", "padding");
+      }
 
-  // Generate all padding classes
-  &-p {
-    @include x-mar-pad("", "padding");
+      &-b {
+        @include x-mar-pad("-bottom", "padding");
+      }
 
-    &-t {
-      @include x-mar-pad("-top", "padding");
-    }
-
-    &-r {
-      @include x-mar-pad("-right", "padding");
-    }
-
-    &-b {
-      @include x-mar-pad("-bottom", "padding");
-    }
-
-    &-l {
-      @include x-mar-pad("-left", "padding");
+      &-l {
+        @include x-mar-pad("-left", "padding");
+      }
     }
   }
 }
