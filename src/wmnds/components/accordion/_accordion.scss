@@ -1,6 +1,10 @@
 .wmnds-accordion {
   display: block;
-  border: 1px solid get-color(primary);
+  background-color: $white;
+
+  &--with-border {
+    border: 1px solid get-color(primary);
+  }
 
   &__summary-wrapper {
     display: block;
