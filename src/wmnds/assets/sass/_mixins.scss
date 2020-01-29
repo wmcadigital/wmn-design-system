@@ -1,7 +1,9 @@
 // TYPE
 // This is to get the size of the font to be used,
 // and to scale the line heights based on the font size
-@mixin type-setting($level) {
+@mixin type-setting($level, $multiplier: 1) {
+  // $mulitplier var gives the option to multiply(scale) the values below. This is often used to scale the headers depending on device size
+
   // Default (16px)
   @if $level == 0 {
     font-size: 1rem;
@@ -9,33 +11,31 @@
   }
   // Heading 1 (46px)
   @if $level == 1 {
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
-    color: get-color(primary);
-    font-size: 2.875rem;
-    line-height: 3rem;
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 3rem * $multiplier;
+    font-size: 2.875rem * $multiplier;
+    line-height: 3rem * $multiplier;
   }
   // Heading 2 (32px)
   @if $level == 2 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: get-color(primary);
-    font-size: 2rem;
-    line-height: 3rem;
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 1.5rem * $multiplier;
+    font-size: 2rem * $multiplier;
+    line-height: 3rem * $multiplier;
   }
   // Heading 3 (23px)
   @if $level == 3 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.4375rem;
-    line-height: 1.5rem;
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 1.5rem * $multiplier;
+    font-size: 1.4375rem * $multiplier;
+    line-height: 1.5rem * $multiplier;
   }
   // Heading 4 (18px)
   @if $level == 4 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 0.75rem * $multiplier;
+    font-size: 1.125rem * $multiplier;
+    line-height: 1.5rem * $multiplier;
   }
 }
 
