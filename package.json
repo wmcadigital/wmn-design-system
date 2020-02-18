@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@zeplin/cli": "^0.4.3",
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.0.3",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
