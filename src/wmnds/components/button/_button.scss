@@ -151,6 +151,17 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-is--active {
       background-color: get-color(secondary, 50);
     }
+
+    // Modal disabled
+    &.wmnds-btn--disabled:disabled {
+      border-color: get-color(disable);
+      color: get-color(disable);
+      background: $white;
+
+      .wmnds-btn__icon {
+        fill: get-color(disable);
+      }
+    }
   }
 
   // Disabled modifier (goes last to override above classes) for default btn
