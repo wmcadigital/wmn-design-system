@@ -147,7 +147,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
     &:active,
     &:target,
-    &:focus,
+    &:focus {
+      background-color: initial;
+    }
+
     &.wmnds-is--active {
       background-color: get-color(secondary, 50);
     }
@@ -179,10 +182,5 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-is--active {
       background-color: get-color(disable);
     }
-  }
-
-  // button small modifier
-  &--small {
-    padding: $size-xs;
   }
 }
