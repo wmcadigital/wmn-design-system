@@ -53,7 +53,7 @@
     "build:netlify": "npm run build:all --build=netlify"
   },
   "devDependencies": {
-    "@zeplin/cli": "^0.2.7",
+    "@zeplin/cli": "^0.4.3",
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "browser-sync": "^2.26.7",
@@ -81,7 +81,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^6.2.0",
     "gulp-json-format": "^2.0.0",
-    "gulp-load-plugins": "^2.0.1",
+    "gulp-load-plugins": "^2.0.2",
     "gulp-nunjucks": "^5.0.1",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-plumber": "^1.2.1",
@@ -100,7 +100,7 @@
     "npm-check-updates": "^4.0.1",
     "nunjucks": "^3.2.0",
     "prettier": "^1.19.1",
-    "sass": "^1.23.7",
+    "sass": "^1.25.0",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
