@@ -53,7 +53,7 @@
     "build:netlify": "npm run build:all --build=netlify"
   },
   "devDependencies": {
-    "@zeplin/cli": "^0.2.7",
+    "@zeplin/cli": "^0.4.3",
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "browser-sync": "^2.26.7",
