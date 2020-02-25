@@ -1,0 +1,24 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Content Tiles" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+
+{%- from "wmnds/components/content-tiles/small/small.njk" import wmndsContentTilesSmall -%}
+{{
+  compExample([
+    wmndsContentTilesSmall()
+  ])
+}}
+{# 
+{{
+  compExample([
+    wmndsContentTileMap()
+  ])
+}} #}
+
+
+
+{% endblock %}
