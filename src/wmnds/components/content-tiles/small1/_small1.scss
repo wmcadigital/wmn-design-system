@@ -1,5 +1,11 @@
 .wmnds-content-tile {
+  padding: $size-sm;
+
   &--yellow {
     background-color: get-color(plannedDisruption);
+
+    .read-more {
+      color: get-color(text);
+    }
   }
 }

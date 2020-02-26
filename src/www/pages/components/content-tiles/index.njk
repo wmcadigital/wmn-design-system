@@ -6,14 +6,31 @@
 {# About #}
 <h2>About</h2>
 
-{%- from "wmnds/components/content-tiles/small/small.njk" import wmndsContentTilesSmall -%}
+{%- from "wmnds/components/content-tiles/small1/small1.njk" import wmndsContentTilesSmall1 -%}
+{%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
+{%- from "wmnds/components/content-tiles/small3/small3.njk" import wmndsContentTilesSmall3 -%}
+
+
+
 {{
   compExample([
-    wmndsContentTilesSmall()
+    wmndsContentTilesSmall1()
   ])
 }}
-{# 
+
 {{
+  compExample([
+    wmndsContentTilesSmall2()
+  ])
+}}
+
+{{
+  compExample([
+    wmndsContentTilesSmall3()
+  ])
+}}
+
+{# {{
   compExample([
     wmndsContentTileMap()
   ])
