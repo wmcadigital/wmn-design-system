@@ -1,0 +1,13 @@
+.wmnds-content-tile {
+  &--related-content {
+    h2 {
+      color: get-color(text);
+    }
+  }
+}
+
+.wmnds-content-tile--related-content {
+  a {
+    margin-bottom: $size-sm;
+  }
+}

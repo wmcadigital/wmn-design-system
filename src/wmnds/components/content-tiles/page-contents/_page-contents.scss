@@ -1,0 +1,18 @@
+.wmnds-content-tile {
+  &--page-contents {
+    h2 {
+      color: get-color(text);
+    }
+  }
+
+  .overview {
+    padding-left: $size-sm;
+    border-left: 3px solid get-color(information);
+  }
+}
+
+.wmnds-content-tile--page-contents {
+  a {
+    margin-bottom: $size-sm;
+  }
+}

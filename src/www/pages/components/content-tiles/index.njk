@@ -10,6 +10,10 @@
 {%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
 {%- from "wmnds/components/content-tiles/small3/small3.njk" import wmndsContentTilesSmall3 -%}
 {%- from "wmnds/components/content-tiles/map/map.njk" import wmndsContentTileMap -%}
+{%- from "wmnds/components/content-tiles/related-content/related-content.njk" import wmndsContentTileRelatedContent -%}
+{%- from "wmnds/components/content-tiles/page-contents/page-contents.njk" import wmndsContentTilePageContents -%}
+
+
 
 
 
@@ -37,6 +41,17 @@
   ])
 }}
 
+{{
+  compExample([
+    wmndsContentTileRelatedContent()
+  ])
+}}
+
+{{
+  compExample([
+    wmndsContentTilePageContents()
+  ])
+}}
 
 
 {% endblock %}
