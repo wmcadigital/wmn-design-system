@@ -1,5 +1,7 @@
-.wmnds-content-tile--copy {
-  list-style-type: none;
+.wmnds-content-tile {
+  &__copy {
+    list-style-type: none;
+  }
 
   span {
     font-weight: bold;
