@@ -1,5 +1,6 @@
 .wmnds-content-tile {
   padding: $size-sm;
+  border-bottom: 5px solid get-color(primary);
 
   &--yellow {
     background-color: get-color(plannedDisruption);
