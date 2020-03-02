@@ -1,10 +1,10 @@
-.wmnds-content-tile--copy {
-  &__list {
+.wmnds-content-tile__copy {
+  &-list {
     padding: 0;
     list-style: none;
   }
 
-  &__links {
+  &-links {
     margin-bottom: $size-sm;
   }
 }
