@@ -1,7 +1,7 @@
-.banner-container {
+.wmnds-banner-container {
   border-bottom: 1px solid get-color(text);
 
-  .feedback {
+  &__feedback {
     border-bottom: 1px solid get-color(text);
   }
 }
