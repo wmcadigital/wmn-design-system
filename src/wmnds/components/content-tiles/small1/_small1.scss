@@ -1,12 +1,13 @@
 .wmnds-content-tile {
+  display: flow-root;
   padding: $size-sm;
   border-bottom: 5px solid get-color(primary);
 
+  &__read-more {
+    color: get-color(text);
+  }
+
   &--yellow {
     background-color: get-color(plannedDisruption);
-
-    .read-more {
-      color: get-color(text);
-    }
   }
 }

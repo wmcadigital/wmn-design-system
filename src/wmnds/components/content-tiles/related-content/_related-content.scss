@@ -6,5 +6,7 @@
 
   &-links {
     margin-bottom: $size-sm;
+    color: get-color(cta);
+    font-weight: 700;
   }
 }
