@@ -8,32 +8,29 @@
 {%- from "wmnds/components/content-tiles/small1/small1.njk" import wmndsContentTilesSmall1 -%}
 
 {# Content tile small 2 #}
-{# <h2>Content tile small 2</h2> #}
 {%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
 
 {# Content tile small 3 #}
-{# <h2>Content tile small 3</h2> #}
 {%- from "wmnds/components/content-tiles/small3/small3.njk" import wmndsContentTilesSmall3 -%}
 
 {# Content tile map #}
-{# <h2>Content tile map</h2> #}
 {%- from "wmnds/components/content-tiles/map/map.njk" import wmndsContentTileMap -%}
 
 {# Content tile related content #}
-{# <h2>Content tile related content</h2> #}
 {%- from "wmnds/components/content-tiles/related-content/related-content.njk" import wmndsContentTileRelatedContent -%}
 
 {# Content tile page contents #}
-{# <h2>Content tile page contents</h2> #}
 {%- from "wmnds/components/content-tiles/page-contents/page-contents.njk" import wmndsContentTilePageContents -%}
 
 {# Content tile travel tips #}
-{# <h2>Content tile travel tips</h2> #}
 {%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
 
 {# Content tile travel updates #}
-{# <h2>Content tile travel updates</h2> #}
 {%- from "wmnds/components/content-tiles/travel-updates/travel-updates.njk" import wmndsContentTileTravelUpdates -%}
+
+{# Content tile advice moving #}
+{%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
+
 
 
 {{
@@ -91,5 +88,11 @@
   ])
 }}
 
+<h2>Content tile advice to keep moving</h2>
+{{
+  compExample([
+    wmndsContentTileAdviceMoving()
+  ])
+}}
 
 {% endblock %}
