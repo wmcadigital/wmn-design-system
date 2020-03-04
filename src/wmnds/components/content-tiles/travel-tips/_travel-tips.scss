@@ -1,0 +1,12 @@
+.wmnds-content-tile {
+  &--purple {
+    margin-bottom: $size-sm;
+    padding: $size-sm;
+    color: get-color(primary);
+    background-color: get-color(secondary-70);
+  }
+
+  &__underline {
+    text-decoration: underline;
+  }
+}

@@ -27,10 +27,9 @@
 {# <h2>Content tile page contents</h2> #}
 {%- from "wmnds/components/content-tiles/page-contents/page-contents.njk" import wmndsContentTilePageContents -%}
 
-
-
-
-
+{# Content tile travel tips #}
+{# <h2>Content tile travel tips</h2> #}
+{%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
 
 
 {{
@@ -38,34 +37,46 @@
     wmndsContentTilesSmall1()
   ])
 }}
+
 <h2>Content tile small 2</h2>
 {{
   compExample([
     wmndsContentTilesSmall2()
   ])
 }}
+
 <h2>Content tile small 3</h2>
 {{
   compExample([
     wmndsContentTilesSmall3()
   ])
 }}
+
 <h2>Content tile map</h2>
 {{
   compExample([
     wmndsContentTileMap()
   ])
 }}
+
 <h2>Content tile related content</h2>
 {{
   compExample([
     wmndsContentTileRelatedContent()
   ])
 }}
+
 <h2>Content tile page contents</h2>
 {{
   compExample([
     wmndsContentTilePageContents()
+  ])
+}}
+
+<h2>Content tile travel tips</h2>
+{{
+  compExample([
+    wmndsContentTileTravelTips()
   ])
 }}
 
