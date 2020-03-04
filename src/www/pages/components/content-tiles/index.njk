@@ -31,6 +31,10 @@
 {# <h2>Content tile travel tips</h2> #}
 {%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
 
+{# Content tile travel updates #}
+{# <h2>Content tile travel updates</h2> #}
+{%- from "wmnds/components/content-tiles/travel-updates/travel-updates.njk" import wmndsContentTileTravelUpdates -%}
+
 
 {{
   compExample([
@@ -77,6 +81,13 @@
 {{
   compExample([
     wmndsContentTileTravelTips()
+  ])
+}}
+
+<h2>Content tile travel updates</h2>
+{{
+  compExample([
+    wmndsContentTileTravelUpdates()
   ])
 }}
 
