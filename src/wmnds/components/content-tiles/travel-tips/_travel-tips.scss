@@ -1,9 +1,8 @@
 .wmnds-content-tile {
   &--purple {
+    display: block !important;
     margin-bottom: $size-sm;
-    padding: $size-sm;
     color: get-color(primary);
-    background-color: get-color(secondary-70);
   }
 
   &__underline {
