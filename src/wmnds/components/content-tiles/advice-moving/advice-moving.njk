@@ -5,47 +5,59 @@
    </div>
    
    <div class="wmnds-content-tile__buttons">
-      <button class="wmnds-btn wmnds-btn--primary wmnds-content-tile__buttons--button">
-         I drive
-         <svg class="wmnds-btn__icon wmnds-btn__icon--right">
-            <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right" href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right"></use>
-         </svg>
-      </button>
+      {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+      {{
+        primary({
+          classNames: "wmnds-btn--primary wmnds-content-tile__button",
+          text: "I drive",
+          iconRight: "general-chevron-right"
+        })
+      }}
 
-      <button class="wmnds-btn wmnds-btn--primary wmnds-content-tile__buttons--button">
-         I use the bus
-         <svg class="wmnds-btn__icon wmnds-btn__icon--right">
-            <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right" href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right"></use>
-         </svg>
-      </button>
+      {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+      {{
+        primary({
+          classNames: "wmnds-btn--primary wmnds-content-tile__button",
+          text: "I use the bus",
+          iconRight: "general-chevron-right"
+        })
+      }}
 
-      <button class="wmnds-btn wmnds-btn--primary wmnds-content-tile__buttons--button">
-         I use the train
-         <svg class="wmnds-btn__icon wmnds-btn__icon--right">
-            <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right" href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right"></use>
-         </svg>
-      </button>
+      {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+      {{
+        primary({
+          classNames: "wmnds-btn--primary wmnds-content-tile__button",
+          text: "I use the train",
+          iconRight: "general-chevron-right"
+        })
+      }}
 
-      <button class="wmnds-btn wmnds-btn--primary wmnds-content-tile__buttons--button">
-         I use the tram
-         <svg class="wmnds-btn__icon wmnds-btn__icon--right">
-            <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right" href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right"></use>
-         </svg>
-      </button>
+      {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+      {{
+        primary({
+          classNames: "wmnds-btn--primary wmnds-content-tile__button",
+          text: "I use the tram",
+          iconRight: "general-chevron-right"
+        })
+      }}
 
-      <button class="wmnds-btn wmnds-btn--primary wmnds-content-tile__buttons--button">
-         I walk or cycle
-         <svg class="wmnds-btn__icon wmnds-btn__icon--right">
-            <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right" href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right"></use>
-         </svg>
-      </button>
+      {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+      {{
+        primary({
+          classNames: "wmnds-btn--primary wmnds-content-tile__button",
+          text: "I walk or cycle",
+          iconRight: "general-chevron-right"
+        })
+      }}
 
-      <button class="wmnds-btn wmnds-btn--primary wmnds-content-tile__buttons--button">
-         I want to visit an attraction or venue
-         <svg class="wmnds-btn__icon wmnds-btn__icon--right">
-            <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right" href="/img/wmnds-sprite.min.svg#wmnds-general-chevron-right"></use>
-         </svg>
-      </button>
+      {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+      {{
+        primary({
+          classNames: "wmnds-btn--primary wmnds-content-tile__button",
+          text: "I want to visit an attraction or venue",
+          iconRight: "general-chevron-right"
+        })
+      }}
    </div>
 </div>
 {% endmacro %}
