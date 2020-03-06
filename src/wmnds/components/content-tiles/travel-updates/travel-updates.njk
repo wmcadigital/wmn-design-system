@@ -1,11 +1,19 @@
 {% macro wmndsContentTileTravelUpdates(params) %}
-<div class="wmnds-content-tile">
+<div class="wmnds-content-tile wmnds-content-tile-container">
       <h2 class="wmnds-content-tile__title">Travel updates</h2>
    <div class="wmnds-content-tile__copy">
       <p>All routes through this disruption.</p>
    </div>
 <h3>Roads</h3>
-
+   {%- from "wmnds/components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge as primary -%}
+      {{
+        primary({
+          strongText: "Hagley Road",
+          text: 'Usual traffic',
+          iconLeft: "modes-isolated-roads",
+          iconRight: 'general-success'
+        })
+      }}
 
 </div>
 {% endmacro %}
