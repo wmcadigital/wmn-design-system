@@ -1,0 +1,10 @@
+.wmnds-content-tile {
+  &__title {
+    color: get-color(text);
+  }
+
+  &__overview {
+    padding-left: $size-sm;
+    border-left: 3px solid get-color(information);
+  }
+}

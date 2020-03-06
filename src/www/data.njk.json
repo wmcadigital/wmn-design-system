@@ -30,6 +30,9 @@
           "name": "Buttons"
         },
         {
+          "name": "Content Tiles"
+        },
+        {
           "name": "Disruption indicators"
         },
         {
@@ -54,6 +57,9 @@
       "subnavItems": [
         {
           "name": "Autocomplete"
+        },
+        {
+          "name": "Beta Banner"
         },
         {
           "name": "Feedback loop"
