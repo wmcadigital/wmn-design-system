@@ -1,12 +1,12 @@
-.wmnds-content-tile__copy {
-  &-list {
+.wmnds-content-tile {
+  &__list {
     padding: 0;
     list-style: none;
-  }
 
-  &-links {
-    margin-bottom: $size-sm;
-    color: get-color(cta);
-    font-weight: 700;
+    &--links {
+      margin-bottom: $size-sm;
+      color: get-color(cta);
+      font-weight: 700;
+    }
   }
 }
