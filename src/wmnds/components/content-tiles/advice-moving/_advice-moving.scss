@@ -1,9 +1,9 @@
 .wmnds-content-tile {
   &__buttons {
     display: grid;
+  }
 
-    &--button {
-      margin-bottom: $size-sm;
-    }
+  &__button {
+    margin-bottom: $size-sm;
   }
 }
