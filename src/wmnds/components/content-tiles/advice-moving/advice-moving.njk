@@ -1,57 +1,55 @@
 {% macro wmndsContentTileAdviceMoving(params) %}
 <div class="wmnds-content-tile">
-    <h2 class="wmnds-content-tile__title">Advice to keep moving</h2>
-   
+   <h2 class="wmnds-content-tile__title">Advice to keep moving</h2>
    <div class="wmnds-content-tile__buttons">
       {%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
       {{
-        primary({
-          classNames: "wmnds-btn--primary wmnds-content-tile__button",
-          text: "I drive",
-          iconRight: "general-chevron-right"
-        })
+      primary({
+      classNames: "wmnds-btn--primary wmnds-content-tile__button",
+      text: "I drive",
+      iconRight: "general-chevron-right"
+      })
       }}
-
+      <br>
       {{
-        primary({
-          classNames: "wmnds-btn--primary wmnds-content-tile__button",
-          text: "I use the bus",
-          iconRight: "general-chevron-right"
-        })
+      primary({
+      classNames: "wmnds-btn--primary wmnds-content-tile__button",
+      text: "I use the bus",
+      iconRight: "general-chevron-right"
+      })
       }}
-
+      <br>
       {{
-        primary({
-          classNames: "wmnds-btn--primary wmnds-content-tile__button",
-          text: "I use the train",
-          iconRight: "general-chevron-right"
-        })
+      primary({
+      classNames: "wmnds-btn--primary wmnds-content-tile__button",
+      text: "I use the train",
+      iconRight: "general-chevron-right"
+      })
       }}
-
+      <br>
       {{
-        primary({
-          classNames: "wmnds-btn--primary wmnds-content-tile__button",
-          text: "I use the tram",
-          iconRight: "general-chevron-right"
-        })
+      primary({
+      classNames: "wmnds-btn--primary wmnds-content-tile__button",
+      text: "I use the tram",
+      iconRight: "general-chevron-right"
+      })
       }}
-
+      <br>
       {{
-        primary({
-          classNames: "wmnds-btn--primary wmnds-content-tile__button",
-          text: "I walk or cycle",
-          iconRight: "general-chevron-right"
-        })
+      primary({
+      classNames: "wmnds-btn--primary wmnds-content-tile__button",
+      text: "I walk or cycle",
+      iconRight: "general-chevron-right"
+      })
       }}
-
+      <br>
       {{
-        primary({
-          classNames: "wmnds-btn--primary wmnds-content-tile__button",
-          text: "I want to visit an attraction or venue",
-          iconRight: "general-chevron-right"
-        })
+      primary({
+      classNames: "wmnds-btn--primary wmnds-content-tile__button",
+      text: "I want to visit an attraction or venue",
+      iconRight: "general-chevron-right"
+      })
       }}
-
    </div>
 </div>
 {% endmacro %}
