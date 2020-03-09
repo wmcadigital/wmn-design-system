@@ -3,7 +3,9 @@
     list-style-type: none;
   }
 
-  span {
-    font-weight: bold;
+  &__list {
+    &-bold {
+      font-weight: bold;
+    }
   }
 }
