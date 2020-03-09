@@ -1,9 +1,9 @@
 .wmnds-content-tile {
-  &-list {
+  &__list {
     padding: 0;
     list-style: none;
 
-    &__links {
+    &-links {
       margin-bottom: $size-sm;
       color: get-color(cta);
       font-weight: 700;
