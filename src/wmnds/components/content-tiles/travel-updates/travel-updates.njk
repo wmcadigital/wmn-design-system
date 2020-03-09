@@ -5,15 +5,183 @@
       <p>All routes through this disruption.</p>
    </div>
 <h3>Roads</h3>
-   {%- from "wmnds/components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge as primary -%}
+   {%- from "wmnds/components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge as large -%}
+   {%- from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as medium -%}
+   {%- from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as star -%}
+
+   <div class="wmnds-content-tile-container__wrapper">
       {{
-        primary({
+        large({
           strongText: "Hagley Road",
           text: 'Usual traffic',
           iconLeft: "modes-isolated-roads",
           iconRight: 'general-success'
         })
       }}
+</div> 
+<div class="wmnds-content-tile-container__wrapper">
+      {{
+        large({
+          strongText: "Ring Road",
+          text: 'Usual traffic',
+          iconLeft: "modes-isolated-roads",
+          iconRight: 'general-success'
+        })
+      }}
+</div> 
+      <h3>Bus Routes</h3>
+<div class="wmnds-content-tile-container__bus">
+         <div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '9',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}  
+<svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div>    
+
+<div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '10',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div> 
+</div>
+
+<div class="wmnds-content-tile-container__bus">
+         <div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '12',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div>
+<div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '12A',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div> 
+</div>
+
+<div class="wmnds-content-tile-container__bus">
+         <div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '13',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div>
+<div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '13A',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div> 
+</div>
+
+<div class="wmnds-content-tile-container__bus">
+         <div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '126',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div>
+<div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: 'X8',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div> 
+</div>
+
+<div class="wmnds-content-tile-container__bus">
+         <div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: 'X10',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div>
+<div class="wmnds-content-tile-container__wrapper--bus">
+      {{
+        medium({
+          classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow wmnds-disruption-indicator-medium--narrow-bus',
+          text: '23',
+          iconLeft: "modes-isolated-bus",
+          iconRight: 'general-success'
+        })
+      }}
+      <svg class="wmnds-content-tile-container__bus--star">
+      <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+   </svg>
+</div> 
+</div>
+
+{% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
+{{
+  wmndsMsgHelp({
+      message: 'Save bus routes to your homepage by pressing the star icon'
+    })
+}}
 
 </div>
 {% endmacro %}
