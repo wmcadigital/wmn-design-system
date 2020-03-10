@@ -1,12 +1,11 @@
+{% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
 {% macro wmndsBanner(params) %}
-
 <div class="wmnds-grid wmnds-banner-container">
-<div class="wmnds-col-1-8">
-      {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+   <div class="wmnds-col-1-8">
       {{wmndsPhaseIndicator()}}
-      </div>
-<div class="wmnds-col-2-3">
+   </div>
+   <div class="wmnds-col-2-3">
       <p>This is a new service - your <span class="wmnds-banner-container__feedback">feedback</span> will help us to improve it.</p>
-</div>
+   </div>
 </div>
 {% endmacro %}
