@@ -30,6 +30,9 @@
           "name": "Buttons"
         },
         {
+          "name": "Content Tiles"
+        },
+        {
           "name": "Disruption indicators"
         },
         {
@@ -56,7 +59,7 @@
           "name": "Autocomplete"
         },
         {
-          "name": "Banner"
+          "name": "Beta Banner"
         },
         {
           "name": "Feedback loop"

@@ -1,0 +1,11 @@
+.wmnds-content-tile {
+  &--purple {
+    display: block !important;
+    margin-bottom: $size-sm;
+    color: get-color(primary);
+  }
+
+  &__underline {
+    text-decoration: underline;
+  }
+}
