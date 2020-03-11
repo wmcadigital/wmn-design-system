@@ -6,18 +6,14 @@
     &--bus {
       margin-right: $size-lg;
       margin-bottom: $size-sm;
-    }
-  }
 
-  &__bus {
-    display: flex;
-    width: 150px;
-
-    &--star {
-      width: 2rem;
-      height: 2rem;
-      margin-left: 3.5rem;
-      fill: get-color("secondary");
+      &-star {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 3.5rem;
+        fill: get-color("secondary");
+      }
     }
   }
 
@@ -39,5 +35,9 @@
 
   .wmnds-msg-help {
     width: 335px;
+  }
+
+  .wmnds-grid__bus {
+    width: 100%;
   }
 }
