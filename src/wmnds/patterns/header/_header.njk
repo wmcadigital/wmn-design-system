@@ -1,8 +1,10 @@
 {% macro wmndsHeader(params) %}
 {# Set navItems #}
 {% set navItems = params.navItems %}
+{% set appClass = " wmnds-header--app" if params.app  %}
 
-<header class="wmnds-header wmnds-grid">
+
+<header class="wmnds-header wmnds-grid{{appClass}}">
   <div class="wmnds-container">
     {# Core logo #}
     <div class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-1-3">
