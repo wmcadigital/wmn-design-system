@@ -1,0 +1,17 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Banner" %}
+{% set section="Patterns" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
+
+
+{% block content %}
+
+
+{{
+  compExample([
+   wmndsBanner()
+  ])
+}}
+
+{% endblock %}
