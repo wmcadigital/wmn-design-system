@@ -1,7 +1,7 @@
 {% macro wmndsHeader(params) %}
 {# Set navItems #}
 {% set navItems = params.navItems %}
-{% set appClass = " wmnds-header--app" if params.app  %}
+{% set appClass = " wmnds-header--app" if params.app else "" %}
 
 
 <header class="wmnds-header wmnds-grid{{appClass}}">
@@ -9,12 +9,36 @@
     {# Core logo #}
     <div class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-1-3">
       <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
-        <img class="wmnds-header__logo" alt="West Midlands Network logo" src="$*cdn/img/logo.svg" />
+        <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
       </a>
       <a href="/" title="West Midlands Network Design System Alpha" class="wmnds-phase-indicator">
         Alpha
       </a>
     </div>
+
+    <!-- Back button -->
+    <div class="wmnds-header__vertical-align wmnds-col-1-2 wmnds-col-md-2-3 hide-on-desktop">
+      <ul class="wmnds-header__links">
+        <li class="wmnds-header__link wmnds-float--right">
+          <a
+            href="#"
+            title="Go back to previous page"
+            target="_self"
+            class="wmnds-link"
+            onClick="goBack(event);"
+          >
+            Back
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      function goBack(e) {
+        e.preventDefault();
+        window.history.back();
+      }
+    </script>
 
     {# Nav items #}
     <nav class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-2-3">

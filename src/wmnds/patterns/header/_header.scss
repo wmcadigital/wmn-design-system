@@ -2,11 +2,7 @@
   display: block;
   padding: $size-md;
   background-color: get-color(primary);
-  text-align: center;
-
-  @media screen and(min-width: $breakpoint-md) {
-    text-align: left;
-  }
+  text-align: left;
 
   // Logo styles
   &__logo-link {
@@ -54,5 +50,8 @@
     .wmnds-link {
       color: $white;
     }
+  }
+
+  &--app {
   }
 }
