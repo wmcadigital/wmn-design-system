@@ -1,9 +1,6 @@
 .wmnds-content-tile {
-  &__buttons {
-    display: grid;
-  }
-
   &__button {
+    width: 100%;
     margin-bottom: $size-sm;
   }
 }
