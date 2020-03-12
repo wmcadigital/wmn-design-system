@@ -2,19 +2,19 @@
   &__wrapper {
     width: 335px;
     margin-bottom: $size-sm;
+  }
 
-    &--bus {
-      margin-right: $size-lg;
-      margin-bottom: $size-sm;
+  &__star {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 3.5rem;
+    fill: get-color("secondary");
+  }
 
-      &-star {
-        display: block;
-        width: 2rem;
-        height: 2rem;
-        margin-left: 3.5rem;
-        fill: get-color("secondary");
-      }
-    }
+  &__bus {
+    margin-right: $size-lg;
+    margin-bottom: $size-sm;
   }
 
   .wmnds-disruption-indicator-medium--narrow {
@@ -34,6 +34,7 @@
   }
 
   .wmnds-msg-help {
+    display: block;
     width: 335px;
   }
 
