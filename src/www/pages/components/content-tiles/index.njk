@@ -1,97 +1,93 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Content Tiles" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-
 {% block content %}
 {# Content tile small 1 #}
+<h2>About</h2>
+<h3>What does it do?</h3>
+<ul>
+   <li>Content tiles structure content clearly by dividing content into blocks. It is important for each block to have a clear function.</li>
+   <li>Placing content in card tiles makes it easy to understand because users can quickly scan tiles. You should write your content for maximum readability.</li>
+</ul>
+<h3>When to use it?</h3>
+<ul>
+   <li>It should be used for bitesize information and when your content has a clear function, e.g. a task user needs to do.</li>
+   <li>When you want to organise your content on the webpage (grid).</li>
+</ul>
+<h3>When not to use it?</h3>
+<ul>
+   <li>Do not use for length content.</li>
+   <li>Should not be used for navigation</li>
+</ul>
 <h2>Content tile small 1</h2>
 {%- from "wmnds/components/content-tiles/small1/small1.njk" import wmndsContentTilesSmall1 -%}
-
 {# Content tile small 2 #}
 {%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
-
 {# Content tile small 3 #}
 {%- from "wmnds/components/content-tiles/small3/small3.njk" import wmndsContentTilesSmall3 -%}
-
 {# Content tile map #}
 {%- from "wmnds/components/content-tiles/map/map.njk" import wmndsContentTileMap -%}
-
 {# Content tile related content #}
 {%- from "wmnds/components/content-tiles/related-content/related-content.njk" import wmndsContentTileRelatedContent -%}
-
 {# Content tile page contents #}
 {%- from "wmnds/components/content-tiles/page-contents/page-contents.njk" import wmndsContentTilePageContents -%}
-
 {# Content tile travel tips #}
 {%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
-
 {# Content tile travel updates #}
 {%- from "wmnds/components/content-tiles/travel-updates/travel-updates.njk" import wmndsContentTileTravelUpdates -%}
-
 {# Content tile advice moving #}
 {%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
-
-
 {{
-  compExample([
-    wmndsContentTilesSmall1()
-  ])
+compExample([
+wmndsContentTilesSmall1()
+])
 }}
-
 <h2>Content tile small 2</h2>
 {{
-  compExample([
-    wmndsContentTilesSmall2()
-  ])
+compExample([
+wmndsContentTilesSmall2()
+])
 }}
-
 <h2>Content tile small 3</h2>
 {{
-  compExample([
-    wmndsContentTilesSmall3()
-  ])
+compExample([
+wmndsContentTilesSmall3()
+])
 }}
-
 <h2>Content tile map</h2>
 {{
-  compExample([
-    wmndsContentTileMap()
-  ])
+compExample([
+wmndsContentTileMap()
+])
 }}
-
 <h2>Content tile related content</h2>
 {{
-  compExample([
-    wmndsContentTileRelatedContent()
-  ])
+compExample([
+wmndsContentTileRelatedContent()
+])
 }}
-
 <h2>Content tile page contents</h2>
 {{
-  compExample([
-    wmndsContentTilePageContents()
-  ])
+compExample([
+wmndsContentTilePageContents()
+])
 }}
-
 <h2>Content tile travel tips</h2>
 {{
-  compExample([
-    wmndsContentTileTravelTips()
-  ])
+compExample([
+wmndsContentTileTravelTips()
+])
 }}
-
 <h2>Content tile travel updates</h2>
 {{
-  compExample([
-    wmndsContentTileTravelUpdates()
-  ])
+compExample([
+wmndsContentTileTravelUpdates()
+])
 }}
-
 <h2>Content tile advice to keep moving</h2>
 {{
-  compExample([
-    wmndsContentTileAdviceMoving()
-  ])
+compExample([
+wmndsContentTileAdviceMoving()
+])
 }}
-
 {% endblock %}
