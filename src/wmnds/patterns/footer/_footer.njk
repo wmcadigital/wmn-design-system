@@ -1,12 +1,13 @@
 {% macro wmndsFooter(params) %}
+{% set appClass = " wmnds-footer--mobile-app" if params.app else "" %}
 
-<footer class="wmnds-footer bg-black">
+<footer class="wmnds-footer{{appClass}}">
   <div class="wmnds-container">
     <div class="wmnds-col-1 wmnds-col-md-1-2">
       Copyright West Midlands Network &copy; 2020
     </div>
     <div class="wmnds-col-1 wmnds-col-md-1-2">
-        <a href="https://github.com/wmcadigital" target="_blank" rel="noopener noreferrer" class="wmnds-footer__link wmnds-link">Created by WMCA Design Team</a>
+      <a href="https://github.com/wmcadigital" target="_blank" rel="noopener noreferrer" class="wmnds-footer__link wmnds-link">Created by WMCA Design Team</a>
     </div>
   </div>
 </footer>
