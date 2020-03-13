@@ -1,32 +1,57 @@
 {% macro wmndsHeader(params) %}
 {# Set navItems #}
 {% set navItems = params.navItems %}
+{% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
+{# Imports #}
+ {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
 
-<header class="wmnds-header wmnds-grid">
-  <div class="wmnds-container">
-    {# Core logo #}
-    <div class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-1-3">
+<header class="wmnds-header{{appClass}}">
+  <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
+    <!-- Logo -->
+    <div class="wmnds-header__vertical-align wmnds-col-auto">
       <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
-        <img class="wmnds-header__logo" alt="West Midlands Network logo" src="$*cdn/img/logo.svg" />
+        <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
       </a>
-      <a href="/" title="West Midlands Network Design System Alpha" class="wmnds-phase-indicator">
-        Alpha
-      </a>
+      {{wmndsPhaseIndicator()}}
     </div>
-
-    {# Nav items #}
-    <nav class="wmnds-header__vertical-align wmnds-col-1 wmnds-col-md-2-3">
-      <ul class="wmnds-header__links">
-        {% for navItem in navItems %}
+    <!-- Nav items -->
+    <nav class="wmnds-header__vertical-align wmnds-col-auto">
+      <ul class="wmnds-header__links wmnds-header__main-links">
+        {% for navItem in navItems -%}
         <li class="wmnds-header__link">
           <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-link" >
             {{ navItem.name}}
           </a>
         </li>
-        {% endfor %}
+        {%- endfor %}
       </ul>
-    </nav>
 
+      {%- if params.app %}
+      <!-- Back button -->
+      <ul class="wmnds-header__links wmnds-header__back-btn">
+        <li class="wmnds-header__link">
+          <a
+            href="#"
+            title="Go back to previous page"
+            target="_self"
+            class="wmnds-link"
+            onClick="goBack(event);"
+          >
+            Back
+          </a>
+        </li>
+      </ul>
+      <script>
+        // Function that sends user to previous page they were on,
+        // This can be included in your local javascript file
+        function goBack(e) {
+          e.preventDefault();
+          window.history.back();
+        }
+      </script>
+      <!-- End back button -->
+      {%- endif %}
+    </nav>
   </div>
 </header>
 
