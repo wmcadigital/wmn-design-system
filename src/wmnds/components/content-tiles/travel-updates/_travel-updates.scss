@@ -1,10 +1,10 @@
-.wmnds-content-tile--container {
-  &__wrapper {
+.wmnds-content-tile__container {
+  &-wrapper {
     width: 335px;
     margin-bottom: $size-sm;
   }
 
-  &__star {
+  &-star {
     display: block;
     width: 2rem;
     height: 2rem;
@@ -12,7 +12,7 @@
     fill: get-color("secondary");
   }
 
-  &__bus {
+  &-bus {
     margin-right: $size-lg;
     margin-bottom: $size-sm;
   }
