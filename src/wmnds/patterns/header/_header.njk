@@ -7,12 +7,15 @@
 
 <header class="wmnds-header{{appClass}}">
   <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
-    <!-- Logo -->
     <div class="wmnds-header__vertical-align wmnds-col-auto">
+      <!-- Logo -->
       <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
         <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
       </a>
-      {{wmndsPhaseIndicator()}}
+      <!-- Phase indicator -->
+      {{
+        wmndsPhaseIndicator() | indent(6) | trim
+      }}
     </div>
     <!-- Nav items -->
     <nav class="wmnds-header__vertical-align wmnds-col-auto">
