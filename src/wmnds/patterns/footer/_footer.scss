@@ -11,4 +11,13 @@
       float: right;
     }
   }
+
+  // App specific footer styles
+  &--mobile-app {
+    display: none;
+
+    @media screen and(min-width: $breakpoint-md) {
+      display: block;
+    }
+  }
 }
