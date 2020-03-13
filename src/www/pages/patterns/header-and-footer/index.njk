@@ -1,9 +1,10 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Header and footer" %}
 {% set section="Patterns" %}
-
+{# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
+{% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
 
 {% block content %}
 {# About #}
@@ -47,13 +48,32 @@
 <h3>Search</h3>
 <p>This functionality only shows for desktop and tablet users. When clicked, search expands and takes over the whole page.</p>
 
-  {{
-    compExample([
-      wmndsHeader({
-        navItems: navItems
-      })
-    ])
-  }}
+{{
+  compExample([
+    wmndsHeader({
+      navItems: navItems
+    })
+  ])
+}}
+{# Mobile app variant #}
+<h3>Mobile app variant of header</h3>
+<p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network header.</p>
+
+<p>To use the mobile app variant:</p>
+<ul>
+  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-header--mobile-app</code> to the wmnds-header element</li>
+  <li>Copy the code for the back button section below and insert it into your existing header</li>
+  <li>Finally, add the script for the back button in your local javascript file</li>
+</ul>
+
+{{
+  compExample([
+    wmndsHeader({
+      navItems: navItems,
+      app: true
+    })
+  ])
+}}
 
 
 <br/><br/>
@@ -61,4 +81,28 @@
 <h2>Footer</h2>
 <h3>Email capture form</h3>
 <p>The data is place within the general marketing email contact database on Campaign Monitor.</p>
+{{
+  compExample([
+    wmndsFooter()
+  ])
+}}
+{# Mobile app variant #}
+<h3>Mobile app variant of Footer</h3>
+<p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network footer.</p>
+
+<p>The mobile app version of the footer ensures that it will not show on devices with a screen width less than 768px. This means the footer will only show on devices with a screen resolution bigger than 768px.</p>
+
+<p>To use the mobile app variant:</p>
+<ul>
+  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-footer--mobile-app</code> to the wmnds-footer element</li>
+</ul>
+
+{{
+  compExample([
+    wmndsFooter({
+      app: true
+    })
+  ])
+}}
+
 {% endblock %}

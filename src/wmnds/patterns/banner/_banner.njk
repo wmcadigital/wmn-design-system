@@ -1,8 +1,10 @@
 {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
 {% macro wmndsBanner(params) %}
 <div class="wmnds-grid wmnds-banner-container">
-   <div class="wmnds-col-auto wmnds-float--left wmnds-m-r-sm">
-      {{wmndsPhaseIndicator()}}
+   <div class="wmnds-col-auto wmnds-float-left wmnds-m-r-sm">
+      {{
+         wmndsPhaseIndicator() | indent(6) | trim
+      }}
    </div>
    <div class="wmnds-col-auto">
       <p>This is a new service - your <span class="wmnds-banner-container__feedback">feedback</span> will help us to improve it.</p>
