@@ -7,25 +7,21 @@
   // Logo styles
   &__logo-link {
     display: inline-block;
+    width: 34px;
     margin-right: $size-md;
+    overflow: hidden;
     vertical-align: middle;
   }
 
   &__logo {
-    width: 100px;
+    max-width: initial;
+    height: 34px;
+    float: left;
   }
 
   // To vertical align the logo's and nav
   &__vertical-align {
     vertical-align: middle;
-
-    &:last-child {
-      margin-top: $size-sm;
-
-      @media screen and(min-width: $breakpoint-md) {
-        margin: 0;
-      }
-    }
   }
 
   // Nav links
@@ -33,6 +29,7 @@
     display: block;
     margin: 0;
     padding: 0;
+    float: right;
 
     @media screen and(min-width: $breakpoint-md) {
       text-align: right;
@@ -52,6 +49,21 @@
     }
   }
 
-  &--app {
+  &__main-links {
+    display: none;
+
+    @media screen and(min-width: $breakpoint-md) {
+      display: inline-block;
+    }
+  }
+
+  &__back-btn {
+    @media screen and(min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .wmnds-phase-indicator {
+    vertical-align: middle;
   }
 }
