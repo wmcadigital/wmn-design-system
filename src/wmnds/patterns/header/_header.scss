@@ -11,6 +11,10 @@
     margin-right: $size-md;
     overflow: hidden;
     vertical-align: middle;
+
+    @media screen and(min-width: $breakpoint-md) {
+      width: auto;
+    }
   }
 
   &__logo {
@@ -49,21 +53,20 @@
     }
   }
 
-  &__main-links {
-    display: none;
-
-    @media screen and(min-width: $breakpoint-md) {
-      display: inline-block;
-    }
-  }
-
-  &__back-btn {
-    @media screen and(min-width: $breakpoint-md) {
+  // App specific header styles
+  &--app {
+    .wmnds-header__main-links {
       display: none;
-    }
-  }
 
-  .wmnds-phase-indicator {
-    vertical-align: middle;
+      @media screen and(min-width: $breakpoint-md) {
+        display: inline-block;
+      }
+    }
+
+    .wmnds-header__back-btn {
+      @media screen and(min-width: $breakpoint-md) {
+        display: none;
+      }
+    }
   }
 }
