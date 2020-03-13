@@ -2,6 +2,8 @@
 {# Set navItems #}
 {% set navItems = params.navItems %}
 {% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
+{# Imports #}
+ {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
 
 <header class="wmnds-header{{appClass}}">
   <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
@@ -10,6 +12,7 @@
       <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
         <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
       </a>
+      {{wmndsPhaseIndicator()}}
     </div>
     <!-- Nav items -->
     <nav class="wmnds-header__vertical-align wmnds-col-auto">
