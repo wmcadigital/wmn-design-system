@@ -48,7 +48,10 @@
     }}
 
     <!-- footer -->
-    {% include "www/_partials/footer/_footer.njk" %}
+    {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+    {{
+      wmndsFooter()
+    }}
     <!-- footer -->
 
     <!-- Scripts -->

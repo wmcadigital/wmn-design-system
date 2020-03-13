@@ -1,9 +1,10 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Header and footer" %}
 {% set section="Patterns" %}
-
+{# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
+{% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
 
 {% block content %}
 {# About #}
@@ -61,6 +62,12 @@
 <h2>Footer</h2>
 <h3>Email capture form</h3>
 <p>The data is place within the general marketing email contact database on Campaign Monitor.</p>
+{{
+  compExample([
+    wmndsFooter()
+  ])
+}}
+
 
 
 <hr>
