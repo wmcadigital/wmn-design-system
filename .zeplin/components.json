@@ -3,11 +3,33 @@
   "styleguides": ["5d95b0aaad77af16c796a476"],
   "components": [
     {
-      "path": "src/components/phase-indicator/_phase-indicator.njk",
+      "path": "src/wmnds/components/phase-indicator/_phase-indicator.njk",
       "zeplinNames": ["Phase indicator / Mobile", "Phase indicator / Desktop"],
       "wmnds": {
         "urlPath": "components/phase-indicator/"
       }
+    },
+    {
+      "path": "src/wmnds/components/disruption-indicator/small/_small.njk",
+      "zeplinNames": []
+    },
+    {
+      "path": "src/wmnds/components/disruption-indicator/large/_large.njk",
+      "wmnds": {
+        "urlPath": "components/disruption-indicators/"
+      },
+      "zeplinNames": [
+        "Disruptions / Service route Indicator ",
+        "Disruptions / Service Indicator / Expandable box",
+        "Disruptions / Service Indicator / Favourites / Delete / 2 Lines",
+        "Disruptions / Service Indicator / Favourites / Delete / 1 Line",
+        "Disruptions / Service Indicator / 2 Lines",
+        "Disruptions / Service Indicator / 1 Line",
+        "Disruptions / Service Indicator / 2 Lines with Label",
+        "Disruptions / Service Indicator / 2 Lines with Label (Short)",
+        "Disruptions / Service Indicator / 1 Line with Label",
+        "Severe Disruption / Service Indicator / Expandable box"
+      ]
     }
   ],
   "github": {
