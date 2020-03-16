@@ -1,0 +1,15 @@
+{% macro wmndsContentTilesNormal(params) %}
+{% set class = ' ' + params.classModifiers if params.classModifiers %}
+
+<div class="wmnds-content-tile{{class}}">
+  <h2>Major Roadworks and events</h2>
+  {#- Copy #}
+  <div class="wmnds-content-tile__copy">
+    {{ params.copy | safe | trim  -}}
+    {#- Read more #}
+    {%- if params.readMore %}
+    <a href="#" class="wmnds-link wmnds-float-right">Read more</a>
+    {%- endif %}
+  </div>
+</div>
+{% endmacro %}
