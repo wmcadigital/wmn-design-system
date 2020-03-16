@@ -1,9 +1,16 @@
 {% macro wmndsContentTilesNormal(params) %}
-<div class="wmnds-content-tile wmnds-content-tile--yellow">
-   <h2 class="wmnds-content-tile__title">Major Roadworks and events</h2>
-   <div class="wmnds-content-tile__copy">
+{% set class = ' ' + params.classModifiers if params.classModifiers %}
+
+<div class="wmnds-content-tile{{class}}">
+  <h2 class="wmnds-content-tile__title">Major Roadworks and events</h2>
+  <div class="wmnds-content-tile__copy">
+    {% if params.copy %}
+      {{params.copy | safe | trim}}
+    {% else %}
       <p>See all major roadworks and events. These could affect your journey, plan ahead.</p>
-      <a href="#" class="wmnds-link wmnds-float-right wmnds-content-tile__read-more">Read more</a>
-   </div>
+    {% endif %}
+
+    <a href="#" class="wmnds-link wmnds-float-right wmnds-content-tile__read-more">Read more</a>
+  </div>
 </div>
 {% endmacro %}

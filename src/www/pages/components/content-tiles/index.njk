@@ -6,12 +6,6 @@
 {# Content tile small 1 #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 
-{# Content tile small 2 #}
-{%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
-
-{# Content tile small 3 #}
-{%- from "wmnds/components/content-tiles/small3/small3.njk" import wmndsContentTilesSmall3 -%}
-
 {# Content tile map #}
 {%- from "wmnds/components/content-tiles/map/map.njk" import wmndsContentTileMap -%}
 
@@ -32,23 +26,33 @@
 
 
 <h2>Normal</h2>
+<h3>General</h3>
 {{
   compExample([
     wmndsContentTilesNormal()
   ])
 }}
 
-<h2>Content tile small 2</h2>
+<h3>Yellow modifier</h3>
 {{
   compExample([
-    wmndsContentTilesSmall2()
+    wmndsContentTilesNormal({
+      classModifiers: 'wmnds-content-tile--yellow'
+    })
   ])
 }}
 
-<h2>Content tile small 3</h2>
+<h2>Major Works</h2>
 {{
   compExample([
-    wmndsContentTilesSmall3()
+    wmndsContentTilesNormal({
+      copy: '
+      <ul class="wmnds-content-tile__list">
+         <li><strong>Location:</strong> Birmingham city centre</li>
+         <li><strong>Lasts until:</strong> December 2019</li>
+      </ul>
+      '
+    })
   ])
 }}
 
