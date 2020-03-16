@@ -2,6 +2,7 @@
   display: flow-root;
   padding: $size-sm;
   border-bottom: 5px solid get-color(primary);
+  background-color: $white;
 
   &__legend {
     padding-left: $size-sm;
