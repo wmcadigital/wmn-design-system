@@ -7,6 +7,10 @@
     color: get-color(text);
   }
 
+  iframe {
+    width: 100%;
+  }
+
   // Yellow modifier
   &--yellow {
     background-color: get-color(plannedDisruption);
