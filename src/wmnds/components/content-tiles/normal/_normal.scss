@@ -3,13 +3,11 @@
   padding: $size-sm;
   border-bottom: 5px solid get-color(primary);
 
-  &__read-more {
-    color: get-color(text);
-  }
-
-  // Constraints for iframe
-  iframe {
-    width: 100%;
+  &__copy {
+    // Constraints for iframe
+    iframe {
+      width: 100%;
+    }
   }
 
   // Yellow modifier
