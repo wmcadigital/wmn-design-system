@@ -6,14 +6,6 @@
 {# Content tile small 1 #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 
-{%- from "wmnds/components/content-tiles/nav/_nav.njk" import wmndsContentTilesNav -%}
-
-{# Content tile related content #}
-{%- from "wmnds/components/content-tiles/related-content/related-content.njk" import wmndsContentTileRelatedContent -%}
-
-{# Content tile page contents #}
-{%- from "wmnds/components/content-tiles/page-contents/page-contents.njk" import wmndsContentTilePageContents -%}
-
 {# Content tile travel tips #}
 {%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
 
@@ -72,21 +64,30 @@
   ])
 }}
 
-<h2>Nav</h2>
+<h3>Nav</h3>
 {{
   compExample([
-   wmndsContentTilesNav()
+   wmndsContentTilesNormal({
+    classModifiers: 'wmnds-content-tile--nav',
+    title: 'Related content',
+    smallTitle: true
+   })
   ])
 }}
 
-<h2>Content tile page contents</h2>
+<h3>Nav with legend</h3>
 {{
   compExample([
-    wmndsContentTilePageContents()
+   wmndsContentTilesNormal({
+    classModifiers: 'wmnds-content-tile--nav',
+    title: 'Related content',
+    smallTitle: true,
+    legend: 'Overview'
+   })
   ])
 }}
 
-<h2>Content tile travel tips</h2>
+<h3>Content tile travel tips</h3>
 {{
   compExample([
     wmndsContentTileTravelTips()

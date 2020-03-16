@@ -1,15 +1,52 @@
 {% macro wmndsContentTilesNormal(params) %}
+{# Imports #}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{# Set vars #}
 {% set class = ' ' + params.classModifiers if params.classModifiers %}
+{% set title = params.title if params.title else "Major Roadworks and events" %} {# set link title #}
+
 
 <div class="wmnds-content-tile{{class}}">
-  <h2>Major Roadworks and events</h2>
+  {# Title #}
+  {% if params.smallTitle %}
+    <h3>{{ title }}</h3>
+  {% else %}
+    <h2>{{ title }}</h2>
+  {% endif %}
+
+  {% if params.legend %}
+    <span class="wmnds-content-tile__legend">
+      {{ params.legend }}
+    </span>
+  {% endif %}
+
   {#- Copy #}
-  <div class="wmnds-content-tile__copy">
-    {{ params.copy | safe | trim  -}}
-    {#- Read more #}
-    {%- if params.readMore %}
-    <a href="#" class="wmnds-link wmnds-float-right">Read more</a>
-    {%- endif %}
-  </div>
+  {% if params.copy %}
+    <div class="wmnds-content-tile__copy">
+      {{ params.copy | safe | trim  -}}
+      {#- Read more #}
+      {%- if params.readMore %}
+      <a href="#" class="wmnds-link wmnds-float-right">Read more</a>
+      {%- endif %}
+    </div>
+  {% else %}
+    <ul class="wmnds-content-tile__list">
+      <li class="wmnds-content-tile__list-item">
+        {{ wmndsLink({text: 'Information for drivers'}) | indent(6) | trim }}
+      </li>
+      <li class="wmnds-content-tile__list-item">
+        {{ wmndsLink({text: 'Information for bus passengers'}) | indent(6) | trim }}
+      </li>
+      <li class="wmnds-content-tile__list-item">
+        {{ wmndsLink({text: 'Information for tram passengers'}) | indent(6) | trim }}
+      </li>
+      <li class="wmnds-content-tile__list-item">
+        {{ wmndsLink({text: 'Information for pedestrians'}) | indent(6) | trim }}
+      </li>
+      <li class="wmnds-content-tile__list-item">
+        {{ wmndsLink({text: 'Getting to venues and attractions'}) | indent(6) | trim }}
+      </li>
+    </ul>
+  {% endif %}
 </div>
 {% endmacro %}

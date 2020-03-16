@@ -3,6 +3,11 @@
   padding: $size-sm;
   border-bottom: 5px solid get-color(primary);
 
+  &__legend {
+    padding-left: $size-sm;
+    border-left: 3px solid get-color(information);
+  }
+
   &__copy {
     // Constraints for iframe
     iframe {
@@ -13,6 +18,13 @@
   &__list {
     padding: 0;
     list-style: none;
+  }
+
+  // Nav modifier
+  &--nav {
+    li {
+      margin-top: $size-sm;
+    }
   }
 
   // Yellow modifier
