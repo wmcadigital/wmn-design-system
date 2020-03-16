@@ -6,6 +6,8 @@
 {# Content tile small 1 #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 
+{%- from "wmnds/components/content-tiles/nav/_nav.njk" import wmndsContentTilesNav -%}
+
 {# Content tile related content #}
 {%- from "wmnds/components/content-tiles/related-content/related-content.njk" import wmndsContentTileRelatedContent -%}
 
@@ -70,10 +72,10 @@
   ])
 }}
 
-<h2>Content tile related content</h2>
+<h2>Nav</h2>
 {{
   compExample([
-    wmndsContentTileRelatedContent()
+   wmndsContentTilesNav()
   ])
 }}
 
