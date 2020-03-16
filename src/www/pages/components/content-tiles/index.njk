@@ -4,8 +4,7 @@
 
 {% block content %}
 {# Content tile small 1 #}
-<h2>Content tile small 1</h2>
-{%- from "wmnds/components/content-tiles/small1/small1.njk" import wmndsContentTilesSmall1 -%}
+{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 
 {# Content tile small 2 #}
 {%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
@@ -32,9 +31,10 @@
 {%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
 
 
+<h2>Normal</h2>
 {{
   compExample([
-    wmndsContentTilesSmall1()
+    wmndsContentTilesNormal()
   ])
 }}
 
