@@ -4,23 +4,7 @@
 
 {% block content %}
 {# Content tile small 1 #}
-<h2>Content tile small 1</h2>
-{%- from "wmnds/components/content-tiles/small1/small1.njk" import wmndsContentTilesSmall1 -%}
-
-{# Content tile small 2 #}
-{%- from "wmnds/components/content-tiles/small2/small2.njk" import wmndsContentTilesSmall2 -%}
-
-{# Content tile small 3 #}
-{%- from "wmnds/components/content-tiles/small3/small3.njk" import wmndsContentTilesSmall3 -%}
-
-{# Content tile map #}
-{%- from "wmnds/components/content-tiles/map/map.njk" import wmndsContentTileMap -%}
-
-{# Content tile related content #}
-{%- from "wmnds/components/content-tiles/related-content/related-content.njk" import wmndsContentTileRelatedContent -%}
-
-{# Content tile page contents #}
-{%- from "wmnds/components/content-tiles/page-contents/page-contents.njk" import wmndsContentTilePageContents -%}
+{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 
 {# Content tile travel tips #}
 {%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
@@ -32,48 +16,79 @@
 {%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
 
 
+<h2>Normal</h2>
+<h3>General</h3>
 {{
   compExample([
-    wmndsContentTilesSmall1()
+    wmndsContentTilesNormal({
+      copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
+      readMore: true
+    })
   ])
 }}
 
-<h2>Content tile small 2</h2>
+<h3>Yellow modifier</h3>
 {{
   compExample([
-    wmndsContentTilesSmall2()
+    wmndsContentTilesNormal({
+      classModifiers: 'wmnds-content-tile--yellow',
+      copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
+      readMore: true
+    })
   ])
 }}
 
-<h2>Content tile small 3</h2>
+<h3>Major Works</h3>
 {{
   compExample([
-    wmndsContentTilesSmall3()
+    wmndsContentTilesNormal({
+      copy: '
+      <ul class="wmnds-content-tile__list">
+        <li><strong>Location:</strong> Birmingham city centre</li>
+        <li><strong>Lasts until:</strong> December 2019</li>
+      </ul>
+      ',
+      readMore: true
+    })
   ])
 }}
 
-<h2>Content tile map</h2>
+<h3>Iframe (map)</h3>
 {{
   compExample([
-    wmndsContentTileMap()
+    wmndsContentTilesNormal({
+      copy: '
+      <p>Consider using City Road and Dudley Road, past City Hospital to head into Birmingham city centre or connect with the ring road.</p>
+      <iframe width="100%" height="500" src="https://tfwm.maps.arcgis.com/apps/MapJournal/index.html?appid=6e52e000bc5d4955b91e9fc48fc920b3&amp;autoplay" frameborder="0" scrolling="no" ></iframe>
+      '
+    })
   ])
 }}
 
-<h2>Content tile related content</h2>
+<h3>Nav</h3>
 {{
   compExample([
-    wmndsContentTileRelatedContent()
+   wmndsContentTilesNormal({
+    classModifiers: 'wmnds-content-tile--nav',
+    title: 'Related content',
+    smallTitle: true
+   })
   ])
 }}
 
-<h2>Content tile page contents</h2>
+<h3>Nav with legend</h3>
 {{
   compExample([
-    wmndsContentTilePageContents()
+   wmndsContentTilesNormal({
+    classModifiers: 'wmnds-content-tile--nav',
+    title: 'Related content',
+    smallTitle: true,
+    legend: 'Overview'
+   })
   ])
 }}
 
-<h2>Content tile travel tips</h2>
+<h3>Content tile travel tips</h3>
 {{
   compExample([
     wmndsContentTileTravelTips()

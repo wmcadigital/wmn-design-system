@@ -4,9 +4,10 @@
 {% set link = params.link if params.link else "#" %} {# set link url #}
 {% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
 {% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
+{% set class = ' ' + params.classModifiers if params.classModifiers %}
 
 
-<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-link">
+<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-link{{class}}">
   {{text}}
 </a>
 
