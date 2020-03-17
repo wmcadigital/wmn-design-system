@@ -5,6 +5,7 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
 {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
 
 {% block content %}
 {# About #}
@@ -56,7 +57,7 @@
   ])
 }}
 {# Mobile app variant #}
-<h3>Mobile app variant of header</h3>
+<h3 id="mobile-app-header">Mobile app variant of header</h3>
 <p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network header.</p>
 
 <p>To use the mobile app variant:</p>
@@ -65,6 +66,20 @@
   <li>Copy the code for the back button section below and insert it into your existing header</li>
   <li>Finally, add the script for the back button in your local javascript file</li>
 </ul>
+
+<p>
+  You will most likely want to use this with the mobile variants of the
+  {{ wmndsLink({
+    text: 'breadcrumb component',
+    link: '/components/breadcrumb/#mobile-app-breadcrumb'
+    })
+  }} and
+  {{ wmndsLink({
+    text: 'footer pattern',
+    link: '#mobile-app-footer'
+    })
+  }} .
+</p>
 
 {{
   compExample([
@@ -87,7 +102,7 @@
   ])
 }}
 {# Mobile app variant #}
-<h3>Mobile app variant of Footer</h3>
+<h3 id="mobile-app-footer">Mobile app variant of Footer</h3>
 <p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network footer.</p>
 
 <p>The mobile app version of the footer ensures that it will not show on devices with a screen width less than 768px. This means the footer will only show on devices with a screen resolution bigger than 768px.</p>
@@ -96,6 +111,20 @@
 <ul>
   <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-footer--mobile-app</code> to the wmnds-footer element</li>
 </ul>
+
+<p>
+  You will most likely want to use this with the mobile variants of the
+  {{ wmndsLink({
+    text: 'breadcrumb component',
+    link: '/components/breadcrumb/#mobile-app-breadcrumb'
+    })
+  }} and
+  {{ wmndsLink({
+    text: 'header pattern',
+    link: '#mobile-app-header'
+    })
+  }} .
+</p>
 
 {{
   compExample([

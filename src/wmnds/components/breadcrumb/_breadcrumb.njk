@@ -9,8 +9,9 @@ And we show the current page breadcrumb at all times.
 {# Set sectionUrl and pageUrl #}
 {% set sectionUrl =  '/' + section | lower | replace(" ", "-") if params.pageTitle != section %}
 {% set pageUrl =  '/' + params.pageTitle | lower | replace(" ", "-") + '/' %}
+{% set class = ' ' + params.classModifiers if params.classModifiers %}
 
-<nav aria-label="Breadcrumb" class="wmnds-breadcrumb">
+<nav aria-label="Breadcrumb" class="wmnds-breadcrumb{{class}}">
   <ol class="wmnds-breadcrumb__list">
     {#- Link back to homepage #}
     <li class="wmnds-breadcrumb__list-item">

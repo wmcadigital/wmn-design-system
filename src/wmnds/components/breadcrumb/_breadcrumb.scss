@@ -34,4 +34,13 @@
       color: get-color(text, 30, dark);
     }
   }
+
+  // App specific breadcrumb styles
+  &--mobile-app {
+    display: none;
+
+    @media screen and(min-width: $breakpoint-md) {
+      display: block;
+    }
+  }
 }
