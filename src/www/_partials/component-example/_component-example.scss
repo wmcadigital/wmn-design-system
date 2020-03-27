@@ -3,6 +3,7 @@
   padding: $size-md;
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
+  background-color: get-color(background);
 }
 
 // Scrollbar styling for code previews of components
