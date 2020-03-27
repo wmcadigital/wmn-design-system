@@ -13,7 +13,7 @@
         for: id
       }) | trim
     }}
-    <select name="{{id}}" id="{{id}}" class="wmnds-fe-dropdown__select">
+    <select class="wmnds-fe-dropdown__select" id="{{id}}" name="{{id}}">
       <option value="" selected="selected">Choose from list</option>
       {%- for i in range(1,6) %}
       <option value="{{i}}">Option {{i}}</option>
