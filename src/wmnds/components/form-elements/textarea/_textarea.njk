@@ -6,14 +6,14 @@
 {# Params #}
 {% set id = params.id if params.id else "textarea" %}
 
-<div class="wmnds-fe-textarea">
+<div class="wmnds-fe-group">
   {{
     wmndsLabel({
       label: 'Textarea label',
       for: id
     }) | trim
   }}
-  <textarea type="text" name="{{id}}" id="{{id}}" class="wmnds-fe-textarea__textarea" rows="3"></textarea>
+  <textarea  class="wmnds-fe-textarea" id="{{id}}" name="{{id}}" rows="3"></textarea>
 </div>
 
 {% endmacro %}
