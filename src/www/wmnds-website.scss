@@ -15,12 +15,6 @@
 
 $component-code-bg: #efefef;
 
-html {
-  overflow-y: scroll;
-  background: get-color(primary);
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: $white;
 }
