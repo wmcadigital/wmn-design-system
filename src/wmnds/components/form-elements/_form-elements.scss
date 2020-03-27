@@ -4,7 +4,6 @@
   }
 }
 
-input,
 textarea {
   @include type-setting(0);
   width: 100%;
@@ -16,4 +15,5 @@ textarea {
 @import "label/label";
 @import "checkboxes/checkboxes";
 @import "dropdown/dropdown";
+@import "input/input";
 @import "textarea/textarea";

@@ -5,15 +5,14 @@
 
 {# Params #}
 {% set id = params.id if params.id else "input" %}
-
-<div class="wmnds-fe-input">
+<div class="wmnds-fe-group">
   {{
     wmndsLabel({
       label: 'Input label',
       for: id
     }) | trim
   }}
-  <input type="text" name="{{id}}" id="{{id}}"/>
+  <input name="{{id}}" id="{{id}}" type="text" class="wmnds-fe-input"/>
 </div>
 
 {% endmacro %}
