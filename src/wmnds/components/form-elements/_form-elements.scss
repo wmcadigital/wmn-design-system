@@ -1,14 +1,11 @@
-input,
-textarea,
-select {
-  @include type-setting(0);
-  width: 100%;
-  padding: $size-sm;
-  border: 1px solid get-color(primary);
-  color: get-color(text);
+.wmnds-fe {
+  &-group {
+    margin-bottom: $size-xl;
+  }
 }
 
 @import "label/label";
 @import "checkboxes/checkboxes";
 @import "dropdown/dropdown";
+@import "input/input";
 @import "textarea/textarea";

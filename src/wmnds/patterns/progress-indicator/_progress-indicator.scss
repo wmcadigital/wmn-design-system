@@ -30,7 +30,10 @@ $wmnds-progress-indicator-icon-margin-right: $size-xs;
       }
     }
 
-    &--current,
+    &--current {
+      border-color: get-color(primary);
+    }
+
     &--success {
       border-color: get-color(success);
     }

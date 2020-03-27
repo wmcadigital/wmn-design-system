@@ -2,8 +2,10 @@
   text-decoration: none;
 }
 
-hr {
-  margin: $size-md 0;
+.wmnds-html {
+  overflow-y: scroll;
+  background: get-color(primary, 50, dark);
+  scroll-behavior: smooth;
 }
 
 // Text highlighting color
