@@ -1,6 +1,11 @@
+.wmnds-fe {
+  &-group {
+    margin-bottom: $size-xl;
+  }
+}
+
 input,
-textarea,
-select {
+textarea {
   @include type-setting(0);
   width: 100%;
   padding: $size-sm;

@@ -9,6 +9,7 @@
     @include type-setting(0);
     display: block;
     position: relative;
+    min-height: 35px;
     margin-bottom: $size-md;
     padding-left: 60px;
     cursor: pointer;
@@ -39,7 +40,11 @@
     position: absolute;
     width: 35px;
     height: 35px;
+    @include type-setting(0);
+    padding: $size-sm;
+    border: 1px solid get-color(primary);
     opacity: 0;
+    color: get-color(text);
 
     &:focus ~ .wmnds-fe-checkboxes__checkmark {
       background-color: get-color(secondary, 70);
