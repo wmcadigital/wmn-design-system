@@ -50,8 +50,9 @@
   max-height: 300px;
   margin-top: 0;
   padding: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-bottom: 1px solid get-color(primary);
+  background-color: $white;
 
   &__li {
     padding: 10px;
