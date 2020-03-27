@@ -4,6 +4,9 @@
 {# Success #}
 {% if params.type === "success" %}
   {% set iconName = 'general-success' %}
+{# Success #}
+{% elseif params.type === "success-fill" %}
+  {% set iconName = 'general-success' %}
 {# Warning #}
 {% elseif params.type === "warning" %}
   {% set iconName = 'general-warning-circle' %}

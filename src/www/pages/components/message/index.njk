@@ -61,6 +61,21 @@
 }}
 {# End success message #}
 
+
+<br><br>
+{# Success message #}
+<h2>Success (fill)</h2>
+{{
+  compExample([
+    wmndsMsgSummary({
+      type: 'success-fill',
+      title: 'Success confirmation',
+      message: 'Details added if needed to confirm action.'
+    })
+  ])
+}}
+{# End success message #}
+
 <br><br>
 {# Warning message #}
 <h2>Warning</h2>
