@@ -1,7 +1,7 @@
 {% macro compExample(componentPath, params) %}
 
 <div class="wmnds-website-code-example">
-  <h3>Component example</h3>
+  <h3 class="wmnds-website-code-example__subtitle">Component example</h3>
   <div class="wmnds-col-1 {{params.classNames}}">
     {%- for item in componentPath %}
       {{ item }}
@@ -15,7 +15,7 @@
     {% endfor -%}
   </div>
 
-  <h3>HTML Markup</h3>
+  <h3 class="wmnds-website-code-example__subtitle">HTML Markup</h3>
 {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
 {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
 <pre><code class="html" tabindex="0">{% for item in componentPath -%}
