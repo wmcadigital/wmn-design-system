@@ -8,7 +8,7 @@
 <div class="wmnds-fe-group">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
-      {{wmndsQuestion()}}
+      {{ wmndsQuestion() | indent(6) | trim }}
     </legend>
     <div class="wmnds-fe-radios">
       <span class="wmnds-fe-radios__desc">
@@ -17,7 +17,6 @@
       {%- for i in range(1,4) %}
       {#- Set checked state on first item in loop #}
       {%- set isChecked = (' checked="checked"' | safe) if i === 1 %}
-
       <label class="wmnds-fe-radios__container">
         Option {{i}}
         <input class="wmnds-fe-radios__input" value="Option {{i}}"{{isChecked}} name="radio-example" type="radio"/>
