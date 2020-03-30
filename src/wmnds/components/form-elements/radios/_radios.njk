@@ -15,15 +15,8 @@
 
     <label class="wmnds-fe-radios__container">
       Option {{i}}
-      <input class="wmnds-fe-radios__input" value="Option {{i}}"{{isChecked}} type="radio"/>
-      <span class="wmnds-fe-radios__checkmark">
-        {# Get SVG icon and pass class #}
-        {{-
-          wmndsIcon({
-            icon: 'general-checkmark',
-            class: 'wmnds-fe-radios__icon'
-          }) | indent(8) | trim
-        }}
+      <input class="wmnds-fe-radios__input" value="Option {{i}}"{{isChecked}} type="radio" name="radio-example"/>
+      <span class="wmnds-fe-radios__dot">
       </span>
     </label>
     {%- endfor %}

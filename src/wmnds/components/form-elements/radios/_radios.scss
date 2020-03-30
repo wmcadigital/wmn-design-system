@@ -16,54 +16,54 @@
     user-select: none;
 
     // On mouse-over, add a grey background color
-    &:hover .wmnds-fe-checkboxes__checkmark {
+    &:hover .wmnds-fe-radios__dot {
       background-color: get-color(secondary, 70);
     }
   }
 
   // The svg checkmark styling
-  &__icon {
+  &__dot:after {
+    content: "";
     display: none;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 26px;
-    height: 23px;
+    width: 25px;
+    height: 25px;
     margin: auto;
-    fill: get-color(primary);
+    border-radius: 25px;
+    background-color: get-color(primary);
   }
 
   // Hide the browser's default checkbox
   &__input {
     position: absolute;
-    width: 35px;
-    height: 35px;
+    width: 0;
+    height: 0;
     @include type-setting(0);
-    padding: $size-sm;
-    border: 1px solid get-color(primary);
     opacity: 0;
-    color: get-color(text);
 
-    &:focus ~ .wmnds-fe-checkboxes__checkmark {
+    &:focus ~ .wmnds-fe-radios__dot {
       background-color: get-color(secondary, 70);
     }
 
     // Show the checkmark when checked
-    &:checked ~ .wmnds-fe-checkboxes__checkmark > .wmnds-fe-checkboxes__icon {
+    &:checked ~ .wmnds-fe-radios__dot:after {
       display: block;
     }
   }
 
   // Create a custom checkbox box
-  &__checkmark {
+  &__dot {
     position: absolute;
     top: 0;
     left: 0;
     width: 35px;
     height: 35px;
     border: 2px solid get-color(primary);
+    border-radius: 35px;
     background: $white;
   }
 }
