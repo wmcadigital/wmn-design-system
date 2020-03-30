@@ -7,7 +7,7 @@
 <div class="wmnds-fe-group">
   <div class="wmnds-fe-radios">
     <span class="wmnds-fe-radios__desc">
-      Select all options that apply
+      Select one option
     </span>
     {%- for i in range(1,4) %}
     {#- Set checked state on first item in loop #}
@@ -15,8 +15,8 @@
 
     <label class="wmnds-fe-radios__container">
       Option {{i}}
-      <input class="wmnds-fe-radios__input" value="Option {{i}}"{{isChecked}} type="radio" name="radio-example"/>
-      <span class="wmnds-fe-radios__dot">
+      <input class="wmnds-fe-radios__input" value="Option {{i}}"{{isChecked}} name="radio-example" type="radio"/>
+      <span class="wmnds-fe-radios__checkmark">
       </span>
     </label>
     {%- endfor %}
