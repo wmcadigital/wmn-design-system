@@ -2,6 +2,17 @@
   &-group {
     margin-bottom: $size-xl;
   }
+
+  &-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &-question {
+    @include type-setting(3);
+  }
 }
 
 @import "label/label";
