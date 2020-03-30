@@ -6,7 +6,7 @@
   background-color: get-color(background);
 
   &__subtitle {
-    color: #84329b;
+    color: get-color(information);
     text-decoration: underline;
   }
 }
