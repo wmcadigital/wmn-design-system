@@ -1,15 +1,26 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Form elements" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
   {# Label #}
   <h2>Label</h2>
   {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsLabel()])
   }}
   {# End label #}
+
+
+  <br><br>
+  {# Question #}
+  <h2>Question</h2>
+  {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+  {{
+    compExample([wmndsQuestion()])
+  }}
+  {# End question #}
+
 
   <br><br>
   {# Checkboxes #}
@@ -29,11 +40,11 @@
     <li>Use fixed width inputs for content that has known length, e.g. postcode.</li>
   </ul>
   {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsCheckboxes()])
   }}
   {# End Checkboxes #}
+
 
   <br><br>
   {# Dropdown #}
@@ -54,7 +65,6 @@
     <li>Do not use when drop down option has more than 36 characters because users will not be able to read them on some mobile devices</li>
   </ul>
   {% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsDropdown()])
   }}
@@ -77,7 +87,6 @@
     <li>Use fixed width inputs for content that has known length, e.g. postcode.</li>
   </ul>
   {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsInput()])
   }}
@@ -101,7 +110,6 @@
     <li>Use fixed width inputs for content that has known length, e.g. postcode.</li>
   </ul>
   {% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsRadios()])
   }}
@@ -113,7 +121,6 @@
   {# Textarea #}
   <h2>Textarea</h2>
   {% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
-  {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsTextarea()])
   }}
