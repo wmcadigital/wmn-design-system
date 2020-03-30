@@ -4,6 +4,11 @@
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
   background-color: get-color(background);
+
+  &__subtitle {
+    color: get-color(information);
+    text-decoration: underline;
+  }
 }
 
 // Scrollbar styling for code previews of components
