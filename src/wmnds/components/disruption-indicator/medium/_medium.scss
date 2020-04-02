@@ -46,4 +46,14 @@
       margin-left: $size-sm;
     }
   }
+
+  &__btn {
+    display: inline-block;
+    margin-left: $size-sm;
+    padding: 0;
+    border: 0;
+    background: none;
+    vertical-align: middle;
+    cursor: pointer;
+  }
 }

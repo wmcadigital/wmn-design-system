@@ -1,4 +1,4 @@
-{% macro wmndsCheckboxes(params) %}
+{% macro wmndsRadios(params) %}
 
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
@@ -10,24 +10,17 @@
     <legend class="wmnds-fe-fieldset__legend">
       {{ wmndsQuestion() | indent(6) | trim }}
     </legend>
-    <div class="wmnds-fe-checkboxes">
-      <span class="wmnds-fe-checkboxes__desc">
-        Select all options that apply
+    <div class="wmnds-fe-radios">
+      <span class="wmnds-fe-radios__desc">
+        Select one option
       </span>
       {%- for i in range(1,4) %}
       {#- Set checked state on first item in loop #}
       {%- set isChecked = (' checked="checked"' | safe) if i === 1 %}
-      <label class="wmnds-fe-checkboxes__container">
+      <label class="wmnds-fe-radios__container">
         Option {{i}}
-        <input class="wmnds-fe-checkboxes__input" value="Option {{i}}"{{isChecked}} type="checkbox"/>
-        <span class="wmnds-fe-checkboxes__checkmark">
-          {# Get SVG icon and pass class #}
-          {{-
-            wmndsIcon({
-              icon: 'general-checkmark',
-              class: 'wmnds-fe-checkboxes__icon'
-            }) | indent(8) | trim
-          }}
+        <input class="wmnds-fe-radios__input" value="Option {{i}}"{{isChecked}} name="radio-example" type="radio"/>
+        <span class="wmnds-fe-radios__checkmark">
         </span>
       </label>
       {%- endfor %}

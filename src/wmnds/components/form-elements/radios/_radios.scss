@@ -1,0 +1,69 @@
+.wmnds-fe-radios {
+  &__desc {
+    display: block;
+    margin-bottom: $size-sm;
+  }
+
+  // Customize the label (the container)
+  &__container {
+    @include type-setting(0);
+    display: block;
+    position: relative;
+    min-height: 35px;
+    margin-bottom: $size-md;
+    padding-left: 60px;
+    cursor: pointer;
+    user-select: none;
+
+    // On mouse-over, add a grey background color
+    &:hover .wmnds-fe-radios__checkmark {
+      background-color: get-color(secondary, 70);
+    }
+  }
+
+  // Hide the browser's default radio
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    @include type-setting(0);
+    opacity: 0;
+
+    &:focus ~ .wmnds-fe-radios__checkmark {
+      background-color: get-color(secondary, 70);
+    }
+
+    // Show the checkmark when checked
+    &:checked ~ .wmnds-fe-radios__checkmark:after {
+      display: block;
+    }
+  }
+
+  // Create a custom radio dot
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border: 2px solid get-color(primary);
+    border-radius: 35px;
+    background: $white;
+
+    // The radio checkmark styling
+    &:after {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 25px;
+      height: 25px;
+      margin: auto;
+      border-radius: 25px;
+      background-color: get-color(primary);
+    }
+  }
+}
