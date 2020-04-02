@@ -17,9 +17,13 @@ body {
   }
 }
 
+.wmnds-grid [class*="wmnds-col"] h1,
 h1,
+.wmnds-grid [class*="wmnds-col"] h2,
 h2,
+.wmnds-grid [class*="wmnds-col"] h3,
 h3,
+.wmnds-grid [class*="wmnds-col"] h4,
 h4 {
   font-family: $x-heading-font-family;
 }
