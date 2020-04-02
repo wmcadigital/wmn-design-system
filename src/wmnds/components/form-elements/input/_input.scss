@@ -4,4 +4,8 @@
   padding: $size-sm;
   border: 1px solid get-color(primary);
   color: get-color(text);
+
+  &--error {
+    border: 2px solid get-color(error);
+  }
 }

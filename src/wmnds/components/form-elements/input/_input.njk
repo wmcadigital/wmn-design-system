@@ -2,17 +2,26 @@
 
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Params #}
 {% set id = params.id if params.id else "input" %}
-<div class="wmnds-fe-group">
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set errorClass = " wmnds-fe-input--error" if params.error %}
+
+<div class="wmnds-fe-group{{groupErrorClass}}">
   {{
     wmndsLabel({
       label: 'Input label',
       for: id
     }) | trim
   }}
-  <input class="wmnds-fe-input" id="{{id}}" name="{{id}}" type="text"/>
+  {% if params.error -%}
+    {{
+      wmndsFeErrorMessage() | trim
+    }}
+  {% endif -%}
+  <input class="wmnds-fe-input{{errorClass}}" id="{{id}}" name="{{id}}" type="text"/>
 </div>
 
 {% endmacro %}]

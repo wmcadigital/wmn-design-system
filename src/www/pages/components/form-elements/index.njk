@@ -125,4 +125,18 @@
     compExample([wmndsTextarea()])
   }}
   {# End Textarea #}
+
+
+  <br><br>
+  {# Handling error #}
+  <h2 id="handling-errors">Handling errors</h2>
+   {{
+    compExample([
+      wmndsInput({
+        id: 'errorExample',
+        error:true
+      })
+    ])
+  }}
+  {# End handling errors #}
 {% endblock %}
