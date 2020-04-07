@@ -1,7 +1,8 @@
 .wmnds-banner-container {
   border-bottom: 1px solid get-color(text);
-
-  &__feedback {
-    border-bottom: 1px solid get-color(text);
+  padding: $size-md 0;
+  p {
+    padding: 0;
+    margin:0
   }
 }
