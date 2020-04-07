@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@zeplin/cli": "^1.0.0",
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^9.7.6",
     "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -99,7 +99,7 @@
     "node-sass": "^4.13.1",
     "npm-check-updates": "^4.1.1",
     "nunjucks": "^3.2.1",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.4",
     "sass": "^1.26.2",
     "webpack-stream": "^5.2.1"
   },
