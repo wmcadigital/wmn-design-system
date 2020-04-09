@@ -1,9 +1,11 @@
 .wmnds-banner-container {
-  border-bottom: 1px solid get-color(text);
   padding: $size-md 0;
+  border-bottom: 1px solid get-color(text);
+
   &__text {
+    margin: 0;
     padding: 0;
-    margin:0;
+
     @media screen and (max-width: $breakpoint-sm) {
       margin-top: $size-sm;
     }
