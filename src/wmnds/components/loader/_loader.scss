@@ -16,6 +16,7 @@ $wmnds-loader-animation-speed: 1s;
     height: 22px;
     margin-left: $size-sm;
     border-width: 2px;
+    border-top-color: get-color(cta);
   }
 
   &--small {
