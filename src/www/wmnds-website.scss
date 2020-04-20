@@ -12,7 +12,7 @@
 @import "pages/styles/icons/icons";
 
 body {
-  background-color: $white;
+  background-color: get-color(background);
 }
 
 .wmnds-website-inline-code {

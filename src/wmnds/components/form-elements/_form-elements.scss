@@ -1,6 +1,11 @@
 .wmnds-fe {
   &-group {
     margin-bottom: $size-xl;
+
+    &--error {
+      padding-left: $size-md;
+      border-left: 5px solid get-color(error);
+    }
   }
 
   &-fieldset {
@@ -13,6 +18,7 @@
       min-width: 0;
       margin: 0;
       padding: 0;
+      overflow: hidden;
       border: 0;
     }
   }
@@ -22,6 +28,7 @@
 @import "question/question";
 @import "checkboxes/checkboxes";
 @import "dropdown/dropdown";
+@import "error-message/error-message";
 @import "input/input";
 @import "radios/radios";
 @import "textarea/textarea";

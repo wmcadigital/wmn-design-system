@@ -1,7 +1,13 @@
 .wmnds-banner-container {
+  padding: $size-md 0;
   border-bottom: 1px solid get-color(text);
 
-  &__feedback {
-    border-bottom: 1px solid get-color(text);
+  &__text {
+    margin: 0;
+    padding: 0;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      margin-top: $size-sm;
+    }
   }
 }
