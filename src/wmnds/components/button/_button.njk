@@ -26,7 +26,7 @@
     {{ text -}}
 
     {#- iconRight -#}
-    {% elseif iconRight %}
+    {% elseif iconRight -%}
     {{ text }}
     {{
       wmndsIcon({
@@ -35,9 +35,9 @@
       }) | indent | trim
     }}
 
-    {% elseif params.loading %}
+    {%- elseif params.loading %}
     {{ text }}
-    {# Loading spinner #}
+    {#- Loading spinner -#}
     {{
       wmndsLoader({
         customClass: 'wmnds-btn__icon wmnds-btn__icon--right',
@@ -48,7 +48,7 @@
 
 
     {#- noIcon -#}
-    {% else %}
+    {% else -%}
     {{text}}
     {%- endif %}
 </button>
