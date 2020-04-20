@@ -1,5 +1,11 @@
 {% macro wmndsBanner(params) %}
+{# Imports #}
 {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{# Set vars #}
+{% set link = params.link if params.link %} {# set button text #}
+{% set linkTitle = params.linkTitle if params.linkTitle %} {# set button text #}
+
 
 <div class="wmnds-grid wmnds-banner-container">
    <div class="wmnds-col-auto wmnds-float-left wmnds-m-r-xsm">
@@ -8,7 +14,17 @@
       }}
    </div>
    <div class="wmnds-col-auto">
-      <p class="wmnds-banner-container__text">This is a new service - your <a href="#" class="wmnds-link">feedback</a> will help us to improve it.</p>
+      <p class="wmnds-banner-container__text">
+         This is a new service - your
+         {{ wmndsLink({
+            text: 'feedback',
+            link: link,
+            linkTitle: linkTitle,
+            linkTarget: '_blank'
+            }) | indent(6) | trim
+         }}
+         will help us to improve it.
+      </p>
    </div>
 </div>
 {% endmacro %}

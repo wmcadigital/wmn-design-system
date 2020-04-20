@@ -26,7 +26,10 @@
     <div class="wmnds-container">
       {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
       {{
-        wmndsBanner ()
+        wmndsBanner ({
+          link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+          linkTitle: 'WMN Design System Github'
+        })
       }}
     </div>
     {# beta banner #}
