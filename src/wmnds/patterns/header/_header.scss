@@ -4,11 +4,35 @@
   background-color: get-color(primary);
   text-align: left;
 
+  // Skip link styling
+  &__skip-link {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: $size-md;
+    clip: rect(0 0 0 0);
+    color: $white;
+    background-color: get-color(cta);
+
+    &:visited {
+      color: $white;
+    }
+
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      clip: auto;
+      box-shadow: none;
+    }
+  }
+
   // Logo styles
   &__logo-link {
     display: inline-block;
     width: 34px;
-    margin-right: $size-md;
+    margin-right: $size-sm;
     overflow: hidden;
     vertical-align: middle;
 

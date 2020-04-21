@@ -18,6 +18,6 @@ body {
 .wmnds-website-inline-code {
   padding: $size-xs;
   color: get-color(primary);
-  background: get-color(background);
+  background: $white;
   @include type-setting(4);
 }

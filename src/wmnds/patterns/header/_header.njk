@@ -3,8 +3,19 @@
 {% set navItems = params.navItems %}
 {% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
 {# Imports #}
- {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+{% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 
+<!-- Skip to content link -->
+{{
+  wmndsLink({
+    link: '#wmnds-main-content',
+    linkTitle: 'Skip to main content',
+    text: 'Skip to main content',
+    classModifiers: 'wmnds-header__skip-link'
+  }) | trim
+}}
+<!-- Main header section -->
 <header class="wmnds-header{{appClass}}">
   <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
     <div class="wmnds-header__vertical-align wmnds-col-auto">
