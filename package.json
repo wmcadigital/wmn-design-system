@@ -89,7 +89,7 @@
     "gulp-remember": "^1.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgmin": "^2.2.0",
