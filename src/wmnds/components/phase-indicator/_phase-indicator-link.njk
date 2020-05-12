@@ -1,15 +1,25 @@
 {% macro wmndsPhaseIndicatorLink(params) %}
+{% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{# Set vars #}
+{% set text = params.text if params.text %}
+{% set link = params.link if params.link %} {# set button text #}
+{% set linkTitle = params.linkTitle if params.linkTitle %} {# set button text #}
 <div class="wmnds-grid wmnds-banner-container">
   <div class="wmnds-col-auto wmnds-float-left wmnds-m-r-xsm">
-     <a href="/" target="_self" class="wmnds-phase-indicator" title="Beta homepage of West Midlands Network Design System">
-       Beta
-     </a>
+    {{
+      wmndsPhaseIndicator() | indent(6) | trim
+   }}
   </div>
   <div class="wmnds-col-auto">
      <p class="wmnds-banner-container__text">
-        <a href="#" title="link title" target="_blank" class="wmnds-link">
-          Try our new disruptions page
-        </a>
+      {{ wmndsLink({
+        text: text,
+        link: link,
+        linkTitle: linkTitle,
+        linkTarget: '_blank'
+        }) | indent(6) | trim
+     }}
      </p>
   </div>
 </div>
