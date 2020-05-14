@@ -30,8 +30,18 @@
 </p>
 
   {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+  {% from "wmnds/components/phase-indicator/_phase-indicator-link.njk" import wmndsPhaseIndicatorLink %}
   {% from "www/_partials/component-example/component-example.njk" import compExample %}
   {{
     compExample([wmndsPhaseIndicator()])
+
+  }}
+  {{
+    compExample([wmndsPhaseIndicatorLink({
+      link:'#',
+      linkTitle: 'Link title',
+      text: 'Try our new disruptions page'
+
+    })])
   }}
 {% endblock %}
