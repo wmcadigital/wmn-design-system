@@ -28,6 +28,15 @@
         wmndsPhaseIndicator() | indent(6) | trim
       }}
     </div>
+
+    {#- If with a title #}
+    {% if params.withTitle -%}
+    <!-- Header title -->
+    <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
+      Reinstate your Direct Debit<br>(COVID-19)
+    </h1>
+    {%- else %}
+    {#- Else with a navigation -#}
     <!-- Nav items -->
     <nav class="wmnds-header__vertical-align wmnds-col-auto">
       <ul class="wmnds-header__links wmnds-header__main-links">
@@ -66,6 +75,7 @@
       <!-- End back button -->
       {%- endif %}
     </nav>
+    {% endif %}
   </div>
 </header>
 

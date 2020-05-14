@@ -53,6 +53,16 @@
     vertical-align: middle;
   }
 
+  // Title variant
+  &__title {
+    @include type-setting(3);
+    color: $white;
+    @media all and(min-width: $breakpoint-sm) {
+      max-width: calc(100% - 200px); // Give some padding for the logos on the left
+      text-align: right;
+    }
+  }
+
   // Nav links
   &__links {
     display: block;
