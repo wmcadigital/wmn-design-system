@@ -1,0 +1,46 @@
+# # See https://github.com/restyled-io/restyled.io/wiki/Configuring-Restyled
+
+enabled: true
+
+exclude:
+  - '**/node_modules/**/*'
+  - '**/vendor/**/*'
+  - '.github/workflows/**/*' # https://github.com/restyled-io/restyler/issues/73
+  - '*.key'
+  - '*.enc'
+  - '*.min.css'
+  - '*.css.map'
+  - '*.min.js'
+  - '*.js.map'
+  - '*.mk'
+  - 'package-lock.json'
+  - 'yarn.lock'
+  - 'Gemfile.lock'
+  - '.typo-ci.yml'
+
+remote_files: []
+
+auto: false
+
+pull_requests: true
+
+comments: false
+
+statuses:
+  differences: true
+  no_differences: true
+  error: true
+
+request_review: none
+
+labels: []
+
+ignore_labels:
+  - restyled-ignore
+
+restylers:
+  - clang-format:
+      enabled: false
+
+  - prettier:
+      enabled: true
