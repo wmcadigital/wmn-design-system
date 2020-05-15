@@ -16,13 +16,3 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           eslint_flags: 'src/'
-
-  pRStatusGiphy:
-    name: PR Status Giphy
-    runs-on: ubuntu-latest
-    steps:
-      - name: PR Status Giphy
-        uses: jzweifel/pr-status-giphy-action@master
-        env:
-          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
