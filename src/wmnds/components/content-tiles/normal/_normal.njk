@@ -3,7 +3,12 @@
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
 {# Set vars #}
 {% set class = ' ' + params.classModifiers if params.classModifiers %}
-{% set title = params.title if params.title else "Major Roadworks and events" %} {# set link title #}
+{% set title = params.title if params.title else "Major Roadworks and events" %} {# set title #}
+{# Link vars #}
+{% set linkText = params.linkText if params.linkText else "Read more" %} {# set link text #}
+{% set link = params.link if params.link else "#" %} {# set link url #}
+{% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
+{% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
 
 
 <div class="wmnds-content-tile{{class}}">
@@ -28,7 +33,10 @@
       {#- Read more -#}
       {%- if params.readMore %}
       {{ wmndsLink({
-        text: 'Read more',
+        link: link,
+        linkTarget: linkTarget,
+        linkTitle: linkTitle,
+        text: linkText,
         classModifiers: 'wmnds-float-right'
         }) | indent(6) | trim
       }}

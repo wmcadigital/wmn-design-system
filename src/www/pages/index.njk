@@ -1,6 +1,8 @@
 {% extends "www/_layouts/layout-fullwidth.njk" %}
 {% set pageTitle = "West Midlands Network<br/>Design System" %}
 {% set section = 'Home' %}
+{# Imports #}
+{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 
 {% block content %}
 <div class="wmnds-grid wmnds-grid--align-center">
@@ -56,17 +58,28 @@
 {# Internal navigation #}
 <h2>Design System</h2>
 <div class="wmnds-grid">
-<div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
-    <div class="wmnds-content-tile">
-      <h3><a href="/user-research" title="User research" target="_self" class="h3">User research</a></h3>
-        <div class="wmnds-content-tile__copy">
-          <p>Start with user needs to make sure you're building the right thing</p>
-        </div>
-    </div>
+  <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
+
+    {{
+      wmndsContentTilesNormal({
+        title: "User research",
+        copy: "<p>Start with user needs to make sure you're building the right thing</p>",
+        smallTitle: true,
+        readMore: true,
+        link: '/user-research/',
+        linkText: 'Read more about user research',
+        linkTitle: 'User research'
+      })
+    }}
+
+    {# <div class="wmnds-content-tile">
+      </div>
+      <a href="/user-research" title="" target="_self">Read more</a>
+    </div> #}
   </div>
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
     <div class="wmnds-content-tile">
-      <h3><a href="/styles" title="Styles" target="_self" class="h3">Styles</a></h3>
+      <h3><a href="/styles" title="Styles" target="_self">Styles</a></h3>
         <div class="wmnds-content-tile__copy">
           <p>Make your service look and feel like WMN: colours, icons, typography and utility classes</p>
         </div>
@@ -74,7 +87,7 @@
   </div>
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
     <div class="wmnds-content-tile">
-      <h3><a href="/components" title="Components" target="_self" class="h3">Components</a></h3>
+      <h3><a href="/components" title="Components" target="_self">Components</a></h3>
         <div class="wmnds-content-tile__copy">
           <p>Reusable parts of the user interface: content, map and form elements; buttons and messages</p>
         </div>
@@ -82,7 +95,7 @@
   </div>
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
     <div class="wmnds-content-tile">
-      <h3><a href="/patterns" title="Patterns" target="_self" class="h3">Patterns</a></h3>
+      <h3><a href="/patterns" title="Patterns" target="_self">Patterns</a></h3>
         <div class="wmnds-content-tile__copy">
           <p>Commonly used sets of components</p>
         </div>
