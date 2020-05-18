@@ -58,8 +58,8 @@
 {# Internal navigation #}
 <h2>Design System</h2>
 <div class="wmnds-grid">
+  {# User research #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
-
     {{
       wmndsContentTilesNormal({
         title: "User research",
@@ -71,37 +71,51 @@
         linkTitle: 'User research'
       })
     }}
-
-    {# <div class="wmnds-content-tile">
-      </div>
-      <a href="/user-research" title="" target="_self">Read more</a>
-    </div> #}
   </div>
+  {# Styles #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
-    <div class="wmnds-content-tile">
-      <h3><a href="/styles" title="Styles" target="_self">Styles</a></h3>
-        <div class="wmnds-content-tile__copy">
-          <p>Make your service look and feel like WMN: colours, icons, typography and utility classes</p>
-        </div>
-        </div>
+    {{
+      wmndsContentTilesNormal({
+        title: "Styles",
+        copy: "<p>Make your service look and feel like WMN: colours, icons, typography and utility classes</p>",
+        smallTitle: true,
+        readMore: true,
+        link: '/styles/',
+        linkText: 'Read more about styles',
+        linkTitle: 'Styles'
+      })
+    }}
   </div>
+  {# Components #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
-    <div class="wmnds-content-tile">
-      <h3><a href="/components" title="Components" target="_self">Components</a></h3>
-        <div class="wmnds-content-tile__copy">
-          <p>Reusable parts of the user interface: content, map and form elements; buttons and messages</p>
-        </div>
-        </div>
+    {{
+      wmndsContentTilesNormal({
+        title: "Components",
+        copy: "<p>Reusable parts of the user interface: content, map and form elements; buttons and messages</p>",
+        smallTitle: true,
+        readMore: true,
+        link: '/components/',
+        linkText: 'Read more about components',
+        linkTitle: 'Components'
+      })
+    }}
   </div>
+  {# Patterns #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-xs">
-    <div class="wmnds-content-tile">
-      <h3><a href="/patterns" title="Patterns" target="_self">Patterns</a></h3>
-        <div class="wmnds-content-tile__copy">
-          <p>Commonly used sets of components</p>
-        </div>
-        </div>
+    {{
+      wmndsContentTilesNormal({
+        title: "Patterns",
+        copy: "<p>Commonly used sets of components</p>",
+        smallTitle: true,
+        readMore: true,
+        link: '/patterns/',
+        linkText: 'Read more about patterns',
+        linkTitle: 'Patterns'
+      })
+    }}
   </div>
 </div>
+
 <br>
 {# Quick start #}
 <h2>Quick start</h2>
