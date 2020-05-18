@@ -17,10 +17,21 @@
 
 
 <h2>Normal</h2>
-<h3>General</h3>
+<h3>General </h3>
 {{
   compExample([
     wmndsContentTilesNormal({
+      copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
+      readMore: true
+    })
+  ])
+}}
+
+<h3>General with one link</h3>
+{{
+  compExample([
+    wmndsContentTilesNormal({
+      classModifiers: 'wmnds-content-tile--with-one-link',
       copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
       readMore: true
     })
@@ -31,7 +42,7 @@
 {{
   compExample([
     wmndsContentTilesNormal({
-      classModifiers: 'wmnds-content-tile--yellow',
+      classModifiers: 'wmnds-content-tile--yellow wmnds-content-tile--with-one-link',
       copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
       readMore: true
     })
@@ -42,6 +53,7 @@
 {{
   compExample([
     wmndsContentTilesNormal({
+      classModifiers: 'wmnds-content-tile--with-one-link',
       copy: '
       <ul class="wmnds-content-tile__list">
         <li><strong>Location:</strong> Birmingham city centre</li>
