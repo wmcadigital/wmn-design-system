@@ -71,6 +71,9 @@
           "name": "Progress indicator"
         }
       ]
+    },
+    {
+      "name": "User research"
     }
   ],
   "colors": {
