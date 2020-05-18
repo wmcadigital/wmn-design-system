@@ -1,5 +1,4 @@
 .wmnds-content-tile {
-  display: flow-root;
   height: 100%;
   padding: $size-sm;
   border-bottom: 5px solid get-color(primary);
@@ -15,11 +14,23 @@
     iframe {
       width: 100%;
     }
+
+    .wmnds-link {
+      position: absolute;
+      right: $size-sm;
+      bottom: $size-sm;
+    }
   }
 
   &__list {
     padding: 0;
     list-style: none;
+  }
+
+  // One main link modifier
+  &--with-one-link {
+    position: relative;
+    padding-bottom: $size-lg;
   }
 
   // Nav modifier
