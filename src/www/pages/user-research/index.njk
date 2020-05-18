@@ -1,163 +1,149 @@
 {% extends "www/_layouts/layout-fullwidth.njk" %}
 {% set pageTitle="User research" %}
+{% set section = "User research" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
-{# Research #}
-<h2>Introduction</h2>
-<p>We <a href="https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs" title="GOV.UK Service Manual - Start by learning user needs" target="_self" class="wmnds-link">start with user needs</a>.</p>
-<p>We're a team that's open to new tools and iterate our processes on a regular basis.</p>
-
-<h2>Which tools do we use?</h2>
-<p>Our toolbox currently consists of:</p>
-<ul>
-  <li>
-    <a href="https://maze.design" title="Maze" target="_self" class="wmnds-link">Maze</a> for prototype testing and early discovery work
-  </li>
-  <li>
-    <a href="https://miro.com" title="Miro" target="_self" class="wmnds-link">Miro</a> for collaboration, remote workshops and idea creation
-  </li>
-  <li>
-    <a href="https://hotjar.com" title="Hotjar" target="_self" class="wmnds-link">Hotjar</a> for heatmaps, polls and quick surveys
-  </li>
-  <li>
-    <a href="https://google.com/analytics" title="Google Analytics" target="_self" class="wmnds-link">Google Analytics</a> for analysing user behaviour
-  </li>
-  <li>
-    <a href="https://campaignmonitor.com" title="Campaign Monitor" target="_self" class="wmnds-link">Campaign Monitor</a> for sending research communications to our User Testing Group
-  </li>
-  <li>
-    <a href="https://google.com/analytics" title="Google Analytics" target="_self" class="wmnds-link">Google Analytics</a> for analysing user behaviour
-  </li>
-</ul>
-<br />
-<br />
-<h2>Research methods</h2>
+{# User research #}
 <div class="wmnds-grid">
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+<div class="wmnds-col-md-3-4">
+  <h2>Introduction</h2>
+    <p>User research helps teams learn about users and create services that meet their needs.</p>
+    <p>Without it, you won’t know what problems you’re trying to solve, what to build or if the service you create will work well for users.</p>
+    <p>We're a team that's open to new tools and iterate our processes on a regular basis.</p>
+    <p>The resources provided are intended as a starting point rather than a definitive guide.</p>
+  <br />
+  <h2>Which platforms do we use?</h2>
+    <p>
+      <ul>
+        <li>
+          <a href="https://maze.design" title="Maze" target="_self" class="wmnds-link">Maze</a> for prototype testing and early discovery work
+        </li>
+        <li>
+          <a href="https://miro.com" title="Miro" target="_self" class="wmnds-link">Miro</a> for collaboration, remote workshops and idea creation
+        </li>
+        <li>
+          <a href="https://hotjar.com" title="Hotjar" target="_self" class="wmnds-link">Hotjar</a> for heatmaps, polls and quick surveys
+        </li>
+        <li>
+          <a href="https://google.com/analytics" title="Google Analytics" target="_self" class="wmnds-link">Google Analytics</a> for analysing user behaviour
+        </li>
+        <li>
+          <a href="https://campaignmonitor.com" title="Campaign Monitor" target="_self" class="wmnds-link">Campaign Monitor</a> for sending research communications to our User Testing Group
+        </li>
+      </ul>
+    </p>
+  </div>
+</div>
+<br />
+<h2>Research method toolbox</h2>
+<div class="wmnds-grid">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Heatmaps</h2>
     <div class="wmnds-content-tile__copy">
       <p>See how users are behaving on the page - where are they clicking? Are they navigating the page in the expected way?</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
-    <h2>In-person workshops</h2>
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
+    <h2>User workshops</h2>
     <div class="wmnds-content-tile__copy">
       <p>Get users into the same space to deep-dive through whole subject areas or co-create solutions</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Online surveys</h2>
     <div class="wmnds-content-tile__copy">
       <p>A quantitative and qualitative method of establishing attitudes and behaviours</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>In-browser polls</h2>
     <div class="wmnds-content-tile__copy">
       <p>Capture the sentiment of users for a specific service area with a few quick questions</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Telephone interviews</h2>
     <div class="wmnds-content-tile__copy">
       <p>Talk to users to explore an area in depth</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Prototype testing</h2>
     <div class="wmnds-content-tile__copy">
       <p>Use Maze to establish the usability of prototypes before development</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>In-content feedback loops</h2>
     <div class="wmnds-content-tile__copy">
       <p>Understand user sentiment towards content and get feedback if something is wrong on the page</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Card sorting and tree testing</h2>
     <div class="wmnds-content-tile__copy">
       <p>Test the hieararchy and structure of content - do users group services and content in the same way as the business?</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Customer journey mapping</h2>
     <div class="wmnds-content-tile__copy">
       <p>Map out real user journeys beyound their interaction with our services</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Google Analytics</h2>
     <div class="wmnds-content-tile__copy">
       <p>Analyse how parts of our websites and services are used, what users are searching for and how users behave</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Contextual interviews</h2>
     <div class="wmnds-content-tile__copy">
       <p>Meet a user in their environment to ask questions relevant to their surroundings</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Highlighter testing</h2>
     <div class="wmnds-content-tile__copy">
       <p>Check whether users understand our emails and letters. Do we give too much information? Do we not give them the right information?</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Stakeholder mapping</h2>
     <div class="wmnds-content-tile__copy">
       <p>Map out who to speak with about a service or website</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Stakeholder workshops</h2>
     <div class="wmnds-content-tile__copy">
       <p>Get under the skin of a service or business area and understand stakeholder expectations</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Service blueprints</h2>
     <div class="wmnds-content-tile__copy">
       <p>Check whether users understand our emails and letters. Do we give too much information? Do we not give them the right information?</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Reframing the problem</h2>
     <div class="wmnds-content-tile__copy">
       <p>Before trying to create a solution, analyse a problem statement to check whether you are researching the right thing</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Assumptions and questions</h2>
     <div class="wmnds-content-tile__copy">
       <p>Collect assumptions and questions to test and identify high-risk assumptions to prioritise for research</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
-  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-3 wmnds-m-xs">
+  <div class="wmnds-content-tile wmnds-col-1 wmnds-col-md-1-4 wmnds-m-xs">
     <h2>Assistive technology testing</h2>
     <div class="wmnds-content-tile__copy">
       <p>Test whether a service is fully accessible by involving users of assistive technology</p>
-      <a href="#" title="link title" target="_self" class="wmnds-link wmnds-float-right">Read more</a>
     </div>
   </div>
 </div>
