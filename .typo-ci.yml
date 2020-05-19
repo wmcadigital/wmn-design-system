@@ -24,6 +24,12 @@ excluded_words:
   - typoci
   - wmnds
   - wmnetwork
+  - nwm
+  - wmn
+  - digital's
+  - networkwm
+  - wmca
+  - tfwm
 
 # Would you like filenames to also be spellchecked?
 spellcheck_filenames: false
