@@ -13,6 +13,12 @@ li {
   margin-bottom: $size-md;
 }
 
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 // Text highlighting color
 ::-moz-selection {
   // Code for Firefox

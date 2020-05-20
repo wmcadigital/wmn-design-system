@@ -173,21 +173,3 @@ body {
     @include x-default-border(transparent);
   }
 }
-
-// Images
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.show-only-mob {
-  @media screen and (min-width: 568px) {
-    display: none;
-  }
-}
-
-.dont-show-mob {
-  @media screen and (max-width: 568px) {
-    display: none;
-  }
-}
