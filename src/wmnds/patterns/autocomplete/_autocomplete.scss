@@ -55,6 +55,7 @@
   background-color: $white;
 
   &__li {
+    margin-bottom: 0;
     padding: 10px;
     list-style: none;
     border-right: 1px solid get-color(primary);
