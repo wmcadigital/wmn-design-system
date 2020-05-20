@@ -4,23 +4,16 @@
 // Mixins
 @import "mixins";
 
-.wmnds-html {
-  min-width: 320px;
-  overflow-y: scroll;
-  background: get-color(primary, 50, dark);
-  scroll-behavior: smooth;
+// Global styles
+@import "utilities";
+@import "typography";
+@import "general";
 
-  // Global styles
-  @import "utilities";
-  @import "typography";
-  @import "general";
+// Vendor Styles
+@import "wmnds-grid";
 
-  // Vendor Styles
-  @import "wmnds-grid";
+// Component Styles
+@import "../../components/components"; // Import all pattern styles
 
-  // Component Styles
-  @import "../../components/components"; // Import all pattern styles
-
-  // Pattern Styles
-  @import "../../patterns/patterns"; // Import all pattern styles
-}
+// Pattern Styles
+@import "../../patterns/patterns"; // Import all pattern styles
