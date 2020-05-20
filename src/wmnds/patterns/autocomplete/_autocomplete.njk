@@ -8,6 +8,7 @@
 {% set query = params.query if params.query else "" %} {# default to x15 as query text if one isn't available #}
 {% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
 {% set isLoading = " wmnds-is--loading" if params.loading %}
+{% set id = params.id if params.id else "genericInput" %}
 
 <div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
   {% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
@@ -25,7 +26,7 @@
     wmndsLoader() | indent(2) | trim
   }}
   <!-- Autocomplete input box -->
-  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="searchExample" aria-label="{{ placeholder }}"  type="text" >
+  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="searchExample" aria-label="{{ placeholder }}"  type="text" id="{{id}}">
 </div>
 
 {#- If showSuggestions is true #}
