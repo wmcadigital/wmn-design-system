@@ -123,19 +123,30 @@
 <br>
 {# Quick start #}
 <h2>Quick start</h2>
-<p class="wmnds-col-md-3-4">
-  Include the below files in your service/application to quickly get started with our design
-  system.
-</p>
+
 <h3>Web projects</h3>
+<p class="wmnds-col-md-3-4">
+  Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application.
+</p>
 <pre>
-    <code class="html">
-      {% filter forceescape %}<!-- CSS for WMN Design System -->
+  <code class="html wmnds-show-more-ignore">
+  {%- filter forceescape %}
+  <!DOCTYPE html>
+  <html lang="en-gb" class="wmnds-html">
+    <head>
+      <!-- CSS for WMN Design System -->
       <link rel="stylesheet" href="$*cdn/css/wmnds-components.min.css" />
-      {%- endfilter %}
-    </code>
-  </pre>
-<h3>Mobile app projects (react native)</h3>
+    </head>
+    <body>
+      <!-- site content... -->
+    </body>
+  </html>
+  {%- endfilter %}
+  </code>
+</pre>
+
+<h3>Mobile app projects (React Native)</h3>
+<p>If you are using React Native, you can import our styles like below.</p>
 <pre>
   <code class="javascript">
     {% filter forceescape %}// Import react native styles for WMN Design System
