@@ -13,7 +13,7 @@
     display: inline-block;
 
     // Put ">" before every list item other than first one
-    & + &::before {
+    &:not(:first-child)::before {
       content: ">";
       display: inline-block;
       height: 0.8em;
