@@ -4,11 +4,20 @@
 {# Imports #}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium %}
+{% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {# Params #}
 {% set query = params.query if params.query else "" %} {# default to x15 as query text if one isn't available #}
 {% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
 {% set isLoading = " wmnds-is--loading" if params.loading %}
 {% set id = params.id if params.id else "genericInput" %}
+
+{# Label #}
+{{
+  wmndsLabel({
+    for: id,
+    label: 'Autocomplete label'
+  }) | trim
+}}
 
 <div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
   {% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
