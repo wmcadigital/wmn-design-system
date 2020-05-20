@@ -126,24 +126,15 @@ body {
 }
 
 // Show/hide on desktop devices only
-.show-desktop {
-  @media screen and (max-width: 767px) {
-    display: none !important;
-  }
-}
-
-.hide-desktop {
-  @media screen and (min-width: 48em) {
+.wmnds-hide-mobile {
+  @media screen and (max-width: $breakpoint-md) {
     display: none;
   }
 }
 
-.hide-lg {
-  @media screen and (max-width: 1280px) {
+.wmnds-hide-desktop {
+  @media screen and (min-width: $breakpoint-md) {
     display: none;
-  }
-  @media screen and (max-width: 1024px) {
-    display: inline-block;
   }
 }
 
@@ -180,23 +171,5 @@ body {
 
   &-transparent {
     @include x-default-border(transparent);
-  }
-}
-
-// Images
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.show-only-mob {
-  @media screen and (min-width: 568px) {
-    display: none;
-  }
-}
-
-.dont-show-mob {
-  @media screen and (max-width: 568px) {
-    display: none;
   }
 }
