@@ -5,16 +5,23 @@
 // Mixins
 @import "mixins";
 
-// Global styles
-@import "utilities";
-@import "typography";
-@import "general";
+.wmnds-html {
+  min-width: 320px;
+  overflow-y: scroll;
+  background: get-color(primary, 50, dark);
+  scroll-behavior: smooth;
 
-// Vendor Styles
-@import "wmnds-grid";
+  // Global styles
+  @import "utilities";
+  @import "typography";
+  @import "general";
 
-// Component Styles
-@import "../../components/components"; // Import all pattern styles
+  // Vendor Styles
+  @import "wmnds-grid";
 
-// Pattern Styles
-@import "../../patterns/patterns"; // Import all pattern styles
+  // Component Styles
+  @import "../../components/components"; // Import all pattern styles
+
+  // Pattern Styles
+  @import "../../patterns/patterns"; // Import all pattern styles
+}
