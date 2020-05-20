@@ -1,15 +1,22 @@
-.with-icon {
-  text-decoration: none;
-}
-
 .wmnds-html {
+  min-width: 320px;
   overflow-y: scroll;
   background: get-color(primary, 50, dark);
   scroll-behavior: smooth;
+}
 
-  ul li {
-    margin-bottom: $size-md;
-  }
+* {
+  box-sizing: border-box;
+}
+
+li {
+  margin-bottom: $size-md;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 // Text highlighting color
@@ -33,15 +40,4 @@
 // This gets rid of firefox default focus dash-border
 *::-moz-focus-inner {
   border: 0;
-}
-
-.wmnds-display {
-  &--block {
-    display: block !important;
-  }
-}
-
-.wmnds-is--block {
-  display: block;
-  width: 100%;
 }
