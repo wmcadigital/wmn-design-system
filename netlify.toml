@@ -1,5 +1,21 @@
+[build]
+  # ignore all PRs opened by `dependabot` (with last commit made by `dependabot`)
+  ignore = "git log -1 --pretty=%B | grep dependabot"
+
 [[headers]]
-# Define which paths this specific [[headers]] block will cover.
-for = "/*"
-  [headers.values]
-  Access-Control-Allow-Origin = "*"
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+# Redirect custom domain to netlify url
+[[redirects]]
+  from = "https://westmidlands.network/*"
+  to = "https://wmnetwork.netlify.app/:splat"
+  status = 301
+
+# Redirect 404s to homepage
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 404
