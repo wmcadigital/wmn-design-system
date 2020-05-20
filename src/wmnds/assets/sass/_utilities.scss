@@ -1,14 +1,3 @@
-// Minimum width of website
-html {
-  min-width: 320px;
-}
-
-// Set padding and borders to be contained within an elements size
-// instead of adding to it
-* {
-  box-sizing: border-box;
-}
-
 .wmnds-grid {
   & > * {
     box-sizing: border-box;

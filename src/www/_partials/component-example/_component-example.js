@@ -39,7 +39,7 @@ export default () => {
     // Run highlightJS for each pre code element found */
     hljs.highlightBlock(element);
     // If the code preview is 192 height (without padding) then we need to display the 'show more code' button
-    if (element.clientHeight >= 192) {
+    if (element.clientHeight >= 192 && !element.classList.contains('wmnds-show-more-ignore')) {
       const htmlString = '<a href="#" class="wmnds-link wmnds-js-show-code">Show more code</a>';
 
       element.parentElement.insertAdjacentHTML('afterend', htmlString);
