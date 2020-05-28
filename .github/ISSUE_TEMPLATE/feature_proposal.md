@@ -2,7 +2,7 @@
 name: Propose something new
 about: Propose a style, component or pattern for the West Midlands Network Design System
 title: ''
-labels: 'proposal'
+labels: 'feature_request'
 assignees: 'mrmjprice,KaterinaKir'
 
 ---
