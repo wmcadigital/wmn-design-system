@@ -23,3 +23,8 @@ If you need help putting your proposal together, you can message Design Team usi
 
 ## Anything else
 > Include links to any examples, research or code to support your proposal, if available.
+
+<!--
+When you have submitted your proposal, it will automatically get sent to the backlog to be reviewed.
+If this proposal is urgent, you should contact @KaterinaKir, @mrmjprice or @daylesalmon
+-->
