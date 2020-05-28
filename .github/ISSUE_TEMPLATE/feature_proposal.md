@@ -4,6 +4,7 @@ about: Propose a style, component or pattern for the West Midlands Network Desig
 title: ''
 labels: 'feature_request'
 assignees: 'mrmjprice,KaterinaKir'
+projects: '1'
 
 ---
 
