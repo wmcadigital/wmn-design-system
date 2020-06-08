@@ -41,6 +41,10 @@ module.exports = {
     src: 'src/www/assets/config/**/*',
     output: 'build/config/'
   },
+  netlifyConfig: {
+    src: '_redirects',
+    output: 'build/'
+  },
   logs: {
     sourcemaps: '_sourcemaps/'
   },

@@ -7,7 +7,6 @@ const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
 
 const buildMode = build !== 'local' ? 'production' : 'development'; // If the build isn't local then set the buildMode of webpack to production (it will hide sourcemaps and minify code)
-
 // Placeholder function for buildScripts to loop through
 function minifyJS(jsFile) {
   return src(jsFile.src)

@@ -40,8 +40,6 @@
     "build:images": "gulp minImages",
     "build:sprites": "gulp buildSprites",
     "build:config": "gulp buildConfig",
-    "build:staging": "npm run build:all --build=staging",
-    "build:live": "npm run build:all --build=live",
     "build:netlify": "npm run build:all --build=netlify"
   },
   "devDependencies": {
