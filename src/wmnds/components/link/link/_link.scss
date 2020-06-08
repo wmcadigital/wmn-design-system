@@ -3,7 +3,7 @@
 // The a[class*="wmnds-col-"] line is to orrived the above not line, as a wmnds-col tag as an 'a' is fine to treat as normal tag
 a:not([class*="wmnds-"]),
 .wmnds-link {
-  color: get-color(cta);
+  color: get-color(cta, 10, dark);
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
@@ -13,6 +13,6 @@ a:not([class*="wmnds-"]),
   }
 
   &:hover {
-    color: get-color(cta, 30, dark);
+    color: get-color(cta, 40, dark);
   }
 }

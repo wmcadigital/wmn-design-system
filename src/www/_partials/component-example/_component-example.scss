@@ -22,6 +22,10 @@
     height: 8px;
     -webkit-appearance: none;
   }
+
+  &.wmnds-show-more-ignore {
+    max-height: 100%;
+  }
 }
 
 ::-webkit-scrollbar-thumb {
