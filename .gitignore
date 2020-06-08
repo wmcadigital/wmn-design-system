@@ -8,3 +8,5 @@ build/
 !package-lock.json
 **/a11y-report.json
 **/.tmp
+# Local Netlify folder
+.netlify

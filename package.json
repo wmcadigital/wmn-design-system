@@ -2,7 +2,7 @@
   "name": "wmn-design-system",
   "version": "1.0.0",
   "description": "A library of typography, visual styles and user interface components which are documented for West Midlands Network.",
-  "homepage": "https://wmnetwork.netlify.com/",
+  "homepage": "https://designsystem.wmnetwork.co.uk",
   "author": "WMCA",
   "main": "src/www/pages/index.njk",
   "repository": "https://github.com/wmcadigital/wmn-design-system.git",
@@ -15,21 +15,13 @@
     "iOS 9"
   ],
   "buildDirs": {
-    "live": {
-      "baseUrl": "//beta.wmca.org.uk",
-      "cdn": "http://cdn.wmca.org.uk/wmca/web"
-    },
-    "staging": {
-      "baseUrl": "//beta.wmn.co.uk",
-      "cdn": "http://static.centro.org.uk/Staging/wmn/build"
-    },
     "local": {
       "baseUrl": "/",
       "cdn": ""
     },
     "netlify": {
       "baseUrl": "/",
-      "cdn": "https://wmnetwork.netlify.com"
+      "cdn": "https://designsystem.wmnetwork.co.uk"
     }
   },
   "scripts": {
@@ -58,7 +50,7 @@
     "babel-eslint": "^10.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.2",

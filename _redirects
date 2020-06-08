@@ -1,0 +1,6 @@
+# domain redirects
+https://westmidlands.network/* https://designsystem.wmnetwork.co.uk/:splat 301!
+https://wmnetwork.netlify.app/* https://designsystem.wmnetwork.co.uk/:splat 301!
+
+# 404 redirect
+/* https://www.wmnetwork.co.uk/404/ 404
