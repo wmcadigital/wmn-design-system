@@ -97,14 +97,38 @@
 <h2>Using icons</h2>
 <p>WMN Design System icons are available as an SVG sprite to include in your HTML page.</p>
 <h3>How to use</h3>
+<h4>Recommended</h4>
+<p>The Recommended method of using the icon sprite sheet is to refer directly to the one used in the deisgn system. This ensures that your icons will always be up to date.</p>
+<p>To get started, inlcude the below snippet of javascript somewhere in your codebase. This will:</p>
 <ul>
-  <li><a class="wmnds-link" target="_blank" href="$*cdn/img/wmnds-sprite.min.svg" download="wmnds-sprite.min.svg">Download the icon svg sprite</a>.</li>
-  <li>Include the downloaded icon sprite in to your project locally.</li>
-  <li>You can now start using the icon svg sprite sheet using the instructions below.</li>
+  <li>Pull the latest SVG icon spritesheet to be used within your web app or service</li>
+  <li>Will ensure the icons work with older browsers such as Internet Explorer 11</li>
+  <li>Keep the icon set consistent with other West Midlands Network Services</li>
 </ul>
-<p>To display an icon or glyph, use an icon tag (from the icon section at the bottom of the page) with a href attribute and xlink:href (as a fallback). Make sure that the xlink and href tags are pointing to the location of your downloaded icon sprite sheet.</p>
 <pre>
-  <code class="html" tabindex="0">
+  <code class="html wmnds-show-more-ignore" tabindex="0">
+  {%- filter forceescape -%}
+  <!-- Ajax SVGs from WMN Design System -->
+  <script>
+    const ajax = new XMLHttpRequest();
+    ajax.open('GET', '$*cdn/img/wmnds-sprite.min.svg', true);
+    ajax.send();
+    ajax.onload = function () {
+      const div = document.createElement('div');
+      div.style.display = 'none';
+      div.innerHTML = ajax.responseText;
+      document.body.insertBefore(div, document.body.childNodes[0]);
+    };
+  </script>
+  {%- endfilter %}
+  </code>
+</pre>
+
+<h4>Displaying an icon</h4>
+<p>To display an icon or glyph, use an icon tag (from the icon section at the bottom of the page) with a href attribute and xlink:href (as a fallback). Make sure that the xlink and href tags are pointing to the location of your downloaded icon sprite sheet.</p>
+<p>The "ICON-TAG-NAME" should be replaced with the icon tag name of the icon you want to show from the Icons section below.
+<pre>
+  <code class="html " tabindex="0" >
     {{-
       wmndsIcon({
         icon: 'ICON-TAG-NAME'
@@ -112,6 +136,15 @@
     -}}
   </code>
 </pre>
+
+
+<h4>Can't include via recommended method? Try hosting the sprites locally</h4>
+<ul>
+  <li><a class="wmnds-link" target="_blank" href="$*cdn/img/wmnds-sprite.min.svg" download="wmnds-sprite.min.svg">Download the icon svg sprite</a>.</li>
+  <li>Include the downloaded icon sprite in to your project locally.</li>
+  <li>You can now start using the icon svg sprite sheet using the instructions below.</li>
+</ul>
+
 <hr>
 
 {# Icons #}
