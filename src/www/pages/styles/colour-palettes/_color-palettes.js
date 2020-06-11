@@ -19,4 +19,4 @@ function colorPalettes() {
   });
 }
 
-export default colorPalettes();
+export default colorPalettes;

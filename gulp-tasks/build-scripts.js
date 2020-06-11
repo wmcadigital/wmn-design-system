@@ -22,6 +22,20 @@ function minifyJS(jsFile) {
     .pipe(
       webpack({
         config: {
+          module: {
+            rules: [
+              {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+              }
+            ]
+          },
           mode: buildMode, // detemined by buildMode const above
           devtool: 'source-map', // Set a sourcemap for this build
           output: { filename: jsFile.minName } // output name of the bundled js
