@@ -9,6 +9,7 @@
   "copyright": "WMCA",
   "sasslintConfig": ".sass-lint.yml",
   "browserslist": [
+    "ie 11",
     "last 2 versions",
     "ie 8",
     "ie 9",
@@ -43,9 +44,12 @@
     "build:netlify": "npm run build:all --build=netlify"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
     "@zeplin/cli": "^1.0.3",
     "autoprefixer": "^9.8.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "eslint": "^7.2.0",
@@ -86,8 +90,8 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^2.0.0",
-    "npm-check-updates": "^7.0.1",
     "node-sass": "^4.14.1",
+    "npm-check-updates": "^7.0.1",
     "nunjucks": "^3.2.1",
     "prettier": "^2.0.5",
     "sass": "^1.26.8",
