@@ -23,9 +23,11 @@
 
 // Container sizes
 .wmnds-container {
+  display: block;
   max-width: $breakpoint-xl;
   margin: auto;
   padding: 0 $size-sm;
+
   @media screen and (min-width: $breakpoint-md) {
     padding: 0 $size-md;
   }
