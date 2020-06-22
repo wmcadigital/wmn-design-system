@@ -6,3 +6,13 @@
   for = "/*"
     [headers.values]
       Access-Control-Allow-Origin = "*"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+[[plugins]]
+package = "@sentry/netlify-build-plugin"
+
+[plugins.inputs]
+  sentryOrg = "wmca-digital"
+  sentryProject = "wmn-design-system"
