@@ -1,6 +1,9 @@
+import * as Sentry from '@sentry/browser';
 import forEachPolyfill from './assets/vendor/js/polyfills/ie11-forEach';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
 import highlightJS from './_partials/component-example/_component-example';
+
+Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374' });
 
 const icons = () => {
   // Ajax SVG in, SVGS are referenced in app (Icon component)
