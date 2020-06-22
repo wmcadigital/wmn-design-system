@@ -1,7 +1,17 @@
 {% macro wmndsMsgHelp(params) %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Set vars and defaults #}
 
 <div class="wmnds-msg-help">
+  <button class="wmnds-msg-help__close-btn" aria-label="Close help message">
+    {# Get SVG icon #}
+    {{-
+      wmndsIcon({
+        icon: 'general-cross',
+        class: 'wmnds-msg-help__close-icon'
+      }) | indent(4) | trim
+    }}
+  </button>
   {{ params.message | safe }}
 </div>
 
