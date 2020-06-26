@@ -3,6 +3,8 @@
 {% set section = 'Home' %}
 {# Imports #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+
 
 {% block content %}
 <div class="wmnds-grid wmnds-grid--align-center">
@@ -11,18 +13,13 @@
     <div class="wmnds-col-md-3-4">
       <h2>Overview</h2>
       <p>
-        The West Midlands Network (WMN) Design System is a library of typography, visual styles and user
-        interface components
-        which are documented and updated continuously.
+        The West Midlands Network (WMN) Design System is a library of typography, visual styles and user interface components which are documented and updated continuously.
       </p>
       <p>
-        Use the WMN Design System to make your service or application consistent with WMN
-        design and styles.
+        Use the WMN Design System to make your service or application consistent with WMN design and styles.
       </p>
       <p>
-        Our design system aims to be platform/framework agnostic. This allows
-        designers and developers from
-        all practices to utilise our design system and avoid repeating work that's already been done.
+        Our design system aims to be platform/framework agnostic. This allows designers and developers from all practices to utilise our design system and avoid repeating work that's already been done.
       </p>
     </div>
   </div>
@@ -144,6 +141,17 @@
   {%- endfilter %}
   </code>
 </pre>
+
+<h3>Want to use our icons, or using a component that references an icon?</h3>
+<p>Please see the
+  {{
+    wmndsLink({
+      link: "$*cdn/styles/icons/",
+      linkTitle: "Using WMN Design System icons",
+      text: "icons page"
+    })
+  }}.
+</p>
 
 <h3>Mobile app projects (React Native)</h3>
 <p>If you are using React Native, you can import our styles like below.</p>

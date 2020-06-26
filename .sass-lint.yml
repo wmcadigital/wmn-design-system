@@ -11,7 +11,8 @@
 # Linter SpaceBeforeBrace, option "allow_single_line_padding"
 
 files:
-  include: '**/*.s+(a|c)ss'
+  include: 'src/**/*.s+(a|c)ss'
+  ignore: 'node_modules/**/*'
 options:
   formatter: stylish
   merge-default-rules: true
