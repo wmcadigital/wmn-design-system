@@ -47,12 +47,12 @@
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@zeplin/cli": "^1.0.3",
-    "autoprefixer": "^9.8.2",
+    "autoprefixer": "^9.8.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
-    "eslint": "^7.3.0",
+    "eslint": "^7.3.1",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.2",
@@ -94,7 +94,7 @@
     "npm-check-updates": "^7.0.1",
     "nunjucks": "^3.2.1",
     "prettier": "^2.0.5",
-    "sass": "^1.26.8",
+    "sass": "^1.26.9",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
