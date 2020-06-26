@@ -33,7 +33,7 @@ The WMN design system is ran at the designated url on startup (usually [http://l
 - Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
 - Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
 
-![West Midlands Network design system example](doc/preview.png)
+<img src ="doc/preview.png" height="500" width="auto" alt="West Midlands Network design system example">
 
 ## 1.3. Quick start
 
