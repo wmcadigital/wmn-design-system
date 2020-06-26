@@ -11,10 +11,6 @@
 @import "pages/styles/colour-palettes/colorPalette";
 @import "pages/styles/icons/icons";
 
-body {
-  background-color: get-color(background);
-}
-
 .wmnds-website-inline-code {
   padding: $size-xs;
   color: get-color(primary);

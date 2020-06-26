@@ -3,6 +3,7 @@
   padding: $size-lg;
   color: $white;
   background-color: get-color(primary, 50, dark);
+  box-shadow: 0 100vh 0 100vh get-color(primary, 50, dark);
 
   &__link.wmnds-link {
     color: $white;
