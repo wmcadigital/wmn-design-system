@@ -31,7 +31,7 @@ Welcome to the [West Midlands Network Design System](https://wmnetwork.netlify.c
 The WMN design system is ran at the designated url on startup (usually [http://localhost:3000](http://localhost:3000)) and is the primary means of viewing your work - it will live update as you make changes.
 
 - Tailored for building West Midlands Network apps and websites: Using the WMN Design System markup and CSS framework results in UIs that reflect the West Midlands Network look and feel.
-- Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with Salesforce UI changes.
+- Continuously updated: As long as you're using the latest version of the WMN Design System, your pages are always up to date with West Midlands Network UI changes.
 
 <img src ="doc/preview.png" height="500" width="auto" alt="West Midlands Network design system example">
 
