@@ -3,6 +3,8 @@
 {% set section = 'Home' %}
 {# Imports #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+
 
 {% block content %}
 <div class="wmnds-grid wmnds-grid--align-center">
@@ -144,6 +146,17 @@
   {%- endfilter %}
   </code>
 </pre>
+
+<h3>Want to use our icons, or using a component that references an icon?</h3>
+<p>Please see the
+  {{
+    wmndsLink({
+      link: "/styles/icons/",
+      linkTitle: "Using WMN Design System icons",
+      text: "icons page"
+    })
+  }}.
+</p>
 
 <h3>Mobile app projects (React Native)</h3>
 <p>If you are using React Native, you can import our styles like below.</p>
