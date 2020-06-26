@@ -94,7 +94,7 @@
     "npm-check-updates": "^7.0.1",
     "nunjucks": "^3.2.1",
     "prettier": "^2.0.5",
-    "sass": "^1.26.8",
+    "sass": "^1.26.9",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
