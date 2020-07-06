@@ -79,7 +79,7 @@
   "colors": {
     "brand": [
       { "varName": "primary", "name": "Primary Purple" },
-      { "varName": "secondary", "name": "Seconday Purple" }
+      { "varName": "secondary", "name": "Secondary Purple" }
     ],
     "modal": [
       { "varName": "bus", "name": "Bus" },
