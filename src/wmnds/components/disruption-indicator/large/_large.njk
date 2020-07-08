@@ -4,9 +4,10 @@
 {% set strongText = params.strongText if params.strongText else "Indicator text" %} {# set button text #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set classModifier = ' wmnds-disruption-indicator-large--' + params.classModifier if params.classModifier else "" %}
 
 {{params.comment | safe}}
-<div class="wmnds-disruption-indicator-large{{' wmnds-disruption-indicator-large--' + params.classModifier}}">
+<div class="wmnds-disruption-indicator-large{{classModifier}}">
   <div class="wmnds-disruption-indicator-large__left-wrapper">
     <span class="wmnds-disruption-indicator-large__left-icon-wrapper">
       {# Get SVG icon for mode #}
