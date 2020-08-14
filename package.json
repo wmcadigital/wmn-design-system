@@ -50,7 +50,7 @@
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "del": "^5.1.0",
     "eslint": "^7.6.0",
     "eslint-config-airbnb-base": "^14.1.0",
