@@ -22,42 +22,49 @@
     }}
     {# header #}
 
-    {# beta banner #}
-    <div class="wmnds-container">
-      {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
-      {{
-        wmndsBanner ({
-          link: 'https://github.com/wmcadigital/wmn-design-system/issues',
-          linkTitle: 'WMN Design System Github'
-        })
-      }}
-    </div>
-    {# beta banner #}
-
-    {# Breadcrumb #}
-    {# Don't display breadcrumb on homepage #}
-    {% if section != 'Home' %}
+    {# main #}
+    <main>
+      {# beta banner #}
       <div class="wmnds-container">
-        {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+        {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
         {{
-            wmndsBreadcrumb({
-              section: section,
-              pageTitle: pageTitle
-            })
+          wmndsBanner ({
+            link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+            linkTitle: 'WMN Design System Github'
+          })
         }}
       </div>
-    {% endif %}
-    {# Breadcrumb #}
+      {# beta banner #}
 
-    <main class="wmnds-container wmnds-container--main">
-      {% block body %}{% endblock %}
+      {# Breadcrumb #}
+      {# Don't display breadcrumb on homepage #}
+      {% if section != 'Home' %}
+        <div class="wmnds-container">
+          {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+          {{
+              wmndsBreadcrumb({
+                section: section,
+                pageTitle: pageTitle
+              })
+          }}
+        </div>
+      {% endif %}
+      {# Breadcrumb #}
+
+      {# body content #}
+      <div class="wmnds-container wmnds-container--main">
+        {% block body %}{% endblock %}
+      </div>
+      {# body content #}
+
+      {# Feedback #}
+      {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
+      {{
+        wmndsFeedbackLoop()
+      }}
+      {# Feedback #}
     </main>
-
-    {# Feedback #}
-    {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
-    {{
-      wmndsFeedbackLoop()
-    }}
+    {# main #}
 
     <!-- footer -->
     {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
