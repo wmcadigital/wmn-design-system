@@ -82,28 +82,28 @@
     </div>
   </div>
 
-  {%- if params.banner -%}
+  {%- if params.banner %}
   <!-- Phase banner -->
   <div class="wmnds-container">
-    {{-
+    {{
       wmndsBanner ({
         link: 'https://github.com/wmcadigital/wmn-design-system/issues',
         linkTitle: 'WMN Design System Github'
-      })
+      }) | trim | indent(4)
     -}}
   </div>
   {%- endif -%}
   
-  {%- if params.breadcrumbs and params.breadcrumbs.section != 'Home' -%}
+  {%- if params.breadcrumbs and params.breadcrumbs.section != 'Home' %}
   <!-- Breadcrumbs -->
-    <div class="wmnds-container">
-      {{-
-        wmndsBreadcrumb({
-          section: params.breadcrumbs.section,
-          pageTitle: params.breadcrumbs.pageTitle
-        })
-      -}}
-    </div>
+  <div class="wmnds-container">
+    {{
+      wmndsBreadcrumb({
+        section: params.breadcrumbs.section,
+        pageTitle: params.breadcrumbs.pageTitle
+      }) | trim | indent(4)
+    -}}
+  </div>
   {%- endif %}
 </header>
 
