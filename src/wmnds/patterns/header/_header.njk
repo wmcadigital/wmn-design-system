@@ -5,6 +5,8 @@
 {# Imports #}
 {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
+{% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 
 <!-- Skip to content link -->
 {{
@@ -16,67 +18,91 @@
   }) | trim
 }}
 <!-- Main header section -->
-<header class="wmnds-header{{appClass}}">
-  <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
-    <div class="wmnds-header__vertical-align wmnds-col-auto">
-      <!-- Logo -->
-      <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
-        <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
-      </a>
-      <!-- Phase indicator -->
+<header>
+  <div class="wmnds-header{{appClass}}">
+    <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
+      <div class="wmnds-header__vertical-align wmnds-col-auto">
+        <!-- Logo -->
+        <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
+          <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
+        </a>
+        <!-- Phase indicator -->
+        {{
+          wmndsPhaseIndicator() | indent(6) | trim
+        }}
+      </div>
+
+      {#- If with a title #}
+      {% if params.withTitle -%}
+      <!-- Header title -->
+      <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
+        Reinstate your Direct Debit<br>(COVID-19)
+      </h1>
+      {%- else %}
+      {#- Else with a navigation -#}
+      <!-- Nav items -->
+      <nav class="wmnds-header__vertical-align wmnds-col-auto">
+        <ul class="wmnds-header__links wmnds-header__main-links">
+          {% for navItem in navItems -%}
+          <li class="wmnds-header__link">
+            <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-link" >
+              {{ navItem.name}}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+
+        {%- if params.app %}
+        <!-- Back button -->
+        <ul class="wmnds-header__links wmnds-header__back-btn">
+          <li class="wmnds-header__link">
+            <a
+              href="#"
+              title="Go back to previous page"
+              target="_self"
+              class="wmnds-link"
+              onClick="goBack(event);"
+            >
+              Back
+            </a>
+          </li>
+        </ul>
+        <script>
+          // Function that sends user to previous page they were on,
+          // This can be included in your local javascript file
+          function goBack(e) {
+            e.preventDefault();
+            window.history.back();
+          }
+        </script>
+        <!-- End back button -->
+        {%- endif %}
+      </nav>
+      {% endif %}
+    </div>
+  </div>
+  {# Banner #}
+  {% if params.banner %}
+  <div class="wmnds-container">
+    {{
+      wmndsBanner ({
+        link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+        linkTitle: 'WMN Design System Github'
+      })
+    }}
+  </div>
+  {% endif %}
+  {# Breadcrumbs #}
+  {% if params.breadcrumbs and section != 'Home' %}
+    <div class="wmnds-container">
       {{
-        wmndsPhaseIndicator() | indent(6) | trim
+          wmndsBreadcrumb({
+            section: params.breadcrumbs.section,
+            pageTitle: params.breadcrumbs.pageTitle
+          })
       }}
     </div>
-
-    {#- If with a title #}
-    {% if params.withTitle -%}
-    <!-- Header title -->
-    <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
-      Reinstate your Direct Debit<br>(COVID-19)
-    </h1>
-    {%- else %}
-    {#- Else with a navigation -#}
-    <!-- Nav items -->
-    <nav class="wmnds-header__vertical-align wmnds-col-auto">
-      <ul class="wmnds-header__links wmnds-header__main-links">
-        {% for navItem in navItems -%}
-        <li class="wmnds-header__link">
-          <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-link" >
-            {{ navItem.name}}
-          </a>
-        </li>
-        {%- endfor %}
-      </ul>
-
-      {%- if params.app %}
-      <!-- Back button -->
-      <ul class="wmnds-header__links wmnds-header__back-btn">
-        <li class="wmnds-header__link">
-          <a
-            href="#"
-            title="Go back to previous page"
-            target="_self"
-            class="wmnds-link"
-            onClick="goBack(event);"
-          >
-            Back
-          </a>
-        </li>
-      </ul>
-      <script>
-        // Function that sends user to previous page they were on,
-        // This can be included in your local javascript file
-        function goBack(e) {
-          e.preventDefault();
-          window.history.back();
-        }
-      </script>
-      <!-- End back button -->
-      {%- endif %}
-    </nav>
-    {% endif %}
-  </div>
+  {% endif %}
 </header>
 
 {% endmacro %}
