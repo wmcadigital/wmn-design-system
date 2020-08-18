@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   color: get-color(text);
-  font-family: $x-font-family-display;
+  font-family: $x-font-family;
   @include type-setting(0);
 }
 
