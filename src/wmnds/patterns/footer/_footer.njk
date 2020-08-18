@@ -4,13 +4,12 @@
 {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
 
 <footer>
-  {# Feedback #}
-  {% if params.feedback %}
-    {{
+  {% if params.feedback -%}
+  <!-- Feedback loop -->
+    {{-
       wmndsFeedbackLoop()
-    }}
-  {% endif %}
-  {# Footer content #}
+    -}}
+  {%- endif -%}
   <div class="wmnds-footer{{appClass}}">
     <div class="wmnds-container wmnds-grid">
       <div class="wmnds-col-1 wmnds-col-md-1-2">
