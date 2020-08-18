@@ -28,6 +28,10 @@
   }
 }
 
+span[class^="hljs-"] {
+  background: #000000;
+}
+
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: rgba($black, 0.3);
