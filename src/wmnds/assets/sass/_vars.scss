@@ -24,9 +24,19 @@ $palettes: (
 $white: #ffffff;
 $black: #000000;
 
+// FONT-FACE
+@font-face {
+  font-family: "Noto Sans Display Regular";
+  src: url('../fonts/notosansdisplay-regular-webfont.woff2') format('woff2'),
+       url('../fonts/notosansdisplay-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // TEXT
 $text-color: get-color($black);
 $x-font-family: "Noto Sans", sans-serif;
+$x-font-family-display: "Noto Sans Display Regular", serif; //TODO: to change fallback font, this is for testing. 
 $x-heading-font-family: "DM Sans", sans-serif;
 
 // Base font size and line height
