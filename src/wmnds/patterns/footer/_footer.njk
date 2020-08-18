@@ -1,13 +1,24 @@
 {% macro wmndsFooter(params) %}
 {% set appClass = " wmnds-footer--mobile-app" if params.app else "" %}
+{# Imports #}
+{% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
 
-<footer class="wmnds-footer{{appClass}}">
-  <div class="wmnds-container wmnds-grid">
-    <div class="wmnds-col-1 wmnds-col-md-1-2">
-      Copyright West Midlands Network &copy; 2020
-    </div>
-    <div class="wmnds-col-1 wmnds-col-md-1-2">
-      <a href="https://www.wmnetwork.co.uk/privacy-cookies-policy/" title="Privacy and cookies policy" target="_blank" rel="noopener noreferrer" class="wmnds-footer__link wmnds-link">Privacy &amp; Cookies Policy</a>
+<footer>
+  {# Feedback #}
+  {% if params.feedback %}
+    {{
+      wmndsFeedbackLoop()
+    }}
+  {% endif %}
+  {# Footer content #}
+  <div class="wmnds-footer{{appClass}}">
+    <div class="wmnds-container wmnds-grid">
+      <div class="wmnds-col-1 wmnds-col-md-1-2">
+        Copyright West Midlands Network &copy; 2020
+      </div>
+      <div class="wmnds-col-1 wmnds-col-md-1-2">
+        <a href="https://www.wmnetwork.co.uk/privacy-cookies-policy/" title="Privacy and cookies policy" target="_blank" rel="noopener noreferrer" class="wmnds-footer__link wmnds-link">Privacy &amp; Cookies Policy</a>
+      </div>
     </div>
   </div>
 </footer>

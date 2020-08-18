@@ -34,20 +34,15 @@
         {% block body %}{% endblock %}
       </div>
       {# body content #}
-
-      {# Feedback #}
-      {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
-      {{
-        wmndsFeedbackLoop()
-      }}
-      {# Feedback #}
     </main>
     {# main #}
 
     <!-- footer -->
     {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
     {{
-      wmndsFooter()
+      wmndsFooter({
+        feedback: true
+      })
     }}
     <!-- footer -->
 
