@@ -93,7 +93,7 @@
   </div>
   {% endif %}
   {# Breadcrumbs #}
-  {% if params.breadcrumbs and section != 'Home' %}
+  {% if params.breadcrumbs and params.breadcrumbs.section != 'Home' %}
     <div class="wmnds-container">
       {{
           wmndsBreadcrumb({
