@@ -112,6 +112,21 @@
   ])
 }}
 
+{# Full header #}
+<h3>Full variant of header</h3>
+
+{{
+  compExample([
+    wmndsHeader({
+      navItems: navItems,
+      banner: true,
+      breadcrumbs: {
+        section: section,
+        pageTitle: pageTitle
+      }
+    })
+  ])
+}}
 
 <br/><br/>
 {# Footer #}
@@ -152,6 +167,17 @@
   compExample([
     wmndsFooter({
       app: true
+    })
+  ])
+}}
+
+{# Full footer #}
+<h3>Full variant of footer</h3>
+
+{{
+  compExample([
+    wmndsFooter({
+      feedback: true
     })
   ])
 }}
