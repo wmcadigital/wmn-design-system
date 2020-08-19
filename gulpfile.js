@@ -6,6 +6,8 @@ const paths = require('./gulp-tasks/paths.js'); // List of all paths in a config
 const lintStyles = require('./gulp-tasks/lint-styles'); // Lint styles
 const { buildStyles, buildReactNativeStyles } = require('./gulp-tasks/build-styles'); // Build Styles
 
+const buildFonts = () => src(paths.fonts.src).pipe(dest(paths.fonts.output)); // move font files to build
+
 // SCRIPTS
 const lintScripts = require('./gulp-tasks/lint-scripts'); // Lint scripts/JS
 const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and concatenate scripts
@@ -47,6 +49,7 @@ const buildAll = series(
   moveImages,
   minImages,
   buildStyles,
+  buildFonts,
   buildReactNativeStyles,
   buildTemplates,
   buildScripts,
@@ -57,13 +60,14 @@ const buildAll = series(
   lintScripts
 );
 
-// run buildStyles & minifyJS on start, series so () => run in an order and parallel so () => can run at same time
+// run buildStyles, buildFonts,& minifyJS on start, series so () => run in an order and parallel so () => can run at same time
 const serve = series(
   lintStyles,
   lintTemplates,
   lintScripts,
   parallel(
     buildStyles,
+    buildFonts,
     buildReactNativeStyles,
     buildTemplates,
     buildScripts,
@@ -87,7 +91,7 @@ exports.lintAll = series(lintStyles, lintTemplates, lintScripts);
 exports.clean = cleanBuild;
 // Building
 exports.buildScripts = series(buildScripts, lintScripts);
-exports.buildStyles = series(lintStyles, buildStyles, buildReactNativeStyles);
+exports.buildStyles = series(lintStyles, buildStyles, buildFonts, buildReactNativeStyles);
 exports.buildTemplates = series(buildTemplates, lintTemplates);
 exports.buildConfig = buildConfig;
 exports.buildSprites = buildSprites;

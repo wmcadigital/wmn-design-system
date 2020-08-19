@@ -1,3 +1,5 @@
+$dark-grey: #2b2b2b;
+
 .wmnds-website-code-example {
   margin-top: $size-xl;
   padding: $size-md;
@@ -26,6 +28,10 @@
   &.wmnds-show-more-ignore {
     max-height: 100%;
   }
+}
+
+span[class^="hljs-"] {
+  background: $dark-grey;
 }
 
 ::-webkit-scrollbar-thumb {

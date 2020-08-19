@@ -113,8 +113,24 @@
   {{
     compExample([wmndsRadios()])
   }}
+  <h3>Inline Radios</h3>
+    {{
+    compExample([wmndsRadios({
+      inline: true
+    })])
+  }}
   {# End Radios #}
 
+
+
+  <br><br>
+  {# Option bar #}
+  <h2>Option bar</h2>
+  {% from "wmnds/components/form-elements/option-bar/_option-bar.njk" import wmndsOptionBar %}
+  {{
+    compExample([wmndsOptionBar()])
+  }}
+  {# End Option bar #}
 
 
   <br><br>
