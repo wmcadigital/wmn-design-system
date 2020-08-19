@@ -53,7 +53,12 @@
 {{
   compExample([
     wmndsHeader({
-      navItems: navItems
+      navItems: navItems,
+      banner: true,
+      breadcrumbs: {
+        section: section,
+        pageTitle: pageTitle
+      }
     })
   ])
 }}
@@ -108,22 +113,6 @@
     wmndsHeader({
       navItems: navItems,
       app: true
-    })
-  ])
-}}
-
-{# Full header #}
-<h3>Full variant of header</h3>
-
-{{
-  compExample([
-    wmndsHeader({
-      navItems: navItems,
-      banner: true,
-      breadcrumbs: {
-        section: section,
-        pageTitle: pageTitle
-      }
     })
   ])
 }}
