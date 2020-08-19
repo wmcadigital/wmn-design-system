@@ -23,6 +23,10 @@ module.exports = {
     ],
     output: 'build/js/' // Output location of minified JS files
   },
+  fonts: {
+    src: 'src/wmnds/assets/fonts/**/*',
+    output: 'build/fonts/'
+  },
   nunjucks: {
     src: 'src/**/*.njk', // Used for watching njk files
     websiteSrc: 'src/www/pages/**/*.njk',
