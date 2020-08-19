@@ -1,0 +1,30 @@
+{% macro wmndsFileUpload(params) %}
+
+<div class="wmnds-fe-group">
+  <fieldset class="wmnds-fe-fieldset">
+    <legend class="wmnds-fe-fieldset__legend">
+      <h3 class="wmnds-fe-question">
+        Upload a file
+      </h3>
+      <p>
+        Files must be jpeg or png file format and be less than 2mb
+      </p>
+    </legend>
+    <label
+      htmlFor="fileUpload"
+      class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload"
+    >
+      <input
+        type="file"
+        name="fileUpload"
+        id="fileUpload"
+        class="wmnds-fe-file-upload__input"
+      />
+      <svg class="wmnds-fe-file-upload">
+        <use xlink:href="#wmnds-general-paperclip"></use>
+      </svg>
+    </label>
+  </fieldset>
+</div>
+
+{% endmacro %}

@@ -122,6 +122,15 @@
   {# End Radios #}
 
 
+  <br><br>
+  {# File upload #}
+  <h2>File upload</h2>
+  {% from "wmnds/components/form-elements/file-upload/_file-upload.njk" import wmndsFileUpload %}
+  {{
+    compExample([wmndsFileUpload()])
+  }}
+  {# End File upload #}
+
 
   <br><br>
   {# Textarea #}
