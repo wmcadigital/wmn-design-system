@@ -8,7 +8,9 @@
     display: flex;
     width: 100%;
     border: 1px solid get-color(primary);
-    flex-wrap: nowrap;
+    border-right: 0;
+    border-bottom: 0;
+    flex-wrap: wrap;
   }
 
   &__input {
@@ -33,21 +35,19 @@
   &__option-label {
     display: block;
     padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid get-color(primary);
     text-align: center;
     cursor: pointer;
   }
 
   &__option {
+    min-width: 20%;
     border-right: 1px solid get-color(primary);
     line-height: $base-line-height;
     flex-grow: 1;
 
     &:hover {
       background-color: get-color(secondary, 70);
-    }
-
-    &:last-child {
-      border: 0;
     }
   }
 }
