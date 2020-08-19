@@ -1,4 +1,7 @@
 .wmnds-fe-file-upload {
+  display: flex;
+  align-items: flex-start;
+
   &__input {
     position: absolute;
     z-index: -1;
@@ -11,5 +14,16 @@
       outline: 0;
       box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
     }
+
+    &--file-selected {
+      & ~ .wmnds-fe-file-upload__label {
+        background-color: get-color(error);
+      }
+    }
+  }
+
+  &__label {
+    margin-right: $size-sm;
+    flex-shrink: 0;
   }
 }
