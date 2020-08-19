@@ -17,52 +17,28 @@
     {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
     {{
       wmndsHeader ({
-        navItems: navItems
+        navItems: navItems,
+        banner: true,
+        breadcrumbs: {
+          section: section,
+          pageTitle: pageTitle
+        }
       })
     }}
     {# header #}
 
-    {# beta banner #}
-    <div class="wmnds-container">
-      {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
-      {{
-        wmndsBanner ({
-          link: 'https://github.com/wmcadigital/wmn-design-system/issues',
-          linkTitle: 'WMN Design System Github'
-        })
-      }}
-    </div>
-    {# beta banner #}
-
-    {# Breadcrumb #}
-    {# Don't display breadcrumb on homepage #}
-    {% if section != 'Home' %}
-      <div class="wmnds-container">
-        {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
-        {{
-            wmndsBreadcrumb({
-              section: section,
-              pageTitle: pageTitle
-            })
-        }}
-      </div>
-    {% endif %}
-    {# Breadcrumb #}
-
+    {# main #}
     <main class="wmnds-container wmnds-container--main">
       {% block body %}{% endblock %}
     </main>
-
-    {# Feedback #}
-    {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
-    {{
-      wmndsFeedbackLoop()
-    }}
+    {# main #}
 
     <!-- footer -->
     {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
     {{
-      wmndsFooter()
+      wmndsFooter({
+        feedback: true
+      })
     }}
     <!-- footer -->
 
