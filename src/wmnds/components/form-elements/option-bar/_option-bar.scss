@@ -1,0 +1,53 @@
+.wmnds-fe-option-bar {
+  &__desc {
+    display: block;
+    margin-bottom: $size-sm;
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    border: 1px solid get-color(primary);
+    border-right: 0;
+    border-bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    @include type-setting(0);
+
+    &:focus ~ .wmnds-fe-option-bar__option-label {
+      outline: 0;
+      box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+    }
+
+    &:checked ~ .wmnds-fe-option-bar__option-label {
+      color: $white;
+      background-color: get-color(primary);
+      font-weight: 700;
+    }
+  }
+
+  &__option-label {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid get-color(primary);
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__option {
+    min-width: 20%;
+    border-right: 1px solid get-color(primary);
+    line-height: $base-line-height;
+    flex-grow: 1;
+
+    &:hover {
+      background-color: get-color(secondary, 70);
+    }
+  }
+}
