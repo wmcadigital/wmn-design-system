@@ -1,5 +1,8 @@
 {% macro wmndsRadios(params) %}
 
+{# Set vars #}
+{% set class = ' wmnds-fe-radios--inline' if params.inline %}
+
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
@@ -10,7 +13,7 @@
     <legend class="wmnds-fe-fieldset__legend">
       {{ wmndsQuestion() | indent(6) | trim }}
     </legend>
-    <div class="wmnds-fe-radios">
+    <div class="wmnds-fe-radios{{class}}">
       <span class="wmnds-fe-radios__desc">
         Select one option
       </span>

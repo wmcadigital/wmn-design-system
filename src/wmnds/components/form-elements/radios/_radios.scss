@@ -21,6 +21,13 @@
     }
   }
 
+  &--inline {
+    .wmnds-fe-radios__container {
+      display: inline-block;
+      margin-right: $size-xl;
+    }
+  }
+
   // Hide the browser's default radio
   &__input {
     position: absolute;
