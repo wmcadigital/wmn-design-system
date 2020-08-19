@@ -35,7 +35,7 @@
       {{
         wmndsTextarea({
           id: (id + '-textarea')
-        })
+        }) | trim | indent(4)
       }}
     </div>
     <br><br>
@@ -43,19 +43,21 @@
       {{
         wmndsInput({
           id: (id + '-input')
-        })
+        }) | trim | indent(4)
       }}
     </div>
     <br><br>
     <div class="wmnds-col-1">
-      {{wmndsCheckboxes()}}
+      {{
+        wmndsCheckboxes() | trim | indent(4)
+      }}
     </div>
     <br><br>
     {{
       primary({
         classNames: "wmnds-btn",
         text: "Submit feedback"
-      })
+      }) | trim | indent(4)
     }}
   </form>
 </div>

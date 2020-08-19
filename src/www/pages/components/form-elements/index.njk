@@ -139,6 +139,16 @@
 
 
   <br><br>
+  {# Option bar #}
+  <h2>Option bar</h2>
+  {% from "wmnds/components/form-elements/option-bar/_option-bar.njk" import wmndsOptionBar %}
+  {{
+    compExample([wmndsOptionBar()])
+  }}
+  {# End Option bar #}
+
+
+  <br><br>
   {# Textarea #}
   <h2>Textarea</h2>
   {% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
