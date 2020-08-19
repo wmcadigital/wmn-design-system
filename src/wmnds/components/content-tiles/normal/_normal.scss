@@ -43,5 +43,9 @@
   // Yellow modifier
   &--yellow {
     background-color: get-color(plannedDisruption);
+
+    .wmnds-link {
+      color: get-color(text);
+    }
   }
 }
