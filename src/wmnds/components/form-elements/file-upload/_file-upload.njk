@@ -10,20 +10,20 @@
         Files must be jpeg or png file format and be less than 2mb
       </p>
     </legend>
-    <label
-      htmlFor="fileUpload"
-      class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload"
-    >
+    <div class="wmnds-fe-file-upload">
       <input
         type="file"
         name="fileUpload"
         id="fileUpload"
         class="wmnds-fe-file-upload__input"
       />
-      <svg class="wmnds-fe-file-upload">
-        <use xlink:href="#wmnds-general-paperclip"></use>
-      </svg>
-    </label>
+      <label for="fileUpload" class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload__label">
+        Choose file
+        <svg class="wmnds-btn__icon wmnds-btn__icon--right">
+          <use xlink:href="#wmnds-general-paperclip"></use>
+        </svg>
+      </label>
+    </div>
   </fieldset>
 </div>
 

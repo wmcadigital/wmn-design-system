@@ -1,0 +1,15 @@
+.wmnds-fe-file-upload {
+  &__input {
+    position: absolute;
+    z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+    opacity: 0;
+
+    &:focus ~ .wmnds-fe-file-upload__label {
+      outline: 0;
+      box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+    }
+  }
+}
