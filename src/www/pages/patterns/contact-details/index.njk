@@ -1,0 +1,51 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Contact Details" %}
+{% set section="Patterns" %}
+{# Imports #}
+{% from "wmnds/patterns/contact-details/_contact-details.njk" import wmndsContactDetails %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+    <h2>About</h2>
+    {# What #}
+    <h3>What does it do?</h3>
+    <ul>
+        <li>
+            Show users the channels they can use to get in contact with you
+        </li>
+    </ul>
+    {# When #}
+    <h3>When to use it?</h3>
+    <ul>
+        <li>
+            When users need to have a way to contact someone
+        </li>
+        <li>
+            To provide users with an alternative way to do something
+        </li>
+    </ul>
+    {# When not #}
+    <h3>When not to use it?</h3>
+    <ul>
+        <li>
+            On pages where a service is not being offered
+        </li>
+    </ul>
+    {# How it works #}
+    <h3>How it works?</h3>
+    <ul>
+        <li>
+            Order contact channels consistently: telephone, email, online chat, postal address and social media
+        </li>
+        <li>
+            In the Umbraco CMS, you can create a contact detail block to ensure 
+        </li>
+    </ul>
+    <p>
+        GOV.UK has detailed information about <a href="https://design-system.service.gov.uk/patterns/contact-a-department-or-service-team/" target="_blank">how to display contact details</a>.
+    </p>
+
+  {{
+    compExample([wmndsContactDetails()])
+  }}
+{% endblock %}
