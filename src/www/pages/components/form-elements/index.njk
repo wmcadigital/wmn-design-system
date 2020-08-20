@@ -122,6 +122,41 @@
   {# End Radios #}
 
 
+  <br><br>
+  {# File uploader #}
+  <h2>File uploader</h2>
+  <h3>What does it do?</h3>
+  <ul>
+    <li>Allows user to select and submit content of their own. </li>
+  </ul>
+  <h3>
+    When to use it?
+  </h3>
+  <ul>
+    <li>
+      When it is essential for user to provide information for you so you can provide the service
+    </li>
+  </ul>
+  <h3>
+    When not to use it?
+  </h3>
+  <ul>
+    <li>When information is not essential for your delivery of service</li>
+    <li>When information can come from API or another source.</li>
+  </ul>
+
+  {% from "wmnds/components/form-elements/file-upload/_file-upload.njk" import wmndsFileUpload %}
+  {{
+    compExample([wmndsFileUpload()])
+  }}
+  <h3>With file uploaded</h3>
+    {{
+    compExample([wmndsFileUpload({
+      fileSelected: true
+    })])
+  }}
+  {# End File uploader #}
+
 
   <br><br>
   {# Option bar #}
