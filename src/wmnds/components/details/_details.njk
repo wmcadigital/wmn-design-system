@@ -3,11 +3,13 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Params  #}
 {% set isOpen = " open" if params.expanded %}
+{% set summary = params.summary or "Type something"%}
+{% set content = params.content or "Type something"%}
 
 <details class="wmnds-details"{{isOpen}}>
-    <summary class="wmnds-link">Detail summary</summary>
+    <summary class="wmnds-link">{{summary}}</summary>
     <div class="wmnds-details__content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>{{content}}</p>
     </div>
 </details>
 {% endmacro %}

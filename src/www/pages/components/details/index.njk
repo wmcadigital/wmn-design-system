@@ -40,7 +40,10 @@
 <h2>Reduced</h2>
 {{
     compExample([
-        wmndsDetails()
+        wmndsDetails({
+            summary: "Detail summary",
+            content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        })
     ])
 }}
 
@@ -48,7 +51,9 @@
 {{
     compExample([
         wmndsDetails({
-            expanded: true
+            expanded: true,
+            summary: "Detail summary",
+            content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
         })
     ])
 }}
