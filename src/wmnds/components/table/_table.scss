@@ -1,3 +1,28 @@
 .wmnds-table {
   width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: $white;
+
+  &__caption {
+    background-color: $white;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  th {
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th,
+  td {
+    height: 2.625rem;
+    border-bottom: 1px solid get-color(border);
+  }
+
+  td {
+    vertical-align: top;
+  }
 }
