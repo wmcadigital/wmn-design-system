@@ -23,13 +23,9 @@
         />
         <label for="fileUploaded" class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload__label">
           Remove file
-          {#- Get SVG icon -#}
-          {{
-            wmndsIcon({
-              icon: 'general-trash',
-              class: 'wmnds-btn__icon wmnds-btn__icon--right'
-            }) | indent(4) | trim
-          }}
+          <svg class="wmnds-btn__icon wmnds-btn__icon--right">
+            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+          </svg>
         </label>
         <span>
           test-file.jpg
@@ -45,13 +41,9 @@
         />
         <label for="fileUpload" class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload__label">
           Choose file
-          {#- Get SVG icon -#}
-          {{
-            wmndsIcon({
-              icon: 'general-paperclip',
-              class: 'wmnds-btn__icon wmnds-btn__icon--right'
-            }) | indent(4) | trim
-          }}
+          <svg class="wmnds-btn__icon wmnds-btn__icon--right">
+            <use xlink:href="#wmnds-general-paperclip" href="#wmnds-general-paperclip"></use>
+          </svg>
         </label>
         <span>
           no file selected
