@@ -6,27 +6,20 @@
   </caption>
   <thead>
     <tr>
-      <th scope="col">Header 1</th>
-      <th scope="col">Header 2</th>
-      <th scope="col">Header 3</th>
+      {%- for i in range(1, params.cols + 1) %}
+      <th scope="col">Header {{i}}</th>
+      {%- endfor %}
     </tr>
   </thead>
   <tbody>
+    {%- for j in range(1, params.rows + 1) %}
     <tr>
       <th scope="row">Cell</th>
+      {%- for k in range(1, params.cols) %}
       <td>Cell</td>
-      <td>Cell</td>
+      {%- endfor %}
     </tr>
-    <tr>
-      <th scope="row">Cell</th>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <th scope="row">Cell</th>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
+    {%- endfor %}
   </tbody>
 </table>
 
