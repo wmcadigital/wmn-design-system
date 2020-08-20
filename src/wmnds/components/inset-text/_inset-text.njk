@@ -3,8 +3,9 @@
 {# Set #}
 {% set html = params.html if params.html else "Type something" %} {# set content #}
 {% set thinModifierClass = " wmnds-inset-text--thinner" if params.thinner %} {# set modifier class if params.thinner is true #}
+{% set label = params.label if params.label else "" %} {# set content #}
 
-<div class="wmnds-inset-text{{ thinModifierClass }}">
+<div class="wmnds-inset-text{{ thinModifierClass }}" {% if params.label %} aria-label="{{ label }}" {% endif %}>
     {{html | safe }}
 </div>
 
