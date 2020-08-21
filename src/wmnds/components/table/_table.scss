@@ -1,0 +1,30 @@
+$border: #979797;
+
+.wmnds-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  &__caption {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  th {
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th,
+  td {
+    height: 2.625rem;
+    padding: $size-xsm 0;
+    padding-right: $size-sm;
+    border-bottom: 1px solid $border;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}

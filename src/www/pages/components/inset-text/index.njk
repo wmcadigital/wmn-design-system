@@ -1,0 +1,104 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Inset Text" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+
+{% block content %}
+{# About #}
+<h2>Inset Text</h2>
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Allows users to identify important content on the page as they scan the page.
+  </li>
+</ul>
+
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    When you have content that needs to standout from what's around it, such as a quote, example or additional information.
+  </li>
+</ul>
+
+<h3>When not to use it?</h3>
+<ul>
+  <li>
+    In close proximity to visually prominent elements. Users don't notice it. 
+    </li>
+    <li>
+    To highlight important information that is key to the transaction/service or time critical. Use Warning Text instead.
+  </li>
+</ul>
+
+<h3>How to use it?</h3>
+<ul>
+  <li>
+    Use inset text sparingly. They're less effective if overused.
+    </li>
+    <li>
+    Users with visual disabilities may not be able to see the colour that helps it stand out. Instead, they may rely on a hidden label to recognise it. Hide <span>Information:</span> inside the Inset Text <code class="wmnds-website-inline-code"> div </code> so that users with screen readers understand this information is different to body text.
+  </li>
+</ul>
+
+  {% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
+  {{
+    compExample([
+        wmndsInsetText({
+            html: "Example of inset text"
+        })
+    ])
+  }}
+  {# End inset text #}
+
+
+  <br><br>
+  {# Question #}
+  <h2>Example Callout</h2>
+
+    <h3>What does it do?</h3>
+    <ul>
+        <li>
+            Highlight a contextual example to provide help users understand the broader page content.
+        </li>
+    </ul>
+
+    <h3>When to use it?</h3>
+    <ul>
+        <li>
+            When a contextual example might help the user understand the information.
+        </li>
+    </ul>
+
+    <h3>When not to use it?</h3>
+    <ul>
+        <li>
+            When the information is simple enough for our user's to understand. Don't give an example for the sake of it.
+        </li>
+    </ul>
+
+    <h3>How to use it?</h3>
+    <ul>
+        <li>
+            Use a concise heading that a user can easily scan and understand.
+        </li>
+        <li>
+            Make sure the heading is relevant to both the content it's supporting and the context it is providing in the main body text.
+        </li>
+        <li>
+            Add an <code class="wmnds-website-inline-code">aria-label</code> to the parent Example Callout <code class="wmnds-website-inline-code"> div </code> so that users with screen readers understand that the information is important. 
+        </li>
+    </ul>
+
+
+  {% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
+  {{
+    compExample([
+        wmndsInsetText({
+            html:  "Example Callout title<br>Example callout description.",
+            label: "Example Callout"
+        })
+    ])
+  }}
+  {# End inset text #}
+
+{% endblock %}
