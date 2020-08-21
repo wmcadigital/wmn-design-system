@@ -52,6 +52,9 @@
         },
         {
           "name": "Phase indicator"
+        },
+        {
+          "name": "Table"
         }
       ]
     },
