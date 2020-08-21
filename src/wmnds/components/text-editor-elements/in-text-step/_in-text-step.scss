@@ -1,0 +1,20 @@
+.wmnds-in-text-step {
+  display: block;
+  position: relative;
+  padding-top: 0.125rem;
+  padding-left: 3rem;
+
+  &__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    color: $white;
+    background-color: get-color(primary);
+    font-weight: 700;
+    line-height: 1.75rem;
+    text-align: center;
+  }
+}
