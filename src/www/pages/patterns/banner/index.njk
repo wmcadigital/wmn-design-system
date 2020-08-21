@@ -6,8 +6,15 @@
 
 {% block content %}
 
-{# About #}
-<h2>About</h2>
+<h2>Normal</h2>
+
+{{
+  compExample([
+   wmndsBanner()
+  ])
+}}
+
+<h2>With phase indicator</h2>
 {# What #}
 <h3>What does it do?</h3>
 <ul>
@@ -31,12 +38,12 @@
   <li>The survey link must point to a Hotjar or service feedback survey, with the service name within the URL. For example, <code class="wmnds-website-inline-code">/?serviceName=descriptiveName</code>.</li>
 </ul>
 <p>A service can either be in Alpha (prototype stage) or Beta (when it is on a publicly accessible website).</p>
-<hr>
-<br><br>
 
 {{
   compExample([
-   wmndsBanner()
+   wmndsBanner({
+      phase: true
+   })
   ])
 }}
 
