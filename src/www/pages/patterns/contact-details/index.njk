@@ -2,7 +2,7 @@
 {% set pageTitle="Contact Details" %}
 {% set section="Patterns" %}
 {# Imports #}
-{% from "wmnds/patterns/contact-details/_contact-details.njk" import wmndsContactDetails %}
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -45,7 +45,32 @@
         GOV.UK has detailed information about <a href="https://design-system.service.gov.uk/patterns/contact-a-department-or-service-team/" target="_blank">how to display contact details</a>.
     </p>
 
-  {{
-    compExample([wmndsContactDetails()])
-  }}
+
+    <h2>Contact Details - Address</h2>
+
+    {{
+        compExample([
+            wmndsInsetText(
+                {
+                    thinner : true,
+                    html: "Customer Services<br>Transport for West Midlands<br>16 Summer Lane<br>Birmingham<br>B19 3SD"
+                }
+            )
+        ])
+    }}
+
+
+    <h2>Contact Details - Template</h2>
+
+    {{
+        compExample([
+            wmndsInsetText({
+                thinner : true,
+                html: "Transport for West Middlands<br><br>customerservice@tfwm.org.uk<br>Telephone: <a href='tel:03453036760'>0345 303 6760<br>Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm"
+            })
+        ])
+    }}
+
+
+
 {% endblock %}
