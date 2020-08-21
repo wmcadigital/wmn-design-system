@@ -42,6 +42,9 @@
           "name": "Form elements"
         },
         {
+          "name": "Inset text"
+        },
+        {
           "name": "Links"
         },
         {
@@ -52,6 +55,9 @@
         },
         {
           "name": "Phase indicator"
+        },
+        {
+          "name": "Table"
         }
       ]
     },
