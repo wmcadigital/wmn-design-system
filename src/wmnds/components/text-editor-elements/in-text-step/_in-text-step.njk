@@ -1,7 +1,9 @@
 {% macro wmndsInTextStep(params) %}
 
+
+
 <div class="wmnds-in-text-step">
-    <span class="wmnds-in-text-step__number">1</span> Step text must end with a full stop.
+    <span class="wmnds-in-text-step__number">{{params.stepNumber}}</span> {{params.text}}
 </div>
 
 {% endmacro %}
