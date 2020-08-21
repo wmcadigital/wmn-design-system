@@ -1,0 +1,56 @@
+{% macro wmndsFileUpload(params) %}
+
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
+<div class="wmnds-fe-group">
+  <fieldset class="wmnds-fe-fieldset">
+    <legend class="wmnds-fe-fieldset__legend">
+      <h3 class="wmnds-fe-question">
+        Upload a file
+      </h3>
+      <p>
+        Files must be jpeg or png file format and be less than 2mb
+      </p>
+    </legend>
+    {% if params.fileSelected -%}
+      <div class="wmnds-fe-file-upload">
+        <input
+          type="file"
+          name="fileUploaded"
+          id="fileUploaded"
+          class="wmnds-fe-file-upload__input wmnds-fe-file-upload__input--file-selected"
+        />
+        <label for="fileUploaded" class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload__label">
+          Remove file
+          <svg class="wmnds-btn__icon wmnds-btn__icon--right">
+            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+          </svg>
+        </label>
+        <span>
+          test-file.jpg
+        </span>
+      </div>
+    {%- else -%}
+      <div class="wmnds-fe-file-upload">
+        <input
+          type="file"
+          name="fileUpload"
+          id="fileUpload"
+          class="wmnds-fe-file-upload__input"
+        />
+        <label for="fileUpload" class="wmnds-btn wmnds-btn--primary wmnds-fe-file-upload__label">
+          Choose file
+          <svg class="wmnds-btn__icon wmnds-btn__icon--right">
+            <use xlink:href="#wmnds-general-paperclip" href="#wmnds-general-paperclip"></use>
+          </svg>
+        </label>
+        <span>
+          no file selected
+        </span>
+      </div>
+    {%- endif %}
+  </fieldset>
+</div>
+
+{% endmacro %}
