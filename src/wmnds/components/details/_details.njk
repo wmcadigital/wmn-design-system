@@ -1,0 +1,14 @@
+{% macro wmndsDetails(params) %}
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{# Params  #}
+{% set summary = params.summary or "Type something"%}
+{% set content = params.content or "Type something"%}
+
+<details class="wmnds-details" {%- if params.expanded %} open="true" {%- endif -%}>
+    <summary class="wmnds-link">{{summary}}</summary>
+    <div class="wmnds-details__content">
+        <p>{{content}}</p>
+    </div>
+</details>
+{% endmacro %}

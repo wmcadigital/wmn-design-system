@@ -8,11 +8,13 @@
 
 
 <div class="wmnds-grid wmnds-banner-container">
+   {% if params.phase -%}
    <div class="wmnds-col-auto wmnds-float-left wmnds-m-r-xsm">
       {{
          wmndsPhaseIndicator() | indent(6) | trim
       }}
    </div>
+   {% endif -%}
    <div class="wmnds-col-auto">
       <p class="wmnds-banner-container__text">
          This is a new service - your
