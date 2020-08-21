@@ -2,10 +2,8 @@
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  background-color: $white;
 
   &__caption {
-    background-color: $white;
     font-weight: bold;
     text-align: left;
   }
@@ -19,10 +17,12 @@
   th,
   td {
     height: 2.625rem;
+    padding: $size-xsm 0;
+    padding-right: $size-sm;
     border-bottom: 1px solid get-color(border);
   }
 
   td {
-    vertical-align: top;
+    vertical-align: middle;
   }
 }
