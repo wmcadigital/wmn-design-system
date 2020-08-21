@@ -1,7 +1,8 @@
 .wmnds-in-text-step {
   display: block;
   position: relative;
-  padding-top: 0.125rem;
+  padding-top: $size-xs / 2; 
+;
   padding-left: $size-xl;
 
   &__number {
