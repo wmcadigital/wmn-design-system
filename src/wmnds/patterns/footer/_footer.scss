@@ -8,7 +8,7 @@
   &__link.wmnds-link {
     color: $white;
 
-    @media screen and(min-width: $breakpoint-md) {
+    @media screen and (min-width: $breakpoint-md) {
       float: right;
     }
   }
@@ -17,7 +17,7 @@
   &--mobile-app {
     display: none;
 
-    @media screen and(min-width: $breakpoint-md) {
+    @media screen and (min-width: $breakpoint-md) {
       display: block;
     }
   }
