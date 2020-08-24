@@ -45,6 +45,9 @@
           "name": "Inset text"
         },
         {
+          "name": "In-text step"
+        },
+        {
           "name": "Links"
         },
         {
@@ -62,9 +65,6 @@
         {
           "name": "Warning text"
         },
-        {
-          "name": "Text editor elements"
-        }
       ]
     },
     {
