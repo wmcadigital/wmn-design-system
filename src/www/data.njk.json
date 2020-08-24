@@ -58,6 +58,9 @@
         },
         {
           "name": "Table"
+        },
+        {
+          "name": "Text editor elements"
         }
       ]
     },

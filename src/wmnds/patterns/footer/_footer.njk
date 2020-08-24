@@ -7,7 +7,9 @@
   {% if params.feedback -%}
   <!-- Feedback loop -->
   {{
-    wmndsFeedbackLoop() | trim | indent(4)
+    wmndsFeedbackLoop({
+      id: params.feedbackId
+    }) | trim | indent(4)
   }}
   <!-- End feedback loop -->
   {% endif -%}
