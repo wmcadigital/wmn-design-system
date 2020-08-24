@@ -3,21 +3,19 @@
 {%- from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText -%}
 {# Set vars #}
 {% set title = params.title if params.title else "Transport for West Midlands" %} {# set title #}
-{% set warningText = params.warningText if params.warningText %} {# set button text #}
-{% set warningIcon = params.warningIcon if params.warningIcon %} {# set button text #}
+{% set warningText = params.warningText if params.warningText %} {# set warning text #}
+{% set warningIcon = params.warningIcon if params.warningIcon %} {# set warning text #}
 {% set content = params.content if params.content %} {# set content #}
 
-
-<div class="wmnds-inset-text">
-   <p>{{title}}</p>
-   <p>
-      {{
-         wmndsWarningText({
+<div class="wmnds-contact-details">
+    <p>{{title}}</p>
+    {{
+        wmndsWarningText({
             text: warningText,
-            icon: warningIcon
-         }) | indent(6) | trim | safe
-      }}
-   </p> 
-   {{content | safe}}
+            icon: warningIcon, 
+            class: "wmnds-p-b-sm"
+        }) | indent(6) | trim | safe
+    }}
+    {{content | safe}}
 </div>
 {% endmacro %}
