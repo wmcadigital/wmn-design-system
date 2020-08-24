@@ -33,6 +33,9 @@
           "name": "Content Tiles"
         },
         {
+          "name": "Details"
+        },
+        {
           "name": "Disruption indicators"
         },
         {
@@ -40,6 +43,12 @@
         },
         {
           "name": "Form elements"
+        },
+        {
+          "name": "Inset text"
+        },
+        {
+          "name": "In-text step"
         },
         {
           "name": "Links"
@@ -52,6 +61,12 @@
         },
         {
           "name": "Phase indicator"
+        },
+        {
+          "name": "Table"
+        },
+        {
+          "name": "Warning text"
         }
       ]
     },
