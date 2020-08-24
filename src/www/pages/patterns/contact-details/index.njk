@@ -65,8 +65,34 @@
     {{
         compExample([
             wmndsInsetText({
-                thinner : true,
-                html: "Transport for West Middlands<br><br>customerservice@tfwm.org.uk<br>Telephone: <a href='tel:03453036760'>0345 303 6760<br>Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm"
+                html: "Transport for West Middlands<br>
+                        <br>
+                        <a href='mailto:customerservice@tfwm.org.uk'>customerservice@tfwm.org.uk</a><br>
+                        Telephone: <a href='tel:03453036760'>0345 303 6760</a><br>
+                        Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
+                        Wednesday, 9.30am - 5pm"
+            })
+        ])
+    }}
+
+
+
+    <h2>Contact Details - Template TfWM</h2>
+
+    {{
+        compExample([
+            wmndsInsetText({
+                html: "Transport for West Middlands<br>
+                <br>
+                <a href='https://twitter.com/wmnetwork'>Twitter</a><br>
+                <a href='https://www.facebook.com/westmidlandsnetwork'>Facebook</a><br>
+                <br>
+                <a href='https://www.wmnetwork.co.uk/get-in-touch/contact-us/'>Submit an enquiry</a><br>
+                Telephone: <a href='tel:03453036760'>0345 303 6760<br></a>
+                <br>
+                Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
+                Wednesday, 9.30am - 5pm<br>
+                Saturday and Sunday, closed"
             })
         ])
     }}

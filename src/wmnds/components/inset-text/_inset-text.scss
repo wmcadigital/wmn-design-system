@@ -7,10 +7,6 @@
   text-align: left;
   white-space: wrap;
 
-  &--thinner {
-    border-left: 2px solid get-color(secondary, 50, light);
-  }
-
   &:active,
   &:target,
   &:focus {
