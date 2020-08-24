@@ -1,0 +1,60 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Details" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# Details component #}
+{%- from "wmnds/components/details/_details.njk" import wmndsDetails -%}
+
+<h2>About</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>Allows users to reveal more detailed information if they need it.</li>
+    <li>Allows users to scan the page more easily.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When you need to provide more detailed information.</li>
+    <li>When you need to hide extra information that only some users will need.</li>
+    <li>When you only need to provide 1 piece of extra information on the given subject.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>To hide information that is important to the majority of users</li>
+    <li>If you need to provide more than 1 piece of extra information related to a given subject. In this instance, use an Accordion.</li>
+    <li>To provide extra context inside a form. Users mistake it for a text link and worry they'll lose their data if they click.</li>
+</ul>
+{# How #}
+<h3>How it works?</h3>
+<ul>
+    <li>The details component expands into more detailed text when a user clicks on it.</li>
+    <li>Inside the <code class="wmnds-website-inline-code">{{ "<details>" }}</code> tag, include 1 <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> and 1 <code class="wmnds-website-inline-code">{{ "<div>" }}</code> tag as direct children of <code class="wmnds-website-inline-code">{{ "<details>" }}</code></li>
+    <li>Place your link text inside <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> and the important information inside the <code class="wmnds-website-inline-code">{{ "<div>" }}</code>.</li>
+</ul>
+<hr>
+<br><br>
+
+<h2>Reduced</h2>
+{{
+    compExample([
+        wmndsDetails({
+            summary: "Detail summary",
+            content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        })
+    ])
+}}
+
+<h2>Expanded</h2>
+{{
+    compExample([
+        wmndsDetails({
+            expanded: true,
+            summary: "Detail summary",
+            content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        })
+    ])
+}}
+{% endblock %}

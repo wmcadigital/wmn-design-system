@@ -1,0 +1,21 @@
+.wmnds-inset-text {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  padding: $size-xsm $size-xsm $size-xsm 20px;
+  border-left: 5px solid get-color(secondary, 50, light);
+  text-align: left;
+  white-space: wrap;
+
+  &--thinner {
+    border-left: 2px solid get-color(secondary, 50, light);
+  }
+
+  &:active,
+  &:target,
+  &:focus {
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+}
