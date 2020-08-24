@@ -1,0 +1,12 @@
+.wmnds-warning-text {
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+
+  &__icon {
+    width: $size-md * 2.5;
+    height: $size-md * 2.5;
+    margin-right: $size-sm;
+    fill: $black;
+  }
+}

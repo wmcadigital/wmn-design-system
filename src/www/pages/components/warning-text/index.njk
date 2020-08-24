@@ -1,0 +1,100 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Warning Text" %}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Help users identify and understand warning content on the page, even if they do not read the whole page.
+  </li>
+</ul>
+<h3>
+  When to use it?
+</h3>
+<p>Use the warning for information that:</p>
+<ul>
+  <li>
+    is time critical
+  </li>
+  <li>
+    addresses a common or significant misconception of mistake
+  </li>
+  <li>
+    has legal consequences of an action, or lack of action, that the user might take
+  </li>
+</ul>
+<h3>
+  When not to use it?
+</h3>
+<ul>
+  <li>
+    If the information is not important
+  </li>
+  <li>
+    If the information has no consequence
+  </li>
+</ul>
+<h3>
+  How it works
+</h3>
+<ul>
+  <li>
+    Use the icon that represents the severity of the warning
+  </li>
+</ul>
+
+<hr>
+<br><br>
+{# Warning Text #}
+<h2>Warning Text with exclamation mark icon - triangle</h2>
+{{
+  compExample([
+    wmndsWarningText({
+      text: "Warning! Type something.",
+      icon: "general-warning-triangle"
+    })
+  ])
+}}
+{# End Warning Text #}
+
+{# Warning Text #}
+<h2>Warning text with exclamation mark icon - round</h2>
+{{
+  compExample([
+    wmndsWarningText({
+      text: "Warning! Type something.",
+      icon: "general-warning-circle"
+    })
+  ])
+}}
+{# End Warning Text #}
+
+{# Warning Text #}
+<h2>Warning text with info icon - round </h2>
+{{
+  compExample([
+    wmndsWarningText({
+      text: "Warning! Type something.",
+      icon: "general-info"
+    })
+  ])
+}}
+{# End Warning Text #}
+
+{# Warning Text #}
+<h2>Warning text with success icon - round</h2>
+{{
+  compExample([
+    wmndsWarningText({
+      text: "Type something.",
+      icon: "general-success"
+    })
+  ])
+}}
+{# End Warning Text #}
+
+{% endblock %}

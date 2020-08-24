@@ -61,6 +61,9 @@
         },
         {
           "name": "Table"
+        },
+        {
+          "name": "Warning text"
         }
       ]
     },

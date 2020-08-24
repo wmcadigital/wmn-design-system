@@ -1,0 +1,20 @@
+{% macro wmndsWarningText(params) %}
+
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
+{# Set #}
+{% set text = params.text if params.text else "Type something." %} {# set warning text #}
+{% set icon = params.icon if params.icon %} {# set svg icon #}
+
+<div class="wmnds-warning-text">
+    {{
+      wmndsIcon({
+        icon: icon,
+        class: 'wmnds-warning-text__icon'
+      }) | indent | trim
+    }}
+    {{ text | safe }}
+</div>
+
+{% endmacro %}
