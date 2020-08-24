@@ -45,6 +45,9 @@
           "name": "Inset text"
         },
         {
+          "name": "In-text step"
+        },
+        {
           "name": "Links"
         },
         {
@@ -58,9 +61,6 @@
         },
         {
           "name": "Table"
-        },
-        {
-          "name": "Text editor elements"
         }
       ]
     },
