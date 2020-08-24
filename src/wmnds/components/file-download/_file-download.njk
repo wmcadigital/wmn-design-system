@@ -15,12 +15,14 @@
         }) | trim | indent(4)
     }}
     <div class="wmnds-file-download__desc">
-        <a href="" download="" class="wmnds-link">
+        <a href="#" download="{{ fileName|replace(' ', '_') + '.' + fileType|lower }}" class="wmnds-link">
             Download '{{fileName}}' ({{fileType}}, {{fileSize}})
         </a>
         {% if params.accessible === false -%}
-        <p>This file may not be suitable for users of assistive techonology.</p>
-        <a href="">Request an accessible format</a>
+        <p class="wmnds-file-download__desc__warning">
+            This file may not be suitable for users of assistive techonology. <br>
+            <a href="#" class="wmnds-link">Request an accessible format.</a>
+        </p>
         {%- endif %}
     </div>
 </div>
