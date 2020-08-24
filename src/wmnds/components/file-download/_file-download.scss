@@ -13,10 +13,10 @@
   }
 
   &__desc {
-    padding-left: 0.75rem;
-
-    &__warning {
-      margin: $size-xsm 0 0;
-    }
+    padding-left: $size-sm;
+  }
+  
+  &__warning {
+    margin: $size-xsm 0 0;
   }
 }
