@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle = "Text editor elements" %}
+{% set pageTitle = "In-text step" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -33,7 +33,7 @@
             When you are not displaying a process
         </li>
     </ul>
-  {% from "wmnds/components/text-editor-elements/in-text-step/_in-text-step.njk" import wmndsInTextStep %}
+  {% from "wmnds/components/in-text-step/_in-text-step.njk" import wmndsInTextStep %}
   {{
     compExample([wmndsInTextStep({
         stepNumber: 1,
