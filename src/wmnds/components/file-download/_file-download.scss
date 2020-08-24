@@ -1,0 +1,22 @@
+.wmnds-file-download {
+  display: flex;
+  align-items: center;
+
+  &--non-accessible {
+    align-items: flex-start;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: get-color(primary);
+  }
+
+  &__desc {
+    padding-left: $size-sm;
+  }
+  
+  &__warning {
+    margin: $size-xsm 0 0;
+  }
+}

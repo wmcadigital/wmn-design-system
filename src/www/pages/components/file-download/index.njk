@@ -1,0 +1,71 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "File download" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{# Macros #}
+{% from "wmnds/components/file-download/_file-download.njk" import wmndsFileDownload %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>Allows users to download an offline version of the on-page content</li>
+    <li>Allows users who rely on assistive technology to access an offline version of the on-page content.</li>
+    <li>Shows users how big the file is so they can decide if they want to download it.</li>
+</ul>
+<hr>
+<br><br>
+
+
+{# Accessible file #}
+<h2>Accessible file</h2>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When you have an accessible, offline version of the on-page content.</li>
+    <li>When you have additional information within an accessible document.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>If the download document is not accessible to users with assistive technology. In that instance, use the non-accessible file component.</li>
+</ul>
+
+{{
+    compExample([
+        wmndsFileDownload()
+    ])
+}}
+<br><br>
+
+{# Non-accessible file #}
+<h2>Non-accessible file</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>Shows the user that the file is not accessible</li>
+    <li>Offers the user a way to get the file in a different format</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When you have an offline version of the on-page content which is not accessible</li>
+    <li>When the file cannot be made accessible. For example, complex maps.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>If the document is accessible to users with assistive technology. In that instance, use the accessible file component.</li>
+    <li>You still need to make the document accessible as soon as possible. Ideally before publishing it.</li>
+</ul>
+
+{{
+    compExample([
+        wmndsFileDownload({
+            accessible: false
+        })
+    ])
+}}
+
+{% endblock %}
