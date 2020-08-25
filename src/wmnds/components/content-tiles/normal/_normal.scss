@@ -27,9 +27,9 @@
 
   // One main link modifier
   &--with-one-link {
+    display: flex;
     position: relative;
     padding-bottom: $size-md;
-    display: flex;
     flex-direction: column;
   }
 
