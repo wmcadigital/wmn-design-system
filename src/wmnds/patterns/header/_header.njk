@@ -4,7 +4,6 @@
 {% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
 {% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
 {# Imports #}
-{% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
@@ -27,10 +26,6 @@
         <a class="wmnds-header__logo-link" href="/" title="West Midlands Network Design System">
           <img class="wmnds-header__logo" alt="West Midlands Network logo" src="/img/logo.svg" />
         </a>
-        <!-- Phase indicator -->
-        {{
-          wmndsPhaseIndicator() | indent(6) | trim
-        }}
       </div>
 
       {#- If with a title #}

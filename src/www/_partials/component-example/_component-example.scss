@@ -11,6 +11,10 @@ $dark-grey: #2b2b2b;
     color: get-color(information);
     text-decoration: underline;
   }
+
+  &__inner-wrap {
+    overflow: hidden;
+  }
 }
 
 // Scrollbar styling for code previews of components
