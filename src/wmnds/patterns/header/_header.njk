@@ -2,6 +2,7 @@
 {# Set navItems #}
 {% set navItems = params.navItems %}
 {% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
+{% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
 {# Imports #}
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
@@ -36,7 +37,7 @@
       {%- else %}
       {#- Else with a navigation -#}
       <!-- Nav items -->
-      <nav class="wmnds-header__vertical-align wmnds-col-auto">
+      <nav class="wmnds-header__vertical-align wmnds-col-auto" aria-label="{{navigationAriaLabel}}">
         <ul class="wmnds-header__links wmnds-header__main-links">
           {% for navItem in navItems -%}
           <li class="wmnds-header__link">
@@ -95,7 +96,8 @@
     {{
       wmndsBreadcrumb({
         section: params.breadcrumbs.section,
-        pageTitle: params.breadcrumbs.pageTitle
+        pageTitle: params.breadcrumbs.pageTitle,
+        exampleAria: params.exampleAria
       }) | trim | indent(4)
     -}}
     {% endif %}
