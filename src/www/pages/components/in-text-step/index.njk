@@ -36,10 +36,14 @@
   {% from "wmnds/components/in-text-step/_in-text-step.njk" import wmndsInTextStep %}
   {{
     compExample([wmndsInTextStep({
-        stepNumber: 1,
-        text: "Step text must end with a full stop."
+        steps: [
+            "Step text must end with a full stop.",
+            "Step text must end with a full stop.",
+            "Step text must end with a full stop."
+        ]
     })])
   }}
+
   {# End label #}
 
 {% endblock %}

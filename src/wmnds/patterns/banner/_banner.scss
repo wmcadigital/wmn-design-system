@@ -1,13 +1,22 @@
 .wmnds-banner-container {
+  $self: &;
   padding: $size-md 0;
   border-bottom: 1px solid get-color(text);
+
+  &__phase-wrapper {
+    margin-right: $size-xsm;
+    float: left;
+
+    // Add line height only when phase is present
+    @media screen and (max-width: $breakpoint-sm) {
+      + #{$self}__text {
+        line-height: $size-lg;
+      }
+    }
+  }
 
   &__text {
     margin: 0;
     padding: 0;
-
-    @media screen and (max-width: $breakpoint-sm) {
-      margin-top: $size-sm;
-    }
   }
 }

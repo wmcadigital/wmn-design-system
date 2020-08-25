@@ -8,14 +8,14 @@
 
 
 <div class="wmnds-grid wmnds-banner-container">
-   {% if params.phase -%}
-   <div class="wmnds-col-auto wmnds-float-left wmnds-m-r-xsm">
-      {{
-         wmndsPhaseIndicator() | indent(6) | trim
-      }}
-   </div>
-   {% endif -%}
-   <div class="wmnds-col-auto">
+   <div class="wmnds-col-1">
+      {% if params.phase -%}
+      <div class="wmnds-banner-container__phase-wrapper">
+         {{
+            wmndsPhaseIndicator() | indent(6) | trim
+         }}
+      </div>
+      {% endif -%}
       <p class="wmnds-banner-container__text">
          This is a new service - your
          {{ wmndsLink({
