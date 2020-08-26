@@ -19,6 +19,4 @@ function colorPalettes() {
   });
 }
 
-const abc = window.addEventListener('DOMContentLoaded', colorPalettes());
-
-export default abc;
+export default colorPalettes;
