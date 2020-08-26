@@ -16,9 +16,7 @@
     }
 
     .wmnds-link {
-      position: absolute;
-      right: $size-sm;
-      bottom: $size-sm;
+      position: relative;
     }
   }
 
@@ -29,8 +27,10 @@
 
   // One main link modifier
   &--with-one-link {
+    display: flex;
     position: relative;
-    padding-bottom: $size-lg;
+    padding-bottom: $size-md;
+    flex-direction: column;
   }
 
   // Nav modifier
