@@ -78,7 +78,7 @@
         },
         {
           "name": "Banner"
-        },        
+        },
         {
           "name": "Contact Details"
         },
@@ -87,6 +87,9 @@
         },
         {
           "name": "Header and footer"
+        },
+        {
+          "name": "Header and footer v2"
         },
         {
           "name": "Progress indicator"
