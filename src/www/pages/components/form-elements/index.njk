@@ -17,7 +17,6 @@
     <li>o not use this component to ask more questions within a question - instead, ask a new question.</li>
     <li>When you're giving extra information and hints to help the user answer a question.</li>
   </ul>
-  <br>
   {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
   {{
     compExample([wmndsLabel()])
@@ -47,8 +46,6 @@
     <li>Make sure users know why you're asking the question and only ask users for information you really need</li>
     <li>Add (optional) to the end of each question that is optional</li>
   </ul>
-
-  <br>
   {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
   {{
     compExample([wmndsQuestion()])
@@ -98,8 +95,6 @@
     <li>Drop down creates more work for your user because it is a multi-step process, they hide available options and they slow users down by defaults therefore if possible use another component to display options e.g. radio buttons, text field, input selector</li>
     <li>Do not use when drop down option has more than 36 characters because users will not be able to read them on some mobile devices</li>
   </ul>
-
-
 
   {% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
   {{
@@ -199,6 +194,26 @@
   <br><br>
   {# Textarea #}
   <h2>Textarea</h2>
+  <h3>What does it do?</h3>
+  <ul>
+    <li>Allows users to enter more than one line of text.</li>
+    <li>Allows users to write whatever they like, also called free text.</li>
+  </ul>
+  <h3>
+    When to use it?
+  </h3>
+  <ul>
+    <li>When the user needs to enter lots of text. For example, a paragraph.</li>
+  </ul>
+  <h3>
+    When not to use it?
+  </h3>
+  <ul>
+    <li>When the user needs to enter one line of text. Use the input component instead.</li>
+    <li>Use fixed-width inputs for content that has a known length, e.g. postcode.</li>
+    <li>When there are limited options. Use a different form element that limits the options.</li>
+  </ul>
+
   {% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
   {{
     compExample([wmndsTextarea()])
@@ -209,7 +224,41 @@
   <br><br>
   {# Handling error #}
   <h2 id="handling-errors">Handling errors</h2>
-   {{
+  <h3>What does it do?</h3>
+  <ul>
+    <li>Lets the user know what is wrong with their answer.</li>
+    <li>Tells the user how to correct their answer.</li>
+    <li>Tells the user what format or characters it is expecting.</li>
+    <li>Prevents the user from trying to submit information that will be rejected by the API.</li>
+  </ul>
+  <h3>
+    When to use it?
+  </h3>
+  <ul>
+    <li>A handling error is used in addition to an error summary, which shows all errors on a page.</li>
+    <li>When there has been an error with validating the user's answer after they try to continue to the next step.</li>
+    <li>When the error is a validation error that is fixable.</li>
+    <li>Use a separate error for each group of answer fields. For example, one error for date fields.</li>
+    <li>The corrective action should be read by a screen reader before data entry components.</li>
+  </ul>
+  <h3>
+    When not to use it?
+  </h3>
+  <ul>
+    <li>Do not show the error until the user tries to move to the next step. Immediate validation can distract a user from progressing, especially if it validates as the user is typing.</li>
+    <li>Hint text should help the user to understand how the field will be validated.</li>
+    <li>If the service is down the user should be shown a service unavailable page.</li>
+  </ul>
+  <h3>
+    How to use it
+  </h3>
+  <ul>
+    <li>Make sure questions and help text are well designed and tested with users to avoid errors in the first place.</li>
+    <li>GOV.UK has advice to follow when <a href="https://design-system.service.gov.uk/components/error-message/">writing error messages</a>.</li>
+    <li>GOV.UK has advice for <a href="https://design-system.service.gov.uk/patterns/validation/">helping users to recover from validation errors</a>.</li>
+  </ul>
+
+  {{
     compExample([
       wmndsInput({
         id: 'errorExample',
