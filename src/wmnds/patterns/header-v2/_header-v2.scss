@@ -110,3 +110,44 @@
     }
   }
 }
+
+.wmnds-mega-menu {
+  &__primary-menu-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__primary-menu-item {
+    margin: 0;
+    list-style: none;
+    &:hover {
+      .wmnds-mega-menu__primary-menu-link {
+        background-color: get-color(information);
+      }
+    }
+  }
+
+  &__primary-menu-link {
+    display: flex;
+    padding: ($size-md) ($size-md * 1.5);
+    border: 0;
+    color: $white;
+    background-color: transparent;
+    font-family: $x-heading-font-family;
+    font-size: 1rem;
+    line-height: 1.5;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__search-icon {
+    width: $size-md * 1.5;
+    height: $size-md * 1.5;
+    fill: $white;
+  }
+
+  &__container {
+    display: none;
+  }
+}
