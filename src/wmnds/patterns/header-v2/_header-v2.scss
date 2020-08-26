@@ -111,20 +111,37 @@
   }
 }
 
+.wmnds-header--mega-menu {
+  padding: 0;
+  position: relative;
+}
+
 .wmnds-mega-menu {
-  &__primary-menu-list {
+  letter-spacing: normal;
+
+  &__primary-menu {
     display: flex;
     margin: 0;
     padding: 0;
   }
 
-  &__primary-menu-item {
+  &__primary-menu,
+  &__sub-menu,
+  &__sub-menu-child-menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__primary-menu-item,
+  &__sub-menu-item,
+  &__sub-menu-child-item {
     margin: 0;
     list-style: none;
-    &:hover {
-      .wmnds-mega-menu__primary-menu-link {
-        background-color: get-color(information);
-      }
+  }
+
+  &__primary-menu-item:focus-within {
+    & .wmnds-mega-menu__container {
+      display: block;
     }
   }
 
@@ -139,15 +156,87 @@
     line-height: 1.5;
     align-items: center;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: get-color(information);
+      & + .wmnds-mega-menu__container {
+        display: block;
+      }
+    }
   }
 
   &__search-icon {
-    width: $size-md * 1.5;
-    height: $size-md * 1.5;
-    fill: $white;
+    width: $size-md * 1.25;
+    height: $size-md * 1.25;
+    fill: currentColor;
   }
 
   &__container {
     display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: $white;
+  }
+
+  &__sub-menu {
+    display: flex;
+    width: 100%;
+    padding: $size-md * 1.25 0;
+  }
+
+  &__sub-menu-item {
+    margin: 0;
+    padding-left: $size-lg;
+    padding-right: $size-md;
+    list-style: none;
+    flex-basis: 25%;
+    flex-grow: 1;
+    &:not(:last-child) {
+      border-right: 1px solid get-color(text, 80);
+    }
+  }
+
+  &__sub-menu-link {
+    display: block;
+    margin-bottom: $size-sm;
+    padding-left: $size-lg;
+    color: get-color(primary);
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+    position: relative;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__sub-menu-link-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+
+  &__sub-menu-child-menu {
+    padding-left: $size-lg;
+  }
+
+  &__sub-menu-child-link {
+    display: block;
+    margin-bottom: $size-sm;
+    color: get-color(text);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 }
