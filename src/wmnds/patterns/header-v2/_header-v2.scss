@@ -112,17 +112,50 @@
 }
 
 .wmnds-header--mega-menu {
-  padding: 0;
   position: relative;
+  z-index: 1000;
+  padding: 0;
 }
 
 .wmnds-mega-menu {
   letter-spacing: normal;
 
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: get-color(primary);
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($black, 0.5);
+  }
+
+  &:focus-within,
+  &:hover {
+    &::after {
+      display: block;
+    }
+  }
+
   &__primary-menu {
     display: flex;
     margin: 0;
     padding: 0;
+    align-items: stretch;
   }
 
   &__primary-menu,
@@ -147,6 +180,7 @@
 
   &__primary-menu-link {
     display: flex;
+    min-height: 100%;
     padding: ($size-md) ($size-md * 1.5);
     border: 0;
     color: $white;
@@ -154,12 +188,13 @@
     font-family: $x-heading-font-family;
     font-size: 1rem;
     line-height: 1.5;
-    align-items: center;
     cursor: pointer;
+    align-items: center;
 
     &:hover,
     &:focus {
       background-color: get-color(information);
+
       & + .wmnds-mega-menu__container {
         display: block;
       }
@@ -174,10 +209,11 @@
 
   &__container {
     display: none;
+    z-index: -1;
     position: absolute;
-    width: 100%;
     top: 100%;
     left: 0;
+    width: 100%;
     background-color: $white;
   }
 
@@ -189,11 +225,12 @@
 
   &__sub-menu-item {
     margin: 0;
-    padding-left: $size-lg;
     padding-right: $size-md;
+    padding-left: $size-lg;
     list-style: none;
     flex-basis: 25%;
     flex-grow: 1;
+
     &:not(:last-child) {
       border-right: 1px solid get-color(text, 80);
     }
@@ -201,13 +238,14 @@
 
   &__sub-menu-link {
     display: block;
+    position: relative;
     margin-bottom: $size-sm;
     padding-left: $size-lg;
     color: get-color(primary);
-    font-weight: 700;
     font-size: 1.125rem;
+    font-weight: 700;
     text-decoration: none;
-    position: relative;
+
     &:hover,
     &:focus {
       text-decoration: underline;
@@ -218,9 +256,9 @@
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
     width: 1em;
     height: 1em;
+    transform: translateY(-50%);
     fill: currentColor;
   }
 
