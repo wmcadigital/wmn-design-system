@@ -183,11 +183,18 @@ $ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
     &:focus-within {
       & .wmnds-mega-menu__container {
         visibility: visible;
+        transform: translateY(0rem);
         opacity: 1;
       }
 
       & .wmnds-mega-menu__primary-menu-link {
         background-color: get-color(information);
+      }
+    }
+
+    &:hover {
+      & .wmnds-mega-menu__container {
+        z-index: -2;
       }
     }
   }
@@ -211,7 +218,14 @@ $ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
       & + .wmnds-mega-menu__container {
         visibility: visible;
+        transform: translateY(0rem);
         opacity: 1;
+      }
+    }
+
+    &:hover {
+      & + .wmnds-mega-menu__container {
+        z-index: -2;
       }
     }
   }
@@ -230,9 +244,10 @@ $ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
     top: 100%;
     left: 0;
     width: 100%;
-    transition: opacity 200ms $ease-out-cubic;
+    transform: translateY(-$size-lg);
     opacity: 0;
     background-color: $white;
+    transition: opacity 150ms 100ms ease, transform 150ms 100ms $ease-out-cubic;
   }
 
   &__sub-menu {
