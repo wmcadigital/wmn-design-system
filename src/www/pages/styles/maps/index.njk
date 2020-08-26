@@ -2,10 +2,46 @@
 {% set pageTitle = "Maps" %}
 {% set section = "Styles" %}
 
+{# Imports #}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+
 {% block content %}
 {# About #}
 <h2>About</h2>
 
+<h3>ESRI</h3>
+<p>
+  When it comes to mapping, West Midlands Network uses
+  {{
+  wmndsLink({
+    link: "https://developers.arcgis.com/labs/what-is-arcgis/",
+    linkTitle: "",
+    linkTarget: "_blank",
+    text: "ESRI ArcGIS products"
+    })
+  }}
+  to create, manage and share data on maps. Therefore, when developing maps it is recommended to use
+  {{
+    wmndsLink({
+      link: "https://developers.arcgis.com/documentation/core-concepts/apis-sdks-apps/#choosing-an-arcgis-api-or-sdk",
+      linkTitle: null,
+      linkTarget: "_blank",
+      text: "ArcGIS APIs and SDKs"
+      })
+    }}.
+</p>
+
+<h3>Basemap</h3>
+<p>
+  When using a map it is recommended to use the
+ {{
+   wmndsLink({
+    link: "https://tfwm.maps.arcgis.com/home/item.html?id=53f165a8863c4d40ba017042e248355e",
+    linkTarget: "_blank",
+    text: "WMCA Basemap"
+    })
+  }} as your basemap layer. This is to ensure maps are consistant across West Midlands Network services.
+</p>
 <img class="wmnds-col-1" src="$*cdn/img/component-images/maps/base-map.png" alt="A screenshot showing an example of a map" >
 
 <img class="wmnds-col-1-2 wmnds-col-sm-1-5" src="$*cdn/img/component-images/maps/map-icons.png" alt="A screenshot showing an example of a map" >
