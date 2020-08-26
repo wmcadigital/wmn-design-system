@@ -1,0 +1,116 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Icons" %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<h3>What does it do?</h3>
+<ul>
+  <li>
+    Icons are images used in context to communicate a meaning (a visual representation of an object, action, or idea).  
+  </li>
+</ul>
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    Only use icons and images if there’s a real user need.
+  </li>
+</ul>
+<h3>When not to use it?</h3>
+<ul>
+  <li>
+    Do not use it for unnecessary decoration.
+  </li>
+</ul>
+
+
+<hr>
+<br><br>
+{# Warning Text #}
+<h2>Icons Examples</h2>
+{{
+  compExample( [
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-expand"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-chevron-right"
+    }), 
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-success"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-trash"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-info"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-warning-circle"
+    }), 
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-warning-triangle"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-trash"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-file"
+    }), 
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-checkmark"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-paperclip"
+    }), 
+        wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-cross"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-search"
+    }),  
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "general-arrow"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "modes-isolated-bus"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "modes-isolated-metro"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "modes-isolated-rail"
+    }),
+    wmndsIcon({
+      class: "wmndsIcon",
+      icon: "modes-isolated-roads"
+    })
+    
+  ],   
+  {
+    displayInline: true
+  })
+}}
+{# End Warning Text #}
+
+
+{% endblock %}
