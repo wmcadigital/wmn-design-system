@@ -2,17 +2,19 @@
   list-style-position: inside;
   padding-inline-start: 0;
 
-  ul {
-    padding-inline-start: 2 * $size-sm;
+  ul,
+  ol {
+    padding-inline-start: $size-lg;
   }
 
-  ul li {
+  ul li,
+  ol li {
     list-style: none;
-  }
 
-  ul li:before {
-    content: "–";
-    padding-right: $size-sm;
+    &:before {
+      content: "–";
+      padding-right: $size-sm;
+    }
   }
 
 }

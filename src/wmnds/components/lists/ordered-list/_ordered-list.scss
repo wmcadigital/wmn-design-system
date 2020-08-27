@@ -2,9 +2,10 @@
   counter-reset: item;
   padding-inline-start: 0;
 
-  ol {
+  ol,
+  ul {
     counter-reset: item;
-    padding-inline-start: $size-sm * 2;
+    padding-inline-start: $size-lg;
   }
 
   li {
