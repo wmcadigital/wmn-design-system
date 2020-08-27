@@ -1,19 +1,18 @@
 .wmnds-unordered-list {
-  list-style-position: inside;
-  padding-inline-start: 0;
+  list-style: none;
+
+  li:before {
+    content: "●";
+    padding-right: $size-xsm;
+  }
 
   ul,
   ol {
     padding-inline-start: $size-lg;
-  }
 
-  ul li,
-  ol li {
-    list-style: none;
-
-    &:before {
+    li:before {
       content: "–";
-      padding-right: $size-sm;
+      padding-right: $size-xsm;
     }
   }
 

@@ -3,7 +3,7 @@
   padding-inline-start: 0;
 
   ol,
-  ul {
+  ul:not(.wmnds-unordered-list) {
     counter-reset: item;
     padding-inline-start: $size-lg;
   }
