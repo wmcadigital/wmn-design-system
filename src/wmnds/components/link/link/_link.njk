@@ -6,10 +6,11 @@
 {% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
 {% set linkRel = "noopener noreferrer" if params.linkTarget === "_blank" %} {# if target is blank then add rel noopener noreferrer to link #}
 {% set class = ' ' + params.classModifiers if params.classModifiers %}
+{% set prefix = "< " if params.isBackLink else "" %} {# set prefix text #}
 
 
 <a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-link{{class}}" {% if linkRel %}rel="{{linkRel}}"{% endif %}>
-  {{- text -}}
+  {{- prefix -}}{{- text -}}
 </a>
 
 {% endmacro %}
