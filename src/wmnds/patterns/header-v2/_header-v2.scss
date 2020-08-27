@@ -185,12 +185,12 @@ $link-transition: background-color 0.2s ease-out;
   &__primary-menu-item {
     &:hover,
     &:not(.keyFocus):focus-within {
-      & .wmnds-mega-menu__primary-menu-link {
+      .wmnds-mega-menu__primary-menu-link {
         background-color: get-color(information);
       }
 
-      & .wmnds-mega-menu__container,
-      & .wmnds-mega-menu__primary-menu-link:focus + .wmnds-mega-menu__container {
+      .wmnds-mega-menu__container,
+      .wmnds-mega-menu__primary-menu-link:focus + .wmnds-mega-menu__container {
         visibility: visible;
         transform: translateY(0);
         opacity: 1;
@@ -198,8 +198,24 @@ $link-transition: background-color 0.2s ease-out;
     }
 
     &:hover {
-      & .wmnds-mega-menu__container {
+      .wmnds-mega-menu__container {
         z-index: -2;
+      }
+    }
+  }
+
+  // on hover give priority to where the keyboard is currently focused
+  &.active {
+    .wmnds-mega-menu__primary-menu-item {
+      &:not(.active):hover {
+        .wmnds-mega-menu__container {
+          z-index: -4;
+        }
+      }
+      &.active {
+        .wmnds-mega-menu__container {
+          z-index: -2;
+        }
       }
     }
   }
