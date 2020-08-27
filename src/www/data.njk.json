@@ -7,10 +7,13 @@
           "name": "Colour palettes"
         },
         {
-          "name": "Typography"
+          "name": "Icons"
         },
         {
-          "name": "Icons"
+          "name": "Maps"
+        },
+        {
+          "name": "Typography"
         },
         {
           "name": "Utility classes"
@@ -81,7 +84,7 @@
         },
         {
           "name": "Banner"
-        },        
+        },
         {
           "name": "Contact Details"
         },
