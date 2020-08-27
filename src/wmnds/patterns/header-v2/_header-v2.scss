@@ -4,6 +4,18 @@ $menu-transition: opacity 0.15s 0.1s ease, transform 0.25s 0.1s $ease-out-cubic;
 $overlay-transition: opacity 0.2s ease-out;
 $link-transition: background-color 0.2s ease-out;
 
+@mixin menu-visible($visible) {
+  @if $visible {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  } @else {
+    visibility: hidden;
+    transform: translateY(-$size-lg);
+    opacity: 0;
+  }
+}
+
 .wmnds-header {
   display: block;
   padding: $size-md 0;
@@ -191,9 +203,7 @@ $link-transition: background-color 0.2s ease-out;
 
       .wmnds-mega-menu__container,
       .wmnds-mega-menu__primary-menu-link:focus + .wmnds-mega-menu__container {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 1;
+        @include menu-visible(true);
       }
     }
 
@@ -212,6 +222,7 @@ $link-transition: background-color 0.2s ease-out;
           z-index: -4;
         }
       }
+
       &.active {
         .wmnds-mega-menu__container {
           z-index: -2;
@@ -252,16 +263,14 @@ $link-transition: background-color 0.2s ease-out;
 
   &__container {
     display: block;
-    visibility: hidden;
     position: absolute;
     z-index: -4;
     top: 100%;
     left: 0;
     width: 100%;
-    transform: translateY(-$size-lg);
     transition: $menu-transition;
-    opacity: 0;
     background-color: $white;
+    @include menu-visible(false);
   }
 
   &__sub-menu {
