@@ -28,10 +28,11 @@ const header = () => {
         }
       };
 
-      const handleKeydown = key => {
+      const handleKeydown = (e, key) => {
         console.log(key);
         // if key pressed is enter or space bar
         if (key === 13 || key === 32) {
+          e.preventDefault();
           // remove keyFocus to allow menu to show
           setMenuActive();
           // focus first menu item
@@ -61,7 +62,7 @@ const header = () => {
       topLevelListItem.addEventListener('mousedown', handleMousedown);
       topLevelLink.addEventListener('focus', handleKeyFocus);
       topLevelListItem.addEventListener('keydown', e => {
-        handleKeydown(e.keyCode);
+        handleKeydown(e, e.keyCode);
       });
     });
   });
