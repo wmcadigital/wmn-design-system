@@ -2,6 +2,7 @@
 $ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 $menu-transition: opacity 0.15s 0.1s ease, transform 0.25s 0.1s $ease-out-cubic;
 $overlay-transition: opacity 0.2s ease-out;
+$link-transition: background-color 0.2s ease-out;
 
 .wmnds-header {
   display: block;
@@ -152,7 +153,7 @@ $overlay-transition: opacity 0.2s ease-out;
     pointer-events: none;
   }
 
-  &:focus-within,
+  &:not(.keyFocus):focus-within,
   &:hover {
     &::after {
       visibility: visible;
@@ -183,15 +184,16 @@ $overlay-transition: opacity 0.2s ease-out;
 
   &__primary-menu-item {
     &:hover,
-    &:focus-within {
-      & .wmnds-mega-menu__container {
+    &:not(.keyFocus):focus-within {
+      & .wmnds-mega-menu__primary-menu-link {
+        background-color: get-color(information);
+      }
+
+      & .wmnds-mega-menu__container,
+      & .wmnds-mega-menu__primary-menu-link:focus + .wmnds-mega-menu__container {
         visibility: visible;
         transform: translateY(0);
         opacity: 1;
-      }
-
-      & .wmnds-mega-menu__primary-menu-link {
-        background-color: get-color(information);
       }
     }
 
@@ -206,6 +208,7 @@ $overlay-transition: opacity 0.2s ease-out;
     display: flex;
     min-height: 100%;
     padding: ($size-md) ($size-md * 1.5);
+    transition: $link-transition;
     border: 0;
     color: $white;
     background-color: transparent;
@@ -218,18 +221,10 @@ $overlay-transition: opacity 0.2s ease-out;
     &:hover,
     &:focus {
       background-color: get-color(information);
-
-      & + .wmnds-mega-menu__container {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 1;
-      }
     }
 
-    &:hover {
-      & + .wmnds-mega-menu__container {
-        z-index: -2;
-      }
+    &:hover + .wmnds-mega-menu__container {
+      z-index: -2;
     }
   }
 
