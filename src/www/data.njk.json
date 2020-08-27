@@ -63,6 +63,9 @@
           "name": "Phase indicator"
         },
         {
+          "name": "Progress indicator"
+        },
+        {
           "name": "Table"
         },
         {
@@ -87,9 +90,6 @@
         },
         {
           "name": "Header and footer"
-        },
-        {
-          "name": "Progress indicator"
         }
       ]
     },
