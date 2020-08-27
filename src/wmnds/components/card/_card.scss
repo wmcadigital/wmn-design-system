@@ -1,0 +1,14 @@
+.wmnds-card {
+  border-bottom: 5px solid get-color(primary);
+  background-color: $white;
+
+  @at-root a#{&} {
+    display: block;
+    color: get-color(text);
+    text-decoration: none;
+  }
+
+  &--yellow {
+    background-color: get-color(plannedDisruption);
+  }
+}
