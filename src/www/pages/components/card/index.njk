@@ -1,0 +1,41 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Card" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{# Imports #}
+{% from "wmnds/components/card/_card.njk" import wmndsCard %}
+
+{% block content %}
+{# About #}
+<h2>Lorem</h2>
+
+{{
+    compExample([
+        wmndsCard()
+    ])
+}}
+
+<br><br>
+{# Ipsum #}
+<h2>Ipsum</h2>
+
+{{
+    compExample([
+        wmndsCard({
+            clickable: true
+        })
+    ])
+}}
+
+<br><br>
+{# Dolor #}
+<h2>Dolor</h2>
+
+{{
+    compExample([
+        wmndsCard({
+            yellow: true
+        })
+    ])
+}}
+
+{% endblock %}
