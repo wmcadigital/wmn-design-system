@@ -4,7 +4,6 @@ $dark-grey: #2b2b2b;
   margin-top: $size-xl;
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
-  background-color: $white;
 
   &__subtitle {
     padding: $size-md $size-md 0;
@@ -13,11 +12,14 @@ $dark-grey: #2b2b2b;
   }
 
   &__inner-wrap {
-    padding: $size-md;
-    overflow: hidden;
     border-top: 1px solid $dark-grey;
     border-bottom: 1px solid $dark-grey;
     background: get-color(background);
+
+    .wmnds-col-1 {
+      padding: $size-md;
+      overflow: hidden;
+    }
   }
 
   pre {
