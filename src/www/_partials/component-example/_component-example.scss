@@ -2,18 +2,26 @@ $dark-grey: #2b2b2b;
 
 .wmnds-website-code-example {
   margin-top: $size-xl;
-  padding: $size-md;
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
-  background-color: get-color(background);
+  background-color: $white;
 
   &__subtitle {
+    padding: $size-md $size-md 0;
     color: get-color(information);
     text-decoration: underline;
   }
 
   &__inner-wrap {
+    padding: $size-md;
     overflow: hidden;
+    border-top: 1px solid $dark-grey;
+    border-bottom: 1px solid $dark-grey;
+    background: get-color(background);
+  }
+
+  pre {
+    margin: 0;
   }
 }
 
@@ -54,5 +62,6 @@ span[class^="hljs-"] {
 }
 
 .wmnds-js-show-code {
+  margin: $size-md;
   float: right;
 }
