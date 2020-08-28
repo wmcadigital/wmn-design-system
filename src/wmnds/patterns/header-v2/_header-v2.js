@@ -76,11 +76,14 @@ const header = () => {
       const handleKeydown = (e, key) => {
         // if key pressed is enter, space bar or down arrow
         if (key === 13 || key === 32 || key === 40) {
-          e.preventDefault();
-          // remove keyFocus to allow menu to show
-          setMenuActive(true);
-          // focus first menu item
-          subMenuLinks[0].focus();
+          // check if list item has a mega menu
+          if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
+            e.preventDefault();
+            // remove keyFocus to allow menu to show
+            setMenuActive(true);
+            // focus first menu item
+            subMenuLinks[0].focus();
+          }
         } else if (key === 37) {
           // left arrow
           const prevLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'prev');
@@ -135,7 +138,14 @@ const header = () => {
                 const nextLink = getMenuLink(linkIndex, thisListLinks, 'next')
                   ? getMenuLink(linkIndex, thisListLinks, 'next')
                   : getMenuLink(-1, menuArray[menuIndex + 1], 'next');
-                if (nextLink) nextLink.focus();
+                if (nextLink) {
+                  nextLink.focus();
+                } else {
+                  setMenuActive(false);
+                  if (getMenuLink(topLevelLinkIndex, topLevelLinks, 'next')) {
+                    getMenuLink(topLevelLinkIndex, topLevelLinks, 'next').focus();
+                  }
+                }
               } else if (e.keyCode === 38) {
                 // up arrow - go to previous item in current menu list
                 e.preventDefault();
