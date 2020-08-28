@@ -29,6 +29,13 @@ const header = () => {
           topLevelListItem.classList.add('keyFocus');
         }
       };
+      const handleBlur = () => {
+        menu.classList.remove('keyFocus');
+        topLevelListItem.classList.remove('keyFocus');
+        menu.classList.remove('active');
+        topLevelListItem.classList.remove('active');
+        console.log('removed active blur');
+      };
 
       const setMenuActive = active => {
         if (active !== false) {
@@ -36,9 +43,11 @@ const header = () => {
           topLevelListItem.classList.remove('keyFocus');
           menu.classList.add('active');
           topLevelListItem.classList.add('active');
+          console.log('added active');
         } else {
           menu.classList.remove('active');
           topLevelListItem.classList.remove('active');
+          console.log('removed active setMenuActive');
           handleKeyFocus();
         }
       };
@@ -69,7 +78,7 @@ const header = () => {
         if (key === 13 || key === 32 || key === 40) {
           e.preventDefault();
           // remove keyFocus to allow menu to show
-          setMenuActive();
+          setMenuActive(true);
           // focus first menu item
           subMenuLinks[0].focus();
         } else if (key === 37) {
@@ -86,8 +95,13 @@ const header = () => {
         }
       };
 
+      topLevelLink.addEventListener('mousedown', e => {
+        e.preventDefault();
+        setMenuActive(false);
+      });
       topLevelListItem.addEventListener('mousedown', handleMousedown);
       topLevelLink.addEventListener('focus', handleKeyFocus);
+      topLevelListItem.addEventListener('blur', handleBlur);
       topLevelListItem.addEventListener('keydown', e => {
         handleKeydown(e, e.keyCode);
       });
