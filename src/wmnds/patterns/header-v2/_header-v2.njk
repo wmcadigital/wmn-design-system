@@ -38,10 +38,11 @@
       </h1>
       {%- elif params.megaMenu %}
       <nav class="wmnds-mega-menu">
-        <ul class="wmnds-mega-menu__primary-menu">
+        <button class="wmnds-mega-menu__mobile-toggle wmnds-btn wmnds-btn--secondary wmnds-hide-desktop" aria-controls="wmnds-mega-menu">Menu</button>
+        <ul id="wmnds-mega-menu" class="wmnds-mega-menu__primary-menu">
           {# nav top level list item #}
           <li class="wmnds-mega-menu__primary-menu-item">
-            <button class="wmnds-mega-menu__primary-menu-link">Level 1A</button>
+            <button class="wmnds-mega-menu__primary-menu-link">Level 1A <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
 
             {# main menu container to be shown/hidden #}
             <div class="wmnds-mega-menu__container">
@@ -51,7 +52,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-location-pin" href="#wmnds-general-location-pin"></use>
-                      </svg> Level 2A</a>
+                      </svg> Level 2A <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3A</a>
@@ -66,7 +67,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-location-arrow" href="#wmnds-general-location-arrow"></use>
-                      </svg> Level 2A</a>
+                      </svg> Level 2A <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3A</a>
@@ -87,7 +88,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-info" href="#wmnds-general-info"></use>
-                      </svg> Level 2A</a>
+                      </svg> Level 2A <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3A</a>
@@ -105,7 +106,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-star" href="#wmnds-general-star"></use>
-                      </svg> Level 2A</a>
+                      </svg> Level 2A <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3A</a>
@@ -127,7 +128,7 @@
           </li>
 
           <li class="wmnds-mega-menu__primary-menu-item">
-            <button class="wmnds-mega-menu__primary-menu-link">Level 1B</button>
+            <button class="wmnds-mega-menu__primary-menu-link">Level 1B <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
 
             {# main menu container to be shown/hidden #}
             <div class="wmnds-mega-menu__container">
@@ -137,7 +138,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-general-location-pin" href="#wmnds-general-location-pin"></use>
-                        </svg> Level 2B</a>
+                        </svg> Level 2B <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
@@ -158,7 +159,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-general-location-arrow" href="#wmnds-general-location-arrow"></use>
-                        </svg> Level 2B</a>
+                        </svg> Level 2B <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
@@ -174,33 +175,12 @@
                       </li>
                     </ul>
                   </li>
-  
-                  {# <li class="wmnds-mega-menu__sub-menu-item">
-                    <a href="#" class="wmnds-mega-menu__sub-menu-link">
-                        <svg class="wmnds-mega-menu__sub-menu-link-icon">
-                          <use xlink:href="#wmnds-general-info" href="#wmnds-general-info"></use>
-                        </svg> Level 2B</a>
-                    <ul class="wmnds-mega-menu__sub-menu-child-menu">
-                      <li class="wmnds-mega-menu__sub-menu-child-item">
-                        <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
-                      </li>
-                      <li class="wmnds-mega-menu__sub-menu-child-item">
-                        <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
-                      </li>
-                      <li class="wmnds-mega-menu__sub-menu-child-item">
-                        <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
-                      </li>
-                      <li class="wmnds-mega-menu__sub-menu-child-item">
-                        <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
-                      </li>
-                    </ul>
-                  </li> #}
                   
                   <li class="wmnds-mega-menu__sub-menu-item">
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-general-star" href="#wmnds-general-star"></use>
-                        </svg> Level 2B</a>
+                        </svg> Level 2B <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3B</a>
@@ -234,7 +214,7 @@
           </li>
 
           <li class="wmnds-mega-menu__primary-menu-item">
-            <button class="wmnds-mega-menu__primary-menu-link">Level 1C</button>
+            <button class="wmnds-mega-menu__primary-menu-link">Level 1C <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
 
             {# main menu container to be shown/hidden #}
             <div class="wmnds-mega-menu__container">
@@ -244,7 +224,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-location-pin" href="#wmnds-general-location-pin"></use>
-                      </svg> Level 2C</a>
+                      </svg> Level 2C <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3C</a>
@@ -265,7 +245,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-location-arrow" href="#wmnds-general-location-arrow"></use>
-                      </svg> Level 2C</a>
+                      </svg> Level 2C <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3C</a>
@@ -286,7 +266,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-info" href="#wmnds-general-info"></use>
-                      </svg> Level 2C</a>
+                      </svg> Level 2C <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3C</a>
@@ -307,7 +287,7 @@
                     <a href="#" class="wmnds-mega-menu__sub-menu-link">
                       <svg class="wmnds-mega-menu__sub-menu-link-icon">
                         <use xlink:href="#wmnds-general-star" href="#wmnds-general-star"></use>
-                      </svg> Level 2C</a>
+                      </svg> Level 2C <svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>
                     <ul class="wmnds-mega-menu__sub-menu-child-menu">
                       <li class="wmnds-mega-menu__sub-menu-child-item">
                         <a href="#" class="wmnds-mega-menu__sub-menu-child-link">Level 3C</a>
@@ -327,14 +307,10 @@
               </div>
             </div>
           </li>
-
-          <li class="wmnds-mega-menu__primary-menu-item">
-            <a href="#" class="wmnds-mega-menu__primary-menu-link">
-              <svg class="wmnds-mega-menu__search-icon"><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
-            </a>
-          </li>
-
         </ul>
+        <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search">
+          <svg class="wmnds-mega-menu__search-icon"><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
+        </button>
       </nav>
       {%- else %}
       {#- Else with a navigation -#}
