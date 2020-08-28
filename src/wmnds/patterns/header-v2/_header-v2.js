@@ -34,7 +34,6 @@ const header = () => {
         topLevelListItem.classList.remove('keyFocus');
         menu.classList.remove('active');
         topLevelListItem.classList.remove('active');
-        console.log('removed active blur');
       };
 
       const setMenuActive = active => {
@@ -43,34 +42,32 @@ const header = () => {
           topLevelListItem.classList.remove('keyFocus');
           menu.classList.add('active');
           topLevelListItem.classList.add('active');
-          console.log('added active');
         } else {
           menu.classList.remove('active');
           topLevelListItem.classList.remove('active');
-          console.log('removed active setMenuActive');
           handleKeyFocus();
         }
       };
 
+      // returns a specified menu link from a specified array
       // currentIndex = index of the link that is currently focused
       // array = array to move through
       // direction = next, prev,
       const getMenuLink = (currentIndex, array, direction) => {
-        // let link = null;
+        let menuLink = null;
         if (array) {
           if (direction === 'prev') {
             // return previous link in specified array if there is one else return null;
-            return array[currentIndex - 1] ? array[currentIndex - 1] : null;
+            menuLink = array[currentIndex - 1] ? array[currentIndex - 1] : null;
           } else if (direction === 'next') {
             // return next link in specified array if there is one else return null;
-            return array[currentIndex + 1] ? array[currentIndex + 1] : null;
+            menuLink = array[currentIndex + 1] ? array[currentIndex + 1] : null;
           } else {
             // return link with same index in specified array;
-            return array[currentIndex] ? array[currentIndex] : array[array.length - 1];
+            menuLink = array[currentIndex] ? array[currentIndex] : array[array.length - 1];
           }
-        } else {
-          return null;
         }
+        return menuLink;
       };
 
       const handleKeydown = (e, key) => {

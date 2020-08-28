@@ -136,42 +136,8 @@ $link-transition: background-color 0.2s ease-out;
 }
 
 .wmnds-mega-menu {
+  display: flex;
   letter-spacing: normal;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: get-color(primary);
-  }
-
-  &::after {
-    content: "";
-    visibility: hidden;
-    position: fixed;
-    z-index: -5;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    transition: $overlay-transition;
-    opacity: 0;
-    background-color: $black;
-    pointer-events: none;
-  }
-
-  &:not(.keyFocus):focus-within,
-  &:hover {
-    &::after {
-      visibility: visible;
-      opacity: 0.5;
-    }
-  }
 
   &__primary-menu {
     display: flex;
@@ -194,66 +160,11 @@ $link-transition: background-color 0.2s ease-out;
     list-style: none;
   }
 
-  &__primary-menu-item {
-    &:hover,
-    &:not(.keyFocus):focus-within {
-      .wmnds-mega-menu__primary-menu-link {
-        background-color: get-color(information);
-      }
-
-      .wmnds-mega-menu__container,
-      .wmnds-mega-menu__primary-menu-link:focus + .wmnds-mega-menu__container {
-        @include menu-visible(true);
-      }
-    }
-
-    &:hover {
-      .wmnds-mega-menu__container {
-        z-index: -2;
-      }
-    }
-  }
-
-  // on hover give priority to where the keyboard is currently focused
-  &.active {
-    .wmnds-mega-menu__primary-menu-item {
-      &:not(.active):hover {
-        .wmnds-mega-menu__container {
-          z-index: -4;
-          @include menu-visible(false);
-        }
-      }
-
-      &.active {
-        .wmnds-mega-menu__container {
-          z-index: -2;
-        }
-      }
-    }
-  }
-
   &__primary-menu-link {
     display: flex;
-    min-height: 100%;
-    padding: ($size-md) ($size-md * 1.5);
-    transition: $link-transition;
     border: 0;
-    color: $white;
     background-color: transparent;
-    font-family: $x-heading-font-family;
-    font-size: 1rem;
     line-height: 1.5;
-    cursor: pointer;
-    align-items: center;
-
-    &:hover,
-    &:focus {
-      background-color: get-color(information);
-    }
-
-    &:hover + .wmnds-mega-menu__container {
-      z-index: -2;
-    }
   }
 
   &__search-icon {
@@ -262,76 +173,242 @@ $link-transition: background-color 0.2s ease-out;
     fill: currentColor;
   }
 
-  &__container {
-    display: block;
-    position: absolute;
-    z-index: -4;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    transition: $menu-transition;
-    background-color: $white;
-    @include menu-visible(false);
+  &__mobile-toggle,
+  &__link-arrow-icon {
+    display: none;
   }
 
-  &__sub-menu {
-    display: flex;
-    width: 100%;
-    padding: $size-md * 1.25 0;
-  }
+  // mobile only navigation styles
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: $size-xs 0;
+    align-items: center;
 
-  &__sub-menu-item {
-    margin: 0;
-    padding-right: $size-md;
-    padding-left: $size-lg;
-    list-style: none;
-    flex-basis: 25%;
-    flex-grow: 1;
+    &__mobile-toggle {
+      display: block;
+      height: $size-md * 2.25;
+      padding: 0 $size-md * 1.35;
+      border-color: $white;
+      color: $white;
+    }
 
-    &:not(:last-child) {
-      border-right: 1px solid get-color(text, 80);
+    &__primary-menu {
+      position: absolute;
+      z-index: -1;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: $white;
+      flex-direction: column;
+
+      .wmnds-mega-menu__primary-menu-link {
+        border-bottom: 1px solid get-color(background);
+      }
+    }
+
+    &__container {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__primary-menu-link {
+      display: flex;
+      width: 100%;
+      padding: $size-md;
+      font-size: $size-md;
+      text-align: left;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__link-arrow-icon {
+      display: block;
+      width: $size-md * 1.8;
+      height: $size-md * 1.8;
+      fill: get-color(primary);
+    }
+
+    &__search {
+      margin-left: $size-sm;
+      padding-right: $size-xsm;
+      padding-left: $size-xsm;
+      color: $white;
+    }
+
+    &__search-icon {
+      display: block;
+      width: $size-md * 1.5;
+      height: $size-md * 1.5;
     }
   }
-
-  &__sub-menu-link {
-    display: block;
-    position: relative;
-    margin-bottom: $size-sm;
-    padding-left: $size-lg;
-    color: get-color(primary);
-    font-size: 1.125rem;
-    font-weight: 700;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+  // desktop navigation styles
+  @media screen and (min-width: $breakpoint-xl) {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: get-color(primary);
     }
-  }
 
-  &__sub-menu-link-icon {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 1em;
-    height: 1em;
-    transform: translateY(-50%);
-    fill: currentColor;
-  }
+    &::after {
+      content: "";
+      visibility: hidden;
+      position: fixed;
+      z-index: -5;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      transition: $overlay-transition;
+      opacity: 0;
+      background-color: $black;
+      pointer-events: none;
+    }
 
-  &__sub-menu-child-menu {
-    padding-left: $size-lg;
-  }
+    &:not(.keyFocus):focus-within,
+    &:hover {
+      &::after {
+        visibility: visible;
+        opacity: 0.5;
+      }
+    }
 
-  &__sub-menu-child-link {
-    display: block;
-    margin-bottom: $size-sm;
-    color: get-color(text);
-    text-decoration: none;
+    &__primary-menu-item {
+      &:hover,
+      &:not(.keyFocus):focus-within {
+        .wmnds-mega-menu__primary-menu-link {
+          background-color: get-color(information);
+        }
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+        .wmnds-mega-menu__container,
+        .wmnds-mega-menu__primary-menu-link:focus + .wmnds-mega-menu__container {
+          @include menu-visible(true);
+        }
+      }
+
+      &:hover {
+        .wmnds-mega-menu__container {
+          z-index: -2;
+        }
+      }
+    }
+
+    // on hover give priority to where the keyboard is currently focused
+    &.active {
+      .wmnds-mega-menu__primary-menu-item {
+        &:not(.active):hover {
+          .wmnds-mega-menu__container {
+            z-index: -4;
+            @include menu-visible(false);
+          }
+        }
+
+        &.active {
+          .wmnds-mega-menu__container {
+            z-index: -2;
+          }
+        }
+      }
+    }
+
+    &__primary-menu-link {
+      min-height: 100%;
+      padding: ($size-md) ($size-md * 1.5);
+      transition: $link-transition;
+      color: $white;
+      font-family: $x-heading-font-family;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: get-color(information);
+      }
+
+      &:hover + .wmnds-mega-menu__container {
+        z-index: -2;
+      }
+    }
+
+    &__container {
+      display: block;
+      position: absolute;
+      z-index: -4;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      transition: $menu-transition;
+      background-color: $white;
+      @include menu-visible(false);
+    }
+
+    &__sub-menu {
+      display: flex;
+      width: 100%;
+      padding: $size-md * 1.25 0;
+    }
+
+    &__sub-menu-item {
+      margin: 0;
+      padding-right: $size-md;
+      padding-left: $size-lg;
+      list-style: none;
+      flex-basis: 25%;
+      flex-grow: 1;
+
+      &:not(:last-child) {
+        border-right: 1px solid get-color(text, 80);
+      }
+    }
+
+    &__sub-menu-link {
+      display: block;
+      position: relative;
+      margin-bottom: $size-sm;
+      padding-left: $size-lg;
+      color: get-color(primary);
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    &__sub-menu-link-icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 1em;
+      height: 1em;
+      transform: translateY(-50%);
+      fill: currentColor;
+    }
+
+    &__sub-menu-child-menu {
+      padding-left: $size-lg;
+    }
+
+    &__sub-menu-child-link {
+      display: block;
+      margin-bottom: $size-sm;
+      color: get-color(text);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
   }
 }
