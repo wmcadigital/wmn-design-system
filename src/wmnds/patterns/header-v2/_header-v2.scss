@@ -220,6 +220,7 @@ $link-transition: background-color 0.2s ease-out;
       &:not(.active):hover {
         .wmnds-mega-menu__container {
           z-index: -4;
+          @include menu-visible(false);
         }
       }
 
