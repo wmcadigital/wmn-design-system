@@ -1,0 +1,44 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Content cards" %}
+{% set section="Patterns" %}
+{# Imports #}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<p>Content cards contain components and text. Against the page background, they help to draw the users attention to important information and help users to navigate content.</p>
+<hr>
+<br><br>
+
+{# Content card #}
+<h2>Content card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A container with a white background and purple underline.</li>
+    <li>Any components and text can be used within a card.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When it is used in a set of cards for navigation purposes. Instead, use a Navigation card.</li>
+</ul>
+
+{{
+    compExample([
+        wmndsContentCard({
+            html: "
+    <div class=\"wmnds-p-sm\">
+        <h2>Where the adventure starts</h2>
+        <p>Whatever your plans this holiday, get there with our great range of family tickets and discount vouchers.</p>
+    </div>
+"
+        })
+    ])
+}}
+
+{#  #}
+
+{% endblock %}

@@ -30,7 +30,7 @@
           "name": "Buttons"
         },
         {
-          "name": "Card"
+          "name": "Content card"
         },
         {
           "name": "Content Tiles"
@@ -85,6 +85,9 @@
         {
           "name": "Contact Details"
         },
+        {
+          "name": "Content cards"
+        },        
         {
           "name": "Feedback loop"
         },

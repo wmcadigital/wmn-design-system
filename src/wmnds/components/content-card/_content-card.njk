@@ -1,0 +1,19 @@
+{% macro wmndsContentCard(params) %}
+{# Set #}
+{% set yellowModifier = " wmnds-content-card--yellow" if params.yellow else "" %}
+{# Opening & closing tags #}
+{% set openingTag = "a href=\"#\" target=\"_self\"" if params.clickable else "div" %}
+{% set closingTag = "a" if params.clickable else "div" %}
+{# HTML content #}
+{% set html = params.html if params.html else "
+    <div class=\"wmnds-p-sm\">
+        Type something
+    </div>
+" %}
+
+<{{openingTag | safe}} class="wmnds-content-card{{yellowModifier}}">
+{# Html #}
+{{- html | safe | trim -}}
+{# end html #}
+</{{closingTag}}>
+{% endmacro %}
