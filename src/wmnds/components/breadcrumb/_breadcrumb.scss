@@ -12,6 +12,11 @@
   &__list-item {
     display: inline-block;
 
+    // Remove conflicting style with global ol li items
+    &:first-child::before {
+      content: none;
+    }
+
     // Put ">" before every list item other than first one
     &:not(:first-child)::before {
       content: ">";
