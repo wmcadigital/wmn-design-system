@@ -1,0 +1,51 @@
+{% macro wmndsReference(params) %}
+{# Imports #}
+{% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
+{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "wmnds/components/form-elements/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+{% set text = params.text if params.text %}
+{% set fields = params.fields if params.fields %}
+{% set actualSection = params.actualSection if params.actualSection else "1" %}
+{% set totalSections = params.totalSections if params.totalSections else "X" %}
+{% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
+
+
+
+{{
+    wmndsLink( { isBackLink: true, text: "Back" } )
+}}
+
+<div class="wmnds-qf-reference">
+ 
+    {{
+        wmndsProgressIndicator({
+            actualSection: actualSection,
+            totalSections: totalSections,
+            sectionName: sectionName
+        })
+    }}
+ 
+    <div class="wmnds-qf-reference__content">
+        {{
+            wmndsQuestion({
+                text: question
+            })
+        }}
+
+        {{ text | safe }}
+    </div>
+
+    <div class="wmnds-qf-reference__fields">
+        {{ fields  | safe }}
+    </div>
+
+    {{ params.button  | safe }}
+
+
+</div>
+
+{% endmacro %}

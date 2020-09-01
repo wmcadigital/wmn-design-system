@@ -1,0 +1,25 @@
+{% macro wmndsSummary(params) %}
+{# Imports #}
+{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+{% set html = params.html if params.html %}
+{% set tables = params.tables if params.tables %}
+{% set button = params.button if params.button %}
+
+
+<div class="wmnds-qf-summary">
+    {{
+        wmndsQuestion({
+            text: question
+        }) | trim | indent(4)
+    }} 
+    {%- for table in tables %}
+        {{ table | trim | indent(4) | safe }}
+    {%- endfor %}
+    {{ html | trim | indent(4) | safe }}
+    {{ params.button  | trim | indent(4) | safe }}
+</div>
+
+{% endmacro %}

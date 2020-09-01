@@ -1,16 +1,32 @@
 {% macro wmndsTable(params) %}
 
-<table class="wmnds-table">
+{# Params #}
+{% set title = params.title if params.title %}
+{% set caption = params.caption if params.caption %}
+{% set noHeaders = params.noHeaders if params.noHeaders else false %}
+{% set classNames = " " + params.classNames if params.classNames %}
+
+
+<table class="wmnds-table {{classNames}}">
+  {% if title %}
+  <h3>
+    {{title}}
+  </h3>
+  {% endif %}
+  {% if caption %}
   <caption class="wmnds-table__caption">
-    Table Title
+    {{title}}
   </caption>
-  <thead>
-    <tr>
-      {%- for i in range(1, params.cols + 1) %}
-      <th scope="col">Header {{i}}</th>
-      {%- endfor %}
-    </tr>
-  </thead>
+  {% endif %}
+  {% if noHeaders === false %}
+    <thead>
+      <tr>
+          {%- for i in range(1, params.cols + 1) %}
+          <th scope="col">Header {{i}}</th>
+          {%- endfor %}
+      </tr>
+    </thead>
+  {% endif %}
   <tbody>
     {%- for j in range(1, params.rows + 1) %}
     <tr>
