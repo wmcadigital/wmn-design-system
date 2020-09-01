@@ -1,6 +1,12 @@
-.wmnds-ordered-list {
+.wmnds-ordered-list,
+ol {
   counter-reset: item;
   padding-inline-start: 0;
+
+  a,
+  .wmnds-link {
+    display: inline;
+  }
 
   ol,
   ul:not(.wmnds-unordered-list) {
@@ -17,5 +23,4 @@
       counter-increment: item;
     }
   }
-
 }

@@ -1,5 +1,11 @@
-.wmnds-unordered-list {
+.wmnds-unordered-list,
+ul {
   list-style: none;
+
+  a,
+  .wmnds-link {
+    display: inline;
+  }
 
   li:before {
     content: "●";
@@ -16,5 +22,4 @@
       padding-right: $size-xsm;
     }
   }
-
 }
