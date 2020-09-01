@@ -91,7 +91,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^2.0.0",
     "node-sass": "^4.14.1",
-    "npm-check-updates": "^7.0.1",
+    "npm-check-updates": "^8.0.2",
     "nunjucks": "^3.2.2",
     "prettier": "^2.0.5",
     "sass": "^1.26.9",
