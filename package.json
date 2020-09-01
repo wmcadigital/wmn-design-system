@@ -95,10 +95,10 @@
     "nunjucks": "^3.2.2",
     "prettier": "^2.0.5",
     "sass": "^1.26.9",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^6.0.0"
   },
   "dependencies": {
-    "@sentry/browser": "^5.18.1",
+    "@sentry/browser": "^5.22.3",
     "path": "^0.12.7"
   }
 }
