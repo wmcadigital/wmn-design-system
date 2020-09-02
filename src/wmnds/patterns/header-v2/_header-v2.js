@@ -3,12 +3,54 @@ const header = () => {
   const megaMenus = document.querySelectorAll('.wmnds-mega-menu');
 
   megaMenus.forEach(menu => {
+    // mobile toggle
+
+    const mobileToggle = menu.querySelector('.wmnds-mega-menu__mobile-toggle');
+    const headerEl = menu.parentNode.parentNode;
+
+    const menuIsOpen = { menu: false, primary: false };
+
+    mobileToggle.addEventListener('click', () => {
+      menuIsOpen.menu = !menuIsOpen.menu;
+      if (menuIsOpen.menu) {
+        headerEl.classList.add('wmnds-header--mega-menu-open');
+      } else {
+        headerEl.classList.remove('wmnds-header--mega-menu-open');
+      }
+    });
+
+    const collapseMenus = menu.querySelectorAll('.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle');
+    collapseMenus.forEach(collapseToggle => {
+      collapseToggle.addEventListener('click', e => {
+        const panel = collapseToggle.nextElementSibling;
+        collapseToggle.classList.toggle('open');
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+
     const topLevelLinks = menu.querySelectorAll('.wmnds-mega-menu__primary-menu-link');
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       let mousedown = false;
       const topLevelListItem = topLevelLink.parentNode;
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
+
+      // mobile nav
+      topLevelLink.addEventListener('click', e => {
+        menuIsOpen.primary = !menuIsOpen.primary;
+
+        if (menuIsOpen.primary) {
+          e.target.parentNode.classList.add('open');
+          headerEl.classList.add('wmnds-header--mega-menu-submenu-open');
+        } else {
+          e.target.parentNode.classList.remove('open');
+          headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
+        }
+      });
 
       // if link is focused via click
       const handleMouseup = () => {
