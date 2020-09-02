@@ -13,37 +13,33 @@
 {% set totalSections = params.totalSections if params.totalSections else "X" %}
 {% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
 
-
-
 {{
-    wmndsLink( { isBackLink: true, text: "Back" } )
+    wmndsLink( { isBackLink: true, text: "Back" } ) | trim | indent(4)
 }}
 
 <div class="wmnds-qf-reference">
- 
     {{
         wmndsProgressIndicator({
             actualSection: actualSection,
             totalSections: totalSections,
             sectionName: sectionName
-        })
+        }) | trim | indent(4)
     }}
  
     <div class="wmnds-qf-reference__content">
         {{
             wmndsQuestion({
                 text: question
-            })
+            }) | trim | indent(4)
         }}
-
-        {{ text | safe }}
+        {{ text | safe | trim | indent(4)}}
     </div>
 
     <div class="wmnds-qf-reference__fields">
-        {{ fields  | safe }}
+        {{ fields  | safe | trim | indent(4) }}
     </div>
 
-    {{ params.button  | safe }}
+    {{ params.button  | safe  | trim | indent(4) }}
 
 
 </div>

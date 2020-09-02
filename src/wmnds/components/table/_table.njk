@@ -30,9 +30,9 @@
   <tbody>
     {%- for j in range(1, params.rows + 1) %}
     <tr>
-      <th scope="row">Cell</th>
+      <th scope="row" class="{{params.cellClasses[0]}}">Cell</th>
       {%- for k in range(1, params.cols) %}
-      <td>Cell</td>
+        <td class="{{params.cellClasses[k]}}">Cell</td>
       {%- endfor %}
     </tr>
     {%- endfor %}

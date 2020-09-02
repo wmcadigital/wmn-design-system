@@ -52,7 +52,7 @@
         compExample([
             wmndsReference({
                 question: "What is your Direct Debit Reference?",
-                text: "<br>This can be found in the email we sent you asking you to reinstate your Direct Debit and begins with a 6.<br><br>If you didn’t receive this email, it is shown next to every payment to WMCA for your Direct Debit on your bank statement.<br>",
+                text: "<p>This can be found in the email we sent you asking you to reinstate your Direct Debit and begins with a 6.<br><br>If you didn’t receive this email, it is shown next to every payment to WMCA for your Direct Debit on your bank statement.</p>",
                 actualSection: "1",
                 totalSections: "3",
                 sectionName: "About your ticket",
@@ -60,13 +60,13 @@
                     wmndsInput({
                         label: "Direct Debit Reference",
                         classNames: "wmnds-col-1-2"
-                    }),
+                    }) | trim | indent(4),
                 button: 
                     wmnButton({
                         text: "Continue",
                         type: "Submit", 
                         classNames: "wmnds-col-1"
-                    })
+                    }) | trim | indent(4)
             }) | trim | indent(4)
         ]) | trim | indent(4)
     }}
@@ -87,6 +87,7 @@
                     wmndsTable({
                         rows: 3,
                         cols: 3,
+                        cellClasses: ["", "", "wmnds-text-align-right"],
                         title: "Personal Details",
                         noHeaders: true, 
                         classNames: "wmnds-m-b-xl"
@@ -94,6 +95,7 @@
                     wmndsTable({
                         rows: 3,
                         cols: 3, 
+                        cellClasses: ["", "", "wmnds-text-align-right"],
                         title: "Ticket Details",
                         noHeaders: true,
                         classNames: "wmnds-m-b-xl"
@@ -101,6 +103,7 @@
                     wmndsTable({
                         rows: 5,
                         cols: 3,
+                        cellClasses: ["", "", "wmnds-text-align-right"],
                         title: "Direct Debit", 
                         noHeaders: true,
                         classNames: "wmnds-m-b-xl"
@@ -129,6 +132,12 @@
     <br><br>
     {# Confirmation Message #}
     <h2>Confirmation Message</h2>
+    {% from "wmnds/patterns/question/confirmation-message/_confirmation-message.njk" import wmndsConfirmationMessage %}
+    {{
+        compExample([
+            wmndsConfirmationMessage()
+        ])
+    }}
     {# End Confirmation Message #}
 
 {% endblock %}
