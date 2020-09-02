@@ -1,0 +1,25 @@
+{% macro wmndsContentCardInlineNavigation(params) %}
+{# imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{# Set #}
+{% set navLinks = ["Overview", "Information for drivers", "Information for bus passengers", "Information for tram passengers", "Information for pedestrians", "Getting  to venues and attractions"] %}
+
+{% call wmndsContentCard() %}
+    <nav class="wmnds-p-sm">
+        <h3 class="wmnds-content-card__title">Page contents</h3>
+        <ul class="wmnds-content-card__list wmnds-m-b-none">
+            {#- Loop through links  -#}
+            {%- for link in navLinks %}
+            <li class="wmnds-content-card__list-item">
+                {% if loop.index === 1 -%}
+                <span aria-current="page">Overview</span>
+                {%- else -%}
+                <a href="#" target="_self" title="Link title" class="wmnds-link">{{link}}</a>
+                {%- endif %}
+            </li>
+            {%- endfor %}
+        </ul>
+    </nav>
+{% endcall %}
+
+{% endmacro %}
