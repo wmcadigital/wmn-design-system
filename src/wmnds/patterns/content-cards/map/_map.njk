@@ -1,0 +1,13 @@
+{% macro wmndsContentCardMap(params) %}
+{# imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+
+{% call wmndsContentCard() %}
+    <div class="wmnds-p-md">
+        <h2 class="wmnds-content-card__title">Driving from bearwood</h2>
+        <p>Consider using City Road and Dudley Road, past City Hospital to head into Birmingham city centre or connect with the ring road.</p>
+        <iframe title="Perry Bar Highway Construction Works" width="100%" height="500" src="https://www.arcgis.com/apps/View/index.html?appid=1b6f79c50c81421d92da2bd1ccee27e8" frameborder="0" scrolling="no" ></iframe>
+    </div>
+{% endcall %}
+
+{% endmacro %}
