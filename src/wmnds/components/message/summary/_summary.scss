@@ -56,6 +56,17 @@ $wmnds-msg-icon-margin-right: $size-sm;
     }
   }
 
+  // Sucess fill no icon
+  &--success-fill-no-icon {
+    border-color: get-color(success);
+    color: $white;
+    background-color: get-color(success);
+
+    .wmnds-msg-summary__icon {
+      display: none;
+    }
+  }
+
   // Warning
   &--warning {
     border-color: get-color(warning);

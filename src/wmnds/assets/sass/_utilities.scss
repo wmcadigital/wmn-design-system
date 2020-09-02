@@ -190,3 +190,24 @@ body {
     @include x-default-border(transparent);
   }
 }
+
+
+//Background 
+
+.bg {
+  &-primary {
+    background-color: get-color(primary);
+  }
+
+  &-white {
+    background-color: $white;
+  }
+
+  &-gray {
+    background-color: get-color(secondary);
+  }
+
+  &-transparent {
+    background-color: transparent;
+  }
+}

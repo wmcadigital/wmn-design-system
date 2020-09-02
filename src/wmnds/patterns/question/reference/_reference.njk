@@ -17,7 +17,7 @@
     wmndsLink( { isBackLink: true, text: "Back" } ) | trim | indent(4)
 }}
 
-<div class="wmnds-qf-reference">
+<div class="bg-white wmnds-p-md">
     {{
         wmndsProgressIndicator({
             actualSection: actualSection,
@@ -26,7 +26,7 @@
         }) | trim | indent(4)
     }}
  
-    <div class="wmnds-qf-reference__content">
+    <div class="wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-2-3">
         {{
             wmndsQuestion({
                 text: question
@@ -35,7 +35,7 @@
         {{ text | safe | trim | indent(4)}}
     </div>
 
-    <div class="wmnds-qf-reference__fields">
+    <div class="wmnds-p-t-md">
         {{ fields  | safe | trim | indent(4) }}
     </div>
 

@@ -145,7 +145,7 @@
     {% from "wmnds/patterns/question/confirmation-message/_confirmation-message.njk" import wmndsConfirmationMessage %}
     {{
         compExample([
-            wmndsConfirmationMessage()
+            wmndsConfirmationMessage() | indent(4) | trim
         ])
     }}
     {# End Confirmation Message #}
