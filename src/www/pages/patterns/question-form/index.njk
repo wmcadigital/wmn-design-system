@@ -31,6 +31,7 @@
     <br><br>
     {# Form Element #}
     <h2>Form Element</h2>
+    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
     {% from "wmnds/patterns/question/form-element/_form-element.njk" import wmndsFormElement %}
     {% from "wmnds/components/button/_button.njk" import wmnButton %} 
     {{
@@ -52,6 +53,7 @@
     <br><br>
     {# Reference #}
     <h2>Reference</h2>
+    <p>This pattern shows a question that shows defined steps and uses the backlink and progress indicator component.</p>
     {% from "wmnds/patterns/question/reference/_reference.njk" import wmndsReference %}
     {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}  
     {{
@@ -82,6 +84,7 @@
     <br><br>
     {# Summary #}
     <h2>Summary</h2>
+    <p>This shows the user all of the data they have entered before they submit the form. This stage allows the user to change any details before submitting the form.</p>
     {% from "wmnds/patterns/question/summary/_summary.njk" import wmndsSummary %}
     {% from "wmnds/components/table/_table.njk" import wmndsTable %} 
     {% from "wmnds/components/button/_button.njk" import wmnButton %} 
@@ -138,6 +141,7 @@
     <br><br>
     {# Confirmation Message #}
     <h2>Confirmation Message</h2>
+    <p>This is a confirmation message to show that the user has successfully submitted the data in the form, along with a reference or any information which the user needs to be made aware of.</p>
     {% from "wmnds/patterns/question/confirmation-message/_confirmation-message.njk" import wmndsConfirmationMessage %}
     {{
         compExample([
