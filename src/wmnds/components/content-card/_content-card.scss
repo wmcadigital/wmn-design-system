@@ -8,7 +8,22 @@
     text-decoration: none;
   }
 
+  // Modifiers
   &--yellow {
     background-color: get-color(plannedDisruption);
+  }
+
+  // Elements
+  &__title {
+    margin-bottom: $size-sm;
+  }
+
+  &__list {
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      margin: $size-sm 0 0;
+    }
   }
 }
