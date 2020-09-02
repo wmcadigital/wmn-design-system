@@ -10,6 +10,7 @@
             text: params.text
         }) | indent(6) | trim 
     }}
+    {{ params.button  | safe  | trim | indent(4) }}
 </form>
 
 {% endmacro %}

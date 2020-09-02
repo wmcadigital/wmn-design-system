@@ -32,10 +32,17 @@
     {# Form Element #}
     <h2>Form Element</h2>
     {% from "wmnds/patterns/question/form-element/_form-element.njk" import wmndsFormElement %}
+    {% from "wmnds/components/button/_button.njk" import wmnButton %} 
     {{
         compExample([
             wmndsFormElement({
-                text: "Question title"
+                text: "Question title",
+                button: 
+                    wmnButton({
+                        text: "Continue",
+                        type: "Submit", 
+                        classNames: "wmnds-col-1"
+                    }) | trim | indent(4)
             })
         ])
     }}
@@ -46,8 +53,7 @@
     {# Reference #}
     <h2>Reference</h2>
     {% from "wmnds/patterns/question/reference/_reference.njk" import wmndsReference %}
-    {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %} 
-    {% from "wmnds/components/button/_button.njk" import wmnButton %} 
+    {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}  
     {{
         compExample([
             wmndsReference({

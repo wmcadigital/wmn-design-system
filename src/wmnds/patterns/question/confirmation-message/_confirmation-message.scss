@@ -1,0 +1,14 @@
+.wmnds-qf-confirmation-message {
+    background-color: get-color(success);
+    padding: $size-md;
+    color: $white; 
+    text-align: center;
+    max-width: $breakpoint-sm;
+    @media screen and (max-width: $breakpoint-md) {
+        max-width: 90%;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
