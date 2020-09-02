@@ -1,0 +1,59 @@
+{% macro wmndsContentCardTravelUpdates(params) %}
+{# imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge as largeDisruption %}
+{% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as mediumDisruption %}
+{% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
+{# Set #}
+{% set largeDisruptionsAreas = ["Hagley Road", "Ring Road"] %}
+{% set buses = ["9", "10", "12", "12A", "13", "13A", "126", "X8", "X10", "23"] %}
+
+{% call wmndsContentCard({ variant: "wmnds-content-card--travel-updates"}) %}
+    <!-- .wmnds-col-* is just used to set the width in the example -->
+    <div class="wmnds-p-sm wmnds-col-10-24">
+        <h2 class="wmnds-content-card__title">Travel updates</h2>
+        <p>All routes through this disruption</p>
+        <!-- Large disruption indicators -->
+        <h3>Roads</h3> 
+        {% for area in largeDisruptionsAreas %}
+        <div class="wmnds-m-t-sm">
+            {{
+                largeDisruption({
+                strongText: area,
+                text: "Usual traffic",
+                iconLeft: "modes-isolated-roads",
+                iconRight: "general-success"
+                }) | trim | indent(8)
+            }}
+        </div>
+        {% endfor %}
+        <!-- Medium disruptions indicators -->
+        <h3>Bus routes</h3>
+        <div class="wmnds-content-card__disruption-grid">
+            {#- Loop through buses -#}
+            {% for bus in buses %}  
+            <div class="wmnds-content-card__disruption-grid-item">
+                {{
+                    mediumDisruption({
+                    text: bus,
+                    classModifiers: "wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
+                    iconLeft: "modes-isolated-bus",
+                    iconRight: "general-success"
+                    }) | trim | indent(8)
+                }}
+                <svg class="wmnds-content-tile__container-star">
+                    <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+                </svg>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Help message -->
+        {{
+            wmndsMsgHelp({
+                message: 'Save bus routes to your homepage by pressing the star icon'
+            }) | indent(12) | trim
+        }}
+    </div>
+{% endcall %}
+
+{% endmacro %}
