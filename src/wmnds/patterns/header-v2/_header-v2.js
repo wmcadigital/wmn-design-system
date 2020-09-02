@@ -15,19 +15,19 @@ const header = () => {
       if (menuIsOpen.menu) {
         headerEl.classList.add('wmnds-header--mega-menu-open');
       } else {
-        headerEl.classList.remove('wmnds-header--mega-menu-open');
+        headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
       }
     });
 
     const collapseMenus = menu.querySelectorAll('.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle');
     collapseMenus.forEach(collapseToggle => {
-      collapseToggle.addEventListener('click', e => {
+      collapseToggle.addEventListener('click', () => {
         const panel = collapseToggle.nextElementSibling;
         collapseToggle.classList.toggle('open');
         if (panel.style.maxHeight) {
           panel.style.maxHeight = null;
         } else {
-          panel.style.maxHeight = panel.scrollHeight + 'px';
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
         }
       });
     });
@@ -42,12 +42,13 @@ const header = () => {
       // mobile nav
       topLevelLink.addEventListener('click', e => {
         menuIsOpen.primary = !menuIsOpen.primary;
-
+        const targetListItem = e.target.parentNode;
         if (menuIsOpen.primary) {
-          e.target.parentNode.classList.add('open');
+          targetListItem.classList.add('open');
+          targetListItem.querySelector('.wmnds-mega-menu__sub-menu-link').focus();
           headerEl.classList.add('wmnds-header--mega-menu-submenu-open');
         } else {
-          e.target.parentNode.classList.remove('open');
+          targetListItem.classList.remove('open');
           headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
         }
       });
