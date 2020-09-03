@@ -12,7 +12,7 @@
             {%- for link in navLinks %}
             <li class="wmnds-content-card__list-item">
                 {% if loop.index === 1 -%}
-                <span aria-current="page">Overview</span>
+                <span class="wmnds-inset-text" aria-current="page">{{link}}</span>
                 {%- else -%}
                 <a href="#" target="_self" title="Link title" class="wmnds-link">{{link}}</a>
                 {%- endif %}
