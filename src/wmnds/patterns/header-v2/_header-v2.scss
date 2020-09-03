@@ -174,8 +174,10 @@ $header-height-mobile: $size-lg * 2;
   &__primary-menu-link {
     display: flex;
     border: 0;
+    color: currentColor;
     background-color: transparent;
     line-height: 1.5;
+    text-decoration: none;
   }
 
   &__search-icon {
@@ -186,6 +188,7 @@ $header-height-mobile: $size-lg * 2;
 
   &__mobile-toggle,
   &__link-arrow-icon,
+  &__link-arrow-icon-btn,
   &__collapse-toggle {
     display: none;
 
@@ -529,19 +532,20 @@ $header-height-mobile: $size-lg * 2;
 
     &__sub-menu {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
-      padding: $size-md * 1.25 0;
+      padding: $size-md * 1.25 0 $size-xs;
     }
 
     &__sub-menu-item {
-      margin: 0;
+      margin: 0 0 $size-md;
       padding-right: $size-md;
       padding-left: $size-lg;
       list-style: none;
       flex-basis: 25%;
-      flex-grow: 1;
+      flex-grow: 0;
 
-      &:not(:last-child) {
+      &:not(:nth-child(4n)) {
         border-right: 1px solid get-color(text, 80);
       }
     }
