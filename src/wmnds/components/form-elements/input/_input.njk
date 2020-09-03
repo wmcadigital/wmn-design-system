@@ -17,11 +17,11 @@
     wmndsLabel({
       label: label,
       for: id
-    }) | trim
+    }) | trim | indent
   }}
   {% if params.error -%}
     {{
-      wmndsFeErrorMessage() | trim
+      wmndsFeErrorMessage() | trim | indent
     }}
   {% endif -%}
   <input class="wmnds-fe-input{{errorClass}}{{paramClass}}" id="{{id}}" name="{{id}}" type="{{type}}"/>

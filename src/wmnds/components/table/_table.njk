@@ -34,11 +34,11 @@
     {%- for j in range(1, params.rows + 1) %}
     <tr>
       <th scope="row" class="{{params.cellClasses[0]}}">
-        {%- if params.values %}
-          {{params.values[j-1][0]}}
-        {% else %}
+        {%- if params.values -%}
+          {{- params.values[j-1][0] -}}
+        {% else -%}
           Cell
-        {% endif -%}
+        {%- endif -%}
       </th>
 
       {%- for k in range(1, params.cols) %}
@@ -47,9 +47,9 @@
             {{- params.values[j-1][k] | safe -}}
           {%- else -%}
             Cell
-          {% endif -%}
+          {%- endif -%}
         </td>
-      {% endfor -%}
+      {%- endfor %}
     </tr>
     {%- endfor %}
   </tbody>

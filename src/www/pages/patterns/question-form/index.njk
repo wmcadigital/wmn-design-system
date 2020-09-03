@@ -43,7 +43,7 @@
                         text: "Continue",
                         type: "Submit",
                         classNames: "wmnds-col-1"
-                    }) | trim | indent(4)
+                    })
             })
         ])
     }}
@@ -68,15 +68,15 @@
                     wmndsInput({
                         label: "Direct Debit Reference",
                         classNames: "wmnds-col-1-2"
-                    }) | trim | indent(4),
+                    }) ,
                 button:
                     wmnButton({
                         text: "Continue",
                         type: "Submit",
                         classNames: "wmnds-col-1"
-                    }) | trim | indent(4)
-            }) | trim | indent(4)
-        ]) | trim | indent(4)
+                    }) 
+            }) 
+        ]) 
     }}
     {# End Reference #}
 
@@ -96,8 +96,7 @@
 "<h3>Now send your request</h3>
 <p>By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct.<br>
 <br>You consent to West Midlands Combined Authority possibly changing your Direct Debit date if it usually would occur in the next 10 days.<br>
-<br>You also consent to West Midlands Combined Authority reinstating your Direct Debit instruction.</p>
-",
+<br>You also consent to West Midlands Combined Authority reinstating your Direct Debit instruction.</p>",
                 button:
                     wmnButton({
                         classNames: "wmnds-btn--start",

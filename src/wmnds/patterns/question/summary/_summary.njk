@@ -19,7 +19,7 @@
 
     {%- if tables -%}
         {%- for table in tables %}
-            {{ table | trim | indent(2) | safe }}
+            {{ table | trim | indent(4) | safe }}
         {%- endfor %}
     {% else %}
     {{
@@ -55,13 +55,13 @@
                 noHeaders: true,
                 classNames: "wmnds-m-b-xl"
             }) | trim | indent(4)
-        ] | join | safe
+        ] | join("\n    ") | safe
     }}
     {% endif %}
 
 
 
-    {{ html | trim | indent | safe }}
+    {{- html | trim | indent | safe }}
     {{ params.button | trim | indent(4) | safe }}
 </div>
 
