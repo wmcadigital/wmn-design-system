@@ -57,7 +57,9 @@
                       <a href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subnavItem.name | lower | replace(" ", "-") }}/" class="wmnds-mega-menu__sub-menu-link">
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-general-star" href="#wmnds-general-star"></use>
-                        </svg> {{subnavItem.name}}</a><button class="wmnds-mega-menu__collapse-toggle"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
+                        </svg> {{subnavItem.name}}</a>
+                        {% if subnavItem.subnavItems %}
+                      <button class="wmnds-mega-menu__collapse-toggle"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
                       <ul class="wmnds-mega-menu__sub-menu-child-menu">
                         {% for subnavchildItem in subnavItem.subnavItems -%}
                         <li class="wmnds-mega-menu__sub-menu-child-item">
@@ -65,6 +67,7 @@
                         </li>
                         {%- endfor %}
                       </ul>
+                      {% endif %}
                     </li>
                     {%- endfor %}
                   </ul>
