@@ -454,7 +454,7 @@ $header-height-mobile: $size-lg * 2;
     }
 
     &:not(.keyFocus):focus-within,
-    &:hover {
+    &:not(.no-overlay):hover {
       &::after {
         visibility: visible;
         opacity: 0.5;

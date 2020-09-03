@@ -40,7 +40,8 @@ const header = () => {
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       let mousedown = false;
-      const topLevelListItem = topLevelLink.parentNode;
+      const getListItem = () => (topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink);
+      const topLevelListItem = getListItem();
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
 
       // mobile nav
@@ -151,12 +152,22 @@ const header = () => {
         }
       };
 
+      const topLevelWithoutMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length === 0;
+      if (topLevelWithoutMenu) {
+        topLevelLink.addEventListener('mouseover', () => {
+          menu.classList.add('no-overlay');
+        });
+        topLevelLink.addEventListener('mouseleave', () => {
+          menu.classList.remove('no-overlay');
+        });
+      }
+
       topLevelLink.addEventListener('mousedown', e => {
         e.preventDefault();
         setMenuActive(false);
       });
-      topLevelListItem.addEventListener('mousedown', handleMousedown);
       topLevelLink.addEventListener('focus', handleKeyFocus);
+      topLevelListItem.addEventListener('mousedown', handleMousedown);
       topLevelListItem.addEventListener('blur', handleBlur);
       topLevelListItem.addEventListener('keydown', e => {
         handleKeydown(e, e.keyCode);
