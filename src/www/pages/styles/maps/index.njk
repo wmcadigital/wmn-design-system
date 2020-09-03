@@ -1,0 +1,176 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Maps" %}
+{% set section = "Styles" %}
+
+{# Imports #}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+
+{% block content %}
+{# ESRI ArcGIS #}
+<h2>ESRI ArcGIS</h2>
+
+{# About #}
+<h3>About</h3>
+<p>
+  When it comes to mapping, West Midlands Network uses
+  {{
+  wmndsLink({
+    link: "https://developers.arcgis.com/labs/what-is-arcgis/",
+    linkTitle: "ESRI ArcGIS products",
+    linkTarget: "_blank",
+    text: "ESRI ArcGIS products"
+    })
+  }}
+  to create, manage and share data on maps. Therefore, when developing maps use
+  {{
+    wmndsLink({
+      link: "https://developers.arcgis.com/documentation/core-concepts/apis-sdks-apps/#choosing-an-arcgis-api-or-sdk",
+      linkTitle: "ArcGIS APIs and SDKs",
+      linkTarget: "_blank",
+      text: "ArcGIS APIs and SDKs"
+    })
+  }}.
+</p>
+
+{# Basemap #}
+<h3>Basemap</h3>
+  <a href="//disruptions.wmnetwork.co.uk/" class="wmnds-col-1" target="_blank" rel="noopener noreferrer">
+    <img class="wmnds-col-1 wmnds-m-b-md" src="/img/component-images/maps/base-map.png" alt="A screenshot showing an example of a map">
+  </a>
+<p>
+  When creating a map use the
+  {{
+    wmndsLink({
+      link: "https://tfwm.maps.arcgis.com/home/item.html?id=53f165a8863c4d40ba017042e248355e",
+      linkTitle: "WMCA Basemap",
+      linkTarget: "_blank",
+      text: "WMCA Basemap"
+    })
+  }} as your basemap layer. This is to ensure maps are consistent across West Midlands Network services.
+</p>
+<p>The WMCA Basemap is a portal item, you can use the
+{{
+   wmndsLink({
+    link: "https://developers.arcgis.com/javascript/latest/api-reference/esri-Basemap.html",
+    linkTitle: "ArcGIS Basemap documentation",
+    linkTarget: "_blank",
+    text: "ArcGIS Basemap documentation"
+    })
+  }} with the WMCA Basemap ID to include the basemap in your application.
+</p>
+
+{# Example of code #}
+<h3>Example of the ESRI ArcGIS JavaScript API</h3>
+<pre>
+  <code class="js wmnds-show-more-ignore" tabindex="0">
+    // ESRI ArcGIS JS code...
+    const basemap = new Basemap({
+      baseLayers: [
+        new VectorTileLayer({
+          portalItem: {
+            // set the baselayer to WMCA Basemap:
+            // https://tfwm.maps.arcgis.com/home/item.html?id=53f165a8863c4d40ba017042e248355e
+            id: '53f165a8863c4d40ba017042e248355e',
+          },
+        }),
+      ],
+    });
+
+    // Create a new map with the basemap set above
+    const map = new Map({
+      basemap,
+    });
+  </code>
+</pre>
+
+{# Can't use Esri ArcGIS #}
+<h3>Can't use ESRI ArcGIS?</h3>
+<p>
+  We understand that you may not always be able to use
+  {{
+    wmndsLink({
+      link: "https://developers.arcgis.com/documentation/core-concepts/apis-sdks-apps/#choosing-an-arcgis-api-or-sdk",
+      linkTitle: "ArcGIS APIs and SDKs",
+      linkTarget: "_blank",
+      text: "ArcGIS APIs and SDKs"
+    })
+  }}.
+  In these situations, style your map as closely to the
+  {{
+    wmndsLink({
+      link: "https://tfwm.maps.arcgis.com/home/item.html?id=53f165a8863c4d40ba017042e248355e",
+      linkTitle: "WMCA Basemap",
+      linkTarget: "_blank",
+      text: "WMCA Basemap"
+    })
+  }} as possible.
+</p>
+<hr><br><br>
+
+
+{# User interface #}
+<h2>User interface</h2>
+<p>
+  User interface elements on a map such as zoom, pan and location buttons follow particular pattern rules when being used.
+</p>
+<p>These pattern rules are:</p>
+<ul>
+  <li>Accessible for screen readers and keyboard navigation</li>
+  <li>User interface buttons must have <strong>35px height</strong> and <strong>35px width</strong></li>
+  <li>User interface buttons must display in the top right of the map</li>
+  <li>The border radius must be <strong>5px</strong> (slight curve on the corners)</li>
+  <li>The icon colour must be <strong>white</strong></li>
+  <li>
+    The background/fill colour of the buttons must use the
+    {{
+      wmndsLink({
+        link: "/styles/colour-palettes/",
+        linkTitle: "Information colour",
+        linkTarget: "_blank",
+        text: "Information colour"
+      })
+    }}
+    <ul>
+      <li>
+        If it is the location button, the background/fill colour must be transparent and the border/icon colour must use the
+        {{
+          wmndsLink({
+            link: "/styles/colour-palettes/",
+            linkTitle: "Primary Purple colour",
+            linkTarget: "_blank",
+            text: "Primary Purple colour"
+          })
+        }}
+      </li>
+    </ul>
+  </li>
+  <li>
+    When hovered, the background/fill colour must be 30% darker (mixed with black) of the
+    {{
+      wmndsLink({
+        link: "/styles/colour-palettes/",
+        linkTitle: "Information colour",
+        linkTarget: "_blank",
+        text: "Information colour"
+      })
+    }}
+    (#5c236d)
+    <ul>
+      <li>
+        If it is the location button, the background/fill colour must be 70% lighter (mixed with white) of the
+         {{
+          wmndsLink({
+            link: "/styles/colour-palettes/",
+            linkTitle: "Secondary Purple colour",
+            linkTarget: "_blank",
+            text: "Secondary Purple colour"
+          })
+        }}
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+{% endblock %}

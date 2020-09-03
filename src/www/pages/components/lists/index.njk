@@ -1,0 +1,107 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Lists" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# Ordered List #}
+<h2>Ordered List</h2>
+<h3>What does it do?</h3>
+<ul>
+  <li>Shows a list of related items in a specific order. List items are marked with numbers.</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When you want to show that items follow a specific order.</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When the order of list items is not relevant.</li>
+</ul>
+{# How to #}
+<h3>How to use it?</h3>
+<ul>
+    <li>List items should have similar line lengths so the one doesn’t overpower another.</li>
+    <li>Start first list with 1, and second with 1.1, third 1.1.1 and fourth with 1.1.1.1.</li>
+</ul>
+{% from "wmnds/components/lists/ordered-list/_ordered-list.njk" import wmndsOrderedList %}
+{{
+  compExample([
+    wmndsOrderedList(
+      {
+        html: 
+  "<li>Text
+      <ol>
+        <li>Text
+          <ol>
+            <li>Text</li>
+            <li>Text
+              <ol>
+                <li>Text</li>
+              </ol>
+            </li>
+            <li>Text</li>
+          </ol>
+        </li>
+        <li>Text</li>
+      </ol>
+  </li>
+  <li>Text</li>"
+      }
+    ) | trim
+  ])
+}}
+<br/><br/>
+
+{# Unordered list #}
+<h2>Unordered List</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Shows a list of items in no particular order</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When the order of the items is not relevant. List items are marked with a bullet.</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When order of list items is relevant and needs to follow a specific order.</li>
+</ul>
+{# How to #}
+<h3>How to use it?</h3>
+<ul>
+    <li>List items should have similar line lengths, doesn’t overpower another.</li>
+    <li>Include related items that are a similar level of importance.</li>
+</ul>
+
+{% from "wmnds/components/lists/unordered-list/_unordered-list.njk" import wmndsUnorderedList %}
+{{
+  compExample([
+    wmndsUnorderedList(
+        {
+            html: 
+  "<li>Text
+      <ul>
+          <li>Text
+            <ul>
+              <li>Text
+                <ul>
+                  <li>Text</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+      </ul>
+  </li>"
+        }
+    ) | trim
+  ])
+}}
+
+
+
+{% endblock %}

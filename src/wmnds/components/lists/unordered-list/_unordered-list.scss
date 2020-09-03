@@ -1,0 +1,27 @@
+// Included the ol tag too incase dev forgets to add .wmnds-unordered-list class.
+// The ul:not([class*="wmnds-"]) line makes sure we don't target any wmnds components that are using the a tag such as the breadcrumbs
+.wmnds-unordered-list,
+ul:not([class*="wmnds-"]) {
+  list-style: none;
+
+  a,
+  .wmnds-link {
+    display: inline;
+  }
+
+  li:before {
+    content: "●";
+    padding-right: $size-xsm;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    padding-inline-start: $size-lg;
+
+    li:before {
+      content: "–";
+      padding-right: $size-xsm;
+    }
+  }
+}
