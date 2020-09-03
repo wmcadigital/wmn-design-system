@@ -8,32 +8,48 @@
 
 
 <table class="wmnds-table {{classNames}}">
-  {% if title %}
+  {%- if title %}
   <h3>
     {{title}}
   </h3>
-  {% endif %}
-  {% if caption %}
-  <caption class="wmnds-table__caption">
-    {{title}}
-  </caption>
-  {% endif %}
-  {% if noHeaders === false %}
+  {% endif -%}
+
+  {%- if caption %}
+    <caption class="wmnds-table__caption">
+      {{- caption -}}
+    </caption>
+  {%- endif -%}
+
+  {%- if noHeaders === false %}
     <thead>
       <tr>
-          {%- for i in range(1, params.cols + 1) %}
-          <th scope="col">Header {{i}}</th>
-          {%- endfor %}
+          {% for i in range(1, params.cols + 1) -%}
+            <th scope="col">Header {{i}}</th>
+          {% endfor %}
       </tr>
     </thead>
-  {% endif %}
+  {% endif -%}
+
   <tbody>
     {%- for j in range(1, params.rows + 1) %}
     <tr>
-      <th scope="row" class="{{params.cellClasses[0]}}">{% if params.values %}{{params.values[j-1][0]}}{% else %}Cell{% endif %}</th>
+      <th scope="row" class="{{params.cellClasses[0]}}">
+        {%- if params.values %}
+          {{params.values[j-1][0]}}
+        {% else %}
+          Cell
+        {% endif -%}
+      </th>
+
       {%- for k in range(1, params.cols) %}
-        <td class="{{params.cellClasses[k]}}">{% if params.values %}{{params.values[j-1][k] | safe }}{% else %}Cell{% endif %}</td>
-      {%- endfor %}
+        <td class="{{params.cellClasses[k]}}">
+          {%- if params.values %}
+            {{- params.values[j-1][k] | safe -}}
+          {%- else -%}
+            Cell
+          {% endif -%}
+        </td>
+      {% endfor -%}
     </tr>
     {%- endfor %}
   </tbody>
