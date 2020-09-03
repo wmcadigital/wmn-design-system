@@ -1,0 +1,70 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Cookies" %}
+{% set section="Patterns" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/patterns/cookies/_cookies.njk" import wmndsCookies %}
+{#
+{% from "wmnds/patterns/cookie-banner/_banner.njk" import wmndsCookieBanner %}
+{% from "wmnds/patterns/cookie-banner/_manager-body.njk" import wmndsCookieManagerBody %}
+#}
+
+{% block content %}
+
+<h2>About</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>Allows users to accept or amend our website's cookie settings.</li>
+    <li>Our cookie preferences should be confirmed before a user can use our website.</li>
+    <li>The Manage cookies pattern allows users to change their cookie preferences.</li>
+</ul>
+<br><br>
+<h2>Cookie banner</h2>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When a user first visits the West Midlands Network website and has not accepted or amended the cookie preferences.</li>
+    <li>The banner should be above the header on every page and only disappear when a user has accepted or amended their cookie preferences.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a user has accepted or amended the website's cookies.</li>
+    <li>When a returning user visits the West Midlands Network website and has already accepted or amended their cookies in a previous session.</li>
+</ul>
+{# How #}
+<h3>How it works</h3>
+<ul>
+    <li>When a user has accepted or amended the website's cookies.</li>
+    <li>When a returning user visits the West Midlands Network website and has already accepted or amended their cookies in a previous session.</li>
+</ul>
+<p>The Cookies banner should be placed above the main header and be on every page</p>
+
+
+{{
+  compExample([
+    wmndsCookies({
+      id: 'cookies-banner'
+    })
+  ])
+}}
+
+<br><br>
+<h2>Manage Cookies</h2>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>Users can manage their cookies through the 'Manage cookies' button in the Cookie banner.</li>
+    <li>The Manage cookies pattern is also accessible from the main Policies page, so users can amend their cookie preferences at any time.</li>
+</ul>
+
+{{
+  compExample([
+    wmndsCookies({
+      isOpen: true,
+      id: 'cookies-manager'
+    })
+  ])
+}}
+
+{% endblock %}
