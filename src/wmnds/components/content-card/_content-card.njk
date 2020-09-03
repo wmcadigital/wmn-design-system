@@ -7,7 +7,9 @@
 {% set closingTag = "a" if params.clickable else "div" %}
 {# HTML content #}
 {% set html = params.html if params.html else "
-    <div class=\"wmnds-p-lg wmnds-m-lg\">
+    <div class=\"wmnds-p-sm\">
+        <h2>Where the adventure starts</h2>
+        <p>Whatever your plans this holiday, get there with our great range of family tickets and discount vouchers.</p>
     </div>
 " %}
 
@@ -21,4 +23,3 @@
 {%- endif -%}
 </{{closingTag}}>
 {% endmacro %}
-
