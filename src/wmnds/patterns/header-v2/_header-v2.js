@@ -126,6 +126,7 @@ const header = () => {
       };
 
       const handleKeydown = (e, key) => {
+        e.stopPropagation();
         // if key pressed is enter, space bar or down arrow
         if (key === 13 || key === 32 || key === 40) {
           // check if list item has a mega menu
