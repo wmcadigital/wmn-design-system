@@ -170,4 +170,54 @@
     ])
 }}
 
+<br><br>
+{# Email sign up card #}
+<h2>Email sign up card</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>Allows the user to sign up for updates when information changes on a page.</li>
+    <li>Sends personalised updates to users based on their location.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>Use these content tiles on pages where users can sign-up for newsletter updates.</li>
+    <li>For a standard newsletter sign up, use the content tile where the text fields expand.</li>
+    <li>If you want to capture additional user data, then use the content block which links to an external form, e.g. Campaign Monitor.</li>
+</ul>
+<hr>
+
+{# Set up email sign up #}
+{% from "wmnds/patterns/content-cards/email-sign-up/_email-sign-up.njk" import wmndsContentCardEmailSignUp %}
+
+{# Collapsed #}
+<h3>Collapsed</h3>
+<p>This is the default state for the email sign up card.</p>
+
+{{
+    compExample([
+        wmndsContentCardEmailSignUp({ exampleSuffix: "collapsed"})
+    ])
+}}
+
+{# Expanded #}
+<h3>Expanded</h3>
+<p>The collapsed card will expand when the 'continue' button is pressed/tapped.</p>
+
+{{
+    compExample([
+        wmndsContentCardEmailSignUp({ expanded: true, exampleSuffix: "expanded" })
+    ])
+}}
+
+{# External link #}
+<h3>External link</h3>
+<p>Use this content card when you want to send users to an external Campaign Monitor form if you want to capture more user data such as demographics, travel habits etc.</p>
+
+{{
+    compExample([
+        wmndsContentCardEmailSignUp({ externalLink: true, exampleSuffix: "external-link" })
+    ])
+}}
 {% endblock %}
