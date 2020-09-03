@@ -11,33 +11,34 @@
 {% set inputId = "esu-form-%%" + ( "-" + params.exampleSuffix or "") %}
 
 {% call wmndsContentCard() %}
-    <div class="wmnds-p-md">
+    <!-- .wmnds-col-* is just used to set the width in the example -->
+    <div class="wmnds-p-sm wmnds-col-10-24">
         <h2 class="wmnds-content-card__title">Stay up to date</h2>
         <p class="wmnds-m-b-md">Receive an email notification when this information changes.</p>
-        {# External link #}
-        {% if params.externalLink %}
-        <button class="wmnds-btn {{btnClass}} wmnds-content-card__esu-form-btn" {{ btnType | safe -}}>{{btnText}}</button>
-        {% else %}
-        <form action="" method="" class="wmnds-content-card__esu-form">
-            <div class="wmnds-content-card__esu-form-group">
+        {#- External link -#}
+        {% if params.externalLink -%}
+        <button class="wmnds-btn {{btnClass}} wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
+        {%- else %}
+        <form>
+            <div class="wmnds-m-b-sm">
                 <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'email')}}">Email address</label>
                 <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'email')}}" name="{{inputId | replace('%%', 'email')}}" type="text"/>
             </div>
             {#- Expanded content -#}
             {% if params.expanded %}
-            <div class="wmnds-content-card__esu-form-group">
+            <div class="wmnds-m-b-sm">
                 <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'name')}}">Name</label>
                 <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'name')}}" name="{{inputId | replace('%%', 'name')}}" type="text"/>
             </div>
-            <div class="wmnds-content-card__esu-form-group">
+            <div class="wmnds-m-b-sm">
                 <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'postcode')}}">Postcode</label>
-                <span>We'll use this to send relevant emails to your location</span>
+                <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
                 <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'postcode')}}" name="{{inputId | replace('%%', 'postcode')}}" type="text"/>
             </div>
-            {% endif %}
-            <button class="wmnds-btn {{btnClass}} wmnds-content-card__esu-form-btn" {{ btnType | safe -}}>{{btnText}}</button>
+            {%- endif %}
+            <button class="wmnds-btn {{btnClass}} wmnds-m-t-md wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
         </form>
-        {% endif %}
+        {%- endif %}
     </div>
 {% endcall %}
 
