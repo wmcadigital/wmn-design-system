@@ -24,6 +24,38 @@
 
     &-item {
       margin: $size-sm 0 0;
+
+      .wmnds-btn {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__disruption-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+    & > &-item {
+      display: flex;
+      width: calc(50% - (#{$size-sm} / 2));
+      flex-flow: row wrap;
+
+      > * {
+        margin: 0 auto $size-sm;
+      }
+
+      .wmnds-disruption-indicator-medium {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
     }
   }
 }

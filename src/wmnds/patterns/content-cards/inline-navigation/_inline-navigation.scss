@@ -1,9 +1,0 @@
-.wmnds-content-card {
-  &__list {
-    // Current page
-    [aria-current="page"] {
-      padding-left: $size-xsm;
-      border-left: 3px solid get-color(information);
-    }
-  }
-}
