@@ -2,22 +2,26 @@
 {# imports #}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
 {# Set #}
-{% set navLinks = ["Overview", "Information for drivers", "Information for bus passengers", "Information for tram passengers", "Information for pedestrians", "Getting  to venues and attractions"] %}
+{% set title = "Page contents" if params.withCurrentPage else "Related content" %}
+{# Set up nav links #}
+{% set navLinks = ["Information for drivers", "Information for bus passengers", "Information for tram passengers", "Information for pedestrians", "Getting  to venues and attractions"] %}
 
 {% call wmndsContentCard() %}
     <nav class="wmnds-p-sm">
-        <h3 class="wmnds-content-card__title">Page contents</h3>
+        <h3 class="wmnds-content-card__title">{{title}}</h3>
         <ul class="wmnds-content-card__list wmnds-m-b-none">
-            {#- Loop through links  -#}
-            {%- for link in navLinks %}
+            {#- Current page -#}
+            {% if params.withCurrentPage %}
             <li class="wmnds-content-card__list-item">
-                {% if loop.index === 1 -%}
-                <span class="wmnds-inset-text" aria-current="page">{{link}}</span>
-                {%- else -%}
-                <a href="#" target="_self" title="Link title" class="wmnds-link">{{link}}</a>
-                {%- endif %}
+                <span class="wmnds-inset-text" aria-current="page">Overview</span>
             </li>
-            {%- endfor %}
+            {% endif -%}
+            {#- Loop through links  -#}
+            {%- for link in navLinks -%}
+            <li class="wmnds-content-card__list-item">
+                <a href="#" target="_self" title="Link title" class="wmnds-link">{{link}}</a>
+            </li>
+            {% endfor %}
         </ul>
     </nav>
 {% endcall %}
