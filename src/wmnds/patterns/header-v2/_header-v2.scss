@@ -9,6 +9,17 @@ $link-transition: background-color 0.2s ease-out;
 //header variables
 $header-height-mobile: $size-lg * 2;
 
+@media screen and (max-width: $breakpoint-xl) {
+  html {
+    &.mobile-menu-open {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+}
+
 @mixin menu-visible($visible) {
   @if $visible {
     visibility: visible;
@@ -204,28 +215,25 @@ $header-height-mobile: $size-lg * 2;
       fill: currentColor;
     }
 
-    &__primary-menu {
+    &__scroll-controller {
       visibility: hidden;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
+      opacity: 0;
       padding-top: $header-height-mobile;
       transition: $menu-transition;
-      opacity: 0;
-      flex-direction: column;
+    }
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $white;
-      }
+    &__primary-menu {
+      padding-bottom: 30vh;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: $white;
+      flex-direction: column;
 
       .wmnds-mega-menu__primary-menu-link,
       .wmnds-mega-menu__sub-menu-item {
@@ -237,8 +245,9 @@ $header-height-mobile: $size-lg * 2;
       position: absolute;
       top: $header-height-mobile;
       left: 100%;
+      padding-bottom: 30vh;
       width: 100%;
-      height: 100%;
+      height: calc(100% - #{$header-height-mobile});
       overflow-x: hidden;
       overflow-y: auto;
       transition: $menu-transition;
@@ -593,12 +602,18 @@ $header-height-mobile: $size-lg * 2;
       height: $header-height-mobile;
     }
 
+    &:not(.wmnds-header--mega-menu-open) {
+      .wmnds-mega-menu__scroll-controller {
+        overflow: hidden;
+      }
+    }
+
     &-open {
       .wmnds-mega-menu__search {
         display: none;
       }
 
-      .wmnds-mega-menu__primary-menu {
+      .wmnds-mega-menu__scroll-controller {
         visibility: visible;
         opacity: 1;
       }

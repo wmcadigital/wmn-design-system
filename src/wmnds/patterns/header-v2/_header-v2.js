@@ -2,20 +2,24 @@ const header = () => {
   // get mega menu elements
   const megaMenus = document.querySelectorAll('.wmnds-mega-menu');
 
+  const mobileMenu = window.matchMedia('(max-width: 1280px)');
+
   megaMenus.forEach(menu => {
     // mobile toggle
 
     const mobileToggle = menu.querySelector('.wmnds-mega-menu__mobile-toggle');
     const headerEl = menu.parentNode.parentNode;
 
-    const menuIsOpen = { menu: false, primary: false };
+    const mobileMenuIsOpen = { menu: false, primary: false };
 
     mobileToggle.addEventListener('click', () => {
-      menuIsOpen.menu = !menuIsOpen.menu;
-      if (menuIsOpen.menu) {
+      mobileMenuIsOpen.menu = !mobileMenuIsOpen.menu;
+      if (mobileMenuIsOpen.menu) {
         headerEl.classList.add('wmnds-header--mega-menu-open');
+        document.querySelector('html').classList.add('mobile-menu-open');
       } else {
         headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
+        document.querySelector('html').classList.remove('mobile-menu-open');
       }
     });
 
@@ -40,18 +44,26 @@ const header = () => {
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
 
       // mobile nav
-      topLevelLink.addEventListener('click', e => {
-        menuIsOpen.primary = !menuIsOpen.primary;
-        const targetListItem = e.target.parentNode;
-        if (menuIsOpen.primary) {
-          targetListItem.classList.add('open');
-          targetListItem.querySelector('.wmnds-mega-menu__sub-menu-link').focus();
-          headerEl.classList.add('wmnds-header--mega-menu-submenu-open');
+      function handleMobileMenu(mq) {
+        if (mq.matches) {
+          topLevelLink.addEventListener('click', e => {
+            mobileMenuIsOpen.primary = !mobileMenuIsOpen.primary;
+            const targetListItem = e.target.parentNode;
+            if (mobileMenuIsOpen.primary) {
+              targetListItem.classList.add('open');
+              targetListItem.querySelector('.wmnds-mega-menu__sub-menu-link').focus();
+              headerEl.classList.add('wmnds-header--mega-menu-submenu-open');
+            } else {
+              targetListItem.classList.remove('open');
+              headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
+            }
+          });
         } else {
-          targetListItem.classList.remove('open');
-          headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
+          topLevelLink.removeEventListener('click');
         }
-      });
+      }
+      handleMobileMenu(mobileMenu);
+      mobileMenu.addListener(handleMobileMenu);
 
       // if link is focused via click
       const handleMouseup = () => {
