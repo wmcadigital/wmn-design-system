@@ -75,6 +75,40 @@
 <br><br>
 
 
+{# Back link #}
+<h2>Back link</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Help users go back to the previous page in a multi-page transaction</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>Only use a back link on transactional services or multi-page forms.</li>
+</ul>
+{# When not #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>Never use it together with breadcrumbs. Do user research to find out if users find breadcrumbs or the back link easier to use.</li>
+  <li>Within COVID-19 services, user research found that too many links on the page distracted users.</li>
+  <li>Do not use the back link on a content page.</li>
+</ul>
+{# How it works #}
+<h3>How it works?</h3>
+<ul>
+  <li>Always place back links at the top of the page.</li>
+  <li>Make sure the link takes users to the previous page they were on, in the state they last saw it.</li>
+  <li>If you cannot do this you should hide the back link. For example, when JavaScript is not available.</li>
+</ul>
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{{
+  compExample([
+    wmndsLink( { isBackLink: true, text: "Back" } )
+  ])
+}}
+<br><br>
+
 {# call to action button as link #}
 <h2>Call to action buttons</h2>
 {# What #}
@@ -96,7 +130,6 @@
   <li>When a button is a destructive action.</li>
   <li>When a button starts a process or journey.</li>
 </ul>
-
 {%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
 {{
   compExample([

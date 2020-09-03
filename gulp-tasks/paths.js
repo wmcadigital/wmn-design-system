@@ -37,7 +37,7 @@ module.exports = {
     dest: 'build/img/'
   },
   images: {
-    src: ['src/wmnds/assets/img/**/*'],
+    src: ['src/wmnds/assets/img/**/*.{png,gif,jpg}'],
     output: 'src/wmnds/assets/img/**/*',
     dest: 'build/img/'
   },
