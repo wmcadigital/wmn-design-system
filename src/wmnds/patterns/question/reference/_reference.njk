@@ -16,7 +16,7 @@
 {{
     wmndsLink( { isBackLink: true, text: "Back" } ) | trim | indent(4)
 }}
-<div class="bg-white wmnds-m-t-lg">
+<form class="bg-white wmnds-m-t-lg">
     <div class="wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-2-3  wmnds-p-sm  wmnds-p-b-none">
         {{
             wmndsProgressIndicator({
@@ -31,13 +31,13 @@
             }) | trim | indent
         }}
         {{ text | safe | trim }}
-        <div class="wmnds-p-t-md">
+        <div class="wmnds-p-t-md wmnds-col-1-2">
             {{ fields  | safe | trim | indent(12) }}
         </div>
     </div>
     <div class="wmnds-col-1  wmnds-p-sm">
         {{ params.button  | safe  | trim | indent }}
     </div>
-</div>
+</form>
 
 {% endmacro %}
