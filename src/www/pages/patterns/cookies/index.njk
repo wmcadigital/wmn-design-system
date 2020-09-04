@@ -2,11 +2,9 @@
 {% set pageTitle = "Cookies" %}
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/cookies/_cookies.njk" import wmndsCookies %}
-{#
-{% from "wmnds/patterns/cookie-banner/_banner.njk" import wmndsCookieBanner %}
-{% from "wmnds/patterns/cookie-banner/_manager-body.njk" import wmndsCookieManagerBody %}
-#}
+{% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
+{% from "wmnds/patterns/cookies/cookies-manager/_cookies-manager.njk" import wmndsCookiesManager %}
+
 
 {% block content %}
 
@@ -43,9 +41,7 @@
 
 {{
   compExample([
-    wmndsCookies({
-      id: 'cookies-banner'
-    })
+    wmndsCookiesBanner()
   ])
 }}
 
@@ -60,10 +56,7 @@
 
 {{
   compExample([
-    wmndsCookies({
-      isOpen: true,
-      id: 'cookies-manager'
-    })
+    wmndsCookiesManager()
   ])
 }}
 
