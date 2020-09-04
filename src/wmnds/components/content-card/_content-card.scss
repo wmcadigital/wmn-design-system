@@ -58,4 +58,14 @@
       }
     }
   }
+
+  &__form {
+    &-collapse {
+      display: none;
+    }
+
+    &.wmnds-is--open &-collapse {
+      display: block;
+    }
+  }
 }
