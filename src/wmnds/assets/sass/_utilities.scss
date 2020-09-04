@@ -191,19 +191,22 @@ body {
   }
 }
 
-
-//Background 
+//Background
 .bg {
-  &-primary {
-    background-color: get-color(primary);
+  &-default {
+    background-color: get-color(background);
   }
 
   &-white {
     background-color: $white;
   }
 
+  &-yellow {
+    background-color: get-color(plannedDisruption);
+  }
+
   &-gray {
-    background-color: get-color(secondary);
+    background-color: get-color(disable);
   }
 
   &-transparent {
