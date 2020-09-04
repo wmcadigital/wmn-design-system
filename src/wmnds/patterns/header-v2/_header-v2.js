@@ -66,6 +66,15 @@ const header = () => {
     mobileMenu.addListener(handleMobileMenu);
 
     const topLevelLinks = menu.querySelectorAll('.wmnds-mega-menu__primary-menu-link');
+
+    // check if level 3 menu is present, if so add modifier class
+    const hasSubmenuChildren = menu.querySelectorAll('.wmnds-mega-menu__sub-menu-child-menu').length !== 0;
+    if (hasSubmenuChildren) {
+      menu.querySelectorAll('.wmnds-mega-menu__sub-menu').forEach(subMenu => {
+        subMenu.classList.add('wmnds-mega-menu__sub-menu--has-child-menus');
+      });
+    }
+
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       let mousedown = false;
