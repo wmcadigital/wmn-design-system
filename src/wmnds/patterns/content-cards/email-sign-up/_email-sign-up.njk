@@ -3,9 +3,13 @@
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
 {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}
 {% from "wmnds/components/button/_button.njk" import wmnButton %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Set #}
+{% set formClass = " wmnds-is--open" if params.expanded else "" %}
+{# Button variables #}
 {% set btnText = "Sign up for updates" if params.expanded or params.externalLink else "Continue" %}
-{% set btnClass = "wmnds-btn--primary" if not params.externalLink else ""  %}
+{% set btnClass = " wmnds-btn--primary" if not params.externalLink else ""  %}
+{% set btnSpacingClass = " wmnds-m-t-xsm" if not params.expanded else ""  %}
 {% set btnType = "type=\"submit\"" if params.expanded or params.externalLink else "" %}
 {# Create a string where we can use the nunjucks '| replace' #}
 {% set inputId = "esu-form-%%" + ( "-" + params.exampleSuffix or "") %}
@@ -16,27 +20,40 @@
         <h2 class="wmnds-content-card__title">Stay up to date</h2>
         <p class="wmnds-m-b-md">Receive an email notification when this information changes.</p>
         {#- External link -#}
-        {% if params.externalLink -%}
-        <button class="wmnds-btn {{btnClass}} wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
+        {% if params.externalLink %}
+        <a href="#" target="_blank" class="wmnds-btn {{btnClass}} wmnds-col-1-1">{{btnText}}</a>
         {%- else %}
-        <form>
+        <form class="wmnds-content-card__form{{formClass}}">
             <div class="wmnds-m-b-sm">
                 <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'email')}}">Email address</label>
                 <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'email')}}" name="{{inputId | replace('%%', 'email')}}" type="text"/>
             </div>
-            {#- Expanded content -#}
-            {% if params.expanded %}
-            <div class="wmnds-m-b-sm">
-                <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'name')}}">Name</label>
-                <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'name')}}" name="{{inputId | replace('%%', 'name')}}" type="text"/>
+            <!-- Expanding content -->
+            <div class="wmnds-content-card__form-collapse">
+                <div class="wmnds-m-b-sm">
+                    <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'name')}}">Name</label>
+                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'name')}}" name="{{inputId | replace('%%', 'name')}}" type="text"/>
+                </div>
+                <div class="wmnds-m-b-sm">
+                    <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'postcode')}}">Postcode</label>
+                    <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
+                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'postcode')}}" name="{{inputId | replace('%%', 'postcode')}}" type="text"/>
+                </div>
+                <label class="wmnds-fe-checkboxes__container wmnds-m-t-md">
+                    I agree to WMCA's Privacy Policy
+                    <input class="wmnds-fe-checkboxes__input" checked="true" type="checkbox"/>
+                    <span class="wmnds-fe-checkboxes__checkmark">
+                    {# Get SVG icon and pass class #}
+                    {{-
+                        wmndsIcon({
+                        icon: 'general-checkmark',
+                        class: 'wmnds-fe-checkboxes__icon'
+                        }) | indent(20) | trim
+                    }}
+                    </span>
+                </label>
             </div>
-            <div class="wmnds-m-b-sm">
-                <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'postcode')}}">Postcode</label>
-                <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
-                <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'postcode')}}" name="{{inputId | replace('%%', 'postcode')}}" type="text"/>
-            </div>
-            {%- endif %}
-            <button class="wmnds-btn {{btnClass}} wmnds-m-t-md wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
+            <button class="wmnds-btn{{btnClass + btnSpacingClass}} wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
         </form>
         {%- endif %}
     </div>

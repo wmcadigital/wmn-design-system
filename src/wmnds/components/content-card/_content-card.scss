@@ -26,4 +26,14 @@
       margin: $size-sm 0 0;
     }
   }
+
+  &__form {
+    &-collapse {
+      display: none;
+    }
+
+    &.wmnds-is--open &-collapse {
+      display: block;
+    }
+  }
 }
