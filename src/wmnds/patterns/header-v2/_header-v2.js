@@ -152,12 +152,23 @@ const header = () => {
         // if key pressed is enter, space bar or down arrow
         if (key === 13 || key === 32 || key === 40) {
           // check if list item has a mega menu
-          if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
-            e.preventDefault();
-            // remove keyFocus to allow menu to show
-            setMenuActive(true);
-            // focus first menu item
-            subMenuLinks[0].focus();
+          function openSubMenu() {
+            if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
+              e.preventDefault();
+              // remove keyFocus to allow menu to show
+              setMenuActive(true);
+              // focus first menu item
+              subMenuLinks[0].focus();
+            }
+          }
+          // enter
+          // check if link exists
+          if (key === 13) {
+            if (!topLevelLink.tagName === 'a' || !topLevelLink.getAttribute('href')) {
+              openSubMenu();
+            }
+          } else {
+            openSubMenu();
           }
         } else if (key === 37) {
           // left arrow
