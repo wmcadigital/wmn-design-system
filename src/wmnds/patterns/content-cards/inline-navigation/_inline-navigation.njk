@@ -1,6 +1,7 @@
 {% macro wmndsContentCardInlineNavigation(params) %}
 {# imports #}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {# Set #}
 {% set title = "Page contents" if params.withCurrentPage else "Related content" %}
 {# Set up nav links #}
@@ -13,7 +14,15 @@
             {#- Current page -#}
             {% if params.withCurrentPage %}
             <li class="wmnds-content-card__list-item">
-                <span class="wmnds-inset-text" aria-current="page">Overview</span>
+                {{
+                    wmndsInsetText({
+                        html: "
+    <span aria-current=\"page\">
+        Overview
+    </span>
+                        "
+                    }) | indent(14) | trim
+                }}
             </li>
             {% endif -%}
             {#- Loop through links  -#}
