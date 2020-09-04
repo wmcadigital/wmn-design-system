@@ -225,14 +225,14 @@ $header-height-mobile: $size-lg * 2;
       left: 0;
       width: 100%;
       height: 100vh;
-      opacity: 0;
       padding-top: $header-height-mobile;
       transition: $menu-transition;
+      opacity: 0;
     }
 
     &__primary-menu {
-      padding-bottom: 30vh;
       height: 100%;
+      padding-bottom: 30vh;
       overflow-x: hidden;
       overflow-y: auto;
       background-color: $white;
@@ -248,9 +248,9 @@ $header-height-mobile: $size-lg * 2;
       position: absolute;
       top: $header-height-mobile;
       left: 100%;
-      padding-bottom: 30vh;
       width: 100%;
       height: calc(100% - #{$header-height-mobile});
+      padding-bottom: 30vh;
       overflow-x: hidden;
       overflow-y: auto;
       transition: $menu-transition;
@@ -294,6 +294,7 @@ $header-height-mobile: $size-lg * 2;
         z-index: 100;
 
         .wmnds-mega-menu__link-arrow-icon-btn {
+          display: flex;
           position: absolute;
           z-index: 100;
           top: 0;
@@ -303,8 +304,13 @@ $header-height-mobile: $size-lg * 2;
           border: 0;
           color: $white;
           background-color: get-color(primary);
-          flex-direction: row-reverse;
-          justify-content: flex-end;
+          justify-content: flex-start;
+          align-items: center;
+
+          &::after {
+            content: attr(data-label);
+            font-size: $size-md;
+          }
 
           .wmnds-mega-menu__link-arrow-icon {
             margin-right: $size-sm;
@@ -545,9 +551,9 @@ $header-height-mobile: $size-lg * 2;
 
     &__sub-menu {
       display: flex;
-      flex-wrap: wrap;
       width: 100%;
       padding: $size-md * 1.25 0 $size-xs;
+      flex-wrap: wrap;
     }
 
     &__sub-menu-item {

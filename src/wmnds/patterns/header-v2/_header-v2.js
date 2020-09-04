@@ -5,7 +5,7 @@ const header = () => {
   const mobileMenu = window.matchMedia('(max-width: 1280px)');
 
   megaMenus.forEach(menu => {
-    // mobile nav
+    // mobile nav function
     function handleMobileMenu(mq) {
       if (mq.matches) {
         const mobileToggle = menu.querySelector('.wmnds-mega-menu__mobile-toggle');
@@ -14,7 +14,7 @@ const header = () => {
         const topLevelMenuBtn = menu.querySelectorAll('.wmnds-mega-menu__link-arrow-icon-btn');
         const mobileMenuIsOpen = { menu: false, primary: false };
 
-        // mobile toggle
+        // handle mobile menu toggle
         mobileToggle.addEventListener('click', () => {
           mobileMenuIsOpen.menu = !mobileMenuIsOpen.menu;
           if (mobileMenuIsOpen.menu) {
@@ -26,6 +26,7 @@ const header = () => {
           }
         });
 
+        // handle sub menu open/close
         topLevelMenuBtn.forEach(menuBtn => {
           menuBtn.addEventListener('click', () => {
             mobileMenuIsOpen.primary = !mobileMenuIsOpen.primary;
@@ -41,7 +42,7 @@ const header = () => {
           });
         });
 
-        // mobile collapse
+        // mobile collapse for third level menus
         const collapseMenus = menu.querySelectorAll(
           '.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle'
         );
@@ -58,7 +59,9 @@ const header = () => {
         });
       }
     }
+    // end mobile nav function
 
+    // init mobile nav function
     handleMobileMenu(mobileMenu);
     mobileMenu.addListener(handleMobileMenu);
 
@@ -66,6 +69,7 @@ const header = () => {
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       let mousedown = false;
+      // return list item parent of the current link if it exists else return the link
       const getListItem = () => (topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink);
       const topLevelListItem = getListItem();
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
@@ -85,10 +89,13 @@ const header = () => {
       const handleKeyFocus = () => {
         topLevelLink.focus();
         if (!mousedown) {
+          // add keyFocus class for when top level link is focused but megamenu is not active
           menu.classList.add('keyFocus');
           topLevelListItem.classList.add('keyFocus');
         }
       };
+
+      // remove keyFocus and active classes on blur
       const handleBlur = () => {
         menu.classList.remove('keyFocus');
         topLevelListItem.classList.remove('keyFocus');
@@ -96,6 +103,7 @@ const header = () => {
         topLevelListItem.classList.remove('active');
       };
 
+      // handle setting the active class on menu and list items
       const setMenuActive = active => {
         if (active !== false) {
           menu.classList.remove('keyFocus');
@@ -156,6 +164,7 @@ const header = () => {
         }
       };
 
+      // if top level link doesn't have a mega-menu child add class to hide overlay when hovered
       const topLevelWithoutMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length === 0;
       if (topLevelWithoutMenu) {
         topLevelLink.addEventListener('mouseover', () => {
@@ -166,11 +175,14 @@ const header = () => {
         });
       }
 
+      // top lvl link event listeners
       topLevelLink.addEventListener('mousedown', e => {
         e.preventDefault();
         setMenuActive(false);
       });
       topLevelLink.addEventListener('focus', handleKeyFocus);
+
+      // top level li event listeners
       topLevelListItem.addEventListener('mousedown', handleMousedown);
       topLevelListItem.addEventListener('blur', handleBlur);
       topLevelListItem.addEventListener('keydown', e => {
