@@ -1,0 +1,16 @@
+{% macro wmndsFormElement(params) %}
+{# Imports #}
+{% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
+{# Set vars and defaults #}
+{% set text = params.text if params.text else "How would you...?" %}
+
+<form class="bg-white wmnds-p-md">
+    {{
+        wmndsRadios({
+            text: params.text
+        }) | indent(6) | trim 
+    }}
+    {{ params.button  | safe  | trim | indent(4) }}
+</form>
+
+{% endmacro %}
