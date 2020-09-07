@@ -55,9 +55,12 @@
                     {% for subnavItem in navItem.subnavItems -%}
                     <li class="wmnds-mega-menu__sub-menu-item">
                       <a href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subnavItem.name | lower | replace(" ", "-") }}/" class="wmnds-mega-menu__sub-menu-link">
+                        {% if subnavItem.icon -%}
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
-                          <use xlink:href="#wmnds-general-star" href="#wmnds-general-star"></use>
-                        </svg> {{subnavItem.name}}</a>
+                          <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
+                        </svg> 
+                        {%- endif %}
+                        {{subnavItem.name}}</a>
                         {%- if subnavItem.subnavItems %}
                       <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
                       <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
