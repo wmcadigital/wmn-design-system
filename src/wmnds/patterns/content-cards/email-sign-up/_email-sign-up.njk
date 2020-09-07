@@ -23,25 +23,25 @@
         {% if params.externalLink %}
         <a href="#" target="_blank" class="wmnds-btn {{btnClass}} wmnds-col-1-1">{{btnText}}</a>
         {%- else %}
-        <form class="wmnds-content-card__form{{formClass}}">
+        <form class="js-cm-form wmnds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="CREATE_SEND_DATA_ID">
             <div class="wmnds-m-b-sm">
                 <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'email')}}">Email address</label>
-                <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'email')}}" name="{{inputId | replace('%%', 'email')}}" type="text"/>
+                <input class="js-cm-email-input qa-input-email wmnds-fe-input" id="{{inputId | replace('%%', 'email')}}" name="{{inputId | replace('%%', 'email')}}" required="" type="email"/>
             </div>
             <!-- Expanding content -->
             <div class="wmnds-content-card__form-collapse">
                 <div class="wmnds-m-b-sm">
                     <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'name')}}">Name</label>
-                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'name')}}" name="{{inputId | replace('%%', 'name')}}" type="text"/>
+                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'name')}}" name="{{inputId | replace('%%', 'name')}}" maxlength="200" type="text"/>
                 </div>
                 <div class="wmnds-m-b-sm">
                     <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'postcode')}}">Postcode</label>
                     <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
-                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'postcode')}}" name="{{inputId | replace('%%', 'postcode')}}" type="text"/>
+                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'postcode')}}" name="{{inputId | replace('%%', 'postcode')}}" maxlength="200" required="" type="text"/>
                 </div>
                 <label class="wmnds-fe-checkboxes__container wmnds-m-t-md">
                     I agree to WMCA's Privacy Policy
-                    <input class="wmnds-fe-checkboxes__input" checked="true" type="checkbox"/>
+                    <input class="wmnds-fe-checkboxes__input" required="true" aria-reqiured="true" checked="true" type="checkbox"/>
                     <span class="wmnds-fe-checkboxes__checkmark">
                     {# Get SVG icon and pass class #}
                     {{-
@@ -55,6 +55,8 @@
             </div>
             <button class="wmnds-btn{{btnClass + btnSpacingClass}} wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
         </form>
+        
+        <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
         {%- endif %}
     </div>
 {% endcall %}
