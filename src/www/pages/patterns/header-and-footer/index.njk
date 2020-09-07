@@ -5,6 +5,7 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
 {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+{% from "wmnds/patterns/footer-v2/_footer-v2.njk" import wmndsFooterV2 %}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
 
 {% block content %}
@@ -127,6 +128,14 @@
 {{
   compExample([
     wmndsFooter()
+  ])
+}}
+
+<h3>Footer V2</h3>
+<p>New version of footer</p>
+{{
+  compExample([
+    wmndsFooterV2()
   ])
 }}
 {# Mobile app variant #}
