@@ -79,8 +79,7 @@ const header = () => {
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       let mousedown = false;
       // return list item parent of the current link if it exists else return the link
-      const getListItem = () => (topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink);
-      const topLevelListItem = getListItem();
+      const topLevelListItem = topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink;
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
 
       // if link is focused via click
@@ -106,10 +105,8 @@ const header = () => {
 
       // remove keyFocus and active classes on blur
       const handleBlur = () => {
-        menu.classList.remove('keyFocus');
-        topLevelListItem.classList.remove('keyFocus');
-        menu.classList.remove('active');
-        topLevelListItem.classList.remove('active');
+        menu.classList.remove('keyFocus', 'active');
+        topLevelListItem.classList.remove('keyFocus', 'active');
       };
 
       // handle setting the active class on menu and list items
@@ -152,7 +149,7 @@ const header = () => {
         // if key pressed is enter, space bar or down arrow
         if (key === 13 || key === 32 || key === 40) {
           // check if list item has a mega menu
-          function openSubMenu() {
+          const openSubMenu = () => {
             if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
               e.preventDefault();
               // remove keyFocus to allow menu to show
@@ -160,7 +157,7 @@ const header = () => {
               // focus first menu item
               subMenuLinks[0].focus();
             }
-          }
+          };
           // enter
           // check if link exists
           if (key === 13) {
@@ -234,7 +231,7 @@ const header = () => {
               } else if (e.keyCode === 40) {
                 // down arrow - go to next link in current menu list
                 e.preventDefault();
-                // if next link doesnt exist try next menu first item else return null
+                // if next link doesn't exist try next menu first item else return null
                 const nextLink = getMenuLink(linkIndex, thisListLinks, 'next')
                   ? getMenuLink(linkIndex, thisListLinks, 'next')
                   : getMenuLink(-1, menuArray[menuIndex + 1], 'next');
