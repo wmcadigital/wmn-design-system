@@ -1,0 +1,15 @@
+{% macro wmndsConfirmationMessage(params) %}
+
+{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
+
+{{-
+    wmndsMsgSummary({
+        type: 'success-fill-no-icon',
+        title: 'Request complete',
+        subtitle: 'You can now start using your Swift card',
+        message: 'Your reference number is <b>12345</b>',
+        classes: 'wmnds-text-align-center'
+    }) | trim 
+-}}
+
+{% endmacro %}
