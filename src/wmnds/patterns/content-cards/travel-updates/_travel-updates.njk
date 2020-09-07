@@ -29,10 +29,10 @@
         {% endfor %}
         <!-- Medium disruptions indicators -->
         <h3>Bus routes</h3>
-        <div class="wmnds-content-card__disruption-grid">
+        <div class="wmnds-grid">
             {#- Loop through buses -#}
             {% for bus in buses %}  
-            <div class="wmnds-content-card__disruption-grid-item">
+            <div class="wmnds-col-auto wmnds-m-r-md">
                 {{
                     mediumDisruption({
                     text: bus,
@@ -41,9 +41,11 @@
                     iconRight: "general-success"
                     }) | trim | indent(8)
                 }}
-                <svg class="wmnds-content-tile__container-star">
-                    <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
-                </svg>
+                <div class="wmnds-grid wmnds-grid--justify-around wmnds-p-t-sm wmnds-p-b-sm">
+                    <svg class="wmnds-content-tile__container-star wmnds-m-l-none">
+                        <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+                    </svg>
+                </div>
             </div>
             {% endfor %}
         </div>
