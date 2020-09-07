@@ -1,0 +1,175 @@
+// footer
+.wmnds-footer {
+  padding: $size-lg;
+  color: $white;
+  background-color: get-color(primary, 50, dark);
+  box-shadow: 0 100vh 0 100vh get-color(primary, 50, dark);
+
+  &--v2 {
+    padding: $size-lg $size-xs;
+  }
+
+  &__link.wmnds-link {
+    color: $white;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      float: right;
+    }
+  }
+
+  // App specific footer styles
+  &--mobile-app {
+    display: none;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  // footer v2 styles
+  .wmnds-btn {
+    display: block;
+    color: get-color(primary);
+    background-color: $white;
+  }
+
+  &__link {
+    color: currentColor;
+    font-weight: normal;
+    text-decoration: none;
+
+    &:hover {
+      color: currentColor;
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    .wmnds-footer__updates-col {
+      margin-bottom: $size-xsm;
+      padding-bottom: $size-md * 1.25;
+      border-bottom: 1px solid get-color(secondary, 70);
+    }
+  }
+
+  .wmnds-footer__heading {
+    padding-bottom: $size-md * 1.125;
+    border-bottom: 1px solid get-color(secondary, 70);
+
+    @media screen and (max-width: $breakpoint-lg) {
+      margin-bottom: $size-md;
+      font-weight: normal;
+
+      &.wmnds-collapse-heading {
+        margin: 0;
+        padding: $size-xsm 0;
+        border: 0;
+        font-family: $x-font-family;
+        font-size: $size-md * 1.125;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      padding-bottom: $size-md * 1.25;
+    }
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: $size-sm;
+      list-style: none;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    .wmnds-grid {
+      justify-content: space-between;
+    }
+
+    .wmnds-col-lg-1-3 {
+      max-width: 30%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__bottom {
+    margin-top: $size-xsm;
+    padding-top: $size-md;
+    border-top: 1px solid get-color(secondary, 70);
+    flex-direction: column-reverse;
+
+    .wmnds-footer__link,
+    .wmnds-footer__copyright {
+      margin: 0;
+      font-family: $x-heading-font-family;
+    }
+  }
+
+  &__bottom-menu {
+    margin: 0 0 $size-lg;
+    padding: 0;
+
+    li {
+      margin-bottom: $size-sm;
+      list-style: none;
+
+      a {
+        display: block;
+        white-space: nowrap;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      display: flex;
+
+      li {
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+          padding-right: $size-lg;
+        }
+      }
+    }
+  }
+}
+
+// collapsible panel styles (could be moved to own component demo)?
+$collapse-transition: max-height 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+$collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+.wmnds-collapse-heading {
+  .wmnds-collapse-heading__indicator {
+    display: none;
+  }
+  @media screen and (max-width: $breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .wmnds-collapse-heading__indicator {
+      display: block;
+      width: $size-md * 1.75;
+      height: $size-md * 1.75;
+      transform: rotate(90deg);
+      transition: $collapse-indicator-transition;
+      fill: currentColor;
+    }
+
+    &.active {
+      .wmnds-collapse-heading__indicator {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+.wmnds-collapse-panel {
+  @media screen and (max-width: $breakpoint-lg) {
+    max-height: 0;
+    overflow: hidden;
+    transition: $collapse-transition;
+  }
+}
