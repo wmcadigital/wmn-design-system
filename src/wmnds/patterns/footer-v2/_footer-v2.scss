@@ -49,6 +49,7 @@
       margin-bottom: $size-xsm;
       padding-bottom: $size-md * 1.25;
       border-bottom: 1px solid get-color(secondary, 70);
+
       p {
         font-size: 0.937rem;
       }
@@ -161,7 +162,7 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
       fill: currentColor;
     }
 
-    &.active {
+    &[aria-expanded="true"] {
       .wmnds-collapse-heading__indicator {
         transform: rotate(-90deg);
       }
