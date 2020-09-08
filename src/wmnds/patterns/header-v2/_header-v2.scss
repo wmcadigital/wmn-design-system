@@ -266,9 +266,9 @@ $header-height-mobile: $size-lg * 2;
     &__sub-menu-link {
       display: flex;
       padding: $size-md;
-      font-size: $size-md;
+      font-size: $size-md * 1.125;
       text-align: left;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
 
       &:focus {
@@ -665,6 +665,19 @@ $header-height-mobile: $size-lg * 2;
         display: none;
       }
     }
+  }
+}
+
+.wmnds-swift-icon {
+  display: inline-block;
+  width: 3.5em;
+  height: 1.35em;
+  margin-top: -0.1em;
+  margin-right: 0.25em;
+  fill: currentColor;
+  @media screen and (min-width: $breakpoint-xl) {
+    width: 3.2em;
+    margin-top: 0.1em;
   }
 }
 

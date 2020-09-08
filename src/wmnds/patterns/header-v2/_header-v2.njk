@@ -6,6 +6,7 @@
 
 {% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
 {# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
@@ -44,13 +45,15 @@
           <ul class="wmnds-mega-menu__primary-menu">
           {% for navItem in navItems -%}
             <li class="wmnds-mega-menu__primary-menu-item">
-              {% if navItem.link -%}
+            {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) if navItem.name === "Swift and tickets" else "" -%}
+            {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name -%}
+              {% if navItem.link -%}{{navItemIcon}}
               <a href="{{primaryLink}}" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
-                {{ navItem.name}}
+                {{navItemIcon}}{{ navItemContent }}
               </a>
               {% else -%}
               <button target="_self" class="wmnds-mega-menu__primary-menu-link" >
-                {{ navItem.name}}
+                {{navItemIcon}}{{ navItemContent }}
               </button>
               {% endif -%}
               {% if navItem.subnavItems -%}
