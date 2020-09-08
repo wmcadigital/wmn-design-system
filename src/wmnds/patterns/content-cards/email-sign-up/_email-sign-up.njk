@@ -24,19 +24,22 @@
         {%- else %}
         <form class="js-cm-form wmnds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="CREATE_SEND_DATA_ID">
             <div class="wmnds-m-b-sm">
-                <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'email')}}">Email address</label>
-                <input class="js-cm-email-input qa-input-email wmnds-fe-input" id="{{inputId | replace('%%', 'email')}}" name="{{inputId | replace('%%', 'email')}}" required="" type="email"/>
+                {%- set emailInputId = inputId | replace('%%', 'email') %}
+                <label class="wmnds-fe-label" for="{{emailInputId}}">Email address</label>
+                <input class="js-cm-email-input qa-input-email wmnds-fe-input" id="{{emailInputId}}" name="{{emailInputId}}" required="" type="email"/>
             </div>
             <!-- Expanding content -->
             <div class="wmnds-content-card__form-collapse">
                 <div class="wmnds-m-b-sm">
-                    <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'name')}}">Name</label>
-                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'name')}}" name="{{inputId | replace('%%', 'name')}}" maxlength="200" type="text"/>
+                    {%- set nameInputId = inputId | replace('%%', 'name') %}
+                    <label class="wmnds-fe-label" for="{{nameInputId}}">Name</label>
+                    <input class="wmnds-fe-input" id="{{nameInputId}}" name="{{nameInputId}}" maxlength="200" type="text"/>
                 </div>
                 <div class="wmnds-m-b-sm">
-                    <label class="wmnds-fe-label" for="{{inputId | replace('%%', 'postcode')}}">Postcode</label>
+                    {%- set postcodeInputId = inputId | replace('%%', 'postcode') %}
+                    <label class="wmnds-fe-label" for="{{postcodeInputId}}">Postcode</label>
                     <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
-                    <input class="wmnds-fe-input" id="{{inputId | replace('%%', 'postcode')}}" name="{{inputId | replace('%%', 'postcode')}}" maxlength="200" required="" type="text"/>
+                    <input class="wmnds-fe-input" id="{{postcodeInputId}}" name="{{postcodeInputId}}" maxlength="200" required="" type="text"/>
                 </div>
                 <label class="wmnds-fe-checkboxes__container wmnds-m-t-md">
                     I agree to WMCA's Privacy Policy
