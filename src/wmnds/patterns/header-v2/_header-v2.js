@@ -2,7 +2,7 @@ const header = () => {
   // get mega menu elements
   const megaMenus = document.querySelectorAll('.wmnds-mega-menu');
 
-  const mobileMenu = window.matchMedia('(max-width: 768px)');
+  const mobileMenu = window.matchMedia('(max-width: 767px)');
 
   megaMenus.forEach(menu => {
     // mobile nav function
