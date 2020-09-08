@@ -1,0 +1,68 @@
+{% macro wmndsSummary(params) %}
+{# Imports #}
+{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "wmnds/components/table/_table.njk" import wmndsTable %}
+
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+{% set html = params.html if params.html %}
+{% set tables = params.tables if params.tables %}
+{% set button = params.button if params.button %}
+
+
+<div class="bg-white wmnds-p-md">
+    {{
+        wmndsQuestion({
+            text: question
+        }) | trim | indent(4)
+    }}
+
+    {%- if tables -%}
+        {%- for table in tables %}
+            {{ table | trim | indent(4) | safe }}
+        {%- endfor %}
+    {% else %}
+    {{
+        [
+            wmndsTable({
+                rows: 3,
+                cols: 3,
+                cellClasses: ["", "", "wmnds-text-align-right"],
+                title: "Personal Details",
+                noHeaders: true,
+                classNames: "wmnds-m-b-xl",
+                values: [
+                    ["Name", "Andy Street", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"],
+                    ["Date of Birth", "1 January 2020", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"],
+                    ["Contact Details", "07700 900 457<br>andy.street@example.com", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"]
+                ]
+            }) | trim | indent(4),
+
+            wmndsTable({
+                rows: 3,
+                cols: 3,
+                cellClasses: ["", "", "wmnds-text-align-right"],
+                title: "Ticket Details",
+                noHeaders: true,
+                classNames: "wmnds-m-b-xl"
+            }) | trim | indent(4),
+
+            wmndsTable({
+                rows: 5,
+                cols: 3,
+                cellClasses: ["", "", "wmnds-text-align-right"],
+                title: "Direct Debit",
+                noHeaders: true,
+                classNames: "wmnds-m-b-xl"
+            }) | trim | indent(4)
+        ] | join("\n    ") | safe
+    }}
+    {% endif %}
+
+
+
+    {{- html | trim | indent | safe }}
+    {{ params.button | trim | indent(4) | safe }}
+</div>
+
+{% endmacro %}
