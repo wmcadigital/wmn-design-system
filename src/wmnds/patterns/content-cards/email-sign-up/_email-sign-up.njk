@@ -15,13 +15,12 @@
 {% set inputId = "esu-form-%%" + ( "-" + params.exampleSuffix or "") %}
 
 {% call wmndsContentCard() %}
-    <!-- .wmnds-col-* is just used to set the width in the example -->
-    <div class="wmnds-p-sm wmnds-col-10-24">
+    <div class="wmnds-p-sm wmnds-col-1">
         <h2 class="wmnds-content-card__title">Stay up to date</h2>
         <p class="wmnds-m-b-md">Receive an email notification when this information changes.</p>
         {#- External link -#}
         {% if params.externalLink %}
-        <a href="#" target="_blank" class="wmnds-btn {{btnClass}} wmnds-col-1-1">{{btnText}}</a>
+        <a href="#" target="_blank" class="wmnds-btn {{btnClass}} wmnds-col-1">{{btnText}}</a>
         {%- else %}
         <form class="js-cm-form wmnds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="CREATE_SEND_DATA_ID">
             <div class="wmnds-m-b-sm">
@@ -53,7 +52,7 @@
                     </span>
                 </label>
             </div>
-            <button class="wmnds-btn{{btnClass + btnSpacingClass}} wmnds-col-1-1" {{ btnType | safe -}}>{{btnText}}</button>
+            <button class="wmnds-btn{{btnClass + btnSpacingClass}} wmnds-col-1" {{ btnType | safe -}}>{{btnText}}</button>
         </form>
         
         <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
