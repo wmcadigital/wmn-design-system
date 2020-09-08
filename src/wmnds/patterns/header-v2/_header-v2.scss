@@ -309,7 +309,7 @@ $header-height-mobile: $size-lg * 2;
 
           &::after {
             content: attr(data-label);
-            font-size: $size-md;
+            font-size: $size-md * 1.125;
           }
 
           .wmnds-mega-menu__link-arrow-icon {
