@@ -9,7 +9,7 @@ $link-transition: background-color 0.2s ease-out;
 //header variables
 $header-height-mobile: $size-lg * 2;
 
-@media screen and (max-width: $breakpoint-xl) {
+@media screen and (max-width: $breakpoint-md) {
   html {
     &.mobile-menu-open {
       position: fixed;
@@ -198,7 +198,7 @@ $header-height-mobile: $size-lg * 2;
   }
 
   // mobile only navigation styles
-  @media screen and (max-width: $breakpoint-xl) {
+  @media screen and (max-width: $breakpoint-md - 1) {
     padding: $size-xs 0;
     align-items: center;
 
@@ -444,7 +444,7 @@ $header-height-mobile: $size-lg * 2;
   }
 
   // desktop navigation styles
-  @media screen and (min-width: $breakpoint-xl) {
+  @media screen and (min-width: $breakpoint-md) {
     &::before {
       content: "";
       display: block;
@@ -626,7 +626,7 @@ $header-height-mobile: $size-lg * 2;
   z-index: 1000;
   padding: 0;
 
-  @media screen and (max-width: $breakpoint-xl) {
+  @media screen and (max-width: $breakpoint-md - 1) {
     height: $header-height-mobile;
 
     .wmnds-mega-menu {
@@ -675,7 +675,7 @@ $header-height-mobile: $size-lg * 2;
   margin-top: -0.1em;
   margin-right: 0.25em;
   fill: currentColor;
-  @media screen and (min-width: $breakpoint-xl) {
+  @media screen and (min-width: $breakpoint-md) {
     width: 3.2em;
     margin-top: 0.1em;
   }
