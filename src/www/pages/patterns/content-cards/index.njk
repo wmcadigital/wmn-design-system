@@ -197,6 +197,8 @@
     <li>For a standard newsletter sign up, use the content tile where the text fields expand.</li>
     <li>If you want to capture additional user data, then use the content block which links to an external form, e.g. Campaign Monitor.</li>
 </ul>
+<p>When adding a sign up form from Campaign Monitor, you are provided with HTML markup, but make sure not to change any of the generated attributes except for classes.</p>
+<p>They have been changed in the following examples to avoid accessibility errors.</p>
 <hr>
 
 {# Set up email sign up #}
@@ -208,7 +210,7 @@
 
 {{
     compExample([
-        wmndsContentCardEmailSignUp({ exampleSuffix: "collapsed"})
+        wmndsContentCardEmailSignUp({ exampleSuffix: "example-1"})
     ])
 }}
 
@@ -218,7 +220,7 @@
 
 {{
     compExample([
-        wmndsContentCardEmailSignUp({ expanded: true, exampleSuffix: "expanded" })
+        wmndsContentCardEmailSignUp({ expanded: true, exampleSuffix: "example-2" })
     ])
 }}
 
@@ -228,7 +230,7 @@
 
 {{
     compExample([
-        wmndsContentCardEmailSignUp({ externalLink: true, exampleSuffix: "external-link" })
+        wmndsContentCardEmailSignUp({ externalLink: true, exampleSuffix: "example-3" })
     ])
 }}
 {% endblock %}

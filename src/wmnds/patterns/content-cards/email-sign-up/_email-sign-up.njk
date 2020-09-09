@@ -12,7 +12,7 @@
 {% set btnSpacingClass = " wmnds-m-t-xsm" if not params.expanded else ""  %}
 {% set btnType = "type=\"submit\"" if params.expanded or params.externalLink else "" %}
 {# Create a string where we can use the nunjucks '| replace' #}
-{% set inputId = "esu-form-%%" + ( "-" + params.exampleSuffix or "") %}
+{% set exampleSuffix = "--" + params.exampleSuffix if params.exampleSuffix else "" %}
 
 {% call wmndsContentCard() %}
     <div class="wmnds-p-sm wmnds-col-1">
@@ -22,28 +22,25 @@
         {% if params.externalLink %}
         <a href="#" target="_blank" class="wmnds-btn {{btnClass}} wmnds-col-1">{{btnText}}</a>
         {%- else %}
-        <form class="js-cm-form wmnds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="CREATE_SEND_DATA_ID">
+        <form class="js-cm-form wmnds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A99364085B43530088A4D2FC306FC12C93064C1C79B7ABC5EE4710A358CB5FBFB9279A45ECC576F3F096FDC1EFB755F64">
             <div class="wmnds-m-b-sm">
-                {%- set emailInputId = inputId | replace('%%', 'email') %}
-                <label class="wmnds-fe-label" for="{{emailInputId}}">Email address</label>
-                <input class="js-cm-email-input qa-input-email wmnds-fe-input" id="{{emailInputId}}" name="{{emailInputId}}" required="" type="email"/>
+                <label class="wmnds-fe-label" for="fieldEmail{{exampleSuffix}}">Email address</label>
+                <input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email wmnds-fe-input" id="fieldEmail{{exampleSuffix}}" maxlength="200" name="cm-nllddr-nllddr" required="" type="email"/>
             </div>
             <!-- Expanding content -->
             <div class="wmnds-content-card__form-collapse">
                 <div class="wmnds-m-b-sm">
-                    {%- set nameInputId = inputId | replace('%%', 'name') %}
-                    <label class="wmnds-fe-label" for="{{nameInputId}}">Name</label>
-                    <input class="wmnds-fe-input" id="{{nameInputId}}" name="{{nameInputId}}" maxlength="200" type="text"/>
+                    <label class="wmnds-fe-label" for="fieldName{{exampleSuffix}}">Name</label>
+                    <input class="wmnds-fe-input" aria-label="Name" id="fieldName{{exampleSuffix}}" maxlength="200" name="cm-name"/>
                 </div>
                 <div class="wmnds-m-b-sm">
-                    {%- set postcodeInputId = inputId | replace('%%', 'postcode') %}
-                    <label class="wmnds-fe-label" for="{{postcodeInputId}}">Postcode</label>
+                    <label class="wmnds-fe-label" for="fieldkdyhlr{{exampleSuffix}}">Postcode</label>
                     <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
-                    <input class="wmnds-fe-input" id="{{postcodeInputId}}" name="{{postcodeInputId}}" maxlength="200" required="" type="text"/>
+                    <input class="wmnds-fe-input" aria-label="Home Postcode" id="fieldkdyhlr{{exampleSuffix}}" maxlength="200" name="cm-f-kdyhlr" required=""/>
                 </div>
                 <label class="wmnds-fe-checkboxes__container wmnds-m-t-md">
                     I agree to WMCA's Privacy Policy
-                    <input class="wmnds-fe-checkboxes__input" required="true" aria-required="true" checked="true" type="checkbox"/>
+                    <input class="wmnds-fe-checkboxes__input" aria-required="" id="cm-privacy-consent{{exampleSuffix}}" name="cm-privacy-consent" required="" type="checkbox"/>
                     <span class="wmnds-fe-checkboxes__checkmark">
                     {# Get SVG icon and pass class #}
                     {{-
@@ -54,6 +51,7 @@
                     }}
                     </span>
                 </label>
+                <input id="cm-privacy-consent-hidden{{exampleSuffix}}" name="cm-privacy-consent-hidden" type="hidden" value="true">
             </div>
             <button class="wmnds-btn{{btnClass + btnSpacingClass}} wmnds-col-1" {{ btnType | safe -}}>{{btnText}}</button>
         </form>
