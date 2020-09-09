@@ -1,0 +1,64 @@
+{% macro wmndsContentCardEmailSignUp(params) %}
+{# imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}
+{% from "wmnds/components/button/_button.njk" import wmnButton %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{# Set #}
+{% set formClass = " wmnds-is--open" if params.expanded else "" %}
+{# Button variables #}
+{% set btnText = "Sign up for updates" if params.expanded or params.externalLink else "Continue" %}
+{% set btnClass = " wmnds-btn--primary" if not params.externalLink else ""  %}
+{% set btnSpacingClass = " wmnds-m-t-xsm" if not params.expanded else ""  %}
+{% set btnType = "type=\"submit\"" if params.expanded or params.externalLink else "" %}
+{# Create a string where we can use the nunjucks '| replace' #}
+{% set exampleSuffix = "--" + params.exampleSuffix if params.exampleSuffix else "" %}
+
+{% call wmndsContentCard() %}
+    <div class="wmnds-p-sm wmnds-col-1">
+        <h2 class="wmnds-content-card__title">Stay up to date</h2>
+        <p class="wmnds-m-b-md">Receive an email notification when this information changes.</p>
+        {#- External link -#}
+        {% if params.externalLink %}
+        <a href="#" target="_blank" class="wmnds-btn {{btnClass}} wmnds-col-1">{{btnText}}</a>
+        {%- else %}
+        <form class="js-cm-form wmnds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A99364085B43530088A4D2FC306FC12C93064C1C79B7ABC5EE4710A358CB5FBFB9279A45ECC576F3F096FDC1EFB755F64">
+            <div class="wmnds-m-b-sm">
+                <label class="wmnds-fe-label" for="fieldEmail{{exampleSuffix}}">Email address</label>
+                <input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email wmnds-fe-input" id="fieldEmail{{exampleSuffix}}" maxlength="200" name="cm-nllddr-nllddr" required="" type="email"/>
+            </div>
+            <!-- Expanding content -->
+            <div class="wmnds-content-card__form-collapse">
+                <div class="wmnds-m-b-sm">
+                    <label class="wmnds-fe-label" for="fieldName{{exampleSuffix}}">Name</label>
+                    <input class="wmnds-fe-input" aria-label="Name" id="fieldName{{exampleSuffix}}" maxlength="200" name="cm-name"/>
+                </div>
+                <div class="wmnds-m-b-sm">
+                    <label class="wmnds-fe-label" for="fieldkdyhlr{{exampleSuffix}}">Postcode</label>
+                    <p class="wmnds-m-b-sm">We'll use this to send relevant emails to your location</p>
+                    <input class="wmnds-fe-input" aria-label="Home Postcode" id="fieldkdyhlr{{exampleSuffix}}" maxlength="200" name="cm-f-kdyhlr" required=""/>
+                </div>
+                <label class="wmnds-fe-checkboxes__container wmnds-m-t-md">
+                    I agree to WMCA's Privacy Policy
+                    <input class="wmnds-fe-checkboxes__input" aria-required="" id="cm-privacy-consent{{exampleSuffix}}" name="cm-privacy-consent" required="" type="checkbox"/>
+                    <span class="wmnds-fe-checkboxes__checkmark">
+                    {# Get SVG icon and pass class #}
+                    {{-
+                        wmndsIcon({
+                        icon: 'general-checkmark',
+                        class: 'wmnds-fe-checkboxes__icon'
+                        }) | indent(20) | trim
+                    }}
+                    </span>
+                </label>
+                <input id="cm-privacy-consent-hidden{{exampleSuffix}}" name="cm-privacy-consent-hidden" type="hidden" value="true">
+            </div>
+            <button class="wmnds-btn{{btnClass + btnSpacingClass}} wmnds-col-1" {{ btnType | safe -}}>{{btnText}}</button>
+        </form>
+        
+        <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+        {%- endif %}
+    </div>
+{% endcall %}
+
+{% endmacro %}
