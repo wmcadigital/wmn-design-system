@@ -1,0 +1,13 @@
+{% macro wmndsContentCardImage(params) %}
+{# imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+
+{% call wmndsContentCard() %}
+    <img class="wmnds-content-card__image" src="https://picsum.photos/id/223/750/250" alt="Street lights with bokeh effect" />
+    <div class="wmnds-p-sm">
+        <h2 class="wmnds-content-card__title">Changes to bus services</h2>
+        <p>View the latest changes to bus services in your area.</p>
+    </div>
+{% endcall %}
+
+{% endmacro %}

@@ -1,0 +1,94 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Content card" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{# Imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<p>Content cards contain components and text. Against the page background, they help to draw the users attention to important information and help users to navigate content.</p>
+<p>The cards have many common use cases and applications, all of which can be found on the <a href="/patterns/content-cards" target="_self">content cards pattern page</a>.</p>
+<hr>
+
+<br><br>
+{# Content card #}
+<h2>Content card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A container with a white background and purple underline.</li>
+    <li>Any components and text can be used within a card.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When it is used in a set of cards for navigation purposes. Instead, use a Navigation card.</li>
+</ul>
+
+{{
+    compExample([
+        wmndsContentCard()
+    ])
+}}
+
+<br><br>
+{# Navigation card #}
+<h2>Navigation card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A variation of the Content card where the whole card area is clickable.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When it is part of a set of cards used for navigation.</li>
+    <li>When the whole card needs to be clickable.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When multiple interactive components within the card are used. Instead, use a Content card.</li>
+</ul>
+
+{{
+    compExample([
+        wmndsContentCard({
+            clickable: true
+        })
+    ])
+}}
+
+<br><br>
+{# Yellow modifier #}
+<h2>Yellow modifier</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>The styling of the card changes to match disruption yellow branding</li>
+    <li>The styling helps users through their journey to major roadworks and events information</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When you are linking to a disruptions (major roadworks and events) page</li>
+    <li>Only one card should be yellow on a page</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When you are not linking to a disruptions (major roadworks and events) page</li>
+    <li>To attract the user's attention to a campaign other than disruptions</li>
+    <li>When there is another yellow card on the page</li>
+</ul>
+
+{{
+    compExample([
+        wmndsContentCard({
+            yellow: true
+        })
+    ])
+}}
+
+{% endblock %}

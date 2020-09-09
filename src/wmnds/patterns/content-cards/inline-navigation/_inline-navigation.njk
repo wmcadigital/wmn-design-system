@@ -1,0 +1,38 @@
+{% macro wmndsContentCardInlineNavigation(params) %}
+{# imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
+{# Set #}
+{% set title = "Page contents" if params.withCurrentPage else "Related content" %}
+{# Set up nav links #}
+{% set navLinks = ["Information for drivers", "Information for bus passengers", "Information for tram passengers", "Information for pedestrians", "Getting  to venues and attractions"] %}
+
+{% call wmndsContentCard() %}
+    <nav class="wmnds-p-sm">
+        <h3 class="wmnds-content-card__title">{{title}}</h3>
+        <ul class="wmnds-content-card__list wmnds-m-b-none">
+            {#- Current page -#}
+            {% if params.withCurrentPage %}
+            <li class="wmnds-content-card__list-item">
+                {{
+                    wmndsInsetText({
+                        html: "
+    <span aria-current=\"page\">
+        Overview
+    </span>
+                        "
+                    }) | indent(14) | trim
+                }}
+            </li>
+            {% endif -%}
+            {#- Loop through links  -#}
+            {% for link in navLinks %}
+            <li class="wmnds-content-card__list-item">
+                <a href="#" target="_self" title="Link title" class="wmnds-link">{{link}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endcall %}
+
+{% endmacro %}
