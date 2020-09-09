@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle="Header and footer V2" %}
+{% set pageTitle="Header V2" %}
 {% set section="Patterns" %}
 {# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
@@ -53,7 +53,16 @@
 {{
   compExample([
     wmndsHeaderV2({
-      navItems: navItems,
+      id: "mega-menu-example-full",
+      navItems: [{
+        name: "Styles"
+      },{
+        name: "Components"
+      },{
+        name: "Patterns"
+      },{
+        name: "User research"
+      }],
       banner: true,
       breadcrumbs: {
         section: section,
@@ -66,7 +75,7 @@
 
 {# With mega menu #}
 <h3>With a mega menu</h3>
-<h4>Recommended</h4>
+<h4>Recommended javascript</h4>
 <div class="wmnds-website-code-example">
 <pre>
   <code class="html" tabindex="0">
@@ -502,99 +511,7 @@
 {{
   compExample([
     wmndsHeaderV2({
-      navItems: navItems,
       withTitle: true
-    })
-  ])
-}}
-
-{# Mobile app variant #}
-<h3 id="mobile-app-header">Mobile app variant of header</h3>
-<p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network header.</p>
-
-<p>To use the mobile app variant:</p>
-<ul>
-  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-header--mobile-app</code> to the wmnds-header element</li>
-  <li>Copy the code for the back button section below and insert it into your existing header</li>
-  <li>Finally, add the script for the back button in your local javascript file</li>
-</ul>
-
-<p>
-  You will most likely want to use this with the mobile variants of the
-  {{ wmndsLink({
-    text: 'breadcrumb component',
-    link: '/components/breadcrumb/#mobile-app-breadcrumb'
-    })
-  }} and
-  {{ wmndsLink({
-    text: 'footer pattern',
-    link: '#mobile-app-footer'
-    })
-  }} .
-</p>
-
-{{
-  compExample([
-    wmndsHeaderV2({
-      navItems: navItems,
-      app: true,
-      exampleAria: "Mobile app header"
-    })
-  ])
-}}
-
-<br/><br/>
-{# Footer #}
-<h2>Footer</h2>
-<h3>Email capture form</h3>
-<p>The data is place within the general marketing email contact database on Campaign Monitor.</p>
-{{
-  compExample([
-    wmndsFooter()
-  ])
-}}
-{# Mobile app variant #}
-<h3 id="mobile-app-footer">Mobile app variant of Footer</h3>
-<p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network footer.</p>
-
-<p>The mobile app version of the footer ensures that it will not show on devices with a screen width less than 768px. This means the footer will only show on devices with a screen resolution bigger than 768px.</p>
-
-<p>To use the mobile app variant:</p>
-<ul>
-  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-footer--mobile-app</code> to the wmnds-footer element</li>
-</ul>
-
-<p>
-  You will most likely want to use this with the mobile variants of the
-  {{ wmndsLink({
-    text: 'breadcrumb component',
-    link: '/components/breadcrumb/#mobile-app-breadcrumb'
-    })
-  }} and
-  {{ wmndsLink({
-    text: 'header pattern',
-    link: '#mobile-app-header'
-    })
-  }} .
-</p>
-
-{{
-  compExample([
-    wmndsFooter({
-      app: true
-    })
-  ])
-}}
-
-
-{# Full footer #}
-<h3>Full variant of footer</h3>
-
-{{
-  compExample([
-    wmndsFooter({
-      feedback: true,
-      feedbackId: 'footer-example-fbl'
     })
   ])
 }}

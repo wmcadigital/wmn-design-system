@@ -2,7 +2,6 @@
 {# Set navItems #}
 {% set navItems = params.navItems %}
 {% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
-{% set menuClass = " wmnds-header--mega-menu" if params.megaMenu else "" %}
 
 {% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
 {# Imports #}
@@ -22,7 +21,7 @@
 }}
 <!-- Main header section -->
 <header>
-  <div class="wmnds-header{{appClass}}{{menuClass}}">
+  <div class="wmnds-header{{appClass}} wmnds-header--mega-menu">
     <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
       <div class="wmnds-header__vertical-align wmnds-col-auto">
         <!-- Logo -->
@@ -36,7 +35,7 @@
       <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
         Reinstate your Direct Debit<br>(COVID-19)
       </h1>
-      {%- elif params.megaMenu -%}
+      {%- else -%}
       <nav id="{{params.id}}" class="wmnds-mega-menu">
         <button class="wmnds-mega-menu__mobile-toggle wmnds-btn wmnds-btn--secondary wmnds-hide-desktop" aria-expanded="false" aria-controls="{{params.id}}-primary-menu">Menu
           <svg class="wmnds-mega-menu__close-icon"><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
@@ -93,45 +92,6 @@
         <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search">
           <svg class="wmnds-mega-menu__search-icon"><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
         </button>
-      </nav>
-      {%- else %}
-      {#- Else with a navigation -#}
-      <!-- Nav items -->
-      <nav class="wmnds-header__vertical-align wmnds-col-auto" aria-label="{{navigationAriaLabel}}">
-        <ul class="wmnds-header__links wmnds-header__main-links">
-          {% for navItem in navItems -%}
-          <li class="wmnds-header__link">
-            <a href="#" target="_self" class="wmnds-link" >
-              {{ navItem.name}}
-            </a>
-          </li>
-          {%- endfor %}
-        </ul>
-        {%- if params.app %}
-        <!-- Back button -->
-        <ul class="wmnds-header__links wmnds-header__back-btn">
-          <li class="wmnds-header__link">
-            <a
-              href="#"
-              title="Go back to previous page"
-              target="_self"
-              class="wmnds-link"
-              onClick="goBack(event);"
-            >
-              Back
-            </a>
-          </li>
-        </ul>
-        <script>
-          // Function that sends user to previous page they were on,
-          // This can be included in your local javascript file
-          function goBack(e) {
-            e.preventDefault();
-            window.history.back();
-          }
-        </script>
-        <!-- End back button -->
-        {%- endif %}
       </nav>
       {%- endif %}
     </div>
