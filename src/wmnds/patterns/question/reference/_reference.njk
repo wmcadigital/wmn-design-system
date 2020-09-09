@@ -1,0 +1,43 @@
+{% macro wmndsReference(params) %}
+{# Imports #}
+{% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
+{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "wmnds/components/form-elements/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+{% set text = params.text if params.text %}
+{% set fields = params.fields if params.fields %}
+{% set actualSection = params.actualSection if params.actualSection else "1" %}
+{% set totalSections = params.totalSections if params.totalSections else "X" %}
+{% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
+
+{{
+    wmndsLink( { isBackLink: true, text: "Back" } ) | trim | indent(4)
+}}
+<form class="bg-white wmnds-m-t-lg">
+    <div class="wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-2-3  wmnds-p-sm  wmnds-p-b-none">
+        {{
+            wmndsProgressIndicator({
+                actualSection: actualSection,
+                totalSections: totalSections,
+                sectionName: sectionName
+            }) | trim | indent
+        }}
+        {{
+            wmndsQuestion({
+                text: question
+            }) | trim | indent
+        }}
+        {{ text | safe | trim }}
+        <div class="wmnds-p-t-md wmnds-col-1-2">
+            {{ fields  | safe | trim | indent(12) }}
+        </div>
+    </div>
+    <div class="wmnds-col-1  wmnds-p-sm">
+        {{ params.button  | safe  | trim | indent }}
+    </div>
+</form>
+
+{% endmacro %}

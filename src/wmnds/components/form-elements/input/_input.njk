@@ -6,22 +6,25 @@
 
 {# Params #}
 {% set id = params.id if params.id else "input" %}
+{% set label = params.label if params.label else "Input Label" %}
+{% set paramClass = " " + params.classNames if params.classNames %} {# set paramClass to params.classNames if any #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
 {% set errorClass = " wmnds-fe-input--error" if params.error %}
+{% set type = params.type if params.type else "text" %}
 
 <div class="wmnds-fe-group{{groupErrorClass}}">
   {{
     wmndsLabel({
-      label: 'Input label',
+      label: label,
       for: id
-    }) | trim
+    }) | trim | indent
   }}
   {% if params.error -%}
     {{
-      wmndsFeErrorMessage() | trim
+      wmndsFeErrorMessage() | trim | indent
     }}
   {% endif -%}
-  <input class="wmnds-fe-input{{errorClass}}" id="{{id}}" name="{{id}}" type="text"/>
+  <input class="wmnds-fe-input{{errorClass}}{{paramClass}}" id="{{id}}" name="{{id}}" type="{{type}}"/>
 </div>
 
-{% endmacro %}]
+{% endmacro %}
