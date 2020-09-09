@@ -2,26 +2,28 @@
 
 {# Imports of components #}
 {% from "wmnds/components/button/_button.njk" import wmnButton as primary %}
+{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
 
-<div id="wmnds-cookies-banner" class="bg-white">
+
+<div id="wmnds-cookies-banner" class="bg-white wmnds-p-t-md wmnds-p-b-md">
   <div class="wmnds-container">
     <div class="wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-2-3">
       <h3>Your privacy settings</h3>
       <p>We use cookies to help you with journey planning and relevant disruptions, remember your login and show you content you might be interested in. If you’re happy with the use of cookies by West Midlands Combined Authority and our selected partners, click ‘Accept all cookies’. Or click ‘Manage cookies’ to learn more.</p>
-      <div id="btn-group" class="wmnds-grid wmnds-grid--justify-between"> 
-          {{
-              primary({
-                  classNames: "wmnds-btn wmnds-col-11-24",
-                  text: "Accept all cookies"
-              }) | trim | indent(4)
-          }}
-
-          {{
-              primary({
-                  classNames: "wmnds-btn wmnds-col-11-24",
-                  text: "Manage cookies"
-              }) | trim | indent(4)
-          }}
+      <div class="wmnds-grid wmnds-grid--justify-between wmnds-group-buttons"> 
+        {{
+          primary({
+            classNames: "wmnds-btn wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24  wmnds-accept-all-cookies",
+            text: "Accept all cookies"
+          }) | trim | indent(4)
+        }}
+        {{
+          cta({
+            text: "Manage Cookies",
+            classNames: "wmnds-btn wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
+            link: "/patterns/cookies/#cookies_manager"
+          })
+        }}
       </div>
     </div>
   </div>

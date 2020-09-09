@@ -21,6 +21,25 @@
   }
 }
 
+//Group buttons 
+.wmnds-group-buttons {
+
+  & > *:not(:first-child){
+    margin-top: $size-md;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    &.wmnds-grid{
+      flex-flow: row nowrap;
+    }
+    & > *:not(:first-child){
+      margin-left: $size-md;
+      margin-top: 0;
+    }
+  }
+
+}
+
 // Container sizes
 .wmnds-container {
   display: block;

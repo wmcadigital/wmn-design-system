@@ -32,6 +32,7 @@
           
           {%- if option.checked !== null %}
           {%- set isChecked = (' checked="checked"' | safe) if option.checked === true  else "" %}
+          {%- set isNotEditable = (' disabled="disabled"' | safe) if option.editable === false else "" %}
           {% endif %}
           <label class="wmnds-fe-checkboxes__container">
             <div class="wmnds-m-b-lg">
@@ -42,7 +43,7 @@
               {{option.desc}}
               {% endif %}
             </div>
-            <input class="wmnds-fe-checkboxes__input" value="{{option.title}}"{{isChecked}} type="checkbox"/>
+            <input class="wmnds-fe-checkboxes__input" value="{{option.title}}"{{isChecked}} type="checkbox" {{isNotEditable}}/>
             <span class="wmnds-fe-checkboxes__checkmark">
               {{-
                 wmndsIcon({

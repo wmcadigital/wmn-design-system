@@ -46,7 +46,7 @@
 }}
 
 <br><br>
-<h2>Manage Cookies</h2>
+<h2 id="cookies_manager">Manage Cookies</h2>
 {# When to #}
 <h3>When to use it?</h3>
 <ul>
@@ -59,5 +59,89 @@
     wmndsCookiesManager()
   ])
 }}
+
+
+<h3>We recommend using this additional code</h3>
+<pre>
+  <code class="html wmnds-show-more-ignore" tabindex="0">
+  {%- filter forceescape %}
+  <script>
+    /*
+    // Creation of default Cookies permissions //
+    document.addEventListener("DOMContentLoaded", function(){
+      // Handler when the DOM is fully loaded
+      setCookiePolicy(true, false, false);
+    });
+
+    // JS for Accept all cookies //
+    var acceptAllCookiesBtn = document.querySelector(".wmnds-accept-all-cookies-btn");
+    acceptAllCookiesBtn.addEventListener("click", function(event){acceptAllCookies(event.target)});
+    acceptAllCookiesBtn.addEventListener("keydown", function(event){
+      if (event.key === " " || event.key == "Enter" || event.key === "Spacebar"){
+        event.preventDefault();
+        acceptAllCookies(event.target);
+      }
+    });
+
+    function acceptAllCookies( event ){
+      setCookiePolicy(true, true, true);
+      var cookiesBanner = document.querySelector("#wmnds-cookies-banner");
+      cookiesBanner.style= "opacity: 0.5";
+      getCookiePolicy();
+    }
+
+
+    // cookies.js
+
+    function setCookiePolicy( essential, functional, performance) {
+      var cookieValue = {
+        "essential": essential, 
+        "functional": functional, 
+        "performance": performance 
+      };
+      setCookie("cookies-policy", JSON.stringify(cookieValue), 181);
+    }
+    function getCookiePolicy( ) {
+
+      getCookie("cookies-policy");
+      console.log(getCookie("cookies-policy"));
+      //setCookie("cookies-policy", JSON.stringify(cookieValue), 181);
+      //return cookieValue;
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function checkCookie(cname) {
+      var isCookieCreated = getCookie(cname);
+      if (!isCookieCreated ) {
+        return false;
+      } 
+      return true;
+    }*/
+
+  </script>
+  {%- endfilter %}
+  </code>
+</pre>
 
 {% endblock %}
