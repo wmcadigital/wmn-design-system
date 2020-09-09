@@ -37,7 +37,11 @@
     {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
     {{
       wmndsFooter({
-        feedback: true
+        feedback: true,
+        bottomMenu: [{
+          name: "Privacy & Cookies Policy",
+          link: "https://www.wmnetwork.co.uk/privacy-cookies-policy/"
+        }]
       })
     }}
     <!-- footer -->

@@ -2,7 +2,7 @@ import * as Sentry from '@sentry/browser';
 import forEachPolyfill from './assets/vendor/js/polyfills/ie11-forEach';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
 import highlightJS from './_partials/component-example/_component-example';
-import footerJs from '../wmnds/patterns/footer-v2/_footer';
+import footerJs from '../wmnds/patterns/footer/_footer';
 
 Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374' });
 
