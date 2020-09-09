@@ -21,7 +21,7 @@
   &--mobile-app {
     display: none;
 
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-md) {
       display: block;
     }
   }
@@ -44,7 +44,7 @@
     }
   }
 
-  @media screen and (max-width: $breakpoint-lg) {
+  @media screen and (max-width: $breakpoint-md - 1) {
     .wmnds-footer__updates-col {
       margin-bottom: $size-xsm;
       padding-bottom: $size-md * 1.25;
@@ -60,7 +60,7 @@
     padding-bottom: $size-md * 1.125;
     border-bottom: 1px solid get-color(secondary, 70);
 
-    @media screen and (max-width: $breakpoint-lg) {
+    @media screen and (max-width: $breakpoint-md - 1) {
       margin-bottom: $size-md;
       font-weight: normal;
 
@@ -73,7 +73,7 @@
       }
     }
 
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-md) {
       padding-bottom: $size-md * 1.25;
     }
   }
@@ -88,7 +88,7 @@
     }
   }
 
-  @media screen and (min-width: $breakpoint-lg) {
+  @media screen and (min-width: $breakpoint-md) {
     .wmnds-grid {
       justify-content: space-between;
     }
@@ -126,7 +126,7 @@
       }
     }
 
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-md) {
       display: flex;
 
       li {
@@ -148,7 +148,7 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
   .wmnds-collapse-heading__indicator {
     display: none;
   }
-  @media screen and (max-width: $breakpoint-lg) {
+  @media screen and (max-width: $breakpoint-md - 1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -171,7 +171,7 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
 }
 
 .wmnds-collapse-panel {
-  @media screen and (max-width: $breakpoint-lg) {
+  @media screen and (max-width: $breakpoint-md - 1) {
     max-height: 0;
     overflow: hidden;
     transition: $collapse-transition;
