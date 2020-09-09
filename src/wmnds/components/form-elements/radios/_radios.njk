@@ -2,6 +2,7 @@
 
 {# Set vars #}
 {% set class = ' wmnds-fe-radios--inline' if params.inline %}
+{% set text = params.text if params.text %}
 
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
@@ -11,7 +12,9 @@
 <div class="wmnds-fe-group">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
-      {{ wmndsQuestion() | indent(6) | trim }}
+      {{ wmndsQuestion({
+          text: text
+      }) | indent(6) | trim }}
     </legend>
     <div class="wmnds-fe-radios{{class}}">
       <span class="wmnds-fe-radios__desc">

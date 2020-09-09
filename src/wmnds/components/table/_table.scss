@@ -27,4 +27,33 @@ $border: #979797;
   td {
     vertical-align: middle;
   }
+
+
+  @media screen and (max-width: $breakpoint-md) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    tr > th,
+    tr > td {
+      border-bottom: 0;
+    }
+
+    td,
+    th {
+      height: auto;
+      padding: $size-xs 0;
+    }
+
+    tr {
+      padding: $size-xs 0;
+      border-bottom: 1px solid $border;
+    }
+
+  }
 }
