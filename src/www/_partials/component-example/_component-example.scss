@@ -16,7 +16,7 @@ $dark-grey: #2b2b2b;
     border-bottom: 1px solid $dark-grey;
     background: get-color(background);
 
-    .wmnds-col-1 {
+    > .wmnds-col-1 {
       padding: $size-md;
       overflow: hidden;
     }
