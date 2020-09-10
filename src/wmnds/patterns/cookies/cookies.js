@@ -7,15 +7,17 @@ const cookies = () => {
   const setCookie = (cname, cvalue, exdays) => {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-    const expires = 'expires=' + d.toUTCString();
+    /* eslint-disable */
+    const expires = 'expires=' + d.toUTCString(); 
     const domain = 'domain=' + window.location.hostname;
     document.cookie = cname + '=' + cvalue + ';' + expires + ';' + domain + ';path=/';
+    /* eslint-enable */
   };
 
   const getCookie = cname => {
-    const name = cname + '=';
+    const name = cname + '='; // eslint-disable-line
     const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
+    for (let i = 0; i < ca.length; i++) { // eslint-disable-line
       let c = ca[i];
       while (c.charAt(0) === ' ') {
         c = c.substring(1);
@@ -43,7 +45,7 @@ const cookies = () => {
         .querySelector('.wmnds-cookies-preferences')
         .querySelectorAll('.wmnds-fe-checkboxes__input');
       const currentOptions = [getCookiePolicy().essential, getCookiePolicy().functional, getCookiePolicy().performance];
-      for (let i = 0; i < cookiesOptions.length; i++) {
+      for (let i = 0; i < cookiesOptions.length; i++) { // eslint-disable-line
         cookiesOptions[i].checked = currentOptions[i];
       }
     }
@@ -70,7 +72,7 @@ const cookies = () => {
       .getElementById('wmnds-cookies-manager-form')
       .querySelectorAll('.wmnds-fe-checkboxes__input');
     const selectedOptions = [];
-    for (let i = 0; i < elements.length; i++) {
+    for (let i = 0; i < elements.length; i++) { // eslint-disable-line
       selectedOptions[i] = elements.item(i).checked;
     }
     setCookiePolicy(...selectedOptions);
@@ -97,7 +99,7 @@ const cookies = () => {
   // When Accept all cookies button is triggered
   const acceptAllCookiesBtn = document.querySelector('.wmnds-accept-all-cookies');
   acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
-  acceptAllCookiesBtn.addEventListener('keydown', (event) => {
+  acceptAllCookiesBtn.addEventListener('keydown', event => {
     if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
       event.preventDefault();
       acceptAllCookies();
