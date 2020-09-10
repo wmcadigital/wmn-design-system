@@ -4,19 +4,16 @@
 {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
 {% from "wmnds/components/button/_button.njk" import wmnButton as primary %}
 
-
-<div class="wmnds-p-md  wmnds-cookies-manager">
+<div class="wmnds-p-md wmnds-cookies-manager">
   <div class="wmnds-container wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-3-5">
     <form class="wmnds-grid wmnds-cookies-manager__form" action="#">
       <h1 class="wmnds-col-1 wmnds-m-none">Manage Cookies</h1>
       <p class="wmnds-col-1 wmnds-m-t-md wmnds-m-b-none">
-        Check your settings below and select the cookies you’re happy with.<br><br>
+        Check your settings below and select the cookies you’re happy with.<br /><br />
         These settings only apply to wmnetwork.co.uk
       </p>
-
-      <br><br>
-      <div class="wmnds-col-1  wmnds-cookies-preferences">
- 
+      <br /><br />
+      <div class="wmnds-col-1 wmnds-cookies-preferences">
         {{
           wmndsCheckboxes({
             question: "",
@@ -42,7 +39,7 @@
           }) | trim | indent(4)
         }}
       </div>
-      <br><br>
+      <br /><br />
       {{
         primary({
           classNames: "wmnds-btn wmnds-save-preferences",
@@ -53,5 +50,4 @@
     </form>
   </div>
 </div>
-
 {% endmacro %}

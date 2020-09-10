@@ -19,4 +19,4 @@ const icons = () => {
   };
 };
 
-window.addEventListener('DOMContentLoaded', (forEachPolyfill, icons(), colorPalettes(), highlightJS, cookies()));
+window.addEventListener('DOMContentLoaded', (forEachPolyfill, icons(), colorPalettes(), cookies(), highlightJS));

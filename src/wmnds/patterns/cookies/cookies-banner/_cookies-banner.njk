@@ -9,20 +9,24 @@
   <div class="wmnds-container">
     <div class="wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-2-3">
       <h3>Your privacy settings</h3>
-      <p>We use cookies to help you with journey planning and relevant disruptions, remember your login and show you content you might be interested in. If you’re happy with the use of cookies by West Midlands Combined Authority and our selected partners, click ‘Accept all cookies’. Or click ‘Manage cookies’ to learn more.</p>
-      <div class="wmnds-grid wmnds-grid--justify-between wmnds-group-buttons"> 
+      <p>
+        We use cookies to help you with journey planning and relevant disruptions, remember your login and show you
+        content you might be interested in. If you’re happy with the use of cookies by West Midlands Combined Authority
+        and our selected partners, click ‘Accept all cookies’. Or click ‘Manage cookies’ to learn more.
+      </p>
+      <div class="wmnds-grid wmnds-grid--justify-between wmnds-group-buttons">
         {{
           primary({
             classNames: "wmnds-btn wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24  wmnds-accept-all-cookies",
             text: "Accept all cookies"
-          }) | trim | indent(4)
+          }) | trim | indent(8)
         }}
         {{
           cta({
             text: "Manage Cookies",
             classNames: "wmnds-btn wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
             link: "/patterns/cookies/#cookies_manager"
-          })
+          }) | trim | indent(8)
         }}
       </div>
     </div>
