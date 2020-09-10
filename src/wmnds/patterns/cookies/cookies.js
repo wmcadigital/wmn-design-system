@@ -1,60 +1,4 @@
 const cookies = () => {
-
-  const cookiesScan = () => {
-    // if cookies-preference exist, hide cookie banner
-    if (checkCookie('cookies-preference')) {
-      hideCookieBanner();
-    }
-    // if not, create a default cookie, cookie banner will be show
-    else {
-      setCookiePolicy(true, false, false);
-    }
-
-    // verify if we are at Cookies Manager page and update the selected options to match the already created cookie
-    updateCookiePreferences();
-  }
-
-  // Creation of default Cookies permissions when the DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', cookiesScan);
-
-  // When Accept all cookies button is triggered
-  const acceptAllCookiesBtn = document.querySelector('.wmnds-accept-all-cookies');
-  acceptAllCookiesBtn.addEventListener('click', function () {
-    acceptAllCookies();
-  });
-  acceptAllCookiesBtn.addEventListener('keydown', function (event) {
-    if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
-      event.preventDefault();
-      acceptAllCookies();
-    }
-  });
-
-  function acceptAllCookies() {
-    setCookiePolicy(true, true, true);
-    setCookie('cookies-preference', true, 181);
-    hideCookieBanner();
-  }
-
-  // When Safe Preferences button is triggered
-  const preferencesForm = document.getElementById('wmnds-cookies-manager-form');
-  preferencesForm.addEventListener('submit', function () {
-    savePreferences();
-  });
-
-  const savePreferences = () => {
-    const elements = document
-      .getElementById('wmnds-cookies-manager-form')
-      .querySelectorAll('.wmnds-fe-checkboxes__input');
-    const selectedOptions = [];
-    for (let i = 0; i < elements.length; i++) {
-      selectedOptions[i] = elements.item(i).checked;
-      console.log(selectedOptions[i]);
-    }
-    setCookiePolicy(...selectedOptions);
-    setCookie('cookies-preference', true, 181);
-  };
-
-  /* **  UTILITIES FUNCTIONS  ** */
   const hideCookieBanner = () => {
     const cookiesBanner = document.querySelector('#wmnds-cookies-banner');
     cookiesBanner.style = 'display:none';
@@ -64,7 +8,7 @@ const cookies = () => {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = 'expires=' + d.toUTCString();
-    const domain = "domain="+ window.location.hostname;
+    const domain = 'domain=' + window.location.hostname;
     document.cookie = cname + '=' + cvalue + ';' + expires + ';' + domain + ';path=/';
   };
 
@@ -91,16 +35,6 @@ const cookies = () => {
     return true;
   };
 
-  const setCookiePolicy = (essentialValue, functionalValue, performanceValue) => {
-    const cookieValue = {
-      essential: essentialValue,
-      functional: functionalValue,
-      performance: performanceValue
-    };
-    setCookie('cookies-policy', JSON.stringify(cookieValue), 181);
-    updateCookiePreferences();
-  };
-
   const getCookiePolicy = () => JSON.parse(getCookie('cookies-policy'));
 
   const updateCookiePreferences = () => {
@@ -115,7 +49,64 @@ const cookies = () => {
     }
   };
 
-  /* **  END UTILITIES FUNCTIONS  ** */
+  const setCookiePolicy = (essentialValue, functionalValue, performanceValue) => {
+    const cookieValue = {
+      essential: essentialValue,
+      functional: functionalValue,
+      performance: performanceValue
+    };
+    setCookie('cookies-policy', JSON.stringify(cookieValue), 181);
+    updateCookiePreferences();
+  };
+
+  function acceptAllCookies() {
+    setCookiePolicy(true, true, true);
+    setCookie('cookies-preference', true, 181);
+    hideCookieBanner();
+  }
+
+  const savePreferences = () => {
+    const elements = document
+      .getElementById('wmnds-cookies-manager-form')
+      .querySelectorAll('.wmnds-fe-checkboxes__input');
+    const selectedOptions = [];
+    for (let i = 0; i < elements.length; i++) {
+      selectedOptions[i] = elements.item(i).checked;
+    }
+    setCookiePolicy(...selectedOptions);
+    setCookie('cookies-preference', true, 181);
+  };
+
+  const cookiesScan = () => {
+    // if cookies-preference exist, hide cookie banner
+    if (checkCookie('cookies-preference')) {
+      hideCookieBanner();
+    }
+    // if not, create a default cookie, cookie banner will be show
+    else {
+      setCookiePolicy(true, false, false);
+    }
+
+    // verify if we are at Cookies Manager page and update the selected options to match the already created cookie
+    updateCookiePreferences();
+  };
+
+  // Creation of default Cookies permissions when the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', cookiesScan);
+
+  // When Accept all cookies button is triggered
+  const acceptAllCookiesBtn = document.querySelector('.wmnds-accept-all-cookies');
+  acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
+  acceptAllCookiesBtn.addEventListener('keydown', (event) => {
+    if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
+      event.preventDefault();
+      acceptAllCookies();
+    }
+  });
+
+  // When Safe Preferences button is triggered
+  const preferencesForm = document.getElementById('wmnds-cookies-manager-form');
+  preferencesForm.addEventListener('submit', savePreferences);
 };
 
 export default cookies;
