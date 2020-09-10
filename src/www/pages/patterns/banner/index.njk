@@ -14,6 +14,7 @@
   ])
 }}
 
+{# Banner with phase indicator #}
 <h2>With phase indicator</h2>
 {# What #}
 <h3>What does it do?</h3>
@@ -43,6 +44,47 @@
   compExample([
    wmndsBanner({
       phase: true
+   })
+  ])
+}}
+
+{# Emergency banner #}
+<h2>Emergency banner</h2>
+{# What #}
+<h3>What does it do</h3>
+<ul>
+  <li>It communicates emergency information and provides advice on what to do.</li>
+  <li>When an emergency is no longer relevant, the content will be archived or removed.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When you need to communicate information that is urgent or critical, which will potentially affect a large group of our users. For example, if there is an emergency situation announced in Birmingham, the banner would advise all users on travel updates and guidance.</li>
+  <li>The emergency banner should be placed directly below the main navigation.</li>
+  <li>Only show one emergency banner notification at a time.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>When a warning or emergency is directly related to a task the user is completing. In this case, use the appropriate <a href="/components/message">Message</a> component to notify users of any issues.</li>
+  <li>If the issue is related to a service we are providing such as our customer service, you should place the <a href="/components/warning-text">Warning text</a> and <a href="/components/inset-text">Inset text</a> components next to the affected service, detailing the issue.</li>
+  <li>Any disruptions to travel will be highlighted on the home page through the <a href="/components/disruption-indicators">Disruption indicator</a> components.</li>
+</ul>
+{# How #}
+<h3>How it works</h3>
+<ul>
+  <li>The user can dismiss the Emergency banner through the 'Close' link. This will remove the current emergency banner from all pages they visit on the website.</li>
+  <li>The On-page variant is only shown when a user is on the Emergency advice page, which can be accessed through the 'Read our latest advice' link.</li>
+</ul>
+<hr>
+
+{# Sitewide #}
+<h3>Sitewide</h3>
+
+{{
+  compExample([
+   wmndsBanner({
+      emergency: true
    })
   ])
 }}
