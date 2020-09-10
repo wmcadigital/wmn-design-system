@@ -2,6 +2,7 @@
 {# Set navItems #}
 {% set navItems = params.navItems %}
 {% set appClass = " wmnds-header--mobile-app" if params.app else "" %}
+{% set menuClass = "" if params.legacyMenu else " wmnds-header--mega-menu" %}
 
 {% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
 {# Imports #}
@@ -21,7 +22,7 @@
 }}
 <!-- Main header section -->
 <header>
-  <div class="wmnds-header{{appClass}} wmnds-header--mega-menu">
+  <div class="wmnds-header{{appClass}}{{menuClass}}">
     <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
       <div class="wmnds-header__vertical-align wmnds-col-auto">
         <!-- Logo -->
