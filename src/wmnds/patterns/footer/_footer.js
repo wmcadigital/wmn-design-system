@@ -1,7 +1,7 @@
 const footerJs = () => {
-  const mobileFooter = window.matchMedia('(max-width: 1024px)');
+  const mobileFooter = window.matchMedia('(max-width: 767px)');
   const collapseMenus = document.querySelectorAll('.wmnds-collapse-heading');
-  function handleMobileFooter(mq) {
+  const handleMobileFooter = mq => {
     if (mq.matches) {
       collapseMenus.forEach(collapseToggle => {
         let toggleActive = false;
@@ -22,7 +22,7 @@ const footerJs = () => {
         });
       });
     }
-  }
+  };
   // init mobile nav function
   handleMobileFooter(mobileFooter);
   mobileFooter.addListener(handleMobileFooter);
