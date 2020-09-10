@@ -63,10 +63,10 @@ const cookies = () => {
     setCookiePolicy(true, true, true);
     setCookie('cookies-preference', true, 181);
     hideCookieBanner();
-  }
+  };
 
   const savePreferences = () => {
-    if (document.querySelector('.wmnds-cookies-manager__form')){
+    if (document.querySelector('.wmnds-cookies-manager__form')) {
       const elements = document
         .querySelector('.wmnds-cookies-manager__form')
         .querySelectorAll('.wmnds-fe-checkboxes__input');
@@ -107,7 +107,7 @@ const cookies = () => {
   });
 
   // When Safe Preferences button is triggered
-  if (document.querySelector('.wmnds-cookies-manager__form')){
+  if (document.querySelector('.wmnds-cookies-manager__form')) {
     const preferencesForm = document.querySelector('.wmnds-cookies-manager__form');
     preferencesForm.addEventListener('submit', savePreferences);
   }
