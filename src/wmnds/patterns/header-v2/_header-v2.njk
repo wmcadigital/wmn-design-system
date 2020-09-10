@@ -50,7 +50,7 @@
           {% for navItem in navItems -%}
             <li class="wmnds-mega-menu__primary-menu-item">
             <!-- Show swift logo in nav if is swift & tickets link -->
-            {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) if navItem.name === "Swift and tickets" else "" -%}
+            {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(4) | trim if navItem.name === "Swift and tickets" else "" %}
             {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name -%}
               <!-- allow primary (level 1) item to link if specified -->
               {% if params.linkTopLevel -%}{{navItemIcon}}
