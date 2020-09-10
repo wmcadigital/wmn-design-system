@@ -67,59 +67,42 @@ const header = () => {
 
     const topLevelLinks = menu.querySelectorAll('.wmnds-mega-menu__primary-menu-link');
 
-    // check if level 3 menu is present, if so add modifier class
-    const hasSubmenuChildren = menu.querySelectorAll('.wmnds-mega-menu__sub-menu-child-menu').length !== 0;
-    if (hasSubmenuChildren) {
-      menu.querySelectorAll('.wmnds-mega-menu__sub-menu').forEach(subMenu => {
-        subMenu.classList.add('wmnds-mega-menu__sub-menu--has-child-menus');
-      });
-    }
-
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
-      let mousedown = false;
       // return list item parent of the current link if it exists else return the link
       const topLevelListItem = topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink;
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
 
-      // if link is focused via click
-      const handleMouseup = () => {
-        mousedown = false;
-        document.removeEventListener('mouseup', handleMouseup);
-      };
+      // check if level 3 menus are present, if so add modifier class
+      const hasSubmenuChildren =
+        topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-child-menu').length !== 0;
+      if (hasSubmenuChildren) {
+        topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu').forEach(subMenu => {
+          subMenu.classList.add('wmnds-mega-menu__sub-menu--has-child-menus');
+        });
+      }
 
-      const handleMousedown = () => {
-        mousedown = true;
-        document.addEventListener('mouseup', handleMouseup);
-      };
-
-      // if link is focused via keyboard
-      const handleKeyFocus = () => {
-        topLevelLink.focus();
-        if (!mousedown) {
-          // add keyFocus class for when top level link is focused but megamenu is not active
-          menu.classList.add('keyFocus');
-          topLevelListItem.classList.add('keyFocus');
-        }
-      };
-
-      // remove keyFocus and active classes on blur
-      const handleBlur = () => {
-        menu.classList.remove('keyFocus', 'active');
-        topLevelListItem.classList.remove('keyFocus', 'active');
+      const clearActiveListItems = () => {
+        // remove active classes from other list items
+        menu.querySelectorAll('.wmnds-mega-menu__primary-menu-item').forEach(menuItem => {
+          menuItem.classList.remove('active');
+        });
       };
 
       // handle setting the active class on menu and list items
-      const setMenuActive = active => {
+      const setMenuActive = (active, focusLink) => {
         if (active !== false) {
-          menu.classList.remove('keyFocus');
-          topLevelListItem.classList.remove('keyFocus');
           menu.classList.add('active');
+          clearActiveListItems();
+          // add active class to current item
           topLevelListItem.classList.add('active');
         } else {
           menu.classList.remove('active');
           topLevelListItem.classList.remove('active');
-          handleKeyFocus();
+          // set focus on menu close
+          if (focusLink !== false) {
+            topLevelLink.focus();
+          }
         }
       };
 
@@ -181,32 +164,34 @@ const header = () => {
         }
       };
 
-      // if top level link doesn't have a mega-menu child add class to hide overlay when hovered
-      const topLevelWithoutMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length === 0;
-      if (topLevelWithoutMenu) {
+      // if top level link doesn't have a mega-menu child add class to menu to hide overlay when hovered
+      // has to be added/removed on mouseover to cover menus that have a mix of items with/without mega menus
+      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length;
+
+      if (isTopLevelWithMenu) {
         topLevelLink.addEventListener('mouseover', () => {
-          menu.classList.add('no-overlay');
+          setMenuActive();
         });
-        topLevelLink.addEventListener('mouseleave', () => {
-          menu.classList.remove('no-overlay');
+        topLevelListItem.addEventListener('mouseleave', () => {
+          setMenuActive(false, false);
+          clearActiveListItems();
         });
+
+        // array of mega menu links by column
+        topLevelListItem.addEventListener('blur', setMenuActive(false, false));
       }
 
-      // top lvl link event listeners
-      topLevelLink.addEventListener('mousedown', e => {
-        e.preventDefault();
-        setMenuActive(false);
-      });
-      topLevelLink.addEventListener('focus', handleKeyFocus);
-
-      // top level li event listeners
-      topLevelListItem.addEventListener('mousedown', handleMousedown);
-      topLevelListItem.addEventListener('blur', handleBlur);
       topLevelListItem.addEventListener('keydown', e => {
         handleKeydown(e, e.keyCode);
       });
+      // top lvl link event listeners
+      topLevelLink.addEventListener('mousedown', e => {
+        // prevent link focus on click
+        e.preventDefault();
+        // setMenuActive(false);
+      });
+      // topLevelLink.addEventListener('focus', handleKeyFocus);
 
-      // array of mega menu links by column
       const menuArray = [];
       subMenuLinks.forEach((menuLink, menuIndex) => {
         const thisList = menuLink.parentNode;

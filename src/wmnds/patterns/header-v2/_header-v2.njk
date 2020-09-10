@@ -46,8 +46,8 @@
             <li class="wmnds-mega-menu__primary-menu-item">
             {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) if navItem.name === "Swift and tickets" else "" -%}
             {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name -%}
-              {% if navItem.link -%}{{navItemIcon}}
-              <a href="{{primaryLink}}" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
+              {% if params.linkTopLevel -%}{{navItemIcon}}
+              <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
                 {{navItemIcon}}{{ navItemContent }}
               </a>
               {% else -%}
@@ -62,7 +62,7 @@
                   <ul class="wmnds-mega-menu__sub-menu">
                     {% for subnavItem in navItem.subnavItems -%}
                     <li class="wmnds-mega-menu__sub-menu-item">
-                      <a href="#" class="wmnds-mega-menu__sub-menu-link">
+                      <a href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subnavItem.name | lower | replace(" ", "-") }}/" class="wmnds-mega-menu__sub-menu-link">
                         {% if subnavItem.icon -%}
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
