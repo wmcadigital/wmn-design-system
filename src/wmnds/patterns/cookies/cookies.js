@@ -1,6 +1,6 @@
 const cookies = () => {
   const hideCookieBanner = () => {
-    const cookiesBanner = document.querySelector('#wmnds-cookies-banner');
+    const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
     cookiesBanner.style = 'display:none';
   };
 
@@ -59,22 +59,24 @@ const cookies = () => {
     updateCookiePreferences();
   };
 
-  function acceptAllCookies() {
+  const acceptAllCookies = () => {
     setCookiePolicy(true, true, true);
     setCookie('cookies-preference', true, 181);
     hideCookieBanner();
-  }
+  };
 
   const savePreferences = () => {
-    const elements = document
-      .getElementById('wmnds-cookies-manager-form')
-      .querySelectorAll('.wmnds-fe-checkboxes__input');
-    const selectedOptions = [];
-    for (let i = 0; i < elements.length; i += 1) {
-      selectedOptions[i] = elements.item(i).checked;
+    if (document.querySelector('.wmnds-cookies-manager__form')) {
+      const elements = document
+        .querySelector('.wmnds-cookies-manager__form')
+        .querySelectorAll('.wmnds-fe-checkboxes__input');
+      const selectedOptions = [];
+      for (let i = 0; i < elements.length; i += 1) {
+        selectedOptions[i] = elements.item(i).checked;
+      }
+      setCookiePolicy(...selectedOptions);
+      setCookie('cookies-preference', true, 181);
     }
-    setCookiePolicy(...selectedOptions);
-    setCookie('cookies-preference', true, 181);
   };
 
   const cookiesScan = () => {
@@ -105,8 +107,10 @@ const cookies = () => {
   });
 
   // When Safe Preferences button is triggered
-  const preferencesForm = document.getElementById('wmnds-cookies-manager-form');
-  preferencesForm.addEventListener('submit', savePreferences);
+  if (document.querySelector('.wmnds-cookies-manager__form')) {
+    const preferencesForm = document.querySelector('.wmnds-cookies-manager__form');
+    preferencesForm.addEventListener('submit', savePreferences);
+  }
 };
 
 export default cookies;
