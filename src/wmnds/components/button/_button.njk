@@ -14,7 +14,7 @@
   {% set classNames = paramClass if paramClass %}
 {% endif %}
 
-<button class="wmnds-btn{{ classNames }}" {% if params.disabled %}disabled="disabled"{% endif %}>
+<button class="wmnds-btn{{ classNames }}" {% if params.disabled %}disabled="disabled"{% endif %} {% if params.type %}type="{{params.type}}"{% endif %}>
     {#- iconLeft -#}
     {%- if iconLeft %}
     {{
