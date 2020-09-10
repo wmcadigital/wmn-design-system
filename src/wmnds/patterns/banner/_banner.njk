@@ -1,13 +1,51 @@
 {% macro wmndsBanner(params) %}
 {# Imports #}
 {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
 {# Set vars #}
 {% set link = params.link if params.link %} {# set button text #}
 {% set linkTitle = params.linkTitle if params.linkTitle %} {# set button text #}
+{% set emergencyModifier = " wmnds-banner-container--emergency" if params.emergency %} 
 
 
-<div class="wmnds-grid wmnds-banner-container">
+<div class="wmnds-grid wmnds-grid--align-center wmnds-banner-container{{emergencyModifier}}">
+   {% if params.emergency %}
+   <div class=" wmnds-col-xl-auto wmnds-col-1-2">
+   {{
+      wmndsIcon({
+         class: "wmnds-banner-container__emergency-icon wmnds-m-r-md",
+         icon: "general-warning-triangle"
+      })
+   }}
+   </div>
+   <div class="wmnds-col-xl-10-24 wmnds-col-1">
+      <h2 class="h4 wmnds-m-b-none">Emergency notification title</h2>
+   </div>
+   <div class="wmnds-col-xl-8-24 wmnds-col-1 wmnds-text-align-right">
+      <a href="#" target="_self" class="wmnds-link wmnds-banner-container__emergency-link">
+         Read our latest advice
+         {{
+            wmndsIcon({
+               class: "wmnds-banner-container__emergency-link-icon wmnds-m-l-sm",
+               icon: "general-chevron-right"
+            })
+         }}
+      </a>
+   </div>
+   <div class="wmnds-col-xl-4-24 wmnds-col-1-2 wmnds-text-align-right">
+      <button class="wmnds-banner-container__emergency-close">
+      Close
+      {{
+         wmndsIcon({
+            class: "wmnds-banner-container__emergency-close-icon wmnds-m-l-sm",
+            icon: "general-cross"
+         })
+      }}
+      </button>
+   </div>
+   {% else %}
    <div class="wmnds-col-1">
       {% if params.phase -%}
       <div class="wmnds-banner-container__phase-wrapper">
@@ -28,5 +66,6 @@
          will help us to improve it.
       </p>
    </div>
+   {% endif %}
 </div>
 {% endmacro %}

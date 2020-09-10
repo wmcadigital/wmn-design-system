@@ -3,6 +3,19 @@
   padding: $size-md 0;
   border-bottom: 1px solid get-color(text);
 
+  &--emergency {
+    padding: $size-md;
+    border-bottom: solid 3px get-color(error);
+    color: $white;
+    background-color: #231f20;
+
+    *,
+    .wmnds-link:hover,
+    .wmnds-link:focus {
+      color: currentColor;
+    }
+  }
+
   &__phase-wrapper {
     margin-right: $size-xsm;
     float: left;
@@ -18,5 +31,41 @@
   &__text {
     margin: 0;
     padding: 0;
+  }
+
+  &__emergency {
+    &-icon {
+      width: 30px;
+      height: 30px;
+      fill: get-color(error);
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+
+      &-icon {
+        width: 23px;
+        height: 23px;
+        fill: currentColor;
+      }
+    }
+
+    &-close {
+      display: inline-flex;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      font-size: $size-md;
+      text-decoration: underline;
+      cursor: pointer;
+      align-items: center;
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+    }
   }
 }
