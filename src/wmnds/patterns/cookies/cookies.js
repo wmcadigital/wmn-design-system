@@ -64,8 +64,7 @@ const cookies = () => {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = 'expires=' + d.toUTCString();
-    //const domain = "domain=.wmnetwork.co.uk";
-    const domain = '';
+    const domain = "domain="+ window.location.hostname;
     document.cookie = cname + '=' + cvalue + ';' + expires + ';' + domain + ';path=/';
   };
 
