@@ -46,7 +46,7 @@
 
   @media screen and (max-width: $breakpoint-md - 1) {
     .wmnds-footer__updates-col {
-      padding-bottom: $size-md * 1.25;
+      padding-bottom: $size-md;
 
       &:not(:last-child) {
         margin-bottom: $size-xsm;
@@ -54,14 +54,14 @@
       }
 
       p {
-        font-size: 0.937rem;
+        font-size: $size-md;
       }
     }
   }
 
   .wmnds-footer__heading {
-    margin-bottom: $size-md * 1.25;
-    padding-bottom: $size-md * 1.125;
+    margin-bottom: $size-md;
+    padding-bottom: $size-md;
     border-bottom: 1px solid get-color(secondary, 70);
 
     @media screen and (max-width: $breakpoint-md - 1) {
@@ -73,12 +73,12 @@
         padding: $size-xsm 0;
         border: 0;
         font-family: $x-font-family;
-        font-size: $size-md * 1.125;
+        font-size: $size-md;
       }
     }
 
     @media screen and (min-width: $breakpoint-md) {
-      padding-bottom: $size-md * 1.25;
+      padding-bottom: $size-md;
     }
   }
 
@@ -165,8 +165,8 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
 
     .wmnds-collapse-heading__indicator {
       display: block;
-      width: $size-md * 1.75;
-      height: $size-md * 1.75;
+      width: $size-lg;
+      height: $size-lg;
       transform: rotate(90deg);
       transition: $collapse-indicator-transition;
       fill: currentColor;
