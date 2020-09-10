@@ -11,7 +11,8 @@
 
     *,
     .wmnds-link:hover,
-    .wmnds-link:focus {
+    .wmnds-link:focus,
+    .wmnds-link:visited {
       color: currentColor;
     }
   }
@@ -35,36 +36,68 @@
 
   &__emergency {
     &-icon {
-      width: 30px;
-      height: 30px;
-      fill: get-color(error);
-    }
+      width: 23px;
+      height: 23px;
+      fill: currentColor;
 
-    &-link {
-      display: inline-flex;
-      align-items: center;
-
-      &-icon {
-        width: 23px;
-        height: 23px;
-        fill: currentColor;
+      &-error {
+        width: 30px;
+        height: 30px;
+        fill: get-color(error);
       }
     }
 
+    &-link,
     &-close {
       display: inline-flex;
+      align-items: center;
+    }
+
+    &-close {
       padding: 0;
       border: 0;
       background-color: transparent;
       font-size: $size-md;
       text-decoration: underline;
       cursor: pointer;
-      align-items: center;
+    }
 
-      &-icon {
-        width: 20px;
-        height: 20px;
-        fill: currentColor;
+    // Ordering
+    &-icon-col {
+      order: 0;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        padding-top: $size-xs;
+        order: 1;
+      }
+    }
+
+    &-title-col {
+      padding: 0;
+      order: 1;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        padding-left: $size-md;
+      }
+    }
+
+    &-link-col {
+      margin-top: $size-md;
+      text-align: left;
+      order: 1;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        margin: 0;
+        text-align: right;
+      }
+    }
+
+    &-close-col {
+      text-align: right;
+      order: 0;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        order: 1;
       }
     }
   }
