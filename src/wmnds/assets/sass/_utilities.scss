@@ -29,12 +29,13 @@
   }
 
   @media screen and (min-width: $breakpoint-md) {
-    &.wmnds-grid{
+    &.wmnds-grid {
       flex-flow: row nowrap;
     }
-    & > *:not(:first-child){
-      margin-left: $size-md;
+    
+    & > *:not(:first-child) {
       margin-top: 0;
+      margin-left: $size-md;
     }
   }
 
