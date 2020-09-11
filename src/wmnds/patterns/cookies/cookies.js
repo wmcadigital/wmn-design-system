@@ -39,6 +39,7 @@ const cookies = () => {
 
   const updateCookiePreferences = () => {
     if (document.querySelector('.wmnds-cookies-preferences')) {
+      hideCookieBanner();
       const cookiesOptions = document
         .querySelector('.wmnds-cookies-preferences')
         .querySelectorAll('.wmnds-fe-checkboxes__input');
