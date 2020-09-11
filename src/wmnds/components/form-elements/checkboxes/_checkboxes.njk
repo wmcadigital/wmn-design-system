@@ -10,8 +10,10 @@
 {% set hasDesc = false if params.question === "" else true %}
 {% set desc = params.desc if params.desc else "Select all options that apply" %}
 {% set options = params.options if params.options %}
+{% set groupClass = params.groupClass if params.groupClass %}
 
-<div class="wmnds-fe-group">
+
+<div class="wmnds-fe-group {{groupClass}}">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
     {%- if hasQuestion %}

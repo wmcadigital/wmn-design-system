@@ -5,7 +5,7 @@
 {% from "wmnds/components/button/_button.njk" import wmnButton as primary %}
 
 <div class="wmnds-p-md wmnds-cookies-manager">
-  <div class="wmnds-container wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-3-5">
+  <div class="wmnds-container wmnds-col-1 wmnds-col-sm-1 wmnds-col-lg-3-4">
     <form class="wmnds-grid wmnds-cookies-manager__form" action="#">
       <h1 class="wmnds-col-1 wmnds-m-none">Manage Cookies</h1>
       <p class="wmnds-col-1 wmnds-m-t-md wmnds-m-b-none">
@@ -16,6 +16,7 @@
       <div class="wmnds-col-1 wmnds-cookies-preferences">
         {{
           wmndsCheckboxes({
+            groupClass: "wmnds-m-none",
             question: "",
             desc: "",
             options: [
@@ -39,14 +40,18 @@
           }) | trim | indent(4)
         }}
       </div>
-      <br /><br />
+      <div class="wmnds-col-1">
       {{
         primary({
-          classNames: "wmnds-btn wmnds-save-preferences",
+          classNames: "wmnds-btn wmnds-save-preferences wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
           text: "Save Preferences",
           type: "submit"
         }) | trim | indent(4)
       }}
+      </div>
+      <div class="wmnds-col-1">
+        <p>If you change your mind, <a href="">visit our Policies page</a> to change your cookie preferences.</p>
+      </div>
     </form>
   </div>
 </div>
