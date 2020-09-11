@@ -1,28 +1,30 @@
 // Included the ol tag too incase dev forgets to add .wmnds-ordered-list class.
 // The ol:not([class*="wmnds-"]) line makes sure we don't target any wmnds components that are using the a tag such as the breadcrumbs
-.wmnds-ordered-list,
-ol:not([class*="wmnds-"]) {
-  counter-reset: item;
-  padding-inline-start: 0;
-
-  a,
-  .wmnds-link {
-    display: inline;
-  }
-
-  ol,
-  ul:not(.wmnds-unordered-list) {
+.wmnds-html {
+  .wmnds-ordered-list,
+  ol:not([class*="wmnds-"]) {
     counter-reset: item;
-    padding-inline-start: $size-lg;
-  }
+    padding-inline-start: 0;
 
-  li {
-    display: block;
+    a,
+    .wmnds-link {
+      display: inline;
+    }
 
-    &:before {
-      content: counters(item, ".") ".";
-      margin-right: $size-xsm;
-      counter-increment: item;
+    ol,
+    ul:not(.wmnds-unordered-list) {
+      counter-reset: item;
+      padding-inline-start: $size-lg;
+    }
+
+    li {
+      display: block;
+
+      &:before {
+        content: counters(item, ".") ".";
+        margin-right: $size-xsm;
+        counter-increment: item;
+      }
     }
   }
 }
