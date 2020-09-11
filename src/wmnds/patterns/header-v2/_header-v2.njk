@@ -10,6 +10,7 @@
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+{% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
 
 <!-- Skip to content link -->
 {{
@@ -22,6 +23,9 @@
 }}
 <!-- Main header section -->
 <header>
+  {{
+    wmndsCookiesBanner()
+  }}
   <div class="wmnds-header{{appClass}}{{menuClass}}">
     <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
       <div class="wmnds-header__vertical-align wmnds-col-auto">
