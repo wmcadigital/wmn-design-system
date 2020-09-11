@@ -5,7 +5,6 @@ import highlightJS from './_partials/component-example/_component-example';
 import cookies from '../wmnds/patterns/cookies/cookies';
 import headerJs from '../wmnds/patterns/header-v2/_header-v2';
 
-
 Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374' });
 
 const icons = () => {
@@ -21,4 +20,7 @@ const icons = () => {
   };
 };
 
-window.addEventListener('DOMContentLoaded', (forEachPolyfill, icons(), colorPalettes(), headerJs(), cookies(), highlightJS));
+window.addEventListener(
+  'DOMContentLoaded',
+  (forEachPolyfill, icons(), colorPalettes(), headerJs(), cookies(), highlightJS)
+);
