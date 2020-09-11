@@ -7,7 +7,7 @@
     padding: $size-md;
     border-bottom: solid 3px get-color(error);
     color: $white;
-    background-color: #231f20;
+    background-color: get-color(emergency);
 
     *,
     .wmnds-link:hover,
