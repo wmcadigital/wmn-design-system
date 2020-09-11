@@ -24,7 +24,7 @@
 //Group buttons 
 .wmnds-group-buttons {
 
-  & > *:not(:first-child){
+  & > *:not(:first-child) {
     margin-top: $size-md;
   }
 
