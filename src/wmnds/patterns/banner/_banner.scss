@@ -36,13 +36,13 @@
 
   &__emergency {
     &-icon {
-      width: 23px;
-      height: 23px;
+      width: 1.5rem;
+      height: 1.5rem;
       fill: currentColor;
 
       &-error {
-        width: 30px;
-        height: 30px;
+        width: $size-lg;
+        height: $size-lg;
         fill: get-color(error);
       }
     }
