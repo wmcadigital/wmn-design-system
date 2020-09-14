@@ -1,11 +1,18 @@
 .wmnds-warning-text {
-  display: flex;
+  display: block;
+  position: relative;
+  min-height: 2.5rem;
+  padding-top: $size-xsm;
+  padding-left: 3.25rem;
   font-weight: 700;
   align-items: center;
 
   &__icon {
-    width: $size-md * 2.5;
-    height: $size-md * 2.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
     margin-right: $size-sm;
     fill: $black;
   }

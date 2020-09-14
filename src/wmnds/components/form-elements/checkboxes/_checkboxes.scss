@@ -7,10 +7,11 @@
   // Customize the label (the container)
   &__container {
     @include type-setting(0);
-    display: flex;
+    display: block;
     position: relative;
     min-height: 35px;
     margin-bottom: $size-md;
+    padding-top: 0.35rem;
     padding-left: 60px;
     cursor: pointer;
     align-items: center;

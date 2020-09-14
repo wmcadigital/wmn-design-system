@@ -14,11 +14,13 @@
     <![endif]-->
 
     {# header #}
-    {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
+    {% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
     {{
-      wmndsHeader ({
+      wmndsHeaderV2 ({
+        id: "mega-menu",
         navItems: navItems,
         banner: true,
+        linkTopLevel: true,
         breadcrumbs: {
           section: section,
           pageTitle: pageTitle
