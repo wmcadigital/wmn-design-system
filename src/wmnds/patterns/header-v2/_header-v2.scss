@@ -577,11 +577,11 @@ $header-height-mobile: 4rem;
     &__sub-menu {
       display: flex;
       width: 100%;
-      padding: 1.25rem 0;
+      padding: 2.5rem 0;
       flex-wrap: wrap;
 
       &--has-child-menus {
-        padding: 1.25rem 0 $size-xs;
+        padding: 2.5rem 0 1.5rem;
 
         .wmnds-mega-menu__sub-menu-item {
           margin: 0 0 $size-md;
