@@ -6,14 +6,15 @@
 
 <div class="wmnds-p-md wmnds-cookies-manager">
   <div class="wmnds-container wmnds-col-1 wmnds-col-sm-1 wmnds-col-lg-3-4">
-    <form class="wmnds-grid wmnds-cookies-manager__form" action="#">
-      <h1 class="wmnds-col-1 wmnds-m-none">Manage Cookies</h1>
-      <p class="wmnds-col-1 wmnds-m-t-md wmnds-m-b-none">
-        Check your settings below and select the cookies you’re happy with.<br /><br />
+    <form class="wmnds-cookies-manager__form" action="#">
+      <h1>Manage Cookies</h1>
+      <p class="wmnds-m-b-md">
+        Check your settings below and select the cookies you’re happy with.
+      </p>
+      <p> 
         These settings only apply to wmnetwork.co.uk
       </p>
-      <br /><br />
-      <div class="wmnds-col-1 wmnds-cookies-preferences">
+      <div class="wmnds-cookies-preferences wmnds-p-b-md wmnds-p-t-md">
         {{
           wmndsCheckboxes({
             groupClass: "wmnds-m-none",
@@ -40,7 +41,7 @@
           }) | trim | indent(4)
         }}
       </div>
-      <div class="wmnds-col-1">
+      <div>
       {{
         primary({
           classNames: "wmnds-btn wmnds-save-preferences wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
@@ -49,7 +50,7 @@
         }) | trim | indent(4)
       }}
       </div>
-      <div class="wmnds-col-1">
+      <div class="wmnds-m-t-lg">
         <p>If you change your mind, <a href="">visit our Policies page</a> to change your cookie preferences.</p>
       </div>
     </form>
