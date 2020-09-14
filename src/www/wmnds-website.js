@@ -20,4 +20,7 @@ const icons = () => {
   };
 };
 
-window.addEventListener('DOMContentLoaded', (forEachPolyfill, icons(), colorPalettes(), headerJs(), footerJs(), highlightJS));
+window.addEventListener(
+  'DOMContentLoaded',
+  (forEachPolyfill, icons(), colorPalettes(), headerJs(), footerJs(), highlightJS)
+);
