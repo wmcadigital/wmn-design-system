@@ -650,12 +650,13 @@ $header-height-mobile: 4rem;
   display: inline-block;
   width: 3.5em;
   height: 1.35em;
-  margin-top: -0.1em;
   margin-right: 0.25em;
+  margin-left: 0.15em;
   fill: currentColor;
+  line-height: 1.5rem;
+  vertical-align: top;
   @media screen and (min-width: $breakpoint-md) {
     width: 3.2em;
-    margin-top: 0.1em;
   }
 }
 
