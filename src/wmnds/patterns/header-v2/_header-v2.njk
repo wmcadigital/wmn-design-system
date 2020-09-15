@@ -79,8 +79,8 @@
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
                         </svg> 
-                        {%- endif %}
-                        {{subnavItem.name}}</a>
+                        {% endif -%}
+                        {{subnavItem.name | replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</a>
                         {%- if subnavItem.subnavItems %}
                         <!-- collapse button for mobile nav level 3 menu items -->
                       <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
