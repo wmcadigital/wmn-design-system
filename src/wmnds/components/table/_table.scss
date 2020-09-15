@@ -28,8 +28,8 @@ $border: #979797;
     vertical-align: middle;
   }
 
-
   @media screen and (max-width: $breakpoint-md) {
+    // Force table to not be like tables anymore
     table,
     thead,
     tbody,
@@ -39,21 +39,54 @@ $border: #979797;
       display: block;
     }
 
-    tr > th,
-    tr > td {
-      border-bottom: 0;
-    }
-
-    td,
-    th {
-      height: auto;
-      padding: $size-xs 0;
+    // Hide table headers (but not display: none;, for accessibility)
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
     }
 
     tr {
-      padding: $size-xs 0;
-      border-bottom: 1px solid $border;
+      padding: $size-md 0;
+      border-bottom: 0;
     }
 
+    // Behave  like a "row"
+    tr > th,
+    tr > td {
+      position: relative;
+      height: auto;
+      padding-left: 50%;
+      border-bottom: 1px solid $border;
+      text-align: left;
+      white-space: normal;
+
+      // Now like a table header
+      &:before {
+        content: attr(data-header);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 45%;
+        padding-right: $size-sm;
+        transform: translateY(-50%);
+        font-weight: bold;
+        text-align: left;
+        white-space: nowrap;
+      }
+    }
+    
+
+    &.wmnds-table--without-header {
+      // shorten table
+      tr > th,
+      tr > td {
+        padding-left: 0;
+      
+        &:before {
+          content: none;
+        }
+      }
+    }
   }
 }
