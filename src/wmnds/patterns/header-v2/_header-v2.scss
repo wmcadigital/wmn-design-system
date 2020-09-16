@@ -577,11 +577,11 @@ $header-height-mobile: 4rem;
     &__sub-menu {
       display: flex;
       width: 100%;
-      padding: 1.25rem 0;
+      padding: 2.5rem 0;
       flex-wrap: wrap;
 
       &--has-child-menus {
-        padding: 1.25rem 0 $size-xs;
+        padding: 2.5rem 0 1.5rem;
 
         .wmnds-mega-menu__sub-menu-item {
           margin: 0 0 $size-md;
@@ -650,12 +650,13 @@ $header-height-mobile: 4rem;
   display: inline-block;
   width: 3.5em;
   height: 1.35em;
-  margin-top: -0.1em;
   margin-right: 0.25em;
+  margin-left: 0.15em;
   fill: currentColor;
+  line-height: 1.5rem;
+  vertical-align: top;
   @media screen and (min-width: $breakpoint-md) {
     width: 3.2em;
-    margin-top: 0.1em;
   }
 }
 
