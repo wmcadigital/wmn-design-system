@@ -1,0 +1,125 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Question Form" %}
+{% set section="Patterns" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+    <h3>What does it do?</h3>
+    <ul>
+        <li>Asks a user questions which a service requires.</li>
+        <li>Helps to break down complex forms by spreading questions across multiple pages.</li>
+    </ul>
+    <h3>When to use it?</h3>
+    <ul>
+        <li>When you are asking users for information as part of a service.</li>
+        <li>When a form is required to be spread across multiple pages.</li>
+    </ul>
+    <h3>When not to use it?</h3>
+    <ul>
+        <li>When there are multiple questions on the same page, unless you have user research that says it makes sense to group the questions.</li>
+    </ul>
+    <h3>How it works?</h3>
+    <ul>
+        <li>Always test questions with users through user research</li>
+        <li>Make sure your <a href="https://www.gov.uk/service-manual/design/designing-good-questions">question makes sense</a></li>
+        <li>Sometimes it makes sense to group a few questions on the same page</li>
+        <li>Make sure users know why you're asking the question and only ask users for information you really need</li>
+        <li>Add (optional) to the end of each question that is optional</li>
+    </ul>
+
+
+    <br><br>
+    {# Form Element #}
+    <h2>Form Element</h2>
+    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    {% from "wmnds/patterns/question/form-element/_form-element.njk" import wmndsFormElement %}
+    {% from "wmnds/components/button/_button.njk" import wmnButton %}
+    {{
+        compExample([
+            wmndsFormElement({
+                text: "Question title",
+                button:
+                    wmnButton({
+                        text: "Continue",
+                        type: "Submit",
+                        classNames: "wmnds-col-1"
+                    })
+            })
+        ])
+    }}
+    {# End Form Element #}
+
+
+    <br><br>
+    {# Reference #}
+    <h2>Reference</h2>
+    <p>This pattern shows a question that shows defined steps and uses the backlink and progress indicator component.</p>
+    {% from "wmnds/patterns/question/reference/_reference.njk" import wmndsReference %}
+    {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}
+    {{
+        compExample([
+            wmndsReference({
+                question: "What is your Direct Debit Reference?",
+                text: "<p>This can be found in the email we sent you asking you to reinstate your Direct Debit and begins with a 6.<br><br>If you didn’t receive this email, it is shown next to every payment to WMCA for your Direct Debit on your bank statement.</p>",
+                actualSection: "1",
+                totalSections: "3",
+                sectionName: "About your ticket",
+                fields:
+                    wmndsInput({
+                        label: "Direct Debit Reference",
+                        classNames: "wmnds-col-1-2"
+                    }) ,
+                button:
+                    wmnButton({
+                        text: "Continue",
+                        type: "Submit",
+                        classNames: "wmnds-col-1"
+                    }) 
+            }) 
+        ]) 
+    }}
+    {# End Reference #}
+
+
+    <br><br>
+    {# Summary #}
+    <h2>Summary</h2>
+    <p>This shows the user all of the data they have entered before they submit the form. This stage allows the user to change any details before submitting the form.</p>
+    {% from "wmnds/patterns/question/summary/_summary.njk" import wmndsSummary %}
+    {% from "wmnds/components/table/_table.njk" import wmndsTable %}
+    {% from "wmnds/components/button/_button.njk" import wmnButton %}
+    {{
+        compExample([
+            wmndsSummary({
+                question: "Check your answers before reinstating your Direct Debit",
+                html:
+"<h3>Now send your request</h3>
+<p>By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct.<br>
+<br>You consent to West Midlands Combined Authority possibly changing your Direct Debit date if it usually would occur in the next 10 days.<br>
+<br>You also consent to West Midlands Combined Authority reinstating your Direct Debit instruction.</p>",
+                button:
+                    wmnButton({
+                        classNames: "wmnds-btn--start",
+                        text: "Accept & Send ",
+                        iconRight: "general-chevron-right"
+                    })
+            })
+
+        ])
+    }}
+    {# End Summary #}
+
+
+    <br><br>
+    {# Confirmation Message #}
+    <h2>Confirmation Message</h2>
+    <p>This is a confirmation message to show that the user has successfully submitted the data in the form, along with a reference or any information which the user needs to be made aware of.</p>
+    {% from "wmnds/patterns/question/confirmation-message/_confirmation-message.njk" import wmndsConfirmationMessage %}
+    {{
+        compExample([
+            wmndsConfirmationMessage() | indent(4) | trim
+        ])
+    }}
+    {# End Confirmation Message #}
+
+{% endblock %}

@@ -7,6 +7,12 @@
   font-weight: bold;
   text-transform: uppercase;
 
+  &-star {
+    width: 2rem;
+    height: 2rem;
+    fill: get-color("secondary");
+  }
+
   &--with-icon {
     padding: $size-sm;
   }

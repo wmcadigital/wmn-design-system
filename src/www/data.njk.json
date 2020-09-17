@@ -33,6 +33,9 @@
           "name": "Buttons"
         },
         {
+          "name": "Content card"
+        },
+        {
           "name": "Content Tiles"
         },
         {
@@ -92,10 +95,19 @@
           "name": "Contact Details"
         },
         {
+          "name": "Content cards"
+        },        
+        {
           "name": "Feedback loop"
         },
         {
           "name": "Header and footer"
+        },
+        {
+          "name": "Header v2"
+        },
+        {
+          "name": "Question Form"
         }
       ]
     },

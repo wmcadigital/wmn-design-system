@@ -38,6 +38,21 @@
   }
 }
 
+//Text align
+.wmnds-text-align {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
 // Floats
 .wmnds-float {
   &-left {
@@ -173,5 +188,28 @@ body {
 
   &-transparent {
     @include x-default-border(transparent);
+  }
+}
+
+//Background
+.bg {
+  &-default {
+    background-color: get-color(background);
+  }
+
+  &-white {
+    background-color: $white;
+  }
+
+  &-planned-disruption {
+    background-color: get-color(plannedDisruption);
+  }
+
+  &-disabled-elements {
+    background-color: get-color(disable);
+  }
+
+  &-transparent {
+    background-color: transparent;
   }
 }

@@ -49,12 +49,27 @@
 <hr>
 <br><br>
 {# Table #}
-<h2>Table</h2>
+<h2>Table with Headers</h2>
 {{
   compExample([
     wmndsTable({
       rows: 3,
-      cols: 3
+      cols: 3,
+      caption: "Table Title"
+    })
+  ])
+}}
+{# End Table #}
+
+{# Table #}
+<h2>Table without Headers</h2>
+{{
+  compExample([
+    wmndsTable({
+      rows: 3,
+      cols: 3,
+      caption: "Table Title", 
+      noHeaders: true
     })
   ])
 }}

@@ -1,0 +1,236 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Content cards" %}
+{% set section="Patterns" %}
+{# Imports #}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+<p>These are common applications of the content card component.</p>
+<hr>
+
+<br><br>
+{# Map card #}
+<h2>Map card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A card with an interactive map component.</li>
+</ul>
+
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When there is a user need for an interactive map to display information.</li>
+    <li>When there is an alternative way to view the information on the interactive map.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When it is the sole way of presenting the information, you must provide an alternative.</li>
+    <li>When the map is a screenshot or image. This is called a static map. Do not use static maps on West Midlands Network products.</li>
+    <li>When there is no user need for a map, use text description instead.</li>
+</ul>
+
+{# Map example #}
+{% from "wmnds/patterns/content-cards/map/_map.njk" import wmndsContentCardMap %}
+
+{{
+    compExample([
+        wmndsContentCardMap()
+    ])
+}}
+
+<br><br>
+{# Travel update card #}
+<h2>Travel update card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A card with disruption indicator components in, which show the live status of a bus, train or tram route and roads.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When the live status of a mode of transport is useful to the content. For example, showing the live status of train lines next to content about trains.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When the live status is irrelevant to the content. Users can find this information on the homepage.</li>
+</ul>
+
+{# Set up travel updates #}
+{% from "wmnds/patterns/content-cards/travel-updates/_travel-updates.njk" import wmndsContentCardTravelUpdates %}
+
+{{
+    compExample([
+        wmndsContentCardTravelUpdates()
+    ])
+}}
+
+<br><br>
+{# Button card #}
+<h2>Button card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A card with several buttons in.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>To direct users to different content relevant to their needs.</li>
+    <li>At the end of the main page content. We found that users preferred to split lots of content into smaller, specific pages and that this was the best way to continue the journey after reading the main overview content.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>To attract the user's attention if there is no benefit to them reading the content.</li>
+    <li>To list links within a section or related content. Use the in-line navigation card instead.</li>
+</ul>
+
+{# Set up buttons #}
+{% from "wmnds/patterns/content-cards/buttons/_buttons.njk" import wmndsContentCardButtons %}
+
+{{
+    compExample([
+        wmndsContentCardButtons()
+    ])
+}}
+
+<br><br>
+{# Image card #}
+<h2>Image card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A card with an image in.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>To display an image within a tile.</li>
+    <li>When the image complements the text.</li>
+</ul>
+{# When to to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When the image has text in. This distracts the user and usually fails accessibility criteria.</li>
+    <li>When the image is a cartoon or illustration. These are called vector images. Vector images display as poor quality for many users.</li>
+</ul>
+
+{# Set up image #}
+{% from "wmnds/patterns/content-cards/image/_image.njk" import wmndsContentCardImage %}
+
+{{
+    compExample([
+        wmndsContentCardImage()
+    ])
+}}
+
+<br><br>
+{# In-line navigation card #}
+<h2>In-line navigation card</h2>
+{# What #}
+<h3>What is it?</h3>
+<ul>
+    <li>A card with in-text links for navigation of sections and displaying related content.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>To help the user navigate a collection of pages. This is called a section.</li>
+    <li>To show related content which meets user needs.</li>
+    <li>To help the user navigate a long page using in-text anchors.</li>
+    <li>Only use this pattern in a sidebar.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When the page links you are listing to form part of a journey or process. The journey should be linear.</li>
+    <li>When you are trying to attract the user's attention. This is called a call-to-action.</li>
+</ul>
+{# How to #}
+<h3>How to use it</h3>
+<ul>
+    <li>The group of links must have a title to help users understand what the links are for. For example, 'Related content', 'On this page' or the section name.</li>
+    <li>If the card is used to navigate a long page of content, it should be displayed on the left-hand side.</li>
+    <li>If the card is used to navigate a set of pages, like a section or related content, it should be displayed on the right-hand side.</li>
+    <li>The current page or section being viewed must be inset.</li>
+</ul>
+
+{# Set up inline navigation #}
+{% from "wmnds/patterns/content-cards/inline-navigation/_inline-navigation.njk" import wmndsContentCardInlineNavigation %}
+
+{{
+    compExample([
+        wmndsContentCardInlineNavigation()
+    ])
+}}
+
+{# With current page #}
+<h3>In-line navigation with current page</h3>
+
+{{
+    compExample([
+        wmndsContentCardInlineNavigation({
+            withCurrentPage: true
+        })
+    ])
+}}
+
+<br><br>
+{# Email sign up card #}
+<h2>Email sign up card</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>Allows the user to sign up for updates when information changes on a page.</li>
+    <li>Sends personalised updates to users based on their location.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>Use these content tiles on pages where users can sign-up for newsletter updates.</li>
+    <li>For a standard newsletter sign up, use the content tile where the text fields expand.</li>
+    <li>If you want to capture additional user data, then use the content block which links to an external form, e.g. Campaign Monitor.</li>
+</ul>
+<p>When adding a sign up form from Campaign Monitor, you are provided with HTML markup, but make sure not to change any of the generated attributes except for classes.</p>
+<p>They have been changed in the following examples to avoid accessibility errors.</p>
+<hr>
+
+{# Set up email sign up #}
+{% from "wmnds/patterns/content-cards/email-sign-up/_email-sign-up.njk" import wmndsContentCardEmailSignUp %}
+
+{# Collapsed #}
+<h3>Collapsed</h3>
+<p>This is the default state for the email sign up card.</p>
+
+{{
+    compExample([
+        wmndsContentCardEmailSignUp({ exampleSuffix: "example-1"})
+    ])
+}}
+
+{# Expanded #}
+<h3>Expanded</h3>
+<p>The collapsed card will expand when the 'continue' button is pressed/tapped.</p>
+
+{{
+    compExample([
+        wmndsContentCardEmailSignUp({ expanded: true, exampleSuffix: "example-2" })
+    ])
+}}
+
+{# External link #}
+<h3>External link</h3>
+<p>Use this content card when you want to send users to an external Campaign Monitor form if you want to capture more user data such as demographics, travel habits etc.</p>
+
+{{
+    compExample([
+        wmndsContentCardEmailSignUp({ externalLink: true, exampleSuffix: "example-3" })
+    ])
+}}
+{% endblock %}

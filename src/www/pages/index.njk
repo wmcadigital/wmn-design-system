@@ -4,6 +4,8 @@
 {# Imports #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+
 
 
 {% block content %}
@@ -120,6 +122,16 @@
 <br>
 {# Quick start #}
 <h2>Quick start</h2>
+<div class="wmnds-col-auto">
+
+{{
+  wmndsWarningText({
+    text: 'Sign up to <a href="https://confirmsubscription.com/h/d/2B27979182BA9145" class="wmnds-link" target="_blank" rel="noopener noreferrer">updates about changes to the Design System</a> so you can maintain your services.',
+    icon: "general-warning-circle"
+  })
+}}
+</div>
+
 
 <h3>Web projects</h3>
 <p class="wmnds-col-md-3-4">

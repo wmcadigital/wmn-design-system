@@ -16,17 +16,17 @@
 
 <button class="wmnds-btn{{ classNames }}" {% if params.disabled %}disabled="disabled"{% endif %}>
     {#- iconLeft -#}
-    {% if iconLeft %}
+    {%- if iconLeft %}
     {{
       wmndsIcon({
         icon: iconLeft,
         class: 'wmnds-btn__icon'
       }) | indent | trim
     }}
-    {{ text -}}
+    {{text}}
 
     {#- iconRight -#}
-    {% elseif iconRight -%}
+    {%- elseif iconRight %}
     {{ text }}
     {{
       wmndsIcon({
@@ -35,22 +35,19 @@
       }) | indent | trim
     }}
 
-    {%- elseif params.loading %}
-    {{ text }}
     {#- Loading spinner -#}
+    {%- elseif params.loading %}
+    {{ text -}}
     {{
       wmndsLoader({
         customClass: 'wmnds-btn__icon wmnds-btn__icon--right',
         size: 'btn'
-      }) | indent(2) | trim
+      }) | indent | trim
     }}
 
-
-
     {#- noIcon -#}
-    {% else -%}
-    {{text}}
-    {%- endif %}
+    {%- else %}
+    {{ text -}}
+    {% endif %}
 </button>
-
 {% endmacro %}

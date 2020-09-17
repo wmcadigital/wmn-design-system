@@ -1,0 +1,561 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle="Header V2" %}
+{% set section="Patterns" %}
+{# Imports #}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
+{% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+
+{% block content %}
+{# About #}
+<h2>About</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>The primary way of navigating the website</li>
+  <li>Standardised pattern</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+  <li>Every page must have a header and a footer</li>
+</ul>
+<hr>
+<br><br>
+
+
+
+{# Header #}
+<h2>Header</h2>
+{# Skip Link #}
+<h3>Skip link</h3>
+<p>There is a hidden skip link for users with screen reader assistive technology. This allows users to quickly access the main content. All pages must include this.</p>
+<p>Ensure there is a HTML element on the page with the ID of <code class="wmnds-website-inline-code">wmnds-main-content</code> so the user can skip to this section.</p>
+{# Logo #}
+<h3>Logo</h3>
+<p>This must always be the West Midlands Network logo.</p>
+{# Phase indicator #}
+<h3>Phase indicator</h3>
+<p>This component must be used if the service is not live, using the phase indicator guidance.</p>
+{# Navigation #}
+<h3>Navigation</h3>
+<p>The three top-level navigation items were decided by identifying our user’s top tasks using Gerry McGovern’s methodology. We overlaid a heatmap of the home page, where we found the same three areas were the most-used areas.</p>
+<p>The top-level items open a structured megamenu to avoid cognitive overload. Users are familiar with this pattern from online shopping and transport operators.</p>
+<p>We only use three top-level items as we prefer not to use hamburger menus on mobile. Users are required to make an extra click to reveal the navigation, therefore you cannot glance at navigation options.</p>
+{# Mobile apps #}
+<h3>Mobile apps</h3>
+<p>When designing an app, you should use a tab bar and avoid using hamburger items wherever possible. Limit the tabs to the most important tasks using user research.</p>
+{# Search #}
+<h3>Search</h3>
+<p>This functionality only shows for desktop and tablet users. When clicked, search expands and takes over the whole page.</p>
+
+{{
+  compExample([
+    wmndsHeaderV2({
+      id: "mega-menu-example-full",
+      navItems: [{
+        name: "Styles"
+      },{
+        name: "Components"
+      },{
+        name: "Patterns"
+      },{
+        name: "User research"
+      }],
+      banner: true,
+      breadcrumbs: {
+        section: section,
+        pageTitle: pageTitle
+      },
+      exampleAria: "Full header"
+    })
+  ])
+}}
+
+{# With mega menu #}
+<h3>With a mega menu</h3>
+<h4>Recommended javascript</h4>
+<div class="wmnds-website-code-example">
+<pre>
+  <code class="html" tabindex="0">
+  {%- filter forceescape -%}
+  <script>
+    const header = () => {
+      // get mega menu elements
+      const megaMenus = document.querySelectorAll('.wmnds-mega-menu');
+
+      const mobileMenu = window.matchMedia('(max-width: 1280px)');
+
+      megaMenus.forEach(menu => {
+        // mobile nav function
+        function handleMobileMenu(mq) {
+          if (mq.matches) {
+            const mobileToggle = menu.querySelector('.wmnds-mega-menu__mobile-toggle');
+            const headerEl = menu.parentNode.parentNode;
+
+            const topLevelMenuBtn = menu.querySelectorAll('.wmnds-mega-menu__link-arrow-icon-btn');
+            const mobileMenuIsOpen = { menu: false, primary: false };
+
+            // handle mobile menu toggle
+            mobileToggle.addEventListener('click', () => {
+              mobileMenuIsOpen.menu = !mobileMenuIsOpen.menu;
+              if (mobileMenuIsOpen.menu) {
+                headerEl.classList.add('wmnds-header--mega-menu-open');
+                document.querySelector('html').classList.add('mobile-menu-open');
+              } else {
+                headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
+                document.querySelector('html').classList.remove('mobile-menu-open');
+              }
+            });
+
+            // handle sub menu open/close
+            topLevelMenuBtn.forEach(menuBtn => {
+              menuBtn.addEventListener('click', () => {
+                mobileMenuIsOpen.primary = !mobileMenuIsOpen.primary;
+                const targetListItem = menuBtn.parentNode;
+                if (mobileMenuIsOpen.primary) {
+                  targetListItem.classList.add('open');
+                  targetListItem.querySelector('.wmnds-mega-menu__sub-menu-link').focus();
+                  headerEl.classList.add('wmnds-header--mega-menu-submenu-open');
+                } else {
+                  targetListItem.classList.remove('open');
+                  headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
+                }
+              });
+            });
+
+            // mobile collapse for third level menus
+            const collapseMenus = menu.querySelectorAll(
+              '.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle'
+            );
+            collapseMenus.forEach(collapseToggle => {
+              collapseToggle.addEventListener('click', () => {
+                const panel = collapseToggle.nextElementSibling;
+                collapseToggle.classList.toggle('open');
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = `${panel.scrollHeight}px`;
+                }
+              });
+            });
+          }
+        }
+        // end mobile nav function
+
+        // init mobile nav function
+        handleMobileMenu(mobileMenu);
+        mobileMenu.addListener(handleMobileMenu);
+
+        const topLevelLinks = menu.querySelectorAll('.wmnds-mega-menu__primary-menu-link');
+
+        // check if level 3 menu is present, if so add modifier class
+        const hasSubmenuChildren = menu.querySelectorAll('.wmnds-mega-menu__sub-menu-child-menu').length !== 0;
+        if (hasSubmenuChildren) {
+          menu.querySelectorAll('.wmnds-mega-menu__sub-menu').forEach(subMenu => {
+            subMenu.classList.add('wmnds-mega-menu__sub-menu--has-child-menus');
+          });
+        }
+
+        // handle events within each top level list item
+        topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
+          let mousedown = false;
+          // return list item parent of the current link if it exists else return the link
+          const getListItem = () => (topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink);
+          const topLevelListItem = getListItem();
+          const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
+
+          // if link is focused via click
+          const handleMouseup = () => {
+            mousedown = false;
+            document.removeEventListener('mouseup', handleMouseup);
+          };
+
+          const handleMousedown = () => {
+            mousedown = true;
+            document.addEventListener('mouseup', handleMouseup);
+          };
+
+          // if link is focused via keyboard
+          const handleKeyFocus = () => {
+            topLevelLink.focus();
+            if (!mousedown) {
+              // add keyFocus class for when top level link is focused but megamenu is not active
+              menu.classList.add('keyFocus');
+              topLevelListItem.classList.add('keyFocus');
+            }
+          };
+
+          // remove keyFocus and active classes on blur
+          const handleBlur = () => {
+            menu.classList.remove('keyFocus');
+            topLevelListItem.classList.remove('keyFocus');
+            menu.classList.remove('active');
+            topLevelListItem.classList.remove('active');
+          };
+
+          // handle setting the active class on menu and list items
+          const setMenuActive = active => {
+            if (active !== false) {
+              menu.classList.remove('keyFocus');
+              topLevelListItem.classList.remove('keyFocus');
+              menu.classList.add('active');
+              topLevelListItem.classList.add('active');
+            } else {
+              menu.classList.remove('active');
+              topLevelListItem.classList.remove('active');
+              handleKeyFocus();
+            }
+          };
+
+          // returns a specified menu link from a specified array
+          // currentIndex = index of the link that is currently focused
+          // array = array to move through
+          // direction = next, prev,
+          const getMenuLink = (currentIndex, array, direction) => {
+            let menuLink = null;
+            if (array) {
+              if (direction === 'prev') {
+                // return previous link in specified array if there is one else return null;
+                menuLink = array[currentIndex - 1] ? array[currentIndex - 1] : null;
+              } else if (direction === 'next') {
+                // return next link in specified array if there is one else return null;
+                menuLink = array[currentIndex + 1] ? array[currentIndex + 1] : null;
+              } else {
+                // return link with same index in specified array;
+                menuLink = array[currentIndex] ? array[currentIndex] : array[array.length - 1];
+              }
+            }
+            return menuLink;
+          };
+
+          const handleKeydown = (e, key) => {
+            e.stopPropagation();
+            // if key pressed is enter, space bar or down arrow
+            if (key === 13 || key === 32 || key === 40) {
+              // check if list item has a mega menu
+              function openSubMenu() {
+                if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
+                  e.preventDefault();
+                  // remove keyFocus to allow menu to show
+                  setMenuActive(true);
+                  // focus first menu item
+                  subMenuLinks[0].focus();
+                }
+              }
+              // enter
+              // check if link exists
+              if (key === 13) {
+                if (!topLevelLink.tagName === 'a' || !topLevelLink.getAttribute('href')) {
+                  openSubMenu();
+                }
+              } else {
+                openSubMenu();
+              }
+            } else if (key === 37) {
+              // left arrow
+              const prevLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'prev');
+              if (prevLink) prevLink.focus();
+            } else if (key === 39) {
+              // right arrow
+              const nextLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'next');
+              if (nextLink) nextLink.focus();
+            } else if (key === 27) {
+              // if escape pressed
+              setMenuActive(false);
+            }
+          };
+
+          // if top level link doesn't have a mega-menu child add class to hide overlay when hovered
+          const topLevelWithoutMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length === 0;
+          if (topLevelWithoutMenu) {
+            topLevelLink.addEventListener('mouseover', () => {
+              menu.classList.add('no-overlay');
+            });
+            topLevelLink.addEventListener('mouseleave', () => {
+              menu.classList.remove('no-overlay');
+            });
+          }
+
+          // top lvl link event listeners
+          topLevelLink.addEventListener('mousedown', e => {
+            e.preventDefault();
+            setMenuActive(false);
+          });
+          topLevelLink.addEventListener('focus', handleKeyFocus);
+
+          // top level li event listeners
+          topLevelListItem.addEventListener('mousedown', handleMousedown);
+          topLevelListItem.addEventListener('blur', handleBlur);
+          topLevelListItem.addEventListener('keydown', e => {
+            handleKeydown(e, e.keyCode);
+          });
+
+          // array of mega menu links by column
+          const menuArray = [];
+          subMenuLinks.forEach((menuLink, menuIndex) => {
+            const thisList = menuLink.parentNode;
+            const thisListLinks = thisList.querySelectorAll('a');
+            // push list of links to array
+            menuArray.push(thisListLinks);
+
+            thisListLinks.forEach((link, linkIndex) => {
+              link.addEventListener('keydown', e => {
+                if (e.keyCode !== 27) {
+                  e.stopPropagation();
+                  if (e.keyCode === 39) {
+                    // right arrow - go to link of same index in next menu list
+                    e.preventDefault();
+                    const nextMenuLink = getMenuLink(linkIndex, menuArray[menuIndex + 1]);
+                    if (nextMenuLink) nextMenuLink.focus();
+                  } else if (e.keyCode === 37) {
+                    // left arrow - go to link of same index in previous menu list
+                    e.preventDefault();
+                    const prevMenuLink = getMenuLink(linkIndex, menuArray[menuIndex - 1]);
+                    if (prevMenuLink) prevMenuLink.focus();
+                  } else if (e.keyCode === 40) {
+                    // down arrow - go to next link in current menu list
+                    e.preventDefault();
+                    // if next link doesnt exist try next menu first item else return null
+                    const nextLink = getMenuLink(linkIndex, thisListLinks, 'next')
+                      ? getMenuLink(linkIndex, thisListLinks, 'next')
+                      : getMenuLink(-1, menuArray[menuIndex + 1], 'next');
+                    if (nextLink) {
+                      nextLink.focus();
+                    } else {
+                      setMenuActive(false);
+                      if (getMenuLink(topLevelLinkIndex, topLevelLinks, 'next')) {
+                        getMenuLink(topLevelLinkIndex, topLevelLinks, 'next').focus();
+                      }
+                    }
+                  } else if (e.keyCode === 38) {
+                    // up arrow - go to previous item in current menu list
+                    e.preventDefault();
+                    const prevMenu = menuArray[menuIndex - 1];
+                    let prevLink = null;
+                    if (prevMenu || linkIndex > 0) {
+                      prevLink = getMenuLink(linkIndex, thisListLinks, 'prev')
+                        ? getMenuLink(linkIndex, thisListLinks, 'prev')
+                        : getMenuLink(prevMenu.length, prevMenu, 'prev');
+                    }
+                    if (prevLink) {
+                      prevLink.focus();
+                    } else {
+                      setMenuActive(false);
+                    }
+                  }
+                }
+              });
+            });
+          });
+        });
+      });
+    };
+
+    export default header;
+
+  </script>
+  {%- endfilter %}
+  </code>
+</pre>
+</div>
+
+{{
+  compExample([
+    wmndsHeaderV2({
+      id: "mega-menu-example",
+      navItems: [{
+        name: "Plan a journey",
+        subnavItems: [{
+          name: "Plan your journey",
+          icon: "general-route",
+          subnavItems: [{
+            name: "Journey planner"
+          },
+          {
+            name: "Find a timetable"
+          },
+          {
+            name: "Live and planned disruptions"
+          },
+          {
+            name: "Major roadworks and events"
+          }]
+        },
+        {
+          name: "Ways to travel",
+          icon: "general-location-arrow",
+          subnavItems: [{
+            name: "Walking"
+          },
+          {
+            name: "Cycling"
+          },
+          {
+            name: "Buses"
+          },
+          {
+            name: "Trains"
+          },
+          {
+            name: "Trams"
+          },
+          {
+            name: "Park and ride"
+          },
+          {
+            name: "Driving"
+          }]
+        },
+        {
+          name: "Travel information",
+          icon: "general-info",
+          subnavItems: [{
+            name: "How to travel with accessibility needs"
+          },
+          {
+            name: "How to travel safely"
+          },
+          {
+            name: "How to get to hospital"
+          }]
+        },
+        {
+          name: "Discover our region",
+          icon: "general-star",
+          subnavItems: [{
+            name: "Places and attractions to visit"
+          },
+          {
+            name: "Find discount vouchers"
+          }]
+        }]
+      }, {
+        name: "Swift and tickets",
+        subnavItems: [{
+          name: "Find a ticket",
+          icon: "general-search",
+          subnavItems: [{
+            name: "Ticket finder"
+          },
+          {
+            name: "Types of ticket"
+          }]
+        },
+        {
+          name: "Discounts and free travel passes",
+          icon: "general-wallet",
+          subnavItems: [{
+            name: "Under 18s"
+          },
+          {
+            name: "Students"
+          },
+          {
+            name: "Families and groups"
+          },
+          {
+            name: "Finding or starting a new job"
+          },
+          {
+            name: "Disabled person's pass"
+          },
+          {
+            name: "Older person's pass"
+          },
+          {
+            name: "WASPI women's pass"
+          }]
+        },{
+          name: "Manage your Swift card",
+          icon: "swift-bird-icon",
+          subnavItems: [{
+            name: "How to use your Swift card"
+          },
+          {
+            name: "Update your personal details"
+          },
+          {
+            name: "Top up your Swift card"
+          },
+          {
+            name: "View your payment history"
+          },
+          {
+            name: "View your travel history"
+          },
+          {
+            name: "Replace your lost Swift card"
+          }]
+        },{
+          name: "Manage your ticket",
+          icon: "general-ticket",
+          subnavItems: [
+          {
+            name: "Update your Direct Debit"
+          },
+          {
+            name: "Get a refund"
+          },
+          {
+            name: "Make a payment"
+          },
+          {
+            name: "Replace your lost ticket or pass"
+          }
+          ]
+        }]
+      },{
+        name: "Get help",
+        subnavItems: [{
+          name: "Contact an operator"
+        },
+        {
+          name: "Find a travel centre"
+        },
+        {
+          name: "Find lost property"
+        },
+        {
+          name: "Give feedback"
+        },
+        {
+          name: "Contact us"
+        },
+        {
+          name: "Report anti-social behaviour"
+        },
+        {
+          name: "Request a new bus shelter or stop pole"
+        },
+        {
+          name: "Report a problem with a shelter or stop"
+        }]
+      }],
+      megaMenu: true,
+      megaMenuDemo: true
+    })
+  ])
+}}
+
+{# With title variant #}
+<h3 id="title-header">With a title variant of header</h3>
+<p>When developing a service you may not need the navigation of the main website. When this is the case, you can place the title of the service in the header (providing their is no other h1 element on the page).</p>
+
+<p>To use the title variant:</p>
+<ul>
+  <li>Add the h1 element and ensure it has the classes <code class="wmnds-website-inline-code">.wmnds-header__title .wmnds-col-1 .wmnds-col-sm-auto</code> on the element</li>
+</ul>
+
+
+{{
+  compExample([
+    wmndsHeaderV2({
+      withTitle: true,
+      legacyMenu: true
+    })
+  ])
+}}
+
+{% endblock %}

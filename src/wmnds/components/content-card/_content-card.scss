@@ -1,0 +1,50 @@
+.wmnds-content-card {
+  height: 100%;
+  border-bottom: 5px solid get-color(primary);
+  background-color: $white;
+
+  @at-root a#{&} {
+    display: block;
+    color: get-color(text);
+    text-decoration: none;
+  }
+
+  // Modifiers
+  &--yellow {
+    background-color: get-color(plannedDisruption);
+  }
+
+  // Elements
+  &__title {
+    margin-bottom: $size-sm;
+  }
+
+  &__list {
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      margin: $size-sm 0 0;
+
+      &-btn {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__form {
+    &-collapse {
+      display: none;
+    }
+
+    &.wmnds-is--open &-collapse {
+      display: block;
+    }
+  }
+}
