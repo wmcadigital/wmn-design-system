@@ -2,6 +2,7 @@ import * as Sentry from '@sentry/browser';
 import forEachPolyfill from './assets/vendor/js/polyfills/ie11-forEach';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
 import highlightJS from './_partials/component-example/_component-example';
+import cookies from '../wmnds/patterns/cookies/cookies';
 import headerJs from '../wmnds/patterns/header-v2/_header-v2';
 import accordionsJS from '../wmnds/components/accordion/_accordion';
 
@@ -22,5 +23,5 @@ const icons = () => {
 
 window.addEventListener(
   'DOMContentLoaded',
-  (forEachPolyfill, icons(), colorPalettes(), headerJs(), accordionsJS(), highlightJS)
+  (forEachPolyfill, icons(), colorPalettes(), headerJs(), accordionsJS(), cookies(), highlightJS)
 );
