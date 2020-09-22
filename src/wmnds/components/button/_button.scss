@@ -116,6 +116,29 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
         fill: get-color(disable);
       }
     }
+
+    // Dark background variant
+    &.wmnds-btn--dark-bg {
+      border: 0;
+      color: $white;
+      background-color: get-color(primary);
+
+      &:hover {
+        background-color: get-color(primary, 10);
+      }
+
+      &:active,
+      &:target,
+      &:focus {
+        color: get-color(primary);
+        background-color: get-color(plannedDisruption);
+      }
+
+      &.wmnds-is--active {
+        color: $white;
+        background-color: get-color(primary, 30);
+      }
+    }
   }
 
   // button destructive styles

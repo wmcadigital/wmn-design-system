@@ -92,7 +92,6 @@
     })
   ])
 }}
-
 {# end: call to action buttons #}
 <br><br>
 
@@ -166,6 +165,7 @@
   <li>To indicate lower priority than call to action and primary button.</li>
   <li>To create a clear hierarchy of priority and importance of actions.</li>
   <li>When a button is inessential for continuing the user journey.</li>
+  <li>Use the Dark background variant when a Secondary button will be used against a background with a dark colour, such as primary purple.</li>
 </ul>
 {# When not #}
 <h3>When not to use it?</h3>
@@ -202,6 +202,20 @@
       text: "Secondary icon disabled button",
       iconRight: "general-chevron-right",
       disabled: true
+    })
+  ])
+}}
+{# Dark background variant #}
+<h3>Dark background variant</h3>
+{{
+  compExample([
+    secondary({
+      classNames: "wmnds-btn--secondary wmnds-btn--dark-bg",
+      text: "Secondary dark bg button"
+    }),
+    secondary({
+      classNames: "wmnds-btn--secondary wmnds-btn--dark-bg wmnds-is--active",
+      text: "Secondary dark bg active button"
     })
   ])
 }}
