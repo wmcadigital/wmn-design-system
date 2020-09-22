@@ -27,7 +27,7 @@
 <br><br>
 
 
-{# primary buttons #}
+{# Call to action buttons #}
 <h2>Call to action buttons</h2>
 {# What #}
 <h3>What does it do?</h3>
@@ -40,6 +40,7 @@
 <ul>
   <li>When you need a strong visual indicator to help user to complete their journey and do their task.</li>
   <li>When you need action oriented button. Think: 'Done', 'Save', 'Next', 'Submit'.</li>
+  <li>Use the Dark background variant when a Call to action button will be used against a background with a dark colour, such as primary purple.</li>
 </ul>
 {# When not #}
 <h3>When not to use it?</h3>
@@ -77,6 +78,21 @@
     })
   ])
 }}
+{# Dark background variant #}
+<h3>Dark background variant</h3>
+{{
+  compExample([
+    cta({
+      classNames: "wmnds-btn--dark-bg",
+      text: "Call to action dark bg button"
+    }),
+    cta({
+      classNames: "wmnds-btn--dark-bg wmnds-is--active",
+      text: "Call to action dark bg active button"
+    })
+  ])
+}}
+
 {# end: call to action buttons #}
 <br><br>
 
