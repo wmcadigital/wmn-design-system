@@ -7,13 +7,14 @@
   }
 
   &__summary-wrapper {
-    display: block;
+    display: flex;
     width: 100%;
     padding: $size-md;
     border: 0;
     background: none;
     text-align: left;
     cursor: pointer;
+    align-items: center;
     @include type-setting(0);
   }
 
