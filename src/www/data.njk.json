@@ -10,6 +10,9 @@
           "name": "Icons"
         },
         {
+          "name": "Layout"
+        },
+        {
           "name": "Maps"
         },
         {
@@ -93,7 +96,7 @@
         },
         {
           "name": "Content cards"
-        },        
+        },
         {
           "name": "Feedback loop"
         },
