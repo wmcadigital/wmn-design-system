@@ -19,6 +19,22 @@
   &.wmnds-grid--align-center {
     align-items: center;
   }
+
+  &.wmnds-grid--inline-elements {
+    & > *:not(:first-child) {
+      margin-top: $size-sm;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      &.wmnds-grid {
+        flex-flow: row nowrap;
+      }
+      & > *:not(:first-child) {
+        margin-top: 0;
+        margin-left: $size-md;
+      }
+    }
+  }
 }
 
 // Container sizes
@@ -66,7 +82,7 @@
 
 // MARGINS AND PADDINGS
 // Helper mixin used to generate various sizes of margin/padding
-@mixin x-mar-pad($side, $type: "margin") {
+@mixin x-mar-pad($side, $type: 'margin') {
   &-xs {
     #{$type}#{$side}: $size-xs;
   }
@@ -100,43 +116,43 @@ body {
   .wmnds {
     // Generate all margin classes
     &-m {
-      @include x-mar-pad("");
+      @include x-mar-pad('');
 
       &-t {
-        @include x-mar-pad("-top");
+        @include x-mar-pad('-top');
       }
 
       &-r {
-        @include x-mar-pad("-right");
+        @include x-mar-pad('-right');
       }
 
       &-b {
-        @include x-mar-pad("-bottom");
+        @include x-mar-pad('-bottom');
       }
 
       &-l {
-        @include x-mar-pad("-left");
+        @include x-mar-pad('-left');
       }
     }
 
     // Generate all padding classes
     &-p {
-      @include x-mar-pad("", "padding");
+      @include x-mar-pad('', 'padding');
 
       &-t {
-        @include x-mar-pad("-top", "padding");
+        @include x-mar-pad('-top', 'padding');
       }
 
       &-r {
-        @include x-mar-pad("-right", "padding");
+        @include x-mar-pad('-right', 'padding');
       }
 
       &-b {
-        @include x-mar-pad("-bottom", "padding");
+        @include x-mar-pad('-bottom', 'padding');
       }
 
       &-l {
-        @include x-mar-pad("-left", "padding");
+        @include x-mar-pad('-left', 'padding');
       }
     }
   }
