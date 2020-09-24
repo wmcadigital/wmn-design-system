@@ -19,9 +19,12 @@
 
   li {
     display: block;
+    position: relative;
 
     &:before {
       content: counters(item, ".") ".";
+      position: absolute;
+      left: -1.5rem;
       margin-right: $size-xsm;
       counter-increment: item;
     }

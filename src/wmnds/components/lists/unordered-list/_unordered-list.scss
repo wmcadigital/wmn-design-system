@@ -10,9 +10,15 @@
     display: inline;
   }
 
-  li:before {
-    content: "●";
-    padding-right: $size-xsm;
+  li {
+    position: relative;
+
+    &:before {
+      content: "●";
+      position: absolute;
+      left: -1.5rem;
+      padding-right: $size-xsm;
+    }
   }
 
   ul,
