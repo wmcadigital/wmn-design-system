@@ -17,18 +17,17 @@
       content: "●";
       position: absolute;
       left: -1.5rem;
-      padding-right: $size-xsm;
     }
   }
 
   ul,
   ol {
+    margin-top: $size-md;
     list-style: none;
     padding-inline-start: $size-lg;
 
     li:before {
       content: "–";
-      padding-right: $size-xsm;
     }
   }
 }
