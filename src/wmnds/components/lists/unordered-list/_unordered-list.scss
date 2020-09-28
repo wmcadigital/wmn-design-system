@@ -20,7 +20,7 @@
     }
   }
 
-  ul,
+  ul:not([class*="wmnds-"]),
   ol {
     margin-top: $size-md;
     list-style: none;
