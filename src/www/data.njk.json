@@ -10,6 +10,9 @@
           "name": "Icons"
         },
         {
+          "name": "Images"
+        },
+        {
           "name": "Maps"
         },
         {
@@ -96,7 +99,7 @@
         },
         {
           "name": "Content cards"
-        },        
+        },
         {
           "name": "Feedback loop"
         },
