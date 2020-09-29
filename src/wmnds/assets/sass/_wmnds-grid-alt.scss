@@ -1,0 +1,90 @@
+// sass-lint:disable no-debug
+
+// When setting the primary font stack, apply it to the Pure grid units along
+// with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+// specific font stacks to ensure the greatest OS/browser compatibility.
+html,
+button,
+input,
+select,
+textarea,
+.wmnds-grid [class*="wmnds-col"] {
+  font-family: $x-font-family;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wmnds-grid {
+  display: flex;
+  width: 100%;
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+
+  [class*="wmnds-col"] {
+    display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-rendering: auto;
+    vertical-align: top;
+  }
+}
+
+.wmnds-col-auto {
+  width: auto;
+}
+
+.wmnds-col-1 {
+  width: 100%;
+}
+
+// Create grid
+$cols: 1 2 3 4 5 6 12 24;
+$col-list: create-col-list($cols);
+$breakpoint-map: (
+  "sm": 35.5,
+  "md": 48,
+  "lg": 64,
+  "xl": 80
+);
+
+// Standard
+@each $group in $col-list {
+  $selector: "";
+
+  @for $i from 1 through length($group) {
+    $tuple: nth($group, $i);
+    $selector: $selector + ".wmnds-col-#{nth($tuple,1)}-#{nth($tuple,2)}";
+    $selector: if($i == length($group), $selector + "", $selector + ", ");
+  }
+
+  #{$selector} {
+    width: divide-tuple(nth($group, 1)) * 100%;
+  }
+}
+
+// Responsive
+@each $bp-name, $bp-value in $breakpoint-map {
+  @media screen and (min-width: #{$bp-value}em) {
+    @each $group in $col-list {
+      $selector: "";
+
+      @for $i from 1 through length($group) {
+        $tuple: nth($group, $i);
+        $selector: $selector + ".wmnds-col-#{$bp-name}-#{nth($tuple,1)}-#{nth($tuple,2)}";
+        $selector: if($i == length($group), $selector + "", $selector + ", ");
+      }
+
+      #{$selector} {
+        width: divide-tuple(nth($group, 1)) * 100%;
+      }
+    }
+  }
+}

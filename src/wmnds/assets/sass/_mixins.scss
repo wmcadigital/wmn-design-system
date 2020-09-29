@@ -54,3 +54,73 @@
 
   @return mix($shade, $color, $percent);
 }
+
+// Create a list of lists for columns
+//
+@function divide-tuple($fraction-tuple) {
+  @return nth($fraction-tuple, 1) / nth($fraction-tuple, 2);
+}
+
+// Sorting algo
+@function compare($tuple-a, $tuple-b) {
+  @if divide-tuple($tuple-a) != divide-tuple($tuple-b) {
+    @return divide-tuple($tuple-a) < divide-tuple($tuple-b);
+  } @else {
+    @return nth($tuple-a, 2) < nth($tuple-b, 2);
+  }
+}
+
+@function swap($list, $index-a, $index-b) {
+  $temp: nth($list, $index-a);
+  $list: set-nth($list, $index-a, nth($list, $index-b));
+  $list: set-nth($list, $index-b, $temp);
+  @return $list;
+}
+
+@function sort($list) {
+  @for $i from 1 through length($list) {
+    @for $j from $i * -1 through -1 {
+      $j: abs($j);
+      @if $j > 1 and compare(nth($list, $j), nth($list, $j - 1)) {
+        $list: swap($list, $j, $j - 1);
+      }
+    }
+  }
+  @return $list;
+}
+
+@function group-by-decimal($tuple-list) {
+  $result: ();
+  $temp: [];
+
+  @for $i from 1 through length($tuple-list) {
+    @if $i == 1 or divide-tuple(nth($tuple-list, $i)) == divide-tuple(nth($tuple-list, $i - 1)) {
+      $temp: append($temp, nth($tuple-list, $i));
+    } @else if divide-tuple(nth($tuple-list, $i)) != divide-tuple(nth($tuple-list, $i - 1)) {
+      $result: append($result, $temp);
+      $temp: [nth($tuple-list, $i) ];
+    }
+
+    @if $i == length($tuple-list) {
+      $result: append($result, ($temp));
+    }
+  }
+
+  @return $result;
+}
+
+@function create-col-list($number-list) {
+  // Create list of all possible combinations from 1-n of all numbers in number-list
+  $unsorted-tuples: ();
+  @each $number in $number-list {
+    @for $i from 1 through $number {
+      $unsorted-tuples: append($unsorted-tuples, ([$i $number]));
+    }
+  }
+
+  // Sort the l;st by increasing fraction value
+  $sorted-tuples: sort($unsorted-tuples);
+
+  // Combine equal tuples
+  @return group-by-decimal($sorted-tuples);
+}
