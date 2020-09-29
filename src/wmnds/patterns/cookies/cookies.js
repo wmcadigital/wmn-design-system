@@ -1,10 +1,10 @@
 const cookies = () => {
+  const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
+
   const hideCookieBanner = () => {
-    const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
     cookiesBanner.style = 'display:none';
   };
   const showCookieBanner = () => {
-    const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
     cookiesBanner.style = 'display:block';
   };
 
