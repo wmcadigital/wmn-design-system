@@ -5,6 +5,7 @@
 .wmnds-html ol:not([class*="wmnds-"]) {
   position: relative;
   counter-reset: item;
+  padding-inline-start: $size-lg;
 
   a,
   .wmnds-link {

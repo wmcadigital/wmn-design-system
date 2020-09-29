@@ -4,6 +4,7 @@
 .wmnds-unordered-list,
 .wmnds-html ul:not([class*="wmnds-"]) {
   list-style: none;
+  padding-inline-start: $size-lg;
 
   a,
   .wmnds-link {
