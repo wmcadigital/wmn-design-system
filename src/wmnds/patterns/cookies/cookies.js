@@ -3,6 +3,10 @@ const cookies = () => {
     const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
     cookiesBanner.style = 'display:none';
   };
+  const showCookieBanner = () => {
+    const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
+    cookiesBanner.style = 'display:block';
+  };
 
   const setCookie = (cname, cvalue, exdays) => {
     const d = new Date();
@@ -81,12 +85,9 @@ const cookies = () => {
   };
 
   const cookiesScan = () => {
-    // if cookies-preference exist, hide cookie banner
-    if (checkCookie('cookies-preference')) {
-      hideCookieBanner();
-    }
-    // if not, create a default cookie, cookie banner will be show
-    else {
+    // if cookies-preference doesn't exist, show cookie banner
+    if (!checkCookie('cookies-preference')) {
+      showCookieBanner();
       setCookiePolicy(true, false, false);
     }
 
