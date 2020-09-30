@@ -70,3 +70,21 @@ $breakpoint-sm: 568px; // Small screen / phone
 $breakpoint-md: 768px; // Medium screen / tablet
 $breakpoint-lg: 1024px; // Large screen / desktop
 $breakpoint-xl: 1280px; // Extra large screen / wide desktop (this is used for wmnds-container size)
+
+// Grid vars
+$cols: 1 2 3 4 5 6 12 24;
+$grid-breakpoint-map: (
+  "sm": 35.5,
+  "md": 48,
+  "lg": 64,
+  "xl": 80
+);
+$max-cols: 4;
+$spacing-map: (
+  "xs": $size-xs,
+  "xsm": $size-xs,
+  "sm": $size-xs,
+  "md": $size-xs,
+  "lg": $size-xs,
+  "xl": $size-xl
+);
