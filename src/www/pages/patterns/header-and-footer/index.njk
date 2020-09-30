@@ -120,15 +120,83 @@
 }}
 
 <br/><br/>
-{# Footer #}
-<h2>Footer</h2>
-<h3>Email capture form</h3>
-<p>The data is place within the general marketing email contact database on Campaign Monitor.</p>
+
+
+{# Full footer #}
+<h3>Full variant of footer</h3>
+<p>The full variant of the footer may include menus which become collapsible on smaller devices.</p>
+<p>To enable the collapsible sections you can include the javascript below:</p>
+<pre>
+  <code class="js wmnds-show-more-ignore" tabindex="0">
+  {%- filter forceescape -%}
+  <script>
+    const mobileFooter = window.matchMedia('(max-width: 767px)');
+  const collapseMenus = document.querySelectorAll('.wmnds-collapse-heading');
+  const handleMobileFooter = mq => {
+    if (mq.matches) {
+      collapseMenus.forEach(collapseToggle => {
+        let toggleActive = false;
+        const panel = collapseToggle.nextElementSibling;
+        const handleToggle = () => {
+          if (toggleActive) {
+            collapseToggle.setAttribute('aria-expanded', 'true');
+            panel.style.maxHeight = `${panel.scrollHeight}px`;
+          } else {
+            collapseToggle.setAttribute('aria-expanded', 'false');
+            panel.style.maxHeight = null;
+          }
+        };
+        handleToggle();
+        collapseToggle.addEventListener('click', () => {
+          toggleActive = !toggleActive;
+          handleToggle();
+        });
+      });
+    }
+  };
+  // init mobile nav function
+  handleMobileFooter(mobileFooter);
+  mobileFooter.addListener(handleMobileFooter);
+  </script>
+  {%- endfilter %}
+  </code>
+</pre>
 {{
   compExample([
-    wmndsFooter()
+    wmndsFooter({
+      menus: [{
+        name: "Resources & support",
+        menuItems: [{
+          name: "Businesses"
+        },{
+          name: "Education"
+        },{
+          name: "Job centres"
+        },{
+          name: "Young people"
+        }]
+      }, {
+        name: "About us",
+        menuItems: [{
+          name: "About West Midlands Network"
+        }, {
+          name: "WMN Apps"
+        }]
+      }],
+      bottomMenu: [{
+        name: "Accessibility"
+      },
+      {
+        name: "Terms and Conditions"
+      },
+      {
+        name: "Policies"
+      }]
+    })
   ])
 }}
+
+
 {# Mobile app variant #}
 <h3 id="mobile-app-footer">Mobile app variant of Footer</h3>
 <p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network footer.</p>
@@ -158,18 +226,6 @@
   compExample([
     wmndsFooter({
       app: true
-    })
-  ])
-}}
-
-{# Full footer #}
-<h3>Full variant of footer</h3>
-
-{{
-  compExample([
-    wmndsFooter({
-      feedback: true,
-      feedbackId: 'footer-example-fbl'
     })
   ])
 }}
