@@ -1,10 +1,42 @@
-// Create a list of lists for columns
+// FUNCTIONS USED TO CREATE GRID + GRID HELPERS
+
 //
+// HELPER FUNCTIONS
+//
+
+// divie-tuple() notes
+// Takes a list of numbder of length: 2
+// it then divides the first item by the second.
 @function divide-tuple($fraction-tuple) {
   @return nth($fraction-tuple, 1) / nth($fraction-tuple, 2);
 }
 
-// Sorting algo
+// create-selector() notes
+//
+// Takes a prefix e.g. "wmnds-col-" and a list of suffixes
+// It applies each of the suffixes to the prefix and then returns a comma-separated
+// selector for all the suffixes
+@function create-selector($selector-prefix, $col-suffix-list) {
+  $result: "";
+
+  @for $i from 1 through length($col-suffix-list) {
+    $result: $result + $selector-prefix + nth($col-suffix-list, $i);
+    $result: if($i == length($col-suffix-list), $result + "", $result + ", ");
+  }
+
+  @return $result;
+}
+
+//
+// TUPLE SORTING
+//
+
+// compare() notes
+//
+// Takes two tuples (number lists of length 2)
+// returns True if the fraction of B > fraction of tuple B
+// If the fraction is equal it returns True if the denominator
+// of fraction A is smaller than that of fraction B
 @function compare($tuple-a, $tuple-b) {
   @if divide-tuple($tuple-a) != divide-tuple($tuple-b) {
     @return divide-tuple($tuple-a) < divide-tuple($tuple-b);
@@ -13,6 +45,10 @@
   }
 }
 
+// swap() notes
+//
+// Takes a list and two indexes
+// Returns a list with the two values at the indexes switched
 @function swap($list, $index-a, $index-b) {
   $temp: nth($list, $index-a);
   $list: set-nth($list, $index-a, nth($list, $index-b));
@@ -20,7 +56,12 @@
   @return $list;
 }
 
-@function sort($list) {
+// sort-by-tuple-fraction()
+//
+// Takes a list of tuples (list of numbers of length 2) and
+// sorts from the smallest tuple fraction to the greatest tuple fraction.
+// return the sorted list
+@function sort-by-fraction($list) {
   @for $i from 1 through length($list) {
     @for $j from $i * -1 through -1 {
       $j: abs($j);
@@ -32,7 +73,31 @@
   @return $list;
 }
 
-@function group-by-decimal($tuple-list) {
+//
+// TUPLE MANIPULATION
+//
+
+// create-all-tuples()
+//
+// Takes a list of numbers and creates a list of all possible
+// tuples (list of numbers of length 2) from 1 to each number of the list
+@function create-all-tuples($number-list) {
+  $result: ();
+  @each $number in $number-list {
+    @for $i from 1 through $number {
+      $result: append($result, ([$i $number]));
+    }
+  }
+
+  @return $result;
+}
+
+// group-by-fraction() notes
+//
+// takes a list of tuples (list of numbers of length 2) and creates
+// sublists by tuples with equal fractions
+// returns a list of sublists of grouped tuples
+@function group-by-fraction($tuple-list) {
   $result: ();
   $temp: [];
 
@@ -52,7 +117,12 @@
   @return $result;
 }
 
-@function map-cols($tuple-list) {
+// map-to-suffix-width() notes
+//
+// Takes a list of sublists of tuples (list of numbers of length 2)
+// and maps each sublist to a sass map with css width and a list of suffixes
+// returns a list of maps
+@function map-to-suffix-width($tuple-list) {
   $result: ();
   @each $group in $tuple-list {
     $width: divide-tuple(nth($group, 1)) * 100%;
@@ -62,7 +132,8 @@
       $suffixes: append($suffixes, "#{nth($tuple, 1)}-#{nth($tuple, 2)}");
     }
 
-    // Add extra "1" suffix
+    // Add extra "1" suffix, for wmnds-col-1
+    // sass-lint:disable-block space-around-operator
     @if $width == 100% {
       $suffixes: append($suffixes, "1");
     }
@@ -76,7 +147,7 @@
     );
   }
 
-  // Add auto suffix & width
+  // Add auto suffix & width for wmnds-col-auto
   $result: append(
     $result,
     (
@@ -88,34 +159,22 @@
   @return $result;
 }
 
+// create-col-list()
+//
+// Takes a list of numbers
+// returns a list of maps of all possible fractions as strings e.g 1-2
+// with their respective css widths grouped by width
 @function create-col-list($number-list) {
-  // Create list of all possible combinations from 1-n of all numbers in number-list
-  $unsorted-tuples: ();
-  @each $number in $number-list {
-    @for $i from 1 through $number {
-      $unsorted-tuples: append($unsorted-tuples, ([$i $number]));
-    }
-  }
+  // Create list of all possible combinations from 1-n of all numbers in $number-list
+  $unsorted-tuples: create-all-tuples($number-list);
 
   // Sort the l;st by increasing fraction value
-  $sorted-tuples: sort($unsorted-tuples);
+  $sorted-tuples: sort-by-fraction($unsorted-tuples);
 
-  // Combine equal tuples
-  $grouped-tuples: group-by-decimal($sorted-tuples);
+  // Group equal tuples
+  $grouped-tuples: group-by-fraction($sorted-tuples);
 
   // Create map with
-  $cols-map: map-cols($grouped-tuples);
-
-  @return $cols-map;
-}
-
-@function create-selector($col-suffix-list, $selector-prefix) {
-  $result: "";
-
-  @for $i from 1 through length($col-suffix-list) {
-    $result: $result + $selector-prefix + nth($col-suffix-list, $i);
-    $result: if($i == length($col-suffix-list), $result + "", $result + ", ");
-  }
-
-  @return $result;
+  $suffix-width-maps: map-to-suffix-width($grouped-tuples);
+  @return $suffix-width-maps;
 }
