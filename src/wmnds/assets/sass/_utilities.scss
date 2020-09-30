@@ -25,38 +25,6 @@
   }
 }
 
-// Column spacing
-.wmnds-grid-row {
-  display: flex;
-  flex-flow: row nowrap;
-
-  &--spacing {
-    @at-root [class*="wmnds-grid--spacing"] {
-      width: auto;
-      flex-flow: column nowrap;
-
-      @media screen and (min-width: $breakpoint-sm) {
-        flex-flow: row nowrap;
-      }
-    }
-
-    // Size
-    &-xs {
-      > [class*="wmnds-col"]:not(:first-child) {
-        margin-left: $size-xs;
-      }
-    }
-
-    &-xsm {
-      > [class*="wmnds-col"]:not(:first-child) {
-        margin-left: $size-xsm;
-      }
-
-      // Responsive
-    }
-  }
-}
-
 // Container sizes
 .wmnds-container {
   display: block;
