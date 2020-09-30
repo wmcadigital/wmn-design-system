@@ -5,34 +5,77 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
 
-<div class="wmnds-fe-group">
+{% set hasQuestion = false if params.question === "" else true %}
+{% set question = params.question if params.question %}
+{% set hasDesc = false if params.question === "" else true %}
+{% set desc = params.desc if params.desc else "Select all options that apply" %}
+{% set options = params.options if params.options %}
+{% set groupClass = params.groupClass if params.groupClass %}
+
+
+<div class="wmnds-fe-group {{groupClass}}">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
-      {{ wmndsQuestion() | indent(6) | trim }}
+    {%- if hasQuestion %}
+    {{ 
+      wmndsQuestion({
+        text: question
+      }) | indent(6) | trim 
+    }}
+    {% endif -%}
     </legend>
     <div class="wmnds-fe-checkboxes">
       <span class="wmnds-fe-checkboxes__desc">
-        Select all options that apply
+      {%- if hasDesc %}
+      {{ desc | safe}}
+      {% endif -%}
       </span>
-      {%- for i in range(1,4) %}
-      {#- Set checked state on first item in loop #}
-      {%- set isChecked = (' checked="checked"' | safe) if i === 1 %}
-      <label class="wmnds-fe-checkboxes__container">
-        Option {{i}}
-        <input class="wmnds-fe-checkboxes__input" value="Option {{i}}"{{isChecked}} type="checkbox"/>
-        <span class="wmnds-fe-checkboxes__checkmark">
-          {# Get SVG icon and pass class #}
-          {{-
-            wmndsIcon({
-              icon: 'general-checkmark',
-              class: 'wmnds-fe-checkboxes__icon'
-            }) | indent(8) | trim
-          }}
-        </span>
-      </label>
-      {%- endfor %}
+      {%- if options %}
+        {%- for option in options %}
+          {%- if option.checked !== null %}
+          {%- set isChecked = (' checked="checked"' | safe) if option.checked === true  else "" %}
+          {%- set isNotEditable = (' disabled="disabled"' | safe) if option.editable === false else "" %}
+          {% endif -%}
+          <label class="wmnds-fe-checkboxes__container">
+            <div class="wmnds-m-b-lg">
+              {%- if option.title %}
+              <h3 class="wmnds-m-none wmnds-p-b-sm">{{option.title}}</h3>
+              {%- endif -%}
+              {%- if option.desc -%}
+              {{ option.desc }}
+              {% endif -%}
+            </div>
+            <input class="wmnds-fe-checkboxes__input" value="{{option.title}}" {{isChecked}} type="checkbox" {{isNotEditable}}/>
+            <span class="wmnds-fe-checkboxes__checkmark">
+              {{
+                wmndsIcon({
+                  icon: 'general-checkmark',
+                  class: 'wmnds-fe-checkboxes__icon'
+                }) | indent(8) | trim
+              }}
+            </span>
+          </label>
+        {%- endfor %}
+      {%- else %} 
+        {%- for i in range(1,4) %}
+        {#- Set checked state on first item in loop #}
+        {%- set isChecked = (' checked="checked"' | safe) if i === 1 %}
+        <label class="wmnds-fe-checkboxes__container">
+          Option {{i}}
+          <input class="wmnds-fe-checkboxes__input" value="Option {{i}}"{{isChecked}} type="checkbox"/>
+          <span class="wmnds-fe-checkboxes__checkmark">
+            {# Get SVG icon and pass class #}
+            {{
+              wmndsIcon({
+                icon: 'general-checkmark',
+                class: 'wmnds-fe-checkboxes__icon'
+              }) | indent(8) | trim
+            }}
+          </span>
+        </label>
+        {%- endfor %}
+      {% endif -%}
     </div>
   </fieldset>
 </div>
-
 {% endmacro %}

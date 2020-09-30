@@ -1,0 +1,59 @@
+{% macro wmndsCookiesManager(params) %}
+
+{# Imports of components #}
+{% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
+{% from "wmnds/components/button/_button.njk" import wmnButton as primary %}
+
+<div class="wmnds-p-md wmnds-cookies-manager">
+  <div class="wmnds-container wmnds-col-1 wmnds-col-sm-1 wmnds-col-lg-3-4">
+    <form class="wmnds-cookies-manager__form" action="#">
+      <h1>Manage Cookies</h1>
+      <p class="wmnds-m-b-md">
+        Check your settings below and select the cookies you’re happy with.
+      </p>
+      <p> 
+        These settings only apply to wmnetwork.co.uk
+      </p>
+      <div class="wmnds-cookies-manager__preferences wmnds-p-b-md wmnds-p-t-md">
+        {{
+          wmndsCheckboxes({
+            groupClass: "wmnds-m-none",
+            question: "",
+            desc: "",
+            options: [
+              {
+                checked: true,
+                editable: false,
+                title: 'Essential cookies',
+                desc: 'Without these cookies our website won’t work properly. They help you to access secure areas like accounts and tools such as the journey planner.'
+              },
+              {
+                checked: false,
+                title: 'Functional cookies',
+                desc: 'These cookies help us to personalise our services to suit your needs, like saving your favourite transport services.'
+              },
+              {
+                checked: false,
+                title: 'Performance cookies',
+                desc: 'These cookies collect information about how you’re using our services, for instance popular pages or errors. We use this information to make decisions when improving our services. We do not use any information collected to identify you as an individual.'
+              }
+            ]
+          }) | trim | indent(4)
+        }}
+      </div>
+      <div>
+      {{
+        primary({
+          classNames: "wmnds-btn wmnds-cookies-manager__save-preferences wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
+          text: "Save Preferences",
+          type: "submit"
+        }) | trim | indent(4)
+      }}
+      </div>
+      <div class="wmnds-m-t-lg">
+        <p>If you change your mind, <a href="">visit our Policies page</a> to change your cookie preferences.</p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endmacro %}
