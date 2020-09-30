@@ -82,9 +82,9 @@ $grid-breakpoint-map: (
 $max-cols: 4;
 $spacing-map: (
   "xs": $size-xs,
-  "xsm": $size-xs,
-  "sm": $size-xs,
-  "md": $size-xs,
-  "lg": $size-xs,
+  "xsm": $size-xsm,
+  "sm": $size-sm,
+  "md": $size-md,
+  "lg": $size-lg,
   "xl": $size-xl
 );
