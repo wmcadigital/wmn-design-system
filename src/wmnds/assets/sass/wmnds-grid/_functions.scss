@@ -4,9 +4,9 @@
 // HELPER FUNCTIONS
 //
 
-// divie-tuple() notes
-// Takes a list of numbder of length: 2
-// it then divides the first item by the second.
+// divide-tuple() notes
+// Takes a tuple (list of numbers of length 2)
+// and then divides the first item by the second.
 @function divide-tuple($fraction-tuple) {
   @return nth($fraction-tuple, 1) / nth($fraction-tuple, 2);
 }
