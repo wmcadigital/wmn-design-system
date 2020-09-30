@@ -24,12 +24,13 @@
       @for $i from 2 through 4 {
         .wmnds-grid--spacing-#{$bp-name}-#{$i}-#{$sp-name} {
           > [class*="wmnds-col"]:nth-child(n) {
-            padding-right: $sp-value;
-            padding-left: $sp-value;
+            padding-right: $sp-value / 2;
+            padding-left: $sp-value / 2;
           }
 
           > [class*="wmnds-col"] {
-            &:nth-child(#{$i}n) {
+            &:nth-child(#{$i}n),
+            &:last-child {
               padding-right: 0;
             }
 
