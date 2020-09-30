@@ -1,4 +1,6 @@
-// Standard grid cols
+// CREATE .wmnds-col-* classes
+
+// Creates standard .wmnds-col classes
 @each $group in $col-list {
   $selector: create-selector(".wmnds-col-", map-get($group, "suffixes"));
   $width: map-get($group, "width");
@@ -8,7 +10,7 @@
   }
 }
 
-// Standard grid cols - responsive
+// Creates wmnds-col-{breakpoint} classes
 @each $bp-name, $bp-value in $grid-breakpoint-map {
   @media screen and (min-width: #{$bp-value}em) {
     // Create the grid classes with the breakpoints

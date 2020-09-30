@@ -1,3 +1,8 @@
+// CREATES .wmnds-grid--spacing classes
+
+// Creates standard .wmnds-grid--spacing-{cols}-{size} classes
+// HOW TO USE
+// .wmnds-grid--spacing-{number-of-cols}-{size-of-space}
 @each $sp-name, $sp-value in $spacing-map {
   @for $i from 2 through 4 {
     .wmnds-grid--spacing-#{$i}-#{$sp-name} {
@@ -17,7 +22,9 @@
   }
 }
 
-// Responsive
+// Creates responsive .wmnds-grid--spacing-{breakpoint}-{cols}-{size} classes
+// HOW TO USE
+// .wmnds-grid--spacing-{breakpoint}-{number-of-cols}-{size-of-space}
 @each $bp-name, $bp-value in $grid-breakpoint-map {
   @media screen and (min-width: #{$bp-value}em) {
     @each $sp-name, $sp-value in $spacing-map {
