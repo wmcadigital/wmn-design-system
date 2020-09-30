@@ -41,11 +41,7 @@ textarea,
   width: auto;
 }
 
-.wmnds-col-1 {
-  width: 100%;
-}
-
-// Create grid
+// Create grid cols
 $cols: 1 2 3 4 5 6 12 24;
 $col-list: create-col-list($cols);
 $breakpoint-map: (
@@ -55,35 +51,86 @@ $breakpoint-map: (
   "xl": 80
 );
 
+// @debug $col-list;
+
 // Standard
 @each $group in $col-list {
-  $selector: "";
-
-  @for $i from 1 through length($group) {
-    $tuple: nth($group, $i);
-    $selector: $selector + ".wmnds-col-#{nth($tuple,1)}-#{nth($tuple,2)}";
-    $selector: if($i == length($group), $selector + "", $selector + ", ");
-  }
+  $selector: create-selector(map-get($group, "suffixes"), ".wmnds-col-");
+  $width: map-get($group, "width");
 
   #{$selector} {
-    width: divide-tuple(nth($group, 1)) * 100%;
+    width: $width;
+  }
+}
+
+// Responsive
+//
+// Loop through grid breakpoints
+@each $bp-name, $bp-value in $breakpoint-map {
+  @media screen and (min-width: #{$bp-value}em) {
+    // Create the grid classes with the breakpoints
+    @each $group in $col-list {
+      $selector: create-selector(map-get($group, "suffixes"), ".wmnds-col-#{$bp-name}-");
+      $width: map-get($group, "width");
+
+      #{$selector} {
+        width: $width;
+      }
+    }
+  }
+}
+
+// Grid spacing
+$max-cols: 4;
+$spacing-map: (
+  "xs": $size-xs,
+  "xsm": $size-xs,
+  "sm": $size-xs,
+  "md": $size-xs,
+  "lg": $size-xs,
+  "xl": $size-xl
+);
+
+@each $sp-name, $sp-value in $spacing-map {
+  @for $i from 2 through 4 {
+    .wmnds-grid--spacing-#{$i}-#{$sp-name} {
+      > [class*="wmnds-col"] {
+        padding-right: $sp-value;
+        padding-left: $sp-value;
+
+        &:nth-child(#{$i}n) {
+          padding-right: 0;
+        }
+
+        &:nth-child(#{$i}n-#{$i - 1}) {
+          padding-left: 0;
+        }
+      }
+    }
   }
 }
 
 // Responsive
 @each $bp-name, $bp-value in $breakpoint-map {
   @media screen and (min-width: #{$bp-value}em) {
-    @each $group in $col-list {
-      $selector: "";
+    @each $sp-name, $sp-value in $spacing-map {
+      @for $i from 2 through 4 {
+        .wmnds-grid--spacing-#{$bp-name}-#{$i}-#{$sp-name} {
+          > [class*="wmnds-col"]:nth-child(n) {
+            padding-right: $sp-value;
+            padding-left: $sp-value;
+          }
 
-      @for $i from 1 through length($group) {
-        $tuple: nth($group, $i);
-        $selector: $selector + ".wmnds-col-#{$bp-name}-#{nth($tuple,1)}-#{nth($tuple,2)}";
-        $selector: if($i == length($group), $selector + "", $selector + ", ");
-      }
+          > [class*="wmnds-col"] {
+            &:nth-child(#{$i}n) {
+              padding-right: 0;
+            }
 
-      #{$selector} {
-        width: divide-tuple(nth($group, 1)) * 100%;
+            &:nth-child(#{$i}n-#{$i - 1}) {
+              padding-left: 0;
+            }
+          }
+        }
       }
     }
   }
