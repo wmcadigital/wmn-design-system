@@ -54,3 +54,18 @@
 
   @return mix($shade, $color, $percent);
 }
+
+// repeater() notes
+//
+// Repeats a string with an optional separator
+@function repeater($item, $count, $separator: "") {
+  @if $count == 0 {
+    @return $item;
+  }
+
+  $string: $item;
+  @for $i from 1 through $count {
+    $string: $string + $separator + $item;
+  }
+  @return "#{$string}";
+}

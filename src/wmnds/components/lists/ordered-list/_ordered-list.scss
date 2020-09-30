@@ -3,8 +3,9 @@
 
 .wmnds-ordered-list,
 .wmnds-html ol:not([class*="wmnds-"]) {
+  position: relative;
   counter-reset: item;
-  padding-inline-start: 0;
+  padding-inline-start: $size-lg;
 
   a,
   .wmnds-link {
@@ -13,17 +14,29 @@
 
   ol,
   ul:not(.wmnds-unordered-list) {
+    position: relative;
+    margin-top: $size-md;
     counter-reset: item;
     padding-inline-start: $size-lg;
   }
 
   li {
     display: block;
+    position: relative;
 
     &:before {
       content: counters(item, ".") ".";
-      margin-right: $size-xsm;
+      position: absolute;
+      left: -1.5rem;
       counter-increment: item;
+    }
+  }
+
+  // Create correct spacing for indent allowing for increase in counter length
+  $selector: "ol:not([class*='wmnds-']) li";
+  @for $i from 0 through 5 {
+    #{repeater($selector, $i, " > ")}:before {
+      left: -#{1.25 + (($i + 1) * 0.8rem)};
     }
   }
 }
