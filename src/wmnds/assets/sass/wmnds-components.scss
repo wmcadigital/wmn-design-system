@@ -9,9 +9,8 @@
 @import "typography";
 @import "general";
 
-// Vendor Styles
-// @import "wmnds-grid";
-@import "wmnds-grid-alt";
+// Grid
+@import "wmnds-grid/wmnds-grid";
 
 // Component Styles
 @import "../../components/components"; // Import all pattern styles

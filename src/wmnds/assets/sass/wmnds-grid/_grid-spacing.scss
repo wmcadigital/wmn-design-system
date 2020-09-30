@@ -1,0 +1,44 @@
+@each $sp-name, $sp-value in $spacing-map {
+  @for $i from 2 through 4 {
+    .wmnds-grid--spacing-#{$i}-#{$sp-name} {
+      > [class*="wmnds-col"] {
+        padding-right: $sp-value;
+        padding-left: $sp-value;
+
+        &:nth-child(#{$i}n) {
+          padding-right: 0;
+        }
+
+        &:nth-child(#{$i}n-#{$i - 1}) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@each $bp-name, $bp-value in $grid-breakpoint-map {
+  @media screen and (min-width: #{$bp-value}em) {
+    @each $sp-name, $sp-value in $spacing-map {
+      @for $i from 2 through 4 {
+        .wmnds-grid--spacing-#{$bp-name}-#{$i}-#{$sp-name} {
+          > [class*="wmnds-col"]:nth-child(n) {
+            padding-right: $sp-value;
+            padding-left: $sp-value;
+          }
+
+          > [class*="wmnds-col"] {
+            &:nth-child(#{$i}n) {
+              padding-right: 0;
+            }
+
+            &:nth-child(#{$i}n-#{$i - 1}) {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
