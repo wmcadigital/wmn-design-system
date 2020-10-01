@@ -1,51 +1,72 @@
 // CREATES .wmnds-grid--spacing classes
 
-// Creates standard .wmnds-grid--spacing-{cols}-{size} classes
-// HOW TO USE
-// .wmnds-grid--spacing-{number-of-cols}-{size-of-space}
-@each $sp-name, $sp-value in $spacing-map {
-  @for $i from 2 through 4 {
-    .wmnds-grid--spacing-#{$i}-#{$sp-name} {
-      > [class*="wmnds-col"] {
-        padding-right: $sp-value;
-        padding-left: $sp-value;
+// Create a mixin than can be called later down the page to create the spacing rules
+@mixin grid-spacing-class(
+  $prefix,
+  $col-count,
+  $spacing-name,
+  $spacing-value,
+  $breakpoint-name: "",
+  $breakpoint-value: ""
+) {
+  .wmnds-grid--spacing#{$prefix}-#{$spacing-name} {
+    > [class*="wmnds-col"] {
+      &:first-child,
+      &:nth-child(#{$col-count}n + 1) {
+        padding-right: $spacing-value * (($col-count - 1) / $col-count);
+        padding-left: 0;
+      }
 
-        &:nth-child(#{$i}n) {
-          padding-right: 0;
+      &:last-child,
+      &:nth-child(#{$col-count}n) {
+        padding-right: 0;
+        padding-left: $spacing-value * (($col-count - 1) / $col-count);
+      }
+
+      @if $col-count - 2 > 0 {
+        @for $i from 1 through $col-count - 2 {
+          &:nth-child(#{$col-count}n - #{$i}) {
+            padding-right: $spacing-value * ($i / $col-count);
+            padding-left: $spacing-value * (1 - (($i + 1) / $col-count));
+          }
         }
-
-        &:nth-child(#{$i}n-#{$i - 1}) {
+      }
+      // To achieve the pattern of 2 in a row and 1 full width below
+      // we give the parent: .wmnds-grid--spacing-{breakpoint}-2-sm
+      // then we give the first two columns: .wmnds-col-{breakpoint}-1-2
+      // and the final column: .wmnds-col-1 or .wmnds-col-{breakpoint}-1-1
+      @if $breakpoint-name == "" or $breakpoint-value == "" {
+        &.wmnds-col-1,
+        &.wmnds-col-1-1 {
+          padding-right: 0;
           padding-left: 0;
+        }
+      } @else {
+        @media screen and (min-width: #{$breakpoint-value}em) {
+          &.wmnds-col-#{$breakpoint-name}-1,
+          &.wmnds-col-#{$breakpoint-name}-1-1 {
+            padding-right: 0;
+            padding-left: 0;
+          }
         }
       }
     }
   }
 }
 
-// Creates responsive .wmnds-grid--spacing-{breakpoint}-{cols}-{size} classes
-// HOW TO USE
-// .wmnds-grid--spacing-{breakpoint}-{number-of-cols}-{size-of-space}
+// Creates standard spacing classes: .wmnds-grid--spacing-{cols}-{size}
+@each $sp-name, $sp-value in $spacing-map {
+  @for $i from 2 through $grid-max-cols {
+    @include grid-spacing-class("-#{$i}", $i, $sp-name, $sp-value);
+  }
+}
+
+// Creates responsive spacing classes: .wmnds-grid--spacing-{breakpoint}-{cols}-{size}
 @each $bp-name, $bp-value in $grid-breakpoint-map {
   @media screen and (min-width: #{$bp-value}em) {
     @each $sp-name, $sp-value in $spacing-map {
-      @for $i from 2 through 4 {
-        .wmnds-grid--spacing-#{$bp-name}-#{$i}-#{$sp-name} {
-          > [class*="wmnds-col"]:nth-child(n) {
-            padding-right: $sp-value / 2;
-            padding-left: $sp-value / 2;
-          }
-
-          > [class*="wmnds-col"] {
-            &:nth-child(#{$i}n),
-            &:last-child {
-              padding-right: 0;
-            }
-
-            &:nth-child(#{$i}n-#{$i - 1}) {
-              padding-left: 0;
-            }
-          }
-        }
+      @for $i from 2 through $grid-max-cols {
+        @include grid-spacing-class("-#{$bp-name}-#{$i}", $i, $sp-name, $sp-value, $bp-name, $bp-value);
       }
     }
   }
