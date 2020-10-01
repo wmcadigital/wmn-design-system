@@ -12,10 +12,10 @@
   .wmnds-grid--spacing#{$prefix}-#{$spacing-name} {
     //  HOW IT WORKS
     //
-    // In orfer that the columns align with the rest of the content on the page the outer facing
+    // In order that the columns align with the rest of the content on the page the outer facing
     // cols must have 0 padding on the outer sides. In order to account for this, the left over spacing
     // must be added to each column within the row.
-    // From right to left, the proportional padding-left incrases from 0 to n-1, and the
+    // From right to left, the proportional padding-left increases from 0 to n-1, and the
     // proportional padding-right decreases from n-1 to 0, with n being the number of columns
     > [class*="wmnds-col"] {
       // The first and last items in the list will always have no padding on the inner sides
@@ -31,7 +31,7 @@
         padding-left: $spacing-value * (($col-count - 1) / $col-count);
       }
 
-      // Loops through the inner cols (from right to left) incrasing the padding right,
+      // Loops through the inner cols (from right to left) increasing the padding right,
       // and decreasing the padding left.
       @if $col-count - 2 > 0 {
         @for $i from 1 through $col-count - 2 {
