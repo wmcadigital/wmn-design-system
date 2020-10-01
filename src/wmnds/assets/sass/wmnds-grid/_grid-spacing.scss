@@ -25,7 +25,6 @@
         padding-left: 0;
       }
 
-      &:last-child,
       &:nth-child(#{$col-count}n) {
         padding-right: 0;
         padding-left: $spacing-value * (($col-count - 1) / $col-count);
