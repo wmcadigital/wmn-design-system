@@ -18,7 +18,11 @@ $wmnds-msg-icon-margin-right: $size-sm;
   }
 
   &__title {
-    margin: 0;
+    margin: 0.35rem 0;
+    @media all and (max-width: $breakpoint-md - 1) {
+      width: 100%;
+      margin: $size-xsm 0;
+    }
   }
 
   &__icon,
