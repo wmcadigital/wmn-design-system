@@ -27,6 +27,7 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-msg-summary wmnds-msg-summary--{{ params.type }} {{classes}}">
+  <button class="wmnds-msg-summary__close wmnds-link">Close <svg><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg></button>
   <div class="wmnds-msg-summary__header">
     {# Get SVG icon and pass class #}
     {%- if iconName !== "" -%}

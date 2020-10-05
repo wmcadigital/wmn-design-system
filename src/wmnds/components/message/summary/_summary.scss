@@ -1,8 +1,11 @@
 // These vars control icon size and the margin right from the icon. By setting here we can ensure the message_info stays indented by same amount as title.
 $wmnds-msg-icon-size: 35px;
 $wmnds-msg-icon-margin-right: $size-sm;
+// controls close button width and ensures header padding right is offset correctly
+$wmnds-msg-close-btn-width: 5rem;
 
 .wmnds-msg-summary {
+  position: relative;
   padding: $size-sm;
   border: 1px solid get-color(information);
 
@@ -38,6 +41,36 @@ $wmnds-msg-icon-margin-right: $size-sm;
     }
   }
 
+  &__close {
+    display: flex;
+    position: absolute;
+    top: $size-sm;
+    right: $size-sm;
+    width: $wmnds-msg-close-btn-width;
+    height: $wmnds-msg-icon-size;
+    margin: 0 $size-xs;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: $size-md;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: $size-sm;
+      fill: get-color(primary);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      & + .wmnds-msg-summary__header {
+        padding-right: $wmnds-msg-close-btn-width + $size-md;
+      }
+    }
+  }
+
   // MESSAGE MODIFIERS - info is the default (above)
 
   // Success
@@ -57,6 +90,14 @@ $wmnds-msg-icon-margin-right: $size-sm;
 
     .wmnds-msg-summary__icon {
       fill: $white;
+    }
+
+    .wmnds-msg-summary__close {
+      color: $white;
+
+      svg {
+        fill: $white;
+      }
     }
   }
 
