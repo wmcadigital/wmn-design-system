@@ -3,6 +3,7 @@
 {% set section="Patterns" %}
 {# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "www/_partials/component-example/component-js.njk" import compExampleJs %}
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
 {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
@@ -125,10 +126,7 @@
 {# Full footer #}
 <h3>Full variant of footer</h3>
 <p>The full variant of the footer may include menus which become collapsible on smaller devices.</p>
-<p>To enable the collapsible sections you can include the javascript below:</p>
-<pre>
-  <code class="js wmnds-show-more-ignore" data-content="footerJs" tabindex="0"></code>
-</pre>
+
 {{
   compExample([
     wmndsFooter({
@@ -163,6 +161,13 @@
     })
   ])
 }}
+<br>
+<p>To enable the collapsible footer menus on smaller screens you can include the javascript below:</p>
+
+{{
+  compExampleJs('footerJs')
+}}
+
 
 
 {# Mobile app variant #}
