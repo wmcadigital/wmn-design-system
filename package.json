@@ -98,7 +98,6 @@
     "webpack-stream": "^6.0.0"
   },
   "dependencies": {
-    "@babel/standalone": "^7.11.6",
     "@sentry/browser": "^5.22.3",
     "path": "^0.12.7"
   }
