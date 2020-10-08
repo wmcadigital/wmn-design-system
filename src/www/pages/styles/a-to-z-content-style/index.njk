@@ -1,53 +1,54 @@
-{% extends "www/_layouts/layout-fullwidth.njk" %}
-{% set pageTitle="Style guide" %}
-{% set section = "Styles" %}
-{# Imports #}
-{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
-{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
-{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
-{# Set array of tiles #}
-
-{% block content %}
-{# About the style guide #}
+{% extends "www/_layouts/layout-fullwidth.njk" %} {% set pageTitle="A to Z content style guide" %} {% set section =
+"Styles" %} {# Imports #} {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal
+-%} {% from "wmnds/components/link/link/_link.njk" import wmndsLink %} {% from
+"wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %} {# Set array of tiles #} {% block content %} {#
+About the style guide #}
 <div class="wmnds-grid">
   <div class="wmnds-col-1 wmnds-col-md-3-4">
-      <h2>Writing content for West Midlands Network</h2>
-      <h3>User-focused content</h3>
-    <p>You should create all content with user-focused content design principles. This means content has an identified user need and is written in plain English.</p>
-    <p>Read the
-        {{
-            wmndsLink({
-                link: "https://www.gov.uk/guidance/content-design/what-is-content-design",
-                linkTitle: "GOV.UK introduction to content design",
-                text: "GOV.UK introduction to content design"
-            })
-        }}
-        to find out more.</p>
+    <h2>Writing content for West Midlands Network</h2>
+    <h3>User-focused content</h3>
+    <p>
+      You should create all content with user-focused content design principles. This means content has an identified
+      user need and is written in plain English.
+    </p>
+    <p>
+      Read the
+      {{
+        wmndsLink({
+          link: 'https://www.gov.uk/guidance/content-design/what-is-content-design',
+          linkTitle: 'GOV.UK introduction to content design',
+          text: 'GOV.UK introduction to content design'
+        })
+      }}
+      to find out more.
+    </p>
     <p>Design Team can help you to test your content with user research.</p>
     <br />
     <h3>About the A-Z of style guide</h3>
     <p>This style guide will help you to use consistent words across West Midlands Network services.</p>
-    <p>If something is not covered by this style guide, check the 
-        {{
-            wmndsLink({
-                link: "https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style",
-                linkTitle: "GOV.UK Style Guide",
-                text: "GOV.UK style guide"
-            })
-        }}
-    .</p>
+    <p>
+      If something is not covered by this style guide, check the
+      {{
+        wmndsLink({
+          link: 'https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style',
+          linkTitle: 'GOV.UK Style Guide',
+          text: 'GOV.UK style guide'
+        })
+      }}
+      .
+    </p>
     <p>You can also email Samresha Purewal if you think something is missing from this guidance.</p>
     <p>
-    {{
-        wmndsInsetText({
-            thinner: true,
-            html: "If you’re talking about day-to-day services (bus, train or tram), you may need to make it clear that West Midlands Network does not run these.<br /><br />For example, you could say: \“We don’t run the buses, trains or trams. We can point you in the right direction if you need help.\""
-        })
-    }}
-</p>
+      {{ wmndsInsetText({ thinner: true, html: "If you’re talking about day-to-day services (bus, train or tram), you
+      may need to make it clear that West Midlands Network does not run these.<br /><br />For example, you could say:
+      \“We don’t run the buses, trains or trams. We can point you in the right direction if you need help.\"" }) }}
+    </p>
     <br />
     <h3>A to Z of style</h3>
-    <p>JSON data is in here, organised by letter in accordion. The user should have the option to expand all and collapse all.</p>
+    <p>
+      JSON data is in here, organised by letter in accordion. The user should have the option to expand all and collapse
+      all.
+    </p>
   </div>
 </div>
 <br />
