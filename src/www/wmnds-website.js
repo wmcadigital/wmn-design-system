@@ -9,17 +9,6 @@ import accordionsJS from '../wmnds/components/accordion/_accordion';
 
 Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374' });
 
-const jsScripts = [headerJs, footerJs, cookies, accordionsJS];
-
-jsScripts.forEach(script => {
-  const codeExamples = document.querySelectorAll('code.js');
-  codeExamples.forEach(codeExample => {
-    if (codeExample.dataset.content === script.name) {
-      codeExample.innerHTML = script; // eslint-disable-line no-param-reassign
-    }
-  });
-});
-
 const icons = () => {
   // Ajax SVG in, SVGS are referenced in app (Icon component)
   const ajax = new XMLHttpRequest();
