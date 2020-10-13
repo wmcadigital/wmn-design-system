@@ -447,7 +447,15 @@
              },
              {
                 "title":"text message alerts",
-                "content":"Not SMS alerts."
+                "content":"<p>Not SMS alerts.</p>"
+             },
+             {
+                "title":"TfWM",
+                "content":"<p>See entry on <a href='#transport-for-west-midlands' class='wmnds-link'>Transport for West Midlands</a>.</p>"
+             },
+             {
+                "title":"Times",
+                "content":"<p>use 'to' in time ranges, not hyphens, en rules or em dashes: 10am to 11am (not 10-11am)<br />5:30pm (not 1730hrs)<br />midnight (not 00:00)<br />midday (not 12 noon, noon or 12pm)<br />6 hours 30 minutes<br />Midnight is the first minute of the day, not the last. You should consider using \"11:59pm\" to avoid confusion about a single, specific time.</p><p>For example, \"You must register by 11:59pm on Tuesday 14 June.\" can only be read one way, but \"You must register by midnight on Tuesday 14 June\" can be read in two ways (the end of Monday 13, or end of Tuesday 14).</p><p>Timetables and printed passenger information use the 24-hour clock in HHMM format.</p>"
              },
              {
                 "title":"tram",
@@ -458,9 +466,9 @@
                 "content":"<p>Not station.</p>"
              },
              {
-                "title":"Times",
-                "content":"<p>use 'to' in time ranges, not hyphens, en rules or em dashes: 10am to 11am (not 10-11am)<br />5:30pm (not 1730hrs)<br />midnight (not 00:00)<br />midday (not 12 noon, noon or 12pm)<br />6 hours 30 minutes<br />Midnight is the first minute of the day, not the last. You should consider using \"11:59pm\" to avoid confusion about a single, specific time.</p><p>For example, \"You must register by 11:59pm on Tuesday 14 June.\" can only be read one way, but \"You must register by midnight on Tuesday 14 June\" can be read in two ways (the end of Monday 13, or end of Tuesday 14).</p><p>Timetables and printed passenger information use the 24-hour clock in HHMM format.</p>"
-             }
+               "title":"Transport for West Midlands",
+               "content":"<p>Avoid referring to Transport for West Midlands (TfWM). Users don't need to know about it while getting travel advice.</p><p>Explaining the relationship between West Midlands Network, TfWM and West Midlands Combined Authority (WMCA) is complicated. Use \"we\" instead. For example, \"we manage the Key Route Network (KRN)\" with a link to the TfWM policy page.</p>"
+            }
           ]
        },
        {
@@ -496,9 +504,17 @@
                 "content":"<p>Not web-site or web site.</p>"
              },
              {
+                "title":"West Midlands Combined Authority",
+                "content":"<p>Avoid referring to West Midlands Combined Authority (WMCA). Users don't need to know about it while getting travel advice.</p><p>The exception is if you referring to a statutory responsibility or a contract. For example, concessionary passes or terms and conditions.</p>"
+             },
+             {
                 "title":"wifi",
                 "content":"<p>Lower case, no hyphen.</p>"
              },
+             {
+               "title":"WMCA",
+               "content":"<p>See entry on <a href='#west-midlands-combined-authority' class='wmnds-link'>West Midlands Combined Authority</a>.</p>"
+            },
              {
                 "title":"wmnetwork.co.uk",
                 "content":"<p>If you are linking to another page, you should use an in-text link rather than the full URL. See the entry on links for more information.</p><p>Sometimes it is better to show the full URL. For example, when telling users to click a link to verify something in an email.</p><p>It is important to use the right URL. Only use wmnetwork.co.uk.</p><p>Do not prefix the URL with ‘www.’ as this makes our URL hard to read. The domain extension ‘.co.uk’ makes it obvious to users that it is a URL.</p>"
