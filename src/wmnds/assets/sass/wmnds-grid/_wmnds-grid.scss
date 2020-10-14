@@ -35,12 +35,6 @@ textarea,
   }
 }
 
-// Automate cols
-@import "functions";
-
-// Create list of columns + widths to iterate over
-$col-list: create-col-list($cols);
-
 // Import grid components
 @import "grid-cols";
 @import "grid-spacing";
