@@ -6,6 +6,7 @@ import cookies from '../wmnds/patterns/cookies/cookies';
 import headerJs from '../wmnds/patterns/header-v2/_header-v2';
 import footerJs from '../wmnds/patterns/footer/_footer';
 import accordionsJS from '../wmnds/components/accordion/_accordion';
+import searchFilterJs from '../wmnds/patterns/search/search-filter/_search-filter';
 
 Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374' });
 
@@ -24,5 +25,13 @@ const icons = () => {
 
 window.addEventListener(
   'DOMContentLoaded',
-  (forEachPolyfill, icons(), colorPalettes(), headerJs(), footerJs(), accordionsJS(), cookies(), highlightJS)
+  (forEachPolyfill,
+  icons(),
+  colorPalettes(),
+  headerJs(),
+  footerJs(),
+  accordionsJS(),
+  cookies(),
+  searchFilterJs(),
+  highlightJS)
 );
