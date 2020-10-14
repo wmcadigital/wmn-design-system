@@ -1,5 +1,21 @@
 // CREATES .wmnds-grid--spacing classes
 
+//  HOW IT WORKS
+//
+// The spacing between each column follows a sequnce. Using 1 rem spacing as an example:
+// (the outer cols have no spacing on the outer facing sides)
+//
+// 2 cols: 0rem [col] 1/2rem | 1/2rem [col] 0rem
+// 3 cols: 0rem [col] 2/3rem | 1/3rem [col] 1/3rem | 2/3rem [col] 0rem
+// 4 cols: 0rem [col] 3/4rem | 1/4rem [col] 2/4rem | 2/4rem [col] 1/4rem | 3/4rem [col] 0rem
+// etc..
+//
+// From this sequence all we have to do to get equal spacing between each cols is increment (from left to right)
+// the padding-left by 1/n and decrement the padding-right by 1/n (where n is the number of columns).
+// Each column has total padding (1 - 1/n) rem, which means they'll all be the same width.
+//
+// In order to have variable spacing we just multiply each side by the desired total spacing between columns.
+
 // Create a mixin than can be called later down the page to create the spacing rules
 @mixin grid-spacing-class(
   $prefix,
@@ -10,15 +26,8 @@
   $breakpoint-value: ""
 ) {
   .wmnds-grid--spacing#{$prefix}-#{$spacing-name} {
-    //  HOW IT WORKS
-    //
-    // In order that the columns align with the rest of the content on the page the outer facing
-    // cols must have 0 padding on the outer sides. In order to account for this, the left over spacing
-    // must be added to each column within the row.
-    // From right to left, the proportional padding-left increases from 0 to n-1, and the
-    // proportional padding-right decreases from n-1 to 0, with n being the number of columns
     > [class*="wmnds-col"] {
-      // The first and last items in the list will always have no padding on the inner sides
+      // The first and last items in the list will always have no padding on the outer facing sides
       &:first-child,
       &:nth-child(#{$col-count}n + 1) {
         padding-right: $spacing-value * (($col-count - 1) / $col-count);
