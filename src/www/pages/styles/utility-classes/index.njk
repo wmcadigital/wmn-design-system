@@ -209,6 +209,32 @@ Where <code class="wmnds-website-inline-code">{size}</code> is one of:
   </code>
 </pre>
 
+{# Grid columns spacing #}
+<h3>Grid column spacing</h3>
+
+<p>
+  Spacing can be applied in between <code class="wmnds-website-inline-code">.wmnds-col-*</code> elements by adding a class to the parent <code class="wmnds-website-inline-code">.wmnds-grid</code>.
+</p>
+<p>
+  The classes are named using the format <code class="wmnds-website-inline-code">.wmnds-grid--spacing-{col-count}-{size}</code>.
+</p>
+<p>
+  Where <code class="wmnds-website-inline-code">{col-count}</code> is the number of columns per row and <code class="wmnds-website-inline-code">{size}</code> is the same as in the spacing utility classes above.
+</p>
+<p>
+  Spacing can also be applied responsively using the format <code class="wmnds-website-inline-code">.wmnds-grid--spacing-{breakpoint}-{col-count}-{size}</code>.
+</p>
+<p>
+  Where <code class="wmnds-website-inline-code">{breakpoint}</code> is one of breakpoint sizes described in the grid section.
+</p>
+
+<p>Some examples of using these utility classes...</p>
+<pre>
+  <code>
+    .wmnds-grid--spacing-2-md // applies a 1rem spacing between 2 columns
+    .wmnds-grid--spacing-lg-4-lg // applies a 2rem spacing between 4 columns above a screen width of 1024px
+  </code>
+</pre>
 
 <hr>
 {# Background #}
