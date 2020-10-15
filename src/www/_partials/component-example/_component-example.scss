@@ -32,6 +32,7 @@ $dark-grey: #2b2b2b;
   max-height: 200px;
   padding: $size-md;
   overflow-y: hidden;
+  font-size: 1rem;
 
   &::-webkit-scrollbar {
     width: 100%;
@@ -66,4 +67,23 @@ span[class^="hljs-"] {
 .wmnds-js-show-code {
   margin: $size-md;
   float: right;
+}
+
+.wmnds-code-toggle {
+  display: block;
+  padding: $size-xsm;
+  color: $white;
+  background: get-color(secondary);
+
+  .wmnds-link {
+    border: 0;
+    color: currentColor;
+    background-color: transparent;
+    font-size: $size-md;
+
+    &:hover {
+      color: currentColor;
+      text-decoration: none;
+    }
+  }
 }
