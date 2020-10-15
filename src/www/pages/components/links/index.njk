@@ -107,8 +107,50 @@
     wmndsLink( { isBackLink: true, text: "Back" } )
   ])
 }}
-<br><br>
 
+
+<br><br>
+{# Link with chevron #}
+<h2>Link with chevron</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+  <li>Directs users to a related page which contains further information.</li>
+  <li>Allows users to navigate forwards and backwards between search results.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+  <li>When you want to direct users to a page with additional information.</li>
+  <li>Only use the Previous variant for the search results page.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+  <li>In body text. Use the Default link component instead.</li>
+  <li>On transactional services or multi-page forms. You should use the Back link component for this.</li>
+</ul>
+{# How #}
+<h3>How does it work?</h3>
+<ul>
+  <li>If used on a site-wide banner, such as the Emergency banner, then the link will need to be hidden on the page which it links to.</li>
+  <li>The colour of the chevron icon must meet graphical object colour contrast requirements of at least 3:1.</li>
+</ul>
+{{
+  compExample([
+    wmndsLink({
+      text: "Link",
+      withChevronLeft: true
+    }),
+    wmndsLink({
+      text: "Link",
+      withChevronRight: true
+    })
+  ])
+}}
+
+
+<br><br>
 {# call to action button as link #}
 <h2>Call to action buttons</h2>
 {# What #}

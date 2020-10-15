@@ -58,7 +58,6 @@ $border: #979797;
       height: auto;
       padding-left: 50%;
       border-bottom: 1px solid $border;
-      text-align: left;
       white-space: normal;
 
       // Now like a table header
@@ -75,14 +74,13 @@ $border: #979797;
         white-space: nowrap;
       }
     }
-    
 
     &.wmnds-table--without-header {
       // shorten table
       tr > th,
       tr > td {
         padding-left: 0;
-      
+
         &:before {
           content: none;
         }
