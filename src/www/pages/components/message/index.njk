@@ -102,7 +102,33 @@
     })
   ])
 }}
+
 {# End error message #}
+<br><br>
+
+{# Close message variant #}
+<h2>Close message variant</h2>
+
+<h3>What does it do?</h3>
+<ul>
+  <li>Allows the user to dismiss an Information, Success, Warning or Error message.</li>
+</ul>
+
+<h3>When to use it?</h3>
+<ul>
+  <li>When the information in the message is a response to a users action, or if the information is of low importance and only applies to a small set of users.</li>
+</ul>
+{{
+  compExample([
+    wmndsMsgSummary({
+      type: 'info',
+      title: 'Information about xx',
+      dismissable: true,
+      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+    })
+  ])
+}}
+{# End close message variant #}
 
 <br><br>
 {# Help message #}
@@ -111,10 +137,10 @@
 <h3>When to use it?</h3>
 <ul>
   <li>
-    Help message should be used when it is determined that user needs guidance to complete digital task successfully
+    The help message should be used when a user requires guidance on how to complete a digital task successfully.
   </li>
   <li>
-    User will be able to remove help message once he understands how to complete his task
+    The user will be able to close the help message once they understand how to complete the task.
   </li>
 </ul>
 {{
