@@ -77,4 +77,26 @@
         ])
     }}
     {# End search result #}
+
+    {# Pagination #}
+    <h2>Search result</h2>
+    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    {% from "wmnds/patterns/search/pagination/_pagination.njk" import wmndsPagination %}
+    {{
+        compExample([
+            wmndsPagination({
+                pageCount: 8,
+                activePage: 1
+            }),
+            wmndsPagination({
+                pageCount: 8,
+                activePage: 5
+            }),
+            wmndsPagination({
+                pageCount: 8,
+                activePage: 8
+            })
+        ])
+    }}
+    {# End pagination #}
 {% endblock %}
