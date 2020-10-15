@@ -1,0 +1,19 @@
+.wmnds-search-result {
+  border-bottom: 1px solid get-color(text, 40);
+
+  &__title {
+    color: get-color(cta, 10, dark);
+  }
+
+  .wmnds-breadcrumb {
+    padding: $size-xsm 0;
+
+    &__list-item {
+      margin-bottom: 0;
+    }
+  }
+
+  &__excerpt {
+    padding-top: $size-md;
+  }
+}

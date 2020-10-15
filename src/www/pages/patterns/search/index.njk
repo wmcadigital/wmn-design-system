@@ -59,7 +59,22 @@
             )
         ])
     }}
-    {# Search filter #}
+    {# End search filter #}
 
-
+    {# Search result #}
+    <h2>Search result</h2>
+    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    {% from "wmnds/patterns/search/search-result/_search-result.njk" import wmndsSearchResult %}
+    {{
+        compExample([
+            wmndsSearchResult(
+                {
+                    pageTitle: "Swift: The smarter way to travel",
+                    breadcrumbs: ['Home', 'Swift'],
+                    excerpt: "<strong>Swift</strong> is the easy and flexible way to travel around the West Midlands. find the <strong>swift</strong> card for you. How do you travel? bus…"
+                }
+            )
+        ])
+    }}
+    {# End search result #}
 {% endblock %}
