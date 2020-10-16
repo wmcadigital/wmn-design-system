@@ -1,15 +1,15 @@
     {% macro wmndsSearchFilter(params) %}
 
-
+<!-- Mobile show filter button -->
 <div class="wmnds-hide-desktop">
-    <button class="wmnds-btn wmnds-btn--primary wmnds-btn--block " id="show_filter_btn">
+    <button class="wmnds-btn wmnds-btn--primary wmnds-btn--block " id="show_filter_btn" aria-controls="search_filter" aria-expanded="false">
         Filter your results
     </button>
 </div>
 
 <div id="search_filter" class="wmnds-search-filter">
-    <div class="wmnds-search-filter__mobile-header">
-        <h3 class="h2 wmnds-search-filter__mobile-header-title">Filter</h3>
+    <div class="wmnds-search-filter__header">
+        <h3 class="wmnds-search-filter__header-title">Filter</h3>
         <a href="#" class="wmnds-link wmnds-search-filter__clear-all">Clear all</a>
         <a href="#" id="hide_filter_btn" class="wmnds-search-filter__close">
             <svg>
@@ -39,7 +39,7 @@
       <div class="wmnds-accordion__content" id="accordion-{{accordion.summaryTitle}}">
         <fieldset class="wmnds-fe-fieldset">
             <div class="wmnds-fe-checkboxes">
-            {% for option in accordion.options -%}
+            {%- for option in accordion.options %}
                 <label class="wmnds-fe-checkboxes__container">
                     {{option}}
                     <input class="wmnds-fe-checkboxes__input" value="{{option}}" type="checkbox"/>
@@ -49,7 +49,7 @@
                         </svg>
                     </span>
                 </label>
-            {% endfor -%}
+            {%- endfor %}
             </div>
         </fieldset>
       </div>
