@@ -27,6 +27,11 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-msg-summary wmnds-msg-summary--{{ params.type }} {{classes}}">
+  {%- if params.dismissable %}
+  <button class="wmnds-msg-summary__close wmnds-link">Close 
+    <svg><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
+  </button>
+  {%- endif %}
   <div class="wmnds-msg-summary__header">
     {# Get SVG icon and pass class #}
     {%- if iconName !== "" -%}
@@ -36,9 +41,9 @@
         class: 'wmnds-msg-summary__icon'
       }) | trim
     -}}
-    {%- endif -%}
+    {%- endif %}
     <h3 class="wmnds-msg-summary__title">{{ params.title }}</h3>
-    {% if params.subtitle %}<h3>{{ params.subtitle }}</h3>{% endif %}
+    {%- if params.subtitle %}<h3>{{ params.subtitle }}</h3>{% endif %}
   </div>
   <div class="wmnds-msg-summary__info">
     {{ params.message | safe }}
