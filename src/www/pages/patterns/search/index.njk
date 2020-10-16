@@ -5,18 +5,23 @@
 {% block content %}
     <h3>What does it do?</h3>
     <ul>
-    <li>info</li>
+        <li>Allows the user to search for information across the West Midlands Network website</li>
     </ul>
     <h3>When to use it?</h3>
     <ul>
-    <li>info</li>
+        <li>When a user needs to find the information they need, which they cannot find through the main navigation</li>
     </ul>
-
+    <h3>How it works</h3>
+    <ul>
+        <li>Users should only be able to access the search function through the header by hovering or selecting the magnifying glass icon</li>
+        <li>The search bar will appear in a dropdown along with the ‘I want to…’ feature, where users can access popular search queries</li>
+        <li>Once a user submits their search query, they will be able to view the search results. They can sort and filter the search results on the search results page</li>
+    </ul>
 
     <br><br>
     {# Search bar #}
     <h2>Search bar</h2>
-    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    
     {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
     {{
         compExample([
@@ -24,20 +29,32 @@
         ])
     }}
     {# End Search bar #}
+
+
+    <br><br>
+    {# Sort #}
+    <h2>Sort</h2>
     <h3>What does it do?</h3>
     <ul>
-    <li>info</li>
+        <li>
+            This gives the user the option to sort search results by relevance or when a page was last updated
+        </li>
     </ul>
-    <h3>When to use it?</h3>
-    <ul>
-    <li>info</li>
-    </ul>
-
+    ***Sort pattern here***
+    {# End sort #}
 
     <br><br>
     {# Search filter #}
     <h2>Filter</h2>
-    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    <h3>What does it do?</h3>
+    <ul>
+        <li>This gives the user the option to filter search results using a predetermined set of filters</li>
+    </ul>
+    <h3>When to use it?</h3>
+    <ul>
+        <li>The filters will narrow down the search results by displaying pages which only match the filter criteria</li>
+        <li>On mobile, the filter options will appear when a user clicks on the ‘Filter your results button’. This will trigger an overlay where users can select and apply filters. This is to reduce page size on smaller devices</li>
+    </ul>
     {% from "wmnds/patterns/search/search-filter/_search-filter.njk" import wmndsSearchFilter %}
     {{
         compExample([
@@ -60,10 +77,21 @@
         ])
     }}
     {# End search filter #}
-
+    
+    <br><br>
     {# Search result #}
     <h2>Search result</h2>
-    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    <h3>What does it do?</h3>
+    <ul>
+        <li>This is how a matching page will display in the search results page</li>
+    </ul>
+    <h3>How it works</h3>
+    <ul>
+        <li>Each page result will show the page breadcrumbs on desktop. On mobile, breadcrumbs are not shown. This is to reduce page size on smaller devices</li>
+        <li>The page description will display main body copy which is highest on the page. The description will be a maximum of 150 characters. Any descriptions longer than 150 characters will be truncated.</li>
+        <li>If the user’s search query is in the page description, it will be highlighted in bold. This is to help them understand the context of the page</li>
+        <li>The horizontal rule at the bottom of a search result is to make the results list easier to scan.</li>
+    </ul>
     {% from "wmnds/patterns/search/search-result/_search-result.njk" import wmndsSearchResult %}
     {{
         compExample([
@@ -77,10 +105,14 @@
         ])
     }}
     {# End search result #}
-
+    
+    <br><br>
     {# Pagination #}
-    <h2>Search result</h2>
-    <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
+    <h2>Pagination links</h2>
+    <h3>What does it do?</h3>
+    <ul>
+        <li>Allows the user to navigate through search results.</li>
+    </ul>
     {% from "wmnds/patterns/search/pagination/_pagination.njk" import wmndsPagination %}
     {{
         compExample([
@@ -99,4 +131,6 @@
         ])
     }}
     {# End pagination #}
+    <br><br>
+    
 {% endblock %}
