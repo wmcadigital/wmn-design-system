@@ -20,8 +20,10 @@ const searchFilterJs = () => {
     const showFilter = show => {
       if (show === false) {
         searchFilter.classList.remove('wmnds-search-filter--is-open');
+        searchFilter.setAttribute('aria-expanded', 'false');
       } else {
         searchFilter.classList.add('wmnds-search-filter--is-open');
+        searchFilter.setAttribute('aria-expanded', 'true');
       }
     };
 
