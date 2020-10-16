@@ -40,7 +40,12 @@
             This gives the user the option to sort search results by relevance or when a page was last updated
         </li>
     </ul>
-    ***Sort pattern here***
+     {% from "wmnds/patterns/search/sort/_sort.njk" import wmndsSearchSort %}
+    {{
+        compExample([
+            wmndsSearchSort()
+        ])
+    }}
     {# End sort #}
 
     <br><br>
@@ -132,5 +137,5 @@
     }}
     {# End pagination #}
     <br><br>
-    
+
 {% endblock %}
