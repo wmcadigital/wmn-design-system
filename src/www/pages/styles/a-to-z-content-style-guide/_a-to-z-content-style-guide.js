@@ -1,6 +1,6 @@
 function aToZContentStyleGuide() {
   // FUNCTIONS
-  // Chage accordion state
+  // Change accordion state
   const changeAccordionState = (accordionElem, changeStateToOpen = true) => {
     const accordionBtn = accordionElem.querySelector('.wmnds-accordion__summary-wrapper');
     if (changeStateToOpen) {
@@ -30,7 +30,7 @@ function aToZContentStyleGuide() {
     elem.scrollIntoView();
   };
 
-  //   Check for anchor to sroll to onload
+  //  Check for anchor to scroll to onload
   const scrollToAnchorOnLoad = () => {
     if (document.location.hash) {
       scrollToAnchor(document.location.hash);
