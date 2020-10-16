@@ -11,17 +11,13 @@
 $transition-fade-in: opacity 0.2s ease-out;
 
 .wmnds-search-filter {
-  background-color: $white;
-
-  &__mobile-header {
+  &__header {
     display: flex;
     position: relative;
-    padding: $size-md;
     align-items: center;
   }
 
-  &__mobile-header-title {
-    margin: 0;
+  &__header-title {
     flex-grow: 1;
   }
 
@@ -64,10 +60,21 @@ $transition-fade-in: opacity 0.2s ease-out;
     overflow: auto;
     transition: $transition-fade-in;
     opacity: 0;
+    background-color: $white;
 
     &--is-open {
       visibility: visible;
       opacity: 1;
+    }
+
+    &__header {
+      padding: $size-md;
+    }
+
+    &__header-title {
+      @include type-setting(2, 0.85);
+      margin: 0;
+      color: get-color(primary);
     }
 
     .wmnds-accordion__summary {
@@ -108,8 +115,8 @@ $transition-fade-in: opacity 0.2s ease-out;
   @media screen and (min-width: $breakpoint-md) {
     border-bottom: 5px solid get-color(primary);
 
-    &__mobile-header,
-    &__mobile-filter-update {
+    &__mobile-filter-update,
+    &__close {
       display: none;
     }
 
@@ -118,6 +125,7 @@ $transition-fade-in: opacity 0.2s ease-out;
       position: relative;
       padding: $size-md;
       color: get-color(primary);
+      background-color: $white;
       text-decoration: underline;
       align-items: center;
 
@@ -136,7 +144,7 @@ $transition-fade-in: opacity 0.2s ease-out;
     }
 
     &--has-inputs-checked {
-      .wmnds-search-filter__clear-all {
+      .wmnds-search-filter__clear-all.wmnds-hide-mobile {
         display: flex;
       }
     }
