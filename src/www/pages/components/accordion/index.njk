@@ -1,7 +1,6 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Accordion" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "www/_partials/component-example/component-js.njk" import compExampleJs %}
 
 {% block content %}
 {# About #}
@@ -72,15 +71,10 @@
       id: 'accordion-open-01',
       isOpen: true
     }) | trim
-  ])
+  ], {
+    js: 'accordionsJS'
+  })
 }}
-
-
-
-<br><br>
-{# Recommended javascript #}
-{{ compExampleJs('accordionsJS') }}
-
 
 <br><br>
 {# Custom #}

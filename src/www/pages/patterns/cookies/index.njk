@@ -1,8 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %} {% set pageTitle = "Cookies" %} 
 
 {% set section="Patterns" %} 
-{% from "www/_partials/component-example/component-example.njk" import compExample %} 
-{% from "www/_partials/component-example/component-js.njk" import compExampleJs %} 
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %} 
 {% from "wmnds/patterns/cookies/cookies-manager/_cookies-manager.njk" import wmndsCookiesManager %} 
 
@@ -64,10 +63,6 @@
   </li>
 </ul>
 
-{{ compExample([wmndsCookiesManager()]) | trim }}
-
-<h3>We recommend using this additional code</h3>
-
-{{ compExampleJs('cookies') }}
+{{ compExample([wmndsCookiesManager()], {js: 'cookies'}) | trim }}
 
 {% endblock %}
