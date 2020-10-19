@@ -16,6 +16,10 @@
     cursor: pointer;
     align-items: center;
     @include type-setting(0);
+
+    &:active {
+      color: get-color(text);
+    }
   }
 
   &__summary {
