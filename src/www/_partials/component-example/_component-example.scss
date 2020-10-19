@@ -25,6 +25,11 @@ $dark-grey: #2b2b2b;
   pre {
     margin: 0;
   }
+
+  & + .wmnds-website-code-example {
+    margin-top: 0;
+    border-top: 0;
+  }
 }
 
 // Scrollbar styling for code previews of components
@@ -71,18 +76,23 @@ span[class^="hljs-"] {
 
 .wmnds-code-toggle {
   display: block;
-  padding: $size-xsm;
+  padding: $size-xsm $size-md;
   color: $white;
   background: get-color(secondary);
 
-  .wmnds-link {
+  .wmnds-btn {
+    margin-left: $size-sm;
+  }
+
+  .wmnds-btn:not(.wmnds-btn--dark-bg) {
     border: 0;
     color: currentColor;
     background-color: transparent;
-    font-size: $size-md;
+    text-decoration: underline;
 
     &:hover {
       color: currentColor;
+      background-color: get-color(information);
       text-decoration: none;
     }
   }
