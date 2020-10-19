@@ -17,13 +17,13 @@ const searchFilterJs = () => {
       });
     });
 
-    const showFilter = show => {
-      if (show === false) {
-        searchFilter.classList.remove('wmnds-search-filter--is-open');
-        searchFilter.setAttribute('aria-expanded', 'false');
-      } else {
+    const showFilter = (show = true) => {
+      if (show) {
         searchFilter.classList.add('wmnds-search-filter--is-open');
         searchFilter.setAttribute('aria-expanded', 'true');
+      } else {
+        searchFilter.classList.remove('wmnds-search-filter--is-open');
+        searchFilter.setAttribute('aria-expanded', 'false');
       }
     };
 
@@ -36,7 +36,7 @@ const searchFilterJs = () => {
 
     showBtn.addEventListener('click', e => {
       e.preventDefault();
-      showFilter(true);
+      showFilter();
     });
 
     hideBtn.addEventListener('click', e => {
