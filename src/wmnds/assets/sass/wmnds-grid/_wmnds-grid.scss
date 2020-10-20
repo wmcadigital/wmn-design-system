@@ -6,7 +6,7 @@ button,
 input,
 select,
 textarea,
-.wmnds-grid [class*="wmnds-col"] {
+.wmnds-grid [class*="wmnds-col-"] {
   font-family: $x-font-family;
   -webkit-font-smoothing: antialiased;
 }
@@ -25,7 +25,7 @@ textarea,
   -ms-flex-line-pack: start;
   align-content: flex-start;
 
-  [class*="wmnds-col"] {
+  [class*="wmnds-col-"] {
     display: inline-block;
     zoom: 1;
     letter-spacing: normal;
