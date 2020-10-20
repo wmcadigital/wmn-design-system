@@ -26,7 +26,7 @@
   $breakpoint-value: ""
 ) {
   .wmnds-grid--spacing#{$prefix}-#{$spacing-name} {
-    > [class*="wmnds-col"] {
+    > [class*="wmnds-col-"] {
       // The first and last items in the list will always have no padding on the outer facing sides
       &:first-child,
       &:nth-child(#{$col-count}n + 1) {
