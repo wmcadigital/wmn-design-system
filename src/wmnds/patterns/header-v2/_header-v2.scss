@@ -181,10 +181,15 @@ $header-height-mobile: 4rem;
     text-decoration: none;
   }
 
-  &__search-icon {
+  &__search-icon,
+  &__search-close-icon {
     width: 1.25rem;
     height: 1.25rem;
     fill: currentColor;
+  }
+
+  &__search-close-icon {
+    display: none;
   }
 
   &__mobile-toggle,
@@ -434,7 +439,7 @@ $header-height-mobile: 4rem;
       text-decoration: none;
     }
 
-    &__search {
+    &__search-btn {
       margin-left: $size-sm;
       padding-right: $size-xsm;
       padding-left: $size-xsm;
@@ -469,10 +474,6 @@ $header-height-mobile: 4rem;
     }
 
     &-open {
-      .wmnds-mega-menu__search {
-        display: none;
-      }
-
       .wmnds-mega-menu__scroll-controller {
         visibility: visible;
         opacity: 1;
@@ -640,6 +641,101 @@ $header-height-mobile: 4rem;
 
       &:hover,
       &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md - 1) {
+  .wmnds-mega-menu__search-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow: visible;
+  }
+
+  .wmnds-header--search-open {
+    .wmnds-mega-menu__search-container {
+      visibility: visible;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .wmnds-mega-menu__search-icon {
+      display: none;
+    }
+
+    .wmnds-mega-menu__search-close-icon {
+      display: block;
+    }
+  }
+}
+
+.wmnds-search-container {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: $size-md;
+
+  .wmnds-search-heading {
+    margin: $size-lg 0;
+  }
+
+  .wmnds-search-list {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: block;
+      list-style: none;
+    }
+  }
+
+  .wmnds-link {
+    &__chevron {
+      fill: get-color(secondary);
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md - 1) {
+    color: $white;
+    background-color: get-color(primary);
+
+    .wmnds-search-heading {
+      color: currentColor;
+    }
+
+    .wmnds-search-bar__input {
+      border: 0;
+    }
+
+    .wmnds-search-bar__btn {
+      background-color: get-color(secondary);
+    }
+
+    .wmnds-link {
+      color: $white;
+    }
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    padding: $size-lg $size-md;
+
+    .wmnds-search-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__item {
+        width: 50%;
+        padding-right: 1em;
+      }
+    }
+
+    .wmnds-link {
+      color: get-color(primary);
+      text-decoration: none;
+
+      &:hover {
+        color: get-color(primary);
         text-decoration: underline;
       }
     }

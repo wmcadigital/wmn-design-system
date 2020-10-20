@@ -12,12 +12,16 @@ const headerJs = () => {
         const headerEl = menu.parentNode.parentNode;
 
         const topLevelMenuBtn = menu.querySelectorAll('.wmnds-mega-menu__link-arrow-icon-btn');
-        const mobileMenuIsOpen = { menu: false, primary: false };
+        const searchBtn = menu.querySelector('.wmnds-mega-menu__search-btn');
+        const mobileMenuIsOpen = { menu: false, primary: false, search: false };
+        // object to see which menu/menu level is open
 
         // handle mobile menu toggle
         mobileToggle.addEventListener('click', () => {
           mobileMenuIsOpen.menu = !mobileMenuIsOpen.menu;
           if (mobileMenuIsOpen.menu) {
+            mobileMenuIsOpen.search = false;
+            headerEl.classList.remove('wmnds-header--search-open');
             headerEl.classList.add('wmnds-header--mega-menu-open');
             document.querySelector('html').classList.add('mobile-menu-open');
           } else {
@@ -25,6 +29,18 @@ const headerJs = () => {
             document.querySelector('html').classList.remove('mobile-menu-open');
           }
         });
+
+        if (searchBtn) {
+          searchBtn.addEventListener('click', () => {
+            console.log('click');
+            mobileMenuIsOpen.search = !mobileMenuIsOpen.search;
+            if (mobileMenuIsOpen.search) {
+              headerEl.classList.add('wmnds-header--search-open');
+            } else {
+              headerEl.classList.remove('wmnds-header--search-open');
+            }
+          });
+        }
 
         // handle sub menu open/close
         topLevelMenuBtn.forEach(menuBtn => {
