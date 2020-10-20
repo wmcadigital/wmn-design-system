@@ -11,6 +11,7 @@
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 {% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
+{% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
 
 <!-- Skip to content link -->
 {{
@@ -112,9 +113,46 @@
           <!-- End primary (level 1) navigation -->
         </div>
         <!-- End scrollable container -->
-        <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search">
-          <svg class="wmnds-mega-menu__search-icon"><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
-        </button>
+        {% if(params.search) %}
+        <div class="wmnds-mega-menu__primary-menu-item wmnds-mega-menu__search">
+          <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn">
+            <svg class="wmnds-mega-menu__search-icon"><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
+            <svg class="wmnds-mega-menu__search-close-icon"><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
+          </button>
+          <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
+            <div class="wmnds-search-container">
+              {{wmndsSearchbar()}}
+              <h1 class="wmnds-search-heading">I want to...</h1>
+              <ul class="wmnds-search-list">
+                <li class="wmnds-search-list__item">
+                  <a href="#" title="link title" target="_self" class="wmnds-link wmnds-link--with-chevron">
+                    Result
+                    {{wmndsIcon({icon: 'general-chevron-right', class: 'wmnds-link__chevron wmnds-link__chevron--right'})}}
+                  </a>
+                </li>
+                <li class="wmnds-search-list__item">
+                  <a href="#" title="link title" target="_self" class="wmnds-link wmnds-link--with-chevron">
+                    Result
+                    {{wmndsIcon({icon: 'general-chevron-right', class: 'wmnds-link__chevron wmnds-link__chevron--right'})}}
+                  </a>
+                </li>
+                <li class="wmnds-search-list__item">
+                  <a href="#" title="link title" target="_self" class="wmnds-link wmnds-link--with-chevron">
+                    Result
+                    {{wmndsIcon({icon: 'general-chevron-right', class: 'wmnds-link__chevron wmnds-link__chevron--right'})}}
+                  </a>
+                </li>
+                <li class="wmnds-search-list__item">
+                  <a href="#" title="link title" target="_self" class="wmnds-link wmnds-link--with-chevron">
+                    Result
+                    {{wmndsIcon({icon: 'general-chevron-right', class: 'wmnds-link__chevron wmnds-link__chevron--right'})}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endif %}
       </nav>
       {%- endif %}
     </div>
