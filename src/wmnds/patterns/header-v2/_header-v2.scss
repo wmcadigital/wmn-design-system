@@ -28,6 +28,16 @@ $header-height-mobile: 4rem;
       width: 100%;
       height: 100vh;
       overflow: hidden;
+
+      // row-reverse ensures close icon is on the right
+      .wmnds-mega-menu {
+        flex-direction: row-reverse;
+
+        &__search-btn {
+          margin-right: $size-sm;
+          margin-left: 0;
+        }
+      }
     }
   }
 }
@@ -181,10 +191,15 @@ $header-height-mobile: 4rem;
     text-decoration: none;
   }
 
-  &__search-icon,
-  &__search-close-icon {
+  &__search-icon {
     width: 1.25rem;
     height: 1.25rem;
+    fill: currentColor;
+  }
+
+  &__search-close-icon {
+    width: 1.5rem;
+    height: 1.5rem;
     fill: currentColor;
   }
 
@@ -440,6 +455,7 @@ $header-height-mobile: 4rem;
     }
 
     &__search-btn {
+      position: relative;
       margin-left: $size-sm;
       padding-right: $size-xsm;
       padding-left: $size-xsm;
@@ -650,12 +666,17 @@ $header-height-mobile: 4rem;
 @media screen and (max-width: $breakpoint-md - 1) {
   .wmnds-mega-menu__search-container {
     position: absolute;
+    visibility: hidden;
+    opacity: 0;
     top: 100%;
     left: 0;
     overflow: visible;
   }
 
   .wmnds-header--search-open {
+    position: fixed;
+    width: 100%;
+
     .wmnds-mega-menu__search-container {
       visibility: visible;
       transform: translateY(0);
@@ -673,7 +694,6 @@ $header-height-mobile: 4rem;
 }
 
 .wmnds-search-container {
-  max-width: 40rem;
   margin: 0 auto;
   padding: $size-md;
 
@@ -698,6 +718,8 @@ $header-height-mobile: 4rem;
   }
 
   @media screen and (max-width: $breakpoint-md - 1) {
+    max-height: calc(100vh - #{$header-height-mobile});
+    overflow-y: auto;
     color: $white;
     background-color: get-color(primary);
 
@@ -717,9 +739,7 @@ $header-height-mobile: 4rem;
       color: $white;
     }
   }
-  @media screen and (min-width: $breakpoint-md) {
-    padding: $size-lg $size-md;
-
+  @media screen and (min-width: $breakpoint-sm) {
     .wmnds-search-list {
       display: flex;
       flex-wrap: wrap;
@@ -729,6 +749,10 @@ $header-height-mobile: 4rem;
         padding-right: 1em;
       }
     }
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: 40rem;
+    padding: $size-lg $size-md;
 
     .wmnds-link {
       color: get-color(primary);

@@ -32,9 +32,11 @@ const headerJs = () => {
 
         if (searchBtn) {
           searchBtn.addEventListener('click', () => {
-            console.log('click');
             mobileMenuIsOpen.search = !mobileMenuIsOpen.search;
             if (mobileMenuIsOpen.search) {
+              mobileMenuIsOpen.menu = false;
+              headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
+              document.querySelector('html').classList.remove('mobile-menu-open');
               headerEl.classList.add('wmnds-header--search-open');
             } else {
               headerEl.classList.remove('wmnds-header--search-open');
