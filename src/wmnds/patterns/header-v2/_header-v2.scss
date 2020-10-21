@@ -668,9 +668,9 @@ $header-height-mobile: 4rem;
     position: absolute;
     visibility: hidden;
     opacity: 0;
+    overflow: visible;
     top: 100%;
     left: 0;
-    overflow: visible;
   }
 
   .wmnds-header--search-open {
