@@ -88,7 +88,12 @@ const headerJs = () => {
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       // return list item parent of the current link if it exists else return the link
-      const topLevelListItem = topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink;
+      const topLevelListItem =
+        topLevelLink.parentNode.tagName === 'LI' ||
+        topLevelLink.parentNode.className.includes('wmnds-mega-menu__search')
+          ? topLevelLink.parentNode
+          : topLevelLink;
+
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
 
       // check if level 3 menus are present, if so add modifier class
