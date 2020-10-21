@@ -4,6 +4,22 @@ const headerJs = () => {
 
   const mobileMenu = window.matchMedia('(max-width: 767px)');
 
+  fetch('/ga.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.rows);
+      data.rows.forEach(row => {
+        const linkItem = document.createElement('LI');
+        linkItem.setAttribute('class', 'wmnds-search-list__item');
+        linkItem.innerHTML = `<a href="${row[0]}" class="wmnds-link wmnds-link--with-chevron">${row[1]} <svg class="wmnds-link__chevron wmnds-link__chevron--right">
+          <use xlink:href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use>
+        </svg></a>`;
+        document.querySelectorAll('.wmnds-search-list').forEach(searchList => {
+          searchList.appendChild(linkItem);
+        });
+      });
+    });
+
   megaMenus.forEach(menu => {
     // mobile nav function
     function handleMobileMenu(mq) {
