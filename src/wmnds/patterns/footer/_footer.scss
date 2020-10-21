@@ -156,6 +156,28 @@
       }
     }
   }
+
+  &__social-media {
+    display: flex;
+    padding: 0;
+
+    li {
+      display: block;
+
+      &:not(:last-child) {
+        a {
+          display: block;
+          margin-right: $size-lg;
+        }
+      }
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+        fill: $white;
+      }
+    }
+  }
 }
 
 // collapsible panel styles (kept separate as maybe could be moved to its own reusable component?)
