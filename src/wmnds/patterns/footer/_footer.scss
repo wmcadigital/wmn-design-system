@@ -87,9 +87,17 @@
     margin: 0;
     padding: 0;
 
+    @media screen and (max-width: $breakpoint-md - 1) {
+      padding-left: 1rem;
+    }
+
     li {
       margin-bottom: $size-sm;
       list-style: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -213,6 +221,8 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
 .wmnds-collapse-panel {
   @media screen and (max-width: $breakpoint-md - 1) {
     max-height: 0;
+    padding-left: $size-md;
+    border-left: 1px solid $white;
     overflow: hidden;
     transition: $collapse-transition;
   }
