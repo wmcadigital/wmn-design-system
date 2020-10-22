@@ -72,8 +72,6 @@
         margin: 0;
         padding: $size-xsm 0;
         border: 0;
-        font-family: $x-font-family;
-        font-size: $size-md;
       }
     }
 
@@ -203,6 +201,7 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
 
     .wmnds-collapse-heading__indicator {
       display: block;
+      margin-left: $size-xs;
       width: $size-lg;
       height: $size-lg;
       transform: rotate(90deg);
