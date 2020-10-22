@@ -1,0 +1,129 @@
+{% extends "www/_layouts/layout-fullwidth.njk" %} 
+{% set pageTitle="A to Z content style guide" %} {% set section = "Styles" %} 
+{# Imports #} 
+{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %} 
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{# Set array of tiles #} 
+{% block content %} 
+
+{# About the style guide #}
+<div class="wmnds-grid">
+  <div class="wmnds-col-1 wmnds-col-md-3-4">
+    <h2>Writing content for West Midlands Network</h2>
+    <p>
+      You should create all content with user-focused content design principles. This means content has an identified
+      user need and is written in plain English.
+    </p>
+    <p>
+      Do not use marketing speak - users will be visiting your website to perform a task (for example, buy a train ticket or find out about Swift cards). Your content shouldn’t try to sell them anything - instead, tell them the information they need to know in the simplest way possible. 
+    </p>
+    <p>
+      Research has shown that both high literacy and low literacy users prefer plain English because it takes less time to read. Users won’t be on your website for fun - so make the experience quick and easy.
+    </p>
+    <p>
+      To find out more about why plain language is important, read:
+    <ul>
+      <li>
+        {{
+          wmndsLink({
+            link: 'https://readabilityguidelines.co.uk/clear-language/',
+            linkTitle: 'advice about clear language',
+            text: 'advice about clear language'
+          })
+        }}
+        from the Readability Guidelines project
+      </li>
+      <li>
+        the
+        {{
+          wmndsLink({
+            link: 'http://www.plainenglish.co.uk/the-a-z-of-alternative-words.html',
+            linkTitle: 'plain English Campaign’s A to Z of alternative words',
+            text: 'plain English Campaign’s A to Z of alternative words'
+          })
+        }}
+         - this helps you find a simple replacement for a complicated word
+      </li>
+    </ul>
+  </p>
+    <p>
+      Read the
+      {{
+        wmndsLink({
+          link: 'https://www.gov.uk/guidance/content-design/what-is-content-design',
+          linkTitle: 'GOV.UK introduction to content design',
+          text: 'GOV.UK introduction to content design'
+        })
+      }}
+      to find out more about content design principles.
+    </p>
+    <p>Design Team can help you to test your content with user research.</p>
+    <br />
+    <h3>About the A-Z of style guide</h3>
+    <p>This style guide will help you to use consistent words across West Midlands Network services.</p>
+    <p>
+      If something is not covered by this style guide, check the
+      {{
+        wmndsLink({
+          link: 'https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style',
+          linkTitle: 'GOV.UK Style Guide',
+          text: 'GOV.UK style guide'
+        })
+      }}
+      . You can also email Samresha Purewal if you think something is missing from this guidance.</p>
+      <br />
+      <h3>Introducing West Midlands Network</h3>
+    <p>If you’re talking about day-to-day services (bus, train or tram), you
+      may need to make it clear that West Midlands Network does not run these.<br /><br />For example, you could say: "We don’t run the buses, trains or trams. We can point you in the right direction if you need help."
+    </p>
+    <br />
+    <br />
+    {# A to Z accordions #}
+    <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--align-center">
+      <div class="wmnds-col-1 wmnds-col-md-1-2">
+        <h3 id="atozofstyle">A to Z of style</h3> 
+      </div>
+      <div class="wmnds-col-1 wmnds-col-md-auto wmnds-m-b-md js-accordion-controls">
+        <button class="wmnds-btn wmnds-btn--primary js-accordion-controls-open">Open all</button>
+        <button class="wmnds-btn wmnds-btn--primary js-accordion-controls-close wmnds-m-l-xs">Close all</button>
+      </div>
+    </div>
+    <div class="wmnds-col-1">
+      {% for section in aToZOfStyles %}
+        <div class="wmnds-accordion wmnds-m-b-sm">
+          <button id="{{section.letter | lower}}" aria-controls="{{section.letter | lower}}" class="wmnds-accordion__summary-wrapper" aria-expanded="false">
+            <div class="wmnds-accordion__summary">
+              <h4 class="wmnds-m-b-none">{{section.letter}}</h4>
+            </div>
+            <!-- plus icon -->
+            {{
+              wmndsIcon({
+                icon: 'general-expand',
+                class: 'wmnds-accordion__icon'
+              }) | indent(4) | trim
+            }}
+            <!-- minus icon -->
+            {{
+              wmndsIcon({
+                icon: 'general-minimise',
+                class: 'wmnds-accordion__icon wmnds-accordion__icon--minimise'
+              }) | indent(4) | trim
+            }}
+          </button>
+          <div class="wmnds-accordion__content" id="accordion-{{section.letter | lower}}">
+            {% for style in section.styles %}
+            <h5 id="{{style.title | replace(r/\W/gi, '') | replace(' ', '-') | lower}}" class="{{"wmnds-m-t-xl" if not loop.first}}">
+              <span>{{style.title}}<span>
+            </h5>
+            {{style.content | safe}}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<br />
+{% endblock %}

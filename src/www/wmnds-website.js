@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/browser';
 import forEachPolyfill from './assets/vendor/js/polyfills/ie11-forEach';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
+import aToZContentStyleGuide from './pages/styles/a-to-z-content-style-guide/_a-to-z-content-style-guide';
 import highlightJS from './_partials/component-example/_component-example';
 import cookies from '../wmnds/patterns/cookies/cookies';
 import headerJs from '../wmnds/patterns/header-v2/_header-v2';
@@ -27,6 +28,7 @@ window.addEventListener(
   'DOMContentLoaded',
   (forEachPolyfill,
   icons(),
+  aToZContentStyleGuide(),
   colorPalettes(),
   headerJs(),
   footerJs(),
