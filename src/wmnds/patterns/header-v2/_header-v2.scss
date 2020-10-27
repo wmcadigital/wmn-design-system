@@ -665,12 +665,12 @@ $header-height-mobile: 4rem;
 
 @media screen and (max-width: $breakpoint-md - 1) {
   .wmnds-mega-menu__search-container {
-    position: absolute;
     visibility: hidden;
-    opacity: 0;
-    overflow: visible;
+    position: absolute;
     top: 100%;
     left: 0;
+    overflow: visible;
+    opacity: 0;
   }
 
   .wmnds-header--search-open {
