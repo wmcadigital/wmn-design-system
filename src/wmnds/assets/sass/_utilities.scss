@@ -21,6 +21,14 @@
   }
 }
 
+// ensures sticky footer
+.wmnds-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 // Container sizes
 .wmnds-container {
   display: block;
@@ -35,6 +43,7 @@
   &--main {
     margin-top: $size-md;
     margin-bottom: $size-lg;
+    flex-grow: 1;
   }
 }
 

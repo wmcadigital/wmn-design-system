@@ -549,6 +549,7 @@ $header-height-mobile: 4rem;
 
     &__primary-menu-link {
       min-height: 100%;
+      margin: 0;
       padding: 1rem 1.5rem;
       transition: $link-transition;
       color: $white;
