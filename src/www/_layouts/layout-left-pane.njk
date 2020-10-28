@@ -1,11 +1,11 @@
 {% extends "www/_layouts/_master-layout.njk" %}
 
 {% block body %}
-<div class="wmnds-grid">
-  <div class="wmnds-col-1 wmnds-col-md-1-4">
+<div class="wmnds-grid wmnds-grid--spacing-lg-2-lg">
+  <div class="wmnds-col-1 wmnds-col-lg-1-3 wmnds-p-b-lg">
     {% include "www/_partials/nav/subnav.njk" %}
   </div>
-  <div class="wmnds-col-1 wmnds-col-md-3-4" id="wmnds-main-content">
+  <div class="wmnds-col-1 wmnds-col-lg-2-3" id="wmnds-main-content">
     <h1>{{ pageTitle }}</h1>
     <hr>
     {% block content %}{% endblock content %}
