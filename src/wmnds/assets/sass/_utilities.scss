@@ -21,20 +21,29 @@
   }
 }
 
+// ensures sticky footer
+.wmnds-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 // Container sizes
 .wmnds-container {
   display: block;
-  max-width: $breakpoint-xl;
+  max-width: $breakpoint-lg;
   margin: auto;
   padding: 0 $size-sm;
 
-  @media screen and (min-width: $breakpoint-md) {
+  @media screen and (min-width: $breakpoint-lg) {
     padding: 0 $size-md;
   }
 
   &--main {
     margin-top: $size-md;
     margin-bottom: $size-lg;
+    flex-grow: 1;
   }
 }
 
