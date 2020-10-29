@@ -4,21 +4,6 @@ const headerJs = () => {
 
   const mobileMenu = window.matchMedia('(max-width: 767px)');
 
-  // get search list items
-  fetch('/ga.json')
-    .then(response => response.json())
-    .then(data => {
-      data.rows.forEach(row => {
-        const linkItem = document.createElement('LI');
-        linkItem.setAttribute('class', 'wmnds-search-list__item');
-        linkItem.innerHTML = `<a href="${row[0]}" class="wmnds-link wmnds-link--with-chevron">${row[1]} <svg class="wmnds-link__chevron wmnds-link__chevron--right"><use xlink:href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a>`;
-        document.querySelectorAll('.wmnds-search-list').forEach(searchList => {
-          const el = linkItem.cloneNode(true);
-          searchList.appendChild(el);
-        });
-      });
-    });
-
   megaMenus.forEach(menu => {
     // mobile nav function
     function handleMobileMenu(mq) {

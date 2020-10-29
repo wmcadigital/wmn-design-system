@@ -122,8 +122,21 @@
           <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
             <div class="wmnds-search-container">
               {{wmndsSearchbar()}}
+              {%- if(params.searchSuggestions) %}
               <h1 class="wmnds-search-heading">I want to...</h1>
-              <ul class="wmnds-search-list"></ul>
+              <ul class="wmnds-search-list">
+              {%- for suggestion in params.searchSuggestions%}
+                <li class="wmnds-search-list__item">
+                  <a href="#" class="wmnds-link wmnds-link--with-chevron">{{suggestion}}
+                    {{wmndsIcon({
+                      class: 'wmnds-link__chevron wmnds-link__chevron--right',
+                      icon: 'general-chevron-right'
+                    })}}
+                  </a>
+                </li>
+                {%- endfor %}
+              </ul>
+              {%- endif %}
             </div>
           </div>
         </div>
