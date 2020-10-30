@@ -1,5 +1,8 @@
     {% macro wmndsSearchFilter(params) %}
 
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
 <!-- Mobile show filter button -->
 <div class="wmnds-hide-desktop">
     <button class="wmnds-btn wmnds-btn--primary wmnds-btn--block " id="show_filter_btn" aria-controls="search_filter" aria-expanded="false">
@@ -13,6 +16,7 @@
         <a href="#" class="wmnds-link wmnds-search-filter__clear-all">Clear all</a>
         <a href="#" id="hide_filter_btn" class="wmnds-search-filter__close">
             <svg>
+                <title>Close</title>
                 <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
             </svg>
         </a>
@@ -26,13 +30,9 @@
           <h4 class="wmnds-accordion__summary-title wmnds-m-b-none">{{accordion.summaryTitle}}</h4>
         </div>
         <!-- plus icon -->
-        <svg class="wmnds-accordion__icon">
-          <use xlink:href="#wmnds-general-expand" href="#wmnds-general-expand"></use>
-        </svg>
+        {{wmndsIcon({class: 'wmnds-accordion__icon', icon: 'general-expand'}) | trim}}
         <!-- minus icon -->
-        <svg class="wmnds-accordion__icon wmnds-accordion__icon--minimise">
-          <use xlink:href="#wmnds-general-minimise" href="#wmnds-general-minimise"></use>
-        </svg>
+        {{wmndsIcon({class: 'wmnds-accordion__icon wmnds-accordion__icon--minimise', icon: 'general-minimise'}) | trim}}
       </button>
     
       <!-- accordion content -->
@@ -44,9 +44,7 @@
                     {{option}}
                     <input class="wmnds-fe-checkboxes__input" value="{{option}}" type="checkbox"/>
                     <span class="wmnds-fe-checkboxes__checkmark">
-                        <svg class="wmnds-fe-checkboxes__icon">
-                            <use xlink:href="#wmnds-general-checkmark" href="#wmnds-general-checkmark"></use>
-                        </svg>
+                    {{wmndsIcon({class: 'wmnds-fe-checkboxes__icon', icon: 'general-checkmark'}) | trim}}
                     </span>
                 </label>
             {%- endfor %}
@@ -60,6 +58,7 @@
     </div>
     <a href="#" class="wmnds-search-filter__clear-all wmnds-hide-mobile">
         <svg>
+            <title>Close</title>
             <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
         </svg> Clear all filters
     </a>
