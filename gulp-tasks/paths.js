@@ -30,7 +30,9 @@ module.exports = {
   nunjucks: {
     src: 'src/**/*.njk', // Used for watching njk files
     websiteSrc: 'src/www/pages/**/*.njk',
-    output: 'build/'
+    componentSrc: 'src/wmnds/**/*.njk',
+    output: 'build/',
+    componentOutput: 'build/njk'
   },
   svgs: {
     src: 'src/wmnds/assets/icon/**/*.svg',
