@@ -4,7 +4,10 @@
   "description": "A library of typography, visual styles and user interface components which are documented for West Midlands Network.",
   "homepage": "https://designsystem.wmnetwork.co.uk",
   "author": "WMCA",
-  "main": "src/www/pages/index.njk",
+  "main": "build/index.html",
+  "files": [
+    "build/*"
+  ],
   "repository": "https://github.com/wmcadigital/wmn-design-system.git",
   "copyright": "WMCA",
   "sasslintConfig": ".sass-lint.yml",
@@ -24,6 +27,16 @@
       "baseUrl": "/",
       "cdn": "https://designsystem.wmnetwork.co.uk"
     }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   },
   "scripts": {
     "upgrade-packages": "ncu -u",
