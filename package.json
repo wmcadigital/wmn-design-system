@@ -47,6 +47,8 @@
   "devDependencies": {
     "@babel/core": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@zeplin/cli": "^1.0.4",
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
@@ -97,6 +99,7 @@
     "nunjucks": "^3.2.2",
     "prettier": "^2.0.5",
     "sass": "^1.26.9",
+    "semantic-release": "^17.2.2",
     "webpack-stream": "^6.0.0"
   },
   "dependencies": {
