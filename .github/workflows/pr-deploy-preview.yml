@@ -22,7 +22,7 @@ jobs:
       - name: Deploy netlify preview
         uses: nwtgck/actions-netlify@v1.1.11
         with:
-          publish-dir: 'build'
+          publish-dir: '../build'
           production-branch: master
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
