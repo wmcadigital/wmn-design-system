@@ -79,8 +79,8 @@ $transition-fade-in: opacity 0.2s ease-out;
 
     .wmnds-accordion__summary {
       .wmnds-accordion__summary-title {
-        font-size: 1.4375rem;
-        line-height: 1.5rem;
+        @include type-setting(3, 1);
+        margin-top: 0;
       }
     }
 
