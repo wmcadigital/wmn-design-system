@@ -10,6 +10,7 @@ $wmnds-msg-close-btn-width: 5rem;
   border: 1px solid get-color(information);
 
   &__header {
+    display: flex;
     flex-wrap: nowrap;
   }
 
