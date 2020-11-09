@@ -12,6 +12,9 @@ $wmnds-msg-close-btn-width: 5rem;
   &__header {
     display: flex;
     flex-wrap: nowrap;
+    @media screen and (min-width: $breakpoint-md) {
+      flex-wrap: wrap;
+    }
   }
 
   &__icon {
