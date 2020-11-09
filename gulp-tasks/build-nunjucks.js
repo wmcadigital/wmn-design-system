@@ -27,6 +27,7 @@ module.exports.buildTemplates = () => {
       })
     )
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
+    .pipe(plugins.replace('$*version', packageJson.version))
     .pipe(plugins.formatHtml())
     .pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
     .pipe(dest(paths.nunjucks.output));
