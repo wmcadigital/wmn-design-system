@@ -32,6 +32,36 @@ $dark-grey: #2b2b2b;
   }
 }
 
+.wmnds-website-code-example__iframe-container {
+  iframe {
+    width: 100%;
+    border: 0;
+  }
+
+  &--fullscreen {
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 3em;
+    background-color: $white;
+    border: 2vh solid get-color(text);
+
+    iframe {
+      height: calc(100vh - 3rem) !important;
+    }
+
+    .wmnds-website-code-example__fullscreen-link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: $size-sm;
+    }
+  }
+}
+
 // Scrollbar styling for code previews of components
 .hljs {
   max-height: 200px;

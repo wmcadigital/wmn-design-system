@@ -1,19 +1,29 @@
 {% macro compExample(componentPath, params) %}
+{% set enableIframeJs = enableIframeJs if params.enableIframeJs else "false" %}
 
 <div class="wmnds-website-code-example">
   <h3 class="wmnds-website-code-example__subtitle">Component example</h3>
   <div class="wmnds-website-code-example__inner-wrap">
     <div class="wmnds-col-1">
-      {%- for item in componentPath %}
-        {{ item }}
-        {% if loop.last == false %}
-          {% if params.displayInline %}
-            <div class="wmnds-m-b-md wmnds-website-mar--right"></div>
-          {% else %}
-            <div class="wmnds-m-b-md"></div>
-          {% endif %}
+      {% if params.iframe %}
+      <div class="wmnds-website-code-example__iframe-container wmnds-website-code-example__iframe">
+        <iframe sandbox="allow-same-origin allow-scripts" frameborder="0">
         {% endif %}
-      {% endfor -%}
+          {%- for item in componentPath %}
+            {{ item }}
+            {% if loop.last == false %}
+              {% if params.displayInline %}
+                <div class="wmnds-m-b-md wmnds-website-mar--right"></div>
+              {% else %}
+                <div class="wmnds-m-b-md"></div>
+              {% endif %}
+            {% endif %}
+          {% endfor -%}
+        {% if params.iframe %}
+        </iframe>
+        <a href="#" class="wmnds-link wmnds-website-code-example__fullscreen-link">View component full screen</a>
+      </div>
+      {% endif %}
     </div>
   </div>
 
