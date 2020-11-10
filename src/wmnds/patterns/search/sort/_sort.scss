@@ -1,0 +1,22 @@
+.wmnds-search-sort {
+  margin-bottom: $size-md;
+
+  .wmnds-fe-label {
+    margin-bottom: $size-sm;
+  }
+
+  @media screen and (max-width: $breakpoint-md - 1) {
+    display: flex;
+    align-items: center;
+
+    .wmnds-fe-label,
+    .wmnds-fe-label h3 {
+      margin: 0;
+    }
+
+    .wmnds-fe-dropdown {
+      margin-left: $size-md;
+      flex-grow: 1;
+    }
+  }
+}
