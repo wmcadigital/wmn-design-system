@@ -1,7 +1,12 @@
-{% extends "www/_layouts/layout-left-pane.njk" %} {% set pageTitle="Message" %} {% from
-"wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %} {% from
-"wmnds/components/message/help/_help.njk" import wmndsMsgHelp %} {% from
-"www/_partials/component-example/component-example.njk" import compExample %} {% block content %} {# About #}
+{% extends "www/_layouts/layout-left-pane.njk" %} 
+{% set pageTitle="Message" %}
+
+{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
+{% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+
+{% block content %}
+{# About #}
 <h2>About</h2>
 <h3>What does it do?</h3>
 <ul>

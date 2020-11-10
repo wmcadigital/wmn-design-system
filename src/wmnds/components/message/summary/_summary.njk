@@ -1,10 +1,27 @@
-{% macro wmndsMsgSummary(params) %} {# Set vars and defaults #} {# Success #} {% if params.type === "success" %} {% set
-iconName = 'general-success' %} {# Success #} {% elseif params.type === "success-fill" %} {% set iconName =
-'general-success' %} {# Success #} {% elseif params.type === "success-fill-no-icon" %} {% set iconName = '' %} {#
-Warning #} {% elseif params.type === "warning" %} {% set iconName = 'general-warning-circle' %} {# Error #} {% elseif
-params.type === "error" %} {% set iconName = 'general-warning-triangle' %} {# Info (default) #} {% else %} {% set
-iconName = 'general-info' %} {% endif %} {# Set classes #} {% set classes = " " + params.classes if params.classes %} {%
-from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% macro wmndsMsgSummary(params) %} 
+{# Set vars and defaults #} 
+{# Success #} 
+{% if params.type === "success" %} 
+{% set iconName = 'general-success' %} 
+{# Success #} 
+{% elseif params.type === "success-fill" %}
+{% set iconName = 'general-success' %} 
+{# Success #} 
+{% elseif params.type === "success-fill-no-icon" %} 
+{% set iconName = '' %} 
+{# Warning #} 
+{% elseif params.type === "warning" %} 
+{% set iconName = 'general-warning-circle' %} 
+{# Error #} 
+{% elseif params.type === "error" %} 
+{% set iconName = 'general-warning-triangle' %}
+{# Info (default) #}
+{% else %}
+{% set iconName = 'general-info' %} 
+{% endif %}
+{# Set classes #}
+{% set classes = " " + params.classes if params.classes %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-msg-summary wmnds-msg-summary--{{ params.type }} {{ classes }}">
   {%- if params.dismissable %}
