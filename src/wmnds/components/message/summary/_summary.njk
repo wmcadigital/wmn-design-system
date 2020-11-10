@@ -30,7 +30,7 @@
     <svg><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
   </button>
   {%- endif %}
-  <div class="wmnds-msg-summary__header wmnds-grid">
+  <div class="wmnds-msg-summary__header">
     {# Get SVG icon and pass class #} {%- if iconName !== "" -%}
     {{-
       wmndsIcon({
@@ -39,7 +39,7 @@
       }) | trim
     -}}
     {%- endif %}
-    <h3 class="wmnds-msg-summary__title wmnds-col-1">{{ params.title }}</h3>
+    <h3 class="wmnds-msg-summary__title">{{ params.title }}</h3>
     {%- if params.subtitle %}
     <h3>{{ params.subtitle }}</h3>
     {% endif %}
