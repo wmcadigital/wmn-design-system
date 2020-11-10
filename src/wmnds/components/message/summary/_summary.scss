@@ -10,10 +10,10 @@ $wmnds-msg-close-btn-width: 5rem;
   border: 1px solid get-color(information);
 
   &__header {
-    display: flex;
+    display: block;
 
     @media screen and (min-width: $breakpoint-md) {
-      flex-wrap: nowrap;
+      display: flex;
     }
   }
 
@@ -22,6 +22,10 @@ $wmnds-msg-close-btn-width: 5rem;
     height: $wmnds-msg-icon-size;
     margin-right: $wmnds-msg-icon-margin-right;
     fill: get-color(information);
+
+    @media screen and (min-width: $breakpoint-md) {
+      min-width: $wmnds-msg-icon-size;
+    }
   }
 
   &__title {
