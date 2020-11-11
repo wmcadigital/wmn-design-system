@@ -26,7 +26,7 @@ const icons = () => {
 
 window.addEventListener(
   'DOMContentLoaded',
-  (forEachPolyfill,
+  (forEachPolyfill(),
   icons(),
   aToZContentStyleGuide(),
   colorPalettes(),
