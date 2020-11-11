@@ -37,6 +37,13 @@
     font-size: 1.125rem * $multiplier;
     line-height: 1.5rem * $multiplier;
   }
+  // Heading 5 (16px)
+  @if $level == 5 {
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 0.75rem * $multiplier;
+    font-size: 1rem * $multiplier;
+    line-height: 1.5rem * $multiplier;
+  }
 }
 
 // get-color() notes
@@ -53,4 +60,19 @@
   $color: map-get($palettes, $color);
 
   @return mix($shade, $color, $percent);
+}
+
+// repeater() notes
+//
+// Repeats a string with an optional separator
+@function repeater($item, $count, $separator: "") {
+  @if $count == 0 {
+    @return $item;
+  }
+
+  $string: $item;
+  @for $i from 1 through $count {
+    $string: $string + $separator + $item;
+  }
+  @return "#{$string}";
 }

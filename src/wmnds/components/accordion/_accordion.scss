@@ -7,14 +7,19 @@
   }
 
   &__summary-wrapper {
-    display: block;
+    display: flex;
     width: 100%;
     padding: $size-md;
     border: 0;
     background: none;
     text-align: left;
     cursor: pointer;
+    align-items: center;
     @include type-setting(0);
+
+    &:active {
+      color: get-color(text);
+    }
   }
 
   &__summary {
@@ -27,7 +32,6 @@
   &__icon {
     width: 32px;
     height: 32px;
-    float: right;
     fill: get-color(secondary);
   }
 

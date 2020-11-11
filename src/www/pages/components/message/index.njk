@@ -1,5 +1,6 @@
-{% extends "www/_layouts/layout-left-pane.njk" %}
+{% extends "www/_layouts/layout-left-pane.njk" %} 
 {% set pageTitle="Message" %}
+
 {% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
 {% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
@@ -10,7 +11,9 @@
 <h3>What does it do?</h3>
 <ul>
   <li>
-    Gives user feedback during the interaction with a website (informs about error, warning, success). Messages are colour coded and use symbols to reinforce the message. The structure of the message: what happened? what does it mean? what can user do about it?)
+    Gives user feedback during the interaction with a website (informs about error, warning, success). Messages are
+    colour coded and use symbols to reinforce the message. The structure of the message: what happened? what does it
+    mean? what can user do about it?)
   </li>
 </ul>
 
@@ -20,7 +23,8 @@
     When user needs explicit indication that something has gone wrong (user error or website/app error)
   </li>
   <li>
-    When user is about to do something that is destructive or when the result of an action is unexpected but it is not an error (Warning Message)
+    When user is about to do something that is destructive or when the result of an action is unexpected but it is not
+    an error (Warning Message)
   </li>
   <li>
     When user needs confirmation of success (Success message)
@@ -32,22 +36,22 @@
     Real time inline validation to inform users about the correctness of provided data.
   </li>
 </ul>
-<hr>
-<br><br>
+<hr />
+<br /><br />
 {# Info message #}
 <h2>Information</h2>
 {{
   compExample([
     wmndsMsgSummary({
       type: 'info',
-      title: 'Information about xx',
-      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+      title: 'Information about XXXXXXXXX was successfully updated!',
+      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum text.'
     })
   ])
 }}
 {# End info message #}
 
-<br><br>
+<br /><br />
 {# Success message #}
 <h2>Success</h2>
 {{
@@ -61,8 +65,7 @@
 }}
 {# End success message #}
 
-
-<br><br>
+<br /><br />
 {# Success message #}
 <h2>Success (fill)</h2>
 {{
@@ -76,7 +79,7 @@
 }}
 {# End success message #}
 
-<br><br>
+<br /><br />
 {# Warning message #}
 <h2>Warning</h2>
 {{
@@ -90,7 +93,7 @@
 }}
 {# End Warning message #}
 
-<br><br>
+<br /><br />
 {# Error message #}
 <h2>Error</h2>
 {{
@@ -102,29 +105,49 @@
     })
   ])
 }}
-{# End error message #}
 
-<br><br>
+{# End error message #}
+<br /><br />
+
+{# Close message variant #}
+<h2>Close message variant</h2>
+
+<h3>What does it do?</h3>
+<ul>
+  <li>Allows the user to dismiss an Information, Success, Warning or Error message.</li>
+</ul>
+
+<h3>When to use it?</h3>
+<ul>
+  <li>
+    When the information in the message is a response to a users action, or if the information is of low importance and
+    only applies to a small set of users.
+  </li>
+</ul>
+{{
+  compExample([
+    wmndsMsgSummary({
+      type: 'info',
+      title: 'Information about XXXXXXXXX was successfully updated!',
+      dismissable: true,
+      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+    })
+  ])
+}}
+{# End close message variant #}
+
+<br /><br />
 {# Help message #}
 <h2>Help</h2>
 
 <h3>When to use it?</h3>
 <ul>
   <li>
-    Help message should be used when it is determined that user needs guidance to complete digital task successfully
+    The help message should be used when a user requires guidance on how to complete a digital task successfully.
   </li>
   <li>
-    User will be able to remove help message once he understands how to complete his task
+    The user will be able to close the help message once they understand how to complete the task.
   </li>
 </ul>
-{{
-  compExample([
-    wmndsMsgHelp({
-      message: 'Details added what happened and what to do next.<br/> Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
-    })
-  ])
-}}
-{# End Help message #}
-
-
-{% endblock %}
+{{ compExample([ wmndsMsgHelp({ message: 'Details added what happened and what to do next.<br />
+Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.' }) ]) }} {# End Help message #} {% endblock %}

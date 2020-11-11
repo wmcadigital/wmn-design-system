@@ -1,4 +1,4 @@
-const header = () => {
+const headerJs = () => {
   // get mega menu elements
   const megaMenus = document.querySelectorAll('.wmnds-mega-menu');
 
@@ -252,4 +252,4 @@ const header = () => {
   });
 };
 
-export default header;
+export default headerJs;

@@ -16,7 +16,7 @@ $dark-grey: #2b2b2b;
     border-bottom: 1px solid $dark-grey;
     background: get-color(background);
 
-    > .wmnds-col-1 {
+    & > .wmnds-col-1 {
       padding: $size-md;
       overflow: hidden;
     }
@@ -25,6 +25,11 @@ $dark-grey: #2b2b2b;
   pre {
     margin: 0;
   }
+
+  & + .wmnds-website-code-example {
+    margin-top: 0;
+    border-top: 0;
+  }
 }
 
 // Scrollbar styling for code previews of components
@@ -32,6 +37,7 @@ $dark-grey: #2b2b2b;
   max-height: 200px;
   padding: $size-md;
   overflow-y: hidden;
+  font-size: 1rem;
 
   &::-webkit-scrollbar {
     width: 100%;
@@ -66,4 +72,28 @@ span[class^="hljs-"] {
 .wmnds-js-show-code {
   margin: $size-md;
   float: right;
+}
+
+.wmnds-code-toggle {
+  display: block;
+  padding: $size-xsm $size-md;
+  color: $white;
+  background: get-color(secondary);
+
+  .wmnds-btn {
+    margin-left: $size-sm;
+  }
+
+  .wmnds-btn:not(.wmnds-btn--dark-bg) {
+    border: 0;
+    color: currentColor;
+    background-color: transparent;
+    text-decoration: underline;
+
+    &:hover {
+      color: currentColor;
+      background-color: get-color(information);
+      text-decoration: none;
+    }
+  }
 }

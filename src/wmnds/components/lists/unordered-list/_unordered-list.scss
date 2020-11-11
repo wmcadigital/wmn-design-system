@@ -4,25 +4,31 @@
 .wmnds-unordered-list,
 .wmnds-html ul:not([class*="wmnds-"]) {
   list-style: none;
+  padding-inline-start: $size-lg;
 
   a,
   .wmnds-link {
     display: inline;
   }
 
-  li:before {
-    content: "●";
-    padding-right: $size-xsm;
+  li {
+    position: relative;
+
+    &:before {
+      content: "●";
+      position: absolute;
+      left: -1.5rem;
+    }
   }
 
-  ul,
+  ul:not([class*="wmnds-"]),
   ol {
+    margin-top: $size-md;
     list-style: none;
     padding-inline-start: $size-lg;
 
     li:before {
       content: "–";
-      padding-right: $size-xsm;
     }
   }
 }

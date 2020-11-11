@@ -6,7 +6,7 @@ button,
 input,
 select,
 textarea,
-.wmnds-grid [class*="wmnds-col"] {
+.wmnds-grid [class*="wmnds-col-"] {
   font-family: $x-font-family;
   -webkit-font-smoothing: antialiased;
 }
@@ -597,7 +597,7 @@ textarea,
   }
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 62em) {
   .wmnds-col-lg-auto,
   .wmnds-col-lg-1,
   .wmnds-col-lg-1-1,

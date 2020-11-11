@@ -46,6 +46,26 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     float: right;
   }
 
+  // Dark background variant
+  &--dark-bg {
+    color: get-color(primary);
+    background-color: $white;
+
+    &:hover {
+      background-color: get-color(primary, 90);
+    }
+
+    &:active,
+    &:target,
+    &:focus {
+      background-color: get-color(plannedDisruption);
+    }
+
+    &.wmnds-is--active {
+      background-color: get-color(primary, 80);
+    }
+  }
+
   // button primary styles
   &--primary {
     background-color: get-color(primary);
@@ -94,6 +114,29 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
       .wmnds-btn__icon {
         fill: get-color(disable);
+      }
+    }
+
+    // Dark background variant
+    &.wmnds-btn--dark-bg {
+      border: 0;
+      color: $white;
+      background-color: get-color(primary);
+
+      &:hover {
+        background-color: get-color(primary, 10);
+      }
+
+      &:active,
+      &:target,
+      &:focus {
+        color: get-color(primary);
+        background-color: get-color(plannedDisruption);
+      }
+
+      &.wmnds-is--active {
+        color: $white;
+        background-color: get-color(primary, 30);
       }
     }
   }
@@ -185,5 +228,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     &.wmnds-is--active {
       background-color: get-color(disable);
     }
+  }
+
+  // block modifier for full width buttons
+  &--block {
+    display: block;
+    width: 100%;
   }
 }

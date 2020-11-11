@@ -1,0 +1,92 @@
+// CREATES .wmnds-grid--spacing classes
+
+//  HOW IT WORKS
+//
+// The spacing between each column follows a sequnce. Using 1 rem spacing as an example:
+// (the outer cols have no spacing on the outer facing sides)
+//
+// 2 cols: 0rem [col] 1/2rem | 1/2rem [col] 0rem
+// 3 cols: 0rem [col] 2/3rem | 1/3rem [col] 1/3rem | 2/3rem [col] 0rem
+// 4 cols: 0rem [col] 3/4rem | 1/4rem [col] 2/4rem | 2/4rem [col] 1/4rem | 3/4rem [col] 0rem
+// etc..
+//
+// From this sequence all we have to do to get equal spacing between each cols is increment (from left to right)
+// the padding-left by 1/n and decrement the padding-right by 1/n (where n is the number of columns).
+// Each column has total padding (1 - 1/n) rem, which means they'll all be the same width.
+//
+// In order to have variable spacing we just multiply each side by the desired total spacing between columns.
+
+// Create a mixin than can be called later down the page to create the spacing rules
+@mixin grid-spacing-class(
+  $prefix,
+  $col-count,
+  $spacing-name,
+  $spacing-value,
+  $breakpoint-name: "",
+  $breakpoint-value: ""
+) {
+  .wmnds-grid--spacing#{$prefix}-#{$spacing-name} {
+    > [class*="wmnds-col-"] {
+      // The first and last items in the list will always have no padding on the outer facing sides
+      &:first-child,
+      &:nth-child(#{$col-count}n + 1) {
+        padding-right: $spacing-value * (($col-count - 1) / $col-count);
+        padding-left: 0;
+      }
+
+      &:nth-child(#{$col-count}n) {
+        padding-right: 0;
+        padding-left: $spacing-value * (($col-count - 1) / $col-count);
+      }
+
+      // Loops through the inner cols (from right to left) increasing the padding right,
+      // and decreasing the padding left.
+      @if $col-count - 2 > 0 {
+        @for $i from 1 through $col-count - 2 {
+          &:nth-child(#{$col-count}n - #{$i}) {
+            padding-right: $spacing-value * ($i / $col-count);
+            padding-left: $spacing-value * (1 - (($i + 1) / $col-count));
+          }
+        }
+      }
+
+      // To achieve the pattern of 2 in a row and 1 full width below
+      // we give the parent: .wmnds-grid--spacing-{breakpoint}-2-sm
+      // then we give the first two columns: .wmnds-col-{breakpoint}-1-2
+      // and the final column: .wmnds-col-1 or .wmnds-col-{breakpoint}-1-1
+      @if $breakpoint-name == "" or $breakpoint-value == "" {
+        &.wmnds-col-1,
+        &.wmnds-col-1-1 {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      } @else {
+        @media screen and (min-width: #{$breakpoint-value}em) {
+          &.wmnds-col-#{$breakpoint-name}-1,
+          &.wmnds-col-#{$breakpoint-name}-1-1 {
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Creates standard spacing classes: .wmnds-grid--spacing-{cols}-{size}
+@each $sp-name, $sp-value in $spacing-map {
+  @for $i from 2 through $grid-max-cols {
+    @include grid-spacing-class("-#{$i}", $i, $sp-name, $sp-value);
+  }
+}
+
+// Creates responsive spacing classes: .wmnds-grid--spacing-{breakpoint}-{cols}-{size}
+@each $bp-name, $bp-value in $grid-breakpoint-map {
+  @media screen and (min-width: #{$bp-value}em) {
+    @each $sp-name, $sp-value in $spacing-map {
+      @for $i from 2 through $grid-max-cols {
+        @include grid-spacing-class("-#{$bp-name}-#{$i}", $i, $sp-name, $sp-value, $bp-name, $bp-value);
+      }
+    }
+  }
+}
