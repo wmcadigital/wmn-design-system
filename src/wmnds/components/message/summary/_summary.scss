@@ -21,7 +21,9 @@ $wmnds-msg-close-btn-width: 5rem;
   }
 
   &__title {
+    width: calc(100% - (35px + #{$size-sm}));
     margin: 0.35rem 0;
+
     @media all and (max-width: $breakpoint-md - 1) {
       width: 100%;
       margin: $size-xsm 0;
