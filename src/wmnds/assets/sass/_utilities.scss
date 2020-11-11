@@ -32,6 +32,7 @@
 // Container sizes
 .wmnds-container {
   display: block;
+  width: 100%;
   max-width: $breakpoint-lg;
   margin: auto;
   padding: 0 $size-sm;

@@ -229,4 +229,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       background-color: get-color(disable);
     }
   }
+
+  // block modifier for full width buttons
+  &--block {
+    display: block;
+    width: 100%;
+  }
 }

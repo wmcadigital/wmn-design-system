@@ -1,0 +1,83 @@
+{% extends "www/_layouts/layout-left-pane.njk" %}
+{% set pageTitle = "Layout" %}
+{% set section = "Styles" %}
+
+{% block content %}
+{# Standard content template #}
+<h2>Standard content template</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>A template is based on 2/3 column for content and a 1/3 column right-hand side for widgets to publish functional content.</li>
+    <li>Content editors will be able to use the design system components in Umbraco to structure content effectively and create visual hierarchy.</li>
+</ul>
+{# When #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When you need to publish functional content based on a clear user task.</li>
+    <li>When your content enables users to complete a specific task. For example, Get a refund, Update a Direct Debit, Find discount vouchers etc.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When you need to create a page for a marketing campaign and you need to use promotional images.</li>
+</ul>
+{# Guidance #}
+<h3>Guidance for content editors</h3>
+<ul>
+    <li>Only use a header image when there is a clear user need for the image and it serves a purpose. For example, on a 'Travel by tram' page, you may want to use a header image of a tram so users unfamiliar with the West Midlands Network will instantly know what our trams look like throughout the region.</li>
+    <li>Use the <a href="/components/links">Link component</a> in your body content if you want to direct the user to additional content. Do not use buttons for any links. Do not use the same link twice as this confuses users.</li>
+    <li>Only use <a href="/components/buttons">buttons</a> in your body content when a user needs to complete an action as part of a process, or if a user is confirming their details e.g. newsletter sign-up.</li>
+</ul>
+<p>Warning text with exclamation mark icon component: <b>Please read the Creating effective content section below before writing content or placing content into your page.</b></p>
+
+
+<hr>
+{# Publicity campaign template #}
+<h2>Publicity campaign template</h2>
+{# What #}
+<h3>What does it do?</h3>
+<ul>
+    <li>A template based on a flexible grid provides content editors with an option to create a marketing campaign page.</li>
+    <li>Content editors will be able to use the design system components in Umbraco to structure content effectively and create visual hierarchy.</li>
+</ul>
+{# When to #}
+<h3>When to use it?</h3>
+<ul>
+    <li>When you want to create a marketing campaign to promote and introduce a new service or a product.</li>
+</ul>
+{# When not to #}
+<h3>When not to use it?</h3>
+<ul>
+    <li>When you need to publish functional content based on a clear user task. For example, Get a refund, Update a Direct Debit, Find discount vouchers etc. For this, you will need to use the Standard content template.</li>
+</ul>
+{# Guidance #}
+<h3>Guidance for content editors</h3>
+<ul>
+    <li>Use a header image to draw attention and to increase the visual appeal of the page. Our User research found that 78% of users prefer pages with header images, with the most popular reason being that they make the page look more attractive. Remember to keep your header image relevant to your content.</li>
+    <li>If you are creating a hub page, use Content cards to direct users to the other pages. For marketing campaign pages, please use <a href="/patterns/content-cards">Content cards with images</a> as this helps users to locate information faster. We recommend using a total of four content cards on one page. However, you can use up to six content cards on a page if absolutely necessary.</li>
+    <li>Restrict the body copy to a maximum of three paragraphs. The body copy introduces the page and should be brief and to the point. The main content your users require needs to be as higher up the page as possible, to reduce scrolling time.</li>
+    <li>Marketing campaign pages should be user tested prior to going live. This is to identify if users can locate the content that they need. Generating heatmaps through Hotjar will help track how the pages are used.</li>
+</ul>
+
+
+<hr>
+{# Creating effective content #}
+<h2>Creating effective content</h2>
+<p>There is no minimum or maximum page length, however:</p>
+<ul>
+    <li><a href="https://www.nngroup.com/articles/how-little-do-users-read/" target="_blank">People only read 20 to 28% of text on a web page</a> anyway.</li>
+    <li>Remember that the pressure on the brain to understand increases for every 100 words you put on a page.</li>
+</ul>
+<p>Use clear and concise content because the longer text, the lower rate of readability and <a href="https://insidegovuk.blog.gov.uk/2014/08/04/sentence-length-why-25-words-is-our-limit/" target="_blank">comprehension drops significantly</a>.</p>
+<p>Always place content with higher importance at the top of the page, with less important content following after.</p>
+<p>If you have to use long content, break it down into smaller sections to make it easier for user to understand information. You can:</p>
+<ul>
+    <li>Use <a href="/components/content-cards">Content cards</a> for important content which you want to draw attention to. You can use a maximum of six content cards on a page. Do not use more than six because user research shows that users prefer less information, especially on the mobile. Our user research showed that content tiles with images help users locate relevant content faster.</li>
+    <li>Use the <a href="/components/accordion">Accordion component</a> to organise and group related information at the bottom of the page, below body copy and content tiles. Accordions can shorten pages and reduce scrolling when your content does not need to be read in full. We also recommend using accordions when space is at a premium and you are placing long content on a mobile interface or in a side panel.</li>
+    <li>Use the <a href="/components/inset-text">Inset text component</a> to highlight crucial information.</li>
+    <li>Use the <a href="/components/in-text-step">In-text step component</a> to show a series of steps in a process.</li>
+    <li>Place the <a href="/patterns/content-cards">In-line navigation component</a> on the left side of a desktop page so users can skip to the relevant section without scrolling. This is especially useful for users on mobile, as the page content component will be placed after the page title.</li>
+</ul>
+
+{% endblock %}

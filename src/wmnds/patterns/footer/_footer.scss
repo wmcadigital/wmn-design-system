@@ -72,8 +72,6 @@
         margin: 0;
         padding: $size-xsm 0;
         border: 0;
-        font-family: $x-font-family;
-        font-size: $size-md;
       }
     }
 
@@ -87,9 +85,17 @@
     margin: 0;
     padding: 0;
 
+    @media screen and (max-width: $breakpoint-md - 1) {
+      padding-left: 1rem;
+    }
+
     li {
       margin-bottom: $size-sm;
       list-style: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -156,6 +162,28 @@
       }
     }
   }
+
+  &__social-media {
+    display: flex;
+    padding: 0;
+
+    li {
+      display: block;
+
+      &:not(:last-child) {
+        a {
+          display: block;
+          margin-right: $size-lg;
+        }
+      }
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+        fill: $white;
+      }
+    }
+  }
 }
 
 // collapsible panel styles (kept separate as maybe could be moved to its own reusable component?)
@@ -175,6 +203,7 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
       display: block;
       width: $size-lg;
       height: $size-lg;
+      margin-left: $size-xs;
       transform: rotate(90deg);
       transition: $collapse-indicator-transition;
       fill: currentColor;
@@ -191,8 +220,10 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
 .wmnds-collapse-panel {
   @media screen and (max-width: $breakpoint-md - 1) {
     max-height: 0;
+    padding-left: $size-md;
     overflow: hidden;
     transition: $collapse-transition;
+    border-left: 1px solid $white;
   }
 }
 

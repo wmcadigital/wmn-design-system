@@ -1,0 +1,81 @@
+.wmnds-pagination {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__nav {
+    display: flex;
+    margin-bottom: $size-md;
+    padding: 0;
+    justify-content: center;
+    flex: 0 0 100%;
+  }
+
+  &__item {
+    display: none;
+    margin: 0;
+    padding: 0 $size-xsm;
+    list-style: none;
+
+    &:first-child,
+    &:last-child {
+      display: block;
+    }
+
+    &--previous {
+      display: block;
+      padding-left: $size-xs;
+
+      &:not(:first-child)::before {
+        content: "...";
+        margin-right: $size-sm;
+      }
+    }
+
+    &--active {
+      display: block;
+
+      & + .wmnds-pagination__item:not(:last-child) {
+        display: block;
+        padding-right: $size-xs;
+
+        &::after {
+          content: "...";
+          margin-left: $size-sm;
+        }
+      }
+    }
+  }
+
+  &__next {
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    &__nav {
+      margin: 0;
+      order: 1;
+      flex: 1 1 46%;
+    }
+
+    &__next {
+      order: 2;
+    }
+
+    &__prev,
+    &__next {
+      flex-grow: 0;
+      flex-basis: 27%;
+    }
+
+    // keep numbers centered when prev/next buttons are hidden
+    &__item--active:first-child {
+      margin-left: 36.5%;
+    }
+
+    &__item--active:last-child {
+      margin-right: 36.5%;
+    }
+  }
+}

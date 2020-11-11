@@ -1,0 +1,17 @@
+{% macro wmndsSearchSort(params) %}
+
+<div class="wmnds-search-sort wmnds-fe-group">
+    <label class="wmnds-fe-label" for="dropdown">
+        <h3>Sort by</h3>
+    </label>
+    <div class="wmnds-fe-dropdown">
+        <select class="wmnds-fe-dropdown__select" id="dropdown" name="dropdown">
+            <option value="" selected="selected">Choose from list</option>
+            <option value="1">Relevance</option>
+            <option value="2">Most recent</option>
+            <option value="3">Oldest</option>
+        </select>
+    </div>
+</div>
+
+{% endmacro %}

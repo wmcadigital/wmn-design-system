@@ -11,6 +11,7 @@
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 {% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
+{% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
 
 <!-- Skip to content link -->
 {{
@@ -112,9 +113,40 @@
           <!-- End primary (level 1) navigation -->
         </div>
         <!-- End scrollable container -->
-        <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search">
-          <svg class="wmnds-mega-menu__search-icon"><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
-        </button>
+        {% if(params.search) %}
+        <div class="wmnds-mega-menu__primary-menu-item wmnds-mega-menu__search">
+          <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn">
+            <svg class="wmnds-mega-menu__search-icon">
+              <title>Search</title>
+              <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
+            </svg>
+            <svg class="wmnds-mega-menu__search-close-icon">
+              <title>Close</title>
+              <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
+            </svg>
+          </button>
+          <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
+            <div class="wmnds-search-container">
+              {{wmndsSearchbar()}}
+              {%- if(params.searchSuggestions) %}
+              <h1 class="wmnds-search-heading">I want to...</h1>
+              <ul class="wmnds-search-list">
+              {%- for suggestion in params.searchSuggestions%}
+                <li class="wmnds-search-list__item">
+                  <a href="#" class="wmnds-link wmnds-link--with-chevron">{{suggestion}}
+                    {{wmndsIcon({
+                      class: 'wmnds-link__chevron wmnds-link__chevron--right',
+                      icon: 'general-chevron-right'
+                    })}}
+                  </a>
+                </li>
+                {%- endfor %}
+              </ul>
+              {%- endif %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
       </nav>
       {%- endif %}
     </div>
@@ -151,7 +183,8 @@
 {% if params.megaMenuDemo %}
 <!-- Content space for example purposes only. DO NOT INCLUDE -->
 <div class="demo-content">
-  Example content
+  
+  <p>Example content <br> <a href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
 </div>
 <!-- END DO NOT INCLUDE -->
 {% endif %}

@@ -1,0 +1,40 @@
+{% macro wmndsPagination(params) %}
+
+{# Imports #}
+{% from "../../../components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+
+<div class="wmnds-pagination">
+    <ol class="wmnds-pagination__nav">
+    {% for i in range(1, params.pageCount + 1) -%}
+    {% if(i == params.activePage - 1) %}
+        <li class="wmnds-pagination__item wmnds-pagination__item--previous">
+            <a class="wmnds-link" href="#">{{ i }}</a>
+        </li>
+    {% elseif(i == params.activePage) %}
+        <li class="wmnds-pagination__item wmnds-pagination__item--active">
+            {{ i }}
+        </li>
+    {% else %}
+        <li class="wmnds-pagination__item">
+            <a class="wmnds-link" href="#">{{ i }}</a>
+        </li>
+    {% endif %}
+    {% endfor -%}
+    </ol>
+    {% if(params.activePage > 1) %}
+    <a href="#" target="_self" class="wmnds-pagination__prev wmnds-link wmnds-link--with-chevron" >
+        <svg class="wmnds-link__chevron wmnds-link__chevron--left">
+            <use xlink:href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use>
+        </svg> Previous page
+    </a>
+    {% endif %}
+    {% if(params.activePage < params.pageCount) %}
+    <a href="#" target="_self" class="wmnds-pagination__next wmnds-link wmnds-link--with-chevron" >
+        Next page <svg class="wmnds-link__chevron wmnds-link__chevron--right">
+        <use xlink:href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use>
+        </svg>
+    </a>
+    {% endif %}
+</div>
+
+{% endmacro %}
