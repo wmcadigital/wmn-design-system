@@ -47,13 +47,16 @@ const headerJs = () => {
           '.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle'
         );
         collapseMenus.forEach(collapseToggle => {
+          let collapseToggleOpen = false;
           collapseToggle.addEventListener('click', () => {
             const panel = collapseToggle.nextElementSibling;
-            collapseToggle.classList.toggle('open');
-            if (panel.style.maxHeight) {
-              panel.style.maxHeight = null;
-            } else {
+            collapseToggleOpen = !collapseToggleOpen;
+            if (collapseToggleOpen) {
+              collapseToggle.classList.add('open');
               panel.style.maxHeight = `${panel.scrollHeight}px`;
+            } else {
+              collapseToggle.classList.remove('open');
+              panel.style.maxHeight = null;
             }
           });
         });
