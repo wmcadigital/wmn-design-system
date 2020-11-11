@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-gb" class="wmnds-html">
+  <!-- Head -->
+  {% include "www/_partials/_head.njk" %}
+  <!-- end: Head -->
+
+  <body class="wmnds-body">
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and
+        security.
+      </p>
+    <![endif]-->
+
+    {# header #}
+    {% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
+    {{
+      wmndsHeaderV2({
+        id: "mega-menu-example",
+        search: true,
+        searchSuggestions: ["See live departures", "Find a timetable", "Check for disruptions", "Manage my Swift card", "Find ticket prices", "Get a refund", "Update Direct Debit", "Apply for a 16-18 photocard"],
+        navItems: [{
+          name: "Plan a journey",
+          subnavItems: [{
+            name: "Plan your journey",
+            icon: "general-route",
+            subnavItems: [{
+                name: "Journey planner"
+              },
+              {
+                name: "Find a timetable"
+              },
+              {
+                name: "Live and planned disruptions"
+              },
+              {
+                name: "Major roadworks and events"
+              }]
+            },
+            {
+              name: "Ways to travel",
+              icon: "general-location-arrow",
+              subnavItems: [{
+                name: "Walking"
+              },
+              {
+                name: "Cycling"
+              },
+              {
+                name: "Buses"
+              },
+              {
+                name: "Trains"
+              },
+              {
+                name: "Trams"
+              },
+              {
+                name: "Park and ride"
+              },
+              {
+                name: "Driving"
+              }]
+            },
+            {
+              name: "Travel information",
+              icon: "general-info",
+              subnavItems: [{
+                name: "How to travel with accessibility needs"
+              },
+              {
+                name: "How to travel safely"
+              },
+              {
+                name: "How to get to hospital"
+              }]
+            },
+            {
+              name: "Discover our region",
+              icon: "general-star",
+              subnavItems: [{
+                name: "Places and attractions to visit"
+              },
+              {
+                name: "Find discount vouchers"
+              }]
+            }]
+          }, {
+            name: "Swift and tickets",
+            subnavItems: [{
+              name: "Find a ticket",
+              icon: "general-search",
+              subnavItems: [{
+                name: "Ticket finder"
+              },
+              {
+                name: "Types of ticket"
+              }]
+            },
+            {
+              name: "Discounts and free travel passes",
+              icon: "general-wallet",
+              subnavItems: [{
+                name: "Under 18s"
+              },
+              {
+                name: "Students"
+              },
+              {
+                name: "Families and groups"
+              },
+              {
+                name: "Finding or starting a new job"
+              },
+              {
+                name: "Disabled person's pass"
+              },
+              {
+                name: "Older person's pass"
+              },
+              {
+                name: "WASPI women's pass"
+              }]
+            },{
+              name: "Manage your Swift card",
+              icon: "swift-bird-icon",
+              subnavItems: [{
+                name: "How to use your Swift card"
+              },
+              {
+                name: "Update your personal details"
+              },
+              {
+                name: "Top up your Swift card"
+              },
+              {
+                name: "View your payment history"
+              },
+              {
+                name: "View your travel history"
+              },
+              {
+                name: "Replace your lost Swift card"
+              }]
+            },{
+              name: "Manage your ticket",
+              icon: "general-ticket",
+              subnavItems: [
+              {
+                name: "Update your Direct Debit"
+              },
+              {
+                name: "Get a refund"
+              },
+              {
+                name: "Make a payment"
+              },
+              {
+                name: "Replace your lost ticket or pass"
+              }
+              ]
+            }]
+          },{
+            name: "Get help",
+            subnavItems: [{
+              name: "Contact an operator"
+            },
+            {
+              name: "Find a travel centre"
+            },
+            {
+              name: "Find lost property"
+            },
+            {
+              name: "Give feedback"
+            },
+            {
+              name: "Contact us"
+            },
+            {
+              name: "Report anti-social behaviour"
+            },
+            {
+              name: "Request a new bus shelter or stop pole"
+            },
+            {
+              name: "Report a problem with a shelter or stop"
+            }]
+          }],
+          megaMenu: true
+        })
+    }}
+    {# header #}
+
+
+    {# main #}
+    <main class="wmnds-container wmnds-container--main">
+      <a class="wmnds-link" href="/patterns/header-v2" onclick="window.close();">Close window</a>
+    </main>
+    {# main #}
+
+    <!-- footer -->
+    {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+    {{
+      wmndsFooter({
+        bottomMenu: [{
+          name: "Privacy & Cookies Policy",
+          link: "https://www.wmnetwork.co.uk/privacy-cookies-policy/"
+        }]
+      })
+    }}
+    <!-- footer -->
+
+    <!-- Scripts -->
+    {% include "www/_partials/_scripts.njk" %}
+    <!-- end: Scripts -->
+  </body>
+
+</html>

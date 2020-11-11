@@ -9,6 +9,7 @@ import accordionsJS from '../../components/accordion/_accordion';
 import searchFilterJs from '../../patterns/search/search-filter/_search-filter';
 // --- insert your imported js to this array
 const js = [headerJs, footerJs, cookies, accordionsJS, searchFilterJs];
+
 const jsExampleCompiler = () => {
   const codeSnippets = document.querySelectorAll('code.js');
   const compiledJs = [];
