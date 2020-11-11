@@ -45,7 +45,7 @@ function minifyJS(jsFile) {
               }
             ]
           },
-          mode: buildMode, // detemined by buildMode const above
+          mode: 'production', // detemined by buildMode const above
           devtool: 'source-map', // Set a sourcemap for this build
           output: { filename: jsFile.minName } // output name of the bundled js
         }
