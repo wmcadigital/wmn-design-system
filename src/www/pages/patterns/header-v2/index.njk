@@ -74,12 +74,14 @@
 }}
 
 {# With mega menu #}
-<h3>With a mega menu</h3>
+<h3>Mega menu with search example</h3>
 
 {{
   compExample([
     wmndsHeaderV2({
       id: "mega-menu-example",
+      search: true,
+      searchSuggestions: ["See live departures", "Find a timetable", "Check for disruptions", "Manage my Swift card", "Find ticket prices", "Get a refund", "Update Direct Debit", "Apply for a 16-18 photocard"],
       navItems: [{
         name: "Plan a journey",
         subnavItems: [{

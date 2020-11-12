@@ -16,7 +16,7 @@ const getNjkData = ({ path: filePath }) => {
   return fs.existsSync(dataFilePath) && JSON.parse(fs.readFileSync(dataFilePath));
 };
 
-module.exports = () => {
+module.exports.buildTemplates = () => {
   return src(paths.nunjucks.websiteSrc)
     .pipe(plugins.data(() => njkData))
     .pipe(plugins.data(file => getNjkData(file)))
@@ -27,7 +27,16 @@ module.exports = () => {
       })
     )
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
+    .pipe(plugins.replace('$*version', packageJson.version))
     .pipe(plugins.formatHtml())
     .pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
     .pipe(dest(paths.nunjucks.output));
+};
+
+// Copy njk components into build folder
+module.exports.buildComponents = () => {
+  return src(paths.nunjucks.componentSrc)
+    .pipe(plugins.flatten({ includeParents: [4, 4] }))
+    .pipe(plugins.replace('from "wmnds/', 'from "'))
+    .pipe(dest(paths.nunjucks.componentOutput));
 };

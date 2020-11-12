@@ -47,6 +47,12 @@
   "full-logo"
 ] %}
 
+{% set iconSocial = [
+  "facebook",
+  "twitter",
+  "instagram"
+] %}
+
 {% set iconModesIsolated = [
   "bus",
   "coach",
@@ -115,7 +121,7 @@
   <!-- Ajax SVGs from WMN Design System -->
   <script>
     const ajax = new XMLHttpRequest();
-    ajax.open('GET', '$*cdn/img/wmnds-sprite.min.svg', true);
+    ajax.open('GET', 'https://unpkg.com/wmn-design-system@$*version/build/img/wmnds-sprite.min.svg', true);
     ajax.send();
     ajax.onload = function () {
       const div = document.createElement('div');
@@ -144,7 +150,7 @@
 
 <h4>Can't include via recommended method? Try hosting the sprites locally</h4>
 <ul>
-  <li><a class="wmnds-link" target="_blank" href="$*cdn/img/wmnds-sprite.min.svg" download="wmnds-sprite.min.svg">Download the icon svg sprite</a>.</li>
+  <li><a class="wmnds-link" target="_blank" href="https://unpkg.com/wmn-design-system@$*version/build/img/wmnds-sprite.min.svg" download="wmnds-sprite.min.svg">Download the icon svg sprite</a>.</li>
   <li>Include the downloaded icon sprite in to your project locally.</li>
   <li>You can now start using the icon svg sprite sheet using the instructions from the "Displaying an icon" section above.</li>
 </ul>
@@ -179,6 +185,21 @@
         })
       }}
       <p>{{ 'swift-' + icon }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{# Social #}
+<h3>Social</h3>
+<div class="wmnds-grid website-icons">
+  {% for icon in iconSocial %}
+    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+      {{
+        wmndsIcon({
+          icon: 'social-' + icon
+        })
+      }}
+      <p>{{ 'social-' + icon }}</p>
     </div>
   {% endfor %}
 </div>

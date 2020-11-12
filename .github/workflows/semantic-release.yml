@@ -1,0 +1,68 @@
+name: Release npm package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      # Checkout branch
+      - name: Checkout branch
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      # Setup node environment
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      # Dry run a release to check if one if necessary
+      - name: Check for new release
+        uses: cycjimmy/semantic-release-action@v2.5.0
+        id: dry_release
+        with:
+          dry_run: true
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMVER_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Build site
+      - name: Build site
+        run: |
+          npm ci
+          VERSION_NUMBER=$VERSION_NUMBER npm run build:all
+        env:
+          VERSION_NUMBER: ${{ steps.dry_release.outputs.new_release_version }}
+      # Publish the release IF the version number is being changed
+      - name: Publish package
+        if: steps.dry_release.outputs.new_release_published == 'true'
+        run: npx semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMVER_GITHUB_TOKEN }}
+      # Deploy build folder to Netlify IF the branch is master
+      - name: Deploy to Netlify
+        if: github.ref == 'refs/heads/master' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
+        uses: nwtgck/actions-netlify@v1.1.11
+        with:
+          publish-dir: './build'
+          production-branch: master
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: '${{ github.event.head_commit.message }}'
+          enable-pull-request-comment: false
+          overwrites-pull-request-comment: false
+          enable-commit-comment: false
+          enable-commit-status: false
+          netlify-config-path: ./netlify.toml
+          # functions-dir: ./functions
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

@@ -5,4 +5,4 @@ const forEachPolyFill = () => {
   }
 };
 
-export default forEachPolyFill;
+export default forEachPolyFill();
