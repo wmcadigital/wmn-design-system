@@ -37,4 +37,3 @@ window.addEventListener(
   'DOMContentLoaded',
   (polyfills, icons(), aToZContentStyleGuide(), colorPalettes(), highlightJS)
 );
-
