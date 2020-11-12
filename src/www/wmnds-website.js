@@ -35,6 +35,5 @@ window.onload = () => {
 
 window.addEventListener(
   'DOMContentLoaded',
-  (polyfills, icons(), aToZContentStyleGuide(), colorPalettes(), highlightJS)
+  (polyfills, createIframes(), icons(), aToZContentStyleGuide(), colorPalettes(), highlightJS)
 );
-
