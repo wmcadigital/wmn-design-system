@@ -39,9 +39,9 @@ const createIframes = () => {
         <html>
           <head>
             <base href="${host}" target="_blank">
-            <link rel="stylesheet" type="text/css" href="/css/wmnds-components.min.css" />
-            <link rel="stylesheet" type="text/css" href="/css/wmnds-website.min.css" />
-            <script src="/js/wmnds-website.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="${host}/css/wmnds-components.min.css" />
+            <link rel="stylesheet" type="text/css" href="${host}/css/wmnds-website.min.css" />
+            <script src="${host}/js/wmnds-website.min.js"></script>
           </head>
           <body>
             ${html || ''}
