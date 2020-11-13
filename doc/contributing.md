@@ -74,6 +74,10 @@ Your contribution needs to work with certain assistive technology as set out in 
 Please see our [git style guide](https://github.com/alphagov/styleguides/blob/master/git.md)
 which describes how we prefer git history and commit messages to read.
 
+## Versioning
+
+See [versioning](/doc/contributing/versioning.md).
+
 ## Updating Changelog
 
 See the versioning documentation for [updating the changelog](/docs/contributing/versioning.md#updating-changelog)
@@ -92,4 +96,4 @@ See [deploying](/docs/contributing/deploying.md).
 
 ## Releasing a new version
 
-See [publishing](/docs/contributing/publishing.md).
+See [versioning](/doc/contributing/versioning.md).
