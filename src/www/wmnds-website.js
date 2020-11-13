@@ -30,7 +30,8 @@ window.onload = () => {
   headerJs();
   cookies();
   footerJs();
-  searchFilterJs(), accordionsJS();
+  searchFilterJs();
+  accordionsJS();
 };
 
 window.addEventListener(
