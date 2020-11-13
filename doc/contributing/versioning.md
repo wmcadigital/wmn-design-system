@@ -2,7 +2,7 @@
 
 The process of versioning The West Midlands Network Design System is automated via GitHub Actions, mainly through the use of [semantic-release](https://github.com/semantic-release/semantic-release).
 
-The Design System is available on Node Pacakge Manager (npm) for download for node based projects. You can also view the website for a given version of the Design System with UNPKG.
+The Design System is available on Node Package Manager (npm) for download for node based projects. You can also view the website for a given version of the Design System with UNPKG.
 
 ## 1.1 Table of contents
 
@@ -61,15 +61,17 @@ Where:
 
 With the full example being: `jd/feature/red-button-variant`.
 
+**This branch must branch from the `release` branch.**
+
 ## 1.3 Adding to the next release
 
-Once you are ready to propose new changes, you must \***\*open a pull request to the** `**release**` **branch\***.
+Once you are ready to propose new changes, you must **open a pull request to the** `release` **branch**.
 
 ### 1.3.1 Pull request title
 
 Opening a pull request to the release branch triggers a workflow to lint the title, among other workflows that lint the code itself.
 
-Pull request titles \***_must_** follow the [Conventional Commit Specification](https://www.conventionalcommits.org/en/v1.0.0/).
+Pull request titles **must** follow the [Conventional Commit Specification](https://www.conventionalcommits.org/en/v1.0.0/).
 
 Correct examples:
 
@@ -85,7 +87,7 @@ Incorrect examples:
 
 ### 1.3.2 Merging into release
 
-When the pull request has passed all the necessary checks and reviews, it must then be merged into the `release` branch via the \***_squash and merge_** strategy.
+When the pull request has passed all the necessary checks and reviews, it must then be merged into the `release` branch via the **squash and merge** strategy.
 
 This reduces all changes on the branch into one commit with the title of the pull request appearing as the commit message.
 
@@ -97,7 +99,7 @@ Once the `release` branch has changes that are ready to go live, a pull request 
 
 ### 1.4.1 Merging into master
 
-Once the pull request has passed all necessary checks and reviews, it must then be merged into the `master` branch via the \***_merge commit_** strategy.
+Once the pull request has passed all necessary checks and reviews, it must then be merged into the `master` branch via the **merge commit** strategy.
 
 This is so that all the commits on the `release` branch are added to the `master` branch. The title of the pull request, and by extention the merge commit, does not have to be in any specific format.
 
@@ -134,13 +136,13 @@ Uses the following tokens:
 - `SEMVER_GITHUB_TOKEN`
 - `NPM_TOKEN`
 
-semantic-release runs in \***_dry_run_** mode to analyze commits to check if a new release is necessary.
+semantic-release runs in **dry_run** mode to analyze commits to check if a new release is necessary.
 
 The package outputs the next version number as variable in the GitHub Action context, which can be accessed by other step / jobs in the workflow.
 
 This step is necessary because if we want to include the new version number in the static site, it has to be available at build time. However, semantic-release normally only changes the version number (and changelog), via a new commit, after the site has been built. Therefore the new version number must be determined beforehand.
 
-_*We also have to use* [*a separate semantic-release action*](*https://github.com/marketplace/actions/action-for-semantic-release*) *when running the dry run running as semantic-release npm package seems to cause conflicts when run twice in the same workflow.*_
+_We also have to use [a separate semantic-release action](https://github.com/marketplace/actions/action-for-semantic-release) when running the dry run running as semantic-release npm package seems to cause conflicts when run twice in the same workflow._
 
 ##### 1.4.2.2.2 Site build
 
@@ -155,7 +157,7 @@ Uses the following tokens:
 
 See the [semantic-release release steps](https://github.com/semantic-release/semantic-release#release-steps) for details.
 
-Through the use of the plugins [@semantic-release/git](@semantic-release/git) and [@semantic-release/changelog](@semantic-release/changelog), semantic-release will also update the `package.json` with the latest version number (\***_after_** publishing the npm package) and update the changelog, via an additional commit.
+Through the use of the plugins [@semantic-release/git](@semantic-release/git) and [@semantic-release/changelog](@semantic-release/changelog), semantic-release will also update the `package.json` with the latest version number (**after** publishing the npm package) and update the changelog, via an additional commit.
 
 ##### 1.4.2.2.4 Netlify deploy
 
