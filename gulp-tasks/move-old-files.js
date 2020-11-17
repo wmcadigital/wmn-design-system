@@ -15,5 +15,5 @@ module.exports.moveOldReactNative = () => {
 };
 
 module.exports.moveOldIcons = () => {
-  return src('src/wmnds/assets/old/img/wmnds-sprite.min.svg').pipe(dest(paths.svgs.output)); // move config files to build
+  return src('src/wmnds/assets/old/img/wmnds-sprite.min.svg').pipe(dest(paths.svgs.dest)); // move config files to build
 };

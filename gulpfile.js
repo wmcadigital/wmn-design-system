@@ -27,6 +27,8 @@ const cleanBuild = require('./gulp-tasks/clean'); // Clean the current build & _
 
 const cacheBust = require('./gulp-tasks/cache-bust'); // This function checks index.html for cb=123 and replaces with current dateTime to bust cache
 
+const { moveOldCSS, moveOldReactNative, moveOldIcons } = require('./gulp-tasks/move-old-files');
+
 const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // BrowserSync server
 
 // WATCHERS
@@ -59,7 +61,10 @@ const buildAll = series(
   buildConfig,
   lintStyles,
   lintTemplates,
-  lintScripts
+  lintScripts,
+  moveOldCSS,
+  moveOldReactNative,
+  moveOldIcons
 );
 
 // run buildStyles, buildFonts,& minifyJS on start, series so () => run in an order and parallel so () => can run at same time
