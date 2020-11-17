@@ -1,0 +1,67 @@
+    {% macro wmndsSearchFilter(params) %}
+
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
+<!-- Mobile show filter button -->
+<div class="wmnds-hide-desktop">
+    <button class="wmnds-btn wmnds-btn--primary wmnds-btn--block " id="show_filter_btn" aria-controls="search_filter" aria-expanded="false">
+        Filter your results
+    </button>
+</div>
+
+<div id="search_filter" class="wmnds-search-filter">
+    <div class="wmnds-search-filter__header">
+        <h3 class="wmnds-search-filter__header-title">Filter</h3>
+        <a href="#" class="wmnds-link wmnds-search-filter__clear-all">Clear all</a>
+        <a href="#" id="hide_filter_btn" class="wmnds-search-filter__close">
+            <svg>
+                <title>Close</title>
+                <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
+            </svg>
+        </a>
+    </div>
+    {# loop through accordion items #}
+    {% for accordion in params.accordion -%}
+    <div class="wmnds-accordion">
+      <button aria-controls="accordion-{{accordion.summaryTitle}}" class="wmnds-accordion__summary-wrapper" aria-expanded="false">
+        <!-- accordion summary -->
+        <div class="wmnds-accordion__summary">
+          <h4 class="wmnds-accordion__summary-title wmnds-m-b-none">{{accordion.summaryTitle}}</h4>
+        </div>
+        <!-- plus icon -->
+        {{wmndsIcon({class: 'wmnds-accordion__icon', icon: 'general-expand'}) | trim}}
+        <!-- minus icon -->
+        {{wmndsIcon({class: 'wmnds-accordion__icon wmnds-accordion__icon--minimise', icon: 'general-minimise'}) | trim}}
+      </button>
+    
+      <!-- accordion content -->
+      <div class="wmnds-accordion__content" id="accordion-{{accordion.summaryTitle}}">
+        <fieldset class="wmnds-fe-fieldset">
+            <div class="wmnds-fe-checkboxes">
+            {%- for option in accordion.options %}
+                <label class="wmnds-fe-checkboxes__container">
+                    {{option}}
+                    <input class="wmnds-fe-checkboxes__input" value="{{option}}" type="checkbox"/>
+                    <span class="wmnds-fe-checkboxes__checkmark">
+                    {{wmndsIcon({class: 'wmnds-fe-checkboxes__icon', icon: 'general-checkmark'}) | trim}}
+                    </span>
+                </label>
+            {%- endfor %}
+            </div>
+        </fieldset>
+      </div>
+    </div>
+    {% endfor -%}
+    <div class="wmnds-search-filter__mobile-filter-update wmnds-hide-desktop">
+        <button id="show_results_btn" class="wmnds-btn wmnds-btn--block">Show 80 results</button>
+    </div>
+    <a href="#" class="wmnds-search-filter__clear-all wmnds-hide-mobile">
+        <svg>
+            <title>Close</title>
+            <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
+        </svg> Clear all filters
+    </a>
+</div>
+
+{% endmacro %}

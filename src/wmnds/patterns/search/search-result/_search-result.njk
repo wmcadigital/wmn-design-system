@@ -1,0 +1,19 @@
+{% macro wmndsSearchResult(params) %}
+
+{# Imports #}
+{% from "../../../components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+
+<div class="wmnds-search-result">
+    <h2 class="wmnds-m-b-none"><a href="#" class="h2 wmnds-search-result__title">{{params.pageTitle}}</a></h2>
+    {{
+        wmndsBreadcrumb({
+            section: 'Swift and Tickets',
+            pageTitle: "Swift",
+            exampleAria: "Main",
+            classModifiers: "wmnds-hide-mobile"
+        }) | trim
+    }}
+    <p class="wmnds-search-result__excerpt">{{params.excerpt | safe}}</p>
+</div>
+
+{% endmacro %}
