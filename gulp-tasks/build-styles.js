@@ -12,6 +12,7 @@ module.exports.buildStyles = () => {
     .pipe(
       plugins.plumber({
         errorHandler(error) {
+          // eslint-disable-next-line no-console
           console.log(error.message);
           this.emit('end');
         }

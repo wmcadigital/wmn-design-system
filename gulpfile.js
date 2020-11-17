@@ -18,7 +18,8 @@ const { buildTemplates, buildComponents } = require('./gulp-tasks/build-nunjucks
 
 // OTHER
 const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output)); // move config files to build
-const buildNetlifyConfig = () => src(paths.netlifyConfig.src).pipe(dest(paths.netlifyConfig.output)); // move config files to build
+const buildNetlifyConfig = () =>
+  src(paths.netlifyConfig.src).pipe(dest(paths.netlifyConfig.output)); // move config files to build
 
 const buildSprites = require('./gulp-tasks/sprite-svgs'); // svg sprite
 const { minImages, moveImages } = require('./gulp-tasks/min-images'); // Optimise images
