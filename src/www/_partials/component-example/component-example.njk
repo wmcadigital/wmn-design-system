@@ -3,9 +3,9 @@
 <div class="wmnds-website-code-example">
   <h3 class="wmnds-website-code-example__subtitle">Component example</h3>
   <div class="wmnds-website-code-example__inner-wrap">
-    <div class="wmnds-col-1">
+    {% set componentsToRender %}
       {%- for item in componentPath %}
-        {{ item }}
+        {{item | trim}}
         {% if loop.last == false %}
           {% if params.displayInline %}
             <div class="wmnds-m-b-md wmnds-website-mar--right"></div>
@@ -14,8 +14,14 @@
           {% endif %}
         {% endif %}
       {% endfor -%}
-    </div>
+
+      {% endset %}
+
+
+      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | forceescape | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="auto" allow="fullscreen" width="100%">
+      </iframe>
   </div>
+
 
   <h3 class="wmnds-website-code-example__subtitle wmnds-m-t-none">HTML Markup</h3>
   {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
@@ -28,12 +34,13 @@
 <div class="wmnds-website-code-example">
   <h3 class="wmnds-website-code-example__subtitle wmnds-m-t-none">Recommended javascript</h3>
   <div class="wmnds-code-toggle">
-      <strong>Format:</strong> 
+      <strong>Format:</strong>
       <button class="wmnds-btn wmnds-btn--dark-bg es6">ES6</button>
       <button class="wmnds-btn">Browser compatible JS</button>
   </div>
   <pre><code class="js" data-content="{{ params.js }}" tabindex="0">{{params.js}}</code></pre>
 </div>
 {% endif %}
+
 <hr>
 {% endmacro %}

@@ -3,6 +3,7 @@ import * as polyfills from './assets/vendor/js/polyfills/polyfills';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
 import aToZContentStyleGuide from './pages/styles/a-to-z-content-style-guide/_a-to-z-content-style-guide';
 import highlightJS from './_partials/component-example/_component-example';
+import createIframes from './_partials/component-example/_component-example-iframe';
 import cookies from '../wmnds/patterns/cookies/cookies';
 import headerJs from '../wmnds/patterns/header-v2/_header-v2';
 import footerJs from '../wmnds/patterns/footer/_footer';
@@ -35,5 +36,6 @@ window.addEventListener(
   accordionsJS(),
   cookies(),
   searchFilterJs(),
+  createIframes(),
   highlightJS)
 );

@@ -22,6 +22,10 @@ $dark-grey: #2b2b2b;
     }
   }
 
+  &__iframe {
+    resize: both;
+  }
+
   pre {
     margin: 0;
   }
