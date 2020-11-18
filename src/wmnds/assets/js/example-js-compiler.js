@@ -1,5 +1,8 @@
 import * as babel from '@babel/standalone';
-import { showCode, displayShowMore } from '../../../www/_partials/component-example/_component-example';
+import {
+  showCode,
+  displayShowMore
+} from '../../../www/_partials/component-example/_component-example';
 
 // -- Add the import to your javascript here
 import cookies from '../../patterns/cookies/cookies';
@@ -34,11 +37,15 @@ const jsExampleCompiler = () => {
   codeSnippets.forEach(codeElement => {
     // toggle between compiled/uncompiled
     let showES6 = true;
-    const toggleBtns = codeElement.parentNode.parentNode.querySelectorAll('.wmnds-code-toggle button');
+    const toggleBtns = codeElement.parentNode.parentNode.querySelectorAll(
+      '.wmnds-code-toggle button'
+    );
 
     // returns compiled/uncompiled js based on toggle var
     const exampleJs = () => {
-      const thisScriptIndex = js.findIndex(jsFunction => codeElement.dataset.content === jsFunction.name);
+      const thisScriptIndex = js.findIndex(
+        jsFunction => codeElement.dataset.content === jsFunction.name
+      );
       let jsOutput = null;
       if (thisScriptIndex >= 0) {
         // find the index of js function that matches the string assigned to the code element data-content attribute

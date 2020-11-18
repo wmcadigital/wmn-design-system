@@ -13,7 +13,7 @@
         <h2 class="wmnds-content-card__title">Travel updates</h2>
         <p>All routes through this disruption</p>
         <!-- Large disruption indicators -->
-        <h3>Roads</h3> 
+        <h3>Roads</h3>
         {% for area in largeDisruptionsAreas %}
         <div class="wmnds-m-t-sm">
             {{
@@ -30,7 +30,7 @@
         <h3>Bus routes</h3>
         <div class="wmnds-grid">
             {#- Loop through buses -#}
-            {% for bus in buses %}  
+            {% for bus in buses %}
             <div class="wmnds-col-auto wmnds-m-r-md">
                 {{
                     mediumDisruption({
@@ -42,7 +42,7 @@
                 }}
                 <div class="wmnds-grid wmnds-grid--justify-around wmnds-p-t-sm wmnds-p-b-sm">
                     <svg class="wmnds-disruption-indicator-medium-star">
-                        <use xlink:href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty" href="/img/wmnds-sprite.min.svg#wmnds-general-star-empty"></use>
+                        <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
                     </svg>
                 </div>
             </div>

@@ -14,7 +14,7 @@ Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sent
 const icons = () => {
   // Ajax SVG in, SVGS are referenced in app (Icon component)
   const ajax = new XMLHttpRequest();
-  ajax.open('GET', '/img/wmnds-sprite.min.svg', true);
+  ajax.open('GET', '/img/wmnds-icons.min.svg', true);
   ajax.send();
   ajax.onload = () => {
     const div = document.createElement('div');
