@@ -14,17 +14,20 @@ const buildScripts = require('./gulp-tasks/build-scripts'); // Minify, and conca
 
 // TEMPLATES
 const lintTemplates = require('./gulp-tasks/lint-templates'); // Lint templates/HTML
-const buildTemplates = require('./gulp-tasks/build-nunjucks'); // build nunjucks templates
+const { buildTemplates, buildComponents } = require('./gulp-tasks/build-nunjucks'); // build nunjucks templates
 
 // OTHER
 const buildConfig = () => src(paths.config.src).pipe(dest(paths.config.output)); // move config files to build
-const buildNetlifyConfig = () => src(paths.netlifyConfig.src).pipe(dest(paths.netlifyConfig.output)); // move config files to build
+const buildNetlifyConfig = () =>
+  src(paths.netlifyConfig.src).pipe(dest(paths.netlifyConfig.output)); // move config files to build
 
 const buildSprites = require('./gulp-tasks/sprite-svgs'); // svg sprite
 const { minImages, moveImages } = require('./gulp-tasks/min-images'); // Optimise images
 const cleanBuild = require('./gulp-tasks/clean'); // Clean the current build & _sourcemaps dir
 
 const cacheBust = require('./gulp-tasks/cache-bust'); // This function checks index.html for cb=123 and replaces with current dateTime to bust cache
+
+const { moveOldCSS, moveOldReactNative, moveOldIcons } = require('./gulp-tasks/move-old-files');
 
 const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // BrowserSync server
 
@@ -52,12 +55,16 @@ const buildAll = series(
   buildFonts,
   buildReactNativeStyles,
   buildTemplates,
+  buildComponents,
   buildScripts,
   buildNetlifyConfig,
   buildConfig,
   lintStyles,
   lintTemplates,
-  lintScripts
+  lintScripts,
+  moveOldCSS,
+  moveOldReactNative,
+  moveOldIcons
 );
 
 // run buildStyles, buildFonts,& minifyJS on start, series so () => run in an order and parallel so () => can run at same time
@@ -93,6 +100,7 @@ exports.clean = cleanBuild;
 exports.buildScripts = series(buildScripts, lintScripts);
 exports.buildStyles = series(lintStyles, buildStyles, buildFonts, buildReactNativeStyles);
 exports.buildTemplates = series(buildTemplates, lintTemplates);
+exports.buildComponents = buildComponents;
 exports.buildConfig = buildConfig;
 exports.buildSprites = buildSprites;
 exports.minImages = series(minImages, moveImages);

@@ -68,6 +68,17 @@ h4,
   @include type-setting(4);
 }
 
+h5,
+.h5 {
+  @include type-setting(5);
+}
+
+h6,
+.h6 {
+  @include type-setting(5);
+  font-weight: normal;
+}
+
 p,
 ul,
 ol,

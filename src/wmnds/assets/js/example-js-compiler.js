@@ -1,13 +1,18 @@
 import * as babel from '@babel/standalone';
-import { showCode, displayShowMore } from '../../../www/_partials/component-example/_component-example';
+import {
+  showCode,
+  displayShowMore
+} from '../../../www/_partials/component-example/_component-example';
 
 // -- Add the import to your javascript here
 import cookies from '../../patterns/cookies/cookies';
 import headerJs from '../../patterns/header-v2/_header-v2';
 import footerJs from '../../patterns/footer/_footer';
 import accordionsJS from '../../components/accordion/_accordion';
+import searchFilterJs from '../../patterns/search/search-filter/_search-filter';
 // --- insert your imported js to this array
-const js = [headerJs, footerJs, cookies, accordionsJS];
+const js = [headerJs, footerJs, cookies, accordionsJS, searchFilterJs];
+
 const jsExampleCompiler = () => {
   const codeSnippets = document.querySelectorAll('code.js');
   const compiledJs = [];
@@ -32,11 +37,15 @@ const jsExampleCompiler = () => {
   codeSnippets.forEach(codeElement => {
     // toggle between compiled/uncompiled
     let showES6 = true;
-    const toggleBtns = codeElement.parentNode.parentNode.querySelectorAll('.wmnds-code-toggle button');
+    const toggleBtns = codeElement.parentNode.parentNode.querySelectorAll(
+      '.wmnds-code-toggle button'
+    );
 
     // returns compiled/uncompiled js based on toggle var
     const exampleJs = () => {
-      const thisScriptIndex = js.findIndex(jsFunction => codeElement.dataset.content === jsFunction.name);
+      const thisScriptIndex = js.findIndex(
+        jsFunction => codeElement.dataset.content === jsFunction.name
+      );
       let jsOutput = null;
       if (thisScriptIndex >= 0) {
         // find the index of js function that matches the string assigned to the code element data-content attribute

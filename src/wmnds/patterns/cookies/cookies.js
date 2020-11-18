@@ -47,7 +47,11 @@ const cookies = () => {
       const cookiesOptions = document
         .querySelector('.wmnds-cookies-manager__preferences')
         .querySelectorAll('.wmnds-fe-checkboxes__input');
-      const currentOptions = [getCookiePolicy().essential, getCookiePolicy().functional, getCookiePolicy().performance];
+      const currentOptions = [
+        getCookiePolicy().essential,
+        getCookiePolicy().functional,
+        getCookiePolicy().performance
+      ];
       for (let i = 0; i < cookiesOptions.length; i += 1) {
         cookiesOptions[i].checked = currentOptions[i];
       }

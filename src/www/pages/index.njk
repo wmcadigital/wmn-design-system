@@ -7,7 +7,6 @@
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
 
-
 {% block content %}
 <div class="wmnds-grid wmnds-grid--align-center wmnds-grid--spacing-lg-2-xl">
   {# Overview #}
@@ -142,7 +141,7 @@
   <html lang="en-gb" class="wmnds-html">
     <head>
       <!-- CSS for WMN Design System -->
-      <link rel="stylesheet" href="$*cdn/css/wmnds-components.min.css" />
+      <link rel="stylesheet" href="https://unpkg.com/wmn-design-system@$*version/build/css/wmnds.min.css" />
     </head>
     <body>
       <!-- site content... -->
@@ -156,7 +155,7 @@
 <p>Please see the
   {{
     wmndsLink({
-      link: "$*cdn/styles/icons/",
+      link: "/styles/icons/",
       linkTitle: "Using WMN Design System icons",
       text: "icons page"
     })
@@ -168,7 +167,7 @@
 <pre>
   <code class="javascript" tabindex="0">
     {% filter forceescape %}// Import react native styles for WMN Design System
-    import wmndsStyles from "$*cdn/css/react-native/wmnds-components.min.js"
+    import wmndsStyles from "https://unpkg.com/wmn-design-system@$*version/build/css/react-native/wmnds.min.js"
     {%- endfilter %}
   </code>
 </pre>

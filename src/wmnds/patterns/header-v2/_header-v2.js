@@ -12,19 +12,43 @@ const headerJs = () => {
         const headerEl = menu.parentNode.parentNode;
 
         const topLevelMenuBtn = menu.querySelectorAll('.wmnds-mega-menu__link-arrow-icon-btn');
-        const mobileMenuIsOpen = { menu: false, primary: false };
+        const searchBtn = menu.querySelector('.wmnds-mega-menu__search-btn');
+        // object to see which menu/menu level is open
+        const mobileMenuIsOpen = { menu: false, primary: false, search: false };
 
         // handle mobile menu toggle
         mobileToggle.addEventListener('click', () => {
           mobileMenuIsOpen.menu = !mobileMenuIsOpen.menu;
           if (mobileMenuIsOpen.menu) {
+            mobileMenuIsOpen.search = false;
+            headerEl.classList.remove('wmnds-header--search-open');
             headerEl.classList.add('wmnds-header--mega-menu-open');
             document.querySelector('html').classList.add('mobile-menu-open');
           } else {
-            headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
+            headerEl.classList.remove(
+              'wmnds-header--mega-menu-open',
+              'wmnds-header--mega-menu-submenu-open'
+            );
             document.querySelector('html').classList.remove('mobile-menu-open');
           }
         });
+
+        if (searchBtn) {
+          searchBtn.addEventListener('click', () => {
+            mobileMenuIsOpen.search = !mobileMenuIsOpen.search;
+            if (mobileMenuIsOpen.search) {
+              mobileMenuIsOpen.menu = false;
+              headerEl.classList.remove(
+                'wmnds-header--mega-menu-open',
+                'wmnds-header--mega-menu-submenu-open'
+              );
+              document.querySelector('html').classList.remove('mobile-menu-open');
+              headerEl.classList.add('wmnds-header--search-open');
+            } else {
+              headerEl.classList.remove('wmnds-header--search-open');
+            }
+          });
+        }
 
         // handle sub menu open/close
         topLevelMenuBtn.forEach(menuBtn => {
@@ -66,11 +90,20 @@ const headerJs = () => {
     mobileMenu.addListener(handleMobileMenu);
 
     const topLevelLinks = menu.querySelectorAll('.wmnds-mega-menu__primary-menu-link');
+    let menuDelay = false;
+    let enterTimeOut;
+    let leaveTimeOut;
+    const delayTime = 300;
 
     // handle events within each top level list item
     topLevelLinks.forEach((topLevelLink, topLevelLinkIndex) => {
       // return list item parent of the current link if it exists else return the link
-      const topLevelListItem = topLevelLink.parentNode.tagName === 'LI' ? topLevelLink.parentNode : topLevelLink;
+      const topLevelListItem =
+        topLevelLink.parentNode.tagName === 'LI' ||
+        topLevelLink.parentNode.className.includes('wmnds-mega-menu__search')
+          ? topLevelLink.parentNode
+          : topLevelLink;
+
       const subMenuLinks = topLevelListItem.querySelectorAll('.wmnds-mega-menu__sub-menu-link');
 
       // check if level 3 menus are present, if so add modifier class
@@ -90,8 +123,8 @@ const headerJs = () => {
       };
 
       // handle setting the active class on menu and list items
-      const setMenuActive = (active, focusLink) => {
-        if (active !== false) {
+      const setMenuActive = (active = true, focusLink) => {
+        if (active) {
           menu.classList.add('active');
           clearActiveListItems();
           // add active class to current item
@@ -127,28 +160,33 @@ const headerJs = () => {
         return menuLink;
       };
 
+      const openSubMenu = e => {
+        // check if list item has a mega menu
+        if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
+          e.preventDefault();
+          // remove keyFocus to allow menu to show
+          setMenuActive(true);
+          // focus first menu item
+          if (topLevelListItem.contains(subMenuLinks[0])) {
+            subMenuLinks[0].focus();
+          } else if (topLevelListItem.querySelector('.wmnds-search-bar__input')) {
+            topLevelListItem.querySelector('.wmnds-search-bar__input').focus();
+          }
+        }
+      };
+
       const handleKeydown = (e, key) => {
         e.stopPropagation();
         // if key pressed is enter, space bar or down arrow
         if (key === 13 || key === 32 || key === 40) {
-          // check if list item has a mega menu
-          const openSubMenu = () => {
-            if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
-              e.preventDefault();
-              // remove keyFocus to allow menu to show
-              setMenuActive(true);
-              // focus first menu item
-              subMenuLinks[0].focus();
-            }
-          };
           // enter
           // check if link exists
           if (key === 13) {
             if (!topLevelLink.tagName === 'a' || !topLevelLink.getAttribute('href')) {
-              openSubMenu();
+              openSubMenu(e);
             }
           } else {
-            openSubMenu();
+            openSubMenu(e);
           }
         } else if (key === 37) {
           // left arrow
@@ -166,24 +204,53 @@ const headerJs = () => {
 
       // if top level link doesn't have a mega-menu child add class to menu to hide overlay when hovered
       // has to be added/removed on mouseover to cover menus that have a mix of items with/without mega menus
-      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length;
+      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container')
+        .length;
 
       if (isTopLevelWithMenu) {
         topLevelLink.addEventListener('mouseover', () => {
-          setMenuActive();
+          if (!menuDelay) {
+            // if no menuDelay is active just open the menu
+            setMenuActive();
+          } else {
+            // if menuDelay is active, clear all timeouts and start a new one
+            clearTimeout(enterTimeOut);
+            clearTimeout(leaveTimeOut);
+
+            enterTimeOut = setTimeout(() => {
+              // enter timeout completed, open menu and kill delay
+              menuDelay = false;
+              setMenuActive();
+            }, delayTime);
+          }
         });
+        topLevelListItem
+          .querySelector('.wmnds-mega-menu__container')
+          .addEventListener('mouseover', () => {
+            if (menuDelay) {
+              // if container is rehovered before timeout is done, clear all timeouts kill the delay
+              clearTimeout(enterTimeOut);
+              clearTimeout(leaveTimeOut);
+              menuDelay = false;
+            }
+          });
         topLevelListItem.addEventListener('mouseleave', () => {
-          setMenuActive(false, false);
-          clearActiveListItems();
+          menuDelay = true;
+          // leave timeout is active
+          leaveTimeOut = setTimeout(() => {
+            // leave timeout completed, close menu
+            setMenuActive(false, false);
+            menuDelay = false;
+          }, delayTime);
         });
 
-        // array of mega menu links by column
         topLevelListItem.addEventListener('blur', setMenuActive(false, false));
       }
 
       topLevelListItem.addEventListener('keydown', e => {
         handleKeydown(e, e.keyCode);
       });
+
       // top lvl link event listeners
       topLevelLink.addEventListener('mousedown', e => {
         // prevent link focus on click
@@ -213,8 +280,8 @@ const headerJs = () => {
                 e.preventDefault();
                 const prevMenuLink = getMenuLink(linkIndex, menuArray[menuIndex - 1]);
                 if (prevMenuLink) prevMenuLink.focus();
-              } else if (e.keyCode === 40) {
-                // down arrow - go to next link in current menu list
+              } else if (e.keyCode === 40 || (e.keyCode === 9 && !e.shiftKey)) {
+                // down arrow or tab - go to next link in current menu list
                 e.preventDefault();
                 // if next link doesn't exist try next menu first item else return null
                 const nextLink = getMenuLink(linkIndex, thisListLinks, 'next')
@@ -228,8 +295,8 @@ const headerJs = () => {
                     getMenuLink(topLevelLinkIndex, topLevelLinks, 'next').focus();
                   }
                 }
-              } else if (e.keyCode === 38) {
-                // up arrow - go to previous item in current menu list
+              } else if (e.keyCode === 38 || (e.shiftKey && e.keyCode === 9)) {
+                // up arrow or shift + tab - go to previous item in current menu list
                 e.preventDefault();
                 const prevMenu = menuArray[menuIndex - 1];
                 let prevLink = null;

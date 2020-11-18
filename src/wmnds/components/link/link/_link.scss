@@ -20,6 +20,11 @@
 
   &--with-chevron {
     display: inline-flex;
+
+    // prevent icon resizing
+    .wmnds-link__chevron {
+      flex: 0 0 1.5rem;
+    }
   }
 
   &__chevron {

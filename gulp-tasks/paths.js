@@ -7,9 +7,9 @@ module.exports = {
   },
   styles: {
     src: ['src/**/*.scss'], // src of styles to watch
-    minifySrc: ['src/wmnds/assets/sass/wmnds-components.scss', 'src/www/wmnds-website.scss'], // List of scss file(s) which should be processed, linted & minified
+    minifySrc: ['src/wmnds/assets/sass/wmnds.scss', 'src/www/wmnds-website.scss'], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/', // output location of minified styles
-    reactNativeSrc: 'src/wmnds/assets/sass/wmnds-components.scss'
+    reactNativeSrc: 'src/wmnds/assets/sass/wmnds.scss'
   },
   scripts: {
     src: ['src/**/*.js'], // Src of JS files to watch
@@ -30,7 +30,9 @@ module.exports = {
   nunjucks: {
     src: 'src/**/*.njk', // Used for watching njk files
     websiteSrc: 'src/www/pages/**/*.njk',
-    output: 'build/'
+    componentSrc: 'src/wmnds/**/*.njk',
+    output: 'build/',
+    componentOutput: 'build/njk'
   },
   svgs: {
     src: 'src/wmnds/assets/icon/**/*.svg',
