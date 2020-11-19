@@ -40,6 +40,7 @@ $gradient: linear-gradient(45deg, get-color(background, 20, dark) 25%, transpare
     overflow-y: auto;
   }
 
+  &__njk,
   &__iframe {
     max-width: 100%;
     resize: both;

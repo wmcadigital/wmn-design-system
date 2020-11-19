@@ -25,7 +25,10 @@
     {% endset %}
 
 
-      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | forceescape | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe>
+      {# <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | forceescape | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe> #}
+      <div class="wmnds-website-code-example__njk wmnds-col-1">
+      {{componentsToRender | safe}}
+      </div>
   </div>
 
 
