@@ -2,8 +2,8 @@ const seeExampleFullScreen = () => {
   const fullScreenBtns = document.querySelectorAll('.wmnds-website-code-example__view-fullscreen');
   const { documentElement } = document;
 
-  const handleKeyDown = e => {
-    const fullScreenEle = document.querySelectorAll('.wmnds-website-code-example--fullscreen')[0];
+  const handleKeyDown = (e, ele) => {
+    const fullScreenEle = ele;
     const focusableElements =
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
@@ -35,23 +35,46 @@ const seeExampleFullScreen = () => {
   fullScreenBtns.forEach(btn => {
     const btnEle = btn;
 
+    const closeFullScreen = () => {
+      btnEle.innerHTML = 'See this example in fullscreen';
+      documentElement.style.overflow = 'initial'; // Set body overflow to hidden, so we don't snap to body scrollbar
+      documentElement.style.overscrollBehaviorY = 'initial'; // Stops pull down to refresh in chrome on android
+      document.removeEventListener('keydown', e => handleKeyDown(e, btnEle.parentElement));
+    };
+
+    const handleEscape = e => {
+      const isEscPressed = e.key === 'Esc' || e.key === 'Escape' || e.keyCode === 27;
+
+      if (!isEscPressed) {
+        return;
+      }
+      if (isEscPressed) {
+        btnEle.parentElement.classList.remove('wmnds-website-code-example--fullscreen');
+        closeFullScreen();
+        btnEle.parentElement.removeEventListener('keydown', handleEscape);
+      }
+    };
+
+    const openFullScreen = () => {
+      btnEle.innerHTML = 'Close this fullscreen example';
+      documentElement.style.overflow = 'hidden'; // Set body overflow to hidden, so we don't snap to body scrollbar
+      documentElement.style.overscrollBehaviorY = 'none'; // Stops pull down to refresh in chrome on android
+      document.addEventListener('keydown', e => handleKeyDown(e, btnEle.parentElement));
+      btnEle.parentElement.addEventListener('keydown', handleEscape);
+    };
+
     const handleClick = () => {
       btnEle.parentElement.classList.toggle('wmnds-website-code-example--fullscreen');
 
       if (btnEle.parentElement.classList.contains('wmnds-website-code-example--fullscreen')) {
-        btnEle.innerHTML = 'Close this fullscreen example';
-        documentElement.style.overflow = 'hidden'; // Set body overflow to hidden, so we don't snap to body scrollbar
-        documentElement.style.overscrollBehaviorY = 'none'; // Stops pull down to refresh in chrome on android
-        document.addEventListener('keydown', handleKeyDown);
+        openFullScreen();
       } else {
-        btnEle.innerHTML = 'See this example in fullscreen';
-        documentElement.style.overflow = 'initial'; // Set body overflow to hidden, so we don't snap to body scrollbar
-        documentElement.style.overscrollBehaviorY = 'initial'; // Stops pull down to refresh in chrome on android
-        document.removeEventListener('keydown', handleKeyDown);
+        closeFullScreen();
+        btnEle.parentElement.removeEventListener('keydown', handleEscape);
       }
     };
 
-    btn.addEventListener('click', handleClick);
+    btnEle.addEventListener('click', handleClick);
   });
 };
 
