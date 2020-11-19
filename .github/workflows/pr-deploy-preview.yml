@@ -1,0 +1,39 @@
+name: PR preview
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    name: Build preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Build site
+        run: |
+          npm ci
+          npm run build:all
+      - name: Deploy netlify preview
+        uses: nwtgck/actions-netlify@v1.1.11
+        with:
+          publish-dir: './build'
+          production-branch: master
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'PR #${{ github.event.number }}'
+          enable-pull-request-comment: true
+          overwrites-pull-request-comment: true
+          enable-commit-comment: true
+          enable-commit-status: true
+          alias: deploy-preview-${{ github.event.number }}
+          netlify-config-path: ./netlify.toml
+          # functions-dir: ./functions
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
