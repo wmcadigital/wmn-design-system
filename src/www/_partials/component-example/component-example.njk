@@ -1,7 +1,16 @@
 {% macro compExample(componentPath, params) %}
+{% from "wmnds/components/button/_button.njk" import wmnButton %}
+
 
 <div class="wmnds-website-code-example">
   <h3 class="wmnds-website-code-example__subtitle">Component example</h3>
+
+  {{
+    wmnButton({
+      classNames: 'wmnds-btn--link wmnds-m-l-md wmnds-website-code-example__view-fullscreen'
+    })
+  }}
+
   <div class="wmnds-website-code-example__inner-wrap">
     {% set componentsToRender %}
       {%- for item in componentPath %}
@@ -14,8 +23,7 @@
           {% endif %}
         {% endif %}
       {% endfor -%}
-
-      {% endset %}
+    {% endset %}
 
 
       <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | forceescape | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%">
