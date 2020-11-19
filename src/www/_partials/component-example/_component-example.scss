@@ -1,4 +1,8 @@
 $dark-grey: #2b2b2b;
+$gradient: linear-gradient(45deg, get-color(background, 20, dark) 25%, transparent 25%),
+linear-gradient(-45deg, get-color(background, 20, dark) 25%, transparent 25%),
+linear-gradient(45deg, transparent 75%, get-color(background, 20, dark) 75%),
+linear-gradient(-45deg, transparent 75%, get-color(background, 20, dark) 75%);
 
 .wmnds-website-code-example {
   margin-top: $size-xl;
@@ -14,7 +18,9 @@ $dark-grey: #2b2b2b;
   &__inner-wrap {
     border-top: 1px solid $dark-grey;
     border-bottom: 1px solid $dark-grey;
-    background: get-color(background);
+    background-image: $gradient;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+    background-size: 20px 20px;
 
     & > .wmnds-col-1 {
       padding: $size-md;
@@ -23,7 +29,9 @@ $dark-grey: #2b2b2b;
   }
 
   &__iframe {
+    max-width: 100%;
     resize: both;
+    background: get-color(background);
   }
 
   pre {
