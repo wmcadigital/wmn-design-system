@@ -18,7 +18,7 @@ const getNjkData = ({ path: filePath }) => {
   return fs.existsSync(dataFilePath) && JSON.parse(fs.readFileSync(dataFilePath));
 };
 
-//
+// Check for upcoming version number in node env (will be set during release workflow)
 const versionNumber = process.env.VERSION_NUMBER || packageJson.version;
 
 module.exports.buildTemplates = () => {
