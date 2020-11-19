@@ -8,6 +8,7 @@ $gradient: linear-gradient(45deg, get-color(background, 20, dark) 25%, transpare
   margin-top: $size-xl;
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
+  background: $white;
 
   &__subtitle {
     padding: $size-md $size-md 0;
@@ -26,17 +27,17 @@ $gradient: linear-gradient(45deg, get-color(background, 20, dark) 25%, transpare
       padding: $size-md;
       overflow: hidden;
     }
+  }
 
-    &--fullscreen {
-      position: fixed;
-      z-index: 100000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      padding-top: 3em;
-      background-color: $white;
-    }
+  &--fullscreen {
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto;
   }
 
   &__iframe {

@@ -1,19 +1,5 @@
 import 'iframe-resizer/js/iframeResizer'; // Import iframe resizer logic
 
-const iframeFullScreenLogic = () => {
-  const iframeFullScreenButton = document.querySelectorAll(
-    '.wmnds-website-code-example__view-fullscreen'
-  );
-
-  iframeFullScreenButton.forEach(btn => {
-    const rando = () => {
-      btn.nextElementSibling.classList.add('wmnds-website-code-example__inner-wrap--fullscreen');
-    };
-
-    btn.addEventListener('click', rando);
-  });
-};
-
 const createIframe = () => {
   const iframeExamples = document.querySelectorAll('.wmnds-website-code-example__iframe');
 
@@ -62,8 +48,6 @@ const createIframe = () => {
 
     return ifrm;
   });
-
-  iframeFullScreenLogic();
 };
 
 export default createIframe;

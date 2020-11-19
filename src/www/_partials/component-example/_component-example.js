@@ -1,3 +1,60 @@
+const seeExampleFullScreen = () => {
+  const fullScreenBtns = document.querySelectorAll('.wmnds-website-code-example__view-fullscreen');
+  const { documentElement } = document;
+
+  const handleKeyDown = e => {
+    const fullScreenEle = document.querySelectorAll('.wmnds-website-code-example--fullscreen')[0];
+    const focusableElements =
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    const firstFocusableElement = fullScreenEle.querySelectorAll(focusableElements)[0];
+    const focusableContent = fullScreenEle.querySelectorAll(focusableElements);
+    const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+    const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) {
+      // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus(); // add focus for the last focusable element
+        e.preventDefault();
+      }
+    }
+    // if tab key is pressed
+    else if (document.activeElement === lastFocusableElement) {
+      // if focused has reached to last focusable element then focus first focusable element after pressing tab
+      firstFocusableElement.focus(); // add focus for the first focusable element
+      e.preventDefault();
+    }
+  };
+
+  fullScreenBtns.forEach(btn => {
+    const btnEle = btn;
+
+    const handleClick = () => {
+      btnEle.parentElement.classList.toggle('wmnds-website-code-example--fullscreen');
+
+      if (btnEle.parentElement.classList.contains('wmnds-website-code-example--fullscreen')) {
+        btnEle.innerHTML = 'Close this fullscreen example';
+        documentElement.style.overflow = 'hidden'; // Set body overflow to hidden, so we don't snap to body scrollbar
+        documentElement.style.overscrollBehaviorY = 'none'; // Stops pull down to refresh in chrome on android
+        document.addEventListener('keydown', handleKeyDown);
+      } else {
+        btnEle.innerHTML = 'See this example in fullscreen';
+        documentElement.style.overflow = 'initial'; // Set body overflow to hidden, so we don't snap to body scrollbar
+        documentElement.style.overscrollBehaviorY = 'initial'; // Stops pull down to refresh in chrome on android
+        document.removeEventListener('keydown', handleKeyDown);
+      }
+    };
+
+    btn.addEventListener('click', handleClick);
+  });
+};
+
 function showCode(ele) {
   // for each button we create below
   function showMore(e) {
@@ -54,4 +111,6 @@ export default () => {
   document.querySelectorAll('.wmnds-js-show-code').forEach(ele => {
     showCode(ele); // run show code function above when hljs has init
   });
+
+  seeExampleFullScreen();
 };
