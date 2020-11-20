@@ -36,6 +36,6 @@ module.exports = () => {
       })
     )
     .pipe(plugins.svgstore())
-    .pipe(plugins.rename({ basename: 'wmnds-sprite', extname: '.min.svg' }))
+    .pipe(plugins.rename({ basename: 'wmnds-icons', extname: '.min.svg' }))
     .pipe(dest(paths.svgs.dest));
 };

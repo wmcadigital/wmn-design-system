@@ -138,7 +138,10 @@ const headerJs = () => {
             headerEl.classList.add('wmnds-header--mega-menu-open');
             document.querySelector('html').classList.add('mobile-menu-open');
           } else {
-            headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
+            headerEl.classList.remove(
+              'wmnds-header--mega-menu-open',
+              'wmnds-header--mega-menu-submenu-open'
+            );
             document.querySelector('html').classList.remove('mobile-menu-open');
           }
         });
@@ -148,7 +151,10 @@ const headerJs = () => {
             mobileMenuIsOpen.search = !mobileMenuIsOpen.search;
             if (mobileMenuIsOpen.search) {
               mobileMenuIsOpen.menu = false;
-              headerEl.classList.remove('wmnds-header--mega-menu-open', 'wmnds-header--mega-menu-submenu-open');
+              headerEl.classList.remove(
+                'wmnds-header--mega-menu-open',
+                'wmnds-header--mega-menu-submenu-open'
+              );
               document.querySelector('html').classList.remove('mobile-menu-open');
               headerEl.classList.add('wmnds-header--search-open');
             } else {
@@ -266,7 +272,8 @@ const headerJs = () => {
 
       // if top level link doesn't have a mega-menu child add class to menu to hide overlay when hovered
       // has to be added/removed on mouseover to cover menus that have a mix of items with/without mega menus
-      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length;
+      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container')
+        .length;
 
       if (isTopLevelWithMenu) {
         topLevelLink.addEventListener('mouseover', () => {
@@ -285,14 +292,16 @@ const headerJs = () => {
             }, delayTime);
           }
         });
-        topLevelListItem.querySelector('.wmnds-mega-menu__container').addEventListener('mouseover', () => {
-          if (menuDelay) {
-            // if container is rehovered before timeout is done, clear all timeouts kill the delay
-            clearTimeout(enterTimeOut);
-            clearTimeout(leaveTimeOut);
-            menuDelay = false;
-          }
-        });
+        topLevelListItem
+          .querySelector('.wmnds-mega-menu__container')
+          .addEventListener('mouseover', () => {
+            if (menuDelay) {
+              // if container is rehovered before timeout is done, clear all timeouts kill the delay
+              clearTimeout(enterTimeOut);
+              clearTimeout(leaveTimeOut);
+              menuDelay = false;
+            }
+          });
         topLevelListItem.addEventListener('mouseleave', () => {
           menuDelay = true;
           // leave timeout is active
