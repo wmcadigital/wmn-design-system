@@ -2,44 +2,44 @@ const seeExampleFullScreen = () => {
   const fullScreenBtns = document.querySelectorAll('.wmnds-website-code-example__view-fullscreen');
   const { documentElement } = document;
 
-  const handleKeyDown = (e, ele) => {
-    const fullScreenEle = ele;
-    const focusableElements =
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
-    const firstFocusableElement = fullScreenEle.querySelectorAll(focusableElements)[0];
-    const focusableContent = fullScreenEle.querySelectorAll(focusableElements);
-    const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
-
-    const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (e.shiftKey) {
-      // if shift key pressed for shift + tab combination
-      if (document.activeElement === firstFocusableElement) {
-        lastFocusableElement.focus(); // add focus for the last focusable element
-        e.preventDefault();
-      }
-    }
-    // if tab key is pressed
-    else if (document.activeElement === lastFocusableElement) {
-      // if focused has reached to last focusable element then focus first focusable element after pressing tab
-      firstFocusableElement.focus(); // add focus for the first focusable element
-      e.preventDefault();
-    }
-  };
-
   fullScreenBtns.forEach(btn => {
     const btnEle = btn;
+
+    const handleKeyDown = e => {
+      const fullScreenEle = btnEle.parentElement;
+      const focusableElements =
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+      const firstFocusableElement = fullScreenEle.querySelectorAll(focusableElements)[0];
+      const focusableContent = fullScreenEle.querySelectorAll(focusableElements);
+      const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+      const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (e.shiftKey) {
+        // if shift key pressed for shift + tab combination
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus(); // add focus for the last focusable element
+          e.preventDefault();
+        }
+      }
+      // if tab key is pressed
+      else if (document.activeElement === lastFocusableElement) {
+        // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        firstFocusableElement.focus(); // add focus for the first focusable element
+        e.preventDefault();
+      }
+    };
 
     const closeFullScreen = () => {
       btnEle.innerHTML = 'See this example in fullscreen';
       documentElement.style.overflow = 'initial'; // Set body overflow to hidden, so we don't snap to body scrollbar
       documentElement.style.overscrollBehaviorY = 'initial'; // Stops pull down to refresh in chrome on android
-      document.removeEventListener('keydown', e => handleKeyDown(e, btnEle.parentElement));
+      document.removeEventListener('keydown', handleKeyDown);
     };
 
     const handleEscape = e => {
@@ -59,8 +59,8 @@ const seeExampleFullScreen = () => {
       btnEle.innerHTML = 'Close this fullscreen example';
       documentElement.style.overflow = 'hidden'; // Set body overflow to hidden, so we don't snap to body scrollbar
       documentElement.style.overscrollBehaviorY = 'none'; // Stops pull down to refresh in chrome on android
-      document.addEventListener('keydown', e => handleKeyDown(e, btnEle.parentElement));
       btnEle.parentElement.addEventListener('keydown', handleEscape);
+      document.addEventListener('keydown', handleKeyDown);
     };
 
     const handleClick = () => {
