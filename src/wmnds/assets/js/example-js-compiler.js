@@ -1,8 +1,8 @@
 import * as babel from '@babel/standalone';
-import {
-  showCode,
-  displayShowMore
-} from '../../../www/_partials/component-example/_component-example';
+// import {
+//   showCode,
+//   displayShowMore
+// } from '../../../www/_partials/component-example/_component-example';
 
 // -- Add the import to your javascript here
 import cookies from '../../patterns/cookies/cookies';
@@ -73,8 +73,8 @@ const jsExampleCompiler = () => {
 
     // init functions
     setInnerJs(exampleJs(), codeElement);
-    displayShowMore(codeElement);
-    showCode(codeElement.parentNode.parentNode.querySelector('.wmnds-js-show-code'));
+    // displayShowMore(codeElement);
+    // showCode(codeElement.parentNode.parentNode.querySelector('.wmnds-js-show-code'));
   });
 };
 

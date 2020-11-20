@@ -3,12 +3,13 @@
 
 
 <div class="wmnds-website-code-example">
-    {{
-      wmnButton({
-        classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
-        text: 'See this example in fullscreen'
-      })
-    }}
+  {{
+    wmnButton({
+      classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
+      text: 'See this example in fullscreen'
+    })
+  }}
+  <hr class="wmnds-m-none" />
 
   <div class="wmnds-website-code-example__inner-wrap">
     {% set componentsToRender %}
@@ -25,31 +26,38 @@
     {% endset %}
 
 
-      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | forceescape | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe>
-      {# <div class="wmnds-website-code-example__njk wmnds-col-1">
-      {{componentsToRender | safe}}
-      </div> #}
+    <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | forceescape | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe>
+    {# <div class="wmnds-website-code-example__njk wmnds-col-1">
+    {{componentsToRender | safe}}
+    </div> #}
   </div>
 
 
-  <h3 class="wmnds-website-code-example__subtitle wmnds-m-t-none">HTML Markup</h3>
-  {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
-  {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-  <pre><code class="html" tabindex="0">{% for item in componentPath -%}
-  {{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}
-  {% endfor -%}</code></pre>
+  <hr class="wmnds-m-none" />
+  <details class="wmnds-details">
+    <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
+    {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
+    {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
+    <pre><code class="html" tabindex="0">{% for item in componentPath -%}
+    {{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}
+    {% endfor -%}</code></pre>
+  </details>
+
+
+  {% if(params.js) %}
+    <hr class="wmnds-m-none" />
+    <details class="wmnds-details">
+      <summary class="wmnds-link wmnds-p-md">Recommended javascript</summary>
+      <div class="wmnds-code-toggle">
+        <strong>Format:</strong>
+        <button class="wmnds-btn wmnds-btn--dark-bg es6">ES6</button>
+        <button class="wmnds-btn">Browser compatible JS</button>
+      </div>
+      <pre><code class="js" data-content="{{ params.js }}" tabindex="0">{{params.js}}</code></pre>
+    </details>
+  {% endif %}
 </div>
-{% if(params.js) %}
-<div class="wmnds-website-code-example">
-  <h3 class="wmnds-website-code-example__subtitle wmnds-m-t-none">Recommended javascript</h3>
-  <div class="wmnds-code-toggle">
-      <strong>Format:</strong>
-      <button class="wmnds-btn wmnds-btn--dark-bg es6">ES6</button>
-      <button class="wmnds-btn">Browser compatible JS</button>
-  </div>
-  <pre><code class="js" data-content="{{ params.js }}" tabindex="0">{{params.js}}</code></pre>
-</div>
-{% endif %}
+
 
 <hr>
 {% endmacro %}
