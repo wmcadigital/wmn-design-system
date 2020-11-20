@@ -1,27 +1,44 @@
 const seeExampleFullScreen = () => {
   const fullScreenBtns = document.querySelectorAll('.wmnds-website-code-example__view-fullscreen');
-  const { documentElement } = document;
+  const { style } = document.documentElement;
 
   fullScreenBtns.forEach(btn => {
-    const btnEle = btn;
+    const btnEle = btn; // Grab ele of btn and map to const to avoid mutation
+    const codeExampleDiv = btnEle.parentElement; // Get parent div of button (inner wrap)
 
-    const handleKeyDown = e => {
-      const fullScreenEle = btnEle.parentElement;
+    // Func on what to do when closing full screen
+    const closeFullScreen = () => {
+      codeExampleDiv.classList.remove('wmnds-website-code-example--fullscreen'); // Remove full screen class
+      btnEle.innerHTML = 'See this example in fullscreen'; // Change button text
+      style.overflow = 'initial'; // Set body overflow back to initial, so we enable scrolling again
+      style.overscrollBehaviorY = 'initial'; // Enables pull down to refresh in chrome on android
+    };
+
+    // Func to handle what to do when keys are pressed
+    const handleFullScreenKeyDown = e => {
       const focusableElements =
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'; // Element we want to track
 
-      const firstFocusableElement = fullScreenEle.querySelectorAll(focusableElements)[0];
-      const focusableContent = fullScreenEle.querySelectorAll(focusableElements);
-      const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+      const firstFocusableElement = codeExampleDiv.querySelectorAll(focusableElements)[0]; // Get first element to be focused
+      const focusableContent = codeExampleDiv.querySelectorAll(focusableElements); // Get all focusable elements
+      const lastFocusableElement = focusableContent[focusableContent.length - 1]; // Get last element to be focused
 
-      const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+      const isTabPressed = e.key === 'Tab' || e.keyCode === 9; // Map to tab key
+      const isEscPressed = e.key === 'Esc' || e.key === 'Escape' || e.keyCode === 27; // Map to esc key
 
-      if (!isTabPressed) {
+      // If tabe or esc is not pressed then break out of func
+      if (!isTabPressed && !isEscPressed) {
         return;
       }
 
-      if (e.shiftKey) {
-        // if shift key pressed for shift + tab combination
+      // If escape key pressed
+      if (isEscPressed) {
+        closeFullScreen();
+        document.removeEventListener('keydown', handleFullScreenKeyDown); // Remove listener as we want to go back to normal keyboard events
+      }
+      // else if shift key pressed for shift + tab combination
+      else if (e.shiftKey) {
+        // if focused has reached to first focusable element then focus last focusable element after pressing shift + tab
         if (document.activeElement === firstFocusableElement) {
           lastFocusableElement.focus(); // add focus for the last focusable element
           e.preventDefault();
@@ -35,42 +52,24 @@ const seeExampleFullScreen = () => {
       }
     };
 
-    const closeFullScreen = () => {
-      btnEle.innerHTML = 'See this example in fullscreen';
-      documentElement.style.overflow = 'initial'; // Set body overflow to hidden, so we don't snap to body scrollbar
-      documentElement.style.overscrollBehaviorY = 'initial'; // Stops pull down to refresh in chrome on android
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-
-    const handleEscape = e => {
-      const isEscPressed = e.key === 'Esc' || e.key === 'Escape' || e.keyCode === 27;
-
-      if (!isEscPressed) {
-        return;
-      }
-      if (isEscPressed) {
-        btnEle.parentElement.classList.remove('wmnds-website-code-example--fullscreen');
-        closeFullScreen();
-        btnEle.parentElement.removeEventListener('keydown', handleEscape);
-      }
-    };
-
-    const openFullScreen = () => {
-      btnEle.innerHTML = 'Close this fullscreen example';
-      documentElement.style.overflow = 'hidden'; // Set body overflow to hidden, so we don't snap to body scrollbar
-      documentElement.style.overscrollBehaviorY = 'none'; // Stops pull down to refresh in chrome on android
-      btnEle.parentElement.addEventListener('keydown', handleEscape);
-      document.addEventListener('keydown', handleKeyDown);
-    };
-
+    // Func to handle click of btn
     const handleClick = () => {
-      btnEle.parentElement.classList.toggle('wmnds-website-code-example--fullscreen');
-
-      if (btnEle.parentElement.classList.contains('wmnds-website-code-example--fullscreen')) {
+      // Func on what to do when opening full screen
+      const openFullScreen = () => {
+        codeExampleDiv.classList.add('wmnds-website-code-example--fullscreen'); // Add full screen class
+        btnEle.innerHTML = 'Close this fullscreen example'; // Change button text
+        style.overflow = 'hidden'; // Set body overflow to hidden, so we don't snap to body scrollbar
+        style.overscrollBehaviorY = 'none'; // Stops pull down to refresh in chrome on android
+        document.addEventListener('keydown', handleFullScreenKeyDown); // Add listener to key events for full screen
+      };
+      // If we are in fullscreen mode
+      if (codeExampleDiv.classList.contains('wmnds-website-code-example--fullscreen')) {
+        closeFullScreen(); // Close full screen
+        document.removeEventListener('keydown', handleFullScreenKeyDown); /// Remove listener as we want to go back to normal keyboard events
+      }
+      // Else we want to go into fullscreen mode
+      else {
         openFullScreen();
-      } else {
-        closeFullScreen();
-        btnEle.parentElement.removeEventListener('keydown', handleEscape);
       }
     };
 
