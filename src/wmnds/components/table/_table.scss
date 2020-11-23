@@ -62,8 +62,8 @@ $border: #979797;
       height: auto;
       padding-left: 50%;
       border-bottom: 0;
-      white-space: normal;
       text-align: left; // force it to align left
+      white-space: normal;
 
       // Now like a table header
       &:before {
