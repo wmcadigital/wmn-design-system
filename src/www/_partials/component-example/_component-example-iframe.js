@@ -13,7 +13,7 @@ const createIframe = () => {
 
     const host = `http://${window.location.host}`;
     const ajax = new XMLHttpRequest();
-    ajax.open('GET', `${host}/img/wmnds-sprite.min.svg`, true); // Fire off ajax to get spritesheet
+    ajax.open('GET', `${host}/img/wmnds-icons.min.svg`, true); // Fire off ajax to get spritesheet
     ajax.send();
     // When spritesheet has loaded
     ajax.onload = () => {
@@ -25,7 +25,7 @@ const createIframe = () => {
         <html>
           <head>
             <base href="${host}" target="_blank">
-            <link rel="stylesheet" type="text/css" href="${host}/css/wmnds-components.min.css" />
+            <link rel="stylesheet" type="text/css" href="${host}/css/wmnds.min.css" />
             <link rel="stylesheet" type="text/css" href="${host}/css/wmnds-website.min.css" />
           </head>
           <body>
