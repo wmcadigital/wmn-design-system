@@ -16,8 +16,7 @@ const seeExampleFullScreen = () => {
 
     // Func to handle what to do when keys are pressed
     const handleFullScreenKeyDown = e => {
-      const focusableElements =
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'; // Element we want to track
+      const focusableElements = 'button, [href], input, select, textarea, details, summary'; // Element we want to track
 
       const firstFocusableElement = codeExampleDiv.querySelectorAll(focusableElements)[0]; // Get first element to be focused
       const focusableContent = codeExampleDiv.querySelectorAll(focusableElements); // Get all focusable elements
@@ -40,15 +39,15 @@ const seeExampleFullScreen = () => {
       else if (e.shiftKey) {
         // if focused has reached to first focusable element then focus last focusable element after pressing shift + tab
         if (document.activeElement === firstFocusableElement) {
-          lastFocusableElement.focus(); // add focus for the last focusable element
           e.preventDefault();
+          lastFocusableElement.focus(); // add focus for the last focusable element
         }
       }
       // if tab key is pressed
       else if (document.activeElement === lastFocusableElement) {
+        e.preventDefault();
         // if focused has reached to last focusable element then focus first focusable element after pressing tab
         firstFocusableElement.focus(); // add focus for the first focusable element
-        e.preventDefault();
       }
     };
 
