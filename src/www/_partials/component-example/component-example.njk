@@ -1,6 +1,8 @@
 {% macro compExample(componentPath, params) %}
 {% from "wmnds/components/button/_button.njk" import wmnButton %}
 
+{% set showAsIframe = true if params.showAsIframe else false %}
+
 
 <div class="wmnds-website-code-example">
   {{
@@ -12,6 +14,7 @@
   <hr class="wmnds-m-none" />
 
   <div class="wmnds-website-code-example__inner-wrap">
+    {# Loop through components passed in and collect in componentsToRender var #}
     {% set componentsToRender %}
       {%- for item in componentPath %}
         {{item | trim}}
@@ -25,11 +28,15 @@
       {% endfor -%}
     {% endset %}
 
-
-    <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe>
-    {# <div class="wmnds-website-code-example__njk wmnds-col-1">
-    {{componentsToRender | safe}}
-    </div> #}
+    {# If iframe var set the show components in iframe #}
+    {% if showAsIframe %}
+      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe>
+    {% else %}
+    {# Else show components like normal #}
+      <div class="wmnds-website-code-example__njk wmnds-col-1">
+        {{componentsToRender | safe}}
+      </div>
+    {% endif %}
   </div>
 
 
