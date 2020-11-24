@@ -1,10 +1,17 @@
 {% macro compExample(componentPath, params) %}
 {% from "wmnds/components/button/_button.njk" import wmnButton %}
 
+{% set componentPath = componentPath if componentPath else [wmnButton({text: "No component specified to example"})] %}
 {% set showAsIframe = true if params.showAsIframe else false %}
-
+{% if params.propertyPath %}
+  {% include params.propertyPath %}
+{% endif %}
 
 <div class="wmnds-website-code-example">
+  {% if params.propertyPath %}
+  {{properties[0].property}}
+{% endif %}
+
   {{
     wmnButton({
       classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
@@ -45,9 +52,7 @@
     <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
     {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
     {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-    <pre><code class="html" tabindex="0">{% for item in componentPath -%}
-    {{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}
-    {% endfor -%}</code></pre>
+<pre><code class="html" tabindex="0">{% for item in componentPath -%}{{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
   </details>
 
 

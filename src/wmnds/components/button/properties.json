@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "property": "colour",
+      "default": "pink",
+      "allowedVals": "red"
+    }
+  ]
+}

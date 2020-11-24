@@ -51,32 +51,37 @@
 </ul>
 {%- from "wmnds/components/button/_button.njk" import wmnButton as cta %}
 {{
-  compExample([
-    cta({
-      text: "Call to action button"
-    }),
-     cta({
-      classNames: "wmnds-is--active",
-      text: "Call to action active button"
-    }),
-    cta({
-      text: "Call to action disabled button",
-      disabled: true
-    }),
-    cta({
-      text: "Call to action icon button",
-      iconRight: "general-chevron-right"
-    }),
-    cta({
-      text: "Call to action loading button",
-      loading: true
-    }),
-    cta({
-      text: "Call to action icon disabled button",
-      iconRight: "general-chevron-right",
-      disabled: true
-    })
-  ])
+  compExample(
+    [
+      cta({
+        text: "Call to action button"
+      }),
+      cta({
+        classNames: "wmnds-is--active",
+        text: "Call to action active button"
+      }),
+      cta({
+        text: "Call to action disabled button",
+        disabled: true
+      }),
+      cta({
+        text: "Call to action icon button",
+        iconRight: "general-chevron-right"
+      }),
+      cta({
+        text: "Call to action loading button",
+        loading: true
+      }),
+      cta({
+        text: "Call to action icon disabled button",
+        iconRight: "general-chevron-right",
+        disabled: true
+      })
+    ],
+    {
+      propertyPath: "wmnds/components/button/properties.json"
+    }
+  )
 }}
 {# Dark background variant #}
 <h3>Dark background variant</h3>
