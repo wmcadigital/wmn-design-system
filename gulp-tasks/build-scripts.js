@@ -56,19 +56,19 @@ function minifyJS(jsFile) {
 }
 
 const buildUncompiledJs = () =>
-  src(['src/wmnds/assets/js/example-js-compiler.js'])
-    .pipe(
-      webpack({
-        config: {
-          mode: 'none',
-          optimization: {
-            minimize: false
-          },
-          output: { filename: 'example-js-compiler.js' } // output name of the bundled js
-        }
-      })
-    )
-    .pipe(dest('build/js')); // concat uncompiled js function
+  src(['src/wmnds/**/_example.js'])
+    // .pipe(
+    //   webpack({
+    //     config: {
+    //       mode: 'none',
+    //       optimization: {
+    //         minimize: false
+    //       },
+    //       output: { filename: 'example-js-compiler.js' } // output name of the bundled js
+    //     }
+    //   })
+    // )
+    .pipe(dest('build/js/wmnds/')); // concat uncompiled js function
 
 // Minify, and concatenate scripts
 module.exports = done => {

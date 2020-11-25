@@ -2,9 +2,11 @@
 {% from "wmnds/components/button/_button.njk" import wmnButton %}
 
 {% set components = components if components else [wmnButton({text: "No component specified to example"})] %}
-{% set showAsIframe = true if params.showAsIframe else false %}
-{% if params.componentPath %}
-  {% include params.componentPath + "properties.json" %}
+{% set showAsIframe = true if params.iframe else false %}
+{% set componentPath = params.componentPath if params.componentPath else false %}
+
+{% if params.njk %}
+  {% include componentPath + "_properties.json" %}
   {% set props = properties %}
 {% endif %}
 
@@ -38,7 +40,7 @@
 
     {# If iframe var set the show components in iframe #}
     {% if showAsIframe %}
-      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%"></iframe>
+      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%" data-path="{{componentPath}}"></iframe>
     {% else %}
     {# Else show components like normal #}
       <div class="wmnds-website-code-example__njk wmnds-col-1">
@@ -56,29 +58,34 @@
 <pre><code class="html" tabindex="0">{% for item in components -%}{{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
   </details>
 
-{% if params.componentPath %}
+{% if componentPath %}
+
+ {% if params.njk %}
     <hr class="wmnds-m-none" />
   <details class="wmnds-details">
     <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
     {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
     {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-<pre><code class="njk" tabindex="0">{%- include params.componentPath + "example.njk" | trim -%}</code></pre>
+<pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" | trim -%}</code></pre>
   </details>
 {% endif %}
 
 
-  {% if(params.js) %}
+
+  {% if params.js %}
     <hr class="wmnds-m-none" />
-    <details class="wmnds-details">
+    <details class="wmnds-details wmnds-details--js">
       <summary class="wmnds-link wmnds-p-md">Recommended javascript</summary>
       <div class="wmnds-code-toggle">
         <strong>Format:</strong>
         <button class="wmnds-btn wmnds-btn--dark-bg es6">ES6</button>
         <button class="wmnds-btn">Browser compatible JS</button>
       </div>
-      <pre><code class="js" data-content="{{ params.js }}" tabindex="0">{{params.js}}</code></pre>
+<pre><code class="js" tabindex="0" data-path="{{componentPath}}"></code></pre>
     </details>
   {% endif %}
+
+{% endif %}
 </div>
 
 

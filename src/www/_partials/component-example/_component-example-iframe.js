@@ -12,6 +12,10 @@ const createIframe = () => {
     ifrm.innerHTML = '';
 
     const host = `http://${window.location.host}`;
+    // const componentScript = ifrm.dataset.src
+    //   ? `<script src="${host}/js/${ifrm.dataset.path}_example.js"></script>`
+    //   : null;
+
     const ajax = new XMLHttpRequest();
     ajax.open('GET', `${host}/img/wmnds-icons.min.svg`, true); // Fire off ajax to get spritesheet
     ajax.send();
@@ -34,6 +38,7 @@ const createIframe = () => {
               ${html || ''}
             </div>
             <script src="https://unpkg.com/iframe-resizer@3.5.7/js/iframeResizer.contentWindow.min.js"></script>
+            <script src="${host}/js/wmnds-website.min.js"></script>
           </body>
         </html>
       `;

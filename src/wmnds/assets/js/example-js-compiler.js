@@ -6,7 +6,7 @@ import * as babel from '@babel/standalone';
 
 // -- Add the import to your javascript here
 import cookies from '../../patterns/cookies/cookies';
-import headerJs from '../../patterns/header-v2/_header-v2';
+import headerJs from '../../patterns/header-v2/_example';
 import footerJs from '../../patterns/footer/_footer';
 import accordionsJS from '../../components/accordion/_accordion';
 import searchFilterJs from '../../patterns/search/search-filter/_search-filter';
