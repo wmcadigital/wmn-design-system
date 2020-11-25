@@ -35,7 +35,9 @@ function minifyJS(jsFile) {
                         '@babel/preset-env',
                         {
                           targets: {
-                            browsers: ['ie >= 11']
+                            browsers: {
+                              ie: '11'
+                            }
                           }
                         }
                       ]

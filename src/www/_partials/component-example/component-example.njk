@@ -66,23 +66,31 @@
     <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
     {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
     {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-<pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" | trim -%}</code></pre>
+<pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" -%}</code></pre>
   </details>
 {% endif %}
 
 
 
   {% if params.js %}
-    <hr class="wmnds-m-none" />
-    <details class="wmnds-details wmnds-details--js">
-      <summary class="wmnds-link wmnds-p-md">Recommended javascript</summary>
-      <div class="wmnds-code-toggle">
-        <strong>Format:</strong>
-        <button class="wmnds-btn wmnds-btn--dark-bg es6">ES6</button>
-        <button class="wmnds-btn">Browser compatible JS</button>
-      </div>
-<pre><code class="js" tabindex="0" data-path="{{componentPath}}"></code></pre>
-    </details>
+  <div class="wmnds-website-code-example__js">
+      <hr class="wmnds-m-none" />
+      <details class="wmnds-details wmnds-details--js">
+        <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
+<pre><code class="js" tabindex="0"></code></pre>
+      </details>
+
+
+      <hr class="wmnds-m-none" />
+      <details class="wmnds-details wmnds-details--es6">
+        <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
+<pre><code class="js" tabindex="0"></code></pre>
+      </details>
+
+      <script type="text/plain" class="wmnds-website-code-example__script">
+        {%- include componentPath + "_example.js" -%}
+      </script>
+  </div>
   {% endif %}
 
 {% endif %}
