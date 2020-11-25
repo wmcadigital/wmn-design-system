@@ -1,9 +1,9 @@
 {
   "properties": [
     {
-      "property": "colour",
-      "default": "pink",
-      "allowedVals": "red"
+      "name": "colour",
+      "type": "pink",
+      "description": "red"
     }
   ]
 }
