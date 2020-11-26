@@ -6,7 +6,7 @@ const componentExampleScript = () => {
 
   exampleScripts.forEach(exampleScript => {
     const parentEle = exampleScript;
-    const scriptTag = parentEle.querySelector('script').innerText;
+    const scriptTag = parentEle.querySelector('script').innerHTML;
 
     const escapeCharacters = str => {
       return str
@@ -15,6 +15,7 @@ const componentExampleScript = () => {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;')
+        .replace('<br>', '<br />')
         .trim();
     };
 
