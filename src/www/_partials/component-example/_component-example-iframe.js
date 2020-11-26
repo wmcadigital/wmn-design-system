@@ -1,6 +1,6 @@
 import 'iframe-resizer/js/iframeResizer'; // Import iframe resizer logic
 
-const createIframe = () => {
+const componentExampleIframe = () => {
   const iframeExamples = document.querySelectorAll('.wmnds-website-code-example__iframe');
 
   iframeExamples.forEach(iframeElement => {
@@ -53,4 +53,4 @@ const createIframe = () => {
   });
 };
 
-export default createIframe;
+export default componentExampleIframe;

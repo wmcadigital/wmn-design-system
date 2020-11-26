@@ -76,12 +76,14 @@ const seeExampleFullScreen = () => {
   });
 };
 
-export default () => {
+const componentExample = () => {
   const { hljs } = window; // declare higlightJS as global var
   document.querySelectorAll('pre code').forEach(element => {
     // Run highlightJS for each pre code element found */
-    hljs.highlightBlock(element);
+    return hljs.highlightBlock(element);
   });
 
   seeExampleFullScreen();
 };
+
+export default componentExample;

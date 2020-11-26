@@ -1,3 +1,4 @@
+// The commented out code below is for compiling ES6 to ES5 in the browser. Commented out for now as it doesn't work great in IE11
 // import * as babel from '@babel/standalone';
 
 const componentExampleScript = () => {
@@ -17,14 +18,14 @@ const componentExampleScript = () => {
         .trim();
     };
 
-    const escapeCharScript = escapeCharacters(scriptTag);
+    const escapeCharScriptES6 = escapeCharacters(scriptTag);
 
     // compile fn
     // const compileJs = input => babel.transform(input, { presets: ['env'] }).code;
-    // const escapedCharES6 = escapeCharacters(compileJs(scriptTag));
+    // const escapedCharScriptES5 = escapeCharacters(compileJs(scriptTag));
 
-    parentEle.querySelector('.wmnds-details--js .js').innerHTML = escapeCharScript;
-    // parentEle.querySelector('.wmnds-details--es6 .js').innerHTML = escapedCharES6;
+    // parentEle.querySelector('.wmnds-details--js .js').innerHTML = escapedCharScriptES5;
+    parentEle.querySelector('.wmnds-details--es6 .js').innerHTML = escapeCharScriptES6;
   });
 };
 

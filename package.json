@@ -75,12 +75,10 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "glob": "^7.1.6",
-    "gulp": "^4.0.2",
     "gulp-accessibility": "^3.1.1",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^4.0.2",
-    "gulp-cheerio": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
@@ -116,12 +114,9 @@
     "webpack-stream": "^6.0.0"
   },
   "dependencies": {
-    "@babel/standalone": "^7.11.6",
     "@sentry/browser": "^5.22.3",
-    "core-js": "^3.8.0",
+    "gulp": "^4.0.2",
     "iframe-resizer": "^4.2.11",
-    "path": "^0.12.7",
-    "polyfill-library-node": "^1.0.0",
-    "regenerator-runtime": "^0.13.7"
+    "path": "^0.12.7"
   }
 }
