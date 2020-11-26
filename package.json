@@ -93,6 +93,7 @@
     "gulp-json-format": "^2.0.0",
     "gulp-load-plugins": "^2.0.3",
     "gulp-nunjucks": "^5.0.1",
+    "gulp-nunjucks-inheritance": "^1.0.1",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-plumber": "^1.2.1",
     "gulp-react-native-stylesheet-css": "^1.4.4",
