@@ -20,10 +20,9 @@ const getNjkData = ({ path: filePath }) => {
 
 module.exports.buildTemplates = () => {
   return src(paths.nunjucks.websiteSrc)
-    .pipe(plugins.cached('njk-cache'))
-    .pipe(plugins.nunjucksInheritance({ base: 'src' }))
     .pipe(plugins.data(() => njkData))
     .pipe(plugins.data(file => getNjkData(file)))
+    .pipe(plugins.cached('njk-cache'))
     .pipe(
       plugins.nunjucksRender({
         path: 'src/',

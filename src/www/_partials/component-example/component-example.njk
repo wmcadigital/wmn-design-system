@@ -5,7 +5,11 @@
 {% set showAsIframe = true if params.iframe else false %}
 {% set componentPath = params.componentPath if params.componentPath else false %}
 
-{% if params.njk %}
+{% set njk = params.njk if params.njk else false %}
+{% set js = params.js if params.js else false %}
+
+
+{% if njk %}
   {% include componentPath + "_properties.json" %}
   {% set props = properties %}
 {% endif %}
@@ -14,7 +18,7 @@
 
   {{properties[0].property}}
 
-
+  {# Show a button to allow the user to see the component fullscreen #}
   {{
     wmnButton({
       classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
@@ -23,6 +27,9 @@
   }}
   <hr class="wmnds-m-none" />
 
+
+
+  {# PREVIEW COMPONENT #}
   <div class="wmnds-website-code-example__inner-wrap">
     {# Loop through components passed in and collect in componentsToRender var #}
     {% set componentsToRender %}
@@ -48,8 +55,13 @@
       </div>
     {% endif %}
   </div>
+  {# END PREVIEW COMPONENT #}
 
 
+
+  {# SHOW DETAIL TAB(S) #}
+
+  {# HTML markup #}
   <hr class="wmnds-m-none" />
   <details class="wmnds-details">
     <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
@@ -58,30 +70,28 @@
 <pre><code class="html" tabindex="0">{% for item in components -%}{{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
   </details>
 
-{% if componentPath %}
-
- {% if params.njk %}
+  {# Njk markup #}
+  {% if njk and componentPath %}
     <hr class="wmnds-m-none" />
-  <details class="wmnds-details">
-    <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
-    {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
-    {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
+    <details class="wmnds-details">
+      <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
+{# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
 <pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" -%}</code></pre>
-  </details>
-{% endif %}
+    </details>
+  {% endif %}
 
-
-
-  {% if params.js %}
-  <div class="wmnds-website-code-example__js">
-  {# Hiding this section until we can compile ES5 for IE11 #}
+  {# JS markup #}
+  {% if js and componentPath %}
+    <div class="wmnds-website-code-example__js">
+      {# HIDING THIS SECTION until we can compile ES5 for IE11 #}
+      {# Show recommended JS (ES2015) #}
       {# <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--js">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
 <pre><code class="js" tabindex="0"></code></pre>
       </details> #}
 
-
+      {# Show recommended JS (ES6) #}
       <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--es6">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
@@ -91,12 +101,11 @@
       <script type="text/plain" class="wmnds-website-code-example__script">
         {%- include componentPath + "_example.js" -%}
       </script>
-  </div>
+    </div>
   {% endif %}
-
-{% endif %}
 </div>
 
+{# END SHOW DETAIL TAB(S) #}
 
 <hr>
 {% endmacro %}
