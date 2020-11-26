@@ -12,12 +12,15 @@ const njkData = require('../src/www/data.njk.json');
 // Automatically parse json from data files
 // Data files must have the same name as their parent directory and have the extension .njk.json
 const getNjkData = ({ path: filePath }) => {
-  const dataFilePath = `${path.dirname(filePath)}/${path.dirname(filePath).split('/').slice(-1)[0]}.njk.json`;
+  const dataFilePath = `${path.dirname(filePath)}/${
+    path.dirname(filePath).split('/').slice(-1)[0]
+  }.njk.json`;
   return fs.existsSync(dataFilePath) && JSON.parse(fs.readFileSync(dataFilePath));
 };
 
 module.exports.buildTemplates = () => {
   return src(paths.nunjucks.websiteSrc)
+    .pipe(plugins.cached('njk-cache'))
     .pipe(plugins.data(() => njkData))
     .pipe(plugins.data(file => getNjkData(file)))
     .pipe(
