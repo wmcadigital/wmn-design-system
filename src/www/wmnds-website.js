@@ -1,3 +1,6 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+// import 'polyfill-library-node';
 import * as Sentry from '@sentry/browser';
 import * as polyfills from './assets/vendor/js/polyfills/polyfills';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
@@ -12,7 +15,15 @@ import searchFilterJs from '../wmnds/patterns/search/search-filter/_search-filte
 
 import componentExampleJS from './_partials/component-example/_component-example-script';
 
-Sentry.init({ dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374' });
+const isInIframe = window.frameElement && window.frameElement.nodeName === 'IFRAME';
+console.log(isInIframe);
+
+if (!isInIframe) {
+  if (process.env.NODE_ENV === 'production')
+    Sentry.init({
+      dsn: 'https://c72ff3aefb3e4a4585c61e5807411ae9@o378798.ingest.sentry.io/5285374'
+    });
+}
 
 const icons = () => {
   // Ajax SVG in, SVGS are referenced in app (Icon component)

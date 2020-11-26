@@ -1,7 +1,4 @@
-import 'babel-polyfill';
-import 'core-js/fn/symbol/iterator';
-import 'core-js/es6/symbol';
-import * as babel from '@babel/standalone';
+// import * as babel from '@babel/standalone';
 
 const componentExampleScript = () => {
   const exampleScripts = document.querySelectorAll('.wmnds-website-code-example__js');
@@ -23,11 +20,11 @@ const componentExampleScript = () => {
     const escapeCharScript = escapeCharacters(scriptTag);
 
     // compile fn
-    const compileJs = input => babel.transform(input, { presets: ['env'] }).code;
-    const escapedCharES6 = escapeCharacters(compileJs(scriptTag));
+    // const compileJs = input => babel.transform(input, { presets: ['env'] }).code;
+    // const escapedCharES6 = escapeCharacters(compileJs(scriptTag));
 
     parentEle.querySelector('.wmnds-details--js .js').innerHTML = escapeCharScript;
-    parentEle.querySelector('.wmnds-details--es6 .js').innerHTML = escapedCharES6;
+    // parentEle.querySelector('.wmnds-details--es6 .js').innerHTML = escapedCharES6;
   });
 };
 
