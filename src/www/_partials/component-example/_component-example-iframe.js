@@ -11,7 +11,7 @@ const componentExampleIframe = () => {
     // clear unnecessary html
     ifrm.innerHTML = '';
 
-    const host = `http://${window.location.host}`;
+    const host = `//${window.location.host}`;
 
     const ajax = new XMLHttpRequest();
     ajax.open('GET', `${host}/img/wmnds-icons.min.svg`, true); // Fire off ajax to get spritesheet
