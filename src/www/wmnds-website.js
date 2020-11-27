@@ -6,7 +6,7 @@ import cookies from '../wmnds/patterns/cookies/_example';
 import headerJs from '../wmnds/patterns/header-v2/_example';
 import footerJs from '../wmnds/patterns/footer/_example';
 import accordionsJS from '../wmnds/components/accordion/_example';
-import searchFilterJs from '../wmnds/patterns/search/search-filter/_search-filter';
+import searchFilterJs from '../wmnds/patterns/search/search-filter/_example';
 
 import {
   componentExample,
