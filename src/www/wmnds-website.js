@@ -4,7 +4,7 @@ import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
 import aToZContentStyleGuide from './pages/styles/a-to-z-content-style-guide/_a-to-z-content-style-guide';
 import cookies from '../wmnds/patterns/cookies/cookies';
 import headerJs from '../wmnds/patterns/header-v2/_example';
-import footerJs from '../wmnds/patterns/footer/_footer';
+import footerJs from '../wmnds/patterns/footer/_example';
 import accordionsJS from '../wmnds/components/accordion/_accordion';
 import searchFilterJs from '../wmnds/patterns/search/search-filter/_search-filter';
 
