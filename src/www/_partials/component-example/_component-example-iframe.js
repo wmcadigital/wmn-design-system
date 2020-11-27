@@ -45,7 +45,7 @@ const componentExampleIframe = () => {
       ifrm.contentWindow.document.close(); // Cloe the iframe doc
 
       ifrm.onload = () => {
-        window.iFrameResize({ checkOrigin: [host] }, ifrm);
+        window.iFrameResize({ checkOrigin: [`http:${host}`, `https:${host}`] }, ifrm);
       }; // When the iframe has loaded then run resize function to give correct height/width, checkOrigin is an array that contains the allow hosts that can change the iframe
     };
 
