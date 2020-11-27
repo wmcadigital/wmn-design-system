@@ -1,26 +1,20 @@
 {% macro compExample(components, params) %}
-{% from "wmnds/components/button/_button.njk" import wmnButton %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/components/table/_table.njk" import wmndsTable %}
 
-{% set components = components if components else [wmnButton({text: "No component specified to example"})] %}
+{% set components = components if components else [wmndsButton({text: "No component specified to example"})] %}
 {% set showAsIframe = true if params.iframe else false %}
 {% set componentPath = params.componentPath if params.componentPath else false %}
 
 {% set njk = params.njk if params.njk else false %}
 {% set js = params.js if params.js else false %}
-
-
-{% if njk %}
-  {% include componentPath + "_properties.json" %}
-  {% set props = properties %}
-{% endif %}
+{% set njkProps = params.njkProps if params.njkProps else false %}
 
 <div class="wmnds-website-code-example">
 
-  {{properties[0].property}}
-
   {# Show a button to allow the user to see the component fullscreen #}
   {{
-    wmnButton({
+    wmndsButton({
       classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
       text: 'See this example in fullscreen'
     })
@@ -77,6 +71,29 @@
       <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
 {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
 <pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" -%}</code></pre>
+    </details>
+  {% endif %}
+
+  {# Njk props #}
+  {% if njkProps %}
+    {# Import properties #}
+    {% set njkProperties %}
+      {% include componentPath + "_properties.json" ignore missing %}
+    {% endset %}
+
+    <hr class="wmnds-m-none" />
+    <details class="wmnds-details">
+      <summary class="wmnds-link wmnds-p-md">Nunjucks properties</summary>
+      <table class="wmnds-table">
+        <thead>
+          <tr>
+            {% asyncEach i in njkProperties.properties | dump|  safe -%}
+              <th scope="col">Header {{i.name}}</th>
+            {% endeach %}
+          </tr>
+        </thead>
+      </table>
+
     </details>
   {% endif %}
 

@@ -49,7 +49,7 @@
   <li>When a button is a destructive action.</li>
   <li>When a button starts a process or journey.</li>
 </ul>
-{%- from "wmnds/components/button/_button.njk" import wmnButton as cta %}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as cta %}
 {{
   compExample(
     [
@@ -79,8 +79,9 @@
       })
     ],
     {
+      componentName: "wmndsButton",
       componentPath: "wmnds/components/button/",
-      njk: true
+      njk: true,
     }
   )
 }}
@@ -123,7 +124,7 @@
   <li>When a button starts a process or journey</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as primary -%}
 {{
   compExample([
     primary({
@@ -182,7 +183,7 @@
   <li>When a button starts a process or journey</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as secondary -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as secondary -%}
 {{
   compExample([
     secondary({
@@ -249,7 +250,7 @@
   <li>When a button is trying to attract the user's attention</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as destructive -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as destructive -%}
 {{
   compExample([
     destructive({
@@ -302,7 +303,7 @@
   <li>When the button is inessential for continuing the user journey</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as start -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as start -%}
 {{
   compExample([
     start({
@@ -355,7 +356,7 @@
   <li>When a button is a destructive action</li>
   <li>When a button starts a process or journey</li>
 </ul>
-{%- from "wmnds/components/button/_button.njk" import wmnButton as mode -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as mode -%}
 {{
   compExample([
     mode({
