@@ -1,9 +1,9 @@
-{% extends "www/_layouts/layout-left-pane.njk" %} {% set pageTitle = "Cookies" %} 
+{% extends "www/_layouts/layout-left-pane.njk" %} {% set pageTitle = "Cookies" %}
 
-{% set section="Patterns" %} 
+{% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %} 
-{% from "wmnds/patterns/cookies/cookies-manager/_cookies-manager.njk" import wmndsCookiesManager %} 
+{% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
+{% from "wmnds/patterns/cookies/cookies-manager/_cookies-manager.njk" import wmndsCookiesManager %}
 
 {% block content %}
 
@@ -49,7 +49,16 @@
 </ul>
 <p>The Cookies banner should be placed above the main header and be on every page</p>
 
-{{ compExample([wmndsCookiesBanner()]) | trim }}
+{{
+  compExample([
+    wmndsCookiesBanner()
+  ],
+  {
+    componentPath: "wmnds/patterns/cookies/",
+    njk: false,
+    js: true,
+    iframe: false
+  }) | trim }}
 
 <br /><br />
 <h2 id="cookies_manager">Manage Cookies</h2>
@@ -63,6 +72,15 @@
   </li>
 </ul>
 
-{{ compExample([wmndsCookiesManager()], {js: 'cookies'}) | trim }}
+{{
+  compExample([
+    wmndsCookiesManager()
+  ],
+  {
+    componentPath: "wmnds/patterns/cookies/",
+    njk: false,
+    js: true,
+    iframe: false
+  }) | trim }}
 
 {% endblock %}
