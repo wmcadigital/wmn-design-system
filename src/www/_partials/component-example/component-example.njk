@@ -8,10 +8,10 @@
 
 {% set njk = params.njk if params.njk else false %}
 {% set js = params.js if params.js else false %}
-{% set njkProps = params.njkProps if params.njkProps else false %}
+{% set njkProps = params.componentName if params.componentName else false %}
 
 <div class="wmnds-website-code-example">
-
+{{params.componentName[0].description}}
   {# Show a button to allow the user to see the component fullscreen #}
   {{
     wmndsButton({
@@ -20,7 +20,6 @@
     })
   }}
   <hr class="wmnds-m-none" />
-
 
 
   {# PREVIEW COMPONENT #}
@@ -76,20 +75,15 @@
 
   {# Njk props #}
   {% if njkProps %}
-    {# Import properties #}
-    {% set njkProperties %}
-      {% include componentPath + "_properties.json" ignore missing %}
-    {% endset %}
-
     <hr class="wmnds-m-none" />
     <details class="wmnds-details">
       <summary class="wmnds-link wmnds-p-md">Nunjucks properties</summary>
       <table class="wmnds-table">
         <thead>
           <tr>
-            {% asyncEach i in njkProperties.properties | dump|  safe -%}
-              <th scope="col">Header {{i.name}}</th>
-            {% endeach %}
+            {% for item in njkProps -%}
+              <th scope="col">Header {{item}}</th>
+            {% endfor %}
           </tr>
         </thead>
       </table>
