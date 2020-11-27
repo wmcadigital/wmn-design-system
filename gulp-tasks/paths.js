@@ -36,7 +36,7 @@ module.exports = {
   },
   njkData: {
     src: 'src/**/*.njk.json',
-    output: '/src/www/assets/json/'
+    output: 'src/www/assets/json/'
   },
   svgs: {
     src: 'src/wmnds/assets/icon/**/*.svg',
