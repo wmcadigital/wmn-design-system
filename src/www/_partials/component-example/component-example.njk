@@ -77,16 +77,26 @@
     <hr class="wmnds-m-none" />
     <details class="wmnds-details">
       <summary class="wmnds-link wmnds-p-md">Nunjucks properties</summary>
-      <table class="wmnds-table">
-        <thead>
-          <tr>
-            {% for item in njkProps -%}
-              <th scope="col">Header {{item.name}}</th>
+      <div class="wmnds-p-md">
+        <table class="wmnds-table wmnds-p-md">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for prop in njkProps %}
+              <tr>
+                <th scope="row" data-header="Name">{{prop.name}}</th>
+                <td data-header="Type">{{prop.type}}</td>
+                <td data-header="Description">{{prop.description | safe}}</td>
+              </tr>
             {% endfor %}
-          </tr>
-        </thead>
-      </table>
-
+          </tbody>
+        </table>
+      </div>
     </details>
   {% endif %}
 
