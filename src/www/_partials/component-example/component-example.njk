@@ -8,10 +8,9 @@
 
 {% set njk = params.njk if params.njk else false %}
 {% set js = params.js if params.js else false %}
-{% set njkProps = params.componentName if params.componentName else false %}
+{% set njkProps = params.njkProps if params.njkProps else false %}
 
 <div class="wmnds-website-code-example">
-{{params.componentName[0].description}}
   {# Show a button to allow the user to see the component fullscreen #}
   {{
     wmndsButton({
@@ -82,7 +81,7 @@
         <thead>
           <tr>
             {% for item in njkProps -%}
-              <th scope="col">Header {{item}}</th>
+              <th scope="col">Header {{item.name}}</th>
             {% endfor %}
           </tr>
         </thead>

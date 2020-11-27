@@ -23,12 +23,15 @@ module.exports.buildTemplates = () => {
       // get our merged json object so we can pass it to nunjucks templates to render
       .pipe(
         plugins.data(() => {
-          JSON.parse(fs.readFileSync(`/${paths.njkData.output}merged.njk.json`));
+          return JSON.parse(fs.readFileSync(`${paths.njkData.output}merged.njk.json`));
         })
       )
       .pipe(
         plugins.nunjucksRender({
-          path: 'src/'
+          path: 'src/',
+          envOptions: {
+            noCache: true
+          }
         })
       )
       .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
