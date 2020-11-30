@@ -99,18 +99,23 @@ const cookies = () => {
     updateCookiePreferences();
   };
 
+  const isInIframe = window.frameElement && window.frameElement.nodeName === 'IFRAME'; // check if we are in an iframe
+
   // Creation of default Cookies permissions when the DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', cookiesScan);
+  if (!isInIframe) document.addEventListener('DOMContentLoaded', cookiesScan);
 
   // When Accept all cookies button is triggered
   const acceptAllCookiesBtn = document.querySelector('.wmnds-cookies-banner__accept-all-cookies');
-  acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
-  acceptAllCookiesBtn.addEventListener('keydown', event => {
-    if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
-      event.preventDefault();
-      acceptAllCookies();
-    }
-  });
+
+  if (!isInIframe) {
+    acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
+    acceptAllCookiesBtn.addEventListener('keydown', event => {
+      if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
+        event.preventDefault();
+        acceptAllCookies();
+      }
+    });
+  }
 
   // When Safe Preferences button is triggered
   const cookieForm = document.querySelector('.wmnds-cookies-manager__form');
