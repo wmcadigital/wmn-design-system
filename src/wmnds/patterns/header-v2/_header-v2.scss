@@ -700,6 +700,8 @@ $header-height-mobile: 4rem;
 
   .wmnds-search-heading {
     margin: $size-lg 0;
+    font-family: $x-heading-font-family;
+    font-weight: 700;
   }
 
   .wmnds-search-list {
@@ -746,7 +748,6 @@ $header-height-mobile: 4rem;
       flex-wrap: wrap;
 
       &__item {
-        width: 50%;
         padding-right: 1em;
       }
     }

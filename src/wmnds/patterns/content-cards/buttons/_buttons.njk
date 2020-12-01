@@ -1,7 +1,7 @@
 {% macro wmndsContentCardButtons(params) %}
 {# imports #}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
-{% from "wmnds/components/button/_button.njk" import wmnButton %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
 {# Set #}
 {% set buttons = ["I drive", "I use the bus", "I use the train", "I use the tram", "I walk or cycle", "I want to visit an attraction or venue"] %}
 
@@ -12,7 +12,7 @@
             {% for buttonText in buttons -%}
             <li class="wmnds-content-card__list-item">
                 {{
-                    wmnButton({
+                    wmndsButton({
                         text: buttonText,
                         classNames: "wmnds-btn--primary wmnds-content-card__list-item-btn",
                         iconRight: "general-chevron-right"

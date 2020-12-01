@@ -140,7 +140,7 @@
         },{
           name: "Young people"
         }]
-      }, 
+      },
       menu2: {
         name: "About us",
         menuItems: [{
@@ -160,7 +160,10 @@
       }]
     })
   ], {
-    js: 'footerJs'
+    componentPath: "wmnds/patterns/footer/",
+    njk: false,
+    js: true,
+    iframe: true
   })
 }}
 <br>
@@ -196,7 +199,11 @@
     wmndsFooter({
       app: true
     })
-  ])
+  ], {
+    componentPath: "wmnds/patterns/footer/",
+    njk: false,
+    js: true
+  })
 }}
 
 {% endblock %}

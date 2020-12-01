@@ -1,41 +1,48 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 // Gulp requires
-const fs = require('fs');
-const path = require('path');
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
+const fs = require('fs');
 const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
-// Data requires
-const njkData = require('../src/www/data.njk.json');
-
-// Automatically parse json from data files
-// Data files must have the same name as their parent directory and have the extension .njk.json
-const getNjkData = ({ path: filePath }) => {
-  const dataFilePath = `${path.dirname(filePath)}/${
-    path.dirname(filePath).split('/').slice(-1)[0]
-  }.njk.json`;
-  return fs.existsSync(dataFilePath) && JSON.parse(fs.readFileSync(dataFilePath));
-};
 
 // Check for upcoming version number in node env (will be set during release workflow)
 const versionNumber = process.env.VERSION_NUMBER || packageJson.version;
 
+// Merge njk json files together
+module.exports.buildJSONForTemplates = () => {
+  return src(paths.njkData.src)
+    .pipe(plugins.mergeJson({ fileName: 'merged.njk.json' }))
+    .pipe(dest(paths.njkData.output));
+};
+
+// Build nunjucks templates with compiled data above
 module.exports.buildTemplates = () => {
-  return src(paths.nunjucks.websiteSrc)
-    .pipe(plugins.data(() => njkData))
-    .pipe(plugins.data(file => getNjkData(file)))
-    .pipe(
-      plugins.nunjucksRender({
-        path: 'src/',
-        watch: true
-      })
-    )
-    .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
-    .pipe(plugins.replace('$*version', versionNumber))
-    .pipe(plugins.formatHtml())
-    .pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
-    .pipe(dest(paths.nunjucks.output));
+  // De-caching for Data files
+  return (
+    src(paths.nunjucks.websiteSrc)
+      // get our merged json object so we can pass it to nunjucks templates to render
+      .pipe(
+        plugins.data(() => {
+          return JSON.parse(fs.readFileSync(`${paths.njkData.output}merged.njk.json`));
+        })
+      )
+      .pipe(
+        plugins.nunjucksRender({
+          path: 'src/',
+          envOptions: {
+            noCache: true
+          }
+        })
+      )
+      .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
+      .pipe(plugins.replace('$*version', versionNumber))
+      .pipe(plugins.formatHtml())
+      .pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
+      .pipe(dest(paths.nunjucks.output))
+  );
 };
 
 // Copy njk components into build folder
