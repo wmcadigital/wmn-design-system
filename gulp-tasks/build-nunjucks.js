@@ -8,6 +8,9 @@ const fs = require('fs');
 const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
 
+// Check for upcoming version number in node env (will be set during release workflow)
+const versionNumber = process.env.VERSION_NUMBER || packageJson.version;
+
 // Merge njk json files together
 module.exports.buildJSONForTemplates = () => {
   return src(paths.njkData.src)
@@ -35,7 +38,7 @@ module.exports.buildTemplates = () => {
         })
       )
       .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
-      .pipe(plugins.replace('$*version', packageJson.version))
+      .pipe(plugins.replace('$*version', versionNumber))
       .pipe(plugins.formatHtml())
       .pipe(plugins.htmlmin({ removeComments: true, collapseWhitespace: true }))
       .pipe(dest(paths.nunjucks.output))
