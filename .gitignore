@@ -8,6 +8,8 @@ build/
 !package-lock.json
 **/a11y-report.json
 **/.tmp
+debug.log
+
 # Local Netlify folder
 .netlify
 .DS_Store
