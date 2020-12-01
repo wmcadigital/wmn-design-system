@@ -1,131 +1,218 @@
-# Versioning
+# 1. Versioning
 
-With our user interface (UI) library, users [can consume our code in different ways](#public-api).
+The process of versioning The West Midlands Network Design System is automated via GitHub Actions, mainly through the use of [semantic-release](https://github.com/semantic-release/semantic-release).
 
-We follow [Semantic Versioning](https://semver.org/) but a UI library often has subjective changes such as visual spacing changes.
+The Design System is [available on Node Package Manager](https://www.npmjs.com/package/wmn-design-system) (npm) for download for node based projects. You can also view the website for a given version of the [Design System on UNPKG](https://unpkg.com/wmn-design-system@1.0.0/build/index.html).
 
-This document aims to outline the processes we follow when we version our releases.
+## 1.1 Table of contents
 
-## Stability
+- [1. Versioning](#1-versioning)
+  - [1.1 Table of contents](#11-table-of-contents)
+  - [1.2 Branches](#12-branches)
+    - [1.2.1 Master](#121-master)
+    - [1.2.2 Release](#122-release)
+    - [1.2.3 New branches](#123-new-branches)
+  - [1.3 Adding to the next release](#13-adding-to-the-next-release)
+    - [1.3.1 Pull request title](#131-pull-request-title)
+    - [1.3.2 Merging into release](#132-merging-into-release)
+  - [1.4 New release](#14-new-release)
+    - [1.4.1 Merging into master](#141-merging-into-master)
+    - [1.4.2 The release workflow](#142-the-release-workflow)
+      - [1.4.2.1 Requirements](#1421-requirements)
+      - [1.4.2.2 Steps](#1422-steps)
+        - [1.4.2.2.1 semantic-release dry run](#14221-semantic-release-dry-run)
+        - [1.4.2.2.2 Site build](#14222-site-build)
+        - [1.4.2.2.3 semantic-release proper run](#14223-semantic-release-proper-run)
+        - [1.4.2.2.4 Netlify deploy](#14224-netlify-deploy)
+  - [1.5 Extra information](#15-extra-information)
+    - [1.5.1 Bumping the version number](#151-bumping-the-version-number)
+    - [1.5.2 Updating the changelog](#152-updating-the-changelog)
+    - [1.5.3 NPM Package](#153-npm-package)
 
-A stable library prioritises the users and ecosystem that it supports.
+## 1.2 Branches
 
-We often release new components and features which will encourage people to update.
+The repository is set up with two main branches: `master` and `release`.
 
-But we should make sure that we only make breaking changes when we have a good reason, and have decided that it is absolutely necessary.
+### 1.2.1 Master
 
-Good examples of such situations would be:
+The `master` branch holds all the commit history of changes to the Design System, with each commit being a change that has been added by one of the two methods below.
 
-- issues that are barriers for end-users (users of services) based on evidence (for example user research)
-- issues that are barriers for users (users of WMN Design System Frontend) based on evidence
-- accessibility issues
-- security issues
-- performance issues
+The `master` branch is only updated by:
 
-We would not make breaking changes for:
+- Pull requests from the `release` branch, merged via the merge commit strategy
+- Urgent pull requests from a hotfix branch, merged via the squash and merge strategy
 
-- thinking you can sneak a change in with other breaking changes
-- changing the name of an API, based on a hunch
-- adopting a technology based on popularity and not because of the problems they solve
-- changing a component's interface without a good reason to do so
+After any push to the `master` branch, the release workflow is triggered.
 
-This is similar to how we try to tackle most problems, by focusing on user needs first.
+### 1.2.2 Release
 
-Whenever we decide to make a breaking change we must ensure we do our best to try to first [deprecate the feature](#deprecation) and allow a [migration path](#migration).
+The `release` branch holds all the changes that will be automatically released when the branch is merged into the `master` branch.
 
-## Proposal
+The `release` branch is only updated by:
 
-Some breaking changes that need discussion may first be proposed in the [WMN Design System Design System architecture repository](https://github.com/alphagov/wmnds-design-system-architecture/blob/master/proposals/README.md).
+- Pull requests from other branches, merged via the **squash and merge** strategy
 
-This is to ensure the community can get involved with the decision.
+### 1.2.3 New branches
 
-Make an active effort to involve the community, this might be in the form of presentations or meetings.
+In order to add to the Design System, you must first create a new branch with the following format `xx/type/short-description`.
 
-## Deprecation
+Where:
 
-Deprecation is the practice of communicating features in the library that should no longer be used and requires a user change behaviour in their application.
+- `xx` is your first and last initials, e.g. `jd` for John Doe
+- `type` is the type of change the branch is working on, e.g. `bugfix`, `feature`
+- `short-description` is a short hyphenated description of the branch, e.g. `red-button-variant`
 
-Deprecating features in the library helps users migrate to the new code while still being able to run the older code.
+With the full example being: `jd/feature/red-button-variant`.
 
-Note: Our users may not know what 'deprecation' means, so it's important to also clarify that we are no longer recommending the use of a feature.
+**This branch must branch from the `release` branch.**
 
-Example 1: Fixing a typo in a CSS class name.
+## 1.3 Adding to the next release
 
-1. We discover the class name `.wmnds-visually-hidden-focussable` includes the typo 'focussable'
-2. We raise a pull request that renames the class to `.wmnds-visually-hidden-focusable` while keeping
-   the previous class available.
-3. We add a comment to the source code that indicates this is deprecated, and raise an issue to remove it in a future breaking release.
-4. When releasing the change we include a clear summary that indicates what was the problem, what we've changed and how a user can migrate before the future breaking release.
+Once you are ready to propose new changes, you must **open a pull request to the** `release` **branch**.
 
-Sometimes it is not possible to deprecate code, this is OK but try to make this a last resort.
+### 1.3.1 Pull request title
 
-### Sass doc deprecation annotations
+Opening a pull request to the `release` branch triggers a workflow to lint the pull request title, as well as other workflows that lint the code itself.
 
-When deprecating Sass, you can use the [deprecated annotation](http://sassdoc.com/annotations/#deprecated).
+Pull requests to the `release` branch are to be merged via the **squash and merge** strategy so that each pull request appears as a single commit on the release branch.
 
-If there is an alias, for example if you are renaming something, you can use the [alias annotation](http://sassdoc.com/annotations/#alias).
+As a result, pull request titles **must** follow the [Conventional Commit Specification](https://www.conventionalcommits.org/en/v1.0.0/), so that semantic-release can correctly bump the version and update the changelog.
 
-See [an example of deprecating a Sass mixin on GitHub](https://github.com/alphagov/wmnds-frontend/blob/9424d87ed54764d2d8afe35d6e0077ee43d231e1/src/helpers/_grid.scss#L20-L26).
+See the [bumping the version](#151-bumping-the-version-number) and [updating the changelog](#152-updating-the-changelog) sections for more details.
 
-## Migration
+### 1.3.2 Merging into release
 
-Migration is the practice of a user moving from one approach to an equivalent approach.
+When the pull request has passed all the necessary checks and reviews, it must then be merged into the `release` branch via the **squash and merge** strategy.
 
-It is very important that we make it easy to migrate when we make deprecations.
+This reduces all changes on the branch into one commit with the title of the pull request appearing as the commit message.
 
-If possible include clear steps for users should update their code directly in the CHANGELOG entry that introduces the deprecation.
+When the `release` branch is merged into the `master` branch, [semantic-release will use these commit messages to determine the type of changes in the new release](https://github.com/semantic-release/semantic-release#commit-message-format).
 
-## Public API
+## 1.4 New release
 
-The [Semantic Versioning specification](https://semver.org/) requires a public API.
+Once the `release` branch has changes that are ready to go live, a pull request must be opened to the `master` branch.
 
-> For this system to work, you first need to declare a public API. This may consist of documentation or be enforced by the code itself.
+### 1.4.1 Merging into master
 
-### Design System Website
+Once the pull request has passed all necessary checks and reviews, it must then be merged into the `master` branch via the **merge commit** strategy.
 
-One of ways users interact with WMN Design System Frontend is through the [WMN Design System Design System website](https://design-system.service.WMN Design System/).
+This is so that all the commits on the `release` branch are added to the `master` branch.
 
-This includes:
+_The title of the pull request or merge commit do not have to be in any specific format._
 
-- HTML - Documented in examples (for example, the [buttons code example](https://design-system.service.WMN Design System/components/button/))
-- Nunjucks - Documented in examples (for example, the buttons code example)
-- SCSS - for example [colours variables](https://design-system.service.WMN Design System/styles/colour/)
+### 1.4.2 The release workflow
 
-### npm package
+As mentioned before, the Design System uses [semantic-release](https://github.com/semantic-release/semantic-release) to automate our release workflow.
 
-The other primary way is through what is [published to npm](https://github.com/alphagov/wmnds-frontend/tree/master/package).
+#### 1.4.2.1 Requirements
 
-This includes:
+The workflow requires the following tokens:
 
-- [JavaScript](https://github.com/alphagov/wmnds-frontend/blob/master/docs/installation/installing-with-npm.md#using-javascript)
-- SCSS - https://wmnds-frontend-review.herokuapp.com/docs/
-- Nunjucks Macros (Templates)
+- `SEMVER_GITHUB_TOKEN` - a personal access token with repo permissions. See the [semantic-release configuration](https://github.com/semantic-release/github#configuration) for details.
+- `NETLIFY_AUTH_TOKEN` - Netlify personal access token. See [actions-netlify](https://github.com/nwtgck/actions-netlify#required-inputs-and-env) for details.
+- `NETLIFY_SITE_ID` - Netlify API ID. See [actions-netlify](https://github.com/nwtgck/actions-netlify#required-inputs-and-env) for details.
+- `NPM_TOKEN` - npm access token with publish permissions. See the [semantic-release configuration](https://github.com/semantic-release/github#configuration) for details.
 
-## Updating Changelog
+The workflow also requires a `GITHUB_TOKEN` but that is made available automatically during any workflow run.
 
-If you open a GitHub pull request on this repo, please update `CHANGELOG` to reflect your contribution.
+#### 1.4.2.2 Steps
 
-Add your entry under `Unreleased` as `Breaking changes`, `New features`, `Fixes`.
+The workflow works in the following way:
 
-Internal changes to the project that are not part of the public API do not need changelog entries, for example fixing the CI build server.
+- [semantic-release dry run](#14221-semantic-release-dry-run)
+- [Site build](#14222-site-build)
+- [semantic-release proper run](#14223-semantic-release-proper-run)
+- [Netlify deploy](#14224-netlify-deploy)
 
-These sections follow [semantic versioning](https://semver.org/), where:
+See the [workflow file](https://github.com/wmcadigital/wmn-design-system/blob/master/.github/workflows/semantic-release.yml) for additional information.
 
-- `Breaking changes` corresponds to a `major` (1.X.X) change.
-- `New features` corresponds to a `minor` (X.1.X) change.
-- `Fixes` corresponds to a `patch` (X.X.1) change.
+##### 1.4.2.2.1 semantic-release dry run
 
-See the [`CHANGELOG_TEMPLATE.md`](/docs/contributing/CHANGELOG_TEMPLATE.md) for an example for how this looks.
+Uses the following tokens:
 
-Include the modified `CHANGELOG` in the PR.
+- `SEMVER_GITHUB_TOKEN`
+- `NPM_TOKEN`
 
-## Accidental breaking changes
+semantic-release runs in `dry_run` mode to analyze commits to check if a new release is necessary.
 
-If a backward-incompatible change is released unintentionally, we will follow the process outlined on semver.org: https://semver.org/#what-do-i-do-if-i-accidentally-release-a-backwards-incompatible-change-as-a-minor-version
+The package outputs the next version number as variable in the GitHub Action context, which can be accessed by other step / jobs in the workflow.
 
-> As soon as you realize that you’ve broken the Semantic Versioning spec, fix the problem and release a new minor version that corrects the problem and restores backwards compatibility. Even under this circumstance, it is unacceptable to modify versioned releases. If it’s appropriate, document the offending version and inform your users of the problem so that they are aware of the offending version.
+This step is necessary because if we want to include the new version number in the static site, it has to be available at build time. However, semantic-release would normally only change the version number (and changelog), via a new commit, after the site has been built. Therefore the new version number must be determined beforehand.
 
-If appropriate, you can set up an incident review that allows the team to see if there are
-any steps to avoid this happening again in the future.
+_We also have to use [a separate semantic-release action](https://github.com/marketplace/actions/action-for-semantic-release) when running the dry run running as semantic-release npm package seems to cause conflicts when run twice in the same workflow._
 
-Communicate any actions as a result of an incident review, this will ensure our users will see that we take incidents seriously and can avoid some loss of trust.
+##### 1.4.2.2.2 Site build
+
+See [Building](./tasks/building.md) for details.
+
+##### 1.4.2.2.3 semantic-release proper run
+
+Uses the following tokens:
+
+- `SEMVER_GITHUB_TOKEN`
+- `NPM_TOKEN`
+
+First, [semantic-release analyses the new commits](https://github.com/semantic-release/commit-analyzer) and to determine if a new package release is necessary.
+
+If a version bump is not necessary the workflow will go straight to the [Netlify deploy step](#1.4.2.2.4-netlify-deploy).
+
+If a version bump is necessary (major, minor or patch), it [publishes the new package to NPM](https://github.com/semantic-release/npm). See the [NPM package information for more details](#1.5.3-npm-package).
+
+Next, it [updates the changelog](@semantic-release/changelog) and [updates the version number](@semantic-release/git) in the `package.json` via an extra `chore(release):` commit on the master branch.
+
+Finally it goes through all issues and pull requests referenced in any commits and [adds a comment and a tag](https://github.com/semantic-release/github) to say that they have been included in the current release.
+
+See the semantic-release [release steps documentation](https://github.com/semantic-release/semantic-release#release-steps) for full details.
+
+##### 1.4.2.2.4 Netlify deploy
+
+Uses the following tokens:
+
+- `GITHUB_TOKEN`
+- `NETLIFY_AUTH_TOKEN`
+- `NETLIFY_SITE_ID`
+
+The built site is deployed on netlify through the use of the [actions-netlify](https://github.com/nwtgck/actions-netlify) github action.
+
+_Note that **Netlfiy's automatic builds must be turned off** or else the site will be deployed twice_.
+
+## 1.5 Extra information
+
+Once the release workflow has finished, the Netlify site will be updated with any new changes and a new NPM package may be released.
+
+### 1.5.1 Bumping the version number
+
+The version number in the **package.json** will be automatically updated during the [semantic-release proper run](#14223-semantic-release-proper-run).
+
+In order for semantic-release to include a commit in its analysis, it **must** follow the [Conventional Commit Specification](https://www.conventionalcommits.org/en/v1.0.0/).
+
+semantic-release will only bump the version number if the release contains a commit starting with `fix:` or `feat:` or if a commit contains `BREAKING CHANGE:` in its description.
+
+If we are starting from version 1.0.0, the version number bump will change as follows:
+
+- `fix:` - Patch release, 1.0.1
+- `feat:` - Minor release, 1.1.0
+- `BREAKING CHANGE:` (in the commit description) - Major release, 2.0.0
+
+It will always increase the version number by presence of the largest change. If a release contains both `fix: ` and `feat:` commits, the version number would be bumped to 1.1.0. If any commits contain `BREAKING CHANGE:` in its description, the new version would be 2.0.0.
+
+For more details see [semantic-release commit message format](https://github.com/semantic-release/semantic-release#commit-message-format) and [semantic versioning specification](https://semver.org/).
+
+### 1.5.2 Updating the changelog
+
+Commits that follow the [Conventional Commit Specification](https://www.conventionalcommits.org/en/v1.0.0/) will be included in the changelog.
+
+Depending on the type of change (e.g. `fix:` or `feat:`), the rest of the commit title will appear under the respective section within the changelog.
+
+For example:
+
+- `fix: header line spacing` - will appear under the **Bug Fixes** heading in the changelog as "header line spacing"
+- `feat: add new button component` - will appear under the **Features** heading in the changelog "add new button component"
+
+### 1.5.3 NPM package
+
+The [wmn-design-system package](https://www.npmjs.com/package/wmn-design-system) is made available on npm.
+
+When linking to assets, like the stylesheet or javascript files, we recommend the [wmn-design-system UNPKG link](https://unpkg.com/wmn-design-system@1.0.0/build/index.html).
+
+See [UNPKG](https://unpkg.com/) for more details.
