@@ -1,0 +1,751 @@
+{
+	"navItems": [
+		{
+			"name": "Styles",
+			"subnavItems": [
+				{
+					"name": "A to Z content style guide"
+				},
+				{
+					"name": "Colour palettes"
+				},
+				{
+					"name": "Icons"
+				},
+				{
+					"name": "Images"
+				},
+				{
+					"name": "Layout"
+				},
+				{
+					"name": "Maps"
+				},
+				{
+					"name": "Typography"
+				},
+				{
+					"name": "Utility classes"
+				}
+			]
+		},
+		{
+			"name": "Components",
+			"subnavItems": [
+				{
+					"name": "Accordion"
+				},
+				{
+					"name": "Breadcrumb"
+				},
+				{
+					"name": "Buttons"
+				},
+				{
+					"name": "Content card"
+				},
+				{
+					"name": "Content Tiles"
+				},
+				{
+					"name": "Details"
+				},
+				{
+					"name": "Disruption indicators"
+				},
+				{
+					"name": "File download"
+				},
+				{
+					"name": "Form elements"
+				},
+				{
+					"name": "Inset text"
+				},
+				{
+					"name": "In-text step"
+				},
+				{
+					"name": "Links"
+				},
+				{
+					"name": "Lists"
+				},
+				{
+					"name": "Loader"
+				},
+				{
+					"name": "Message"
+				},
+				{
+					"name": "Phase indicator"
+				},
+				{
+					"name": "Table"
+				},
+				{
+					"name": "Warning text"
+				}
+			]
+		},
+		{
+			"name": "Patterns",
+			"subnavItems": [
+				{
+					"name": "Autocomplete"
+				},
+				{
+					"name": "Banner"
+				},
+				{
+					"name": "Cookies"
+				},
+				{
+					"name": "Contact Details"
+				},
+				{
+					"name": "Content cards"
+				},
+				{
+					"name": "Feedback loop"
+				},
+				{
+					"name": "Header and footer"
+				},
+				{
+					"name": "Header v2"
+				},
+				{
+					"name": "Question Form"
+				},
+				{
+					"name": "Search"
+				}
+			]
+		},
+		{
+			"name": "User research"
+		}
+	],
+	"colors": {
+		"brand": [
+			{
+				"varName": "primary",
+				"name": "Primary Purple"
+			},
+			{
+				"varName": "secondary",
+				"name": "Secondary Purple"
+			}
+		],
+		"modal": [
+			{
+				"varName": "bus",
+				"name": "Bus"
+			},
+			{
+				"varName": "metro",
+				"name": "Metro"
+			},
+			{
+				"varName": "railway",
+				"name": "WM Railway"
+			},
+			{
+				"varName": "susTravel",
+				"name": "Sustainable Travel"
+			},
+			{
+				"varName": "roads",
+				"name": "Roads"
+			},
+			{
+				"varName": "taxi",
+				"name": "Taxi"
+			}
+		],
+		"web": [
+			{
+				"varName": "text",
+				"name": "Text"
+			},
+			{
+				"varName": "cta",
+				"name": "Call to Action"
+			},
+			{
+				"varName": "error",
+				"name": "Error"
+			},
+			{
+				"varName": "warning",
+				"name": "Warning"
+			},
+			{
+				"varName": "success",
+				"name": "Success"
+			},
+			{
+				"varName": "information",
+				"name": "Information"
+			}
+		],
+		"backgroundOnly": [
+			{
+				"varName": "plannedDisruption",
+				"name": "Planned Disruption"
+			},
+			{
+				"varName": "disable",
+				"name": "Disabled Elements"
+			},
+			{
+				"varName": "background",
+				"name": "Background"
+			}
+		]
+	},
+	"abc123": [
+		{
+			"name": "colour",
+			"type": "pink",
+			"description": "red"
+		}
+	],
+	"aToZOfStyles": [
+		{
+			"letter": "A",
+			"styles": [
+				{
+					"title": "Abbreviations and acronyms",
+					"content": "<p>The first time you use an abbreviation or acronym explain it in full on each page unless it's well known, like UK or BBC. Then refer to it by initials.</p><p>Do not use full stops in abbreviations: BBC, not B.B.C.</p><p>If you only use a term once, you don't need to include the abbreviation afterwards.</p><p>Use 'm' (for millions) and 'bn' (for billions) for sums of money and measurable quantities: £10bn; 1bn litres of water. However, spell out for people and countable nouns: 3 billion commuters; 10 billion tickets.</p><p>Use lower case for standard measurements: kg; km; lb; mph but use upper case for KB; GB; MB.</p><p>Exception: Spell out metres to prevent confusion with abbreviation for million.</p><p>Note:<ol><li>Do not include a space between the number and the unit: 20km; 50kph; 100KB</li><li>Never add an 's' to measurements: 20km, not 20kms</li></ol></p><p>Use lower case for ie and eg, but avoid using these terms altogether where possible. Use 'that is' or 'for example' instead.</p>"
+				},
+				{
+					"title": "Active voice",
+					"content": "<p>Use the active voice, not the passive voice - it’s easier to read. For example:</p><p>We’re going to get the train tomorrow (active voice)</p><p>A train is going to be caught by us tomorrow (passive voice)</p>"
+				},
+				{
+					"title": "Addresses",
+					"content": "<p>Use the <a href='/patterns/contact-details/' class='wmnds-link'>contact details design pattern</a>. This shows you how to format addresses.</p>"
+				},
+				{
+					"title": "Addressing the user",
+					"content": "<p>Address the user as 'you' wherever possible.</p>"
+				},
+				{
+					"title": "Adult rate",
+					"content": "<p>Do not hyphenate.</p>"
+				},
+				{
+					"title": "Ages",
+					"content": "<p>Do not use hyphens in ages unless to avoid confusion, although it's always best to write in a way that avoids ambiguity. For example, 'a class of 15 16-year-old students took the A level course' can be written as '15 students aged 16 took the A level course'.</p><p>Write ages like this: XX years old (for example, 66 years old).</p><p>Exception - use hyphens when talking about age groups:<ul><li>under-16s (n): under-16s</li><li>under 16 (adj): If you are under 16</li><li>over-60s (n): over-60s</li><li>over 60 (adj): If you are over 60</li></ul></p>"
+				},
+				{
+					"title": "American and UK English",
+					"content": "<p>Use UK English spelling and grammar. For example, use 'organise' not 'organize', 'modelling' not 'modeling', and 'fill in a form', not 'fill out a form'.</p><p>American proper nouns, like 4th Mechanized Brigade or World Health Organization, take American English spelling.</p>"
+				},
+				{
+					"title": "Ampersand",
+					"content": "<p>Use and rather than &, unless it's a department's logo image or a company's name as it appears on the Companies House register.</p>"
+				},
+				{
+					"title": "Antisocial",
+					"content": "<p>Hyphenated.</p>"
+				},
+				{
+					"title": "A-road",
+					"content": "<p>Hyphenated.</p>"
+				}
+			]
+		},
+		{
+			"letter": "B",
+			"styles": [
+				{
+					"title": "Bacs (Bankers Automated Clearing System)",
+					"content": "<p>Use the acronym as it's more widely known than the full name. No need to include the full name in brackets.</p>"
+				},
+				{
+					"title": "bold",
+					"content": "<p>Only use bold for instructions when you’re talking about an interactive service.</p><p>You can use bold to explain what field a user needs to fill in on a form, or what button they need to select. For example: \"Select <strong>Continue</strong>.\"</p><p>Use bold sparingly - using too much will make it difficult for users to know which parts of your content they need to pay the most attention to.</p><p>Do not use bold in other situations, for example to emphasise text.</p><p>To emphasise words or phrases, you can:<ul><li>front-load sentences</li><li>use headings</li><li>use bullets</li></ul></p>"
+				},
+				{
+					"title": "bus station",
+					"content": "<p>Only use upper case if you're talking about a specific bus station: Dudley Bus Station, Coventry Pool Bus Station.</p><p>Use lower case if you're talking about bus stations in general: You can find bike racks at our bus stations.</p>"
+				},
+				{
+					"title": "borough council",
+					"content": "<p>Lower case except in a name: Dudley Metropolitan Borough Council.</p>"
+				},
+				{
+					"title": "Bullet points and numbered steps",
+					"content": "<p>You can use bullet points to make text easier to read. Make sure that:<ul><li>you always use a lead-in line with a colon</li><li>the bullets make sense running on from the lead-in line</li><li>you use lower case at the start of the bullet</li><li>you do not use more than one sentence per bullet point - use commas or dashes to expand on an item</li><li>you do not put 'or' or 'and' after the bullets</li><li>you do not make the whole bullet a link if it's a long phrase</li><li>you do not put any punctuation at the end of a bullet</li><li>there is no full stop after the last bullet point</li></ul><p>Bullets should normally form a complete sentence following from the lead text. But it's sometimes necessary to add a short phrase to clarify whether all or some of the points apply. For example, 'You can only register a pension scheme that is (one of the following):'</p><p>The number and type of examples in a list may lead the user to believe the list is exhaustive. This can be dealt with by<ul><li>checking if there are other conditions (or if the list is actually complete)</li><li> listing the conditions which apply to the most users and removing the rest</li><li>consider broader terms in the list which capture more scenarios (and could make the list exhaustive)</li></ul></p><h6>Numbered steps</h6><p>Use numbered steps instead of bullet points to guide a user through a process. List the things the user needs to do in order. You do not need a lead-in line. Steps end in a full stop because each should be a complete sentence.</p>"
+				}
+			]
+		},
+		{
+			"letter": "C",
+			"styles": [
+				{
+					"title": "campaign/scheme names and brands",
+					"content": "<p>If you have a scheme or campaign brand, explain the brand. Don't expect users to understand what you mean. If you say ‘be aware and share’ or ‘get your roll and stroll on’ out of context, it’s not clear what that means.</p><p>Don’t capitalise slogans like ‘be aware and share’. If you’re talking about a specific brand or campaign, use capitals. For example, Workwise, PassProtect. Don’t tell people to ‘Be Aware and Share’, but do say ‘the Be Aware and Share’ campaign.</p><p>For example:<ul><li>'get half-price travel when you start a new job with the Workwise scheme'</li><li>'find your nearest cycle route on the Starley cycle network'</li><li>'hire a bike with West Midlands Cycle Hire'</li><li>'If you join the PassProtect scheme, you will get a discount if you need to replace your child's school travel pass.'</li></ul></p>"
+				},
+				{
+					"title": "cash fare",
+					"content": "Do not use - it's confusing. Say 'ticket bought on the bus, train or tram on the day' instead."
+				},
+				{
+					"title": "Capitalisation",
+					"content": "<p>DO NOT USE BLOCK CAPITALS FOR LARGE AMOUNTS OF TEXT AS IT'S QUITE HARD TO READ.</p><p>Always use lower case, even in page titles. The exceptions to this are proper nouns.</p>"
+				},
+				{
+					"title": "checkbox",
+					"content": "<p>Not \"check box\"</p>"
+				},
+				{
+					"title": "child rate",
+					"content": "<p>Do not hyphenate.</p>"
+				},
+				{
+					"title": "click",
+					"content": "<p>Don't use \"click\" when talking about user interfaces because not all users click. Use \"select\".</p><p>You can use \"right-click\" if the user needs to right-click to open up a list of options to progress through the user journey.</p>"
+				},
+				{
+					"title": "collective nouns",
+					"content": "<p>Treat as singular, except staff and police: the committee has but the staff are; the police want.</p><p>A pair and a couple are both plural.</p>"
+				},
+				{
+					"title": "concessionary",
+					"content": "<p>Try to avoid. Use these instead:<ul><li>older person's free travel pass</li><li>disabled person's travel pass</li><li>16-18 photocard</li><li>under-16 photocard</li><li>discounted travel pass</li></ul></p><p>It’s okay to use concessionary if you’re talking about the English National Concessionary Travel Scheme.</p>"
+				},
+				{
+					"title": "contact details",
+					"content": "<p>Use the <a href='/patterns/contact-details/' class='wmnds-link'>contact details design pattern</a>.</p>"
+				},
+				{
+					"title": "contactless",
+					"content": "<p>Not Contactless.</p>"
+				},
+				{
+					"title": "contractions",
+					"content": "<p>You can use contractions to help make your text less formal.</p><p>Avoid negative contractions like can't and don't. Many users find them harder to read, or misread them as the opposite of what they say. Use cannot instead of can't; do not instead of don’t.</p><p>Avoid should've, could've, would've, they've too. These can also be hard to read.</p>"
+				},
+				{
+					"title": "co-operation",
+					"content": "<p>Hyphenated.</p>"
+				},
+				{
+					"title": "coronavirus (COVID-19)",
+					"content": "<p>Coronavirus is the virus which causes the illness COVID-19. Coronavirus is lower case.</p>"
+				},
+				{
+					"title": "council",
+					"content": "<p>Use lower case when writing about local councils in general. Use capitals for the official name of a local council, for example: Birmingham City Council.</p>"
+				},
+				{
+					"title": "Council Tax",
+					"content": "<p>Upper case.</p>"
+				},
+				{
+					"title": "customers",
+					"content": "<p>Refer to 'customers' rather than 'passengers'.</p>"
+				}
+			]
+		},
+		{
+			"letter": "D",
+			"styles": [
+				{
+					"title": "Dates",
+					"content": "<p><ul><li>use upper case for months: January, February</li><li>do not use a comma between the month and year: 4 June 2017</li><li>when space is an issue - in tables or publication titles, for example - you can use truncated months: Jan, Feb</li><li>use 'to' in date ranges - not hyphens, en rules or em dashes. For example: tax year 2011 to 2012</li><li>Monday to Friday, 9am to 5pm (put different days on a new line, do not separate with a comma)</li><li>10 November to 21 December</li><li>do not use quarter for dates, use the months: 'Jan to Mar 2013'</li><li>when referring to today (as in a news article) include the date: 'The minister announced today (14 June 2012) that&hellip;'</li></ul></p><p>Use 'to' instead of a dash or slash in date ranges. 'To' is quicker to read than a dash, and it's easier for screen readers.</p><p>Always explain what your date range represents, for example 'tax year 2013 to 2014' or 'September 2013 to July 2014'. Date ranges can be the academic year, calendar year or tax year. This is why date ranges must be very, very clear.</p>"
+				},
+				{
+					"title": "daytime",
+					"content": "<p>But night-time.</p>"
+				},
+				{
+					"title": "Direct Debit",
+					"content": "<p>Upper case.</p>"
+				},
+				{
+					"title": "Direct Debit Instruction",
+					"content": "<p>Upper case.</p>"
+				},
+				{
+					"title": "disabled access",
+					"content": "<p>Use this term when referring to disabled accessibility, as 'accessibility' has a wider meaning.</p>"
+				},
+				{
+					"title": "disabled people",
+					"content": "<p>Not 'the disabled' or 'people with disabilities'.</p><p><a href='https://www.gov.uk/government/publications/inclusive-communication/inclusive-language-words-to-use-and-avoid-when-writing-about-disability' class='wmnds-link'>Read GOV.UK advice on words to use and avoid when talking about disability</a>.</p>"
+				},
+				{
+					"title": "district council",
+					"content": "<p>Lower case even in a name, like Warwick district council.</p>"
+				}
+			]
+		},
+		{
+			"letter": "E",
+			"styles": [
+				{
+					"title": "eg, etc and ie",
+					"content": "<p>eg can sometimes be read aloud as 'egg' by screen reading software. Instead use 'for example' or 'such as' or 'like' or 'including' - whichever works best in the specific context.</p><p>etc can usually be avoided. Try using 'for example' or 'such as' or 'like' or 'including'. Never use etc at the end of a list starting with these words.</p><p>ie - used to clarify a sentence - is not always well understood. Try (re)writing sentences to avoid the need to use it. If that is not possible, use an alternative such as 'meaning' or 'that is'.</p>"
+				},
+				{
+					"title": "email",
+					"content": "<p>Not e-mail.</p><p>Always give the full email address when providing a hyperlink. For example, 'email <a href='mailto:#' class='wmnds-link'>ticketing@twfm.org.uk</a>' not '<a href='mailto:#' class='wmnds-link'>email the ticketing team</a>'</p>"
+				}
+			]
+		},
+		{
+			"letter": "F",
+			"styles": [
+				{
+					"title": "FAQs (frequently asked questions)",
+					"content": "<p>Do not use FAQs.</p><p>If you write content by starting with user needs, you will not need to use FAQs.</p><p>FAQs are discouraged because they:<ul><li>duplicate other content on the site</li><li>cannot be front-loaded (putting the most important words people will search for), which makes usability difficult</li><li>mean that content is not where people expect to find it; it needs to be in context</li><li>can add to search results with duplicate, competing text</li></ul></p>"
+				},
+				{
+					"title": "fine",
+					"content": "<p>Use 'fine' instead of 'financial penalty'.</p><p>For example, \"You'll pay a £50 fine.\""
+				},
+				{
+					"title": "first person",
+					"content": "<p>Use \"we'\" and \"us\" when addressing the user where possible. For example, instead of \"West Midlands network has…\" say \"We have\" - it’s more personal.</p>"
+				},
+				{
+					"title": "fire and rescue service",
+					"content": "<p>Lower case.</p>"
+				},
+				{
+					"title": "focus",
+					"content": "<p>Focuses/focused/focusing. Not focusses/focussed/focussing.</p>"
+				}
+			]
+		},
+		{
+			"letter": "G",
+			"styles": [
+				{
+					"title": "government",
+					"content": "<p>Lower case unless it's a full title. For example: 'UK government', but 'Her Majesty's Government of the United Kingdom of Great Britain and Northern Ireland'.</p>"
+				}
+			]
+		},
+		{
+			"letter": "H",
+			"styles": [
+				{
+					"title": "Hyphenation",
+					"content": "<p>Hyphenate:<ul><li>re- words starting with e, like re-evaluate</li><li>co-ordinate</li><li>co-operate</li></ul></p><p>Do not hyphenate:</p><p><ul><li>reuse</li><li>reinvent</li><li>reorder</li><li>reopen</li><li>email</li></ul></p><p>Do not use a hyphen unless it's confusing without it, for example, a little used-car is different from a little-used car. You can also refer to <a href='https://www.theguardian.com/guardian-observer-style-guide-h' class='wmnds-link'>The Guardian style guide</a> for advice on hyphenation.</p><p>Use 'to' for time and date ranges, not hyphens.</p>"
+				}
+			]
+		},
+		{
+			"letter": "I",
+			"styles": [
+				{
+					"title": "ie",
+					"content": "<p>see <a href='#egetcandie' class='wmnds-link'>eg, etc and ie</a></p>"
+				},
+				{
+					"title": "Italics",
+					"content": "<p>Do not use italics. They can be hard to read online.</p>"
+				}
+			]
+		},
+		{
+			"letter": "J",
+			"styles": [
+				{
+					"title": "job titles",
+					"content": "<p>Use upper case when referring to a specific role: Lord Mayor of Birmingham.</p><p>Use lower case if writing generally: service assistants, station managers.</p>"
+				},
+				{
+					"title": "Journey Planner",
+					"content": "<p>Our travel tool that helps with live route-planning across our network</p><p>A stand-alone link to it should be action-led and first-person: 'Plan my journey'.</p></p><p>If giving instruction, it can be second-person (to avoid mixing perspectives): 'Plan your journey'.</p><p>If listing tools, we can use the product name: 'Journey Planner'.</p>"
+				}
+			]
+		},
+		{
+			"letter": "L",
+			"styles": [
+				{
+					"title": "Links",
+					"content": "<p>Front-load your link text with the relevant terms and make them active and specific. Do not use ‘click here’. Use text that describes the link instead.</p>"
+				},
+				{
+					"title": "Lists",
+					"content": "<p>Lists should be bulleted to make them easier to read. See <a href='#bulletpointsandnumberedsteps' class='wmnds-link'>bullets and steps</a>.</p><p>Very long lists can be written as a paragraph with a lead-in sentence if it looks better: 'The following countries are in the EU: Spain, France, Italy...'</p>"
+				},
+				{
+					"title": "log in",
+					"content": "<p>See sign in or log in.</p>"
+				}
+			]
+		},
+		{
+			"letter": "M",
+			"styles": [
+				{
+					"title": "measurements",
+					"content": "<p>Use lower case for standard measurements: kg; km; mph; kph but use upper case for KB; GB; MB.</p><p>Spell out metres to prevent confusion with abbreviation for million.</p><p>Do not include a space between the number and the unit: 20km; 50mph; 100KB.</p><p>Never add an 's' to measurements: 20km, not 20kms.</p>"
+				},
+				{
+					"title": "Metro",
+					"content": "<p>Only use when talking about the company that runs the tram - West Midlands Metro. To talk about the tram as a mode of transport, use tram, not Metro.</p>"
+				},
+				{
+					"title": "money",
+					"content": "<p>Use the £ symbol: £75.</p><p>Do not use decimals unless pence are included: £75.50 but not £75.00.</p><p>Do not use '£0.xx million' for amounts less than £1 million.</p><p>Write out pence in full: calls will cost 4 pence per minute from a landline.</p><p>Currencies are lower case.</p>"
+				}
+			]
+		},
+		{
+			"letter": "N",
+			"styles": [
+				{
+					"title": "nBus",
+					"content": "<p>Use when talking about network bus tickets - always use a lower case ‘n’, upper case ‘B’.</p>"
+				},
+				{
+					"title": "nNetwork",
+					"content": "<p>Use when talking about network tickets for the bus, train and tram - always use a lower case ‘n’, followed by an upper case ‘N’.</p>"
+				},
+				{
+					"title": "nTrain",
+					"content": "<p>Use when talking about network train tickets - always use a lower case ‘n’, upper case ‘T’.</p>"
+				},
+				{
+					"title": "Numbers",
+					"content": "<p>Use 'one' unless you're talking about a step, a point in a list or another situation where using the numeral makes more sense: 'in point 1 of the design instructions', for example. Or this:</p><p>You'll be shown 14 clips that feature everyday road scenes.</p><p>There will be:</p><ol><li>developing hazard in 13 clips</li><li>developing hazards in the other clip</li></ol><p>Write all other numbers in numerals (including 2 to 9) except where it's part of a common expression like 'one or two of them' where numerals would look strange.</p><p>If a number starts a sentence, write it out in full (Thirty-four, for example) except where it starts a title or subheading.</p><p>For numerals over 999 - insert a comma for clarity: 9,000</p><p>Spell out common fractions like two-thirds.</p><p>Use a % sign for percentages: 50%.</p><p>Use a 0 where there's no digit before the decimal point.</p><p>Use '500 to 900' and not '500-900' (except in tables and for the 16-18 photocard).</p><p>Use MB for anything over 1MB: 4MB not 4096KB.</p><p>Use KB for anything under 1MB: 569KB not 0.55MB.</p><p>Keep it as accurate as possible and up to 2 decimal places: 4.03MB.</p><p>Addresses: use 'to' in address ranges: 49 to 53 Cherry Street.</p><p>Ordinal numbers</p><p>Spell out first to ninth. After that use 10th, 11th and so on.</p><p>In tables, use numerals throughout.</p>"
+				},
+				{
+					"title": "NXWM",
+					"content": "<p>see <a href='#operatornames' class='wmnds-link'>operator names</a>.</p>"
+				}
+			]
+		},
+		{
+			"letter": "O",
+			"styles": [
+				{
+					"title": "off-peak",
+					"content": "<p>Use lower case and include a hyphen.</p>"
+				},
+				{
+					"title": "older people",
+					"content": "<p>Refer to older people rather than elderly people.</p>"
+				},
+				{
+					"title": "online",
+					"content": "<p>One word. Do not use 'on-line' or 'on line'.</p>"
+				},
+				{
+					"title": "operator names",
+					"content": "<p>Do not abbreviate the name. For example, do not use ‘WM Metro’, ‘NX West Midlands’ or ‘West Mids Railway’.</p><p>You can use an acronym for timetables and passenger information. For example, ‘West Midlands Metro (WMM)’, ‘National Express West Midlands (NXWM)’ or ‘West Midlands Railway (WMR)’.</p><p>Do not use the NXWM acronym without explaining it first. It is not a well known acronym.</p>"
+				},
+				{
+					"title": "or",
+					"content": "<p>Do not use slashes instead of \"or\". For example, do not say \"Do this 3/4 times\".</p>"
+				},
+				{
+					"title": "opt in/out",
+					"content": "<p>Verb: I would like to opt in</p>"
+				},
+				{
+					"title": "opt-in/out",
+					"content": "<p>Adjective: an opt-in clause</p>"
+				}
+			]
+		},
+		{
+			"letter": "P",
+			"styles": [
+				{
+					"title": "paper ticket",
+					"content": "<p>A ticket that’s printed on paper, not on a Swift card.</p>"
+				},
+				{
+					"title": "passengers",
+					"content": "<p>Refer to 'customers' rather than 'passengers'.</p>"
+				},
+				{
+					"title": "pay as you go",
+					"content": "<p>Do not hyphenate and always use lower case.</p>"
+				},
+				{
+					"title": "pay as you go credit",
+					"content": "<p>Use to describe Swift cards with a stored cash value</p><p>Note: Do not use 'pay as you go travel value (cash)' or 'pay as you go cash value'.</p>"
+				},
+				{
+					"title": "PDF",
+					"content": "Upper case. No need to explain the acronym."
+				},
+				{
+					"title": "plain English",
+					"content": "<p>Lower case plain and upper case English unless in a title: the Plain English Campaign.</p><p>All content should be written in plain English. You should also make sure you use language your audience will understand. Use the <a href='http://www.plainenglish.co.uk/the-a-z-of-alternative-words.html' class='wmnds-link'>Plain English Campaign’s A to Z of alternative words</a> to avoid complex language.</p>"
+				},
+				{
+					"title": "phone numbers",
+					"content": "<p>Phone numbers should be split into at least three groups of digits for readability, ideally with no more than four digits in any single group. For example: 020 7378 1705; 0343 222 6666; 0762 480 4299. See also the <a href='/patterns/contact-details/' class='wmnds-link'>design pattern for contact details</a>.</p>"
+				}
+			]
+		},
+		{
+			"letter": "Q",
+			"styles": [
+				{
+					"title": "quotation marks",
+					"content": "<p>Use single quotation marks in all cases.</p><p>Use double quotation marks if using a quote within a quote.</p><p>If a quote runs on longer than one paragraph, include quotation marks at the beginning of each subsequent paragraph but only at the end of the final paragraph.</p><p>Place full stops and commas inside quotes when they are complete sentences, otherwise place them outside: 'I want to buy a ticket,' said Mr Smith; When he said 'I promise', he didn't really mean it.</p>"
+				}
+			]
+		},
+		{
+			"letter": "R",
+			"styles": [
+				{
+					"title": "real time/realtime",
+					"content": "<p>Where possible, use 'live' instead of 'realtime' or 'real time'</p><p>real time (noun): this information is being updated in real time.<br />realtime (adjective): realtime service information.<br />Not real-time.</p>"
+				},
+				{
+					"title": "re-open",
+					"content": "<p>Not reopen.</p>"
+				}
+			]
+		},
+		{
+			"letter": "S",
+			"styles": [
+				{
+					"title": "seasons",
+					"content": "<p>Use lower case for spring, summer, autumn and winter.</p>"
+				},
+				{
+					"title": "Sentence length",
+					"content": "<p>Do not use long sentences. Check sentences with more than 25 words to see if you can split them to make them clearer.</p>"
+				},
+				{
+					"title": "sign in or log in",
+					"content": "<p>Use sign in rather than log in (verb) for calls-to-action where users enter their details to access a service.</p><p>Do not use login as a noun - say what the user actually needs to enter (like username, password, National Insurance number).</p>"
+				},
+				{
+					"title": "State Pension",
+					"content": "<p>Upper case.</p>"
+				},
+				{
+					"title": "Station",
+					"content": "<p>Lower case. For example, Birmingham New Street station. Do not say tram station, say tram stop.</p>"
+				},
+				{
+					"title": "Stop",
+					"content": "<p>Lower case. For example, Summer Lane bus stop.</p>"
+				},
+				{
+					"title": "Swift card",
+					"content": "<p>Do not capitalise 'Card'.</p>"
+				},
+				{
+					"title": "step-free",
+					"content": "<p>A route between street and platform that doesn't require the use of stairs or escalators.</p>"
+				}
+			]
+		},
+		{
+			"letter": "T",
+			"styles": [
+				{
+					"title": "terms and conditions",
+					"content": "<p>Not Terms and Conditions or terms & conditions.</p>"
+				},
+				{
+					"title": "text message alerts",
+					"content": "<p>Not SMS alerts.</p>"
+				},
+				{
+					"title": "TfWM",
+					"content": "<p>See entry on <a href='#transportforwestmidlands' class='wmnds-link'>Transport for West Midlands</a>.</p>"
+				},
+				{
+					"title": "Times",
+					"content": "<p>use 'to' in time ranges, not hyphens, en rules or em dashes: 10am to 11am (not 10-11am)<br />5:30pm (not 1730hrs)<br />midnight (not 00:00)<br />midday (not 12 noon, noon or 12pm)<br />6 hours 30 minutes<br />Midnight is the first minute of the day, not the last. You should consider using \"11:59pm\" to avoid confusion about a single, specific time.</p><p>For example, \"You must register by 11:59pm on Tuesday 14 June.\" can only be read one way, but \"You must register by midnight on Tuesday 14 June\" can be read in two ways (the end of Monday 13, or end of Tuesday 14).</p><p>Timetables and printed passenger information use the 24-hour clock in HHMM format.</p>"
+				},
+				{
+					"title": "tram",
+					"content": "<p>Not Metro.</p>"
+				},
+				{
+					"title": "tram stop",
+					"content": "<p>Not station.</p>"
+				},
+				{
+					"title": "Transport for West Midlands",
+					"content": "<p>Avoid referring to Transport for West Midlands (TfWM). Users don't need to know about it while getting travel advice.</p><p>Explaining the relationship between West Midlands Network, TfWM and West Midlands Combined Authority (WMCA) is complicated. Use \"we\" instead. For example, \"we manage the Key Route Network (KRN)\" with a link to the TfWM policy page.</p>"
+				}
+			]
+		},
+		{
+			"letter": "U",
+			"styles": [
+				{
+					"title": "under-16s",
+					"content": "<p>Requires a hyphen in all cases. This is true whenever referring to age groups: under-16s; under-18s; over-60s.</p><p>Avoid the common error of adding an apostrophe when making a word or abbreviation plural as this makes it possessive: under-16s not under-16's.</p>"
+				},
+				{
+					"title": "URL",
+					"content": "<p>Upper case. No need to explain the acronym.</p>"
+				},
+				{
+					"title": "username",
+					"content": "<p>Not \"user name\".</p>"
+				}
+			]
+		},
+		{
+			"letter": "W",
+			"styles": [
+				{
+					"title": "web",
+					"content": "<p>Lower case.</p>"
+				},
+				{
+					"title": "webpage",
+					"content": "<p>One word.</p>"
+				},
+				{
+					"title": "website",
+					"content": "<p>Not web-site or web site.</p>"
+				},
+				{
+					"title": "West Midlands Combined Authority",
+					"content": "<p>Avoid referring to West Midlands Combined Authority (WMCA). Users don't need to know about it while getting travel advice.</p><p>The exception is if you referring to a statutory responsibility or a contract. For example, concessionary passes or terms and conditions.</p>"
+				},
+				{
+					"title": "wifi",
+					"content": "<p>Lower case, no hyphen.</p>"
+				},
+				{
+					"title": "WMCA",
+					"content": "<p>See entry on <a href='#westmidlandscombinedauthority' class='wmnds-link'>West Midlands Combined Authority</a>.</p>"
+				},
+				{
+					"title": "wmnetwork.co.uk",
+					"content": "<p>If you are linking to another page, you should use an in-text link rather than the full URL. See the entry on links for more information.</p><p>Sometimes it is better to show the full URL. For example, when telling users to click a link to verify something in an email.</p><p>It is important to use the right URL. Only use wmnetwork.co.uk.</p><p>Do not prefix the URL with ‘www.’ as this makes our URL hard to read. The domain extension ‘.co.uk’ makes it obvious to users that it is a URL.</p>"
+				},
+				{
+					"title": "www.",
+					"content": "<p>See entry on <a href='#wmnetworkcouk' class='wmnds-link'>wmnetwork.co.uk</a>.</p>"
+				}
+			]
+		},
+		{
+			"letter": "Z",
+			"styles": [
+				{
+					"title": "zero-hours contract",
+					"content": "<p>Not \"zero-hour contract\" or \"zero hours contract\"</p>"
+				}
+			]
+		}
+	]
+}

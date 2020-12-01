@@ -83,9 +83,9 @@
                         <!-- Show submenu (level 2) item icon if specified -->
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
-                        </svg> 
+                        </svg>
                         {% endif -%}
-                        {{subnavItem.name | replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</a>
+                        {{subnavItem.name| capitalize | replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</a>
                         {%- if subnavItem.subnavItems %}
                         <!-- collapse button for mobile nav level 3 menu items -->
                       <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
@@ -93,7 +93,7 @@
                       <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
                         {% for subnavchildItem in subnavItem.subnavItems -%}
                         <li class="wmnds-mega-menu__sub-menu-child-item">
-                          <a href="#" class="wmnds-mega-menu__sub-menu-child-link">{{subnavchildItem.name}}</a>
+                          <a href="#" class="wmnds-mega-menu__sub-menu-child-link">{{subnavchildItem.name | capitalize}}</a>
                         </li>
                         {%- endfor %}
                       </ul>
@@ -131,7 +131,7 @@
               {%- if(params.searchSuggestions) %}
               <p class="wmnds-search-heading h1">I want to...</p>
               <div class="wmnds-grid">
-                <div class="wmnds-col-1-2">                
+                <div class="wmnds-col-1-2">
                   <ul class="wmnds-search-list">
                   {%- for i in range(0, 4) %}
                     <li class="wmnds-search-list__item">
@@ -145,7 +145,7 @@
                   {%- endfor %}
                   </ul>
                 </div>
-                <div class="wmnds-col-1-2">                
+                <div class="wmnds-col-1-2">
                   <ul class="wmnds-search-list">
                   {%- for i in range(4, params.searchSuggestions.length) %}
                     <li class="wmnds-search-list__item">
@@ -201,7 +201,7 @@
 {% if params.megaMenuDemo %}
 <!-- Content space for example purposes only. DO NOT INCLUDE -->
 <div class="demo-content">
-  
+
   <p>Example content <br> <a href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
 </div>
 <!-- END DO NOT INCLUDE -->

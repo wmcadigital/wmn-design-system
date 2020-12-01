@@ -34,6 +34,10 @@ module.exports = {
     output: 'build/',
     componentOutput: 'build/njk'
   },
+  njkData: {
+    src: 'src/**/*.njk.json',
+    output: 'build/json/'
+  },
   svgs: {
     src: 'src/wmnds/assets/icon/**/*.svg',
     dest: 'build/img/'

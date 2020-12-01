@@ -10,7 +10,7 @@
 
   <li>
     <a class="wmnds-col-1 wmnds-link"
-      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{endUrl}}/">{{ sectionItem.name}}</a>
+      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{endUrl}}/">{{ sectionItem.name | capitalize}}</a>
   </li>
   {% endfor %}
   {% endif %}
