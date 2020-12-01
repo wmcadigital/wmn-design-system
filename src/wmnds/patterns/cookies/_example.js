@@ -5,9 +5,10 @@ const cookies = () => {
     cookiesBanner.style.display = 'none';
   };
   const showCookieBanner = () => {
+    const codeExample = document.querySelector('.wmnds-website-code-example .wmnds-cookies-banner');
+
     cookiesBanner.style.display = 'block';
-    document.querySelector('.wmnds-website-code-example .wmnds-cookies-banner').style.display =
-      'block'; // Ensure the cookie banner in the component example stays visible even if the user has already accepted cookies
+    if (codeExample) codeExample.style.display = 'block'; // Ensure the cookie banner in the component example stays visible even if the user has already accepted cookies
   };
 
   // Set cookie based on name, value and expiry date supplied
