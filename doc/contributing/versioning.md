@@ -58,7 +58,7 @@ In order to add to the Design System, you must first create a new branch with th
 
 Where:
 
-- `xx` is your first and last intials, e.g. `jd` for John Doe
+- `xx` is your first and last initials, e.g. `jd` for John Doe
 - `type` is the type of change the branch is working on, e.g. `bugfix`, `feature`
 - `short-description` is a short hyphenated description of the branch, e.g. `red-button-variant`
 
@@ -113,7 +113,7 @@ The workflow requires the following tokens:
 - `NETLIFY_SITE_ID` - Netlify API ID. See [actions-netlify](https://github.com/nwtgck/actions-netlify#required-inputs-and-env) for details.
 - `NPM_TOKEN` - npm access token with publish permissions. See the [semantic-release configuration](https://github.com/semantic-release/github#configuration) for details.
 
-The workflow also requires a `GITHUB_TOKEN` but that is made avaible automatically during any workflow run.
+The workflow also requires a `GITHUB_TOKEN` but that is made available automatically during any workflow run.
 
 #### 1.4.2.2 Steps
 
