@@ -4,7 +4,120 @@ const headerJs = () => {
 
   const mobileMenu = window.matchMedia('(max-width: 767px)');
 
+  /* 
+      Mega menu helper functions
+  */
+
+  // getMenuLink returns a specified menu link from a specified array
+  // currentIndex = index of the link that is currently focused
+  // array = array to move through
+  // direction = next, prev,
+  const getMenuLink = (currentIndex, array, direction) => {
+    let menuLink = null;
+    if (array) {
+      if (direction === 'prev') {
+        // return previous link in specified array if there is one else return null;
+        menuLink = array[currentIndex - 1] ? array[currentIndex - 1] : null;
+      } else if (direction === 'next') {
+        // return next link in specified array if there is one else return null;
+        menuLink = array[currentIndex + 1] ? array[currentIndex + 1] : null;
+      } else {
+        // return link with same index in specified array;
+        menuLink = array[currentIndex] ? array[currentIndex] : array[array.length - 1];
+      }
+    }
+    return menuLink;
+  };
+
+  // takes a menu element and allows moving between focus via tabbing/arrows
+  const setKeyboardNavigation = (subMenuContainer, subMenuQuery, onFirst, onLast) => {
+    // array of all links in menu container
+    const allLinksArray = [];
+
+    // use specified query to select all submenus
+    const subMenus = subMenuContainer.querySelectorAll(subMenuQuery);
+
+    subMenus.forEach((subMenu, subMenuIndex) => {
+      const thisSubMenuLinks = subMenu.querySelectorAll('a');
+
+      // add list of all links in this container to an array
+      allLinksArray.push(thisSubMenuLinks);
+
+      // add event listener to each link with key logic
+      thisSubMenuLinks.forEach((link, linkIndex) => {
+        link.addEventListener('keydown', e => {
+          // if not escape
+          if (e.keyCode !== 27) {
+            e.stopPropagation();
+            if (e.keyCode === 39) {
+              // right arrow - go to link of same index in next menu list
+              e.preventDefault();
+              const nextMenuLink = getMenuLink(linkIndex, allLinksArray[subMenuIndex + 1]);
+              if (nextMenuLink) nextMenuLink.focus();
+            } else if (e.keyCode === 37) {
+              // left arrow - go to link of same index in previous menu list
+              e.preventDefault();
+              const prevMenuLink = getMenuLink(linkIndex, allLinksArray[subMenuIndex - 1]);
+              if (prevMenuLink) prevMenuLink.focus();
+            } else if (e.keyCode === 40 || (e.keyCode === 9 && !e.shiftKey)) {
+              // down arrow or tab - go to next link in current menu list
+              e.preventDefault();
+              // if next link doesn't exist try next menu first item else return null
+              const nextLink = getMenuLink(linkIndex, thisSubMenuLinks, 'next')
+                ? getMenuLink(linkIndex, thisSubMenuLinks, 'next')
+                : getMenuLink(-1, allLinksArray[subMenuIndex + 1], 'next');
+
+              if (nextLink) {
+                nextLink.focus();
+              } else if (onLast) {
+                onLast();
+              }
+            } else if (e.keyCode === 38 || (e.shiftKey && e.keyCode === 9)) {
+              // up arrow or shift + tab - go to previous item in current menu list
+              e.preventDefault();
+              const prevMenu = allLinksArray[subMenuIndex - 1];
+              let prevLink = null;
+              if (prevMenu || linkIndex > 0) {
+                prevLink = getMenuLink(linkIndex, thisSubMenuLinks, 'prev')
+                  ? getMenuLink(linkIndex, thisSubMenuLinks, 'prev')
+                  : getMenuLink(prevMenu.length, prevMenu, 'prev');
+              }
+              if (prevLink) {
+                prevLink.focus();
+              } else if (onFirst) {
+                onFirst();
+              }
+            }
+          }
+        });
+      });
+    });
+  };
+
   megaMenus.forEach(menu => {
+    const clearActiveListItems = () => {
+      // remove active classes from other list items
+      menu.querySelectorAll('.wmnds-mega-menu__primary-menu-item').forEach(menuItem => {
+        menuItem.classList.remove('active');
+      });
+    };
+
+    // handle setting the active class on menu and list items
+    const setMenuActive = (element, active = true, onCloseFocusElement) => {
+      if (active) {
+        menu.classList.add('active');
+        clearActiveListItems();
+        // add active class to current item
+        element.classList.add('active');
+      } else {
+        menu.classList.remove('active');
+        element.classList.remove('active');
+        // set focus on menu close
+
+        if (onCloseFocusElement) onCloseFocusElement.focus();
+      }
+    };
+
     // mobile nav function
     function handleMobileMenu(mq) {
       if (mq.matches) {
@@ -115,57 +228,12 @@ const headerJs = () => {
         });
       }
 
-      const clearActiveListItems = () => {
-        // remove active classes from other list items
-        menu.querySelectorAll('.wmnds-mega-menu__primary-menu-item').forEach(menuItem => {
-          menuItem.classList.remove('active');
-        });
-      };
-
-      // handle setting the active class on menu and list items
-      const setMenuActive = (active = true, focusLink) => {
-        if (active) {
-          menu.classList.add('active');
-          clearActiveListItems();
-          // add active class to current item
-          topLevelListItem.classList.add('active');
-        } else {
-          menu.classList.remove('active');
-          topLevelListItem.classList.remove('active');
-          // set focus on menu close
-          if (focusLink !== false) {
-            topLevelLink.focus();
-          }
-        }
-      };
-
-      // returns a specified menu link from a specified array
-      // currentIndex = index of the link that is currently focused
-      // array = array to move through
-      // direction = next, prev,
-      const getMenuLink = (currentIndex, array, direction) => {
-        let menuLink = null;
-        if (array) {
-          if (direction === 'prev') {
-            // return previous link in specified array if there is one else return null;
-            menuLink = array[currentIndex - 1] ? array[currentIndex - 1] : null;
-          } else if (direction === 'next') {
-            // return next link in specified array if there is one else return null;
-            menuLink = array[currentIndex + 1] ? array[currentIndex + 1] : null;
-          } else {
-            // return link with same index in specified array;
-            menuLink = array[currentIndex] ? array[currentIndex] : array[array.length - 1];
-          }
-        }
-        return menuLink;
-      };
-
       const openSubMenu = e => {
         // check if list item has a mega menu
         if (topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length) {
           e.preventDefault();
           // remove keyFocus to allow menu to show
-          setMenuActive(true);
+          setMenuActive(topLevelListItem, true);
           // focus first menu item
           if (topLevelListItem.contains(subMenuLinks[0])) {
             subMenuLinks[0].focus();
@@ -198,7 +266,7 @@ const headerJs = () => {
           if (nextLink) nextLink.focus();
         } else if (key === 27) {
           // if escape pressed
-          setMenuActive(false);
+          setMenuActive(topLevelListItem, false, topLevelLink);
         }
       };
 
@@ -211,7 +279,7 @@ const headerJs = () => {
         topLevelLink.addEventListener('mouseover', () => {
           if (!menuDelay) {
             // if no menuDelay is active just open the menu
-            setMenuActive();
+            setMenuActive(topLevelListItem);
           } else {
             // if menuDelay is active, clear all timeouts and start a new one
             clearTimeout(enterTimeOut);
@@ -220,7 +288,7 @@ const headerJs = () => {
             enterTimeOut = setTimeout(() => {
               // enter timeout completed, open menu and kill delay
               menuDelay = false;
-              setMenuActive();
+              setMenuActive(topLevelListItem);
             }, delayTime);
           }
         });
@@ -239,12 +307,12 @@ const headerJs = () => {
           // leave timeout is active
           leaveTimeOut = setTimeout(() => {
             // leave timeout completed, close menu
-            setMenuActive(false, false);
+            setMenuActive(topLevelListItem, false);
             menuDelay = false;
           }, delayTime);
         });
 
-        topLevelListItem.addEventListener('blur', setMenuActive(false, false));
+        topLevelListItem.addEventListener('blur', setMenuActive(topLevelListItem, false));
       }
 
       topLevelListItem.addEventListener('keydown', e => {
@@ -252,70 +320,53 @@ const headerJs = () => {
       });
 
       // top lvl link event listeners
+      topLevelLink.addEventListener('focus', e => {
+        e.preventDefault();
+        setMenuActive(topLevelListItem, false);
+        clearActiveListItems();
+      });
       topLevelLink.addEventListener('mousedown', e => {
         // prevent link focus on click
         e.preventDefault();
-        // setMenuActive(false);
       });
-      // topLevelLink.addEventListener('focus', handleKeyFocus);
 
-      const menuArray = [];
-      subMenuLinks.forEach((menuLink, menuIndex) => {
-        const thisList = menuLink.parentNode;
-        const thisListLinks = thisList.querySelectorAll('a');
-        // push list of links to array
-        menuArray.push(thisListLinks);
+      // set up keyboard navigation for sub menu links
+      const subMenuContainer = topLevelListItem.querySelector('.wmnds-mega-menu__sub-menu');
 
-        thisListLinks.forEach((link, linkIndex) => {
-          link.addEventListener('keydown', e => {
-            if (e.keyCode !== 27) {
-              e.stopPropagation();
-              if (e.keyCode === 39) {
-                // right arrow - go to link of same index in next menu list
-                e.preventDefault();
-                const nextMenuLink = getMenuLink(linkIndex, menuArray[menuIndex + 1]);
-                if (nextMenuLink) nextMenuLink.focus();
-              } else if (e.keyCode === 37) {
-                // left arrow - go to link of same index in previous menu list
-                e.preventDefault();
-                const prevMenuLink = getMenuLink(linkIndex, menuArray[menuIndex - 1]);
-                if (prevMenuLink) prevMenuLink.focus();
-              } else if (e.keyCode === 40 || (e.keyCode === 9 && !e.shiftKey)) {
-                // down arrow or tab - go to next link in current menu list
-                e.preventDefault();
-                // if next link doesn't exist try next menu first item else return null
-                const nextLink = getMenuLink(linkIndex, thisListLinks, 'next')
-                  ? getMenuLink(linkIndex, thisListLinks, 'next')
-                  : getMenuLink(-1, menuArray[menuIndex + 1], 'next');
-                if (nextLink) {
-                  nextLink.focus();
-                } else {
-                  setMenuActive(false);
-                  if (getMenuLink(topLevelLinkIndex, topLevelLinks, 'next')) {
-                    getMenuLink(topLevelLinkIndex, topLevelLinks, 'next').focus();
-                  }
-                }
-              } else if (e.keyCode === 38 || (e.shiftKey && e.keyCode === 9)) {
-                // up arrow or shift + tab - go to previous item in current menu list
-                e.preventDefault();
-                const prevMenu = menuArray[menuIndex - 1];
-                let prevLink = null;
-                if (prevMenu || linkIndex > 0) {
-                  prevLink = getMenuLink(linkIndex, thisListLinks, 'prev')
-                    ? getMenuLink(linkIndex, thisListLinks, 'prev')
-                    : getMenuLink(prevMenu.length, prevMenu, 'prev');
-                }
-                if (prevLink) {
-                  prevLink.focus();
-                } else {
-                  setMenuActive(false);
-                }
-              }
+      if (subMenuContainer) {
+        setKeyboardNavigation(
+          subMenuContainer,
+          '.wmnds-mega-menu__sub-menu-item',
+          // what to do on first link
+          () => topLevelLink.focus(),
+          // what to do on last link
+          () => {
+            setMenuActive(topLevelListItem, false);
+            if (getMenuLink(topLevelLinkIndex, topLevelLinks, 'next')) {
+              getMenuLink(topLevelLinkIndex, topLevelLinks, 'next').focus();
             }
-          });
-        });
-      });
+          }
+        );
+      }
     });
+
+    // set up keyboard navigation for search menu links
+    const searchMenuContainer = menu.querySelector('.wmnds-search-container');
+    if (searchMenuContainer) {
+      setKeyboardNavigation(
+        searchMenuContainer,
+        '.wmnds-search-list',
+        // what to do on first link
+        () => menu.querySelector('.wmnds-search-bar__input').focus(),
+        // what to do on last link
+        () =>
+          setMenuActive(
+            menu.querySelector('.wmnds-mega-menu__search'),
+            false,
+            menu.querySelector('.wmnds-mega-menu__search-btn')
+          )
+      );
+    }
   });
 };
 

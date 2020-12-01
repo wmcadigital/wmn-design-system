@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle="Question Form" %}
+{% set pageTitle="Question form" %}
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
@@ -33,13 +33,13 @@
     <h2>Form Element</h2>
     <p>This pattern can be populated with any form element, such as text, radio buttons, checkboxes, dropdown or file upload.</p>
     {% from "wmnds/patterns/question/form-element/_form-element.njk" import wmndsFormElement %}
-    {% from "wmnds/components/button/_button.njk" import wmnButton %}
+    {% from "wmnds/components/button/_button.njk" import wmndsButton %}
     {{
         compExample([
             wmndsFormElement({
                 text: "Question title",
                 button:
-                    wmnButton({
+                    wmndsButton({
                         text: "Continue",
                         type: "Submit",
                         classNames: "wmnds-col-1"
@@ -70,13 +70,13 @@
                         classNames: "wmnds-col-1-2"
                     }) ,
                 button:
-                    wmnButton({
+                    wmndsButton({
                         text: "Continue",
                         type: "Submit",
                         classNames: "wmnds-col-1"
-                    }) 
-            }) 
-        ]) 
+                    })
+            })
+        ])
     }}
     {# End Reference #}
 
@@ -87,7 +87,7 @@
     <p>This shows the user all of the data they have entered before they submit the form. This stage allows the user to change any details before submitting the form.</p>
     {% from "wmnds/patterns/question/summary/_summary.njk" import wmndsSummary %}
     {% from "wmnds/components/table/_table.njk" import wmndsTable %}
-    {% from "wmnds/components/button/_button.njk" import wmnButton %}
+    {% from "wmnds/components/button/_button.njk" import wmndsButton %}
     {{
         compExample([
             wmndsSummary({
@@ -98,7 +98,7 @@
 <br>You consent to West Midlands Combined Authority possibly changing your Direct Debit date if it usually would occur in the next 10 days.<br>
 <br>You also consent to West Midlands Combined Authority reinstating your Direct Debit instruction.</p>",
                 button:
-                    wmnButton({
+                    wmndsButton({
                         classNames: "wmnds-btn--start",
                         text: "Accept & Send ",
                         iconRight: "general-chevron-right"

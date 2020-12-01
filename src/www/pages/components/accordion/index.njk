@@ -51,7 +51,13 @@
 {{
   compExample([
     wmndsAccordion() | trim
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/accordion/",
+    njk: false,
+    js: true,
+    iframe: false
+  })
 }}
 
 
@@ -71,8 +77,12 @@
       id: 'accordion-open-01',
       isOpen: true
     }) | trim
-  ], {
-    js: 'accordionsJS'
+  ],
+  {
+    componentPath: "wmnds/components/accordion/",
+    njk: false,
+    js: true,
+    iframe: false
   })
 }}
 
@@ -98,7 +108,13 @@
       isOpen: true,
       customSummary: true
     }) | trim
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/accordion/",
+    njk: false,
+    js: true,
+    iframe: false
+  })
 }}
 
 {% endblock %}

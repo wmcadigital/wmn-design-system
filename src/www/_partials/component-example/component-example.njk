@@ -1,11 +1,32 @@
-{% macro compExample(componentPath, params) %}
+{% macro compExample(components, params) %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/components/table/_table.njk" import wmndsTable %}
+
+{% set components = components if components else [wmndsButton({text: "No component specified to example"})] %}
+{% set showAsIframe = true if params.iframe else false %}
+{% set componentPath = params.componentPath if params.componentPath else false %}
+
+{% set njk = params.njk if params.njk else false %}
+{% set js = params.js if params.js else false %}
+{% set njkProps = params.njkProps if params.njkProps else false %}
 
 <div class="wmnds-website-code-example">
-  <h3 class="wmnds-website-code-example__subtitle">Component example</h3>
+  {# Show a button to allow the user to see the component fullscreen #}
+  {{
+    wmndsButton({
+      classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
+      text: 'See this example in fullscreen'
+    })
+  }}
+  <hr class="wmnds-m-none" />
+
+
+  {# PREVIEW COMPONENT #}
   <div class="wmnds-website-code-example__inner-wrap">
-    <div class="wmnds-col-1">
-      {%- for item in componentPath %}
-        {{ item }}
+    {# Loop through components passed in and collect in componentsToRender var #}
+    {% set componentsToRender %}
+      {%- for item in components %}
+        {{item | trim}}
         {% if loop.last == false %}
           {% if params.displayInline %}
             <div class="wmnds-m-b-md wmnds-website-mar--right"></div>
@@ -14,26 +35,97 @@
           {% endif %}
         {% endif %}
       {% endfor -%}
-    </div>
-  </div>
+    {% endset %}
 
-  <h3 class="wmnds-website-code-example__subtitle wmnds-m-t-none">HTML Markup</h3>
-  {# Be careful with the below, the whitespace is extemely delicate (like a flower 🌸) #}
-  {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-  <pre><code class="html" tabindex="0">{% for item in componentPath -%}
-  {{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}
-  {% endfor -%}</code></pre>
-</div>
-{% if(params.js) %}
-<div class="wmnds-website-code-example">
-  <h3 class="wmnds-website-code-example__subtitle wmnds-m-t-none">Recommended javascript</h3>
-  <div class="wmnds-code-toggle">
-      <strong>Format:</strong> 
-      <button class="wmnds-btn wmnds-btn--dark-bg es6">ES6</button>
-      <button class="wmnds-btn">Browser compatible JS</button>
+    {# If iframe var set the show components in iframe #}
+    {% if showAsIframe %}
+      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%" data-path="{{componentPath}}"></iframe>
+    {% else %}
+    {# Else show components like normal #}
+      <div class="wmnds-website-code-example__njk wmnds-col-1">
+        {{componentsToRender | safe}}
+      </div>
+    {% endif %}
   </div>
-  <pre><code class="js" data-content="{{ params.js }}" tabindex="0">{{params.js}}</code></pre>
+  {# END PREVIEW COMPONENT #}
+
+
+
+  {# SHOW DETAIL TAB(S) #}
+
+  {# HTML markup #}
+  <hr class="wmnds-m-none" />
+  <details class="wmnds-details">
+    <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
+    {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
+    {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
+<pre><code class="html" tabindex="0">{% for item in components -%}{{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
+  </details>
+
+  {# Njk markup #}
+  {% if njk and componentPath %}
+    <hr class="wmnds-m-none" />
+    <details class="wmnds-details">
+      <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
+{# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
+<pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" -%}</code></pre>
+    </details>
+  {% endif %}
+
+  {# Njk props #}
+  {% if njkProps %}
+    <hr class="wmnds-m-none" />
+    <details class="wmnds-details">
+      <summary class="wmnds-link wmnds-p-md">Nunjucks properties</summary>
+      <div class="wmnds-p-md">
+        <table class="wmnds-table wmnds-p-md">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for prop in njkProps %}
+              <tr>
+                <th scope="row" data-header="Name">{{prop.name}}</th>
+                <td data-header="Type">{{prop.type}}</td>
+                <td data-header="Description">{{prop.description | safe}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  {% endif %}
+
+  {# JS markup #}
+  {% if js and componentPath %}
+    <div class="wmnds-website-code-example__js">
+      {# HIDING THIS SECTION until we can compile ES5 for IE11 #}
+      {# Show recommended JS (ES2015) #}
+      {# <hr class="wmnds-m-none" />
+      <details class="wmnds-details wmnds-details--js">
+        <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
+<pre><code class="js" tabindex="0"></code></pre>
+      </details> #}
+
+      {# Show recommended JS (ES6) #}
+      <hr class="wmnds-m-none" />
+      <details class="wmnds-details wmnds-details--es6">
+        <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
+<pre><code class="js" tabindex="0"></code></pre>
+      </details>
+
+      <script type="text/plain" class="wmnds-website-code-example__script">
+        {%- include componentPath + "_example.js" -%}
+      </script>
+    </div>
+  {% endif %}
 </div>
-{% endif %}
+
+{# END SHOW DETAIL TAB(S) #}
+
 <hr>
 {% endmacro %}
