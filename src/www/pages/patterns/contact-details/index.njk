@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle="Contact Details" %}
+{% set pageTitle="Contact details" %}
 {% set section="Patterns" %}
 {# Imports #}
 {% from "wmnds/patterns/contact-details/_contact-details.njk" import wmndsContactDetails %}
@@ -39,7 +39,7 @@
             Order contact channels consistently: telephone, email, online chat, postal address and social media
         </li>
         <li>
-            In the Umbraco CMS, you can create a contact detail block to ensure 
+            In the Umbraco CMS, you can create a contact detail block to ensure
         </li>
     </ul>
     <p>
@@ -65,7 +65,7 @@
 
     {{
         compExample([
-            wmndsInsetText({html: 
+            wmndsInsetText({html:
                 wmndsContactDetails({
                     warningText: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
                     warningIcon: "general-warning-triangle",
@@ -75,9 +75,9 @@
     Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
     Wednesday, 9.30am - 5pm"
                 }) | indent(6) | trim
-            }) 
-        ]) 
-    }} 
+            })
+        ])
+    }}
 
 
 
