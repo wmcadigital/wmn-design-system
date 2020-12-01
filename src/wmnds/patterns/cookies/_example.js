@@ -1,23 +1,28 @@
 const cookies = () => {
-  const cookiesBanner = document.querySelector('.wmnds-cookies-banner');
+  const cookiesBanner = document.querySelector('header .wmnds-cookies-banner');
 
   const hideCookieBanner = () => {
-    cookiesBanner.style = 'display:none';
+    cookiesBanner.style.display = 'none';
   };
   const showCookieBanner = () => {
-    cookiesBanner.style = 'display:block';
+    const codeExample = document.querySelector('.wmnds-website-code-example .wmnds-cookies-banner');
+
+    cookiesBanner.style.display = 'block';
+    if (codeExample) codeExample.style.display = 'block'; // Ensure the cookie banner in the component example stays visible even if the user has already accepted cookies
   };
 
+  // Set cookie based on name, value and expiry date supplied
   const setCookie = (cname, cvalue, exdays) => {
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-    const expires = 'expires=' + d.toUTCString(); // eslint-disable-line prefer-template
-    const domain = 'domain=' + window.location.hostname; // eslint-disable-line prefer-template
-    document.cookie = cname + '=' + cvalue + ';' + expires + ';' + domain + ';path=/'; // eslint-disable-line prefer-template
+    const expires = `expires=${d.toUTCString()}`;
+    const domain = `domain=${window.location.hostname}`;
+    document.cookie = `${cname}=${cvalue};${expires};${domain};path=/`;
   };
 
+  // Get cookie based on name supplied
   const getCookie = cname => {
-    const name = cname + '='; // eslint-disable-line prefer-template
+    const name = `${cname}=`;
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i += 1) {
       let c = ca[i];
@@ -31,6 +36,7 @@ const cookies = () => {
     return '';
   };
 
+  // Check if cookie(s) created or not
   const checkCookie = cname => {
     const isCookieCreated = getCookie(cname);
     if (isCookieCreated === '') {
@@ -47,7 +53,11 @@ const cookies = () => {
       const cookiesOptions = document
         .querySelector('.wmnds-cookies-manager__preferences')
         .querySelectorAll('.wmnds-fe-checkboxes__input');
-      const currentOptions = [getCookiePolicy().essential, getCookiePolicy().functional, getCookiePolicy().performance];
+      const currentOptions = [
+        getCookiePolicy().essential,
+        getCookiePolicy().functional,
+        getCookiePolicy().performance
+      ];
       for (let i = 0; i < cookiesOptions.length; i += 1) {
         cookiesOptions[i].checked = currentOptions[i];
       }
@@ -95,18 +105,23 @@ const cookies = () => {
     updateCookiePreferences();
   };
 
+  const isInIframe = window.frameElement && window.frameElement.nodeName === 'IFRAME'; // check if we are in an iframe
+
   // Creation of default Cookies permissions when the DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', cookiesScan);
+  if (!isInIframe) document.addEventListener('DOMContentLoaded', cookiesScan);
 
   // When Accept all cookies button is triggered
   const acceptAllCookiesBtn = document.querySelector('.wmnds-cookies-banner__accept-all-cookies');
-  acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
-  acceptAllCookiesBtn.addEventListener('keydown', event => {
-    if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
-      event.preventDefault();
-      acceptAllCookies();
-    }
-  });
+
+  if (!isInIframe) {
+    acceptAllCookiesBtn.addEventListener('click', acceptAllCookies);
+    acceptAllCookiesBtn.addEventListener('keydown', event => {
+      if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
+        event.preventDefault();
+        acceptAllCookies();
+      }
+    });
+  }
 
   // When Safe Preferences button is triggered
   const cookieForm = document.querySelector('.wmnds-cookies-manager__form');

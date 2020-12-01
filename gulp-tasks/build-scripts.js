@@ -26,7 +26,7 @@ function minifyJS(jsFile) {
             rules: [
               {
                 test: /\.m?js$/,
-                exclude: /node_modules/,
+                exclude: [/node_modules/],
                 use: {
                   loader: 'babel-loader',
                   options: {
@@ -55,24 +55,8 @@ function minifyJS(jsFile) {
     .pipe(dest(paths.scripts.output)); // Spit out concat + minified file in ./build/
 }
 
-const buildUncompiledJs = () =>
-  src(['src/wmnds/assets/js/example-js-compiler.js'])
-    .pipe(
-      webpack({
-        config: {
-          mode: 'none',
-          optimization: {
-            minimize: false
-          },
-          output: { filename: 'example-js-compiler.js' } // output name of the bundled js
-        }
-      })
-    )
-    .pipe(dest('build/js')); // concat uncompiled js function
-
 // Minify, and concatenate scripts
 module.exports = done => {
   paths.scripts.minifySrc.map(jsFile => minifyJS(jsFile));
-  buildUncompiledJs();
   done();
 };

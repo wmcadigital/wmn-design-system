@@ -1,0 +1,13 @@
+{% filter trim %}
+{% raw %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+
+{{
+   wmndsButton({
+      classNames: "wmnds-btn--mode",
+      text: "Metro",
+      iconLeft: "modes-isolated-metro"
+    })
+}}
+{% endraw %}
+{% endfilter %}

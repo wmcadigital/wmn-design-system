@@ -49,35 +49,42 @@
   <li>When a button is a destructive action.</li>
   <li>When a button starts a process or journey.</li>
 </ul>
-{%- from "wmnds/components/button/_button.njk" import wmnButton as cta %}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as cta %}
 {{
-  compExample([
-    cta({
-      text: "Call to action button"
-    }),
-     cta({
-      classNames: "wmnds-is--active",
-      text: "Call to action active button"
-    }),
-    cta({
-      text: "Call to action disabled button",
-      disabled: true
-    }),
-    cta({
-      text: "Call to action icon button",
-      iconRight: "general-chevron-right"
-    }),
-    cta({
-      text: "Call to action loading button",
-      loading: true
-    }),
-    cta({
-      text: "Call to action icon disabled button",
-      iconRight: "general-chevron-right",
-      disabled: true
-    })
-  ])
+  compExample(
+    [
+      cta({
+        text: "Call to action button"
+      }),
+      cta({
+        classNames: "wmnds-is--active",
+        text: "Call to action active button"
+      }),
+      cta({
+        text: "Call to action disabled button",
+        disabled: true
+      }),
+      cta({
+        text: "Call to action icon button",
+        iconRight: "general-chevron-right"
+      }),
+      cta({
+        text: "Call to action loading button",
+        loading: true
+      }),
+      cta({
+        text: "Call to action icon disabled button",
+        iconRight: "general-chevron-right",
+        disabled: true
+      })
+    ],
+    {
+      componentPath: "wmnds/components/button/",
+      njk: true
+    }
+  )
 }}
+
 {# Dark background variant #}
 <h3>Dark background variant</h3>
 {{
@@ -117,7 +124,7 @@
   <li>When a button starts a process or journey</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as primary -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as primary -%}
 {{
   compExample([
     primary({
@@ -143,8 +150,8 @@
       text: "Primary icon disabled button",
       iconRight: "general-chevron-right",
       disabled: true
-    }) 
-  ]) 
+    })
+  ])
 }}
 {# end: primary buttons #}
 
@@ -176,7 +183,7 @@
   <li>When a button starts a process or journey</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as secondary -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as secondary -%}
 {{
   compExample([
     secondary({
@@ -243,7 +250,7 @@
   <li>When a button is trying to attract the user's attention</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as destructive -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as destructive -%}
 {{
   compExample([
     destructive({
@@ -296,7 +303,7 @@
   <li>When the button is inessential for continuing the user journey</li>
 </ul>
 
-{%- from "wmnds/components/button/_button.njk" import wmnButton as start -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as start -%}
 {{
   compExample([
     start({
@@ -349,7 +356,7 @@
   <li>When a button is a destructive action</li>
   <li>When a button starts a process or journey</li>
 </ul>
-{%- from "wmnds/components/button/_button.njk" import wmnButton as mode -%}
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as mode -%}
 {{
   compExample([
     mode({

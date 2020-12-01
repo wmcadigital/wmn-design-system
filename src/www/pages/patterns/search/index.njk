@@ -1,5 +1,6 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Search" %}
+{% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -21,7 +22,6 @@
     <br><br>
     {# Search bar #}
     <h2>Search bar</h2>
-    
     {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
     {{
         compExample([
@@ -80,12 +80,14 @@
                 ]}
             )
         ], {
-            js: 'searchFilterJs'
+            componentPath: "wmnds/patterns/search/search-filter/",
+            njk: false,
+            js: true,
+            iframe: false
         })
     }}
 
     {# End search filter #}
-    
     <br><br>
     {# Search result #}
     <h2>Search result</h2>
@@ -113,7 +115,6 @@
         ])
     }}
     {# End search result #}
-    
     <br><br>
     {# Pagination #}
     <h2>Pagination links</h2>
