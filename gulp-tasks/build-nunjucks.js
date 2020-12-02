@@ -29,14 +29,17 @@ module.exports.buildTemplates = () => {
           return JSON.parse(fs.readFileSync(`${paths.njkData.output}merged.njk.json`));
         })
       )
+      // Note: we remove the extension off the file and add .html in the next step. This allows us to use custom exentions like .njk.md
       .pipe(
         plugins.nunjucksRender({
           path: 'src/',
+          ext: '',
           envOptions: {
             noCache: true
           }
         })
       )
+      .pipe(plugins.rename({ extname: '.html' }))
       .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
       .pipe(plugins.replace('$*version', versionNumber))
       .pipe(plugins.formatHtml())
