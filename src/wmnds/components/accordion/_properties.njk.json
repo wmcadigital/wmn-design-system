@@ -1,0 +1,24 @@
+{
+  "wmndsAccordionProps": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required</strong>. Must be unique. Used as an id in the HTML for the accordion as a whole, and also as a prefix for the ids of the section contents and the buttons that open them, so that those ids can be the target of aria-labelledby and aria-control attributes."
+    },
+    {
+      "name": "summaryText",
+      "type": "string",
+      "description": "Text content for summary line. If summaryHTML is supplied, this is ignored."
+    },
+    {
+      "name": "summaryHTML",
+      "type": "string",
+      "description": "HTML content for summary line."
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "description": "If true, accordion element will be expanded."
+    }
+  ]
+}

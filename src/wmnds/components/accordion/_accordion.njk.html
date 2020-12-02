@@ -1,0 +1,52 @@
+{% macro wmndsAccordion(params) %} {# Imports #} {% from "wmnds/components/icon/_icon.njk" import
+wmndsIcon %} {% from "wmnds/components/disruption-indicator/small/_small.njk" import
+wmndsDisruptionIndicatorSmall %} {% from "wmnds/components/disruption-indicator/medium/_medium.njk"
+import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %} {% from
+"wmnds/components/icon/_icon.njk" import wmndsIcon %} {# Params #} {% set isOpen = " wmnds-is--open"
+if params.isOpen %} {% set _isExpanded = "true" if params.isOpen else "false" %} {% set id =
+params.id if params.id else "accordion-01" %} {% set summaryText = params.summaryText if
+params.summaryText else "Accordion" %} {% set summaryHTML = params.summaryHTML if params.summaryHTML
+else null %}
+
+<div class="wmnds-accordion{{isOpen}}">
+  <button
+    aria-controls="{{id}}"
+    class="wmnds-accordion__summary-wrapper"
+    aria-expanded="{{_isExpanded}}"
+  >
+    <!-- accordion summary -->
+    <div class="wmnds-accordion__summary">
+      {% if params.customSummary -%}
+      <!-- custom summary using grid -->
+      <div class="wmnds-grid wmnds-grid--align-center">
+        {{ wmndsDisruptionIndicatorSmall({ classModifiers: 'wmnds-col-auto wmnds-m-r-md', mode:
+        'bus' }) | indent(10) | trim }}
+        <div class="wmnds-col-auto">
+          Resurfacing Works at <strong>Abbey Street, Lower Gornal</strong>
+        </div>
+      </div>
+      {%- else -%}
+      <h4 class="wmnds-m-b-none">{{summaryText}}</h4>
+      {%- endif %}
+    </div>
+    <!-- plus icon -->
+    {{ wmndsIcon({ icon: 'general-expand', class: 'wmnds-accordion__icon' }) | indent(4) | trim }}
+    <!-- minus icon -->
+    {{ wmndsIcon({ icon: 'general-minimise', class: 'wmnds-accordion__icon
+    wmnds-accordion__icon--minimise' }) | indent(4) | trim }}
+  </button>
+
+  <!-- accordion content -->
+  <div class="wmnds-accordion__content" id="{{id}}">
+    <p>
+      <strong>Some random subtitle</strong>
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, eius repellat dolor
+      vel corporis eos fugiat. Ut totam, incidunt sequi iusto nesciunt illum natus, dolores velit
+      cumque, excepturi labore!
+    </p>
+  </div>
+</div>
+
+{% endmacro %}

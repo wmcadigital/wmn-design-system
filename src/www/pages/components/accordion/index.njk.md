@@ -1,10 +1,13 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Accordion" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/components/accordion/_accordion.njk.html" import wmndsAccordion %}
 
 {% block content %}
 {# About #}
-<h2>About</h2>
+
+## About
+
 <h3>What does it do?</h3>
 <ul>
   <li>
@@ -35,7 +38,6 @@
   </li>
 </ul>
 
-
 <hr><br><br>
 {# Closed #}
 <h2>Closed</h2>
@@ -47,22 +49,22 @@
   <li>The attribute <code class="wmnds-website-inline-code">aria-expanded</code> is set to "false" when in the closed state. Again, this helps with accessibility.</li>
   <li>The only thing not visible in the <code class="wmnds-website-inline-code">button.wmnds-accordion-summary-wrapper</code> is the minimise icon.</li>
 </ul>
-{% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
 {{
   compExample([
     wmndsAccordion() | trim
   ],
   {
     componentPath: "wmnds/components/accordion/",
-    njk: false,
+    njk: true,
+    njkProps: wmndsAccordionProps,
     js: true,
     iframe: false
   })
 }}
 
-
 <br><br>
 {# Open #}
+
 <h2>Open</h2>
 <p>In the open state, the accordion shows all of the content it was initially hiding in the <code class="wmnds-website-inline-code">.wmnds-accordion__content</code> element.</p>
 <p>To change the accordion to this state, you need to add the modifier class <code class="wmnds-website-inline-code">wmnds-is--open</code> to the main <code class="wmnds-website-inline-code">.wmnds-accordion</code> element as shown in the code snippet.</p>
@@ -88,6 +90,7 @@
 
 <br><br>
 {# Custom #}
+
 <h2>Custom</h2>
 <p>
   In the example below, you can see that we have cusomised the summary section of the accordion so that it contains an <a href="/components/disruption-indicator/" title="Disruption indicator component" target="_self" class="wmnds-link"> disruption indicator</a> and some text.
