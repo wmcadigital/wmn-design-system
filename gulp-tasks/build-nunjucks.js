@@ -1,6 +1,7 @@
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
+const beautify = require('js-beautify').html;
 // Local requires
 const fs = require('fs');
 const paths = require('./paths.js');
@@ -16,8 +17,25 @@ const mergingJSONFiles = () => {
     .pipe(dest(paths.njkData.output));
 };
 
-// Build nunjucks templates with compiled data above
+const manageEnv = env => {
+  // Custom Filters
+  // This filter beautify's our html, useful for the pre/code blocks in component-example.njk
+  env.addFilter('formtHTML', html => {
+    const newStr = beautify(html.trim(), {
+      indent_size: 2,
+      end_with_newline: true,
+      // If there are multiple blank lines, reduce down to one blank new line.
+      max_preserve_newlines: 0,
+      // set unformatted to a small group of elements, not all inline (the default)
+      // otherwise tags like label arent indented properly
+      unformatted: ['code', 'pre', 'em', 'strong']
+    });
 
+    return newStr;
+  });
+};
+
+// Build nunjucks templates with compiled data above
 const buildingTemplates = () => {
   // De-caching for Data files
   return (
@@ -35,7 +53,8 @@ const buildingTemplates = () => {
           ext: '',
           envOptions: {
             noCache: true
-          }
+          },
+          manageEnv
         })
       )
       .pipe(plugins.rename({ extname: '.html' }))
