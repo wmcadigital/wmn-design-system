@@ -13,11 +13,7 @@
 
 
 <div class="wmnds-accordion{{isOpen}}">
-<button
-    aria-controls="{{id}}"
-    class="wmnds-accordion__summary-wrapper"
-    aria-expanded="{{_isExpanded}}"
-  >
+  <button aria-controls="{{id}}" class="wmnds-accordion__summary-wrapper" aria-expanded="{{_isExpanded}}">
     <!-- accordion summary -->
     <div class="wmnds-accordion__summary">
       {% if params.customSummary -%}
@@ -34,10 +30,10 @@
       {%- endif %}
     </div>
     <!-- plus icon -->
-    {{ wmndsIcon({ icon: 'general-expand', class: 'wmnds-accordion__icon' }) | indent(4) | trim }}
+    {{ wmndsIcon({ icon: 'general-expand', class: 'wmnds-accordion__icon' }) | indent(4) | safe | trim }}
     <!-- minus icon -->
     {{ wmndsIcon({ icon: 'general-minimise', class: 'wmnds-accordion__icon
-    wmnds-accordion__icon--minimise' }) | indent(4) | trim }}
+    wmnds-accordion__icon--minimise' }) | indent(4) | safe }}
   </button>
 
   <!-- accordion content -->

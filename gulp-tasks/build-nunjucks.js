@@ -1,12 +1,14 @@
+const DOMPurify = require('dompurify');
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const beautify = require('js-beautify').html;
 // Local requires
 const fs = require('fs');
+const markdown = require('nunjucks-markdown');
+const marked = require('marked');
 const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
-
 // Check for upcoming version number in node env (will be set during release workflow)
 const versionNumber = process.env.VERSION_NUMBER || packageJson.version;
 
@@ -21,7 +23,7 @@ const manageEnv = env => {
   // Custom Filters
   // This filter beautify's our html, useful for the pre/code blocks in component-example.njk
   env.addFilter('formtHTML', html => {
-    const newStr = beautify(html.trim(), {
+    const beautifulHTML = beautify(html.trim(), {
       indent_size: 2,
       end_with_newline: true,
       // If there are multiple blank lines, reduce down to one blank new line.
@@ -31,8 +33,26 @@ const manageEnv = env => {
       unformatted: ['code', 'pre', 'em', 'strong']
     });
 
-    return newStr;
+    return beautifulHTML;
   });
+
+  // Enable the use of markdown when used within {% markdown %} {% endmarkdown %}
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: true,
+    tables: true,
+    breaks: false,
+    pedantic: false,
+    sanitizer: markdownString =>
+      DOMPurify.sanitize(markdownString, {
+        USE_PROFILES: { svg: true, svgFilters: true, html: true },
+        SAFE_FOR_TEMPLATES: true
+      }),
+    smartLists: true,
+    smartypants: false
+  });
+
+  markdown.register(env, marked);
 };
 
 // Build nunjucks templates with compiled data above

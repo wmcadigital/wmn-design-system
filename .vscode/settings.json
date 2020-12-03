@@ -1,13 +1,13 @@
 {
-  "eslint.enable": true,
   "emmet.includeLanguages": {
     "nunjucks": "html",
     "njk": "html",
     "jinja-html": "html"
   },
-  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,njk}",
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,njk, md}",
   "files.associations": {
-    "*.njk": ["jinja-html", "html"]
+    "*.njk": "jinja-html",
+    "*.njk.md": "jinja-md"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "vsicons.associations.files": [
