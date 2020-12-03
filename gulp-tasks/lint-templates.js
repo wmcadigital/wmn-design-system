@@ -32,30 +32,30 @@ const lintingTemplates = () => {
       // Run htmlhint and a11y checker
       .pipe(plugins.htmlhint('.htmlhintrc'))
       .pipe(plugins.htmlhint.reporter())
-      .pipe(
-        plugins.accessibility({
-          force: true,
-          verbose: false,
-          accessibilityLevel: 'WCAG2AA',
-          ignore: ['WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage']
-        })
-      )
-      .pipe(plugins.accessibility.report({ reportType: 'json' }))
-      // Name all reports a11y-report.json and stick them in same dir as the file effected
-      .pipe(
-        plugins.rename(path => {
-          const filepath = path; // set var to path
-          filepath.dirname = nodePath.join(filepath.dirname, '..'); // Then go to the parent directory
-          filepath.basename = 'a11y-report';
-          filepath.extname = '.json';
-        })
-      )
-      .pipe(plugins.jsonFormat(2))
-      .pipe(dest(file => file.base))
-      // Then clean-up, by deleting all tmp folders with the html inside
-      .on('end', () => {
-        return del(paths.clean.tmp);
-      })
+    // .pipe(
+    //   plugins.accessibility({
+    //     force: true,
+    //     verbose: false,
+    //     accessibilityLevel: 'WCAG2AA',
+    //     ignore: ['WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage']
+    //   })
+    // )
+    // .pipe(plugins.accessibility.report({ reportType: 'json' }))
+    // // Name all reports a11y-report.json and stick them in same dir as the file effected
+    // .pipe(
+    //   plugins.rename(path => {
+    //     const filepath = path; // set var to path
+    //     filepath.dirname = nodePath.join(filepath.dirname, '..'); // Then go to the parent directory
+    //     filepath.basename = 'a11y-report';
+    //     filepath.extname = '.json';
+    //   })
+    // )
+    // .pipe(plugins.jsonFormat(2))
+    // .pipe(dest(file => file.base))
+    // // Then clean-up, by deleting all tmp folders with the html inside
+    // .on('end', () => {
+    //   return del(paths.clean.tmp);
+    // })
   );
 };
 
