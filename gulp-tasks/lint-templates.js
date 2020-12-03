@@ -8,7 +8,7 @@ const paths = require('./paths.js');
 const { packageJson, build } = require('./utils');
 const njkData = require('../src/www/data.njk.json');
 
-module.exports = () => {
+const lintingTemplates = () => {
   return (
     src(paths.nunjucks.websiteSrc, { base: '.' })
       // Build nunjucks files into HTML so we can run a11y checker on them later
@@ -58,3 +58,5 @@ module.exports = () => {
       })
   );
 };
+
+module.exports = lintingTemplates;

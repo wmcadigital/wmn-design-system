@@ -12,14 +12,15 @@ const { packageJson, build } = require('./utils');
 const versionNumber = process.env.VERSION_NUMBER || packageJson.version;
 
 // Merge njk json files together
-module.exports.buildJSONForTemplates = () => {
+const mergingJSONFiles = () => {
   return src(paths.njkData.src)
     .pipe(plugins.mergeJson({ fileName: 'merged.njk.json' }))
     .pipe(dest(paths.njkData.output));
 };
 
 // Build nunjucks templates with compiled data above
-module.exports.buildTemplates = () => {
+
+const buildingTemplates = () => {
   // De-caching for Data files
   return (
     src(paths.nunjucks.websiteSrc)
@@ -49,9 +50,13 @@ module.exports.buildTemplates = () => {
 };
 
 // Copy njk components into build folder
-module.exports.buildComponents = () => {
+const buildingComponentsForLive = () => {
   return src(paths.nunjucks.componentSrc)
     .pipe(plugins.flatten({ includeParents: [4, 4] }))
     .pipe(plugins.replace('from "wmnds/', 'from "'))
     .pipe(dest(paths.nunjucks.componentOutput));
 };
+
+module.exports.buildJSONForTemplates = mergingJSONFiles;
+module.exports.buildTemplates = buildingTemplates;
+module.exports.buildComponents = buildingComponentsForLive;
