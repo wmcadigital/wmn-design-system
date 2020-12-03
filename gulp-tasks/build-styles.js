@@ -7,7 +7,7 @@ const paths = require('./paths.js');
 const { getRoot, packageJson, build } = require('./utils');
 
 // Process, lint, and minify Sass files
-module.exports.buildStyles = () => {
+const buildingStyles = () => {
   return src(paths.styles.minifySrc)
     .pipe(
       plugins.plumber({
@@ -32,7 +32,7 @@ module.exports.buildStyles = () => {
     .pipe(dest(paths.styles.output));
 };
 
-module.exports.buildReactNativeStyles = () => {
+const buildingReactNativeStyles = () => {
   return src(paths.styles.reactNativeSrc)
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
@@ -46,3 +46,6 @@ module.exports.buildReactNativeStyles = () => {
     )
     .pipe(dest(`${paths.styles.output}react-native/`));
 };
+
+module.exports.buildStyles = buildingStyles;
+module.exports.buildReactNativeStyles = buildingReactNativeStyles;

@@ -5,7 +5,7 @@ const plugins = require('gulp-load-plugins')();
 const path = require('path');
 const paths = require('./paths.js');
 
-module.exports = () => {
+const spritingSVGs = () => {
   return src(paths.svgs.src)
     .pipe(
       plugins.rename(file => {
@@ -39,3 +39,5 @@ module.exports = () => {
     .pipe(plugins.rename({ basename: 'wmnds-icons', extname: '.min.svg' }))
     .pipe(dest(paths.svgs.dest));
 };
+
+module.exports = spritingSVGs;
