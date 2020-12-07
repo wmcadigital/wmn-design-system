@@ -23,7 +23,8 @@ const mergingJSONFiles = () => {
 };
 
 const manageEnv = env => {
-  // Custom Filters
+  // Custom Filters for nunjucks
+
   // This filter beautify's our html, useful for the pre/code blocks in component-example.njk
   env.addFilter('formatHTML', html => {
     const beautifulHTML = beautify(html.trim(), {
@@ -39,6 +40,7 @@ const manageEnv = env => {
     return beautifulHTML;
   });
 
+  // Beautify function shared by the two JS filters below
   const beautifyJavascript = js =>
     beautifyJS(js.trim(), {
       indent_size: 2,
@@ -47,13 +49,14 @@ const manageEnv = env => {
       max_preserve_newlines: 0
     });
 
+  // Filter to format JS
   env.addFilter('formatJS', js => {
     return beautifyJavascript(js);
   });
 
+  // Filter to convert content to ES5
   env.addFilter('convertToES5', js => {
-    const compileJs = input =>
-      babel.transform(input, { presets: ['env', { modules: false }] }).code;
+    const compileJs = input => babel.transform(input, { presets: ['env'] }).code; // BABEL COMPILER ES6 => ES5
     const compiledJS = compileJs(js);
 
     return beautifyJavascript(compiledJS);
