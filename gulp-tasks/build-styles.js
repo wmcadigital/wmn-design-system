@@ -1,9 +1,10 @@
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
-
 // Local requires
 const paths = require('./paths.js');
+const { browserSync } = require('./browser-sync'); // BrowserSync server
+
 const { getRoot, packageJson, build } = require('./utils');
 
 // Process, lint, and minify Sass files
@@ -29,7 +30,8 @@ const buildingStyles = () => {
       })
     )
     .pipe(plugins.sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
-    .pipe(dest(paths.styles.output));
+    .pipe(dest(paths.styles.output))
+    .pipe(browserSync.stream());
 };
 
 const buildingReactNativeStyles = () => {
