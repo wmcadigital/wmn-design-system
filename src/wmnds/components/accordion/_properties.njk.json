@@ -6,6 +6,16 @@
       "description": "<strong>Required</strong>. Must be unique. Used as an id in the HTML for the accordion as a whole, and also as a prefix for the ids of the section contents and the buttons that open them, so that those ids can be the target of aria-labelledby and aria-control attributes."
     },
     {
+      "name": "headingText",
+      "type": "string",
+      "description": "Text content for heading line. If headingHTML is supplied, this is ignored."
+    },
+    {
+      "name": "headingHTML",
+      "type": "string",
+      "description": "HTML content for heading line."
+    },
+    {
       "name": "summaryText",
       "type": "string",
       "description": "Text content for summary line. If summaryHTML is supplied, this is ignored."

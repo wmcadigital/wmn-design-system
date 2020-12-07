@@ -1,14 +1,15 @@
-{% filter trim %}
 {% raw %}
 {% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
 
 {{
    wmndsAccordion({
-      id: "wmnds-btn--mode",
-      summaryText: "Metro",
-      summaryHTML: "modes-isolated-metro",
+      id: "accordion-01",
+      headingText: "Accordion",
+      headingHTML: null,
+      contentText: "Lorem ipsum dolar sit...",
+      contentHTML: "<p><strong>Some random subtitle</strong></p>
+      <p>Lorem ipsum dolor sit...</p>",
       isOpen: false
     })
 }}
 {% endraw %}
-{% endfilter %}

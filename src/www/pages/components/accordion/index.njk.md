@@ -2,6 +2,7 @@
 {% set pageTitle="Accordion" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
+{% from "wmnds/components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
 
 {% block content %}
 {# About #}
@@ -96,7 +97,8 @@ Take note that:
       })
   ], {
     componentPath: "wmnds/components/accordion/",
-    njk: false,
+    njk: true,
+    njkProps: wmndsAccordionProps,
     js: true,
     iframe: false
   })
@@ -123,16 +125,42 @@ within the <code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</
 
 {% endmarkdown %}
 
+{# Set vars for use in custom example below #}
+{% set customheadingHTML ='
+
+  <div class="wmnds-grid wmnds-grid--align-center">' +
+    wmndsDisruptionIndicatorSmall({
+      classModifiers: "wmnds-col-auto wmnds-m-r-md",
+      mode: "bus"
+    }) +
+    '<div class="wmnds-col-auto">Resurfacing Works at
+      <strong>Abbey Street, Lower Gornal</strong>
+    </div>
+  </div>'
+%}
+
+{% set customContentHTML = '
+
+  <p>
+    <strong>Some random subtitle</strong>
+  </p>
+  <p>
+    Lorem ipsum dolor sit...
+  </p>'
+%}
+
 {{
   compExample([
     wmndsAccordion({
       id: 'accordion-custom-01',
       isOpen: true,
-      customSummary: true
+      headingHTML: customheadingHTML ,
+      contentHTML: customContentHTML
     })
   ], {
     componentPath: "wmnds/components/accordion/",
-    njk: false,
+    njk: true,
+    njkProps: wmndsAccordionProps,
     js: true,
     iframe: false
   })

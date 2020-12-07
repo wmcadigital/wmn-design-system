@@ -20,7 +20,6 @@
   }}
   <hr class="wmnds-m-none" />
 
-
   {# PREVIEW COMPONENT #}
   <div class="wmnds-website-code-example__inner-wrap">
     {# Loop through components passed in and collect in componentsToRender var #}
@@ -50,7 +49,6 @@
   {# END PREVIEW COMPONENT #}
 
 
-
   {# SHOW DETAIL TAB(S) #}
 
   {# HTML markup #}
@@ -59,7 +57,7 @@
     <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
     {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
     {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-<pre><code class="html" tabindex="0">{% for item in components -%}{{ item | formtHTML }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
+    <pre><code class="html" tabindex="0">{% for item in components -%}{{ item | formatHTML }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
   </details>
 
   {# Njk markup #}
@@ -67,8 +65,12 @@
     <hr class="wmnds-m-none" />
     <details class="wmnds-details">
       <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
-{# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
-<pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" -%}</code></pre>
+      {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
+      <pre><code class="njk" tabindex="0">
+      {%- filter trim %}
+        {%- include componentPath + "_example.njk" -%}
+      {% endfilter -%}
+      </code></pre>
     </details>
   {% endif %}
 
@@ -108,14 +110,14 @@
       {# <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--js">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
-<pre><code class="js" tabindex="0"></code></pre>
+        <pre><code class="js" tabindex="0"></code></pre>
       </details> #}
 
       {# Show recommended JS (ES6) #}
       <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--es6">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
-<pre><code class="js" tabindex="0"></code></pre>
+        <pre><code class="js" tabindex="0"></code></pre>
       </details>
 
       <script type="text/plain" class="wmnds-website-code-example__script">

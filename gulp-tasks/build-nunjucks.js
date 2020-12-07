@@ -3,6 +3,7 @@ const DOMPurify = require('dompurify');
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const beautify = require('js-beautify').html;
+const beautifyJS = require('js-beautify');
 // Local requires
 const fs = require('fs');
 const markdown = require('nunjucks-markdown');
@@ -22,7 +23,7 @@ const mergingJSONFiles = () => {
 const manageEnv = env => {
   // Custom Filters
   // This filter beautify's our html, useful for the pre/code blocks in component-example.njk
-  env.addFilter('formtHTML', html => {
+  env.addFilter('formatHTML', html => {
     const beautifulHTML = beautify(html.trim(), {
       indent_size: 2,
       end_with_newline: true,
