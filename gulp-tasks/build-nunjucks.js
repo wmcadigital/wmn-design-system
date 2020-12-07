@@ -1,9 +1,11 @@
+const babel = require('@babel/standalone');
 const DOMPurify = require('dompurify');
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const beautify = require('js-beautify').html;
 const beautifyJS = require('js-beautify');
+
 // Local requires
 const fs = require('fs');
 const markdown = require('nunjucks-markdown');
@@ -35,6 +37,26 @@ const manageEnv = env => {
     });
 
     return beautifulHTML;
+  });
+
+  const beautifyJavascript = js =>
+    beautifyJS(js.trim(), {
+      indent_size: 2,
+      end_with_newline: true,
+      // If there are multiple blank lines, reduce down to one blank new line.
+      max_preserve_newlines: 0
+    });
+
+  env.addFilter('formatJS', js => {
+    return beautifyJavascript(js);
+  });
+
+  env.addFilter('convertToES5', js => {
+    const compileJs = input =>
+      babel.transform(input, { presets: ['env', { modules: false }] }).code;
+    const compiledJS = compileJs(js);
+
+    return beautifyJavascript(compiledJS);
   });
 
   // Enable the use of markdown when used within {% markdown %} {% endmarkdown %}

@@ -107,22 +107,30 @@
     <div class="wmnds-website-code-example__js">
       {# HIDING THIS SECTION until we can compile ES5 for IE11 #}
       {# Show recommended JS (ES2015) #}
-      {# <hr class="wmnds-m-none" />
+      <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--js">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
-        <pre><code class="js" tabindex="0"></code></pre>
-      </details> #}
+        <pre><code class="js" tabindex="0">
+          {%- filter convertToES5 %}
+            {%- include componentPath + "_example.js" -%}
+          {% endfilter -%}
+        </code></pre>
+      </details>
 
       {# Show recommended JS (ES6) #}
       <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--es6">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
-        <pre><code class="js" tabindex="0"></code></pre>
+        <pre><code class="js" tabindex="0">
+          {%- filter formatJS %}
+            {%- include componentPath + "_example.js" -%}
+          {% endfilter -%}
+        </code></pre>
       </details>
 
-      <script type="text/plain" class="wmnds-website-code-example__script">
+      {# <script type="text/plain" class="wmnds-website-code-example__script">
         {%- include componentPath + "_example.js" -%}
-      </script>
+      </script> #}
     </div>
   {% endif %}
 </div>
