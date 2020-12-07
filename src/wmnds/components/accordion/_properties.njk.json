@@ -3,32 +3,32 @@
     {
       "name": "id",
       "type": "string",
-      "description": "<strong>Required</strong>. Must be unique. Used as an id in the HTML for the accordion as a whole, and also as a prefix for the ids of the section contents and the buttons that open them, so that those ids can be the target of aria-labelledby and aria-control attributes."
+      "description": "<strong>Required.</strong> Must be unique. Used as an id in the HTML for the accordion as a whole, and also as a prefix for the ids of the section contents and the buttons that open them, so that those ids can be the target of aria-labelledby and aria-control attributes."
     },
     {
       "name": "headingText",
       "type": "string",
-      "description": "Text content for heading line. If headingHTML is supplied, this is ignored."
+      "description": "<strong>Required.</strong> Text content for heading line. If <code class='wmnds-website-inline-code'>headingHTML</code> is supplied, this is ignored."
     },
     {
       "name": "headingHTML",
       "type": "string",
-      "description": "HTML content for heading line."
+      "description": "<strong>Required.</strong> HTML content for heading line."
     },
     {
-      "name": "summaryText",
+      "name": "contentText",
       "type": "string",
-      "description": "Text content for summary line. If summaryHTML is supplied, this is ignored."
+      "description": "<strong>Required.</strong> The text content of each section, which is hidden when the section is closed. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
     },
     {
-      "name": "summaryHTML",
+      "name": "contentHTML",
       "type": "string",
-      "description": "HTML content for summary line."
+      "description": "<strong>Required.</strong> The HTML content of each section, which is hidden when the section is closed."
     },
     {
       "name": "isOpen",
       "type": "boolean",
-      "description": "If true, accordion element will be expanded."
+      "description": "If true, accordion element will be expanded upon initial load. Defaults to <code class='wmnds-website-inline-code'>false</code>."
     }
   ]
 }
