@@ -4,7 +4,9 @@
 // Mixins
 @import "../wmnds/assets/sass/mixins";
 
+// Other
 @import "_partials/component-example/component-example";
+@import "_partials/nav/subnav";
 
 // Styleguide page specific styles
 @import "pages/home";

@@ -8,11 +8,7 @@ import footerJs from '../wmnds/patterns/footer/_example';
 import accordionsJS from '../wmnds/components/accordion/_example';
 import searchFilterJs from '../wmnds/patterns/search/search-filter/_example';
 
-import {
-  componentExample,
-  componentExampleScript,
-  componentExampleIframe
-} from './_partials/component-example';
+import { componentExample, componentExampleIframe } from './_partials/component-example';
 
 const isInIframe = window.frameElement && window.frameElement.nodeName === 'IFRAME'; // check if we are in an iframe
 // If not in iframe and we are in prod, then run sentry
@@ -46,6 +42,5 @@ window.addEventListener(
   cookies(),
   searchFilterJs(),
   componentExampleIframe(),
-  componentExampleScript(),
   componentExample)
 );

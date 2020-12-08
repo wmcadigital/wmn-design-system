@@ -1,12 +1,12 @@
-{% extends "www/_layouts/layout-fullwidth.njk" %} 
-{% set pageTitle="A to Z content style guide" %} {% set section = "Styles" %} 
-{# Imports #} 
+{% extends "www/_layouts/layout-fullwidth.njk" %}
+{% set pageTitle="A to Z content style guide" %} {% set section = "Styles" %}
+{# Imports #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
-{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %} 
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
-{# Set array of tiles #} 
-{% block content %} 
+{# Set array of tiles #}
+{% block content %}
 
 {# About the style guide #}
 <div class="wmnds-grid">
@@ -17,7 +17,7 @@
       user need and is written in plain English.
     </p>
     <p>
-      Do not use marketing speak - users will be visiting your website to perform a task (for example, buy a train ticket or find out about Swift cards). Your content shouldn’t try to sell them anything - instead, tell them the information they need to know in the simplest way possible. 
+      Do not use marketing speak - users will be visiting your website to perform a task (for example, buy a train ticket or find out about Swift cards). Your content shouldn’t try to sell them anything - instead, tell them the information they need to know in the simplest way possible.
     </p>
     <p>
       Research has shown that both high literacy and low literacy users prefer plain English because it takes less time to read. Users won’t be on your website for fun - so make the experience quick and easy.
@@ -83,7 +83,7 @@
     {# A to Z accordions #}
     <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--align-center">
       <div class="wmnds-col-1 wmnds-col-md-1-2">
-        <h3 id="atozofstyle">A to Z of style</h3> 
+        <h3 id="atozofstyle">A to Z of style</h3>
       </div>
       <div class="wmnds-col-1 wmnds-col-md-auto wmnds-m-b-md js-accordion-controls">
         <button class="wmnds-btn wmnds-btn--primary js-accordion-controls-open">Open all</button>
@@ -114,8 +114,8 @@
           </button>
           <div class="wmnds-accordion__content" id="accordion-{{section.letter | lower}}">
             {% for style in section.styles %}
-            <h5 id="{{style.title | replace(r/\W/gi, '') | replace(' ', '-') | lower}}" class="{{"wmnds-m-t-xl" if not loop.first}}">
-              <span>{{style.title}}<span>
+            <h5 id="{{style.title | replace(r/\W/gi, '') | replace(' ', '-') | lower}}-{{ loop.index }}" class="{{'wmnds-m-t-xl' if not loop.first}}">
+              <span>{{style.title}}</span>
             </h5>
             {{style.content | safe}}
             {% endfor %}

@@ -28,9 +28,9 @@ module.exports = {
     output: 'build/fonts/'
   },
   nunjucks: {
-    src: 'src/**/*.njk', // Used for watching njk files
-    websiteSrc: 'src/www/pages/**/*.njk',
-    componentSrc: 'src/wmnds/**/*.njk',
+    src: 'src/**/*.{njk,md,html}', // Used for watching njk files
+    websiteSrc: 'src/www/pages/**/*.{njk,md,html}',
+    componentSrc: 'src/wmnds/**/*.{njk,md,html}',
     output: 'build/',
     componentOutput: 'build/njk'
   },
