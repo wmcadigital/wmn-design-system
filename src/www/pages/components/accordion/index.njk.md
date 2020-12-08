@@ -108,7 +108,7 @@ Take note that:
 
 ## Custom
 
-In the example below, you can see that we have cusomised the summary section of the accordion so
+In the example below, you can see that we have customised the summary section of the accordion so
 that it contains an
 <a href="/components/disruption-indicator/" title="Disruption indicator component" target="\_self" class="wmnds-link">disruption indicator</a>
 and some text.

@@ -92,7 +92,7 @@ const buildingTemplates = () => {
           return JSON.parse(fs.readFileSync(`${paths.njkData.output}merged.njk.json`));
         })
       )
-      // Note: we remove the extension off the file and add .html in the next step. This allows us to use custom exentions like .njk.md
+      // Note: we remove the extension off the file and add .html in the next step. This allows us to use custom exensions like .njk.md
       .pipe(
         plugins.nunjucksRender({
           path: 'src/',
