@@ -9,7 +9,7 @@
     {{ pageTitle | striptags}} - West Midlands Network Design System
   {% endif %}
   </title>
-  <meta name="description" content="Your one stop shop for travel in the West Midlands" />
+  <meta name="description" content="A design system to help your service look and feel like West Midlands Network." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {# Favicons #}
@@ -22,6 +22,42 @@
   <meta name="msapplication-TileColor" content="#3c1053">
   <meta name="msapplication-config" content="/config/favicons/browserconfig.xml">
   <meta name="theme-color" content="#3c1053">
+
+  {# SEO Metadata #}
+  <meta name="title" content="{# If homepage #}
+  {% if section == "Home" %}
+  Home - West Midlands Network Design System
+  {% else %}
+  {# Else any other pages #}
+  {{pageTitle | striptags}} - West Midlands Network Design System
+  {% endif %}">
+<meta name="description" content="A design system to help your service look and feel like West Midlands Network.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://designsystem.wmnetwork.co.uk/">
+<meta property="og:title" content="{# If homepage #}
+{% if section == "Home" %}
+West Midlands Network Design System
+{% else %}
+{# Else any other pages #}
+{{pageTitle | striptags}}
+{% endif %}">
+<meta property="og:description" content="A design system to help your service look and feel like West Midlands Network.">
+<meta property="og:image" content="https://designsystem.wmnetwork.co.uk/assets/img/wmn-share.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://designsystem.wmnetwork.co.uk/">
+<meta property="twitter:title" content="{# If homepage #}
+{% if section == "Home" %}
+West Midlands Network Design System
+{% else %}
+{# Else any other pages #}
+{{pageTitle | striptags}}
+{% endif %}">
+<meta property="twitter:description" content="A design system to help your service look and feel like West Midlands Network.">
+<meta property="twitter:image" content="https://designsystem.wmnetwork.co.uk/assets/img/wmn-share.png">
 
   <!-- Website Styles -->
   <link rel="stylesheet" href="/css/wmnds.min.css" />
