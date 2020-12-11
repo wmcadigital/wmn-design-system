@@ -6,6 +6,15 @@
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
 {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+
+{# Deprecation warning #}
+{{
+  wmndsWarningText({
+    text: 'The header is no longer in use. Use the <a href="../header-and-footer-v2/" class="wmnds-link" target="_blank" rel="noopener noreferrer">header v2 pattern</a> instead.',
+    icon: "general-warning-triangle"
+  })
+}}
 
 {% block content %}
 {# About #}
