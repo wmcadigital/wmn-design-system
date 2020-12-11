@@ -2,7 +2,7 @@
 {% set pageTitle = "West Midlands Network<br/>Design System" %}
 {% set section = 'Home' %}
 {# Imports #}
-{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
@@ -57,56 +57,60 @@
   {# User research #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
     {{
-      wmndsContentCard({
-        clickable: true,
+      wmndsContentTilesNormal({
+        classModifiers: 'wmnds-content-tile--with-one-link',
+        title: "User research",
+        copy: "<p>Start with user needs to make sure you're building the right thing</p>",
+        smallTitle: true,
+        readMore: true,
         link: '/user-research/',
-        linkTitle: 'User research',
-        html: "<div class=\"wmnds-p-sm\">
-          <h3>User research</h3>
-        <p>Start with user needs to build the right thing</p>
-      </div>"
+        linkText: 'Read more about user research',
+        linkTitle: 'User research'
       })
     }}
   </div>
   {# Styles #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
     {{
-      wmndsContentCard({
-        clickable: true,
+      wmndsContentTilesNormal({
+        classModifiers: 'wmnds-content-tile--with-one-link',
+        title: "Styles",
+        copy: "<p>Make your service look and feel like WMN: colours, icons, typography and utility classes</p>",
+        smallTitle: true,
+        readMore: true,
         link: '/styles/',
-        linkTitle: 'Styles',
-        html: "<div class=\"wmnds-p-sm\">
-          <h3>Styles</h3>
-        <p>Make your service look and feel like West Midlands Network</p>
-      </div>"
+        linkText: 'Read more about styles',
+        linkTitle: 'Styles'
       })
     }}
   </div>
   {# Components #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
-  {{
-    wmndsContentCard({
-      clickable: true,
-      link: '/components/',
-      linkTitle: 'Components',
-      html: "<div class=\"wmnds-p-sm\">
-        <h3>Components</h3>
-      <p>Reusable parts of the user interface</p>
-    </div>"
-    })
-  }}
-</div>
+    {{
+      wmndsContentTilesNormal({
+        classModifiers: 'wmnds-content-tile--with-one-link',
+        title: "Components",
+        copy: "<p>Reusable parts of the user interface: content, map and form elements; buttons and messages</p>",
+        smallTitle: true,
+        readMore: true,
+        link: '/components/',
+        linkText: 'Read more about components',
+        linkTitle: 'Components'
+      })
+    }}
+  </div>
   {# Patterns #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
     {{
-      wmndsContentCard({
-        clickable: true,
+      wmndsContentTilesNormal({
+        classModifiers: 'wmnds-content-tile--with-one-link',
+        title: "Patterns",
+        copy: "<p>Commonly used sets of components</p>",
+        smallTitle: true,
+        readMore: true,
         link: '/patterns/',
-        linkTitle: 'Patterns',
-        html: "<div class=\"wmnds-p-sm\">
-          <h3>Patterns</h3>
-        <p>Commonly used sets of components</p>
-      </div>"
+        linkText: 'Read more about patterns',
+        linkTitle: 'Patterns'
       })
     }}
   </div>
