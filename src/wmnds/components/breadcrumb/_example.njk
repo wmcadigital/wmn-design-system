@@ -1,0 +1,11 @@
+{% raw %}
+{% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
+
+{{
+   wmndsBreadcrumb({
+      section: section,
+      pageTitle: pageTitle,
+      exampleAria: "Main"
+    })
+}}
+{% endraw %}
