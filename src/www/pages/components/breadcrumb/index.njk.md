@@ -5,32 +5,28 @@
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
 
-
 {% block content %}
+
+{% markdown %}
 {# About #}
-<h2>About</h2>
-<h3>What does it do?</h3>
-<ul>
-  <li>
-    Breadcrumbs help users to understand where they are within a website’s structure.
-  </li>
-</ul>
 
-<h3>When to use it?</h3>
-<ul>
-  <li>
-    When you need to help users understand and move between the multiple levels of a website.
-  </li>
-  <li>Always make sure that the breadcrumb is contained within a <code class="wmnds-website-inline-code">.wmnds-container</code> element. This ensures that the breadcrumb doesn't scale the size of large browser windows.</li>
-  <li>When displaying the current page within the breadcrumb, ensure that the modifier class <code class="wmnds-website-inline-code">.wmnds-breadcrumb__link--current</code> as seen below.</li>
-</ul>
+## About
 
-<h3>When not to use it?</h3>
-<ul>
-  <li>
-    When websites have flat structure
-  </li>
-</ul>
+### What does it do?
+
+- Breadcrumbs help users to understand where they are within a website’s structure.
+
+### When to use it?
+
+- When you need to help users understand and move between the multiple levels of a website.
+- Always make sure that the breadcrumb is contained within a <code class="wmnds-website-inline-code">.wmnds-container</code> element. This ensures that the breadcrumb doesn't scale the size of large browser windows.
+- When displaying the current page within the breadcrumb, ensure that the modifier class <code class="wmnds-website-inline-code">.wmnds-breadcrumb\_\_link--current</code> as seen below.
+
+### When not to use it?
+
+- When websites have flat structure
+
+{% endmarkdown %}
 
 {{
   compExample([
@@ -38,10 +34,15 @@
       section: section,
       pageTitle: pageTitle,
       exampleAria: "Main"
-    }) | trim
-  ])
+    })
+  ], {
+    componentPath: "wmnds/components/breadcrumb/",
+    njk: true,
+    njkProps: wmndsBreadcrumbProps,
+    js: false,
+    iframe: false
+  })
 }}
-
 
 <h3 id="mobile-app-breadcrumb">Mobile app variant of breadcrumb</h3>
 <p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network breadcrumb component.</p>
