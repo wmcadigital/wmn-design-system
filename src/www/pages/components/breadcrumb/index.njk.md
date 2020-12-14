@@ -44,24 +44,27 @@
   })
 }}
 
-<h3 id="mobile-app-breadcrumb">Mobile app variant of breadcrumb</h3>
-<p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network breadcrumb component.</p>
+{% markdown %}
 
-<p>The mobile app version of the breadcrumb ensures that it will not show on devices with a screen width less than 768px. This means the breadcrumb will only show on devices with a screen resolution bigger than 768px.</p>
+### Mobile app variant of breadcrumb <a name="mobile-app-breadcrumb"></a>
 
-<p>To use the mobile app variant:</p>
-<ul>
-  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-breadcrumb--mobile-app</code> to the wmnds-breadcrumb element</li>
-</ul>
+When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network breadcrumb component.
 
-<p>
-  You will most likely want to use this with the mobile variants of the
-  {{ wmndsLink({
-    contentText: 'header and footer patterns',
+The mobile app version of the breadcrumb ensures that it will not show on devices with a screen width less than 768px. This means the breadcrumb will only show on devices with a screen resolution bigger than 768px.
+
+To use the mobile app variant:
+
+- Add the modifier class <code class="wmnds-website-inline-code">wmnds-breadcrumb--mobile-app</code> to the wmnds-breadcrumb element
+
+You will most likely want to use this with the mobile variants of the
+{{
+  wmndsLink({
+    text: 'header and footer patterns',
     link: '/patterns/header-and-footer/#mobile-app-header'
-    })
-  }}.
-</p>
+  }) | trim
+}}.
+
+{% endmarkdown %}
 
 {{
   compExample([
@@ -70,7 +73,7 @@
       pageTitle: pageTitle,
       classModifiers: 'wmnds-breadcrumb--mobile-app',
       exampleAria: "Mobile app"
-    }) | trim
+    })
   ])
 }}
 
