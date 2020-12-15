@@ -65,16 +65,19 @@ using screen readers will here the same text twice.
 {% endmarkdown %}
 
 {{
-  compExample([
-    wmndsLink()
-  ],
-  {
-    componentPath: "wmnds/components/link/link/",
-    njk: true,
-    njkProps: wmndsLinkProps,
-    js: false,
-    iframe: false
-  })
+compExample([
+  wmndsLink( {
+      contentText: "Button text"
+    }
+  )
+],
+{
+componentPath: "wmnds/components/link/link/",
+njk: true,
+njkProps: wmndsLinkProps,
+js: false,
+iframe: false
+})
 }}
 
 {% markdown %}
@@ -190,15 +193,22 @@ using screen readers will here the same text twice.
 {{
   compExample([
     cta({
-      text: "Call to action button",
+      contentText: "Call to action button",
       linkTitle: "This is a call to action link"
     }),
     cta({
-      text: "Call to action icon button",
+      contentText: "Call to action icon button",
       iconRight: "general-chevron-right",
       linkTitle: "This is a call to action link"
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/link/as-button/",
+    njk: true,
+    njkProps: wmndsLinkAsButtonProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% markdown %}
@@ -228,17 +238,24 @@ using screen readers will here the same text twice.
 {{
   compExample([
     primary({
-      classNames: "wmnds-btn--primary",
-      text: "Primary button",
+      type: "primary",
+      contentText: "Primary button",
       linkTitle: "This is a primary link"
     }),
     primary({
-      classNames: "wmnds-btn--primary",
-      text: "Primary icon button",
+      type: "primary",
+      contentText: "Primary icon button",
       iconRight: "general-chevron-right",
       linkTitle: "This is a primary link"
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/link/as-button/",
+    njk: true,
+    njkProps: wmndsLinkAsButtonProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% markdown %}
@@ -271,17 +288,24 @@ using screen readers will here the same text twice.
 {{
   compExample([
     secondary({
-      classNames: "wmnds-btn--secondary",
-      text: "Secondary button",
+      type: "secondary",
+      contentText: "Secondary button",
       linkTitle: "This is a secondary link"
     }),
     secondary({
-      classNames: "wmnds-btn--secondary",
-      text: "Secondary icon button",
+      type: "secondary",
+      contentText: "Secondary icon button",
       iconRight: "general-chevron-right",
       linkTitle: "This is a secondary link"
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/link/as-button/",
+    njk: true,
+    njkProps: wmndsLinkAsButtonProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% markdown %}
@@ -309,17 +333,24 @@ using screen readers will here the same text twice.
 {{
   compExample([
     destructive({
-      classNames: "wmnds-btn--destructive",
-      text: "Destructive button",
+      type: "destructive",
+      contentText: "Destructive button",
       linkTitle: "This is a destructive link"
     }),
     destructive({
-      classNames: "wmnds-btn--destructive",
-      text: "Destructive icon button",
+      type: "destructive",
+      contentText: "Destructive icon button",
       iconRight: "general-chevron-right",
       linkTitle: "This is a destructive link"
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/link/as-button/",
+    njk: true,
+    njkProps: wmndsLinkAsButtonProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% markdown %}
@@ -347,16 +378,23 @@ using screen readers will here the same text twice.
 {{
   compExample([
     start({
-      classNames: "wmnds-btn--start",
-      text: "Start button",
+      type: "start",
+      contentText: "Start button",
       linkTitle: "This is a start link"
     }),
     start({
-      classNames: "wmnds-btn--start",
-      text: "Start icon button",
+      type: "start",
+      contentText: "Start icon button",
       iconRight: "general-chevron-right",
       linkTitle: "This is a start link"
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/link/as-button/",
+    njk: true,
+    njkProps: wmndsLinkAsButtonProps,
+    js: false,
+    iframe: false
+  })
 }}
 {% endblock %}

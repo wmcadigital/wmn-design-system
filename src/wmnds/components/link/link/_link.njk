@@ -10,10 +10,10 @@
 {% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
 {% set _linkRel = "noopener noreferrer" if linkTarget === "_blank" %} {# if target is blank then add rel noopener noreferrer to link #}
 {# Class modifiers #}
-{% set classModifiers = ' ' + params.classModifiers if params.classModifiers %}
-{% set classModifiers = classModifiers + " wmnds-link--with-chevron" if params.withChevronLeft or params.withChevronRight else class %}
+{% set class = ' ' + params.classModifiers if params.classModifiers %}
+{% set class = class + " wmnds-link--with-chevron" if params.withChevronLeft or params.withChevronRight else class %}
 
-<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-link{{classModifiers}}" {% if _linkRel %}rel="{{linkRel}}"{% endif %}>
+<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-link{{class}}" {% if _linkRel %}rel="{{linkRel}}"{% endif %}>
   {% if params.withChevronLeft -%}
     {{ wmndsIcon({ icon: "general-chevron-right", class: "wmnds-link__chevron wmnds-link__chevron--left" })}}
   {%- endif %}
@@ -22,6 +22,7 @@
   {% else %}
     {{contentText}}
   {% endif %}
+
   {% if params.withChevronRight -%}
     {{ wmndsIcon({ icon: "general-chevron-right", class: "wmnds-link__chevron wmnds-link__chevron--right" })}}
   {%- endif %}

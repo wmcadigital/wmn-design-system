@@ -1,0 +1,17 @@
+{% raw %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+
+{{
+   wmndsLink({
+      contentText: null,
+      contentHTML: "<strong>homepage</strong>",
+      link: '/',
+      linkTitle: "Go to Homepage",
+      linkTarget: null,
+      classModifiers: null,
+      isBackLink: false,
+      withChevronLeft: false,
+      withChevronRight: false
+    })
+}}
+{% endraw %}

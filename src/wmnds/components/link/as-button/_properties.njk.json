@@ -1,0 +1,49 @@
+{
+  "wmndsLinkAsButtonProps": [
+    {
+      "name": "type",
+      "type": "string",
+      "description": "Type of the button. As default it is <code class='wmnds-website-inline-code'>null</code>. Available types: <code class='wmnds-website-inline-code'>primary</code>, <code class='wmnds-website-inline-code'>secondary</code>, <code class='wmnds-website-inline-code'>destructive</code>, <code class='wmnds-website-inline-code'>start</code>, <code class='wmnds-website-inline-code'>mode</code> "
+    },
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the content that will be part of the link. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> Uses HTML to specifies what content is going to be linked."
+    },
+    {
+      "name": "link",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the URL of the page the link goes to."
+    },
+    {
+      "name": "linkTitle",
+      "type": "string",
+      "description": "<strong>Required.</strong> The link title attribute gives additional information about the page being linked to."
+    },
+    {
+      "name": "linkTarget",
+      "type": "string",
+      "description": "Specifies where to open the linked document. Defaults to <code class='wmnds-website-inline-code'>_self</code> that means it opens in the same tab. "
+    },
+    {
+      "name": "classModifiers",
+      "type": "string",
+      "description": "Specifies what class modifiers to apply to link component."
+    },
+    {
+      "name": "iconLeft",
+      "type": "string",
+      "description": "Specified the name of the left icon, which will be used to import icon and place it on the left side of the button, before text."
+    },
+    {
+      "name": "iconRight",
+      "type": "string",
+      "description": "Specifies the name of the right icon, which will be used to import icon and place it on the right side of the button, after text."
+    }
+  ]
+}
