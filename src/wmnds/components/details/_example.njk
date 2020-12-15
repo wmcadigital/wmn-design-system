@@ -1,0 +1,14 @@
+{% raw %}
+{% from "wmnds/components/details/_details.njk" import wmndsDetails %}
+
+{{
+   wmndsDetails({
+      headingText: "Detail Heading",
+      headingHTML: null,
+      contentText: null,
+      contentHTML: "<p><strong>Some random subtitle</strong></p>
+      <p>Lorem ipsum dolor sit...</p>",
+      isOpen: false
+    })
+}}
+{% endraw %}
