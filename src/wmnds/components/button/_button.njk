@@ -3,18 +3,19 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
 {# Set #}
-{% set text = params.text if params.text else "Button text" %} {# set button text #}
-{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set classNames = " " + params.classNames if params.classNames %} {# set svg left reference #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
-{% set paramClass = " " + params.classNames if params.classNames %} {# set paramClass to params.classNames if any #}
-{# if button disabled is true #}
-{% if params.disabled %}
-  {% set classNames = paramClass + " wmnds-btn--disabled" %}
-{% else %}
-  {% set classNames = paramClass if paramClass %}
-{% endif %}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set isActive = " wmnds-is--active" if params.isActive %}
+{% set isDarkBg = " wmnds-btn--dark-bg" if params.isDarkBg %}
+{% set isDisabled = " wmnds-btn--disabled" if params.isDisabled %}
+{% set isLoading = params.isLoading %}
+{% set role = params.role if params.role else "button" %}
+{% set text = params.text if params.text else "Button text" %} {# set button text #}
+{% set type = " wmnds-btn--" + params.type if params.type %}
 
-<button class="wmnds-btn{{ classNames }}" {% if params.disabled %}disabled="disabled"{% endif %} {% if params.type %}type="{{params.type}}"{% endif %}>
+
+<button class="wmnds-btn{{type}}{{classNames}}{{isActive}}{{isDarkBg}}{{isDisabled}}" {% if params.isDisabled %}disabled="disabled"{% endif %} type="{{role}}">
     {#- iconLeft -#}
     {%- if iconLeft %}
     {{
@@ -36,7 +37,7 @@
     }}
 
     {#- Loading spinner -#}
-    {%- elseif params.loading %}
+    {%- elseif isLoading %}
     {{ text -}}
     {{
       wmndsLoader({
