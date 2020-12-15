@@ -36,28 +36,28 @@
         link: link,
         linkTarget: linkTarget,
         linkTitle: linkTitle,
-        text: linkText,
+        contentText: linkText,
         classModifiers: 'wmnds-float-right'
-        }) | indent(6) | trim
+        })
       }}
       {%- endif %}
     </div>
   {%- else %}
     <ul class="wmnds-content-tile__list">
       <li class="wmnds-content-tile__list-item">
-        {{ wmndsLink({text: 'Information for drivers'}) | indent(8) | trim }}
+        {{ wmndsLink({contentText: 'Information for drivers'}) }}
       </li>
       <li class="wmnds-content-tile__list-item">
-        {{ wmndsLink({text: 'Information for bus passengers'}) | indent(8) | trim }}
+        {{ wmndsLink({contentText: 'Information for bus passengers'}) }}
       </li>
       <li class="wmnds-content-tile__list-item">
-        {{ wmndsLink({text: 'Information for tram passengers'}) | indent(8) | trim }}
+        {{ wmndsLink({contentText: 'Information for tram passengers'}) }}
       </li>
       <li class="wmnds-content-tile__list-item">
-        {{ wmndsLink({text: 'Information for pedestrians'}) | indent(8) | trim }}
+        {{ wmndsLink({contentText: 'Information for pedestrians'}) }}
       </li>
       <li class="wmnds-content-tile__list-item">
-        {{ wmndsLink({text: 'Getting to venues and attractions'}) | indent(8) | trim }}
+        {{ wmndsLink({contentText: 'Getting to venues and attractions'}) }}
       </li>
     </ul>
   {%- endif %}
