@@ -13,10 +13,11 @@
             <li class="wmnds-content-card__list-item">
                 {{
                     wmndsButton({
+                        classNames: "wmnds-content-card__list-item-btn",
+                        iconRight: "general-chevron-right",
                         text: buttonText,
-                        classNames: "wmnds-btn--primary wmnds-content-card__list-item-btn",
-                        iconRight: "general-chevron-right"
-                    }) | indent(16) | trim
+                        type: "primary"
+                    })
                 }}
             </li>
             {% endfor -%}

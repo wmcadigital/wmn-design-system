@@ -4,7 +4,7 @@
 {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
 {% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}
 {% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
-{% from "wmnds/components/button/_button.njk" import wmndsButton as primary %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
 
 {# Set params #}
 {% set isOpen = " wmnds-is-open" if params.isOpen %}
@@ -35,7 +35,7 @@
       {{
         wmndsTextarea({
           id: (id + '-textarea')
-        }) | trim | indent(4)
+        })
       }}
     </div>
     <br><br>
@@ -43,21 +43,20 @@
       {{
         wmndsInput({
           id: (id + '-input')
-        }) | trim | indent(4)
+        })
       }}
     </div>
     <br><br>
     <div class="wmnds-col-1">
       {{
-        wmndsCheckboxes() | trim | indent(4)
+        wmndsCheckboxes() 
       }}
     </div>
     <br><br>
     {{
-      primary({
-        classNames: "wmnds-btn",
+      wmndsButton({
         text: "Submit feedback"
-      }) | trim | indent(4)
+      })
     }}
   </form>
 </div>
