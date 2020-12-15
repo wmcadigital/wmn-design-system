@@ -217,8 +217,8 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     }),
     secondary({
       iconRight: "general-chevron-right",
-      type: "secondary",
-      text: "Secondary icon button"
+      text: "Secondary icon button",
+      type: "secondary"
     }),
     secondary({
       iconRight: "general-chevron-right",
