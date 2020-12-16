@@ -1,13 +1,14 @@
 // Gulp requires
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
-
 // Local requires
 const paths = require('./paths.js');
+const { browserSync } = require('./browser-sync'); // BrowserSync server
+
 const { getRoot, packageJson, build } = require('./utils');
 
 // Process, lint, and minify Sass files
-module.exports.buildStyles = () => {
+const buildingStyles = () => {
   return src(paths.styles.minifySrc)
     .pipe(
       plugins.plumber({
@@ -29,10 +30,11 @@ module.exports.buildStyles = () => {
       })
     )
     .pipe(plugins.sourcemaps.write(getRoot(paths.styles.output) + paths.logs.sourcemaps))
-    .pipe(dest(paths.styles.output));
+    .pipe(dest(paths.styles.output))
+    .pipe(browserSync.stream());
 };
 
-module.exports.buildReactNativeStyles = () => {
+const buildingReactNativeStyles = () => {
   return src(paths.styles.reactNativeSrc)
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
@@ -46,3 +48,6 @@ module.exports.buildReactNativeStyles = () => {
     )
     .pipe(dest(`${paths.styles.output}react-native/`));
 };
+
+module.exports.buildStyles = buildingStyles;
+module.exports.buildReactNativeStyles = buildingReactNativeStyles;
