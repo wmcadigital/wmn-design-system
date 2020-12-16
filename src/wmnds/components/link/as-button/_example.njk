@@ -1,17 +1,16 @@
 {% raw %}
-{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
 
 {{
-   wmndsLink({
+   wmndsLinkAsButton({
       contentText: null,
-      contentHTML: "<strong>homepage</strong>",
+      contentHTML: "<em>homepage</em>",
       link: '/',
       linkTitle: "Go to Homepage",
       linkTarget: null,
-      classModifiers: null,
-      isBackLink: false,
-      withChevronLeft: false,
-      withChevronRight: false
+      classes: null,
+      iconLeft: null,
+      iconRight: 'general-chevron-right'
     })
 }}
 {% endraw %}

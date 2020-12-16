@@ -31,7 +31,7 @@
       "description": "Specifies where to open the linked document. Defaults to <code class='wmnds-website-inline-code'>_self</code> that means it opens in the same tab. "
     },
     {
-      "name": "classModifiers",
+      "name": "classes",
       "type": "string",
       "description": "Specifies what class modifiers to apply to link component."
     },
