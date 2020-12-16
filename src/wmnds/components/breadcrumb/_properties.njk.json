@@ -1,34 +1,24 @@
 {
   "wmndsBreadcrumbProps": [
     {
-      "name": "abc123Test",
+      "name": "section",
       "type": "string",
-      "description": "<strong>hello.</strong> Must be unique. Used as an id in the HTML for the accordion as a whole, and also as a prefix for the ids of the section contents and the buttons that open them, so that those ids can be the target of aria-labelledby and aria-control attributes."
+      "description": "Specifies the section which the current page falls under. If this is the same as the page title it will not display."
     },
     {
-      "name": "headingText",
+      "name": "pageTitle",
       "type": "string",
-      "description": "<strong>Required.</strong> Text content for heading line. If <code class='wmnds-website-inline-code'>headingHTML</code> is supplied, this is ignored."
+      "description": "<strong>Required.</strong> Specifies the page title for the current page."
     },
     {
-      "name": "headingHTML",
+      "name": "ariaLabel",
       "type": "string",
-      "description": "<strong>Required.</strong> HTML content for heading line."
+      "description": "The accessibility label for the breadcrumb component. If not provided, this will default to 'Breadcrumbs'"
     },
     {
-      "name": "contentText",
-      "type": "string",
-      "description": "<strong>Required.</strong> The text content of each section, which is hidden when the section is closed. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
-    },
-    {
-      "name": "contentHTML",
-      "type": "string",
-      "description": "<strong>Required.</strong> The HTML content of each section, which is hidden when the section is closed."
-    },
-    {
-      "name": "isOpen",
+      "name": "isMobileApp",
       "type": "boolean",
-      "description": "If true, accordion element will be expanded upon initial load. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+      "description": "If true, breadcrumb will only show on devices with a screen resolution bigger than 768px"
     }
   ]
 }

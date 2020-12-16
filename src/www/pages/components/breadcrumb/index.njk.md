@@ -33,7 +33,7 @@
     wmndsBreadcrumb({
       section: section,
       pageTitle: pageTitle,
-      exampleAria: "Main"
+      ariaLabel: "Main"
     })
   ], {
     componentPath: "wmnds/components/breadcrumb/",
@@ -71,8 +71,8 @@ You will most likely want to use this with the mobile variants of the
     wmndsBreadcrumb({
       section: section,
       pageTitle: pageTitle,
-      classModifiers: 'wmnds-breadcrumb--mobile-app',
-      exampleAria: "Mobile app"
+      isMobileApp: true,
+      ariaLabel: "Mobile app"
     })
   ])
 }}
