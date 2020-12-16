@@ -34,6 +34,10 @@
     - Inside the <code class="wmnds-website-inline-code">{{ "<details>" }}</code> tag, include 1 <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> and 1 <code class="wmnds-website-inline-code">{{ "<div>" }}</code> tag as direct children of <code class="wmnds-website-inline-code">{{ "<details>" }}</code>
     - Place your link text inside <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> and the important information inside the <code class="wmnds-website-inline-code">{{ "<div>" }}</code>.
 
+### Using with IE11?
+
+    - Make sure you include the polyfill in the recommended JavaScript below as the <code class="wmnds-website-inline-code">{{ "<details>" }}</code> and <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> elements are not supported at IE11.
+
 ---
 
 ## Reduced
@@ -50,7 +54,7 @@
       componentPath: "wmnds/components/details/",
       njk: true,
       njkProps: wmndsDetailsProps,
-      js: false,
+      js: true,
       iframe: false
     })
 }}
@@ -72,7 +76,7 @@
       componentPath: "wmnds/components/details/",
       njk: true,
       njkProps: wmndsDetailsProps,
-      js: false,
+      js: true,
       iframe: false
     })
 }}

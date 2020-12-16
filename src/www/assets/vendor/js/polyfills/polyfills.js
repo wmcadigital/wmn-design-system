@@ -5,4 +5,4 @@
 // This file is then included as the first import in the main wmnds-website.js file so our polyfills get loaded
 export * from './ie11-forEach';
 export * from './includes';
-export * from './details-element'
+export * from '../../../../../wmnds/components/details/_example';
