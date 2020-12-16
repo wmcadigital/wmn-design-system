@@ -40,15 +40,12 @@
 
 ---
 
-## Reduced
+## Closed
 
 {% endmarkdown %}
 {{
     compExample([
-        wmndsDetails({
-            headingText: "Detail summary",
-            contentText: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        })
+        wmndsDetails()
     ],
     {
       componentPath: "wmnds/components/details/",
@@ -68,8 +65,7 @@
     compExample([
         wmndsDetails({
             isOpen: true,
-            headingText: "Detail summary",
-            contentText: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            contentHTML: "<p><strong>Some random subtitle</strong></p><p>Lorem ipsum dolor sit...</p>"
         })
     ],
     {
