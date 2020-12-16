@@ -21,7 +21,7 @@ are:
 - Certain call to actions
 - Links to internal or external pages
 
-### What do the **link** attritubes mean?
+<h3>What do the **link** attritubes mean?</h3>
 
 The **href** attritube is used to define the link address
 The **target** attritube is used to define where to open the linked document.
@@ -48,16 +48,16 @@ using screen readers will here the same text twice.
 
 ## Default link
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Highlight that the word or phrase is different from other body text
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - When the link is within text
 - When the link is part of a list of links
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - The start of a process
 - When the link is a destructive action
@@ -85,21 +85,21 @@ iframe: false
 
 ## Back link
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Help users go back to the previous page in a multi-page transaction
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - Only use a back link on transactional services or multi-page forms.
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - Never use it together with breadcrumbs. Do user research to find out if users find breadcrumbs or the back link easier to use.
 - Within COVID-19 services, user research found that too many links on the page distracted users.
 - Do not use the back link on a content page.
 
-### How it works?
+<h3>How it works?</h3>
 
 - Always place back links at the top of the page.
 - Make sure the link takes users to the previous page they were on, in the state they last saw it.
@@ -125,22 +125,22 @@ iframe: false
 
 ## Link with chevron
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Directs users to a related page which contains further information.
 - Allows users to navigate forwards and backwards between search results.
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - When you want to direct users to a page with additional information.
 - Only use the Previous variant for the search results page.
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - In body text. Use the Default link component instead.
 - On transactional services or multi-page forms. You should use the Back link component for this.
 
-### How does it work?
+<h3>How does it work?</h3>
 
 - If used on a site-wide banner, such as the Emergency banner, then the link will need to be hidden on the page which it links to.
 - The colour of the chevron icon must meet graphical object colour contrast requirements of at least 3:1.
@@ -171,17 +171,17 @@ iframe: false
 
 ## Call to action buttons
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Encourages the most desired action you want visitors to take.
 - Attracts attention on the page.
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - When you need a strong visual indicator to help user to complete their journey and do their task.
 - When you need action oriented button. Think: 'Done', 'Save', 'Next', 'Submit'.
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - What action you want users to take is not essential in completing their task.
 - When a button is a destructive action.
@@ -216,17 +216,17 @@ iframe: false
 
 ## Primary buttons
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Gives users alternative to the call to action button.
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - When action is not as important as a call to action so it shouldn’t call as much attention.
 - When a button typically indicates actions that are important but not the call to action on a page.
 - Can be used in isolation or in conjunction with call to action button and secondary.
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - When a button is essential for continuing the user journey
 - When a button is a destructive action
@@ -263,19 +263,19 @@ iframe: false
 
 ## Secondary buttons
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Indicates action that is less important than call to action primary.
 - When used together with call to action and primary button it creates visual hierarchy.
 - Highlights an inessential action.
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - To indicate lower priority than call to action and primary button.
 - To create a clear hierarchy of priority and importance of actions.
 - When a button is inessential for continuing the user journey.
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - When you need a strong visual indicator to help user to complete their journey and do their task.
 - When a button is essential for continuing the user journey
@@ -313,16 +313,16 @@ iframe: false
 
 ## Destructive button as link
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Shows that the button's action deletes or removes something
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - When an action is destructive
 - Example: deleting a favourite route, removing a swift card, deleting an account
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - When a button starts a process or journey
 - When a button is trying to attract the user's attention
@@ -358,15 +358,15 @@ iframe: false
 
 ## Start button as link
 
-### What does it do?
+<h3>What does it do?</h3>
 
 - Shows that the button starts a process or journey
 
-### When to use it?
+<h3>When to use it?</h3>
 
 - When a button starts a process or journey
 
-### When not to use it?
+<h3>When not to use it?</h3>
 
 - When a button is a destructive action
 - When a button is trying to attract the user's attention
