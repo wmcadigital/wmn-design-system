@@ -9,8 +9,8 @@ And we show the current page breadcrumb at all times.
 {# Set sectionUrl and pageUrl #}
 {% set sectionUrl =  '/' + section | lower | replace(" ", "-") if params.pageTitle != section %}
 {% set pageUrl =  '/' + params.pageTitle | lower | replace(" ", "-") + '/' %}
-{% set class = ' ' + params.classModifiers if params.classModifiers %}
-{% set ariaLabel = params.exampleAria + " example breadcrumbs" if params.exampleAria else "Breadcrumbs" %}
+{% set class = ' wmnds-breadcrumb--mobile-app' if params.isMobileApp %}
+{% set ariaLabel = params.ariaLabel + " example breadcrumbs" if params.ariaLabel else "Breadcrumbs" %}
 
 <nav aria-label="{{ariaLabel}}" class="wmnds-breadcrumb{{class}}">
   <ol class="wmnds-breadcrumb__list">
@@ -28,7 +28,7 @@ And we show the current page breadcrumb at all times.
       </a>
     </li>
     {%- endif %}
-    {#- Show the curent page in the breadcrumb #}
+    {#- Show the current page in the breadcrumb #}
     <li class="wmnds-breadcrumb__list-item">
       <a href="{{ sectionUrl + pageUrl }}" class="wmnds-breadcrumb__link wmnds-breadcrumb__link--current" aria-current="page">
         {{params.pageTitle}}
