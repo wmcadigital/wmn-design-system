@@ -35,7 +35,13 @@
         wmndsInsetText({
             html: "Example of inset text"
         })
-    ])
+    ], {
+      componentPath: "wmnds/components/inset-text/",
+      njk: true,
+      njkProps: wmndsInsetTextProps,
+      js: false,
+      iframe: false
+    })
   }}
 {# End inset text #}
 
@@ -67,14 +73,19 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {{
     compExample([
         wmndsInsetText({
             html:  "Example Callout title<br>Example callout description.",
             label: "Example Callout"
         })
-    ])
+    ], {
+      componentPath: "wmnds/components/inset-text/",
+      njk: true,
+      njkProps: wmndsInsetTextProps,
+      js: false,
+      iframe: false
+    })
   }}
 {# End inset text #}
 

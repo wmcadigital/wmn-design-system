@@ -2,7 +2,7 @@
 
 {# Set #}
 {% set html = params.html if params.html else "Type something" %} {# set content #}
-{% set label = params.label if params.label else "" %} {# set content #}
+{% set ariaLabel = params.label if params.ariaLabel else "Inset text" %} {# set content #}
 
 <div class="wmnds-inset-text" {% if params.label %} aria-label="{{ label }}" {% endif %}>
     {{html | safe }}

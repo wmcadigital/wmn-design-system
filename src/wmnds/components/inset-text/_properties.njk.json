@@ -1,0 +1,14 @@
+{
+  "wmndsInsetTextProps": [
+    {
+      "name": "html",
+      "type": "string",
+      "description": "<strong>Required.</strong> The HTML content to use within the component."
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "description": "<strong>Required.</strong> The label to be attached to the component for accessibility purposes."
+    }
+  ]
+}
