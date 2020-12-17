@@ -1,0 +1,9 @@
+{
+  "wmndsFileDownloadProps": [
+    {
+      "name": "accessible",
+      "type": "boolean",
+      "description": "Determines whether to display the file as an accessible or non-accessible file component. Defaults to <code class='wmnds-website-inline-code'>true</code>."
+    }
+  ]
+}
