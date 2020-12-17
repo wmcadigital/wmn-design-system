@@ -53,19 +53,19 @@
 
 ## Example Callout
 
-### What does it do?
+### What does it do? <a name="example-callout-what-does-it-do"></a>
 
 - Highlight a contextual example to provide help users understand the broader page content.
 
-### When to use it?
+### When to use it? <a name="example-callout-when-to-use-it"></a>
 
 - When a contextual example might help the user understand the information.
 
-### When not to use it?
+### When not to use it? <a name="example-callout-when-not-to-use-it"></a>
 
 - When the information is simple enough for our user's to understand. Don't give an example for the sake of it.
 
-### How to use it?
+### How to use it? <a name="example-callout-how-to-use-it"></a>
 
 - Use a concise heading that a user can easily scan and understand.
 - Make sure the heading is relevant to both the content it's supporting and the context it is providing in the main body text.
