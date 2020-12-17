@@ -62,21 +62,21 @@
 
 {# What #}
 
-### What does it do?
+### What does it do? <a name="non-accessible-what-does-it-do"></a>
 
 - Shows the user that the file is not accessible
 - Offers the user a way to get the file in a different format
 
 {# When to #}
 
-### When to use it?
+### When to use it? <a name="non-accessible-when-to-use-it"></a>
 
 - When you have an offline version of the on-page content which is not accessible
 - When the file cannot be made accessible. For example, complex maps.
 
 {# When not to #}
 
-### When not to use it?
+### When not to use it? <a name="non-accessible-when-not-to-use-it"></a>
 
 - If the document is accessible to users with assistive technology. In that instance, use the accessible file component.
 - You still need to make the document accessible as soon as possible. Ideally before publishing it.
