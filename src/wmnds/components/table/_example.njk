@@ -1,0 +1,22 @@
+{% raw %}
+{% from "wmnds/components/table/_table.njk" import wmndsTable %}
+
+{{
+   wmndsTable(
+     {
+        rows: 3,
+        cols: 3,
+        cellClasses: ["", "", "wmnds-text-align-right"],
+        title: "Table Title",
+        caption: "Table Caption",
+        hideHeader: false,
+        headers: ["Header 1", "Header 2", "Header 3"],
+        classNames: "wmnds-m-b-xl",
+        values: [
+          ["Cell 1", "Cell 2", "Cell 3"],
+          ["Cell 1", "Cell 2", "Cell 3"],
+          ["Cell 1", "Cell 2", "Cell 3"]
+        ]
+    })
+}}
+{% endraw %}

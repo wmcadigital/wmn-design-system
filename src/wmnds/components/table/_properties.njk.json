@@ -1,0 +1,49 @@
+{
+  "wmndsTableProps": [
+    {
+      "name": "caption",
+      "type": "string",
+      "description": "Caption text"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Table title (displayed as h3)"
+    },
+    {
+      "name": "hideHeader",
+      "type": "boolean",
+      "description": "Determines whether to display a table header row (<code class='wmnds-website-inline-code'>thead</code>) at the top of the table. Set to <code class='wmnds-website-inline-code'>false</code> by default."
+    },
+    {
+      "name": "headers",
+      "type": "array",
+      "description": "Array of table head cells. Will not show if hideHeader is true."
+    },
+    {
+      "name": "rows",
+      "type": "integer",
+      "description": "<strong>Required.</strong> Number of rows to include in the table"
+    },
+    {
+      "name": "cols",
+      "type": "integer",
+      "description": "<strong>Required.</strong> Number of columns to include in the table"
+    },
+    {
+      "name": "classNames",
+      "type": "string",
+      "description": "Additional classes to add to the table container."
+    },
+    {
+      "name": "cellClasses",
+      "type": "array",
+      "description": "Additional classes to add to the table cells."
+    },
+    {
+      "name": "values",
+      "type": "array",
+      "description": "An array of values which will populate the table. See nunjucks markup for example."
+    }
+  ]
+}

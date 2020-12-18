@@ -29,7 +29,7 @@
                 cols: 3,
                 cellClasses: ["", "", "wmnds-text-align-right"],
                 title: "Personal Details",
-                noHeaders: true,
+                hideHeader: true,
                 classNames: "wmnds-m-b-xl",
                 values: [
                     ["Name", "Andy Street", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"],
@@ -43,7 +43,7 @@
                 cols: 3,
                 cellClasses: ["", "", "wmnds-text-align-right"],
                 title: "Ticket Details",
-                noHeaders: true,
+                hideHeader: true,
                 classNames: "wmnds-m-b-xl"
             }) | trim | indent(4),
 
@@ -52,7 +52,7 @@
                 cols: 3,
                 cellClasses: ["", "", "wmnds-text-align-right"],
                 title: "Direct Debit",
-                noHeaders: true,
+                hideHeader: true,
                 classNames: "wmnds-m-b-xl"
             }) | trim | indent(4)
         ] | join("\n    ") | safe

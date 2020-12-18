@@ -3,13 +3,13 @@
 {# Params #}
 {% set title = params.title if params.title %}
 {% set caption = params.caption if params.caption %}
-{% set noHeaders = params.noHeaders if params.noHeaders else false %}
+{% set hideHeader = params.hideHeader if params.hideHeader else false %}
 {% set classNames = " " + params.classNames if params.classNames %}
-{% set noHeadersClass = " wmnds-table--without-header" if params.noHeaders else "" %}
+{% set hideHeaderClass = " wmnds-table--without-header" if params.hideHeader else "" %}
 
 
 
-<table class="wmnds-table {{classNames}} {{noHeadersClass}}">
+<table class="wmnds-table{{classNames}}{{hideHeaderClass}}">
   {%- if title %}
   <h3>
     {{title}}
@@ -23,7 +23,7 @@
   {%- endif -%}
 
   
-  {%- if noHeaders === false %}
+  {%- if hideHeader === false %}
     {%- if params.headers %}
       <thead>
         <tr>
@@ -46,7 +46,7 @@
   <tbody>
     {%- for j in range(1, params.rows + 1) %}
     <tr>
-      <th scope="row" class="{{params.cellClasses[0]}}" {% if params.headers %}data-header="{{params.headers[0]}}"{% else %}data-header="Header 1"{% endif %}>
+      <th scope="row" {% if params.cellClasses[0] %}class="{{params.cellClasses[0]}}"{% endif %} {% if params.headers %}data-header="{{params.headers[0]}}"{% endif %}>
         {%- if params.values -%}
           {{- params.values[j-1][0] -}}
         {% else -%}
@@ -55,7 +55,7 @@
       </th>
 
       {%- for k in range(1, params.cols) %}
-        <td class="{{params.cellClasses[k]}}" {% if params.headers %}data-header="{{params.headers[k]}}"{% else %}data-header="Header {{k+1}}"{% endif %}>
+        <td {% if params.cellClasses[k] %}class="{{params.cellClasses[k]}}"{% endif %} {% if params.headers %}data-header="{{params.headers[k]}}"{% endif %}>
           {%- if params.values %}
             {{- params.values[j-1][k] | safe -}}
           {%- else -%}

@@ -44,9 +44,22 @@
     wmndsTable({
       rows: 3,
       cols: 3,
-      caption: "Table Title"
+      caption: "Table caption",
+      title: "Table title",
+      headers: ["Header 1", "Header 2", "Header 3"],
+      values: [
+        ["Cell 1", "Cell 2", "Cell 3"],
+        ["Cell 1", "Cell 2", "Cell 3"],
+        ["Cell 1", "Cell 2", "Cell 3"]
+      ]
     })
-  ])
+  ], {
+    componentPath: "wmnds/components/table/",
+    njk: true,
+    njkProps: wmndsTableProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End Table #}
 
@@ -62,9 +75,15 @@
       rows: 3,
       cols: 3,
       caption: "Table Title",
-      noHeaders: true
+      hideHeader: true
     })
-  ])
+  ], {
+    componentPath: "wmnds/components/table/",
+    njk: true,
+    njkProps: wmndsTableProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End Table #}
 
