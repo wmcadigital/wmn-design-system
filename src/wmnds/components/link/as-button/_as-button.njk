@@ -11,9 +11,10 @@
 {% set classes = " " + params.classes if params.classes %} {# set params.classNames if any #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set _linkRel = "noopener noreferrer" if linkTarget === "_blank" %} {# if target is blank then add rel noopener noreferrer to link #}
 {% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 
-<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-btn{{ classes }}{{ type }}">
+<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-btn{{ classes }}{{ type }}" {% if _linkRel %}rel="{{linkRel}}"{% endif %}>
   {#- iconLeft -#}
   {% if iconLeft %}
     {{
