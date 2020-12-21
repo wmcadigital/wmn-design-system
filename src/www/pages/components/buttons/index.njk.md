@@ -50,28 +50,28 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     cta({
-      text: "Call to action button"
+      contentText: "Call to action button"
     }),
     cta({
       isActive: true,
-      text: "Call to action active button"
+      contentText: "Call to action active button"
     }),
     cta({
       isDisabled: true,
-      text: "Call to action disabled button"
+      contentText: "Call to action disabled button"
     }),
     cta({
       iconRight: "general-chevron-right",
-      text: "Call to action icon button"
+      contentText: "Call to action icon button"
     }),
     cta({
       isLoading: true,
-      text: "Call to action loading button"
+      contentText: "Call to action loading button"
     }),
     cta({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      text: "Call to action icon disabled button"
+      contentText: "Call to action icon disabled button"
     })
   ],
   {
@@ -94,12 +94,12 @@ Icons should only be used where it is deemed absolutely necessary to communicate
   compExample([
     cta({
       isDarkBg: true,
-      text: "Call to action dark bg button"
+      contentText: "Call to action dark bg button"
     }),
     cta({
       isDarkBg: true,
       isActive: true,
-      text: "Call to action dark bg active button"
+      contentText: "Call to action dark bg active button"
     })
   ],
   {
@@ -138,28 +138,28 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     primary({
-      text: "Primary button",
+      contentText: "Primary button",
       type: "primary"
     }),
     primary({
       isActive: true,
-      text: "Primary active button",
+      contentText: "Primary active button",
       type: "primary"
     }),
     primary({
       isDisabled: true,
-      text: "Primary disabled button",
+      contentText: "Primary disabled button",
       type: "primary"
     }),
     primary({
       iconRight: "general-chevron-right",
-      text: "Primary icon button",
+      contentText: "Primary icon button",
       type: "primary"
     }),
     primary({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      text: "Primary icon disabled button",
+      contentText: "Primary icon disabled button",
       type: "primary"
     })
   ],
@@ -202,28 +202,28 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     secondary({
-      text: "Secondary button",
+      contentText: "Secondary button",
       type: "secondary"
     }),
     secondary({
       isActive: true,
-      text: "Secondary active button",
+      contentText: "Secondary active button",
       type: "secondary"
     }),
     secondary({
       isDisabled: true,
-      text: "Secondary disabled button",
+      contentText: "Secondary disabled button",
       type: "secondary"
     }),
     secondary({
       iconRight: "general-chevron-right",
-      text: "Secondary icon button",
+      contentText: "Secondary icon button",
       type: "secondary"
     }),
     secondary({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      text: "Secondary icon disabled button",
+      contentText: "Secondary icon disabled button",
       type: "secondary"
     })
   ],
@@ -247,13 +247,13 @@ Icons should only be used where it is deemed absolutely necessary to communicate
   compExample([
     secondary({
       isDarkBg: true,
-      text: "Secondary dark bg button",
+      contentText: "Secondary dark bg button",
       type: "secondary"
     }),
     secondary({
       isActive: true,
       isDarkBg: true,
-      text: "Secondary dark bg active button",
+      contentText: "Secondary dark bg active button",
       type: "secondary"
     })
   ],
@@ -290,28 +290,28 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     destructive({
-      text: "Destructive button",
+      contentText: "Destructive button",
       type: "destructive"
     }),
     destructive({
       isActive: true,
-      text: "Destructive active button",
+      contentText: "Destructive active button",
       type: "destructive"
     }),
     destructive({
       isDisabled: true,
-      text: "Destructive disabled button",
+      contentText: "Destructive disabled button",
       type: "destructive"
     }),
     destructive({
       iconRight: "general-chevron-right",
-      text: "Destructive icon button",
+      contentText: "Destructive icon button",
       type: "destructive"
     }),
     destructive({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      text: "Destructive icon disabled button",
+      contentText: "Destructive icon disabled button",
       type: "destructive"
     })
   ],
@@ -348,28 +348,28 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     start({
-      text: "Start button",
+      contentText: "Start button",
       type: "start"
     }),
     start({
       isActive: true,
-      text: "Start active button",
+      contentText: "Start active button",
       type: "start"
     }),
     start({
       isDisabled: true,
-      text: "Start disabled button",
+      contentText: "Start disabled button",
       type: "start"
     }),
     start({
       iconRight: "general-chevron-right",
-      text: "Start icon button",
+      contentText: "Start icon button",
       type: "start"
     }),
     start({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      text: "Start icon disabled button",
+      contentText: "Start icon disabled button",
       type: "start"
     })
   ],
@@ -408,34 +408,34 @@ Icons should only be used where it is deemed absolutely necessary to communicate
   compExample([
     mode({
       iconLeft: "modes-isolated-bus",
-      text: "Bus",
+      contentText: "Bus",
       type: "mode"
     }),
     mode({
       isActive: true,
       iconLeft: "modes-isolated-bus",
-      text: "Bus active",
+      contentText: "Bus active",
       type: "mode"
     }),
     mode({
       iconLeft: "modes-isolated-rail",
-      text: "Train",
+      contentText: "Train",
       type: "mode"
     }),
     mode({
       iconLeft: "modes-isolated-metro",
-      text: "Metro",
+      contentText: "Metro",
       type: "mode"
     }),
     mode({
       iconLeft: "modes-isolated-roads",
-      text: "Roads",
+      contentText: "Roads",
       type: "mode"
     }),
     mode({
       iconLeft: "modes-isolated-bus",
       isDisabled: true,
-      text: "Disabled mode button",
+      contentText: "Disabled mode button",
       type: "mode"
     })
   ],
@@ -470,7 +470,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     wmndsButton({
-      text: "Button as link",
+      contentText: "Button as link",
       type: "link"
     })
   ],
