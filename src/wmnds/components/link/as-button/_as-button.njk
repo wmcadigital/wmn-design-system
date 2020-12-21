@@ -2,16 +2,15 @@
 {# Imports #}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Set vars #}
-{% set classes = " " + params.classes if params.classes %} {# set params.classNames if any #}
 {% set type = " wmnds-btn--" + params.type if params.type %}
 {% set contentText = params.contentText if params.contentText else "Button text" %}
 {% set contentHTML = params.contentHTML if params.contentHTML else null %}
-{% set text = params.text if params.text else "Button text" %} {# set button text #}
-{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
-{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
 {% set link = params.link if params.link else "#" %} {# set link url #}
 {% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
 {% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
+{% set classes = " " + params.classes if params.classes %} {# set params.classNames if any #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
 {% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 
 <a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-btn{{ classes }}{{ type }}">
