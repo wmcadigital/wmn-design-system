@@ -6,8 +6,8 @@
 {% set label = params.label if params.label else "Inset text" %} {# set content #}
 {% set classes = " " + params.classes if params.classes else "" %} {# set content #}
 
-<div id="{{ id }}" class="wmnds-inset-text{{classes}}" {% if params.label %} aria-label="{{ label }}" {% endif %}>
-    {{html | safe }}
+<div {% if params.id %}id="{{ id }}"{% endif %} class="wmnds-inset-text{{classes}}" {% if params.label %}aria-label="{{ label }}"{% endif %}>
+    {{contentHTML | safe }}
 </div>
 
 {% endmacro %}
