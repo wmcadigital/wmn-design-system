@@ -1,9 +1,19 @@
 {
   "wmndsInsetTextProps": [
     {
-      "name": "html",
+      "name": "contentHTML",
       "type": "string",
       "description": "<strong>Required.</strong> The HTML content to use within the component."
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Id attribute to add to the inset text container."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the inset text container."
     },
     {
       "name": "ariaLabel",

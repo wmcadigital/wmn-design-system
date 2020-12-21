@@ -33,7 +33,7 @@
 {{
     compExample([
         wmndsInsetText({
-            html: "Example of inset text"
+            contentHTML: "Example of inset text"
         })
     ], {
       componentPath: "wmnds/components/inset-text/",
@@ -53,19 +53,19 @@
 
 ## Example Callout
 
-### What does it do? <a name="example-callout-what-does-it-do"></a>
+<h3>What does it do?</h3>
 
 - Highlight a contextual example to provide help users understand the broader page content.
 
-### When to use it? <a name="example-callout-when-to-use-it"></a>
+<h3>When to use it?</h3>
 
 - When a contextual example might help the user understand the information.
 
-### When not to use it? <a name="example-callout-when-not-to-use-it"></a>
+<h3>When not to use it?</h3>
 
 - When the information is simple enough for our user's to understand. Don't give an example for the sake of it.
 
-### How to use it? <a name="example-callout-how-to-use-it"></a>
+<h3>How to use it?</h3>
 
 - Use a concise heading that a user can easily scan and understand.
 - Make sure the heading is relevant to both the content it's supporting and the context it is providing in the main body text.
@@ -76,7 +76,7 @@
 {{
     compExample([
         wmndsInsetText({
-            html:  "Example Callout title<br>Example callout description.",
+            contentHTML:  "Example Callout title<br>Example callout description.",
             label: "Example Callout"
         })
     ], {
