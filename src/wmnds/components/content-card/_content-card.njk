@@ -5,9 +5,9 @@
 {# Opening & closing tags #}
 {% set tag = "a" if params.clickable else "div" %}
 {% set href = params.href if params.href else "#" %}
-{% set attributes = " href=\"" + href + "\" target=\"_self\"" if params.clickable else "" %}
+{% set _attributes = " href=\"" + href + "\" target=\"_self\"" if params.clickable else "" %}
 {# HTML content #}
-{% set html = params.html if params.html else "
+{% set contentHTML = params.contentHTML if params.contentHTML else "
     <div class=\"wmnds-p-sm\">
         <h2>Where the adventure starts</h2>
         <p>Whatever your plans this holiday, get there with our great range of family tickets and discount vouchers.</p>
@@ -16,11 +16,11 @@
 
 {# This macro checks if it's being called inside a {% call %} tag #}
 {# It's an easier way to pass in larger html content  #}
-<{{tag}}{{attributes | safe}} class="wmnds-content-card{{variantModifier + yellowModifier}}">
+<{{tag}}{{_attributes | safe}} class="wmnds-content-card{{variantModifier + yellowModifier}}">
 {%- if caller -%}
     {{ caller() }}
     {%- else -%}
-    {{ html | safe }}
+    {{ contentHTML | safe }}
 {%- endif -%}
 </{{tag}}>
 {% endmacro %}
