@@ -1,55 +1,55 @@
 {% macro wmndsContentTileAdviceMoving(params) %}
-{%- from "wmnds/components/button/_button.njk" import wmndsButton -%}
+{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton -%}
 
 <div class="wmnds-content-tile">
   <h2 class="wmnds-content-tile__title">Advice to keep moving</h2>
   <div class="wmnds-content-tile__buttons">
 
     {{
-      wmndsButton({
-        classNames: "wmnds-content-tile__button",
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
         iconRight: "general-chevron-right",
-        text: "I drive",
+        contentText: "I drive",
         type: 'primary'
       })
     }}
     {{
-      wmndsButton({
-        classNames: "wmnds-content-tile__button",
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
         iconRight: "general-chevron-right",
-        text: "I use the bus",
+        contentText: "I use the bus",
         type: 'primary'
       })
     }}
     {{
-      wmndsButton({
-        classNames: "wmnds-content-tile__button",
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
         iconRight: "general-chevron-right",
-        text: "I use the train",
+        contentText: "I use the train",
         type: 'primary'
       })
     }}
     {{
-      wmndsButton({
-        classNames: "wmnds-content-tile__button",
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
         iconRight: "general-chevron-right",
-        text: "I use the tram",
+        contentText: "I use the tram",
         type: 'primary'
       })
     }}
     {{
-      wmndsButton({
-        classNames: "wmnds-content-tile__button",
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
         iconRight: "general-chevron-right",
-        text: "I walk or cycle",
+        contentText: "I walk or cycle",
         type: 'primary'
-      }) 
+      })
     }}
     {{
-      wmndsButton({
-        classNames: "wmnds-content-tile__button",
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
         iconRight: "general-chevron-right",
-        text: "I want to visit an attraction or venue",
+        contentText: "I want to visit an attraction or venue",
         type: 'primary'
       })
     }}
