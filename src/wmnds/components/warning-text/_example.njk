@@ -1,15 +1,11 @@
 {% raw %}
-{% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
 {{
-   wmndsAccordion({
-      id: "accordion-01",
-      headingText: "Accordion",
-      headingHTML: null,
+   wmndsWarningText({
       contentText: null,
-      contentHTML: "<p><strong>Some random subtitle</strong></p>
-      <p>Lorem ipsum dolor sit...</p>",
-      isOpen: false
+      contentHTML: "Lorem <a href='#' title='lorem' target='_blank'>ipsum</a> dolar sit...",
+      classes: null
     })
 }}
 {% endraw %}

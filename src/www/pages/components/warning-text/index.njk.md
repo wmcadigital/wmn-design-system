@@ -41,8 +41,7 @@
 {{
   compExample([
     wmndsWarningText({
-      contentText: "Warning! Type something.",
-      icon: "general-warning-triangle"
+      contentHTML: "Lorem <a href='#' title='lorem' target='_blank'>ipsum</a> dolar sit..."
     })
   ], {
     componentPath: "wmnds/components/warning-text/",
@@ -64,7 +63,6 @@
 {{
   compExample([
     wmndsWarningText({
-      contentText: "Warning! Type something.",
       icon: "general-warning-circle"
     })
   ], {
@@ -87,7 +85,6 @@
 {{
   compExample([
     wmndsWarningText({
-      contentText: "Warning! Type something.",
       icon: "general-info"
     })
   ], {
@@ -110,7 +107,6 @@
 {{
   compExample([
     wmndsWarningText({
-      contentText: "Type something.",
       icon: "general-success"
     })
   ], {
