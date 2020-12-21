@@ -41,7 +41,7 @@
 {{
   compExample([
     wmndsWarningText({
-      text: "Warning! Type something.",
+      contentText: "Warning! Type something.",
       icon: "general-warning-triangle"
     })
   ], {
@@ -64,7 +64,7 @@
 {{
   compExample([
     wmndsWarningText({
-      text: "Warning! Type something.",
+      contentText: "Warning! Type something.",
       icon: "general-warning-circle"
     })
   ], {
@@ -87,7 +87,7 @@
 {{
   compExample([
     wmndsWarningText({
-      text: "Warning! Type something.",
+      contentText: "Warning! Type something.",
       icon: "general-info"
     })
   ], {
@@ -110,7 +110,7 @@
 {{
   compExample([
     wmndsWarningText({
-      text: "Type something.",
+      contentText: "Type something.",
       icon: "general-success"
     })
   ], {

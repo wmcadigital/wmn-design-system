@@ -4,18 +4,23 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 {# Set #}
-{% set text = params.text if params.text else "Type something." %} {# set warning text #}
+{% set contentText = params.contentText if params.contentText else "Lorem ipsum dolar sit..." %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
 {% set icon = params.icon if params.icon %} {# set svg icon #}
-{% set class = params.class if params.class %} {# set svg icon #}
+{% set classes = params.classes if params.classes %} {# set svg icon #}
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 
-<div class="wmnds-warning-text {{class}}">
+<div class="wmnds-warning-text {{classes}}">
+  {% if icon %}
     {{
       wmndsIcon({
         icon: icon,
         class: 'wmnds-warning-text__icon'
-      }) | indent | trim
+      })
     }}
-    {{ text | safe }}
+  {% endif %}
+
+  {{_content}}
 </div>
 
 {% endmacro %}
