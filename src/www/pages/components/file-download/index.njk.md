@@ -45,7 +45,11 @@
 
 {{
     compExample([
-        wmndsFileDownload()
+        wmndsFileDownload({
+            downloadLinkText: "Download this file",
+            fileName: "example file",
+            fileType: "pdf"
+        })
     ], {
         componentPath: "wmnds/components/file-download/",
         njk: true,

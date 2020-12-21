@@ -1,11 +1,15 @@
 {% macro wmndsFileDownload(params) %}
 {# Imports #}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {# Set #}
 {% set fileName = params.fileName or 'file name' %}
 {% set fileType = params.fileType or 'filetype' %}
 {% set fileSize = params.fileSize or 'filesize' %}
 {% set accessibleClass = " wmnds-file-download--non-accessible" if params.accessible === false else "" %}
+{% set downloadLinkText = params.downloadLinkText if params.downloadLinkText else "Download 'file name' (filetype, filesize)" %}
+{% set link = params.link if params.link else "#" %}
+
 
 <div class="wmnds-file-download{{accessibleClass}}">
     {{
@@ -15,9 +19,13 @@
         }) | trim | indent(4)
     }}
     <div class="wmnds-file-download__desc">
-        <a href="#" download="{{ fileName|replace(' ', '_') + '.' + fileType|lower }}" class="wmnds-link">
-            Download '{{fileName}}' ({{fileType}}, {{fileSize}})
-        </a>
+        {{    
+            wmndsLink({
+                contentText: downloadLinkText,
+                download: fileName|replace(' ', '_') + '.' + fileType|lower,
+                link: link
+            })
+        }}
         {% if params.accessible === false -%}
         <p class="wmnds-file-download__warning">
             This file may not be suitable for users of assistive technology. <br>
