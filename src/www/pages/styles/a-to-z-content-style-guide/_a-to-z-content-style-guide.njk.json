@@ -345,6 +345,7 @@
           "content": "<p>Verb: I would like to opt in</p>"
         },
         {
+          "id": "opt-in-out-adj",
           "title": "opt-in/out",
           "content": "<p>Adjective: an opt-in clause</p>"
         }
