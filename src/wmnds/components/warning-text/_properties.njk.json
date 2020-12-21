@@ -18,7 +18,7 @@
     {
       "name": "icon",
       "type": "string",
-      "description": "Name of the icon, which will be used to import icon and place it on the left side of the button, before text. Icon names can be found on the <a href='/styles/icons/#icons' title='icons page'>icons page</a>."
+      "description": "Name of the icon, which will be used to import icon and place it on the left side of the warning text, before text. By default it uses the <code class='wmnds-website-inline-code'>general-warning-triangle</code> icon. Icon names can be found on the <a href='/styles/icons/#icons' title='icons page'>icons page</a>."
     }
   ]
 }
