@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
- <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-     <title>Icons/Closed</title>
-     <defs>
-         <filter id="filter-1">
-             <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
-         </filter>
-     </defs>
-     <g id="Icons/Closed" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-         <g filter="url(#filter-1)" id="ban-solid">
-             <g>
-                 <path d="M128,0 C57.307871,0 0,57.3073548 0,128 C0,198.692645 57.307871,256 128,256 C198.692129,256 256,198.692129 256,128 C256,57.307871 198.692645,0 128,0 Z M195.152516,60.8474839 C228.932129,94.6270968 231.281548,146.257032 205.824516,182.466581 L73.5329032,50.176 C109.767226,24.7019355 161.391484,27.0869677 195.152516,60.8474839 Z M60.8474839,195.152516 C27.067871,161.372903 24.7184516,109.742968 50.1754839,73.5334194 L182.467097,205.824 C146.23329,231.298065 94.6085161,228.913548 60.8474839,195.152516 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
-             </g>
-         </g>
-     </g>
- </svg>
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ban" class="svg-inline--fa fa-ban fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.034 8 8 119.033 8 256s111.034 248 248 248 248-111.034 248-248S392.967 8 256 8zm130.108 117.892c65.448 65.448 70 165.481 20.677 235.637L150.47 105.216c70.204-49.356 170.226-44.735 235.638 20.676zM125.892 386.108c-65.448-65.448-70-165.481-20.677-235.637L361.53 406.784c-70.203 49.356-170.226 44.736-235.638-20.676z"></path></svg>
