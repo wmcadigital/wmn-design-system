@@ -9,7 +9,7 @@
 {% set headingHTML = params.headingHTML if params.headingHTML else null %}
 {% set contentText = params.contentText if params.contentText else "Lorem ipsum dolar sit..." %}
 {% set contentHTML = params.contentHTML if params.contentHTML else null %}
-
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 
 <div class="wmnds-accordion{{isOpen}}">
   <button aria-controls="{{id}}" class="wmnds-accordion__summary-wrapper" aria-expanded="{{_isExpanded}}">
@@ -36,11 +36,7 @@
 
   <!-- accordion content -->
   <div class="wmnds-accordion__content" id="{{id}}">
-    {% if contentHTML %}
-      {{contentHTML | safe}}
-    {% else %}
-      {{contentText}}
-    {% endif %}
+    {{_content}}
   </div>
 </div>
 

@@ -43,12 +43,12 @@
     {
       "name": "iconLeft",
       "type": "string",
-      "description": "Name of the left icon, which will be used to import icon and place it on the left side of the button, before text."
+      "description": "Name of the left icon, which will be used to import icon and place it on the left side of the button, before text. Icon names can be found on the <a href='/styles/icons/#icons' title='icons page'>icons page</a>."
     },
     {
       "name": "iconRight",
       "type": "string",
-      "description": "Name of the right icon, which will be used to import icon and place it on the right side of the button, after text."
+      "description": "Name of the right icon, which will be used to import icon and place it on the right side of the button, after text. Icon names can be found on the <a href='/styles/icons/#icons' title='icons page'>icons page</a>."
     },
     {
       "name": "role",
