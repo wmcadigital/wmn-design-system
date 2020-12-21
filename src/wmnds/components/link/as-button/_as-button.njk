@@ -12,7 +12,7 @@
 {% set link = params.link if params.link else "#" %} {# set link url #}
 {% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
 {% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
-
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 
 <a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="wmnds-btn{{ classes }}{{ type }}">
   {#- iconLeft -#}
@@ -23,20 +23,13 @@
         class: 'wmnds-btn__icon'
       })
     }}
-    {% if contentHTML %}
-      {{contentHTML | safe}}
-    {% else %}
-      {{contentText}}
-    {% endif %}
+
+   {{_content}}
 
   {#- iconRight -#}
   {% elseif iconRight %}
 
-    {% if contentHTML %}
-      {{contentHTML | safe}}
-    {% else %}
-      {{contentText}}
-    {% endif %}
+   {{_content}}
 
     {{
       wmndsIcon({
@@ -48,11 +41,7 @@
   {#- noIcon -#}
   {% else %}
 
-    {% if contentHTML %}
-      {{contentHTML | safe}}
-    {% else %}
-      {{contentText}}
-    {% endif %}
+   {{_content}}
 
   {%- endif %}
 </a>
