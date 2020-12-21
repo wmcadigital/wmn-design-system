@@ -1,6 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle = "Content tiles (deprecated)" %}
+{% set pageTitle = "Content tiles" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
 {% block content %}
 {# Content tile small 1 #}
@@ -14,7 +15,14 @@
 
 {# Content tile advice moving #}
 {%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
-
+<br>
+{{
+ wmndsWarningText ({
+      contentHTML: "<p>This component is no longer in use. Use the <a href=\"/components/content-card\" class=\"wmnds-link\">content card component</a> instead.</p>",
+      icon: "general-info"
+    })
+}}
+<hr />
 
 <h2>Normal</h2>
 <h3>General </h3>
