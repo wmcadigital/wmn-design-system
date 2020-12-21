@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle = "Content tiles (deprecated)" %}
+{% set pageTitle = "Content tiles" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -14,7 +14,14 @@
 
 {# Content tile advice moving #}
 {%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
-
+<br>
+<p>
+  <span class="wmnds-phase-indicator">
+    Replaced
+  </span>
+</p>
+<p>This component is no longer in use. Use the <a href="/components/content-card" class="wmnds-link">content card component</a> instead.</p>
+<hr />
 
 <h2>Normal</h2>
 <h3>General </h3>
