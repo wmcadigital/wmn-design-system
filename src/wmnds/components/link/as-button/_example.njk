@@ -1,0 +1,17 @@
+{% raw %}
+{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
+
+{{
+   wmndsLinkAsButton({
+      type: null,
+      contentText: null,
+      contentHTML: "<em>homepage</em>",
+      link: '/',
+      linkTitle: "Go to Homepage",
+      linkTarget: null,
+      classes: null,
+      iconRight: 'general-chevron-right',
+      iconLeft: null
+    })
+}}
+{% endraw %}

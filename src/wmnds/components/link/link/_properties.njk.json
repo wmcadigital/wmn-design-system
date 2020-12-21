@@ -1,0 +1,49 @@
+{
+  "wmndsLinkProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the content that will be part of the link. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> Uses HTML to specifies what content is going to be linked."
+    },
+    {
+      "name": "link",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the URL of the page the link goes to."
+    },
+    {
+      "name": "linkTitle",
+      "type": "string",
+      "description": "<strong>Required.</strong> The link title attribute gives additional information about the page being linked to."
+    },
+    {
+      "name": "linkTarget",
+      "type": "string",
+      "description": "Specifies where to open the linked document. Defaults to <code class='wmnds-website-inline-code'>_self</code> that means it opens in the same tab. "
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Specifies what class modifiers to apply to link component."
+    },
+    {
+      "name": "isBackLink",
+      "type": "boolean",
+      "description": "If true, it will overwrite text and show the standard back link. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "withChevronLeft",
+      "type": "boolean",
+      "description": "If true, the link will display an chevron left before the text. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "withChevronRight",
+      "type": "boolean",
+      "description": "If true, the link will display an chevron left after the text. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    }
+  ]
+}
