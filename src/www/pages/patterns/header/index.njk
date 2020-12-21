@@ -6,7 +6,8 @@
 {% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
 {% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
 {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
 {% block content %}
 {# About #}
@@ -295,13 +296,12 @@
 <br>
 {# Archived Header #}
 <h2>Archived header</h2>
-<p>
-  <span class="wmnds-phase-indicator">
-    Replaced
-  </span>
-</p>
-<p>This is an old version of the header pattern for developer reference only. Mobile users have a poor experience and there isn't the ability to search.</p>
-<p>You should use the <a href="#wmnds-main-content" class="wmnds-link" title="New version of header pattern">current version</a> instead.</p>
+{{
+ wmndsWarningText ({
+      contentHTML: "<p>This is an old version fo the header pattern for reference only. Use the <a href=\"#wmnds-main-content\" class=\"wmnds-link\" title=\"Current version of header pattern\">current version</a> instead.</p>",
+      icon: "general-info"
+    })
+}}
 <hr />
 {{
   compExample([
