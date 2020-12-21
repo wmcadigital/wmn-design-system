@@ -1,7 +1,7 @@
 {% macro wmndsCookiesBanner(params) %}
 
 {# Imports of components #}
-{% from "wmnds/components/button/_button.njk" import wmndsButton as primary %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
 {%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
 
 
@@ -16,10 +16,10 @@
       </p>
       <div class="wmnds-grid wmnds-grid--justify-between wmnds-cookies-banner__group-buttons">
         {{
-          primary({
-            classNames: "wmnds-btn wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24  wmnds-cookies-banner__accept-all-cookies",
-            text: "Accept all cookies"
-          }) | trim | indent(8)
+          wmndsButton({
+            classes: "wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24  wmnds-cookies-banner__accept-all-cookies",
+            contentText: "Accept all cookies"
+          })
         }}
         {{
           cta({

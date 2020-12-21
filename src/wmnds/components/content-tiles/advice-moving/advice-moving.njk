@@ -1,51 +1,57 @@
 {% macro wmndsContentTileAdviceMoving(params) %}
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as primary -%}
+{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton -%}
 
 <div class="wmnds-content-tile">
   <h2 class="wmnds-content-tile__title">Advice to keep moving</h2>
   <div class="wmnds-content-tile__buttons">
 
     {{
-      primary({
-        classNames: "wmnds-btn--primary wmnds-content-tile__button",
-        text: "I drive",
-        iconRight: "general-chevron-right"
-      }) | trim | indent(4)
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I drive",
+        type: 'primary'
+      })
     }}
     {{
-      primary({
-        classNames: "wmnds-btn--primary wmnds-content-tile__button",
-        text: "I use the bus",
-        iconRight: "general-chevron-right"
-      }) | trim | indent(4)
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I use the bus",
+        type: 'primary'
+      })
     }}
     {{
-      primary({
-        classNames: "wmnds-btn--primary wmnds-content-tile__button",
-        text: "I use the train",
-        iconRight: "general-chevron-right"
-      }) | trim | indent(4)
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I use the train",
+        type: 'primary'
+      })
     }}
     {{
-      primary({
-        classNames: "wmnds-btn--primary wmnds-content-tile__button",
-        text: "I use the tram",
-        iconRight: "general-chevron-right"
-      }) | trim | indent(4)
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I use the tram",
+        type: 'primary'
+      })
     }}
     {{
-      primary({
-        classNames: "wmnds-btn--primary wmnds-content-tile__button",
-        text: "I walk or cycle",
-        iconRight: "general-chevron-right"
-      }) | trim | indent(4)
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I walk or cycle",
+        type: 'primary'
+      })
     }}
     {{
-      primary({
-        classNames: "wmnds-btn--primary wmnds-content-tile__button",
-        text: "I want to visit an attraction or venue",
-        iconRight: "general-chevron-right"
-      }) | trim | indent(4)
+      wmndsLinkAsButton({
+        classes: "wmnds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I want to visit an attraction or venue",
+        type: 'primary'
+      })
     }}
   </div>
 </div>
