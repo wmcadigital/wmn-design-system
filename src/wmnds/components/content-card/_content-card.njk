@@ -4,7 +4,8 @@
 {% set yellowModifier = " wmnds-content-card--yellow" if params.yellow else "" %}
 {# Opening & closing tags #}
 {% set tag = "a" if params.clickable else "div" %}
-{% set attributes = " href=\"#\" target=\"_self\"" if params.clickable else "" %}
+{% set href = params.href if params.href else "#" %}
+{% set attributes = " href=\"" + href + "\" target=\"_self\"" if params.clickable else "" %}
 {# HTML content #}
 {% set html = params.html if params.html else "
     <div class=\"wmnds-p-sm\">

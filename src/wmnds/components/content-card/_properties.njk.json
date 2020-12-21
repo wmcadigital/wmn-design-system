@@ -1,0 +1,24 @@
+{
+  "wmndsContentCardProps": [
+    {
+      "name": "clickable",
+      "type": "boolean",
+      "description": "If set to <code class='wmnds-website-inline-code'>true</code> the whole content card will be displayed as a clickable as a navigation card. Default value is <code class='wmnds-website-inline-code'>false</code>"
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "description": "Specifies the link for a clickable content card. If <code class='wmnds-website-inline-code'>clickable</code> is set to <code class='wmnds-website-inline-code'>true</code>, this should always be set."
+    },
+    {
+      "name": "yellow",
+      "type": "boolean",
+      "description": "Displays the content card with a highlighted (yellow) background. Default value is <code class='wmnds-website-inline-code'>false</code>"
+    },
+    {
+      "name": "variant",
+      "type": "string",
+      "description": "Includes a custom class for specifying the variant of a content card e.g. <code class='wmnds-website-inline-code'>wmnds-content-card--travel-updates</code>."
+    }
+  ]
+}

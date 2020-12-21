@@ -36,10 +36,17 @@ The cards have many common use cases and applications, all of which can be found
 - When it is used in a set of cards for navigation purposes. Instead, use a Navigation card.
 
 {% endmarkdown %}
+
 {{
     compExample([
         wmndsContentCard()
-    ])
+    ], {
+      componentPath: "wmnds/components/content-card/",
+      njk: true,
+      njkProps: wmndsContentCardProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 <br><br>
@@ -67,14 +74,23 @@ The cards have many common use cases and applications, all of which can be found
 ### When not to use it? <a name="nav-card-when-not-to-use-it"></a>
 
 - When multiple interactive components within the card are used. Instead, use a Content card.
-  {% endmarkdown %}
-  {{
-      compExample([
-          wmndsContentCard({
-              clickable: true
-          })
-      ])
-  }}
+
+{% endmarkdown %}
+
+{{
+    compExample([
+        wmndsContentCard({
+            clickable: true,
+            href: "https://designsystem.wmnetwork.co.uk/components/content-card/"
+        })
+    ], {
+      componentPath: "wmnds/components/content-card/",
+      njk: true,
+      njkProps: wmndsContentCardProps,
+      js: false,
+      iframe: false
+    })
+}}
 
 <br><br>
 
@@ -89,13 +105,15 @@ The cards have many common use cases and applications, all of which can be found
 
 - The styling of the card changes to match disruption yellow branding
 - The styling helps users through their journey to major roadworks and events information
-  {# When to #}
+
+{# When to #}
 
 ### When to use it? <a name="yellow-when-to-use-it"></a>
 
 - When you are linking to a disruptions (major roadworks and events) page
 - Only one card should be yellow on a page
-  {# When not to #}
+
+{# When not to #}
 
 ### When not to use it? <a name="yellow-when-not-to-use-it"></a>
 
@@ -110,7 +128,13 @@ The cards have many common use cases and applications, all of which can be found
         wmndsContentCard({
             yellow: true
         })
-    ])
+    ], {
+      componentPath: "wmnds/components/content-card/",
+      njk: true,
+      njkProps: wmndsContentCardProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% endblock %}
