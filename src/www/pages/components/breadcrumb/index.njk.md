@@ -69,6 +69,12 @@ You will most likely want to use this with the mobile variants of the
 {{
   compExample([
     wmndsBreadcrumb({
+      items: [{
+        contentText: "Components",
+        href: "/"
+      },{
+        contentText: pageTitle
+      }],
       section: section,
       pageTitle: pageTitle,
       isMobileApp: true,

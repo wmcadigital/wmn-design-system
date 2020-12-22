@@ -7,12 +7,40 @@ And we show the current page breadcrumb at all times.
 {% set section = params.section if params.section else "Components" %} {# default to Components section if one isn't available #}
 
 {# Set sectionUrl and pageUrl #}
+{% set items = params.items if params.items else [{ contentText: "Components" }] %}
 {% set sectionUrl =  '/' + section | lower | replace(" ", "-") if params.pageTitle != section %}
 {% set pageUrl =  '/' + params.pageTitle | lower | replace(" ", "-") + '/' %}
 {% set class = ' wmnds-breadcrumb--mobile-app' if params.isMobileApp %}
+{% set classes = ' ' + params.classes if params.classes %}
 {% set label = params.label + " example breadcrumbs" if params.label else "Breadcrumbs" %}
 
-<nav aria-label="{{label}}" class="wmnds-breadcrumb{{class}}">
+<nav aria-label="{{label}}" class="wmnds-breadcrumb{{class}}{{classes}}">
+
+  <ol class="wmnds-breadcrumb__list">
+    {#- Link back to homepage #}
+    <li class="wmnds-breadcrumb__list-item">
+      <a href="/" class="wmnds-breadcrumb__link">
+        Home
+      </a>
+    </li>
+    {# loop through items array for breadcrumbs #}
+    {% for breadcrumb in items -%}
+      {% set _pageUrl = "" %}
+      {% for i in range(0, loop.index) -%}
+        {% set _pageUrl = _pageUrl + '/' + items[i].contentText | lower | replace(" ", "-") %} {# loop through items array to make breadcrumb trail url #}
+      {%- endfor %}
+      {% set _href = breadcrumb.href if breadcrumb.href else _pageUrl %} {# if href is set use this, else use pageUrl constructed above #}
+      {% set isCurrentPage = loop.index === items.length %}
+    <li class="wmnds-breadcrumb__list-item">
+      
+      <a href="{{ _href }}" class="wmnds-breadcrumb__link{% if isCurrentPage %} wmnds-breadcrumb__link--current{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}  >
+        {{ breadcrumb.contentText }}
+      </a>
+
+    </li>
+    {% endfor %}
+  </ol>
+
   <ol class="wmnds-breadcrumb__list">
     {#- Link back to homepage #}
     <li class="wmnds-breadcrumb__list-item">
