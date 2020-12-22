@@ -5,10 +5,9 @@
 {# Set #}
 {% set fileName = params.fileName or 'file name' %}
 {% set fileType = params.fileType or 'filetype' %}
-{% set fileSize = params.fileSize or 'filesize' %}
+{% set fileSize =  ", " + params.fileSize if params.fileSize else '' %}
 {% set accessibleClass = " wmnds-file-download--non-accessible" if params.accessible === false else "" %}
-{% set downloadLinkText = params.downloadLinkText if params.downloadLinkText else "Download 'file name' (filetype, filesize)" %}
-{% set link = params.link if params.link else "#" %}
+{% set downloadLinkText = params.downloadLinkText if params.downloadLinkText else "Download '" + fileName + "' (" + fileType + fileSize + ")" %}
 
 
 <div class="wmnds-file-download{{accessibleClass}}">
@@ -23,7 +22,7 @@
             wmndsLink({
                 contentText: downloadLinkText,
                 download: fileName|replace(' ', '_') + '.' + fileType|lower,
-                link: link
+                link: "#"
             })
         }}
         {% if params.accessible === false -%}
