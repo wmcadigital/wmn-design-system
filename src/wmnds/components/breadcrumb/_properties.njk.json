@@ -1,14 +1,29 @@
 {
   "wmndsBreadcrumbProps": [
     {
-      "name": "section",
-      "type": "string",
+      "name": "items",
+      "type": "array",
       "description": "Specifies the section which the current page falls under. If this is the same as the page title it will not display."
     },
     {
-      "name": "pageTitle",
+      "name": "contentText",
       "type": "string",
-      "description": "<strong>Required.</strong> Specifies the page title for the current page."
+      "description": "[items array] <strong>Required.</strong> Text to use within the breadcrumbs item."
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "description": "[items array] Link for the breadcrumbs item. If not specified, breadcrumb link will be automatically generated from the <code class='wmnds-website-inline-code'>contentText</code> strings from the items in the array."
+    },
+    {
+      "name": "unlinkedItem",
+      "type": "boolean",
+      "description": "[items array] If set to true, breadcrumbs item is a normal list item."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the breadcrumbs container."
     },
     {
       "name": "label",

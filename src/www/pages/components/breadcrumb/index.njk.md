@@ -31,6 +31,13 @@
 {{
   compExample([
     wmndsBreadcrumb({
+      items: [{
+        contentText: "Components",
+        unlinkedItem: true,
+        href: "/"
+      },{
+        contentText: pageTitle
+      }],
       label: "Main"
     })
   ], {
@@ -54,14 +61,7 @@ To use the mobile app variant:
 
 - Add the modifier class <code class="wmnds-website-inline-code">wmnds-breadcrumb--mobile-app</code> to the wmnds-breadcrumb element
 
-You will most likely want to use this with the mobile variants of the
-{{
-  wmndsLink({
-    text: 'header and footer patterns',
-    link: '/patterns/header-and-footer/#mobile-app-header'
-  }) | trim
-}}.
-
+You will most likely want to use this with the mobile variants of the <a href="/patterns/header-and-footer/#mobile-app-header" class="wmnds-link">header and footer patterns</a>.
 {% endmarkdown %}
 
 {{
@@ -73,8 +73,6 @@ You will most likely want to use this with the mobile variants of the
       },{
         contentText: pageTitle
       }],
-      section: section,
-      pageTitle: pageTitle,
       isMobileApp: true,
       label: "Mobile app"
     })
