@@ -3,7 +3,6 @@
 {# Imports #}
 {%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
-{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {# Set array of tiles #}
 {% block content %}
@@ -114,7 +113,10 @@
           </button>
           <div class="wmnds-accordion__content" id="accordion-{{section.letter | lower}}">
             {% for style in section.styles %}
-            <h5 id="{{style.title | replace(r/\W/gi, '') | replace(' ', '-') | lower}}-{{ loop.index }}" class="{{'wmnds-m-t-xl' if not loop.first}}">
+            {# If custom id use that, else generate an id #}
+            {% set id = style.id if style.id else style.title | replace(r/\W/gi, '') | replace(' ', '-') | lower %}
+
+            <h5 id="{{id}}" class="{{'wmnds-m-t-xl' if not loop.first}}">
               <span>{{style.title}}</span>
             </h5>
             {{style.content | safe}}
