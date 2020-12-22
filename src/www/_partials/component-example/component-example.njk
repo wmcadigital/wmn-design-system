@@ -99,6 +99,30 @@
             {% endfor %}
           </tbody>
         </table>
+
+        {% for prop in njkProps %}
+        {% if prop.arrayOptions %}
+        <h4 class="h3 wmnds-m-t-lg">Options for {{ prop.name }}</h4>
+        <table class="wmnds-table wmnds-p-md">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in prop.arrayOptions %}
+              <tr>
+                <th scope="row" data-header="Name">{{item.name}}</th>
+                <td data-header="Type">{{item.type}}</td>
+                <td data-header="Description">{{item.description | safe}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+        {% endfor %}
       </div>
     </details>
   {% endif %}
