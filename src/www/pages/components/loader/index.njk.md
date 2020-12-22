@@ -21,7 +21,7 @@
 ### When to use it?
 
 - When you are calling an API
-- In there area of the page that the action is occurring
+- In the area of the page that the action is occurring
 - Example: within a search box
 
 {# When not #}
