@@ -21,7 +21,7 @@
 ### When not to use it?
 
 - In close proximity to visually prominent elements. Users don't notice it.
-- To highlight important information that is key to the transaction/service or time critical. Use Warning Text instead.
+- To highlight important information that is key to the transaction/service or time critical. Use <a href="/components/warning-text" target="_self">Warning Text</a> instead.
 
 ### How to use it?
 

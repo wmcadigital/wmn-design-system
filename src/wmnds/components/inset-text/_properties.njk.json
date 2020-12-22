@@ -21,7 +21,7 @@
       "description": "Classes to add to the inset text container."
     },
     {
-      "name": "ariaLabel",
+      "name": "label",
       "type": "string",
       "description": "<strong>Required.</strong> The label to be attached to the component for accessibility purposes."
     }
