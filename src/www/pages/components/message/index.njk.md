@@ -1,4 +1,4 @@
-{% extends "www/_layouts/layout-left-pane.njk" %} 
+{% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Message" %}
 
 {% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
@@ -6,40 +6,33 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
+
+{% markdown %}
 {# About #}
-<h2>About</h2>
-<h3>What does it do?</h3>
-<ul>
-  <li>
-    Gives user feedback during the interaction with a website (informs about error, warning, success). Messages are
-    colour coded and use symbols to reinforce the message. The structure of the message: what happened? what does it
-    mean? what can user do about it?)
-  </li>
-</ul>
+
+## About
+
+### What does it do?
+
+- Gives user feedback during the interaction with a website (informs about error, warning, success). Messages are colour coded and use symbols to reinforce the message. The structure of the message: what happened? what does it mean? what can user do about it?)
 
 <h3>When to use it?</h3>
-<ul>
-  <li>
-    When user needs explicit indication that something has gone wrong (user error or website/app error)
-  </li>
-  <li>
-    When user is about to do something that is destructive or when the result of an action is unexpected but it is not
-    an error (Warning Message)
-  </li>
-  <li>
-    When user needs confirmation of success (Success message)
-  </li>
-  <li>
-    When user needs key information about upcoming change (Information message).
-  </li>
-  <li>
-    Real time inline validation to inform users about the correctness of provided data.
-  </li>
-</ul>
-<hr />
+
+- When user needs explicit indication that something has gone wrong (user error or website/app error)
+- When user is about to do something that is destructive or when the result of an action is unexpected but it is not an error (Warning Message)
+- When user needs confirmation of success (Success message)
+- When user needs key information about upcoming change (Information message).
+- Real time inline validation to inform users about the correctness of provided data.
+
+---
+
 <br /><br />
+
 {# Info message #}
-<h2>Information</h2>
+
+## Information
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsMsgSummary({
@@ -51,9 +44,15 @@
 }}
 {# End info message #}
 
+{% markdown %}
+
 <br /><br />
+
 {# Success message #}
-<h2>Success</h2>
+
+## Success
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsMsgSummary({
@@ -65,9 +64,16 @@
 }}
 {# End success message #}
 
+{% markdown %}
+
 <br /><br />
+
 {# Success message #}
-<h2>Success (fill)</h2>
+
+## Success (fill)
+
+{% endmarkdown %}
+
 {{
   compExample([
     wmndsMsgSummary({
@@ -79,9 +85,16 @@
 }}
 {# End success message #}
 
+{% markdown %}
+
 <br /><br />
+
 {# Warning message #}
-<h2>Warning</h2>
+
+## Warning
+
+{% endmarkdown %}
+
 {{
   compExample([
     wmndsMsgSummary({
@@ -93,9 +106,16 @@
 }}
 {# End Warning message #}
 
+{% markdown %}
+
 <br /><br />
+
 {# Error message #}
-<h2>Error</h2>
+
+## Error
+
+{% endmarkdown %}
+
 {{
   compExample([
     wmndsMsgSummary({
@@ -107,23 +127,25 @@
 }}
 
 {# End error message #}
+
+{% markdown %}
+
 <br /><br />
 
 {# Close message variant #}
-<h2>Close message variant</h2>
+
+## Close message variant
 
 <h3>What does it do?</h3>
-<ul>
-  <li>Allows the user to dismiss an Information, Success, Warning or Error message.</li>
-</ul>
+
+- Allows the user to dismiss an Information, Success, Warning or Error message.
 
 <h3>When to use it?</h3>
-<ul>
-  <li>
-    When the information in the message is a response to a users action, or if the information is of low importance and
-    only applies to a small set of users.
-  </li>
-</ul>
+
+- When the information in the message is a response to a users action, or if the information is of low importance and only applies to a small set of users.
+
+{% endmarkdown %}
+
 {{
   compExample([
     wmndsMsgSummary({
@@ -136,18 +158,28 @@
 }}
 {# End close message variant #}
 
+{% markdown %}
+
 <br /><br />
+
 {# Help message #}
-<h2>Help</h2>
+
+## Help
 
 <h3>When to use it?</h3>
-<ul>
-  <li>
-    The help message should be used when a user requires guidance on how to complete a digital task successfully.
-  </li>
-  <li>
-    The user will be able to close the help message once they understand how to complete the task.
-  </li>
-</ul>
-{{ compExample([ wmndsMsgHelp({ message: 'Details added what happened and what to do next.<br />
-Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.' }) ]) }} {# End Help message #} {% endblock %}
+
+- The help message should be used when a user requires guidance on how to complete a digital task successfully.
+- The user will be able to close the help message once they understand how to complete the task.
+
+{% endmarkdown %}
+
+{{ compExample
+  ([
+    wmndsMsgHelp({
+      message: 'Details added what happened and what to do next.<br /> Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+    })
+  ])
+}}
+
+{# End Help message #}
+{% endblock %}
