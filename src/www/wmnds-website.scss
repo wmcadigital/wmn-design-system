@@ -19,28 +19,3 @@
   background: $white;
   @include type-setting(4);
 }
-
-.wmnds-website-summary-content {
-  background: get-color(primary);
-
-  .white {
-    color: $white;
-  }
-
-  &__white {
-    color: $white;
-  }
-
-  .wmnds-link .white {
-    color: $white;
-  }
-
-  .wmnds-content-card {
-    border-bottom-color: get-color(secondary);
-  }
-
-  .emphasised {
-    font-size: 1.4375rem;
-    line-height: 1.5em;
-  }
-}
