@@ -53,8 +53,7 @@
         compExample([
             wmndsInsetText(
                 {
-                    thinner : true,
-                    html: "Customer Services<br>Transport for West Midlands<br>16 Summer Lane<br>Birmingham<br>B19 3SD"
+                    contentHTML: "Customer Services<br>Transport for West Midlands<br>16 Summer Lane<br>Birmingham<br>B19 3SD"
                 }
             )
         ])
@@ -65,15 +64,15 @@
 
     {{
         compExample([
-            wmndsInsetText({html:
+            wmndsInsetText({
+                contentHTML:
                 wmndsContactDetails({
                     warningText: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
                     warningIcon: "general-warning-triangle",
-                    content: "
-    <a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
-    Telephone: <a href=\"tel:03453036760\">0345 303 6760</a><br>
-    Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
-    Wednesday, 9.30am - 5pm"
+                    content: "<a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
+                    Telephone: <a href=\"tel:03453036760\">0345 303 6760</a><br>
+                    Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
+                    Wednesday, 9.30am - 5pm"
                 }) | indent(6) | trim
             })
         ])
@@ -86,19 +85,19 @@
     {{
         compExample([
             wmndsInsetText({
-                html: "
-    <p>Transport for West Midlands</p>
-    <p>
-        <a href=\"https://twitter.com/wmnetwork\">Twitter</a><br>
-        <a href=\"https://www.facebook.com/westmidlandsnetwork\">Facebook</a><br>
-    </p>
-    <p>
-        <a href=\"https://www.wmnetwork.co.uk/get-in-touch/contact-us/\">Submit an enquiry</a><br>
-        Telephone: <a href=\"tel:03453036760\">0345 303 6760<br></a>
-    </p>
-    Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
-    Wednesday, 9.30am - 5pm<br>
-    Saturday and Sunday, closed
+                contentHTML: "
+                <p>Transport for West Midlands</p>
+                <p>
+                    <a href=\"https://twitter.com/wmnetwork\">Twitter</a><br>
+                    <a href=\"https://www.facebook.com/westmidlandsnetwork\">Facebook</a><br>
+                </p>
+                <p>
+                    <a href=\"https://www.wmnetwork.co.uk/get-in-touch/contact-us/\">Submit an enquiry</a><br>
+                    Telephone: <a href=\"tel:03453036760\">0345 303 6760<br></a>
+                </p>
+                Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
+                Wednesday, 9.30am - 5pm<br>
+                Saturday and Sunday, closed
                 "
             })
         ])
