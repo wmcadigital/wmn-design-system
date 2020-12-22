@@ -5,10 +5,10 @@
 Only two size modifiers are 'large' and 'small' #}
 {% set size = " wmnds-loader--" + params.size if params.size %}
 {% set commentSize = params.size if params.size else "normal" %}
-{% set customClass = " " + params.customClass if params.customClass %} {# Allows custom classes to be added to loader #}
+{% set classes = " " + params.classes if params.classes %} {# Allows custom classes to be added to loader #}
 
 <!-- {{commentSize}} sized loader -->
-<div class="wmnds-loader{{size}}{{customClass}}" role="alert" aria-live="assertive">
+<div class="wmnds-loader{{size}}{{classes}}" role="alert" aria-live="assertive">
   <p class="wmnds-loader__content">Content is loading...</p>
 </div>
 
