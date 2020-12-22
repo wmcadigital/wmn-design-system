@@ -32,12 +32,12 @@
 - Try to avoid using a loading spinner, our services should respond quickly
 - If an action takes a long time, users will lose trust in the service
 
-<strong>By default you should aim to use the 'normal sized loader'.</strong> <br>
+**By default you should aim to use the 'normal sized loader'.** <br>
 Only when the normal sized loader is not fit for purpose should you use the large or small sized loader.
 
 Change the text within <code class="wmnds-website-inline-code">.wmnds-loader\_\_content</code> from 'Content is loading...' to something that describes what it is you are loading, this will help with accessibility.
 
-{%endmarkdown %}
+{% endmarkdown %}
 
 {% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
 {{
