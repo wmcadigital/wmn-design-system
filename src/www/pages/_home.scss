@@ -7,3 +7,34 @@
     color: $black;
   }
 }
+
+.wmnds-website-summary-content {
+  margin-top: -1px;
+  color: $white;
+  background: get-color(primary);
+
+  h1 {
+    color: $white;
+  }
+
+  // Make links white in the purple banner
+  &__link,
+  &__link:visited {
+    color: $white;
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .wmnds-content-card {
+    border-bottom-color: get-color(secondary);
+    color: get-color(text);
+  }
+
+  .emphasised {
+    font-size: 1.4375rem;
+    line-height: 1.5em;
+  }
+}
