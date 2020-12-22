@@ -10,9 +10,9 @@ And we show the current page breadcrumb at all times.
 {% set sectionUrl =  '/' + section | lower | replace(" ", "-") if params.pageTitle != section %}
 {% set pageUrl =  '/' + params.pageTitle | lower | replace(" ", "-") + '/' %}
 {% set class = ' wmnds-breadcrumb--mobile-app' if params.isMobileApp %}
-{% set ariaLabel = params.ariaLabel + " example breadcrumbs" if params.ariaLabel else "Breadcrumbs" %}
+{% set label = params.label + " example breadcrumbs" if params.label else "Breadcrumbs" %}
 
-<nav aria-label="{{ariaLabel}}" class="wmnds-breadcrumb{{class}}">
+<nav aria-label="{{label}}" class="wmnds-breadcrumb{{class}}">
   <ol class="wmnds-breadcrumb__list">
     {#- Link back to homepage #}
     <li class="wmnds-breadcrumb__list-item">

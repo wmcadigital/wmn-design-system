@@ -11,7 +11,7 @@
       "description": "<strong>Required.</strong> Specifies the page title for the current page."
     },
     {
-      "name": "ariaLabel",
+      "name": "label",
       "type": "string",
       "description": "The accessibility label for the breadcrumb component. If not provided, this will default to 'Breadcrumbs'"
     },
