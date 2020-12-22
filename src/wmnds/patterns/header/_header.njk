@@ -99,8 +99,11 @@
     <!-- Breadcrumbs -->
     {{
       wmndsBreadcrumb({
-        section: params.breadcrumbs.section,
-        pageTitle: params.breadcrumbs.pageTitle,
+        items: [{
+          contentText: params.breadcrumbs.section or "Components"
+        },{
+          contentText: params.breadcrumbs.pageTitle
+        }],
         label: params.label
       }) | trim | indent(4)
     -}}

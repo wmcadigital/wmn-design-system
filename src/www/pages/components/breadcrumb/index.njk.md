@@ -31,8 +31,6 @@
 {{
   compExample([
     wmndsBreadcrumb({
-      section: section,
-      pageTitle: pageTitle,
       label: "Main"
     })
   ], {
@@ -46,7 +44,7 @@
 
 {% markdown %}
 
-### Mobile app variant of breadcrumb <a name="mobile-app-breadcrumb"></a>
+### Mobile app variant of breadcrumb
 
 When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network breadcrumb component.
 
