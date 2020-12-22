@@ -76,7 +76,13 @@ You will most likely want to use this with the mobile variants of the <a href="/
       isMobileApp: true,
       label: "Mobile app"
     })
-  ])
+  ], {
+    componentPath: "wmnds/components/breadcrumb/",
+    njk: true,
+    njkProps: wmndsBreadcrumbProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% endblock %}
