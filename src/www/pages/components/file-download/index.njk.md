@@ -92,7 +92,13 @@
         wmndsFileDownload({
             accessible: false
         })
-    ])
+    ], {
+        componentPath: "wmnds/components/file-download/",
+        njk: true,
+        njkProps: wmndsFileDownloadProps,
+        js: false,
+        iframe: false
+    })
 }}
 
 {% endblock %}
