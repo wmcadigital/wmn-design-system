@@ -1,9 +1,14 @@
 {% extends "www/_layouts/_master-layout.njk" %}
 
+{% block summary %}
+<div class="wmnds-website-summary-content">
+  <div class="wmnds-grid wmnds-container">
+  {% block summaryContent %}{% endblock summaryContent %}
+  </div>
+</div>
+{% endblock summary %}
 {% block body %}
-<h1 id="wmnds-main-content">{{ pageTitle | safe}}</h1>
-<hr>
-<div class="wmnds-grid" >
+<div class="wmnds-grid wmnds-container" >
   <div class="wmnds-col-1">
     {% block content %}{% endblock content %}
   </div>
