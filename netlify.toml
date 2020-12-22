@@ -7,9 +7,18 @@
     [headers.values]
       Access-Control-Allow-Origin = "*"
 
+# Generate sitemap
 [[plugins]]
 package = "@netlify/plugin-sitemap"
 
+[plugins.inputs]
+  buildDir = "build"
+
+# Submite sitemap
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+# Submit new build to sentry
 [[plugins]]
 package = "@sentry/netlify-build-plugin"
 

@@ -5,9 +5,10 @@
 {% from "wmnds/components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
 
 {% block content %}
-{# About #}
 
 {% markdown %}
+
+{# About #}
 
 ## About
 
