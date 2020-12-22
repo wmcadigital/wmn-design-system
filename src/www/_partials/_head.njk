@@ -1,27 +1,44 @@
+{# Set vars #}
+{% set title = "Home - West Midlands Network Design System" if section == "Home" else (pageTitle | striptags +  " - West Midlands Network Design System") %} {# If homepage, else any other pages #}
+{% set description = "A design system to help your service look and feel like West Midlands Network." %} {# Description of website #}
+{% set urlToShare = "https://designsystem.wmnetwork.co.uk/" %} {# URL of website to share in meta data #}
+{% set imgToShare = "https://designsystem.wmnetwork.co.uk/assets/img/wmn-share.png" %} {# Image to share in meta data #}
+{% set faviconsDir = "/config/favicons/" %} {# Path to favicons dir, used in meta data #}
+
 <head>
   <meta charset="utf-8" />
-  <title>
-  {# If homepage #}
-  {% if section == "Home" %}
-    Home - West Midlands Network Design System
-  {% else %}
-  {# Else any other pages #}
-    {{ pageTitle | striptags}} - West Midlands Network Design System
-  {% endif %}
-  </title>
-  <meta name="description" content="Your one stop shop for travel in the West Midlands" />
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {# Favicons #}
-  <link rel="apple-touch-icon" sizes="180x180" href="/config/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/config/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/config/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/config/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/config/favicons/safari-pinned-tab.svg" color="#3c1053">
-  <link rel="shortcut icon" href="/config/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{faviconsDir}}apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{faviconsDir}}favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{faviconsDir}}favicon-16x16.png">
+  <link rel="manifest" href="{{faviconsDir}}site.webmanifest">
+  <link rel="mask-icon" href="{{faviconsDir}}safari-pinned-tab.svg" color="#3c1053">
+  <link rel="shortcut icon" href="{{faviconsDir}}favicon.ico">
   <meta name="msapplication-TileColor" content="#3c1053">
-  <meta name="msapplication-config" content="/config/favicons/browserconfig.xml">
+  <meta name="msapplication-config" content="{{faviconsDir}}browserconfig.xml">
   <meta name="theme-color" content="#3c1053">
+
+  {# SEO Metadata #}
+  <meta name="title" content="{{title}}">
+  <meta name="description" content="{{description}}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{urlToShare}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{{imgToShare}}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{urlToShare}}">
+  <meta property="twitter:title" content="{{title}}">
+  <meta property="twitter:description" content="{{description}}">
+  <meta property="twitter:image" content="{{imgToShare}}">
 
   <!-- Website Styles -->
   <link rel="stylesheet" href="/css/wmnds.min.css" />
