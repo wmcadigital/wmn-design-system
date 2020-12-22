@@ -20,7 +20,7 @@
 
 - When you need to help users understand and move between the multiple levels of a website.
 - Always make sure that the breadcrumb is contained within a <code class="wmnds-website-inline-code">.wmnds-container</code> element. This ensures that the breadcrumb doesn't scale the size of large browser windows.
-- When displaying the current page within the breadcrumb, ensure that the modifier class <code class="wmnds-website-inline-code">.wmnds-breadcrumb\_\_link--current</code> as seen below.
+- When displaying the current page within the breadcrumb, ensure that the modifier class <code class="wmnds-website-inline-code">.wmnds-breadcrumb\_\_link--current</code> is used as seen below.
 
 ### When not to use it?
 
@@ -33,10 +33,10 @@
     wmndsBreadcrumb({
       items: [{
         contentText: "Components",
-        unlinkedItem: true,
-        href: "/"
+        href: "#"
       },{
-        contentText: pageTitle
+        contentText: pageTitle,
+        href: "#"
       }],
       label: "Main"
     })
@@ -69,9 +69,10 @@ You will most likely want to use this with the mobile variants of the <a href="/
     wmndsBreadcrumb({
       items: [{
         contentText: "Components",
-        href: "/"
+        href: "#"
       },{
-        contentText: pageTitle
+        contentText: pageTitle,
+        href: "#"
       }],
       isMobileApp: true,
       label: "Mobile app"
