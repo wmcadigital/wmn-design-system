@@ -6,7 +6,7 @@
   },
   "html-css-class-completion.includeGlobPattern": "**/*.{css,html,njk, md}",
   "files.associations": {
-    "*.njk": "jinja-html",
+    "*.njk": "nunjucks",
     "*.njk.md": "jinja-md"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
