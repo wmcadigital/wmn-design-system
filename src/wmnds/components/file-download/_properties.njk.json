@@ -3,12 +3,12 @@
     {
       "name": "fileName",
       "type": "string",
-      "description": "The file name of the download."
+      "description": "<strong>Required.</strong> The file name of the download."
     },
     {
       "name": "fileType",
       "type": "string",
-      "description": "The file type of the download e.g. doc, pdf."
+      "description": "<strong>Required.</strong> The file type of the download e.g. doc, pdf."
     },
     {
       "name": "fileSize",
@@ -18,7 +18,7 @@
     {
       "name": "downloadLinkText",
       "type": "string",
-      "description": "The text to be displayed in the download link."
+      "description": "Custom text to be displayed in the download link."
     },
     {
       "name": "accessible",
