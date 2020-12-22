@@ -11,10 +11,10 @@
     <p>{{title}}</p>
     {{
         wmndsWarningText({
-            text: warningText,
-            icon: warningIcon, 
-            class: "wmnds-p-b-sm"
-        }) | indent(6) | trim | safe
+            contentText: warningText,
+            icon: warningIcon,
+            classes: "wmnds-p-b-sm"
+        })
     }}
     {{content | safe}}
 </div>

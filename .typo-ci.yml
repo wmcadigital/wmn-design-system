@@ -32,6 +32,8 @@ excluded_words:
   - tfwm
   - njk
   - basemap
+  - ipsum
+  - atozofstyle
 
 # Would you like filenames to also be spellchecked?
 spellcheck_filenames: false

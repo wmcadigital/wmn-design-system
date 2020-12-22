@@ -33,7 +33,7 @@ const cacheBust = require('./gulp-tasks/cache-bust'); // This function checks in
 
 const { moveOldCSS, moveOldReactNative, moveOldIcons } = require('./gulp-tasks/move-old-files');
 
-const { browserSync, reload } = require('./gulp-tasks/browser-sync'); // BrowserSync server
+const { startBrowserSync, reload } = require('./gulp-tasks/browser-sync'); // BrowserSync server
 
 // WATCHERS
 function watchFiles() {
@@ -46,7 +46,7 @@ function watchFiles() {
   // watch(paths.nunjucks.output, formatNjk); // Format Nunjucks src files if change is detected in build folder (this is to stop watch looping, if inserted in above watcher)
   watch(paths.images.src, series(moveImages, reload)); // If new images are found, move to build folder
   watch(paths.svgs.src, series(buildSprites, reload));
-  watch(paths.styles.src, series(buildStyles, buildReactNativeStyles, lintStyles, reload)); // run buildStyles function on scss change(s)
+  watch(paths.styles.src, series(buildStyles, lintStyles)); // run buildStyles function on scss change(s)
   watch(paths.config.src, series(buildConfig, reload)); // Reload when config folder changes
 }
 
@@ -95,7 +95,7 @@ const serve = series(
   ),
   minImages,
   cacheBust,
-  parallel(watchFiles, browserSync)
+  parallel(watchFiles, startBrowserSync)
 );
 // Export items to be used in terminal
 exports.default = serve;

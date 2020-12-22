@@ -4,7 +4,7 @@ const plugins = require('gulp-load-plugins')();
 // Local requires
 const paths = require('./paths.js');
 
-module.exports = () => {
+const lintingStyles = () => {
   return src(paths.styles.src)
     .pipe(
       plugins.sassLint({
@@ -13,3 +13,5 @@ module.exports = () => {
     )
     .pipe(plugins.sassLint.format());
 };
+
+module.exports = lintingStyles;

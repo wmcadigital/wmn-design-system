@@ -1,11 +1,13 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle="Header V2" %}
+{% set pageTitle="Header" %}
 {% set section="Patterns" %}
 {# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
 {% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
 {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
 {% block content %}
 {# About #}
@@ -30,25 +32,27 @@
 <h2>Header</h2>
 {# Skip Link #}
 <h3>Skip link</h3>
-<p>There is a hidden skip link for users with screen reader assistive technology. This allows users to quickly access the main content. All pages must include this.</p>
+<p>There is a hidden <a href="https://design-system.service.gov.uk/components/skip-link/" target="_blank">skip link</a> for users with screen reader assistive technology. This allows users to quickly access the main content. All pages must include this.</p>
 <p>Ensure there is a HTML element on the page with the ID of <code class="wmnds-website-inline-code">wmnds-main-content</code> so the user can skip to this section.</p>
 {# Logo #}
 <h3>Logo</h3>
 <p>This must always be the West Midlands Network logo.</p>
 {# Phase indicator #}
 <h3>Phase indicator</h3>
-<p>This component must be used if the service is not live, using the phase indicator guidance.</p>
+<p>This component must be used if the service is not live, using the <a href="/components/phase-indicator/" target="_self">phase indicator guidance</a>.</p>
 {# Navigation #}
 <h3>Navigation</h3>
-<p>The three top-level navigation items were decided by identifying our user’s top tasks using Gerry McGovern’s methodology. We overlaid a heatmap of the home page, where we found the same three areas were the most-used areas.</p>
+<p>The three top-level navigation items were decided by identifying our user’s <a href="https://medium.com/@gerrymcgovern/identifying-customer-top-tasks-ee228206b6ed" target="_blank">top tasks</a> using Gerry McGovern’s methodology. We overlaid a heatmap of the home page, where we found the same three areas were the most-used areas.</p>
 <p>The top-level items open a structured megamenu to avoid cognitive overload. Users are familiar with this pattern from online shopping and transport operators.</p>
-<p>We only use three top-level items as we prefer not to use hamburger menus on mobile. Users are required to make an extra click to reveal the navigation, therefore you cannot glance at navigation options.</p>
+<p>We only use three top-level items as we <a href="https://lmjabreu.com/post/why-and-how-to-avoid-hamburger-menus/" target="_blank">prefer not to use hamburger menus</a> on mobile. Users are required to make an extra click to reveal the navigation, therefore you cannot glance at navigation options.</p>
 {# Mobile apps #}
 <h3>Mobile apps</h3>
-<p>When designing an app, you should use a tab bar and avoid using hamburger items wherever possible. Limit the tabs to the most important tasks using user research.</p>
+<p>When designing an app, you should use a <a href="https://developer.apple.com/design/human-interface-guidelines/ios/bars/tab-bars/" target="_blank">tab bar</a> and avoid using hamburger items wherever possible. Limit the tabs to the most important tasks using user research.</p>
 {# Search #}
 <h3>Search</h3>
-<p>This functionality only shows for desktop and tablet users. When clicked, search expands and takes over the whole page.</p>
+<p>This function expands the mega menu and reveals the search bar along with the ‘I want to…’ feature.</p>
+<p>The ‘I want to...’ feature shows a list of the top page links which users access through search. This is to help users find the information they are searching for faster. These links are regularly updated using search data to maintain their relevance.</p>
+<p>On mobile, the mega menu search function uses a primary purple background instead of the standard white background. Our user testing found users preferred the white link text on the primary purple background as it is clearer to read.</p>
 
 {{
   compExample([
@@ -289,5 +293,65 @@
     iframe: true
   })
 }}
+<br>
+{# Archived Header #}
+<h2>Archived header</h2>
+{{
+ wmndsWarningText ({
+      contentHTML: "<p>This is an old version fo the header pattern for reference only. Use the <a href=\"#wmnds-main-content\" class=\"wmnds-link\" title=\"Current version of header pattern\">current version</a> instead.</p>",
+      icon: "general-info"
+    })
+}}
+<hr />
+{{
+  compExample([
+    wmndsHeader({
+      navItems: navItems,
+      banner: true,
+      breadcrumbs: {
+        section: section,
+        pageTitle: pageTitle
+      },
+      exampleAria: "Full header"
+    })
+  ])
+}}
+
+{# Mobile app variant #}
+<h3 id="mobile-app-header">Mobile app variant of header</h3>
+<p>When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network header.</p>
+
+<p>To use the mobile app variant:</p>
+<ul>
+  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-header--mobile-app</code> to the wmnds-header element</li>
+  <li>Copy the code for the back button section below and insert it into your existing header</li>
+  <li>Finally, add the script for the back button in your local javascript file</li>
+</ul>
+
+<p>
+  You will most likely want to use this with the mobile variants of the
+  {{ wmndsLink({
+    contentText: 'breadcrumb component',
+    link: '/components/breadcrumb/#mobile-app-breadcrumb'
+    })
+  }} and
+  {{ wmndsLink({
+    contentText: 'footer pattern',
+    link: '#mobile-app-footer'
+    })
+  }} .
+</p>
+
+{{
+  compExample([
+    wmndsHeader({
+      navItems: navItems,
+      app: true,
+      exampleAria: "Mobile app header"
+    })
+  ])
+}}
+
+<br/><br/>
 
 {% endblock %}

@@ -2,7 +2,7 @@
 const browserSync = require('browser-sync').create();
 const paths = require('./paths.js'); // List of all paths in a config
 
-module.exports.browserSync = () => {
+const startingBrowserSync = () => {
   return browserSync.init({
     server: {
       baseDir: paths.server.baseDir,
@@ -14,7 +14,11 @@ module.exports.browserSync = () => {
   });
 };
 
-module.exports.reload = done => {
+const reloadingBrowserSync = done => {
   browserSync.reload();
   done();
 };
+
+module.exports.browserSync = browserSync;
+module.exports.startBrowserSync = startingBrowserSync;
+module.exports.reload = reloadingBrowserSync;
