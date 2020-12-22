@@ -16,8 +16,6 @@ The cards have many common use cases and applications, all of which can be found
 
 ---
 
-<br><br>
-
 {# Content card #}
 
 ## Content card
@@ -49,8 +47,6 @@ The cards have many common use cases and applications, all of which can be found
     })
 }}
 
-<br><br>
-
 {% markdown %}
 {# Navigation card #}
 
@@ -58,20 +54,20 @@ The cards have many common use cases and applications, all of which can be found
 
 {# What #}
 
-### What is it? <a name="nav-card-what-is-it"></a>
+<h3>What is it?</h3>
 
 - A variation of the Content card where the whole card area is clickable.
 
 {# When to #}
 
-### When to use it? <a name="nav-card-when-to-use-it"></a>
+<h3>When to use it?</h3>
 
 - When it is part of a set of cards used for navigation.
 - When the whole card needs to be clickable.
 
 {# When not to #}
 
-### When not to use it? <a name="nav-card-when-not-to-use-it"></a>
+<h3>When not to use it?</h3>
 
 - When multiple interactive components within the card are used. Instead, use a Content card.
 
@@ -80,7 +76,6 @@ The cards have many common use cases and applications, all of which can be found
 {{
     compExample([
         wmndsContentCard({
-            clickable: true,
             href: "https://designsystem.wmnetwork.co.uk/components/content-card/"
         })
     ], {
@@ -101,21 +96,21 @@ The cards have many common use cases and applications, all of which can be found
 
 {# What #}
 
-### What is it? <a name="yellow-what-is-it"></a>
+<h3>What is it?</h3>
 
 - The styling of the card changes to match disruption yellow branding
 - The styling helps users through their journey to major roadworks and events information
 
 {# When to #}
 
-### When to use it? <a name="yellow-when-to-use-it"></a>
+<h3>When to use it?</h3>
 
 - When you are linking to a disruptions (major roadworks and events) page
 - Only one card should be yellow on a page
 
 {# When not to #}
 
-### When not to use it? <a name="yellow-when-not-to-use-it"></a>
+<h3>When not to use it?</h3>
 
 - When you are not linking to a disruptions (major roadworks and events) page
 - To attract the user's attention to a campaign other than disruptions

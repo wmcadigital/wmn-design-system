@@ -1,11 +1,11 @@
 {% macro wmndsContentCard(params) %}
 {# Set #}
-{% set variantModifier = " " + params.variant if params.variant else "" %}
+{% set classes = " " + params.classes if params.classes else "" %}
 {% set yellowModifier = " wmnds-content-card--yellow" if params.yellow else "" %}
 {# Opening & closing tags #}
-{% set tag = "a" if params.clickable else "div" %}
+{% set tag = "a" if params.href else "div" %}
 {% set href = params.href if params.href else "#" %}
-{% set _attributes = " href=\"" + href + "\" target=\"_self\"" if params.clickable else "" %}
+{% set _attributes = " href=\"" + href + "\" target=\"_self\"" if params.href else "" %}
 {# HTML content #}
 {% set contentHTML = params.contentHTML if params.contentHTML else "
     <div class=\"wmnds-p-sm\">
@@ -16,7 +16,7 @@
 
 {# This macro checks if it's being called inside a {% call %} tag #}
 {# It's an easier way to pass in larger html content  #}
-<{{tag}}{{_attributes | safe}} class="wmnds-content-card{{variantModifier + yellowModifier}}">
+<{{tag}}{{_attributes | safe}} {% if params.id %}id="{{ params.id }}"{% endif %} class="wmnds-content-card{{classes + yellowModifier}}">
 {%- if caller -%}
     {{ caller() }}
     {%- else -%}
