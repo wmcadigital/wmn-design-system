@@ -1,12 +1,10 @@
-{% extends "www/_layouts/layout-fullwidth.njk" %}
+{% extends "www/_layouts/layout-homepage.njk" %}
 {% set pageTitle = "West Midlands Network<br/>Design System" %}
 {% set section = 'Home' %}
 {# Imports #}
-{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
-
 
 {% block content %}
 <div class="wmnds-grid wmnds-grid--spacing-lg-2-xl wmnds-m-t-md wmnds-m-b-md">
@@ -16,7 +14,7 @@
         The design system helps to make your West Midlands Network service consistent.
       </p>
       <p>
-        It is a library of styles, interface components and frequent patterns underpinned by user research.
+        You must use the design system for new services.
       </p>
       <p>
         You can use GitHub to <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/doc/contributing.md" title="View and contribute code to the Design System on GitHub" target="_blank" rel="noopener noreferrer">view and contribute code</a>, <a href="https://github.com/wmcadigital/wmn-design-system/issues/new?assignees=mrmjprice%2CKaterinaKir&labels=feature_request&template=feature_proposal.md&title=" title="Give feedback or propose an idea about the Design System on GitHub" target="_blank" rel="noopener noreferrer">give feedback or propose an idea</a>, or <a href="https://github.com/wmcadigital/wmn-design-system/issues/new?assignees=&labels=&template=report_bug.md&title=" title="Report an issue with the Design System on GitHub" target="_blank" rel="noopener noreferrer">report an issue</a>.
@@ -31,7 +29,8 @@
   }}
   </div>
 </div>
-<hr />
+</div>
+
 {# Internal navigation #}
 <div class="wmnds-grid wmnds-grid--align-stretch wmnds-grid--spacing-sm-2-xsm wmnds-grid--spacing-lg-4-xsm wmnds-m-t-md">
   {# User research #}
