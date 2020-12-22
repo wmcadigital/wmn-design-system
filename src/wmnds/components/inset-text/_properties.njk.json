@@ -1,6 +1,11 @@
 {
   "wmndsInsetTextProps": [
     {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the content that will be part of the button. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+    },
+    {
       "name": "contentHTML",
       "type": "string",
       "description": "<strong>Required.</strong> The HTML content to use within the component."
