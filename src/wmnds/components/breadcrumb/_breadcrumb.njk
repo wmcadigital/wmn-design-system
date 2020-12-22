@@ -26,9 +26,9 @@
       {% if breadcrumb.unlinkedItem === true %} 
         {{ breadcrumb.contentText }}
       {% else %}
-      <a href="{{ _href }}" class="wmnds-breadcrumb__link{% if isCurrentPage %} wmnds-breadcrumb__link--current{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
-        {{ breadcrumb.contentText }}
-      </a>
+        <a href="{{ _href }}" class="wmnds-breadcrumb__link{% if isCurrentPage %} wmnds-breadcrumb__link--current{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
+          {{ breadcrumb.contentText }}
+        </a>
       {% endif %}
 
     </li>

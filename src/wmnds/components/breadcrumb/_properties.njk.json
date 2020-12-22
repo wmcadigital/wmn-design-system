@@ -3,7 +3,7 @@
     {
       "name": "items",
       "type": "array",
-      "description": "Specifies the section which the current page falls under. If this is the same as the page title it will not display.",
+      "description": "<strong>Required.</strong> Array of breadcrumbs item objects. See <code class='wmnds-website-inline-code'>items</code> below.",
       "arrayOptions": [
         {
           "name": "contentText",
