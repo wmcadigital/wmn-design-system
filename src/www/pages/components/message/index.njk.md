@@ -218,9 +218,16 @@
 {{ compExample
   ([
     wmndsMsgHelp({
-      message: 'Details added what happened and what to do next.<br /> Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+      contentHTML: 'Details added what happened and what to do next.<br /> Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/help/",
+    njk: true,
+    njkProps: wmndsMsgHelpProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {# End Help message #}

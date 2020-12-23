@@ -23,7 +23,7 @@
     {
       "name": "contentHTML",
       "type": "string",
-      "description": "<strong>Required.</strong> The HTML to use within the notification banner. You can use any string with this option. If you set <code class='wmnds-website-inline-code'>contentHTML</code>, <code class='wmnds-website-inline-code'>contentText</code> is not required and is ignored."
+      "description": "<strong>Required.</strong> The HTML to use within the message component. You can use any string with this option. If you set <code class='wmnds-website-inline-code'>contentHTML</code>, <code class='wmnds-website-inline-code'>contentText</code> is not required and is ignored."
     },
     {
       "name": "dismissable",
