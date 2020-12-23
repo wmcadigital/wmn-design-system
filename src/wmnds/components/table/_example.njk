@@ -2,94 +2,85 @@
 {% from "wmnds/components/table/_table.njk" import wmndsTable %}
 
 {{
-   wmndsTable(
-     {
-        title: "Table Title",
-        caption: "Table Caption",
-        hideHeader: false,
-        firstCellIsHeader: true,
-        classes: "wmnds-m-b-xl",
-        captionClasses: null,
-        head: [
+  wmndsTable(
+    {
+      title: "Table Title",
+      caption: "Table Caption",
+      hideHeader: false,
+      firstCellIsHeader: true,
+      classes: "wmnds-m-b-xl",
+      captionClasses: null,
+      head: [
+        {
+          contentText: "Header 1",
+          contentHTML: "Header 1",
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 2",
+          contentHTML: "Header 2",
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 3",
+          contentHTML: "Header 3",
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        }
+      ],
+      rows: [
+        [
           {
-            contentText: "Header 1",
+            contentText: "Cell 1",
             contentHTML: null,
             classes: null,
-            format: null,
             colspan: 1,
             rowspan: 1,
           },
           {
-            contentText: "Header 2",
+            contentText: "Cell 2",
             contentHTML: null,
             classes: null,
-            format: null,
             colspan: 1,
             rowspan: 1,
           },
           {
-            contentText: "Header 3",
+            contentText: "Cell 3",
             contentHTML: null,
             classes: null,
-            format: null,
             colspan: 1,
             rowspan: 1,
           }
         ],
-        rows: [
-          [
-            {
-              contentText: "Cell 1",
-              contentHTML: null,
-              classes: null,
-              format: null,
-              colspan: 1,
-              rowspan: 1,
-            },
-            {
-              contentText: "Cell 2",
-              contentHTML: null,
-              classes: null,
-              format: "",
-              colspan: 1,
-              rowspan: 1,
-            },
-            {
-              contentText: "Cell 3",
-              contentHTML: null,
-              classes: null,
-              format: null,
-              colspan: 1,
-              rowspan: 1,
-            }
-          ],
-          [
-            {
-              contentText: "Cell 1",
-              contentHTML: null,
-              classes: null,
-              format: null,
-              colspan: 1,
-              rowspan: 1,
-            },
-            {
-              contentText: "Cell 2",
-              contentHTML: null,
-              classes: null,
-              format: "",
-              colspan: 1,
-              rowspan: 1,
-            },
-            {
-              contentText: "Cell 3",
-              contentHTML: null,
-              classes: null,
-              format: null,
-              colspan: 1,
-              rowspan: 1,
-            }
-          ]
+        [
+          {
+            contentText: "Cell 1",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 2",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 3",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          }
         ]
+      ]
     })
 }}
 {% endraw %}

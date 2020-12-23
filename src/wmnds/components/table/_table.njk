@@ -3,68 +3,95 @@
 {# Params #}
 {% set title = params.title if params.title %}
 {% set caption = params.caption if params.caption %}
+{% set classes = " " + params.classes if params.classes %}
 {% set hideHeader = params.hideHeader if params.hideHeader else false %}
-{% set classNames = " " + params.classNames if params.classNames %}
 {% set hideHeaderClass = " wmnds-table--without-header" if params.hideHeader else "" %}
 
+{# Set row params #}
+{% if params.tableRows %}
+  {% set rows = params.tableRows %}
+{% else %}
+  {% set rows = [
+    [
+      {
+        contentText: "Cell 1"
+      },
+      {
+        contentText: "Cell 2"
+      }
+    ],
+    [
+      {
+        contentText: "Cell 1"
+      },
+      {
+        contentText: "Cell 2"
+      }
+    ]
+  ] %}
+{% endif %}
+{# Set head row params #}
+{% if params.head %}
+  {% set head = params.head %}
+{% else %}
+  {% set head = [
+    {
+      contentText: "Header 1"
+    },
+    {
+      contentText: "Header 2"
+    }
+  ] %}
+{% endif %}
 
-
-<table class="wmnds-table{{classNames}}{{hideHeaderClass}}">
+<table class="wmnds-table{{classes}}{{hideHeaderClass}}">
+  {# Table Title #}
   {%- if title %}
   <h3>
     {{title}}
   </h3>
   {% endif -%}
 
+  {# Table Caption #}
   {%- if caption %}
-    <caption class="wmnds-table__caption">
-      {{- caption -}}
-    </caption>
+  <caption class="wmnds-table__caption">
+    {{- caption -}}
+  </caption>
   {%- endif -%}
 
-  
   {%- if hideHeader === false %}
-    {%- if params.headers %}
       <thead>
         <tr>
-            {% for i in range(0, params.headers.length) -%}
-              <th scope="col">{{params.headers[i]}}</th>
+            {% for cell in head -%}
+              {% set _headCellContent = cell.contentHTML | safe if cell.contentHTML else cell.contentText %}
+              <th scope="col">{{ _headCellContent }}</th>
             {% endfor %}
         </tr>
       </thead>
-    {%- else %}
-      <thead>
-        <tr>
-            {% for i in range(1, params.cols + 1) -%}
-              <th scope="col">Header {{i}}</th>
-            {% endfor %}
-        </tr>
-      </thead>
-    {% endif -%}
   {% endif -%}
 
   <tbody>
-    {%- for j in range(1, params.rows + 1) %}
+    {% for row in rows %}
     <tr>
-      <th scope="row" {% if params.cellClasses[0] %}class="{{params.cellClasses[0]}}"{% endif %} {% if params.headers %}data-header="{{params.headers[0]}}"{% endif %}>
-        {%- if params.values -%}
-          {{- params.values[j-1][0] -}}
-        {% else -%}
-          Cell
-        {%- endif -%}
+      {% for cell in row %}
+      {% set _cellContent = cell.contentHTML | safe if cell.contentHTML else cell.contentText %}
+  
+      {% if head %}
+        {% set _dataHeaderContent = head[loop.index0].contentText %}
+      {% endif %}
+  
+      {% if loop.index === 1 and params.firstCellIsHeader === true %}
+      <th scope="row" {% if cell.colspan %}colspan="{{ cell.colspan }}"{% endif %} {% if cell.rowspan %}rowspan="{{ cell.rowspan }}"{% endif %} {% if cell.classes %}class="{{ cell.classes }}"{% endif %} {% if _dataHeaderContent %}data-header="{{ _dataHeaderContent }}"{% endif %}>
+        {{ _cellContent }}
       </th>
-
-      {%- for k in range(1, params.cols) %}
-        <td {% if params.cellClasses[k] %}class="{{params.cellClasses[k]}}"{% endif %} {% if params.headers %}data-header="{{params.headers[k]}}"{% endif %}>
-          {%- if params.values %}
-            {{- params.values[j-1][k] | safe -}}
-          {%- else -%}
-            Cell
-          {%- endif -%}
-        </td>
-      {%- endfor %}
+      {% else %}
+      <td {% if cell.classes %}class="{{ cell.classes }}"{% endif %} {% if cell.colspan %}colspan="{{ cell.colspan }}"{% endif %} {% if cell.rowspan %}rowspan="{{ cell.rowspan }}"{% endif %} {% if _dataHeaderContent %}data-header="{{ _dataHeaderContent }}"{% endif %}>
+        {{ _cellContent }}
+      </td>
+      {% endif %}
+      {% endfor %}
     </tr>
-    {%- endfor %}
+    {% endfor %}
   </tbody>
 </table>
 

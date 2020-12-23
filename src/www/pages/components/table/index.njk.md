@@ -42,16 +42,44 @@
 {{
   compExample([
     wmndsTable({
-      rows: 3,
-      cols: 3,
       caption: "Table caption",
       title: "Table title",
-      headers: ["Header 1", "Header 2", "Header 3"],
-      values: [
-        ["Cell 1", "Cell 2", "Cell 3"],
-        ["Cell 1", "Cell 2", "Cell 3"],
-        ["Cell 1", "Cell 2", "Cell 3"]
-      ]
+      firstCellIsHeader: true,
+      head: [
+        {
+          contentText: "Header 1"
+        },
+        {
+          contentText: "Header 2"
+        },
+        {
+          contentText: "Header 3"
+        }
+      ],
+      tableRows: [
+          [
+            {
+              contentText: "Cell 1"
+            },
+            {
+              contentText: "Cell 2"
+            },
+            {
+              contentText: "Cell 3"
+            }
+          ],
+          [
+            {
+              contentText: "Cell 1"
+            },
+            {
+              contentText: "Cell 2"
+            },
+            {
+              contentText: "Cell 3"
+            }
+          ]
+        ]
     })
   ], {
     componentPath: "wmnds/components/table/",
