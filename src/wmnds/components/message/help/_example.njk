@@ -1,12 +1,8 @@
 {% raw %}
-{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
+{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgHelp %}
 
 {{
-   wmndsMsgSummaryProps({
-      type: "info",
-      classes: null,
-      title: "Information about XXXXXXXXX was successfully updated!",
-      subtitle: null,
+   wmndsMsgHelp({
       contentText: "Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum text.",
       contentHTML: null,
       dismissable: false
