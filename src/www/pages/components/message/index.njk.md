@@ -38,9 +38,16 @@
     wmndsMsgSummary({
       type: 'info',
       title: 'Information about XXXXXXXXX was successfully updated!',
-      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum text.'
+      contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum text.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/summary/",
+    njk: true,
+    njkProps: wmndsMsgSummaryProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End info message #}
 
@@ -58,9 +65,16 @@
     wmndsMsgSummary({
       type: 'success',
       title: 'Success confirmation',
-      message: 'Details added if needed to confirm action.'
+      contentText: 'Details added if needed to confirm action.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/summary/",
+    njk: true,
+    njkProps: wmndsMsgSummaryProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End success message #}
 
@@ -79,9 +93,16 @@
     wmndsMsgSummary({
       type: 'success-fill',
       title: 'Success confirmation',
-      message: 'Details added if needed to confirm action.'
+      contentText: 'Details added if needed to confirm action.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/summary/",
+    njk: true,
+    njkProps: wmndsMsgSummaryProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End success message #}
 
@@ -100,9 +121,16 @@
     wmndsMsgSummary({
       type: 'warning',
       title: 'Warning message',
-      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+      contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/summary/",
+    njk: true,
+    njkProps: wmndsMsgSummaryProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End Warning message #}
 
@@ -121,9 +149,16 @@
     wmndsMsgSummary({
       type: 'error',
       title: 'Error message',
-      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+      contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/summary/",
+    njk: true,
+    njkProps: wmndsMsgSummaryProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {# End error message #}
@@ -152,9 +187,16 @@
       type: 'info',
       title: 'Information about XXXXXXXXX was successfully updated!',
       dismissable: true,
-      message: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+      contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/message/summary/",
+    njk: true,
+    njkProps: wmndsMsgSummaryProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End close message variant #}
 
