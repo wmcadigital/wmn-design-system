@@ -26,8 +26,6 @@
 
 ---
 
-<br /><br />
-
 {# Info message #}
 
 ## Information
@@ -53,8 +51,6 @@
 
 {% markdown %}
 
-<br /><br />
-
 {# Success message #}
 
 ## Success
@@ -79,8 +75,6 @@
 {# End success message #}
 
 {% markdown %}
-
-<br /><br />
 
 {# Success message #}
 
@@ -108,8 +102,6 @@
 
 {% markdown %}
 
-<br /><br />
-
 {# Warning message #}
 
 ## Warning
@@ -135,8 +127,6 @@
 {# End Warning message #}
 
 {% markdown %}
-
-<br /><br />
 
 {# Error message #}
 
@@ -164,8 +154,6 @@
 {# End error message #}
 
 {% markdown %}
-
-<br /><br />
 
 {# Close message variant #}
 
@@ -201,8 +189,6 @@
 {# End close message variant #}
 
 {% markdown %}
-
-<br /><br />
 
 {# Help message #}
 
