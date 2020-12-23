@@ -2,7 +2,7 @@
 
 {# Imports of components #}
 {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
-{% from "wmnds/components/button/_button.njk" import wmndsButton as primary %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
 
 <div class="wmnds-p-md wmnds-cookies-manager">
   <div class="wmnds-container wmnds-col-1 wmnds-col-sm-1 wmnds-col-lg-3-4">
@@ -38,16 +38,16 @@
                 desc: 'These cookies collect information about how you’re using our services, for instance popular pages or errors. We use this information to make decisions when improving our services. We do not use any information collected to identify you as an individual.'
               }
             ]
-          }) | trim | indent(4)
+          })
         }}
       </div>
       <div>
       {{
-        primary({
-          classNames: "wmnds-btn wmnds-cookies-manager__save-preferences wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
-          text: "Save Preferences",
-          type: "submit"
-        }) | trim | indent(4)
+        wmndsButton({
+          classses: "wmnds-cookies-manager__save-preferences wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
+          contentText: "Save Preferences",
+          role: "submit"
+        })
       }}
       </div>
       <div class="wmnds-m-t-lg">

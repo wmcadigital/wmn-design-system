@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+     <title>Icons/Electric</title>
+     <g id="Icons/Electric" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+         <path d="M194.714638,80 L138.297501,80 L159.123931,15.1 C161.079465,7.5 155.457306,0 147.781838,0 L77.3826379,0 C71.516038,0 66.529428,4.45 65.7472146,10.4 L50.102948,130.4 C49.1740696,137.6 54.649563,144 61.7383713,144 L119.768823,144 L97.2313013,241.25 C95.4713213,248.85 101.142368,256 108.622283,256 C112.728903,256 116.63997,253.8 118.791056,250 L204.834523,98 C209.381138,90.05 203.758979,80 194.714638,80 Z" id="Path" fill="#FFFFFF"></path>
+     </g>
+ </svg> 

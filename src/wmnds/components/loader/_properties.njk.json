@@ -1,0 +1,14 @@
+{
+  "wmndsLoaderProps": [
+    {
+      "name": "size",
+      "type": "string",
+      "description": "Determines the display size of the loader. If left blank, the loader will display at the default size. Other accepted values are <code class='wmnds-website-inline-code'>small</code> or <code class='wmnds-website-inline-code'>large</code>."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the loader component."
+    }
+  ]
+}

@@ -14,7 +14,7 @@
 {% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
 
 {{
-    wmndsLink( { isBackLink: true, text: "Back" } ) | trim | indent(4)
+    wmndsLink( { isBackLink: true } )
 }}
 <form class="bg-white wmnds-m-t-lg">
     <div class="wmnds-col-1 wmnds-col-sm-3-4 wmnds-col-lg-2-3  wmnds-p-sm  wmnds-p-b-none">
