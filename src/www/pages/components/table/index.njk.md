@@ -31,8 +31,6 @@
 
 ---
 
-<br><br>
-
 {# Table #}
 
 ## Table with Headers

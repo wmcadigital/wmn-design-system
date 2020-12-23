@@ -5,7 +5,7 @@
 {% set caption = params.caption if params.caption %}
 {% set classes = " " + params.classes if params.classes %}
 {% set hideHeader = params.hideHeader if params.hideHeader else false %}
-{% set hideHeaderClass = " wmnds-table--without-header" if params.hideHeader else "" %}
+{% set _hideHeaderClass = " wmnds-table--without-header" if params.hideHeader else "" %}
 {% set _firstCellIsHeader = false if params.firstCellIsHeader === false else true %}
 
 
@@ -46,7 +46,7 @@
   ] %}
 {% endif %}
 
-<table class="wmnds-table{{classes}}{{hideHeaderClass}}">
+<table class="wmnds-table{{classes}}{{_hideHeaderClass}}">
   {# Table Title #}
   {%- if title %}
   <h3>
