@@ -21,6 +21,7 @@
 {% endif %}
 {# Set classes #}
 {% set classes = " " + params.classes if params.classes %}
+{% set _content = params.contentHTML | safe if params.contentHTML else params.contentText %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 <div class="wmnds-msg-summary wmnds-msg-summary--{{ params.type }} {{ classes }}">
@@ -45,7 +46,7 @@
     {% endif %}
   </div>
   <div class="wmnds-msg-summary__info">
-    {{ params.message | safe }}
+    {{ _content }}
   </div>
 </div>
 {% endmacro %}
