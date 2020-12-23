@@ -25,35 +25,136 @@
     {{
         [
             wmndsTable({
-                rows: 3,
-                cols: 3,
-                cellClasses: ["", "", "wmnds-text-align-right"],
                 title: "Personal Details",
                 hideHeader: true,
-                classNames: "wmnds-m-b-xl",
-                values: [
-                    ["Name", "Andy Street", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"],
-                    ["Date of Birth", "1 January 2020", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"],
-                    ["Contact Details", "07700 900 457<br>andy.street@example.com", "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>"]
-                ]
-            }) | trim | indent(4),
+                tableRows: [
+                    [
+                        {
+                            contentText: "Name"
+                        },
+                        {
+                            contentText: "Andy Street"
+                        },
+                        {
+                            contentHTML: "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Date of Birth"
+                        },
+                        {
+                            contentText: "1 January 2020"
+                        },
+                        {
+                            contentHTML: "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Contact Details"
+                        },
+                        {
+                            contentHTML: "07700 900 457<br>andy.street@example.com"
+                        },
+                        {
+                            contentHTML: "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ]
+                ],
+                classes: "wmnds-m-b-xl"
+            }),
 
             wmndsTable({
-                rows: 3,
-                cols: 3,
-                cellClasses: ["", "", "wmnds-text-align-right"],
                 title: "Ticket Details",
                 hideHeader: true,
-                classNames: "wmnds-m-b-xl"
+                tableRows: [
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ]
+                ],
+                classes: "wmnds-m-b-xl"
             }) | trim | indent(4),
 
             wmndsTable({
-                rows: 5,
-                cols: 3,
-                cellClasses: ["", "", "wmnds-text-align-right"],
                 title: "Direct Debit",
                 hideHeader: true,
-                classNames: "wmnds-m-b-xl"
+                firstCellIsHeader: true,
+                tableRows: [
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell",
+                            classes: "wmnds-text-align-right"
+                        }
+                    ]
+                ],
+                classes: "wmnds-m-b-xl"
             }) | trim | indent(4)
         ] | join("\n    ") | safe
     }}

@@ -6,6 +6,8 @@
 {% set classes = " " + params.classes if params.classes %}
 {% set hideHeader = params.hideHeader if params.hideHeader else false %}
 {% set hideHeaderClass = " wmnds-table--without-header" if params.hideHeader else "" %}
+{% set _firstCellIsHeader = false if params.firstCellIsHeader === false else true %}
+
 
 {# Set row params #}
 {% if params.tableRows %}
@@ -80,7 +82,7 @@
         {% set _dataHeaderContent = head[loop.index0].contentText %}
       {% endif %}
   
-      {% if loop.index === 1 and params.firstCellIsHeader === true %}
+      {% if loop.index === 1 and _firstCellIsHeader === true %}
       <th scope="row" {% if cell.colspan %}colspan="{{ cell.colspan }}"{% endif %} {% if cell.rowspan %}rowspan="{{ cell.rowspan }}"{% endif %} {% if cell.classes %}class="{{ cell.classes }}"{% endif %} {% if _dataHeaderContent %}data-header="{{ _dataHeaderContent }}"{% endif %}>
         {{ _cellContent }}
       </th>
