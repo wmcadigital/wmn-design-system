@@ -87,8 +87,6 @@ The cards have many common use cases and applications, all of which can be found
     })
 }}
 
-<br><br>
-
 {% markdown %}
 {# Yellow modifier #}
 
