@@ -4,18 +4,91 @@
 {{
    wmndsTable(
      {
-        rows: 3,
-        cols: 3,
-        cellClasses: ["", "", "wmnds-text-align-right"],
         title: "Table Title",
         caption: "Table Caption",
         hideHeader: false,
-        headers: ["Header 1", "Header 2", "Header 3"],
-        classNames: "wmnds-m-b-xl",
-        values: [
-          ["Cell 1", "Cell 2", "Cell 3"],
-          ["Cell 1", "Cell 2", "Cell 3"],
-          ["Cell 1", "Cell 2", "Cell 3"]
+        firstCellIsHeader: true,
+        classes: "wmnds-m-b-xl",
+        captionClasses: null,
+        head: [
+          {
+            contentText: "Header 1",
+            contentHTML: null,
+            classes: null,
+            format: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Header 2",
+            contentHTML: null,
+            classes: null,
+            format: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Header 3",
+            contentHTML: null,
+            classes: null,
+            format: null,
+            colspan: 1,
+            rowspan: 1,
+          }
+        ],
+        rows: [
+          [
+            {
+              contentText: "Cell 1",
+              contentHTML: null,
+              classes: null,
+              format: null,
+              colspan: 1,
+              rowspan: 1,
+            },
+            {
+              contentText: "Cell 2",
+              contentHTML: null,
+              classes: null,
+              format: "",
+              colspan: 1,
+              rowspan: 1,
+            },
+            {
+              contentText: "Cell 3",
+              contentHTML: null,
+              classes: null,
+              format: null,
+              colspan: 1,
+              rowspan: 1,
+            }
+          ],
+          [
+            {
+              contentText: "Cell 1",
+              contentHTML: null,
+              classes: null,
+              format: null,
+              colspan: 1,
+              rowspan: 1,
+            },
+            {
+              contentText: "Cell 2",
+              contentHTML: null,
+              classes: null,
+              format: "",
+              colspan: 1,
+              rowspan: 1,
+            },
+            {
+              contentText: "Cell 3",
+              contentHTML: null,
+              classes: null,
+              format: null,
+              colspan: 1,
+              rowspan: 1,
+            }
+          ]
         ]
     })
 }}

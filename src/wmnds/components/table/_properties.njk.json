@@ -11,39 +11,89 @@
       "description": "Table title (displayed as h3)"
     },
     {
+      "name": "rows",
+      "type": "array",
+      "description": "<strong>Required.</strong> Array of table rows and cells. See options for rows below.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>html</code> is set, this is not required. Text for cells in table rows. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>text</code> is set, this is not required. HTML for cells in table rows. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>text</code> argument will be ignored"
+        },
+        {
+          "name": "format",
+          "type": "string",
+          "description": "Specify format of a cell. Currently we only use \"numeric\"."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Additional classes to add to the table row cell."
+        },
+        {
+          "name": "colspan",
+          "type": "integer",
+          "description": "Specify how many columns a cell extends."
+        },
+        {
+          "name": "rowspan",
+          "type": "integer",
+          "description": "Specify how many rows a cell extends."
+        }
+      ]
+    },
+    {
       "name": "hideHeader",
       "type": "boolean",
       "description": "Determines whether to display a table header row (<code class='wmnds-website-inline-code'>thead</code>) at the top of the table. Set to <code class='wmnds-website-inline-code'>false</code> by default."
     },
     {
-      "name": "headers",
+      "name": "head",
       "type": "array",
-      "description": "Array of table head cells. Will not show if hideHeader is true."
+      "description": "Array of table head cells. See options for head below. Will not show if hideHeader is true.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>html</code> is set, this is not required. Text for cells in table rows. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>text</code> is set, this is not required. HTML for cells in table rows. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>text</code> argument will be ignored"
+        },
+        {
+          "name": "format",
+          "type": "string",
+          "description": "Specify format of a cell. Currently we only use \"numeric\"."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Additional classes to add to the table row cell."
+        },
+        {
+          "name": "colspan",
+          "type": "integer",
+          "description": "Specify how many columns a cell extends."
+        },
+        {
+          "name": "rowspan",
+          "type": "integer",
+          "description": "Specify how many rows a cell extends."
+        }
+      ]
     },
+
     {
-      "name": "rows",
-      "type": "integer",
-      "description": "<strong>Required.</strong> Number of rows to include in the table"
-    },
-    {
-      "name": "cols",
-      "type": "integer",
-      "description": "<strong>Required.</strong> Number of columns to include in the table"
-    },
-    {
-      "name": "classNames",
+      "name": "classes",
       "type": "string",
       "description": "Additional classes to add to the table container."
-    },
-    {
-      "name": "cellClasses",
-      "type": "array",
-      "description": "Additional classes to add to the table cells."
-    },
-    {
-      "name": "values",
-      "type": "array",
-      "description": "An array of values which will populate the table. See nunjucks markup for example."
     }
   ]
 }
