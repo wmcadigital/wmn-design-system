@@ -1,116 +1,91 @@
-{% extends "www/_layouts/layout-fullwidth.njk" %}
+{% extends "www/_layouts/layout-homepage.njk" %}
 {% set pageTitle = "West Midlands Network<br/>Design System" %}
 {% set section = 'Home' %}
 {# Imports #}
-{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
 {%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 
+{% block summaryContent %}
+  <div class="wmnds-col-1 wmnds-m-t-lg wmnds-m-b-lg">
+    <div class="wmnds-grid wmnds-grid--spacing-lg-2-xl wmnds-m-t-sm wmnds-m-b-sm">
+      <div class="wmnds-col-1 wmnds-col-lg-2-3 white">
+        <h1 id="wmnds-main-content" class="white">Design and build digital services for transport in the West Midlands</h1>
+        <p class="emphasised">
+          Use this design system to build consistent, usable services. Learn from the research and experience of other teams.
+        </p>
+        <br>
+        <p>
+          You can use GitHub to <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/doc/contributing.md" title="View and contribute code to the Design System on GitHub" target="_blank" rel="noopener noreferrer" class="wmnds-link wmnds-website-summary-content__link">view and contribute code</a>, <a href="https://github.com/wmcadigital/wmn-design-system/issues/new?assignees=mrmjprice%2CKaterinaKir&labels=feature_request&template=feature_proposal.md&title=" title="Give feedback or propose an idea about the Design System on GitHub" target="_blank" rel="noopener noreferrer" class="wmnds-link wmnds-website-summary-content__link">give feedback or propose an idea</a>, or <a href="https://github.com/wmcadigital/wmn-design-system/issues/new?assignees=&labels=&template=report_bug.md&title=" title="Report an issue with the Design System on GitHub" target="_blank" rel="noopener noreferrer" class="wmnds-link wmnds-website-summary-content__link">report an issue</a>.
+        </p>
+      </div>
+      {# Design system version / Current release #}
+      <div class="wmnds-col-1 wmnds-col-lg-1-3">
+        <div class="wmnds-col-1">
+        {{
+          wmndsContentCard({
+            contentHTML: "<div class=\"wmnds-p-sm\"><h2>Current release</h2><p>The current release is <a href=\"https://github.com/wmcadigital/wmn-design-system/releases/tag/v$*version\" title=\"View release notes for version $*version on GitHub\" target=\"_blank\" rel=\"noopener noreferrer\">version $*version</a> which was released on $*releaseDate.</p><p>You can get alerts about new releases by <a href=\"https://docs.github.com/en/free-pro-team@latest/github/managing-subscriptions-and-notifications-on-github/viewing-your-subscriptions\" target=\"_blank\" rel=\"noopener noreferrer\">watching the design system on GitHub</a>.</p></div>"
+          })
+        }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock summaryContent %}
 
 {% block content %}
-<div class="wmnds-grid wmnds-grid--align-center wmnds-grid--spacing-lg-2-xl">
-  {# Overview #}
-  <div class="wmnds-col-1 wmnds-col-lg-2-3">
-      <h2>Overview</h2>
-      <p>
-        The West Midlands Network (WMN) Design System is a library of typography, visual styles and user interface components which are documented and updated continuously.
-      </p>
-      <p>
-        Use the WMN Design System to make your service or application consistent with WMN design and styles.
-      </p>
-      <p>
-        Our design system aims to be platform/framework agnostic. This allows designers and developers from all practices to utilise our design system and avoid repeating work that's already been done.
-      </p>
-  </div>
-  {# Design system links #}
-  <div class="wmnds-col-1 wmnds-col-lg-1-3">
-    <h2>Contribute</h2>
-    {# Github code repo #}
-    <p>
-      <a href="https://github.com/wmcadigital/wmn-design-system" target="_blank" rel="noopener noreferrer">
-       <svg aria-hidden="true" data-prefix="fab" data-icon="github" class="wmnds-website-homepage-icons svg-inline--fa fa-github fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>Github code repository
-      </a>
-    </p>
-    {# Zeplin designs #}
-    <p>
-      <a href="https://app.zeplin.io/project/5d95c0263689f402745a6e3a/styleguide" target="_blank" rel="noopener noreferrer">
-        <svg class="wmnds-website-homepage-icons" viewBox="0 0 2406.8 1923.8" xmlns="http://www.w3.org/2000/svg"><path d="M371 1326.4l-125.9 46-6.7 374.5 435.8-159.2c-149.6-50.1-258.7-138.4-303.2-261.3" fill="#fdbd39"/><path d="M436.9 930.3L0 1089.9l245.1 282.6 125.9-46c-44.4-122.5-17-260.8 65.9-396.2" fill="#f69833"/><path d="M1172 389.8C615.7 593 257 1012.4 371 1326.4l2014.5-735.9c-114-314-657.2-403.9-1213.5-200.7" fill="#fecf33"/><path d="M1584.4 1527.2c556.3-203.2 915.6-620.7 801-936.6L370.9 1326.4c114.6 316 657.2 404 1213.5 200.8" fill="#ee6723"/><path d="M2385.4 590.5L371 1326.4c39.4 108.8 189.9 162.4 400.9 162.4 205.8 0 469.2-50.9 743.8-151.2 556.3-203.2 947.6-532.3 869.7-747.1" fill="#f69833"/><path d="M1984.5 428.2c-205.7 0-469.2 50.9-743.8 151.2-556.3 203.2-947.6 532.2-869.7 747l2014.5-735.9c-39.5-108.8-189.9-162.3-401-162.3" fill="#fdbd39"/><g fill="#ee6723"><path d="M1873.2 1766.8c-59.3 0-146.7-53.5-259.9-159.1-133.9-124.9-287.2-307.9-431.9-515.2C1036.8 885.2 918 678 846.8 508.9c-77.5-184.2-88.6-297.4-32.9-336.6 12.9-8.8 28.2-13.3 43.8-12.9 45.3 0 133.7 33.7 297 194.5l3.6 3.5-.5 5c-1.1 11.6-2.1 23.2-3 34.7l-1.8 22.7-16-16.1C961 226.4 883.6 207.3 858.4 207.3c-7.2 0-12.9 1.4-17 4.3-24.2 17-25.8 100.2 49.4 278.7 69.9 166 187 370.1 329.7 574.7 142.8 204.7 293.8 384.9 425.4 507.6 141.8 132.3 205.7 146.6 226.6 146.6 7.2 0 13-1.5 17.4-4.6 25.5-17.9 25.5-107-58.3-299.2l-3.9-8.8 8.4-4.6c8.4-4.6 16.6-9.1 24.2-13.5l10.1-5.7 4.7 10.6c59.4 136.2 115 309.3 42.1 360.5-12.9 8.8-28.3 13.3-44 12.9zm0-21v10.5z"/><path d="M1597.9 1521.4l-.8 10.4c-14.1 174-51.1 383.2-147.7 391.7-2 .2-4 .2-5.9.2-65.6 0-127.7-94-184.4-279.3-53.8-175.4-95.5-410.8-117.4-662.9-22-252.1-21.7-491.2.9-673.3 24.6-198.4 71.4-302 139.2-308 2-.2 4.1-.3 6.1-.3 47.6 0 119.3 53.9 192.7 304.9l-47.9 9.2c-24.5-83.8-51.2-152-77.7-199-24.5-43.3-48.4-67.2-67.1-67.2-.6 0-1.2 0-1.9.1-29.4 2.6-72.2 73.8-96 266.2-22.2 178.8-22.5 414.4-.8 663.2 21.7 248.9 62.7 480.8 115.5 653 23.6 77.1 49.5 140.7 75 183.8 23.4 39.8 46.1 61.7 63.8 61.7.6 0 1.2 0 1.8-.1 28.1-2.4 81.1-76.6 103.4-337.5z"/></g></svg>Zeplin designs
-      </a>
-    </p>
-    {# Contribute to design system #}
-    <p>
-      <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/doc/contributing.md" target="_blank" rel="noopener noreferrer">
-       <svg aria-hidden="true" data-prefix="far" data-icon="lightbulb-on" class="wmnds-website-homepage-icons svg-inline--fa fa-lightbulb-on fa-w-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M112 192a24 24 0 00-24-24H24a24 24 0 000 48h64a24 24 0 0024-24zm-4.92 95.22l-55.42 32a24 24 0 1024 41.56l55.42-32a24 24 0 00-24-41.56zm24-232l-55.42-32a24 24 0 10-24 41.56l55.42 32a24 24 0 1024-41.56zM520.94 100a23.8 23.8 0 0012-3.22l55.42-32a24 24 0 00-24-41.56l-55.42 32a24 24 0 0012 44.78zM616 168h-64a24 24 0 000 48h64a24 24 0 000-48zm-27.66 151.23l-55.42-32a24 24 0 10-24 41.56l55.42 32a24 24 0 0024-41.56zM320 0C217.72 0 144 83 144 176a175 175 0 0043.56 115.78c16.63 19 42.75 58.8 52.41 92.16v.06h48v-.12a47.67 47.67 0 00-2.13-14.07C280.25 352 263 305.06 223.66 260.15a127.48 127.48 0 01-31.6-84.15C191.84 102.36 251.72 48 320 48a127.91 127.91 0 0196.34 212.15c-39.09 44.61-56.4 91.47-62.09 109.46a56.78 56.78 0 00-2.25 14.31v.08h48c9.69-33.37 35.78-73.18 52.41-92.15A175.93 175.93 0 00320 0zm0 80a96.11 96.11 0 00-96 96 16 16 0 0032 0 64.08 64.08 0 0164-64 16 16 0 000-32zm-79.94 379.19a16 16 0 002.69 8.84l24.5 36.83a16 16 0 0013.31 7.14h78.85a16 16 0 0013.34-7.14l24.5-36.86a16.2 16.2 0 002.69-8.84L400 416H240z"/></svg>Contribute to our design system
-      </a>
-    </p>
-    {# Report an issue #}
-    <p>
-      <a href="https://github.com/wmcadigital/wmn-design-system/issues" target="_blank" rel="noopener noreferrer">
-        <svg aria-hidden="true" data-prefix="fas" data-icon="bug" class="wmnds-website-homepage-icons svg-inline--fa fa-bug fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M511.988 288.9c-.478 17.43-15.217 31.1-32.653 31.1H424v16c0 21.864-4.882 42.584-13.6 61.145l60.228 60.228c12.496 12.497 12.496 32.758 0 45.255-12.498 12.497-32.759 12.496-45.256 0l-54.736-54.736C345.886 467.965 314.351 480 280 480V236c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v244c-34.351 0-65.886-12.035-90.636-32.108l-54.736 54.736c-12.498 12.497-32.759 12.496-45.256 0-12.496-12.497-12.496-32.758 0-45.255l60.228-60.228C92.882 378.584 88 357.864 88 336v-16H32.666C15.23 320 .491 306.33.013 288.9-.484 270.816 14.028 256 32 256h56v-58.745l-46.628-46.628c-12.496-12.497-12.496-32.758 0-45.255 12.498-12.497 32.758-12.497 45.256 0L141.255 160h229.489l54.627-54.627c12.498-12.497 32.758-12.497 45.256 0 12.496 12.497 12.496 32.758 0 45.255L424 197.255V256h56c17.972 0 32.484 14.816 31.988 32.9zM257 0c-61.856 0-112 50.144-112 112h224C369 50.144 318.856 0 257 0z"/></svg>Report an issue
-      </a>
-    </p>
-  </div>
-</div>
+
 {# Internal navigation #}
-<h2>Design System</h2>
-<div class="wmnds-grid wmnds-grid--align-stretch wmnds-grid--spacing-sm-2-xsm wmnds-grid--spacing-lg-4-xsm">
+<div class="wmnds-grid wmnds-grid--align-stretch wmnds-grid--spacing-sm-2-xsm wmnds-grid--spacing-lg-4-xsm wmnds-m-t-md">
   {# User research #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
-    {{
-      wmndsContentTilesNormal({
-        classModifiers: 'wmnds-content-tile--with-one-link',
-        title: "User research",
-        copy: "<p>Start with user needs to make sure you're building the right thing</p>",
-        smallTitle: true,
-        readMore: true,
-        link: '/user-research/',
-        linkText: 'Read more about user research',
-        linkTitle: 'User research'
+     {{
+      wmndsContentCard({
+        href: "/user-research/",
+        linkTitle: "User research",
+        contentHTML: "<div class=\"wmnds-p-sm\">
+           <h3>User research</h3>
+         <p>Start with user needs to build the right thing</p>
+       </div>"
       })
     }}
   </div>
   {# Styles #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
-    {{
-      wmndsContentTilesNormal({
-        classModifiers: 'wmnds-content-tile--with-one-link',
-        title: "Styles",
-        copy: "<p>Make your service look and feel like WMN: colours, icons, typography and utility classes</p>",
-        smallTitle: true,
-        readMore: true,
-        link: '/styles/',
-        linkText: 'Read more about styles',
-        linkTitle: 'Styles'
+      {{
+      wmndsContentCard({
+        href: "/styles/",
+        linkTitle: "Styles",
+        contentHTML: "<div class=\"wmnds-p-sm\">
+           <h3>Styles</h3>
+         <p>Make your service look and feel like West Midlands Network</p>
+       </div>"
       })
     }}
   </div>
   {# Components #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
-    {{
-      wmndsContentTilesNormal({
-        classModifiers: 'wmnds-content-tile--with-one-link',
-        title: "Components",
-        copy: "<p>Reusable parts of the user interface: content, map and form elements; buttons and messages</p>",
-        smallTitle: true,
-        readMore: true,
-        link: '/components/',
-        linkText: 'Read more about components',
-        linkTitle: 'Components'
+        {{
+      wmndsContentCard({
+        href: "/components/",
+        linkTitle: "Components",
+        contentHTML: "<div class=\"wmnds-p-sm\">
+           <h3>Components</h3>
+         <p>Reusable parts of the user interface</p>
+       </div>"
       })
     }}
   </div>
   {# Patterns #}
   <div class="wmnds-col-1 wmnds-col-sm-1-2 wmnds-col-lg-1-4 wmnds-p-b-xsm">
-    {{
-      wmndsContentTilesNormal({
-        classModifiers: 'wmnds-content-tile--with-one-link',
-        title: "Patterns",
-        copy: "<p>Commonly used sets of components</p>",
-        smallTitle: true,
-        readMore: true,
-        link: '/patterns/',
-        linkText: 'Read more about patterns',
-        linkTitle: 'Patterns'
+        {{
+      wmndsContentCard({
+        href: "/patterns/",
+        linkTitle: "Patterns",
+        contentHTML: "<div class=\"wmnds-p-sm\">
+          <h3>Patterns</h3>
+         <p>Commonly used sets of components</p>
+       </div>"
       })
     }}
   </div>
@@ -118,21 +93,13 @@
 
 <br>
 {# Quick start #}
-<h2>Quick start</h2>
-<div class="wmnds-col-auto">
-
-{{
-  wmndsWarningText({
-    text: 'Sign up to <a href="https://confirmsubscription.com/h/d/2B27979182BA9145" class="wmnds-link" target="_blank" rel="noopener noreferrer">updates about changes to the Design System</a> so you can maintain your services.',
-    icon: "general-warning-circle"
-  })
-}}
-</div>
-
-
-<h3>Web projects</h3>
+<h2>Start using the design system</h2>
+<h3>Designing a new service</h3>
+<p>You can <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" target='_blank'>request the Sketch library</a>.</p>
+<br>
+<h3>Developing a web service</h3>
 <p class="wmnds-col-md-3-4">
-  Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application.
+  Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application:
 </p>
 <pre>
   <code class="html wmnds-show-more-ignore" tabindex="0">
@@ -150,20 +117,17 @@
   {%- endfilter %}
   </code>
 </pre>
-
-<h3>Want to use our icons, or using a component that references an icon?</h3>
-<p>Please see the
-  {{
-    wmndsLink({
-      link: "/styles/icons/",
-      linkTitle: "Using WMN Design System icons",
-      text: "icons page"
+<br>
+{{
+   wmndsWarningText({
+      contentHTML: "You should read <a href='/styles/icons/#using-icons' title='Documentation about using icons' target='_blank'>documentation about using icons in your service</a>.",
+      icon: warning-triangle
     })
-  }}.
-</p>
-
-<h3>Mobile app projects (React Native)</h3>
-<p>If you are using React Native, you can import our styles like below.</p>
+}}
+<br>
+<br>
+<h3>Developing an app for mobile devices</h3>
+<p>If you are using React Native, you can import our styles like the example:</p>
 <pre>
   <code class="javascript" tabindex="0">
     {% filter forceescape %}// Import react native styles for WMN Design System
@@ -171,4 +135,16 @@
     {%- endfilter %}
   </code>
 </pre>
+<h3>Before making a service live</h3>
+<p>You must:
+<ul>
+  <li>Make sure you've tested your service with real users</li>
+  <li>Make sure you meet <a href="https://www.gov.uk/guidance/make-your-website-or-app-accessible-and-publish-an-accessibility-statement?utm_source=CampaignPage1&utm_campaign=access_regs" target='_blank'>accessibility regulations</a> else you might be <a href="https://www.legislation.gov.uk/uksi/2018/952/made" title="The Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018" target='_blank'>breaking the law</a></li>
+  <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" title="Let us know you're using the design system" target='_blank'>Let us know</a> you're using the design system on a live service</li>
+</ul>
+</p>
+<br>
+<h3>Get help with using the design system</h3>
+<p>The design system is maintained by the Digital and Data team at West Midlands Combined Authority.</p>
+<p>You can <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" title="Ask a question about using the design system" target='_blank'>ask a question using this form</a>.</p>
 {% endblock %}

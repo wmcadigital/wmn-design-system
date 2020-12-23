@@ -14,9 +14,9 @@
   wmndsLink({
     link: '#wmnds-main-content',
     linkTitle: 'Skip to main content',
-    text: 'Skip to main content',
-    classModifiers: 'wmnds-header__skip-link'
-  }) | trim
+    contentText: 'Skip to main content',
+    classes: 'wmnds-header__skip-link'
+  })
 }}
 <!-- Main header section -->
 <header>
@@ -99,9 +99,12 @@
     <!-- Breadcrumbs -->
     {{
       wmndsBreadcrumb({
-        section: params.breadcrumbs.section,
-        pageTitle: params.breadcrumbs.pageTitle,
-        exampleAria: params.exampleAria
+        items: [{
+          contentText: params.breadcrumbs.section or "Components"
+        },{
+          contentText: params.breadcrumbs.pageTitle
+        }],
+        label: params.label
       }) | trim | indent(4)
     -}}
     {% endif %}

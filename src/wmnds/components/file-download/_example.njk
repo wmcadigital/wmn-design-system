@@ -1,0 +1,13 @@
+{% raw %}
+{% from "wmnds/components/file-download/_file-download.njk" import wmndsFileDownload %}
+
+{{
+    wmndsFileDownload({
+        fileName: "example file",
+        fileType: "pdf",
+        fileSize: "1MB",
+        downloadLinkText: "Download file",
+        accessible: true
+    })
+}}
+{% endraw %}
