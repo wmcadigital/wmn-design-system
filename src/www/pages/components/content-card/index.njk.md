@@ -39,11 +39,11 @@ The cards have many common use cases and applications, all of which can be found
     compExample([
         wmndsContentCard()
     ], {
-      componentPath: "wmnds/components/content-card/",
-      njk: true,
-      njkProps: wmndsContentCardProps,
-      js: false,
-      iframe: false
+        componentPath: "wmnds/components/content-card/",
+        njk: true,
+        njkProps: wmndsContentCardProps,
+        js: false,
+        iframe: false
     })
 }}
 
@@ -79,11 +79,11 @@ The cards have many common use cases and applications, all of which can be found
             href: "https://designsystem.wmnetwork.co.uk/components/content-card/"
         })
     ], {
-      componentPath: "wmnds/components/content-card/",
-      njk: true,
-      njkProps: wmndsContentCardProps,
-      js: false,
-      iframe: false
+        componentPath: "wmnds/components/content-card/",
+        njk: true,
+        njkProps: wmndsContentCardProps,
+        js: false,
+        iframe: false
     })
 }}
 
@@ -122,11 +122,11 @@ The cards have many common use cases and applications, all of which can be found
             yellow: true
         })
     ], {
-      componentPath: "wmnds/components/content-card/",
-      njk: true,
-      njkProps: wmndsContentCardProps,
-      js: false,
-      iframe: false
+        componentPath: "wmnds/components/content-card/",
+        njk: true,
+        njkProps: wmndsContentCardProps,
+        js: false,
+        iframe: false
     })
 }}
 
