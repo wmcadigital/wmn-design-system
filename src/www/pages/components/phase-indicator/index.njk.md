@@ -28,19 +28,34 @@ A service can either be in Alpha (prototype stage) or Beta (when it is on a publ
 {% endmarkdown %}
 
 {% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
-{% from "wmnds/components/phase-indicator/_phase-indicator-link.njk" import wmndsPhaseIndicatorLink %}
+{% from "wmnds/components/phase-indicator/phase-indicator-link/_phase-indicator-link.njk" import wmndsPhaseIndicatorLink %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {{
-  compExample([wmndsPhaseIndicator()])
+  compExample([
+    wmndsPhaseIndicator()
+  ], {
+    componentPath: "wmnds/components/phase-indicator/",
+    njk: true,
+    js: false,
+    iframe: false
+  })
 }}
 
 {{
-  compExample([wmndsPhaseIndicatorLink({
-    link:'#',
-    linkTitle: 'Link title',
-    text: 'Try our new disruptions page'
-  })])
+  compExample([
+    wmndsPhaseIndicatorLink({
+      href:'#',
+      linkTitle: 'Link title',
+      contentText: 'Try our new disruptions page'
+    })
+  ], {
+    componentPath: "wmnds/components/phase-indicator/phase-indicator-link/",
+    njk: true,
+    njkProps: wmndsPhaseIndicatorLinkProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% endblock %}
