@@ -16,6 +16,11 @@
       "description": "If set to <code class='wmnds-website-inline-code'>false</code>, first cell in table row will be a <code class='wmnds-website-inline-code'>td</code> instead of a <code class='wmnds-website-inline-code'>th</code>. Default value is <code class='wmnds-website-inline-code'>true</code>"
     },
     {
+      "name": "classes",
+      "type": "string",
+      "description": "Additional classes to add to the table container."
+    },
+    {
       "name": "rows",
       "type": "array",
       "description": "<strong>Required.</strong> Array of table rows and cells. See options for rows below.",
@@ -28,7 +33,39 @@
         {
           "name": "contentHTML",
           "type": "string",
-          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>text</code> is set, this is not required. HTML for cells in table rows. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>text</code> argument will be ignored"
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML for cells in table rows. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored"
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Additional classes to add to the table row cell."
+        },
+        {
+          "name": "colspan",
+          "type": "integer",
+          "description": "Specify how many columns a cell extends."
+        },
+        {
+          "name": "rowspan",
+          "type": "integer",
+          "description": "Specify how many rows a cell extends."
+        }
+      ]
+    },
+    {
+      "name": "head",
+      "type": "array",
+      "description": "Array of table head cells. See options for head below. Will not show if <code class='wmnds-website-inline-code'>hideHeader</code> is true.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text for cells in table head. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be used for mobile headers."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML for cells in table rows. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored"
         },
         {
           "name": "classes",
@@ -51,44 +88,6 @@
       "name": "hideHeader",
       "type": "boolean",
       "description": "Determines whether to display a table header row (<code class='wmnds-website-inline-code'>thead</code>) at the top of the table. Set to <code class='wmnds-website-inline-code'>false</code> by default."
-    },
-    {
-      "name": "head",
-      "type": "array",
-      "description": "Array of table head cells. See options for head below. Will not show if hideHeader is true.",
-      "arrayOptions": [
-        {
-          "name": "contentText",
-          "type": "string",
-          "description": "<strong>Required.</strong> Text for cells in table head. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be used for mobile headers."
-        },
-        {
-          "name": "contentHTML",
-          "type": "string",
-          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>text</code> is set, this is not required. HTML for cells in table rows. If <code class='wmnds-website-inline-code'>html</code> is provided, the <code class='wmnds-website-inline-code'>text</code> argument will be ignored"
-        },
-        {
-          "name": "classes",
-          "type": "string",
-          "description": "Additional classes to add to the table row cell."
-        },
-        {
-          "name": "colspan",
-          "type": "integer",
-          "description": "Specify how many columns a cell extends."
-        },
-        {
-          "name": "rowspan",
-          "type": "integer",
-          "description": "Specify how many rows a cell extends."
-        }
-      ]
-    },
-
-    {
-      "name": "classes",
-      "type": "string",
-      "description": "Additional classes to add to the table container."
     }
   ]
 }
