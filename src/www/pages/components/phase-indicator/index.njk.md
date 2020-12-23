@@ -17,7 +17,7 @@
 
 {# When #}
 
-### When to use it?</h3>
+### When to use it?
 
 - Every service that has not passed its public beta service assessment must have a phase indicator
 - Within the header pattern
