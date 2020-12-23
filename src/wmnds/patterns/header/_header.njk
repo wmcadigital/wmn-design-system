@@ -99,9 +99,12 @@
     <!-- Breadcrumbs -->
     {{
       wmndsBreadcrumb({
-        section: params.breadcrumbs.section,
-        pageTitle: params.breadcrumbs.pageTitle,
-        exampleAria: params.exampleAria
+        items: [{
+          contentText: params.breadcrumbs.section or "Components"
+        },{
+          contentText: params.breadcrumbs.pageTitle
+        }],
+        label: params.label
       }) | trim | indent(4)
     -}}
     {% endif %}
