@@ -8,12 +8,12 @@
     {
       "name": "iconRight",
       "type": "string",
-      "description": "The icon tag which specifies the icon to show to the right of the indicator (see icon reference). Default value is <code class='wmnds-website-inline-code'>general-warning-circle</code>. By default, no icon will be displayed."
+      "description": "The icon tag which specifies the icon to show to the right of the indicator (see icon reference). By default, no icon will be displayed."
     },
     {
       "name": "iconLeft",
       "type": "string",
-      "description": "The icon tag which specifies the icon to show to the left of the indicator (see icon reference). Default value is <code class='wmnds-website-inline-code'>modes-isolated-bus</code>. By default, no icon will be displayed."
+      "description": "The icon tag which specifies the icon to show to the left of the indicator (see icon reference). By default, no icon will be displayed."
     },
     {
       "name": "classes",
