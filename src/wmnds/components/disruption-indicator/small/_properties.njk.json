@@ -3,17 +3,17 @@
     {
       "name": "mode",
       "type": "string",
-      "description": "Accepted values are: <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>coach</code>, <code class='wmnds-website-inline-code'>cycle</code>, <code class='wmnds-website-inline-code'>metro</code>, <code class='wmnds-website-inline-code'>plane</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>roads</code> and <code class='wmnds-website-inline-code'>walk</code>"
+      "description": "<strong>Required.</strong> Specifies the travel mode which the disruption relates to. Accepted values are: <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>coach</code>, <code class='wmnds-website-inline-code'>cycle</code>, <code class='wmnds-website-inline-code'>metro</code>, <code class='wmnds-website-inline-code'>plane</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>roads</code> and <code class='wmnds-website-inline-code'>walk</code>"
     },
     {
       "name": "iconRight",
       "type": "string",
-      "description": "Type of the button. As default it is <code class='wmnds-website-inline-code'>null</code>. Available types: <code class='wmnds-website-inline-code'>link</code>, <code class='wmnds-website-inline-code'>primary</code>, <code class='wmnds-website-inline-code'>secondary</code>, <code class='wmnds-website-inline-code'>destructive</code>, <code class='wmnds-website-inline-code'>start</code>, <code class='wmnds-website-inline-code'>mode</code> "
+      "description": "The icon tag which specifies the icon to show to the right of the indicator (see icon reference). Default value is <code class='wmnds-website-inline-code'>general-warning-circle</code>"
     },
     {
       "name": "classes",
       "type": "string",
-      "description": "<strong>Required.</strong> Specifies the content that will be part of the button. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+      "description": "List of aditional classes which will be added to the disruption indicator. A typical use case is modifying the badge colour to indicate severity e.g. <code class='wmnds-website-inline-code'>wmnds-disruption-indicator-small--severe</code>"
     }
   ]
 }
