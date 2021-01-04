@@ -1,0 +1,24 @@
+{
+  "wmndsDisruptionIndicatorMediumProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Text to describe the route name or number of the mode of transport."
+    },
+    {
+      "name": "iconRight",
+      "type": "string",
+      "description": "The icon tag which specifies the icon to show to the right of the indicator (see icon reference). Default value is <code class='wmnds-website-inline-code'>general-warning-circle</code>. By default, no icon will be displayed."
+    },
+    {
+      "name": "iconLeft",
+      "type": "string",
+      "description": "The icon tag which specifies the icon to show to the left of the indicator (see icon reference). Default value is <code class='wmnds-website-inline-code'>modes-isolated-bus</code>. By default, no icon will be displayed."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "List of aditional classes which will be added to the disruption indicator. Typical use cases are modifying the badge colour to indicate severity or displaying a narrow badge e.g. <code class='wmnds-website-inline-code'>wmnds-disruption-indicator-medium--narrow</code>"
+    }
+  ]
+}

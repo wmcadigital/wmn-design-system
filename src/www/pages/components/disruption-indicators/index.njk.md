@@ -227,22 +227,29 @@ There are three types all giving different levels of detail.
   compExample([
     wmndsDisruptionIndicatorMedium(),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--success',
+      classes: 'wmnds-disruption-indicator-medium--success',
       iconRight: 'general-success'
     }),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--warning',
+      classes: 'wmnds-disruption-indicator-medium--warning',
       iconRight: 'general-warning-circle'
     }),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--error',
+      classes: 'wmnds-disruption-indicator-medium--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--severe',
+      classes: 'wmnds-disruption-indicator-medium--severe',
       iconRight: 'general-warning-triangle'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/disruption-indicator/medium/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorMediumProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {# Medium - Narrow #}
@@ -277,37 +284,41 @@ There are three types all giving different levels of detail.
   compExample([
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (good service) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow',
+      classes: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-success'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (mindor disruption) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
+      classes: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-circle'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (major disruption) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
+      classes: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (severe disruption) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow',
+      classes: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (delete) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
+      classes: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-trash'
     })
   ],
   {
-    displayInline: true
+    componentPath: "wmnds/components/disruption-indicator/medium/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorMediumProps,
+    js: false,
+    iframe: false
   })
 }}
 
