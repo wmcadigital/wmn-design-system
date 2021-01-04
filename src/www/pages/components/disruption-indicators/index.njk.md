@@ -18,30 +18,39 @@
 ] %}
 
 {% block content %}
+{% markdown %}
 {# About #}
-<h2>About</h2>
-<p>Disruption indicators are used to show the current service status within interfaces and maps.</p>
-<p>There are three types all giving different levels of detail.</p>
-<hr>
 
-<br><br>
+## About
+
+Disruption indicators are used to show the current service status within interfaces and maps.
+There are three types all giving different levels of detail.
+
+---
+
 {# Map pin #}
-<h2>Small</h2>
+
+## Small
+
 {# What #}
-<h3>What does it do?</h3>
-<ul>
-  <li>A pin to place on a map</li>
-  <li>Shows the modal icon</li>
-  <li>Shows severity of the disruption with background colour and icon</li>
-</ul>
+
+### What does it do?
+
+- A pin to place on a map
+- Shows the modal icon
+- Shows severity of the disruption with background colour and icon
+
 {# When #}
-<h3>When to use it?</h3>
-<ul>
-  <li>On a live map</li>
-</ul>
+
+### When to use it?
+
+- On a live map
 
 {# Small:Minor disruptions #}
-<h3>Minor disruption</h3>
+
+### Minor disruption
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorSmall({
@@ -73,9 +82,13 @@
     displayInline: true
   })
 }}
-
+{% markdown %}
 {# Small:Major disruptions #}
-<h3>Major disruption</h3>
+
+### Major disruption
+
+{% endmarkdown %}
+
 {{
   compExample([
     wmndsDisruptionIndicatorSmall({
@@ -123,9 +136,12 @@
     displayInline: true
   })
 }}
-
+{% markdown %}
 {# Small:Severe disruptions #}
-<h3>Severe disruption</h3>
+
+### Severe disruption
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorSmall({
@@ -173,22 +189,25 @@
     displayInline: true
   })
 }}
-
-<br><br>
+{% markdown %}
 {# Medium:Normal #}
-<h2>Medium - Normal</h2>
-{# What #}
-<h3>What does it do?</h3>
-<ul>
-  <li>Shows the route number</li>
-  <li>Shows the severity with the background colour and icon where there is data, purple where there is no data</li>
-</ul>
-{# When #}
-<h3>When to use it?</h3>
-<ul>
-  <li>In search results, when searching for a bus route</li>
-</ul>
 
+## Medium - Normal
+
+{# What #}
+
+<h3>What does it do?</h3>
+
+- Shows the route number
+- Shows the severity with the background colour and icon where there is data, purple where there is no data
+
+{# When #}
+
+<h3>When to use it?</h3>
+
+- In search results, when searching for a bus route
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorMedium(),
@@ -211,29 +230,34 @@
   ])
 }}
 
-<br><br>
 {# Medium - Narrow #}
 {% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %}
-<h2>Medium - Narrow</h2>
-{# What #}
-<h3>What does it do?</h3>
-<ul>
-  <li>Shows the route number</li>
-  <li>Shows the modal icon</li>
-  <li>Shows the disruption severity with the background</li>
-</ul>
-{# When #}
-<h3>When to use it?</h3>
-<ul>
-  <li>When showing a specific bus route's disruption status</li>
-  <li>Example: homepage travel updates widget or major roadworks sidebar</li>
-</ul>
-{# When not #}
-<h3>When not use it?</h3>
-<ul>
-  <li>If the service is not a route</li>
-</ul>
+{% markdown %}
 
+## Medium - Narrow
+
+{# What #}
+
+<h3>What does it do?</h3>
+
+- Shows the route number
+- Shows the modal icon
+- Shows the disruption severity with the background
+
+{# When #}
+
+<h3>When to use it?</h3>
+
+- When showing a specific bus route's disruption status
+- Example: homepage travel updates widget or major roadworks sidebar
+
+{# When not #}
+
+<h3>When not use it?</h3>
+
+- If the service is not a route
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorNarrow({
@@ -272,28 +296,36 @@
   })
 }}
 
-<br><br>
+{% markdown %}
+
 {# LARGE #}
-<h2>Large</h2>
+
+## Large</h2>
+
 {# What #}
+
 <h3>What does it do?</h3>
-<ul>
-  <li>Shows the route name or number</li>
-  <li>Shows the modal name and icon</li>
-  <li>Shows the disruption severity with the background colour, icon and text</li>
-</ul>
+
+- Shows the route name or number
+- Shows the modal name and icon
+- Shows the disruption severity with the background colour, icon and text
+
 {# When #}
+
 <h3>When to use it?</h3>
-<ul>
-  <li>Showing a specific train, tram or road's disruption status</li>
-  <li>Example: homepage travel updates widget or major roadworks sidebar</li>
-</ul>
+
+- Showing a specific train, tram or road's disruption status
+- Example: homepage travel updates widget or major roadworks sidebar
+
 {# Research #}
+
 <h3>Research</h3>
-<ul>
-  <li>During user testing for the home page travel update widget, users preferred having a text description of the mode in addition to the modal icons, as the train and tram brand icons are very similar when small</li>
-</ul>
-<h3>Train</h3>
+
+- During user testing for the home page travel update widget, users preferred having a text description of the mode in addition to the modal icons, as the train and tram brand icons are very similar when small
+
+### Train
+
+{% endmarkdown %}
 {{
   compExample(
     [
@@ -346,8 +378,12 @@
   )
 }}
 
+{% markdown %}
 {# Tram #}
-<h3>Tram</h3>
+
+### Tram
+
+{% endmarkdown %}
 {{
   compExample(
     [
@@ -398,9 +434,12 @@
     ]
   )
 }}
-
+{% markdown %}
 {# Roads #}
-<h3>Roads</h3>
+
+### Roads
+
+{% endmarkdown %}
 {{
   compExample(
     [
@@ -452,6 +491,5 @@
     ]
   )
 }}
-
 
 {% endblock %}
