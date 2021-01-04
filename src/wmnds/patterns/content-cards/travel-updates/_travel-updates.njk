@@ -18,7 +18,7 @@
         <div class="wmnds-m-t-sm">
             {{
                 largeDisruption({
-                strongText: area,
+                primaryText: area,
                 text: "Usual traffic",
                 iconLeft: "modes-isolated-roads",
                 iconRight: "general-success"
@@ -35,7 +35,7 @@
                 {{
                     mediumDisruption({
                     text: bus,
-                    classModifiers: "wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
+                    classes: "wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
                     iconLeft: "modes-isolated-bus",
                     iconRight: "general-success"
                     }) | trim | indent(12)
