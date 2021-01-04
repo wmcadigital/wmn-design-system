@@ -41,7 +41,11 @@ A service can either be in Alpha (prototype stage) or Beta (when it is on a publ
     iframe: false
   })
 }}
+{% markdown %}
 
+### Phase indicator with link
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsPhaseIndicatorLink({
