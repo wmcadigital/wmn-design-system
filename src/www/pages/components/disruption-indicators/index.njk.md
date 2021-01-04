@@ -79,7 +79,12 @@ There are three types all giving different levels of detail.
     })
   ],
   {
-    displayInline: true
+    displayInline: true,
+    componentPath: "wmnds/components/disruption-indicator/small/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorSmallProps,
+    js: false,
+    iframe: false
   })
 }}
 {% markdown %}
@@ -93,47 +98,52 @@ There are three types all giving different levels of detail.
   compExample([
     wmndsDisruptionIndicatorSmall({
       mode: 'bus',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'coach',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'cycle',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'metro',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'plane',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'rail',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'roads',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'walk',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
-    displayInline: true
+    displayInline: true,
+    componentPath: "wmnds/components/disruption-indicator/small/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorSmallProps,
+    js: false,
+    iframe: false
   })
 }}
 {% markdown %}
@@ -146,47 +156,52 @@ There are three types all giving different levels of detail.
   compExample([
     wmndsDisruptionIndicatorSmall({
       mode: 'bus',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'coach',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'cycle',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'metro',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'plane',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'rail',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'roads',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'walk',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
-    displayInline: true
+    displayInline: true,
+    componentPath: "wmnds/components/disruption-indicator/small/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorSmallProps,
+    js: false,
+    iframe: false
   })
 }}
 {% markdown %}
