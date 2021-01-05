@@ -1,0 +1,9 @@
+{
+  "wmndsInTextStepProps": [
+    {
+      "name": "steps",
+      "type": "array",
+      "description": "<strong>Required.</strong> The list of text strings to be displayed as steps."
+    }
+  ]
+}
