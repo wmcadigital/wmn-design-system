@@ -19,7 +19,7 @@
     {%- if hasQuestion %}
     {{ 
       wmndsQuestion({
-        text: question
+        contentText: question
       }) | indent(6) | trim 
     }}
     {% endif -%}
