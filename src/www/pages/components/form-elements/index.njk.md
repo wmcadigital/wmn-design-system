@@ -26,7 +26,16 @@
 
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {{
-  compExample([wmndsLabel()])
+  compExample([
+    wmndsLabel()
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/label/",
+    njk: true,
+    njkProps: wmndsLabelProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End label #}
 
