@@ -1,9 +1,9 @@
 {% macro wmndsQuestion(params) %}
 {# Set vars and defaults #}
-{% set text = params.contentText if params.contentText else "How would you...?" %}
+{% set _text = params.contentText if params.contentText else "How would you...?" %}
 
 <h2 class="wmnds-fe-question">
-  {{contentText}}
+  {{_text}}
 </h2>
 
 {% endmacro %}
