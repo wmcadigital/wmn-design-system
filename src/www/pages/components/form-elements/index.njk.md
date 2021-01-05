@@ -116,7 +116,9 @@
 
 {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
 {{
-  compExample([wmndsCheckboxes()])
+  compExample([
+    wmndsCheckboxes()
+  ])
 }}
 {# End Checkboxes #}
 

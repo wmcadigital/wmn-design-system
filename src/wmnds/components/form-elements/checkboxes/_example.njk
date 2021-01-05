@@ -1,0 +1,31 @@
+{% raw %}
+{% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
+
+{{
+   wmndsCheckboxes({
+      items: [
+         {
+            checked: false,
+            title: null,
+            contentText: "Option 1",
+            editable: true
+         },
+         {
+            checked: true,
+            title: null,
+            contentText: "Option 2",
+            editable: true
+         },
+         {
+            checked: false,
+            title: null,
+            contentText: "Option 3",
+            editable: false
+         }
+      ],
+      legend: "How would you...?",
+      contentText: "Select all options that apply",
+      classes: null
+   })
+}}
+{% endraw %}

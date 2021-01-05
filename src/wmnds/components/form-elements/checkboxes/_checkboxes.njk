@@ -5,47 +5,48 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
 
-{% set hasQuestion = false if params.question === "" else true %}
-{% set question = params.question if params.question %}
-{% set hasDesc = false if params.question === "" else true %}
-{% set desc = params.desc if params.desc else "Select all options that apply" %}
-{% set options = params.options if params.options %}
-{% set groupClass = params.groupClass if params.groupClass %}
+{% set hasLegend = false if params.legend === "" else true %}
+{% set legend = params.legend if params.legend %}
+{% set hasDescription = false if params.legend === "" else true %}
+{% set contentText = params.contentText if params.contentText else "Select all options that apply" %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+{% set items = params.items if params.items %}
+{% set class = " " + params.classes if params.classes %}
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 
-
-<div class="wmnds-fe-group {{groupClass}}">
+<div class="wmnds-fe-group{{class}}">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
-    {%- if hasQuestion %}
+    {%- if hasLegend %}
     {{ 
       wmndsQuestion({
-        text: question
+        text: legend
       }) | indent(6) | trim 
     }}
     {% endif -%}
     </legend>
     <div class="wmnds-fe-checkboxes">
       <span class="wmnds-fe-checkboxes__desc">
-      {%- if hasDesc %}
-      {{ desc | safe}}
+      {%- if hasDescription %}
+      {{ _content }}
       {% endif -%}
       </span>
-      {%- if options %}
-        {%- for option in options %}
-          {%- if option.checked !== null %}
-          {%- set isChecked = (' checked="checked"' | safe) if option.checked === true  else "" %}
-          {%- set isNotEditable = (' disabled="disabled"' | safe) if option.editable === false else "" %}
+      {%- if items %}
+        {%- for item in items %}
+          {%- if item.checked !== null %}
+          {%- set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
+          {%- set isNotEditable = (' disabled="disabled"' | safe) if item.editable === false else "" %}
           {% endif -%}
           <label class="wmnds-fe-checkboxes__container">
             <div class="wmnds-m-b-lg">
-              {%- if option.title %}
-              <h3 class="wmnds-m-none wmnds-p-b-sm">{{option.title}}</h3>
+              {%- if item.title %}
+              <h3 class="wmnds-m-none wmnds-p-b-sm">{{item.title}}</h3>
               {%- endif -%}
-              {%- if option.desc -%}
-              {{ option.desc }}
+              {%- if item.contentText -%}
+              {{ item.contentText }}
               {% endif -%}
             </div>
-            <input class="wmnds-fe-checkboxes__input" value="{{option.title}}" {{isChecked}} type="checkbox" {{isNotEditable}}/>
+            <input class="wmnds-fe-checkboxes__input" value="{{item.title}}" {{isChecked}} type="checkbox" {{isNotEditable}}/>
             <span class="wmnds-fe-checkboxes__checkmark">
               {{
                 wmndsIcon({
