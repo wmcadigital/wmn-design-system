@@ -5,8 +5,8 @@
 {% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
 
 <div class="wmnds-progress-indicator">
-  Section {{actualSection}} of {{totalSections}}
+  Section {{currentSection}} of {{totalSections}}
   <h4>{{sectionName}}</h4>
 </div>
 
-{% endmacro %}
+{% endmacro %} 

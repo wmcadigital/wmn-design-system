@@ -1,0 +1,11 @@
+{% raw %}
+{% from "wmnds/components/form-elements/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
+
+{{
+   wmndsProgressIndicator({
+      currentSection: "1",
+      totalSections: "X",
+      sectionName: "Section Name"
+   })
+}}
+{% endraw %}
