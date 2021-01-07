@@ -5,26 +5,42 @@
    wmndsCheckboxes({
       items: [
          {
+            id: null,
             checked: false,
-            title: null,
+            titleText: null,
             contentText: "Option 1",
-            editable: true
+            contentHTML: null,
+            value: "option1",
+            disabled: false
          },
          {
+            id: null,
             checked: true,
-            title: null,
+            titleText: null,
             contentText: "Option 2",
-            editable: true
+            contentHTML: null,
+            value: "option2",
+            disabled: true
          },
          {
+            id: null,
             checked: false,
-            title: null,
+            titleText: null,
             contentText: "Option 3",
-            editable: false
+            contentHTML: null,
+            value: "option3",
+            disabled: false
          }
       ],
-      legend: "How would you...?",
-      contentText: "Select all options that apply",
+      question: "How would you...?",
+      idPrefix: "checkbox",
+      name: "checkboxes-example",
+      hint: {
+         id: null,
+         classes: null,
+         contentText: "Select all options that apply",
+         contentHTML: null
+      },
       classes: null
    })
 }}

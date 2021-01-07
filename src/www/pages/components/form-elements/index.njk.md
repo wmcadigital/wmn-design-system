@@ -117,8 +117,49 @@
 {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
 {{
   compExample([
-    wmndsCheckboxes()
-  ])
+    wmndsCheckboxes({items: [
+         {
+            id: null,
+            checked: false,
+            titleText: null,
+            contentText: "Item 1",
+            disabled: false
+         },
+         {
+            id: null,
+            checked: true,
+            titleText: null,
+            contentText: "Item 2",
+            value: "item2",
+            disabled: true
+         },
+         {
+            id: null,
+            checked: false,
+            titleText: null,
+            contentText: "Item 3",
+            value: "item3",
+            disabled: false
+         }
+      ],
+      question: "How would you question...?",
+      idPrefix: "checkboxes",
+      name: "checkboxes-example",
+      hint: {
+         id: null,
+         classes: null,
+         contentHTML: "<strong>Select all</strong> options that apply to this question"
+      },
+      classes: null
+      })
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/checkboxes/",
+    njk: true,
+    njkProps: wmndsCheckboxesProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End Checkboxes #}
 
