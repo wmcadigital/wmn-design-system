@@ -81,6 +81,9 @@
           "name": "Phase indicator"
         },
         {
+          "name": "Progress indicator"
+        },
+        {
           "name": "Table"
         },
         {
