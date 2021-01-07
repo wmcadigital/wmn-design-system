@@ -7,18 +7,18 @@
 
 {# Checkboxes #}
 
-## Checkboxes
+## About
 
-<h3>What does it do?</h3>
+### What does it do?
 
 - Allows users select one or more options by clicking the box.
 
-<h3>When to use it?</h3>
+### When to use it?
 
 - When user can select multiple options from the list
 - When user wants to toggle option on or off
 
-<h3>When not to use it?</h3>
+### When not to use it?
 
 - When user can select just one option.
 
