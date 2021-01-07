@@ -2,18 +2,18 @@
   "wmndsCheckboxesProps": [
     {
       "name": "items",
-      "type": "string",
-      "description": "<strong>Required.</strong> Array of checkbox items objects. See items.",
+      "type": "array",
+      "description": "<strong>Required.</strong> Array of checkbox items objects. See <code class='wmnds-website-inline-code'>items</code> below.",
       "arrayOptions": [
         {
           "name": "contentText",
           "type": "string",
-          "description": "<strong>Required.</strong> If html is set, this is not required. Text to use within each checkbox item label. If html is provided, the text argument will be ignored."
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within each checkbox item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
         },
         {
           "name": "contentHTML",
           "type": "string",
-          "description": "<strong>Required.</strong> If text is set, this is not required. HTML to use within each checkbox item label. If html is provided, the text argument will be ignored."
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within each checkbox item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
         },
         {
           "name": "checked",
@@ -22,7 +22,7 @@
         },
         {
           "name": "name",
-          "type": "boolean",
+          "type": "string",
           "description": "Specific name for the checkbox item. If omitted, then component global name string will be applied."
         },
         {
@@ -38,19 +38,51 @@
       ]
     },
     {
-      "name": "contentText",
+      "name": "question",
       "type": "string",
-      "description": "<strong>Required.</strong> If text is set, this is not required. HTML to use within the legend. If html is provided, the text argument will be ignored."
+      "description": "Text for the question component relating to the checkboxes."
     },
     {
       "name": "hint",
+      "type": "object",
+      "description": "Options for the hint component (e.g. text). See <code class='wmnds-website-inline-code'>hint</code> options below.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Optional id attribute to add to the hint span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within the hint. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within the hint. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the hint span tag."
+        }
+      ]
+    },
+    {
+      "name": "idPrefix",
       "type": "string",
-      "description": ""
+      "description": "String to prefix id for each checkbox item if no id is specified on each item. If not passed, fall back to using the name option instead."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong> Name attribute for all checkbox items."
     },
     {
       "name": "classes",
       "type": "string",
-      "description": ""
+      "description": "Classes to add to the checkboxes container."
     }
   ]
 }

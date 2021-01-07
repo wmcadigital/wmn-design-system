@@ -14,7 +14,7 @@
 {% set hintContentHTML = params.hint.contentHTML if params.hint.contentHTML else null %}
 {% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
 {% set hasDescription = false if _hintContent === "" else true %}
-{% set idPrefix = params.idPrefix if params.idPrefix else "checkbox-example" %}
+{% set idPrefix = params.idPrefix if params.idPrefix else name %}
 
 <div class="wmnds-fe-group{{groupClass}}">
   <fieldset class="wmnds-fe-fieldset">
