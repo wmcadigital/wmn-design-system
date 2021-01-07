@@ -1,6 +1,8 @@
 {% macro wmndsFeErrorMessage(params) %}
 
 {# Params #}
-<span class="wmnds-fe-error-message">This is an example error message</span>
+{% set errorMessage = params.errorMessage if params.errorMessage else "This is an example error message" %}
+
+<span class="wmnds-fe-error-message">{{errorMessage}}</span>
 
 {% endmacro %}]
