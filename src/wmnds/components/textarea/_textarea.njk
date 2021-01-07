@@ -2,38 +2,63 @@
 
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Params #}
-{% set classes = " " + params.classes if params.classes %}
 {% set id = params.id if params.id else "textarea" %}
-{% set autofocus = params.autofocus if params.autofocus else null %}
-{% set disabled = params.disabled if params.disabled else null %}
-{% set formId = params.formId if params.formId else null %}
-{% set maxLength = params.maxLength if params.maxLength else null %}
-{% set placeholder = params.placeholder if params.placeholder else null %}
-{% set required = params.required if params.required else false %}
+{% set name = params.name if params.name else id %}
 {% set rows = params.rows if params.rows else 3 %}
+{% set required = params.required if params.required else false %}
+{% set classes = " " + params.classes if params.classes %}
+{% set errorMessage = params.errorMessage if params.errorMessage else "There's an error. Please review this field." %}
+{# Params of label #}
+{% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
+{% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
+{% set labelClasses = params.label.classes if params.label.classes else null %}
+{% set labelFor = params.label.for if params.label.for else params.id %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+{# Params of Attributes #}
+{% set autocomplete = " " + params.attributes.autocomplete if params.attributes.autocomplete %}
+{% set spellcheck = params.attributes.spellcheck if params.attributes.spellcheck else null %}
+{% set autofocus = params.attributes.autofocus if params.attributes.autofocus else null %}
+{% set disabled = params.attributes.disabled if params.attributes.disabled else null %}
+{% set formId = params.attributes.formId if params.attributes.formId else null %}
+{% set maxLength = params.attributes.maxLength if params.attributes.maxLength else null %}
+{% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
+{% set value = params.attributes.value if params.attributes.value else null %}
 
 
-<div class="wmnds-fe-group">
+<div class="wmnds-fe-group{{formGroupClasses}}">
   {{
     wmndsLabel({
-      label: 'Textarea label',
-      for: id
-    }) | trim
+      contentText: labelContentText,
+      contentHTML: labelContentHTML,
+      classes: labelClasses,
+      for: labelFor
+    })
   }}
+  {% if params.error %}
+    {{
+      wmndsFeErrorMessage({
+        errorMessage: errorMessage
+      })
+    }}
+  {% endif %}
   <textarea 
     class="wmnds-fe-textarea{{classes}}" 
     id="{{id}}" 
-    name="{{id}}" 
+    name="{{name}}" 
     rows="{{rows}}"
+    {% if autocomplete %} autocomplete="on" {% endif %} 
     {% if autofocus %} autofocus {% endif %} 
+    {% if spellcheck %} spellcheck="true" {% endif %} 
     {% if disabled %} disabled {% endif %}
     {% if formId %} form="{{formId}}" {% endif %} 
     {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
     {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
     {% if required %} required {% endif %}
-  ></textarea>
+  >{% if value %}{{value}}{% endif %}</textarea>
 </div>
 
 {% endmacro %}

@@ -1,39 +1,19 @@
 {
   "wmndsTextareaProps": [
     {
-      "name": "classes",
-      "type": "string",
-      "description": "List of aditional classes which will be added to the textarea."
-    },
-    {
       "name": "id",
       "type": "string",
-      "description": "<strong>Required.</strong> Must be unique. Used as an id and name attribute. It is linked to the textarea label."
+      "description": "<strong>Required.</strong> Must be unique. The id of the textarea."
     },
     {
-      "name": "autofocus",
-      "type": "boolean",
-      "description": "If true, the text area should automatically get focus when the page loads. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-    },
-    {
-      "name": "disabled",
-      "type": "boolean",
-      "description": "If true, textarea should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-    },
-    {
-      "name": "formId",
+      "name": "name",
       "type": "string",
-      "description": "The form id from the form which the text area belongs to. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+      "description": "<strong>Required.</strong> The name of the textarea, which is submitted with the form data."
     },
     {
-      "name": "maxLength",
-      "type": "int",
-      "description": "The maxLength is the maximum number of characters allowed in the text area. It's an <code class='wmnds-website-inline-code'>optional</code> field."
-    },
-    {
-      "name": "placeholder",
+      "name": "rows",
       "type": "string",
-      "description": "Placeholder is a short hint that describes the expected value of a text area. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+      "description": "Optional number of textarea rows. Default is <code class='wmnds-website-inline-code'>3 rows</code>."
     },
     {
       "name": "required",
@@ -41,9 +21,100 @@
       "description": "If true, textarea is required/must be filled out. Defaults to <code class='wmnds-website-inline-code'>false</code>."
     },
     {
-      "name": "rows",
-      "type": "int",
-      "description": "Rows are the visible number of lines in a text area. Default is <code class='wmnds-website-inline-code'>3</code>."
+      "name": "errorMessage",
+      "type": "string",
+      "description": "Options for the error message component. The error message component will not display if you use a falsy value for errorMessage, for example false or null. See errorMessage."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the textarea."
+    },
+    {
+      "name": "Label",
+      "type": "Object",
+      "description": "<strong>Required.</strong> Options for the label component. See label.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If `contentHTML` is set, this is not required. Text to use within the label. If `contentHTML` is provided, the `contentText`  argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If `contentText` is set, this is not required. HTML to use within the label. If `contentHTML` is provided, the `contentText` argument will be ignored."
+        },
+        {
+          "name": "for",
+          "type": "string",
+          "description": "The value of the for attribute, the id of the input the label is associated with."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the label tag."
+        }
+      ]
+    },
+    {
+      "name": "formGroup",
+      "type": "Object",
+      "description": "Options for the form-group wrapper See formGroup below.",
+      "arrayOptions": [
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the form group (e.g. to show error state for the whole group)"
+        }
+      ]
+    },
+    {
+      "name": "Attributes",
+      "type": "object",
+      "description": "Attribute to identify textarea purpose, for instance <code class='wmnds-website-inline-code'>postal-code</code> or <code class='wmnds-website-inline-code'>username</code>. See autofill for full list of attributes that can be used.",
+      "arrayOptions": [
+        {
+          "name": "autocomplete",
+          "type": "string",
+          "description": "Attribute to identify input purpose, for instance <code class='wmnds-website-inline-code'>postal-code</code> or <code class='wmnds-website-inline-code'>username</code>. See autofill for full list of attributes that can be used."
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "description": "If true, the text area should automatically get focus when the page loads. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+        },
+        {
+          "name": "spellcheck",
+          "type": "boolean",
+          "description": "Optional field to enable or disable the spellcheck attribute on the textarea."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "If true, textarea should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+        },
+        {
+          "name": "formId",
+          "type": "string",
+          "description": "The form id from the form which the text area belongs to. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+        },
+        {
+          "name": "maxLength",
+          "type": "string",
+          "description": "The maxLength is the maximum number of characters allowed in the text area. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder is a short hint that describes the expected value of a text area. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Optional initial value of the textarea."
+        }
+      ]
     }
   ]
 }

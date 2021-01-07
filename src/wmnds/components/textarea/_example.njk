@@ -3,15 +3,32 @@
 
 {{
    wmndsTextarea({
-      classes: null,
-      id: "description",
-      autofocus: false,
-      disabled: false,
-      formId: null,
-      maxLength: 200,
-      placeholder: "Please enter a brief description",
+      id: "example-textarea",
+      name: "example-textarea",
+      rows: "2",
+      error: false,
+      errorMessage: null,
       required: true,
-      rows: 2,
+      classes: null,
+      label: {
+         contentText: "Textarea label",
+         contentHTML: "<span>Textarea label <em>updated</em></span>",
+         classes: "wmnds-m-t-20",
+         for: null
+      },
+      formGroup: {
+         classes: "wmnds-m-t-20"
+      },
+      attributes: {
+         autocomplete: false,
+         spellcheck: true,
+         autofocus: true,
+         disabled: false,
+         formId: "signup-form",
+         maxLength: "200",
+         placeholder: "Textarea placeholder...",
+         value: null
+      }
     })
 }}
 {% endraw %}

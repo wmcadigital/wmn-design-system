@@ -28,16 +28,33 @@
 
 {{
     compExample(
-      [wmndsTextarea({
-        id: "example-textarea",
-        autofocus: true,
-        disabled: false,
-        formId: "signup-form",
-        maxLength: 200,
-        placeholder: "Textarea placeholder...",
-        required: true,
-        rows: 2
-      }
+      [wmndsTextarea(
+        {
+          id: "example-textarea",
+          name: "example-textarea",
+          rows: "2",
+          error: false,
+          errorMessage: null,
+          required: true,
+          classes: null,
+          label: {
+            contentText: "Textarea label",
+            classes: "wmnds-m-t-20"
+          },
+          formGroup: {
+            classes: "wmnds-m-t-20"
+          },
+          attributes: {
+            autocomplete: false,
+            spellcheck: true,
+            autofocus: true,
+            disabled: false,
+            formId: "signup-form",
+            maxLength: "200",
+            placeholder: "Textarea placeholder...",
+            value: null
+          }
+        }
       )],
       {
         componentPath: "wmnds/components/textarea/",
