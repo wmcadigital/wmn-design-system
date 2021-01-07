@@ -1,0 +1,17 @@
+{% raw %}
+{% from "wmnds/components/textarea/_textarea.njk" import wmndsTextarea %}
+
+{{
+   wmndsTextarea({
+      classes: null,
+      id: "description",
+      autofocus: false,
+      disabled: false,
+      formId: null,
+      maxLength: 200,
+      placeholder: "Please enter a brief description",
+      required: true,
+      rows: 2,
+    })
+}}
+{% endraw %}

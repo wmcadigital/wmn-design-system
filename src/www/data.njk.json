@@ -84,6 +84,9 @@
           "name": "Table"
         },
         {
+          "name": "Textarea"
+        },
+        {
           "name": "Warning text"
         }
       ]

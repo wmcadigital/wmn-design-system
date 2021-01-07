@@ -1,0 +1,39 @@
+{% macro wmndsTextarea(params) %}
+
+{# Imports #}
+{% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+
+{# Params #}
+{% set classes = " " + params.classes if params.classes %}
+{% set id = params.id if params.id else "textarea" %}
+{% set autofocus = params.autofocus if params.autofocus else null %}
+{% set disabled = params.disabled if params.disabled else null %}
+{% set formId = params.formId if params.formId else null %}
+{% set maxLength = params.maxLength if params.maxLength else null %}
+{% set placeholder = params.placeholder if params.placeholder else null %}
+{% set required = params.required if params.required else false %}
+{% set rows = params.rows if params.rows else 3 %}
+
+
+<div class="wmnds-fe-group">
+  {{
+    wmndsLabel({
+      label: 'Textarea label',
+      for: id
+    }) | trim
+  }}
+  <textarea 
+    class="wmnds-fe-textarea{{classes}}" 
+    id="{{id}}" 
+    name="{{id}}" 
+    rows="{{rows}}"
+    {% if autofocus %} autofocus {% endif %} 
+    {% if disabled %} disabled {% endif %}
+    {% if formId %} form="{{formId}}" {% endif %} 
+    {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
+    {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
+    {% if required %} required {% endif %}
+  ></textarea>
+</div>
+
+{% endmacro %}

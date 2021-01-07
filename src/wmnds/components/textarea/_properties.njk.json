@@ -1,0 +1,49 @@
+{
+  "wmndsTextareaProps": [
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "List of aditional classes which will be added to the textarea."
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> Must be unique. Used as an id and name attribute. It is linked to the textarea label."
+    },
+    {
+      "name": "autofocus",
+      "type": "boolean",
+      "description": "If true, the text area should automatically get focus when the page loads. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "If true, textarea should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "formId",
+      "type": "string",
+      "description": "The form id from the form which the text area belongs to. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "maxLength",
+      "type": "int",
+      "description": "The maxLength is the maximum number of characters allowed in the text area. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder is a short hint that describes the expected value of a text area. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "description": "If true, textarea is required/must be filled out. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "rows",
+      "type": "int",
+      "description": "Rows are the visible number of lines in a text area. Default is <code class='wmnds-website-inline-code'>3</code>."
+    }
+  ]
+}
