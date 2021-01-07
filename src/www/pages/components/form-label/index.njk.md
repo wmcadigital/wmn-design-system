@@ -6,7 +6,7 @@
 {% markdown %}
 {# Label #}
 
-## Form Label
+## About
 
 ### What does it do?
 
