@@ -3,44 +3,39 @@
     {
       "name": "items",
       "type": "array",
-      "description": "<strong>Required.</strong> Array of checkbox items objects. See <code class='wmnds-website-inline-code'>items</code> below.",
+      "description": "<strong>Required.</strong> Array of radio items objects. See <code class='wmnds-website-inline-code'>items</code> below.",
       "arrayOptions": [
         {
           "name": "contentText",
           "type": "string",
-          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within each checkbox item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within each radio item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
         },
         {
           "name": "contentHTML",
           "type": "string",
-          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within each checkbox item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within each radio item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
         },
         {
           "name": "checked",
           "type": "boolean",
-          "description": "If true, checkbox will be checked."
+          "description": "If true, radio will be checked."
         },
         {
           "name": "name",
           "type": "string",
-          "description": "Specific name for the checkbox item. If omitted, then component global name string will be applied."
+          "description": "Specific name for the radio item. If omitted, then component global name string will be applied."
         },
         {
           "name": "disabled",
           "type": "boolean",
-          "description": "If true, checkbox will be disabled."
-        },
-        {
-          "name": "titleText",
-          "type": "string",
-          "description": ""
+          "description": "If true, radio will be disabled."
         }
       ]
     },
     {
       "name": "question",
       "type": "string",
-      "description": "Text for the question component relating to the checkboxes."
+      "description": "Text for the question component relating to the radios."
     },
     {
       "name": "hint",
@@ -72,17 +67,22 @@
     {
       "name": "idPrefix",
       "type": "string",
-      "description": "String to prefix id for each checkbox item if no id is specified on each item. If not passed, fall back to using the name option instead."
+      "description": "String to prefix id for each radio item if no id is specified on each item. If not passed, fall back to using the name option instead."
+    },
+    {
+      "name": "inline",
+      "type": "boolean",
+      "description": "Determines whether to the display the radios horizontally or vertically."
     },
     {
       "name": "name",
       "type": "string",
-      "description": "<strong>Required.</strong> Name attribute for all checkbox items."
+      "description": "<strong>Required.</strong> Name attribute for all radio items."
     },
     {
       "name": "classes",
       "type": "string",
-      "description": "Classes to add to the checkboxes container."
+      "description": "Classes to add to the radios container."
     }
   ]
 }

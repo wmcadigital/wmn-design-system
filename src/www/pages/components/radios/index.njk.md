@@ -26,7 +26,15 @@
 
 {% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
 {{
-  compExample([wmndsRadios()])
+  compExample([
+    wmndsRadios()
+  ], {
+    componentPath: "wmnds/components/form-elements/radios/",
+    njk: true,
+    njkProps: wmndsRadiosProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% markdown %}
@@ -38,9 +46,16 @@
 {{
   compExample([
     wmndsRadios({
-      inline: true
+      inline: true,
+      name: "inline-example"
     })
-  ])
+  ], {
+    componentPath: "wmnds/components/form-elements/radios/",
+    njk: true,
+    njkProps: wmndsRadiosProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End Radios #}
 
