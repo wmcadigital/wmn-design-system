@@ -10,7 +10,13 @@
 {% set rows = params.rows if params.rows else 3 %}
 {% set required = params.required if params.required else false %}
 {% set classes = " " + params.classes if params.classes %}
-{% set errorMessage = params.errorMessage if params.errorMessage else "There's an error. Please review this field." %}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set textareaErrorClass = " wmnds-fe-input--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else null %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 {# Params of label #}
 {% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
 {% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
@@ -29,7 +35,7 @@
 {% set value = params.attributes.value if params.attributes.value else null %}
 
 
-<div class="wmnds-fe-group{{formGroupClasses}}">
+<div class="wmnds-fe-group{{formGroupClasses}}{{groupErrorClass}}">
   {{
     wmndsLabel({
       contentText: labelContentText,
@@ -41,12 +47,15 @@
   {% if params.error %}
     {{
       wmndsFeErrorMessage({
-        errorMessage: errorMessage
+          contentText: errorContentText,
+          contentHTML: errorContentHTML,
+          classes: errorClasses,
+          id: errorId
       })
     }}
   {% endif %}
   <textarea 
-    class="wmnds-fe-textarea{{classes}}" 
+    class="wmnds-fe-textarea{{classes}}{{textareaErrorClass}}" 
     id="{{id}}" 
     name="{{name}}" 
     rows="{{rows}}"

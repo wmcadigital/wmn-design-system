@@ -33,10 +33,12 @@
           id: "example-textarea",
           name: "example-textarea",
           rows: "2",
-          error: false,
-          errorMessage: null,
           required: true,
           classes: null,
+          error: false,
+          errorMessage: {
+            contentText: "Input custom error message"
+          }
           label: {
             contentText: "Textarea label",
             classes: "wmnds-m-t-20"
