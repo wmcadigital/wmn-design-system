@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle = "Get started" %}
+{% set pageTitle = "Production" %}
 {% set section = "Docs" %}
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 

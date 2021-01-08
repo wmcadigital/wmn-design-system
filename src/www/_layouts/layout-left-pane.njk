@@ -1,4 +1,5 @@
 {% extends "www/_layouts/_master-layout.njk" %}
+{% set section = section if section else "Components" %}
 
 {% block body %}
 <div class="wmnds-grid wmnds-grid--spacing-lg-2-lg">
@@ -6,6 +7,11 @@
     {% include "www/_partials/nav/subnav.njk" %}
   </div>
   <div class="wmnds-col-1 wmnds-col-lg-2-3" id="wmnds-main-content">
+    {# Show section as smmall text above title #}
+    {% if section != pageTitle %}
+      <span class="h3">{{section}}</span>
+    {% endif %}
+
     <h1>{{ pageTitle }}</h1>
     <hr>
     {% block content %}{% endblock content %}

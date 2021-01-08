@@ -7,7 +7,7 @@
 {% markdown %}
 The West Midlands Network Design System provides a collection of reusable HTML components to build custom services and experiences that adhere to West Midlands Network's design standards.
 
-There are many different ways to get started with our design system. It all depends on your project's needs and whether you are developing or designing.
+There are many different ways to get started with our design system. It all depends on your project's needs and whether you are developing, designing or somewhere in the middle.
 
 **These are our guides for getting started:**
 
