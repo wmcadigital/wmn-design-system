@@ -1,0 +1,56 @@
+{
+  "wmndsDropdownProps": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> Id for each dropdown."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong> Name property for the dropdown."
+    },
+    {
+      "name": "items",
+      "type": "array",
+      "description": "<strong>Required.</strong> Array of option items for the dropdown. See <code class='wmnds-website-inline-code'>items</code> below.",
+      "arrayOptions": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Value for the option item."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text for the option item."
+        },
+        {
+          "name": "selected",
+          "type": "boolean",
+          "description": "Sets the option as the selected."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "Sets the option item as disabled."
+        }
+      ]
+    },
+    {
+      "name": "describedBy",
+      "type": "string",
+      "description": "One or more element IDs to add to the <code class='wmnds-website-inline-code'>aria-describedby</code> attribute, used to provide additional descriptive information for screenreader users."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Label text for the dropdown."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the dropdown container."
+    }
+  ]
+}

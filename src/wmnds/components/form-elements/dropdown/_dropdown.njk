@@ -4,20 +4,32 @@
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 
 {# Params #}
-{% set id = params.id if params.id else "dropdown" %}
+{% set id = params.id if params.id else "dropdown-example" %}
+{% set name = params.name if params.name else "dropdown-example" %}
+{% set items = params.items if params.items %}
+{% set classes = " " + params.classes if params.classes %}
+{% set describedBy = params.describedBy if params.describedBy %}
 <div class="wmnds-fe-group">
-  <div class="wmnds-fe-dropdown">
+  <div class="wmnds-fe-dropdown{{classes}}">
     {{
       wmndsLabel({
-        label: 'Dropdown label',
+        label: params.label,
         for: id
       }) | trim
     }}
-    <select class="wmnds-fe-dropdown__select" id="{{id}}" name="{{id}}">
-      <option value="" selected="selected">Choose from list</option>
-      {%- for i in range(1,6) %}
+    <select class="wmnds-fe-dropdown__select" id="{{id}}" name="{{name}}" {%if describedBy%}aria-describedBy="{{describedBy}}"{%endif%}>
+      {% if items %}
+      {% for option in items %}
+      {% set selected = "selected=\"true\"" | safe if option.selected %}
+      {% set disabled = "disabled=\"true\"" | safe if option.disabled %}
+      <option value="{{option.value}}" {{selected}} {{disabled}}>{{option.contentText}}</option>
+      {% endfor %}
+      {% else %}
+      <option value="" selected="true">Choose from list</option>
+      {% for i in range(1,6) %}
       <option value="{{i}}">Option {{i}}</option>
-      {%- endfor %}
+      {% endfor %}
+      {% endif %}
     </select>
   </div>
 </div>

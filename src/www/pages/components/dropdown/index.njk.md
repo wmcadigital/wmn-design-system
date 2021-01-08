@@ -29,7 +29,13 @@
 
 {% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
 {{
-  compExample([wmndsDropdown()])
+compExample([wmndsDropdown()], {
+    componentPath: "wmnds/components/form-elements/dropdown/",
+    njk: true,
+    njkProps: wmndsDropdownProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End Dropdown #}
 
