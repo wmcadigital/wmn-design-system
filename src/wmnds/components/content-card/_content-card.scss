@@ -1,3 +1,15 @@
+//accessibility styles
+@mixin accessibility-hover {
+  h2 {
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 1px get-color(primary);
+  }
+}
+
 .wmnds-content-card {
   height: 100%;
   border-bottom: 5px solid get-color(primary);
@@ -7,11 +19,13 @@
     display: block;
     color: get-color(text);
     text-decoration: none;
+    @include accessibility-hover;
   }
 
   // Modifiers
   &--yellow {
     background-color: get-color(plannedDisruption);
+    @include accessibility-hover;
   }
 
   // Elements
