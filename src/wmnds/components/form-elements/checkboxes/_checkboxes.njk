@@ -35,7 +35,6 @@
       {% endif -%}
       {%- if items %}
         {%- for item in items %}
-          {%- if item.checked !== null %}
           {%- set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
           {%- set inputValue = item.value if item.value else "option" + loop.index | string %}
           {%- set inputId = item.id if item.id else idPrefix + "_" + inputValue %}
@@ -43,7 +42,6 @@
           {% set itemContentText = item.contentText if item.contentText else "Select all options that apply" %}
           {% set itemContentHTML = item.contentHTML if item.contentHTML else null %}
           {% set _itemContent = itemContentHTML | safe if itemContentHTML else itemContentText %} {# change content based on what user has input #}
-          {% endif -%}
           <label class="wmnds-fe-checkboxes__container">
             <div class="wmnds-m-b-lg">
               {%- if item.titleText %}

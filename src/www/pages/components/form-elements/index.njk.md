@@ -73,12 +73,12 @@
 
 <h3>What does it do?</h3>
 
-- It is visual representation of progress through a set of steps that guides user in order to complete a specified process. Knowing where the user is in their progress can help improve their orientation within the system. It sets expectations and gives and impression of activity and progress.
+- It is visual representation of progress through a set of steps that guides user in order to complete a specified process. Knowing where the user is in their progress can help improve their orientation within the system. It sets expectations and gives and impression of activity and progress.
 
 <h3>When to use it?</h3>
 
 - When you want to tell users where they are in the process.
-- When you want to reassure users that the system is working and reduce user’s uncertainty.
+- When you want to reassure users that the system is working and reduce user’s uncertainty.
 
 <h3>When not to use it?</h3>
 
@@ -95,6 +95,33 @@
 
 {% markdown %}
 
+{# Checkboxes #}
+
+## Checkboxes
+
+<h3>What does it do?</h3>
+
+- Allows users select one or more options by clicking the box.
+
+<h3>When to use it?</h3>
+
+- When user can select multiple options from the list
+- When user wants to toggle option on or off
+
+<h3>When not to use it?</h3>
+
+- When user can select just one option.
+
+{% endmarkdown %}
+
+{% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
+{{
+  compExample([wmndsCheckboxes()])
+}}
+{# End Checkboxes #}
+
+{% markdown %}
+
 {# Dropdown #}
 
 ## Dropdown
@@ -104,13 +131,13 @@
 - Navigation expands when user hovers or clicks on it revealing options to select.
 <h3>When to use it?</h3>
 
-- When there is limited space and you need to reduce the space taken on the page
+- When there is limited space and you need to reduce the space taken on the page
 - When an input is nonessential, e.g. sorting list
-- When you need flexibility because you do not know how many options there will be. All options are contained within the drop down component.
+- When you need flexibility because you do not know how many options there will be. All options are contained within the drop down component.
 
 <h3>When not to use it?</h3>
 
-- Drop down creates more work for your user because it is a multi-step process, they hide available options and they slow users down by defaults therefore if possible use another component to display options e.g. radio buttons, text field, input selector
+- Drop down creates more work for your user because it is a multi-step process, they hide available options and they slow users down by defaults therefore if possible use another component to display options e.g. radio buttons, text field, input selector
 - Do not use when drop down option has more than 36 characters because users will not be able to read them on some mobile devices
 
 {% endmarkdown %}
@@ -129,7 +156,7 @@
 
 <h3>What does it do?</h3>
 
-- Allows users to enter text.
+- Allows users to enter text.
 
 <h3>When to use it?</h3>
 

@@ -33,7 +33,7 @@
         {
           "name": "titleText",
           "type": "string",
-          "description": ""
+          "description": "Text to use as a heading for the checkbox option. (Displays as <code class='wmnds-website-inline-code'>h3</code>)"
         }
       ]
     },
