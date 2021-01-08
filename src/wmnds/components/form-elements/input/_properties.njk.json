@@ -21,6 +21,33 @@
       "description": "If true, input is required/must be filled out. Defaults to <code class='wmnds-website-inline-code'>false</code>."
     },
     {
+      "name": "errorMessage",
+      "type": "object",
+      "description": "Options for the error message component. See errorMessage.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Id attribute to add to the error message span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the error message. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> HTML to use within the error message"
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the error message span tag."
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "Object",
       "description": "<strong>Required.</strong> Options for the label component. See label.",
