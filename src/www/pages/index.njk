@@ -2,8 +2,9 @@
 {% set pageTitle = "West Midlands Network<br/>Design System" %}
 {% set section = 'Home' %}
 {# Imports #}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
 
 {# Top/purple section #}
 {% block summaryContent %}
@@ -30,6 +31,15 @@
         </div>
       </div>
     </div>
+
+    {{
+      wmndsLinkAsButton({
+        link: '/docs/get-started/',
+        classes: 'wmnds-btn--dark-bg',
+        iconRight: 'general-chevron-right'
+      })
+    }}
+
   </div>
 {% endblock summaryContent %}
 
