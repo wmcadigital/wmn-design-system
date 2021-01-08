@@ -6,25 +6,67 @@
 
 {# Params #}
 {% set id = params.id if params.id else "input" %}
-{% set label = params.label if params.label else "Input Label" %}
-{% set paramClass = " " + params.classNames if params.classNames %} {# set paramClass to params.classNames if any #}
-{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
-{% set errorClass = " wmnds-fe-input--error" if params.error %}
+{% set name = params.name if params.name else id %}
 {% set type = params.type if params.type else "text" %}
+{% set required = params.required if params.required else false %}
+{% set classes = " " + params.classes if params.classes %} {# set paramClass to params.classNames if any #}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set inputErrorClass = " wmnds-fe-input--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else null %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{# Params of label #}
+{% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
+{% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
+{% set labelClasses = params.label.classes if params.label.classes else null %}
+{% set labelFor = params.label.for if params.label.for else params.id %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+{# Params of Attributes #}
+{% set autocomplete = " " + params.attributes.autocomplete if params.attributes.autocomplete %}
+{% set spellcheck = params.attributes.spellcheck if params.attributes.spellcheck else null %}
+{% set autofocus = params.attributes.autofocus if params.attributes.autofocus else null %}
+{% set disabled = params.attributes.disabled if params.attributes.disabled else null %}
+{% set formId = params.attributes.formId if params.attributes.formId else null %}
+{% set maxLength = params.attributes.maxLength if params.attributes.maxLength else null %}
+{% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
+{% set value = params.attributes.value if params.attributes.value else null %}
 
-<div class="wmnds-fe-group{{groupErrorClass}}">
+<div class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
   {{
     wmndsLabel({
       label: label,
       for: id
-    }) | trim | indent
+    }) 
   }}
   {% if params.error -%}
     {{
-      wmndsFeErrorMessage() | trim | indent
+      wmndsFeErrorMessage(
+        {
+          contentText: errorContentText,
+          contentHTML: errorContentHTML,
+          classes: errorClasses,
+          id: errorId
+        }
+      )
     }}
   {% endif -%}
-  <input class="wmnds-fe-input{{errorClass}}{{paramClass}}" id="{{id}}" name="{{id}}" type="{{type}}"/>
+  <input 
+    class="wmnds-fe-input{{inputErrorClass}}{{classes}}" 
+    id="{{id}}" 
+    name="{{name}}" 
+    type="{{type}}"
+    {% if autocomplete %} autocomplete="on" {% endif %} 
+    {% if autofocus %} autofocus {% endif %} 
+    {% if spellcheck %} spellcheck="true" {% endif %} 
+    {% if disabled %} disabled {% endif %}
+    {% if formId %} form="{{formId}}" {% endif %} 
+    {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
+    {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
+    {% if required %} required {% endif %}
+  >{% if value %}{{value}}{% endif %}</input>
 </div>
 
 {% endmacro %}

@@ -84,6 +84,9 @@
           "name": "Table"
         },
         {
+          "name": "Text Input"
+        },
+        {
           "name": "Warning text"
         }
       ]
