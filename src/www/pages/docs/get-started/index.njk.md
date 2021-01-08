@@ -59,9 +59,7 @@
 </ul>
 </p>
 <br>
-<h3>Get help with using the design system</h3>
-<p>The design system is maintained by the Digital and Data team at West Midlands Combined Authority.</p>
-<p>You can <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" title="Ask a question about using the design system" target='_blank'>ask a question using this form</a>.</p>
+
 {% endmarkdown %}
 
 {% endblock %}
