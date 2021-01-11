@@ -6,12 +6,19 @@
 {% block content %}
 
 {% markdown %}
-{# Quick start #}
 
-<h2>Start using the design system</h2>
-<h3>Designing a new service</h3>
-<p>You can <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" target='_blank'>request the Sketch library</a>.</p>
-<br>
+## Start using the design system
+
+To start using our styles, components and patterns in your production project, you'll first need to include West Midlands Network Design System in your project.
+
+There are currently two ways of including the design system within your poject. You can either install it using node package manager (npm) or include the compiled files in your application.
+
+### Option 1: install using npm
+
+`npm i wmn-design-system`
+
+### Option 2: include compiled files
+
 <h3>Developing a web service</h3>
 <p class="wmnds-col-md-3-4">
   Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application:
