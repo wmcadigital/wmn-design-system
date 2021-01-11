@@ -26,13 +26,7 @@
 {{
 compExample(
     [wmndsFileUpload({
-        fileSelected: false,
-        hint: {
-            id: null,
-            classes: null,
-            contentText: "Custom hint text  ",
-            contentHTML: null
-        }
+        fileSelected: false
     })],
     {
         componentPath: "wmnds/components/form-elements/file-upload/",
@@ -53,6 +47,28 @@ compExample(
 {{
     compExample([wmndsFileUpload({
       fileSelected: true
+    })],{
+      componentPath: "wmnds/components/form-elements/file-upload/",
+      njk: true,
+      njkProps: wmndsFileUploaderProps,
+      js: false,
+      iframe: false
+    })
+}}
+
+{% markdown %}
+
+### Showing error
+
+{% endmarkdown %}
+
+{{
+    compExample([wmndsFileUpload({
+      fileSelected: false,
+      error: true,
+      errorMessage : {
+          contentText: "Files must be jpeg or png file format and be less than 2mb"
+      }
     })],{
       componentPath: "wmnds/components/form-elements/file-upload/",
       njk: true,

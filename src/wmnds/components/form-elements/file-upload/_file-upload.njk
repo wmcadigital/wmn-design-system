@@ -8,22 +8,11 @@
 {# Params #}
 {% set id = params.id if params.id else "fileUploader" %}
 {% set name = params.name if params.name else id %}
-{% set classes = " " + params.classes if params.classes %} {# set paramClass to params.classNames if any #}
+{% set classes = " " + params.classes if params.classes %}
 {% set required = params.required if params.required else false %}
 {% set disabled = params.disabled if params.disabled else null %}
-{# Params of Question #}
-{% set hasQuestion = false if params.question === "" else true %}
-{% set question = params.question if params.question else "Upload a file" %}
-{# Params of Hint #}
-{% set hintContentText = params.hint.contentText if params.hint.contentText else "Files must be jpeg or png file format and be less than 2mb" %}
-{% set hintContentHTML = params.hint.contentHTML if params.hint.contentHTML else null %}
-{% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
-{% set hasDescription = false if _hintContent === "" else true %}
-{% set idPrefix = params.idPrefix if params.idPrefix else name %}
-{% set hintClass = " " + params.hint.classes if params.hint.classes %}
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
-{% set inputErrorClass = " wmnds-fe-input--error" if params.error %}
 {% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else null %}
 {% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
 {% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
@@ -32,24 +21,9 @@
 {% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
 
 
-
 <div class="wmnds-fe-group {{formGroupClasses}}{{groupErrorClass}}">
-  <fieldset class="wmnds-fe-fieldset">
-    <legend class="wmnds-fe-fieldset__legend">
-      {%- if hasQuestion %}
-        {{ 
-          wmndsQuestion({
-            text: question
-          })
-        }}
-      {% endif -%}
-      <p class="{{hintClass}}">
-        {{_hintContent}}
-      </p>
-    </legend>
 
     {% if params.fileSelected -%}
-      <div class="wmnds-fe-file-upload">
         {% if params.error -%}
           {{
             wmndsFeErrorMessage(
@@ -62,6 +36,7 @@
             )
           }}
         {% endif -%}
+      <div class="wmnds-fe-file-upload">
         <input
           type="file"
           name="{{name}}"
@@ -101,7 +76,7 @@
           type="file"
           name="{{name}}"
           id="{{id}}"
-          class="wmnds-fe-file-upload__input {{classes}} {{inputErrorClass}}"
+          class="wmnds-fe-file-upload__input {{classes}}"
           {% if required %} required {% endif %}
           {% if disabled %} disabled {% endif %}
         />
@@ -119,7 +94,7 @@
         </span>
       </div>
     {%- endif %}
-  </fieldset>
+
 </div>
 
 {% endmacro %}
