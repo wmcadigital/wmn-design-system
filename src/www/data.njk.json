@@ -57,6 +57,9 @@
           "name": "File download"
         },
         {
+          "name": "File upload"
+        },
+        {
           "name": "Form elements"
         },
         {

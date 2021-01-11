@@ -1,0 +1,105 @@
+{
+  "wmndsFileUploaderProps": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong>. The name of the input, which is submitted with the form data."
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> Must be unique. The id of the input"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Optional initial value of the input"
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the file upload component."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "description": "If true, file upload is required/must be filled out. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "If true, file upload should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "errorMessage",
+      "type": "object",
+      "description": "Options for the error message component. See errorMessage.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Id attribute to add to the error message span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the error message. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> HTML to use within the error message"
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the error message span tag."
+        }
+      ]
+    },
+    {
+      "name": "question",
+      "type": "string",
+      "description": "Text for the question component relating to the file upload."
+    },
+    {
+      "name": "hint",
+      "type": "object",
+      "description": "Options for the hint component (e.g. text). See <code class='wmnds-website-inline-code'>hint</code> options below.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Optional id attribute to add to the hint span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within the hint. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within the hint. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the hint span tag."
+        }
+      ]
+    },
+    {
+      "name": "formGroup",
+      "type": "Object",
+      "description": "Options for the form-group wrapper See formGroup below.",
+      "arrayOptions": [
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the form group (e.g. to show error state for the whole group)"
+        }
+      ]
+    }
+  ]
+}

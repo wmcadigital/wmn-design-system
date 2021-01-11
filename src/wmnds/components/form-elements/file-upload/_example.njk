@@ -1,0 +1,24 @@
+{% raw %}
+{% from "wmnds/components/form-elements/file-upload/_file-upload.njk" import wmndsFileUpload %}
+
+{{
+   wmndsFileUpload({
+      id: "profile-image-upload",
+      name: null,
+      classes: null,
+      required: true,
+      disabled: false,
+      question: "Please upload your profile photo" 
+      hint: {
+         id: null,
+         classes: null,
+         contentText: "Custom hint text",
+         contentHTML: null
+      },
+      fileSelected: false,
+      formGroup: {
+         classes: "wmnds-m-t-20"
+      }
+    })
+}}
+{% endraw %}
