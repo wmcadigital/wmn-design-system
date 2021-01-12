@@ -1,0 +1,34 @@
+{% raw %}
+{% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
+
+{{
+   wmndsTextarea({
+      id: "example-textarea",
+      name: "example-textarea",
+      rows: "2",
+      error: false,
+      errorMessage: {
+         contentText: null,
+         contentHTML: "<span>Custom <em>error message</em></span>",
+         id: null,
+         classes: null
+      }
+      required: true,
+      classes: null,
+      label: {
+         contentText: "Textarea label",
+         contentHTML: "<span>Textarea label <em>updated</em></span>",
+         classes: "wmnds-m-t-20"
+      },
+      formGroup: {
+         classes: "wmnds-m-t-20"
+      },
+      attributes: {
+         disabled: false,
+         maxLength: "200",
+         placeholder: "Textarea placeholder...",
+         value: null
+      }
+    })
+}}
+{% endraw %}

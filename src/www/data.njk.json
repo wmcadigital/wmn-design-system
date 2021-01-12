@@ -96,6 +96,9 @@
           "name": "Table"
         },
         {
+          "name": "Textarea"
+        },
+        {
           "name": "Text Input"
         },
         {
