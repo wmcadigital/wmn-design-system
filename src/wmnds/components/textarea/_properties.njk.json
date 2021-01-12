@@ -21,6 +21,11 @@
       "description": "If true, textarea is required/must be filled out. Defaults to <code class='wmnds-website-inline-code'>false</code>."
     },
     {
+      "name": "error",
+      "type": "boolean",
+      "description": "If true, an error will be displayed. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
       "name": "errorMessage",
       "type": "object",
       "description": "Options for the error message component. See errorMessage.",
@@ -68,11 +73,6 @@
           "description": "<strong>Required.</strong> If `contentText` is set, this is not required. HTML to use within the label. If `contentHTML` is provided, the `contentText` argument will be ignored."
         },
         {
-          "name": "for",
-          "type": "string",
-          "description": "The value of the for attribute, the id of the input the label is associated with."
-        },
-        {
           "name": "classes",
           "type": "string",
           "description": "Classes to add to the label tag."
@@ -97,29 +97,9 @@
       "description": "Attribute to identify textarea purpose, for instance <code class='wmnds-website-inline-code'>postal-code</code> or <code class='wmnds-website-inline-code'>username</code>. See autofill for full list of attributes that can be used.",
       "arrayOptions": [
         {
-          "name": "autocomplete",
-          "type": "string",
-          "description": "Attribute to identify input purpose, for instance <code class='wmnds-website-inline-code'>postal-code</code> or <code class='wmnds-website-inline-code'>username</code>. See autofill for full list of attributes that can be used."
-        },
-        {
-          "name": "autofocus",
-          "type": "boolean",
-          "description": "If true, the text area should automatically get focus when the page loads. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-        },
-        {
-          "name": "spellcheck",
-          "type": "boolean",
-          "description": "Optional field to enable or disable the spellcheck attribute on the textarea."
-        },
-        {
           "name": "disabled",
           "type": "boolean",
           "description": "If true, textarea should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-        },
-        {
-          "name": "formId",
-          "type": "string",
-          "description": "The form id from the form which the text area belongs to. It's an <code class='wmnds-website-inline-code'>optional</code> field."
         },
         {
           "name": "maxLength",

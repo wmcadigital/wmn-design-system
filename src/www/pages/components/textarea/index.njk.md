@@ -28,8 +28,7 @@
 
 {{
     compExample(
-      [wmndsTextarea(
-        {
+      [wmndsTextarea({
           id: "example-textarea",
           name: "example-textarea",
           rows: "2",
@@ -38,7 +37,7 @@
           error: false,
           errorMessage: {
             contentText: "Input custom error message"
-          }
+          },
           label: {
             contentText: "Textarea label",
             classes: "wmnds-m-t-20"
@@ -47,11 +46,52 @@
             classes: "wmnds-m-t-20"
           },
           attributes: {
-            autocomplete: false,
-            spellcheck: true,
-            autofocus: true,
             disabled: false,
-            formId: "signup-form",
+            maxLength: "200",
+            placeholder: "Textarea placeholder...",
+            value: null
+          }
+        }
+      )],
+      {
+        componentPath: "wmnds/components/textarea/",
+        njk: true,
+        njkProps: wmndsTextareaProps,
+        js: false,
+        iframe: false
+      }
+    )
+}}
+{# End Textarea #}
+
+{% markdown %}
+
+### Showing error
+
+{% endmarkdown %}
+
+{{
+    compExample(
+      [wmndsTextarea(
+        {
+          id: "example-textarea",
+          name: "example-textarea",
+          rows: "2",
+          required: true,
+          classes: null,
+          error: true,
+          errorMessage: {
+            contentText: "Textarea custom error message"
+          },
+          label: {
+            contentText: "Textarea label",
+            classes: "wmnds-m-t-20"
+          },
+          formGroup: {
+            classes: "wmnds-m-t-20"
+          },
+          attributes: {
+            disabled: false,
             maxLength: "200",
             placeholder: "Textarea placeholder...",
             value: null

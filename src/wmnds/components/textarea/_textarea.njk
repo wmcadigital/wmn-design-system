@@ -21,15 +21,10 @@
 {% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
 {% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
 {% set labelClasses = params.label.classes if params.label.classes else null %}
-{% set labelFor = params.label.for if params.label.for else params.id %}
 {# Params of formGroup #}
 {% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
 {# Params of Attributes #}
-{% set autocomplete = " " + params.attributes.autocomplete if params.attributes.autocomplete %}
-{% set spellcheck = params.attributes.spellcheck if params.attributes.spellcheck else null %}
-{% set autofocus = params.attributes.autofocus if params.attributes.autofocus else null %}
 {% set disabled = params.attributes.disabled if params.attributes.disabled else null %}
-{% set formId = params.attributes.formId if params.attributes.formId else null %}
 {% set maxLength = params.attributes.maxLength if params.attributes.maxLength else null %}
 {% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
 {% set value = params.attributes.value if params.attributes.value else null %}
@@ -41,7 +36,7 @@
       contentText: labelContentText,
       contentHTML: labelContentHTML,
       classes: labelClasses,
-      for: labelFor
+      for: id
     })
   }}
   {% if params.error %}
@@ -59,11 +54,7 @@
     id="{{id}}" 
     name="{{name}}" 
     rows="{{rows}}"
-    {% if autocomplete %} autocomplete="on" {% endif %} 
-    {% if autofocus %} autofocus {% endif %} 
-    {% if spellcheck %} spellcheck="true" {% endif %} 
     {% if disabled %} disabled {% endif %}
-    {% if formId %} form="{{formId}}" {% endif %} 
     {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
     {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
     {% if required %} required {% endif %}
