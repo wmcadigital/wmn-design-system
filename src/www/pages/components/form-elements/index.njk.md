@@ -61,7 +61,16 @@
 
 {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
 {{
-  compExample([wmndsQuestion()])
+  compExample([
+    wmndsQuestion()
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/question/",
+    njk: true,
+    njkProps: wmndsQuestionProps,
+    js: false,
+    iframe: false
+  })
 }}
 {# End question #}
 

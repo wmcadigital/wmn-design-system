@@ -19,8 +19,8 @@
     {%- if hasQuestion %}
     {{ 
       wmndsQuestion({
-        text: question
-      }) | indent(6) | trim 
+        contentText: question
+      })
     }}
     {% endif -%}
     </legend>
