@@ -2,9 +2,10 @@
 {# Set vars and defaults #}
 {% set for = params.for if params.for else "genericInput" %}
 {% set contentText = params.contentText if params.contentText else "Form label" %}
+{% set classes = " " + params.classes if params.classes %}
 {% set contentHTML = params.contentHTML if params.contentHTML else contentText %}
 {% set _label = contentHTML | safe if contentHTML else contentText %}
 
-<label class="wmnds-fe-label" for="{{for}}">{{ _label }}</label>
+<label class="wmnds-fe-label{{classes}}" for="{{for}}">{{ _label }}</label>
 
 {% endmacro %}

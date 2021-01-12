@@ -14,6 +14,11 @@
       "name": "for",
       "type": "string",
       "description": "<strong>Required.</strong> Specifies the id of the element this label should link to."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the label tag."
     }
   ]
 }
