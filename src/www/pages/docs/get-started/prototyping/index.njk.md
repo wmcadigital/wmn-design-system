@@ -6,59 +6,24 @@
 {% block content %}
 
 {% markdown %}
-{# Quick start #}
 
-<h2>Prototyp</h2>
-<h3>Designing a new service</h3>
-<p>You can <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" target='_blank'>request the Sketch library</a>.</p>
-<br>
-<h3>Developing a web service</h3>
-<p class="wmnds-col-md-3-4">
-  Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application:
-</p>
-<pre>
-  <code class="html wmnds-show-more-ignore" tabindex="0">
-  {%- filter forceescape %}
-  <!DOCTYPE html>
-  <html lang="en-gb" class="wmnds-html">
-    <head>
-      <!-- CSS for WMN Design System -->
-      <link rel="stylesheet" href="https://unpkg.com/wmn-design-system@$*version/build/css/wmnds.min.css" />
-    </head>
-    <body>
-      <!-- site content... -->
-    </body>
-  </html>
-  {%- endfilter %}
-  </code>
-</pre>
-<br>
-{{
-   wmndsWarningText({
-      contentHTML: "You should read <a href='/styles/icons/#using-icons' title='Documentation about using icons' target='_blank'>documentation about using icons in your service</a>.",
-      icon: warning-triangle
-    })
-}}
-<br>
-<br>
-<h3>Developing an app for mobile devices</h3>
-<p>If you are using React Native, you can import our styles like the example:</p>
-<pre>
-  <code class="javascript" tabindex="0">
-    {% filter forceescape %}// Import react native styles for WMN Design System
-    import wmndsStyles from "https://unpkg.com/wmn-design-system@$*version/build/css/react-native/wmnds.min.js"
-    {%- endfilter %}
-  </code>
-</pre>
-<h3>Before making a service live</h3>
-<p>You must:
-<ul>
-  <li>Make sure you've tested your service with real users</li>
-  <li>Make sure you meet <a href="https://www.gov.uk/guidance/make-your-website-or-app-accessible-and-publish-an-accessibility-statement?utm_source=CampaignPage1&utm_campaign=access_regs" target='_blank'>accessibility regulations</a> else you might be <a href="https://www.legislation.gov.uk/uksi/2018/952/made" title="The Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018" target='_blank'>breaking the law</a></li>
-  <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnL0kEZK0X_-9IoNQ__PZJI49UNlBZUFRPNENVTFRWV08xQk1SN0FPR0dDQi4u" title="Let us know you're using the design system" target='_blank'>Let us know</a> you're using the design system on a live service</li>
-</ul>
-</p>
-<br>
+## About
+
+The <a href="https://github.com/wmcadigital/wmn-prototype-kit" target="_blank" class="wmnds-link">West Midlands Network Protype Kit</a> provides a simple way to make interactive prototypes that look and feel like pages on West Midlands Network. These prototypes can be used to design and lay out pages, and for use in user research.
+
+This guide explains how to create dynamic prototypes using the West Midlands Network Design System and the <a href="https://github.com/wmcadigital/wmn-prototype-kit" target="_blank" class="wmnds-link">West Midlands Network Protype Kit</a>.
+
+---
+
+## Before you start
+
+To make prototypes you will need to make sure you have installed <a href="https://nodejs.org/en/" target="_blank" class="wmnds-link">Node.js</a> and <a href="https://git-scm.com/" target="_blank" class="wmnds-link">Git</a>. When installed, please follow the guide on how to install and use the <a href="https://github.com/wmcadigital/wmn-prototype-kit" target="_blank" class="wmnds-link">West Midlands Network Protype Kit</a>.
+
+---
+
+## Start using the design system
+
+When you have installed the <a href="https://github.com/wmcadigital/wmn-prototype-kit" target="_blank" class="wmnds-link">West Midlands Network Protype Kit</a> you can start using the West Midlands Network Design System. See [using the design system](../using-the-design-system/).
 
 {% endmarkdown %}
 
