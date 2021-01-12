@@ -37,6 +37,24 @@ compExample([wmndsDropdown()], {
     iframe: false
   })
 }}
+
+{% markdown %}
+
+### Dropdown with error
+
+{% endmarkdown %}
+
+{{
+compExample([wmndsDropdown({
+  error: true
+})], {
+    componentPath: "wmnds/components/form-elements/dropdown/",
+    njk: true,
+    njkProps: wmndsDropdownProps,
+    js: false,
+    iframe: false
+  })
+}}
 {# End Dropdown #}
 
 {% endblock %}

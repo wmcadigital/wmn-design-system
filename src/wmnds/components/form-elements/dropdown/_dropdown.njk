@@ -2,6 +2,7 @@
 
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Params #}
 {% set id = params.id if params.id else "dropdown-example" %}
@@ -9,8 +10,27 @@
 {% set items = params.items if params.items %}
 {% set classes = " " + params.classes if params.classes %}
 {% set describedBy = params.describedBy if params.describedBy %}
-<div class="wmnds-fe-group">
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+
+<div class="wmnds-fe-group{{groupErrorClass}}">
   <div class="wmnds-fe-dropdown{{classes}}">
+    {% if params.error -%}
+      {{
+        wmndsFeErrorMessage(
+          {
+            contentText: errorContentText,
+            contentHTML: errorContentHTML,
+            classes: errorClasses,
+            id: errorId
+          }
+        )
+      }}
+    {% endif -%}
     {{
       wmndsLabel({
         label: params.label,
