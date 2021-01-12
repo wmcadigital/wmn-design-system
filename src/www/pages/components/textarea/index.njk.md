@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Textarea" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/textarea/_textarea.njk" import wmndsTextarea %}
+{% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
 
 {% block content %}
 
@@ -54,7 +54,7 @@
         }
       )],
       {
-        componentPath: "wmnds/components/textarea/",
+        componentPath: "wmnds/components/form-elements/textarea/",
         njk: true,
         njkProps: wmndsTextareaProps,
         js: false,
@@ -99,7 +99,7 @@
         }
       )],
       {
-        componentPath: "wmnds/components/textarea/",
+        componentPath: "wmnds/components/form-elements/textarea/",
         njk: true,
         njkProps: wmndsTextareaProps,
         js: false,
