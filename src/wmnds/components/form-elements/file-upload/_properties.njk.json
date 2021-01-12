@@ -75,7 +75,7 @@
         {
           "name": "classes",
           "type": "string",
-          "description": "Classes to add to the form group (e.g. to show error state for the whole group)"
+          "description": "Classes to add to the form group"
         }
       ]
     }
