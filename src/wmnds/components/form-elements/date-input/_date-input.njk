@@ -1,0 +1,74 @@
+{% macro wmndsDateInput(params) %}
+
+{# Imports #}
+{% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
+
+{# Params #}
+{% set id = params.id if params.id else "date-input" %}
+{% set name = params.name if params.name else id %}
+{% set required = params.required if params.required else false %}
+{% set classes = " " + params.classes if params.classes %} {# set paramClass to params.classNames if any #}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set inputErrorClass = " wmnds-fe-input--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else null %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+{# Params of Attributes #}
+{% set disabled = params.attributes.disabled if params.attributes.disabled else null %}
+{% set maxLength = params.attributes.maxLength if params.attributes.maxLength else null %}
+{% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
+{% set value = params.attributes.value if params.attributes.value else null %}
+
+<div id="{{id}}" class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
+
+  {% if params.error -%}
+    {{
+      wmndsFeErrorMessage(
+        {
+          contentText: errorContentText,
+          contentHTML: errorContentHTML,
+          classes: errorClasses,
+          id: errorId
+        }
+      ) 
+    }}
+  {% endif -%}
+
+  <div class="wmnds-col-1-2 wmnds-col-sm-1-12 wmnds-m-r-md">
+    {{
+      wmndsLabel({
+        contentText: "Day",
+        for: "LastUsedDateDay"
+      }) 
+    }}
+    <input autocomplete="day" class="wmnds-fe-input {{inputErrorClass}}" id="LastUsedDateDay" inputmode="numeric" name="LastUsedDateDay" type="text" value="" {% if required %} required {% endif %}>
+  </div>
+  
+  <div class="wmnds-col-1-2 wmnds-col-sm-1-12 wmnds-m-r-md">
+    {{
+      wmndsLabel({
+        contentText: "Month",
+        for: "LastUsedDateMonth"
+      }) 
+    }}
+    <input autocomplete="month" class="wmnds-fe-input {{inputErrorClass}}" id="LastUsedDateMonth" inputmode="numeric" name="LastUsedDateMonth" type="text" value="" {% if required %} required {% endif %}>
+  </div>
+  
+  <div class="wmnds-col-1-2 wmnds-col-sm-1-8">
+    {{
+      wmndsLabel({
+        contentText: "Year",
+        for: "LastUsedDateYear"
+      }) 
+    }}
+    <input autocomplete="year" class="wmnds-fe-input {{inputErrorClass}}" id="LastUsedDateYear" inputmode="numeric" name="LastUsedDateYear" type="text" value="" {% if required %} required {% endif %}>
+  </div>
+
+</div>
+
+{% endmacro %}
