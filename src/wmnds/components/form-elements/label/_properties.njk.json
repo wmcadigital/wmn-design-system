@@ -3,7 +3,12 @@
     {
       "name": "contentText",
       "type": "string",
-      "description": "<strong>Required.</strong> Specifies the text that will be included in the label."
+      "description": "<strong>Required.</strong> Specifies the text that will be included in the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided this is not required and will be ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the text that will be included in the label as HTML. If <code class='wmnds-website-inline-code'>contentText</code> is provided, this is not required."
     },
     {
       "name": "for",
