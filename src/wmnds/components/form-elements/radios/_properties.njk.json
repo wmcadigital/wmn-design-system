@@ -33,11 +33,6 @@
       ]
     },
     {
-      "name": "question",
-      "type": "string",
-      "description": "Text for the question component relating to the radios."
-    },
-    {
       "name": "hint",
       "type": "object",
       "description": "Options for the hint component (e.g. text). See <code class='wmnds-website-inline-code'>hint</code> options below.",
