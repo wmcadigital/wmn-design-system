@@ -13,7 +13,7 @@
 {% set disabled = params.disabled if params.disabled else null %}
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
-{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else null %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please upload an image" %}
 {% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
 {% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
