@@ -24,7 +24,25 @@
 {% endmarkdown %}
 
 {{
+    compExample([wmndsInput()], {
+      componentPath: "wmnds/components/form-elements/input/",
+      njk: true,
+      njkProps: wmndsInputProps,
+      js: false,
+      iframe: false
+    })
+}}
+{# End Input #}
+
+{% markdown %}
+
+## Showing error
+
+{% endmarkdown %}
+
+{{
     compExample([wmndsInput({
+        error: true,
         errorMessage: {
             contentText: "Input custom error message"
         }
@@ -36,6 +54,5 @@
       iframe: false
     })
 }}
-{# End Input #}
 
 {% endblock %}
