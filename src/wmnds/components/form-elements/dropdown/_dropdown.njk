@@ -33,9 +33,9 @@
     {% endif -%}
     {{
       wmndsLabel({
-        label: params.label,
+        contentText: params.label,
         for: id
-      }) | trim
+      })
     }}
     <select class="wmnds-fe-dropdown__select" id="{{id}}" name="{{name}}" {%if describedBy%}aria-describedBy="{{describedBy}}"{%endif%}>
       {% if items %}

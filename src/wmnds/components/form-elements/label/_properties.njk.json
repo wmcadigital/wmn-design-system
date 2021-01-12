@@ -1,0 +1,24 @@
+{
+  "wmndsLabelProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the text that will be included in the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided this is not required and will be ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the text that will be included in the label as HTML. If <code class='wmnds-website-inline-code'>contentText</code> is provided, this is not required."
+    },
+    {
+      "name": "for",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the id of the element this label should link to."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the label tag."
+    }
+  ]
+}

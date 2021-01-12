@@ -60,7 +60,13 @@
           "name": "File download"
         },
         {
+          "name": "File upload"
+        },
+        {
           "name": "Form elements"
+        },
+        {
+          "name": "Form label"
         },
         {
           "name": "Inset text"
@@ -84,7 +90,16 @@
           "name": "Phase indicator"
         },
         {
+          "name": "Progress indicator"
+        },
+        {
+          "name": "Question"
+        },
+        {
           "name": "Table"
+        },
+        {
+          "name": "Text Input"
         },
         {
           "name": "Warning text"
