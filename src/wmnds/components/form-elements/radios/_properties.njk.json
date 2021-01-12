@@ -104,7 +104,7 @@
           "type": "string",
           "description": "<strong>Required.</strong> HTML to use within the error message"
         },
-         {
+        {
           "name": "classes",
           "type": "string",
           "description": "Classes to add to the error message."
