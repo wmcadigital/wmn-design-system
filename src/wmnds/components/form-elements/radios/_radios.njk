@@ -4,13 +4,10 @@
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
-{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
 {% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Set vars #}
 {% set class = ' wmnds-fe-radios--inline' if params.inline %}
-{% set hasQuestion = false if params.question === "" else true %}
-{% set question = params.question if params.question %}
 {% set items = params.items if params.items %}
 {% set groupClass = " " + params.classes if params.classes %}
 {% set name = params.name if params.name else "checkbox-example" %}
@@ -28,16 +25,6 @@
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
 <div class="wmnds-fe-group{{groupErrorClass}}">
-  <fieldset class="wmnds-fe-fieldset">
-    <legend class="wmnds-fe-fieldset__legend">
-    {%- if hasQuestion %}
-    {{ 
-      wmndsQuestion({
-        text: question
-      })
-    }}
-    {% endif -%}
-    </legend>
     <div class="wmnds-fe-radios{{class}}">
       {% if params.error -%}
         {{
@@ -82,7 +69,6 @@
       {% endfor %}
       {% endif %}
     </div>
-  </fieldset>
 </div>
 
 {% endmacro %}
