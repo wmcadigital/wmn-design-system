@@ -24,6 +24,7 @@
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
 {% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
 {% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
 <div class="wmnds-fe-group{{groupErrorClass}}">
@@ -44,6 +45,7 @@
             {
               contentText: errorContentText,
               contentHTML: errorContentHTML,
+              classes: errorClasses,
               id: errorId
             }
           )
