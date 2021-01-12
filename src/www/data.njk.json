@@ -60,6 +60,9 @@
           "name": "Form elements"
         },
         {
+          "name": "Form label"
+        },
+        {
           "name": "Inset text"
         },
         {
@@ -79,6 +82,12 @@
         },
         {
           "name": "Phase indicator"
+        },
+        {
+          "name": "Progress indicator"
+        },
+        {
+          "name": "Question"
         },
         {
           "name": "Table"
