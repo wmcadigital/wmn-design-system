@@ -44,7 +44,7 @@
     },
     {
       "name": "formGroup",
-      "type": "Object",
+      "type": "object",
       "description": "Options for the form-group wrapper. See formGroup below.",
       "arrayOptions": [
         {
