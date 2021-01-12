@@ -1,12 +1,12 @@
 {% macro wmndsProgressIndicator(params) %}
 {# Set vars and defaults #}
-{% set actualSection = params.actualSection if params.actualSection else "1" %}
+{% set currentSection = params.currentSection if params.currentSection else "1" %}
 {% set totalSections = params.totalSections if params.totalSections else "X" %}
 {% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
 
 <div class="wmnds-progress-indicator">
-  Section {{actualSection}} of {{totalSections}}
+  Section {{currentSection}} of {{totalSections}}
   <h4>{{sectionName}}</h4>
 </div>
 
-{% endmacro %}
+{% endmacro %} 

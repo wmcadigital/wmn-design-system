@@ -1,0 +1,19 @@
+{
+  "wmndsProgressIndicatorProps": [
+    {
+      "name": "currentSection",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the section which the user is currently on."
+    },
+    {
+      "name": "totalSections",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the total number of sections in the sequence."
+    },
+    {
+      "name": "sectionName",
+      "type": "string",
+      "description": "<strong>Required.</strong> Text to describe the name or title of the current section."
+    }
+  ]
+}

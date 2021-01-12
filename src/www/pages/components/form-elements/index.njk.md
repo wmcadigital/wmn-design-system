@@ -97,7 +97,16 @@
 
 {% from "wmnds/components/form-elements/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
 {{
-  compExample([wmndsProgressIndicator()])
+  compExample([
+    wmndsProgressIndicator()
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/progress-indicator/",
+    njk: true,
+    njkProps: wmndsProgressIndicatorProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {# Progress Indicator #}
