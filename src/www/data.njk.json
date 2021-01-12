@@ -57,7 +57,13 @@
           "name": "File download"
         },
         {
+          "name": "File upload"
+        },
+        {
           "name": "Form elements"
+        },
+        {
+          "name": "Form label"
         },
         {
           "name": "Inset text"
@@ -91,6 +97,9 @@
         },
         {
           "name": "Textarea"
+        },
+        {
+          "name": "Text Input"
         },
         {
           "name": "Warning text"
