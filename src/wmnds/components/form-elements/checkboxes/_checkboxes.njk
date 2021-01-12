@@ -4,6 +4,7 @@
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {% set hasQuestion = false if params.question === "" else true %}
 {% set question = params.question if params.question %}
@@ -15,19 +16,37 @@
 {% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
 {% set hasDescription = false if _hintContent === "" else true %}
 {% set idPrefix = params.idPrefix if params.idPrefix else name %}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select at least one option" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
-<div class="wmnds-fe-group{{groupClass}}">
+<div class="wmnds-fe-group{{groupClass}}{{groupErrorClass}}">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
     {%- if hasQuestion %}
     {{ 
       wmndsQuestion({
         text: question
-      }) | indent(6) | trim 
+      })
     }}
     {% endif -%}
     </legend>
     <div class="wmnds-fe-checkboxes">
+      {% if params.error -%}
+        {{
+          wmndsFeErrorMessage(
+            {
+              contentText: errorContentText,
+              contentHTML: errorContentHTML,
+              classes: errorClasses,
+              id: errorId
+            }
+          )
+        }}
+      {% endif -%}
       {%- if hasDescription %}
       <span class="wmnds-fe-checkboxes__desc{{params.hint.classes}}" {% if params.hint.id %}id="{{params.hint.id}}"{% endif %}>
       {{ _hintContent }}
@@ -55,7 +74,7 @@
                 wmndsIcon({
                   icon: 'general-checkmark',
                   class: 'wmnds-fe-checkboxes__icon'
-                }) | indent(8) | trim
+                })
               }}
             </span>
           </label>
@@ -74,7 +93,7 @@
               wmndsIcon({
                 icon: 'general-checkmark',
                 class: 'wmnds-fe-checkboxes__icon'
-              }) | indent(8) | trim
+              })
             }}
           </span>
         </label>

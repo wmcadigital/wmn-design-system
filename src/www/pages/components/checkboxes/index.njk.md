@@ -39,6 +39,40 @@
     iframe: false
   })
 }}
+{% markdown %}
+
+### Checkboxes with error
+
+{% endmarkdown %}
+{{
+  compExample([
+    wmndsCheckboxes({
+      idPrefix: "checkboxes",
+      error: true,
+      items: [
+        {
+          contentText: "Option 1",
+          value: "option1"
+        },
+        {
+          contentText: "Option 2",
+          value: "option2"
+        },
+        {
+          contentText: "Option 3",
+          value: "option3"
+        }
+      ]
+    })
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/checkboxes/",
+    njk: true,
+    njkProps: wmndsCheckboxesProps,
+    js: false,
+    iframe: false
+  })
+}}
 {# End Checkboxes #}
 
 {% endblock %}
