@@ -2,18 +2,63 @@
 
 {# Imports #}
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Params #}
 {% set id = params.id if params.id else "textarea" %}
+{% set name = params.name if params.name else id %}
+{% set rows = params.rows if params.rows else 3 %}
+{% set required = params.required if params.required else false %}
+{% set classes = " " + params.classes if params.classes %}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set textareaErrorClass = " wmnds-fe-input--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please enter some text" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{# Params of label #}
+{% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
+{% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
+{% set labelClasses = params.label.classes if params.label.classes else null %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+{# Params of Attributes #}
+{% set disabled = params.attributes.disabled if params.attributes.disabled else null %}
+{% set maxLength = params.attributes.maxLength if params.attributes.maxLength else null %}
+{% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
+{% set value = params.attributes.value if params.attributes.value else null %}
 
-<div class="wmnds-fe-group">
+
+<div class="wmnds-fe-group{{formGroupClasses}}{{groupErrorClass}}">
   {{
     wmndsLabel({
-      contentText: 'Textarea label',
+      contentText: labelContentText,
+      contentHTML: labelContentHTML,
+      classes: labelClasses,
       for: id
-    }) | trim
+    })
   }}
-  <textarea  class="wmnds-fe-textarea" id="{{id}}" name="{{id}}" rows="3"></textarea>
+  {% if params.error %}
+    {{
+      wmndsFeErrorMessage({
+          contentText: errorContentText,
+          contentHTML: errorContentHTML,
+          classes: errorClasses,
+          id: errorId
+      })
+    }}
+  {% endif %}
+  <textarea 
+    class="wmnds-fe-textarea{{classes}}{{textareaErrorClass}}" 
+    id="{{id}}" 
+    name="{{name}}" 
+    rows="{{rows}}"
+    {% if disabled %} disabled {% endif %}
+    {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
+    {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
+    {% if required %} required {% endif %}
+  >{% if value %}{{value}}{% endif %}</textarea>
 </div>
 
 {% endmacro %}
