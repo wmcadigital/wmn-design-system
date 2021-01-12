@@ -92,7 +92,7 @@
       ]
     },
     {
-      "name": "Attributes",
+      "name": "attributes",
       "type": "object",
       "description": "Attribute to identify textarea purpose, for instance <code class='wmnds-website-inline-code'>postal-code</code> or <code class='wmnds-website-inline-code'>username</code>. See autofill for full list of attributes that can be used.",
       "arrayOptions": [
