@@ -5,6 +5,7 @@
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Set vars #}
 {% set class = ' wmnds-fe-radios--inline' if params.inline %}
@@ -19,8 +20,13 @@
 {% set hasDescription = false if _hintContent === "" else true %}
 {% set idPrefix = params.idPrefix if params.idPrefix else name %}
 {% set hintClass = " " + params.hint.classes if params.hint.classes %}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
-<div class="wmnds-fe-group">
+<div class="wmnds-fe-group{{groupErrorClass}}">
   <fieldset class="wmnds-fe-fieldset">
     <legend class="wmnds-fe-fieldset__legend">
     {%- if hasQuestion %}
@@ -32,6 +38,17 @@
     {% endif -%}
     </legend>
     <div class="wmnds-fe-radios{{class}}">
+      {% if params.error -%}
+        {{
+          wmndsFeErrorMessage(
+            {
+              contentText: errorContentText,
+              contentHTML: errorContentHTML,
+              id: errorId
+            }
+          )
+        }}
+      {% endif -%}
       <span class="wmnds-fe-radios__desc{{hintClass}}" {% if params.hint.id %}id="{{params.hint.id}}"{% endif %}>
         {{ _hintContent }}
       </span>

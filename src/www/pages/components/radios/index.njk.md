@@ -59,4 +59,27 @@
 }}
 {# End Radios #}
 
+{% markdown %}
+
+### Radio with error
+
+{% endmarkdown %}
+
+{{
+  compExample([
+    wmndsRadios({
+      inline: true,
+      name: "inline-example",
+      error: true
+    })
+  ], {
+    componentPath: "wmnds/components/form-elements/radios/",
+    njk: true,
+    njkProps: wmndsRadiosProps,
+    js: false,
+    iframe: false
+  })
+}}
+{# End Radios #}
+
 {% endblock %}
