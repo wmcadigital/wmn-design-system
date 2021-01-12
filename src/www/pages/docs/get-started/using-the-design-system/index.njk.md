@@ -1,4 +1,4 @@
-{% extends "www/_layouts/layout-left-pane.njk" %}
+{% extends "www/_layouts/layout-docs.njk" %}
 {% set pageTitle = "Using the design system" %}
 {% set section = "Docs" %}
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
