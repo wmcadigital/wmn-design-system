@@ -70,7 +70,7 @@
     {
       "name": "formGroup",
       "type": "Object",
-      "description": "Options for the form-group wrapper See formGroup below.",
+      "description": "Options for the form-group wrapper. See formGroup options below.",
       "arrayOptions": [
         {
           "name": "classes",
