@@ -74,8 +74,8 @@
     compExample(
       [wmndsTextarea(
         {
-          id: "example-textarea",
-          name: "example-textarea",
+          id: "error-textarea",
+          name: "error-textarea",
           rows: "2",
           required: true,
           classes: null,

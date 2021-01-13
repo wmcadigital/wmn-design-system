@@ -46,6 +46,7 @@ compExample([wmndsDropdown()], {
 
 {{
 compExample([wmndsDropdown({
+  id: "dropdown-error",
   error: true
 })], {
     componentPath: "wmnds/components/form-elements/dropdown/",

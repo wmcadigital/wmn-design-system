@@ -47,7 +47,7 @@
 {{
   compExample([
     wmndsCheckboxes({
-      idPrefix: "checkboxes",
+      idPrefix: "error-checkboxes",
       error: true,
       items: [
         {

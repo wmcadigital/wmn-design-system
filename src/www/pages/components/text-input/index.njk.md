@@ -41,12 +41,17 @@
 {% endmarkdown %}
 
 {{
-    compExample([wmndsInput({
+    compExample(
+    [
+      wmndsInput({
+        id: "error-input",
         error: true,
         errorMessage: {
-            contentText: "Input custom error message"
+          contentText: "Input custom error message"
         }
-    })], {
+      })
+    ],
+    {
       componentPath: "wmnds/components/form-elements/input/",
       njk: true,
       njkProps: wmndsInputProps,

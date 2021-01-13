@@ -40,12 +40,15 @@
 {% endmarkdown %}
 
 {{
-    compExample([wmndsDateInput({
+    compExample([
+      wmndsDateInput({
+        id: "error-date",
         error: true,
         errorMessage: {
-            contentText: "Date input custom error message"
+          contentText: "Date input custom error message"
         }
-    })], {
+      })
+    ], {
       componentPath: "wmnds/components/form-elements/date-input/",
       njk: true,
       njkProps: wmndsDateInputProps,

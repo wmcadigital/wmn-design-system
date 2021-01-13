@@ -25,15 +25,17 @@
 
 {{
 compExample(
-    [wmndsFileUpload({
+    [
+      wmndsFileUpload({
         fileSelected: false
-    })],
+      })
+    ],
     {
-        componentPath: "wmnds/components/form-elements/file-upload/",
-        njk: true,
-        njkProps: wmndsFileUploaderProps,
-        js: false,
-        iframe: false
+      componentPath: "wmnds/components/form-elements/file-upload/",
+      njk: true,
+      njkProps: wmndsFileUploaderProps,
+      js: false,
+      iframe: false
     }
 )
 }}
@@ -45,9 +47,12 @@ compExample(
 {% endmarkdown %}
 
 {{
-    compExample([wmndsFileUpload({
-      fileSelected: true
-    })],{
+    compExample([
+      wmndsFileUpload({
+        id: "uploaded-fileupload",
+        fileSelected: true
+      })
+    ],{
       componentPath: "wmnds/components/form-elements/file-upload/",
       njk: true,
       njkProps: wmndsFileUploaderProps,
@@ -63,13 +68,16 @@ compExample(
 {% endmarkdown %}
 
 {{
-    compExample([wmndsFileUpload({
-      fileSelected: false,
-      error: true,
-      errorMessage : {
+    compExample([
+      wmndsFileUpload({
+        id: "error-fileupload",
+        fileSelected: false,
+        error: true,
+        errorMessage : {
           contentText: "Files must be jpeg or png file format and be less than 2mb"
-      }
-    })],{
+        }
+      })
+    ],{
       componentPath: "wmnds/components/form-elements/file-upload/",
       njk: true,
       njkProps: wmndsFileUploaderProps,
