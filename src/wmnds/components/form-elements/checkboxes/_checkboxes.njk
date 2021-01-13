@@ -4,54 +4,65 @@
 {% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
-{% set hasQuestion = false if params.question === "" else true %}
-{% set question = params.question if params.question %}
-{% set hasDesc = false if params.question === "" else true %}
-{% set desc = params.desc if params.desc else "Select all options that apply" %}
-{% set options = params.options if params.options %}
-{% set groupClass = params.groupClass if params.groupClass %}
+{% set items = params.items if params.items %}
+{% set groupClass = " " + params.classes if params.classes %}
+{% set name = params.name if params.name else "checkbox-example" %}
+{% set hintContentText = params.hint.contentText if params.hint.contentText else "Select all options that apply" %}
+{% set hintContentHTML = params.hint.contentHTML if params.hint.contentHTML else null %}
+{% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
+{% set hasDescription = false if _hintContent === "" else true %}
+{% set idPrefix = params.idPrefix if params.idPrefix else name %}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select at least one option" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
-
-<div class="wmnds-fe-group {{groupClass}}">
-  <fieldset class="wmnds-fe-fieldset">
-    <legend class="wmnds-fe-fieldset__legend">
-    {%- if hasQuestion %}
-    {{ 
-      wmndsQuestion({
-        contentText: question
-      })
-    }}
-    {% endif -%}
-    </legend>
+<div class="wmnds-fe-group{{groupClass}}{{groupErrorClass}}">
     <div class="wmnds-fe-checkboxes">
-      <span class="wmnds-fe-checkboxes__desc">
-      {%- if hasDesc %}
-      {{ desc | safe}}
+      {% if params.error -%}
+        {{
+          wmndsFeErrorMessage(
+            {
+              contentText: errorContentText,
+              contentHTML: errorContentHTML,
+              classes: errorClasses,
+              id: errorId
+            }
+          )
+        }}
       {% endif -%}
+      {%- if hasDescription %}
+      <span class="wmnds-fe-checkboxes__desc{{params.hint.classes}}" {% if params.hint.id %}id="{{params.hint.id}}"{% endif %}>
+      {{ _hintContent }}
       </span>
-      {%- if options %}
-        {%- for option in options %}
-          {%- if option.checked !== null %}
-          {%- set isChecked = (' checked="checked"' | safe) if option.checked === true  else "" %}
-          {%- set isNotEditable = (' disabled="disabled"' | safe) if option.editable === false else "" %}
-          {% endif -%}
+      {% endif -%}
+      {%- if items %}
+        {%- for item in items %}
+          {%- set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
+          {%- set inputValue = item.value if item.value else "option" + loop.index | string %}
+          {%- set inputId = item.id if item.id else idPrefix + "_" + inputValue %}
+          {%- set isNotEditable = (' disabled="disabled"' | safe) if item.disabled === true else "" %}
+          {% set itemContentText = item.contentText if item.contentText else "Select all options that apply" %}
+          {% set itemContentHTML = item.contentHTML if item.contentHTML else null %}
+          {% set _itemContent = itemContentHTML | safe if itemContentHTML else itemContentText %} {# change content based on what user has input #}
           <label class="wmnds-fe-checkboxes__container">
             <div class="wmnds-m-b-lg">
-              {%- if option.title %}
-              <h3 class="wmnds-m-none wmnds-p-b-sm">{{option.title}}</h3>
+              {%- if item.titleText %}
+              <h3 class="wmnds-m-none wmnds-p-b-sm">{{item.titleText}}</h3>
               {%- endif -%}
-              {%- if option.desc -%}
-              {{ option.desc }}
-              {% endif -%}
+              {{ _itemContent }}
             </div>
-            <input class="wmnds-fe-checkboxes__input" value="{{option.title}}" {{isChecked}} type="checkbox" {{isNotEditable}}/>
+            <input id="{{inputId}}" class="wmnds-fe-checkboxes__input" value="{{inputValue}}" name="{{name}}" {{isChecked}} type="checkbox" {{isNotEditable}}/>
             <span class="wmnds-fe-checkboxes__checkmark">
               {{
                 wmndsIcon({
                   icon: 'general-checkmark',
                   class: 'wmnds-fe-checkboxes__icon'
-                }) | indent(8) | trim
+                })
               }}
             </span>
           </label>
@@ -60,22 +71,22 @@
         {%- for i in range(1,4) %}
         {#- Set checked state on first item in loop #}
         {%- set isChecked = (' checked="checked"' | safe) if i === 1 %}
+        {%- set inputId = idPrefix + "_option" + i | string %}
         <label class="wmnds-fe-checkboxes__container">
           Option {{i}}
-          <input class="wmnds-fe-checkboxes__input" value="Option {{i}}"{{isChecked}} type="checkbox"/>
+          <input id="{{inputId}}" class="wmnds-fe-checkboxes__input" value="{{inputValue}}" name="{{name}}" {{isChecked}} type="checkbox" />
           <span class="wmnds-fe-checkboxes__checkmark">
             {# Get SVG icon and pass class #}
             {{
               wmndsIcon({
                 icon: 'general-checkmark',
                 class: 'wmnds-fe-checkboxes__icon'
-              }) | indent(8) | trim
+              })
             }}
           </span>
         </label>
         {%- endfor %}
       {% endif -%}
     </div>
-  </fieldset>
 </div>
 {% endmacro %}
