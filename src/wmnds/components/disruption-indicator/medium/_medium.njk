@@ -3,42 +3,42 @@
 
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
-{% set _text = params.contentText if params.contentText else 'X15' %} {# set text, or default to X15 #}
+{% set _content = params.contentText if params.contentText else 'X15' %} {# set text, or default to X15 #}
 
-{% set _class = ' ' + params.classes if params.classes %}
+{% set classes = ' ' + params.classes if params.classes %}
 {% set _iconClassModifier = ' wmnds-disruption-indicator-medium--with-icon' if ( params.iconLeft or params.iconRight ) %}
 
 {{params.comment | safe}}
-<div class="wmnds-disruption-indicator-medium{{_iconClassModifier}}{{_class}}">
-  {%- if iconLeft %}
+<div class="wmnds-disruption-indicator-medium{{_iconClassModifier}}{{classes}}">
+  {% if iconLeft %}
   {# Get SVG icon -#}
   {{
     wmndsIcon({
       icon: iconLeft,
       class: 'wmnds-disruption-indicator-medium__icon wmnds-disruption-indicator-medium__icon--left'
-    }) | indent(2) | trim
+    })
   }}
-  {%- endif %}
-  {{ _text }}
-  {% if iconRight === 'general-trash' -%}
+  {% endif %}
+  {{ _content }}
+  {% if iconRight === 'general-trash' %}
   <button class="wmnds-disruption-indicator-medium__btn" aria-label="Delete favourite - bus - {{ _text }}">
     {#- Get SVG icon -#}
     {{
       wmndsIcon({
         icon: iconRight,
         class: 'wmnds-disruption-indicator-medium__icon'
-      }) | indent(4) | trim
+      })
     }}
   </button>
-  {%- elif iconRight -%}
+  {% elif iconRight %}
   {#- Get SVG icon -#}
   {{
     wmndsIcon({
       icon: iconRight,
       class: 'wmnds-disruption-indicator-medium__icon wmnds-disruption-indicator-medium__icon--right'
-    }) | indent(2) | trim
+    })
   }}
-  {%- endif %}
+  {% endif %}
 </div>
 
 {% endmacro %}

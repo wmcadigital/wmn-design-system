@@ -1,12 +1,13 @@
 {% raw %}
-{% from "wmnds/components/disruption-indicator/medium/medium.njk" import wmndsDisruptionIndicatorMedium %}
+{% from "wmnds/components/disruption-indicator/large/large.njk" import wmndsDisruptionIndicatorLarge %}
 
 {{
-   wmndsDisruptionIndicatorMedium({
-     contentText: "X15",
-     classes: "wmnds-disruption-indicator-medium--error",
-     iconLeft: "modes-isolated-bus",
-     iconRight: "general-warning-triangle"
-    })
+  wmndsDisruptionIndicatorLarge({
+    primaryText: "Good service",
+    contentText: "A38",
+    classes: "wmnds-disruption-indicator-large--error",
+    iconLeft: "modes-isolated-bus",
+    iconRight: "general-warning-triangle"
+  })
 }}
 {% endraw %}

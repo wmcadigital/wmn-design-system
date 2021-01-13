@@ -1,26 +1,26 @@
 {% macro wmndsDisruptionIndicatorLarge(params) %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
-{% set _primaryText = params.primaryText if params.primaryText else "Indicator text" %} {# set button text #}
-{% set _iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
-{% set _iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
-{% set _classes = ' wmnds-disruption-indicator-large--' + params.classes if params.classes else "" %}
+{% set primaryText = params.primaryText if params.primaryText else "Indicator text" %} {# set button text #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set classes = ' wmnds-disruption-indicator-large--' + params.classes if params.classes else "" %}
 
 {{params.comment | safe}}
-<div class="wmnds-disruption-indicator-large{{_classes}}">
+<div class="wmnds-disruption-indicator-large{{classes}}">
   <div class="wmnds-disruption-indicator-large__left-wrapper">
     <span class="wmnds-disruption-indicator-large__left-icon-wrapper">
       {# Get SVG icon for mode #}
-      {{-
+      {{
         wmndsIcon({
-          icon: _iconLeft,
+          icon: iconLeft,
           class: 'wmnds-disruption-indicator-large__icon'
-        }) | indent(2) | trim
+        })
       }} <br>{{params.mode}}
     </span>
     <span class="wmnds-disruption-indicator-large__text">
-      <strong>{{_primaryText}}</strong><br>
-      {{- params.contentText }}
+      <strong>{{primaryText}}</strong><br>
+      {{ params.contentText }}
     </span>
   </div>
 
@@ -28,11 +28,11 @@
   {% if params.iconRightBtn %}
   <button class="wmnds-disruption-indicator-large__btn" aria-label="Delete favourite - {{params.mode}} - {{ params.text }}">
     {# Get SVG icon #}
-    {{-
+    {{
       wmndsIcon({
-        icon: _iconRight,
+        icon: iconRight,
         class: 'wmnds-disruption-indicator-large__icon'
-      }) | indent(4) | trim
+      })
     }}
   </button>
   {#- else -#}
@@ -40,10 +40,10 @@
   {#- Get SVG icon #}
   {{
     wmndsIcon({
-      icon: _iconRight,
+      icon: iconRight,
       class: 'wmnds-disruption-indicator-large__icon wmnds-disruption-indicator-large__icon--right'
-    }) | indent(2) | trim
-  -}}
+    })
+  }}
   {% endif %}
 </div>
 
