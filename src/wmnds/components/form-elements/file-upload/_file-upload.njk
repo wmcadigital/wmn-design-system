@@ -23,7 +23,7 @@
 
 <div class="wmnds-fe-group {{formGroupClasses}}{{groupErrorClass}}">
 
-    {% if params.fileSelected -%}
+    {% if params.fileSelected %}
         {% if params.error -%}
           {{
             wmndsFeErrorMessage(
@@ -35,7 +35,7 @@
               }
             )
           }}
-        {% endif -%}
+        {% endif %}
       <div class="wmnds-fe-file-upload">
         <input
           type="file"
@@ -58,7 +58,7 @@
         </span>
       </div>
 
-    {%- else -%}
+    {% else %}
       <div class="wmnds-fe-file-upload">
         {% if params.error -%}
           {{
@@ -71,7 +71,7 @@
               }
             )
           }}
-        {% endif -%}
+        {% endif %}
         <input
           type="file"
           name="{{name}}"
@@ -93,7 +93,7 @@
           no file selected
         </span>
       </div>
-    {%- endif %}
+    {% endif %}
 
 </div>
 

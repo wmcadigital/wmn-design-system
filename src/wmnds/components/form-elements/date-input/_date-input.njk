@@ -26,7 +26,7 @@
 
 <div id="{{id}}" class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
 
-  {% if params.error -%}
+  {% if params.error %}
     {{
       wmndsFeErrorMessage(
         {
@@ -37,7 +37,7 @@
         }
       ) 
     }}
-  {% endif -%}
+  {% endif %}
 
   <div class="wmnds-col-1-2 wmnds-col-sm-1-12 wmnds-m-r-md">
     {{

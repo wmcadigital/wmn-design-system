@@ -23,7 +23,7 @@
 
 <div class="wmnds-fe-group{{groupClass}}{{groupErrorClass}}">
     <div class="wmnds-fe-checkboxes">
-      {% if params.error -%}
+      {% if params.error %}
         {{
           wmndsFeErrorMessage(
             {
@@ -34,13 +34,13 @@
             }
           )
         }}
-      {% endif -%}
-      {%- if hasDescription %}
+      {% endif %}
+      {% if hasDescription %}
       <span class="wmnds-fe-checkboxes__desc{{params.hint.classes}}" {% if params.hint.id %}id="{{params.hint.id}}"{% endif %}>
       {{ _hintContent }}
       </span>
-      {% endif -%}
-      {%- if items %}
+      {% endif %}
+      {% if items %}
         {%- for item in items %}
           {%- set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
           {%- set inputValue = item.value if item.value else "option" + loop.index | string %}
@@ -66,12 +66,12 @@
               }}
             </span>
           </label>
-        {%- endfor %}
-      {%- else %} 
-        {%- for i in range(1,4) %}
-        {#- Set checked state on first item in loop #}
-        {%- set isChecked = (' checked="checked"' | safe) if i === 1 %}
-        {%- set inputId = idPrefix + "_option" + i | string %}
+        {% endfor %}
+      {% else %} 
+        {% for i in range(1,4) %}
+        {# Set checked state on first item in loop #}
+        {% set isChecked = (' checked="checked"' | safe) if i === 1 %}
+        {% set inputId = idPrefix + "_option" + i | string %}
         <label class="wmnds-fe-checkboxes__container">
           Option {{i}}
           <input id="{{inputId}}" class="wmnds-fe-checkboxes__input" value="{{inputValue}}" name="{{name}}" {{isChecked}} type="checkbox" />
@@ -85,8 +85,8 @@
             }}
           </span>
         </label>
-        {%- endfor %}
-      {% endif -%}
+        {% endfor %}
+      {% endif %}
     </div>
 </div>
 {% endmacro %}
