@@ -26,11 +26,18 @@
 
 {% from "wmnds/components/in-text-step/_in-text-step.njk" import wmndsInTextStep %}
 {{
-    compExample([wmndsInTextStep({
-            steps: [
-                "Step text must end with a full stop.",
-                "Step text must end with a full stop.",
-                "Step text must end with a full stop."
+    compExample([
+        wmndsInTextStep({
+            items: [
+                {
+                    contentText: "Step text must end with a full stop."
+                },
+                {
+                    contentText: "Step text must end with a full stop."
+                },
+                {
+                    contentText: "Step text must end with a full stop."
+                }
             ]
         })
     ],
