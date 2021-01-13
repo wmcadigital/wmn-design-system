@@ -50,6 +50,12 @@ If you are using the [Prototype Kit](/docs/get-started/prototyping/) or you [ins
 
 As both of these methods use <a href="https://mozilla.github.io/nunjucks/templating.html" target="_blank" class="wmnds-link">Nunjucks templating</a>, you can use our nunjucks macros (Nunjucks markup tab) and use the Nunjucks properties tab as reference to speed up your development.
 
+#### Nunjucks macros
+
+A Nunjucks macro is a simple template that generates more complex HTML. However, macros are more sensitive to mistakes than HTML, so it’s worth saving and previewing.
+
+When using Nunjucks macros in the Prototype Kit leave out the first line that starts with
+
 {% endmarkdown %}
 {{
   compExample([
