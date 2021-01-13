@@ -1,5 +1,6 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Lists" %}
+{% set section="Styles" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -35,29 +36,27 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/lists/ordered-list/_ordered-list.njk" import wmndsOrderedList %}
 {{
   compExample([
-    wmndsOrderedList(
-      {
-        html: "<li>Text
+    "<ol class='wmnds-ordered-list'>
+        <li>Text
+          <ol>
+            <li>Text
+              <ol>
+                <li>Text</li>
+                <li>Text
                   <ol>
-                    <li>Text
-                      <ol>
-                        <li>Text</li>
-                        <li>Text
-                          <ol>
-                            <li>Text</li>
-                          </ol>
-                        </li>
-                        <li>Text</li>
-                      </ol>
-                    </li>
                     <li>Text</li>
                   </ol>
-              </li>
-              <li>Text</li>"
-      }) | trim
+                </li>
+                <li>Text</li>
+              </ol>
+            </li>
+            <li>Text</li>
+          </ol>
+      </li>
+      <li>Text</li>
+    </ol>"
   ])
 }}
 {% markdown %}
@@ -92,26 +91,23 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/lists/unordered-list/_unordered-list.njk" import wmndsUnorderedList %}
 {{
 compExample([
-wmndsUnorderedList(
-{
-html:
-    "<li>Text
-      <ul>
-        <li>Text
-          <ul>
-            <li>Text
-              <ul>
-                <li>Text</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>"
-    }) | trim
+    "<ul class='wmnds-unordered-list'>
+      <li>Text
+        <ul>
+          <li>Text
+            <ul>
+              <li>Text
+                <ul>
+                  <li>Text</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>"
   ])
 }}
 
