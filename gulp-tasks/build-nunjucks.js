@@ -15,6 +15,12 @@ const { packageJson, build } = require('./utils');
 // Check for upcoming version number in node env (will be set during release workflow)
 const versionNumber = process.env.VERSION_NUMBER || packageJson.version;
 
+// Create a JS date for today, then split into year, month and day (used for copyright and release date)
+const d = new Date();
+const year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+const month = new Intl.DateTimeFormat('en', { month: 'long' }).format(d);
+const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+
 // Merge njk json files together
 const mergingJSONFiles = () => {
   return src(paths.njkData.src)
@@ -39,6 +45,8 @@ const manageEnv = env => {
 
     return beautifulHTML;
   });
+
+  env.addGlobal('currentYear', year); // This is used for the copyright year in the footer, so it is always up to date
 
   // Beautify function shared by the two JS filters below
   const beautifyJavascript = js =>
@@ -107,15 +115,10 @@ const buildingTemplates = () => {
       .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
       .pipe(plugins.replace('$*version', versionNumber))
       .pipe(
+        // Show todays date in place of the release date
+        // When the site builds from release this will stay static until the next release
         plugins.replace('$*releaseDate', () => {
-          // Show todays date in place of the release date
-          // When the site builds from release this will stay static until the next release
-          const d = new Date();
-          const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-          const mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(d);
-          const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
-
-          return `${da} ${mo} ${ye}`;
+          return `${day} ${month} ${year}`;
         })
       )
       .pipe(plugins.formatHtml())
