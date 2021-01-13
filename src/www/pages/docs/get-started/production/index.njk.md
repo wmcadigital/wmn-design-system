@@ -47,16 +47,16 @@ You should now be able to include West Midlands Network Design System components
 
 ### Option 2: install using npm
 
-West Midlands Network Design System is available on npm as <a href="https://www.npmjs.com/package/wmn-design-system" target="_blank" class="wmnds-link">wmn-design-system</a>. This package contains all of West Midlands Network Design System [styles](/styles/), [components](/components/) or [patterns](/patterns/) and documentation.
+West Midlands Network Design System is available on npm as <a href="https://www.npmjs.com/package/wmn-design-system" target="_blank" rel="noopener noreferrer" class="wmnds-link">wmn-design-system</a>. This package contains all of West Midlands Network Design System [styles](/styles/), [components](/components/) or [patterns](/patterns/) and documentation.
 
 #### Add design system package to your project
 
-1. Install <a href="https://nodejs.org/en/" target="_blank" class="wmnds-link">Node.js</a>
+1. Install <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer" class="wmnds-link">Node.js</a>
    If you have not already installed version 4.2.0 or later of Node.js, install the latest Long Term Support(LTS) version.
 
 2. Navigate to the root folder of your new project
 
-3. Ensure you have a <a href="https://docs.npmjs.com/files/package.json" target="_blank" class="wmnds-link">package.json file</a>. If you do not have the file, create it by opening the terminal and running:
+3. Ensure you have a <a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="noopener noreferrer" class="wmnds-link">package.json file</a>. If you do not have the file, create it by opening the terminal and running:
 <pre><code class="bash wmnds-show-more-ignore" tabindex="0">npm init</code></pre>
 
 4. In your terminal, run:

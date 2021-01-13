@@ -38,7 +38,7 @@ You must:
 
 ## Something missing?
 
-If something is missing in the documentation or you found some part confusing, you can <a class="wmnds-link" href="https://github.com/wmcadigital/wmn-design-system/issues/new?assignees=mrmjprice%2CKaterinaKir%2Cdaylesalmon&labels=question&template=question.md&title=" target="_blank" >raise an issue</a> or <a class="wmnds-link" href="https://github.com/wmcadigital/wmn-design-system/discussions/new" target="_blank">start a discussion</a> with our team.
+If something is missing in the documentation or you found some part confusing, you can <a class="wmnds-link" href="https://github.com/wmcadigital/wmn-design-system/issues/new?assignees=mrmjprice%2CKaterinaKir%2Cdaylesalmon&labels=question&template=question.md&title=" target="_blank" rel="noopener noreferrer" >raise an issue</a> or <a class="wmnds-link" href="https://github.com/wmcadigital/wmn-design-system/discussions/new" target="_blank" rel="noopener noreferrer">start a discussion</a> with our team.
 
 We always look forward to hearing from you!
 
