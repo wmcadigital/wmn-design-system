@@ -7,7 +7,7 @@
 
 {% markdown %}
 
-## Start using the design system
+## About
 
 To start using our [styles](/styles/), [components](/components/) and [patterns](/patterns/) in your production project, you'll first need to include West Midlands Network Design System in your project.
 
@@ -41,7 +41,7 @@ Getting started is as simple as including West Midlands Network Design System's 
 
 #### Start developing
 
-You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the HTML markup tabs on each page to see how to include that component/pattern to your project.
+You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the HTML markup tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
 
 ---
 
@@ -81,7 +81,7 @@ West Midlands Network Design System is available on npm as <a href="https://www.
 
 #### Start developing
 
-You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the nunjucks markup and properties tabs on each page to see how to include that component/pattern to your project.
+You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the nunjucks markup and properties tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
 
 {% endmarkdown %}
 
