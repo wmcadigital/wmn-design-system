@@ -1,0 +1,54 @@
+{% raw %}
+{% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
+
+{{
+  wmndsRadios({
+    items: [
+      {
+          id: null,
+          checked: false,
+          titleText: null,
+          contentText: "Option 1",
+          contentHTML: null,
+          value: "option1",
+          disabled: false
+      },
+      {
+          id: null,
+          checked: true,
+          titleText: null,
+          contentText: "Option 2",
+          contentHTML: null,
+          value: "option2",
+          disabled: false
+      },
+      {
+          id: null,
+          checked: false,
+          titleText: null,
+          contentText: "Option 3",
+          contentHTML: null,
+          value: "option3",
+          disabled: false
+      }
+    ],
+    idPrefix: "radios",
+    name: "radios-example",
+    classes: null,
+    inline: false,
+    hint: {
+      id: null,
+      classes: null,
+      contentText: "Select one option",
+      contentHTML: null
+    },
+      error: false,
+      errorMessage: {
+        contentText: "Please select an option",
+        contentHTML: null,
+        classes: null,
+        id: null
+      }
+  })
+}}
+{% endraw %}
