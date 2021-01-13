@@ -51,6 +51,9 @@
           "name": "Content tiles"
         },
         {
+          "name": "Date Input"
+        },
+        {
           "name": "Details"
         },
         {
@@ -60,7 +63,10 @@
           "name": "File download"
         },
         {
-          "name": "Form elements"
+          "name": "File upload"
+        },
+        {
+          "name": "Form label"
         },
         {
           "name": "Inset text"
@@ -91,6 +97,12 @@
         },
         {
           "name": "Table"
+        },
+        {
+          "name": "Textarea"
+        },
+        {
+          "name": "Text Input"
         },
         {
           "name": "Warning text"

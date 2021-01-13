@@ -1,8 +1,12 @@
 {% macro wmndsLabel(params) %}
 {# Set vars and defaults #}
-{% set for = params.for if params.for else "genericInput" %}
-{% set label = params.label if params.label else "Form label" %}
 
-<label class="wmnds-fe-label" for="{{for}}">{{ label }}</label>
+{% set contentText = params.contentText if params.contentText else "Form label" %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+{% set _labelContent = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
+{% set classes = " " + params.classes if params.classes else null %}
+{% set for = params.for if params.for else "genericInput" %}
+
+<label class="wmnds-fe-label{{classes}}" for="{{for}}">{{ _labelContent }}</label>
 
 {% endmacro %}
