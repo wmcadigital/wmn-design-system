@@ -8,7 +8,7 @@
     {
       "name": "iconRight",
       "type": "string",
-      "description": "The icon tag which specifies the icon to show to the right of the indicator (see icon reference). Default value is <code class='wmnds-website-inline-code'>general-warning-circle</code>"
+      "description": "The icon tag which specifies the icon to show to the right of the indicator (see <a href='/styles/icons/' rel='noopener noreferrer nofollow' target='_blank'>icon reference</a>). Default value is <code class='wmnds-website-inline-code'>general-warning-circle</code>"
     },
     {
       "name": "classes",
