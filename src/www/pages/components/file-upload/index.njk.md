@@ -63,7 +63,7 @@ compExample(
 
 {% markdown %}
 
-### Showing error
+### File upload with error
 
 {% endmarkdown %}
 

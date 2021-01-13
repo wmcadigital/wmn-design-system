@@ -35,7 +35,7 @@
 
 {% markdown %}
 
-## Showing error
+### Date input with error
 
 {% endmarkdown %}
 

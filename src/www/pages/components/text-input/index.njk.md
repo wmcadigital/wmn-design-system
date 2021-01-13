@@ -36,7 +36,7 @@
 
 {% markdown %}
 
-## Showing error
+### Text input with error
 
 {% endmarkdown %}
 

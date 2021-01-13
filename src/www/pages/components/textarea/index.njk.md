@@ -66,7 +66,7 @@
 
 {% markdown %}
 
-### Showing error
+### Textarea with error
 
 {% endmarkdown %}
 
