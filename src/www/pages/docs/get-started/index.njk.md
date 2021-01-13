@@ -22,6 +22,8 @@ There are many different ways to get started with our design system. It all depe
 
 When something is published in the West Midlands Network design system as a [style](/styles/), [component](/components/) or [pattern](/patterns/) we include details of what it is, how to use it, and when to use it based on our [user research](/user-research/). This should help you decide whether it’s something you can use or adapt for your service.
 
+The guide, [using the design system](using-the-design-system/) contains more information on how to use the West Midlands Network Design System.
+
 ---
 
 ## Before making a service live
