@@ -60,6 +60,9 @@
           "name": "Disruption indicators"
         },
         {
+          "name": "Dropdown"
+        },
+        {
           "name": "File download"
         },
         {
@@ -91,6 +94,9 @@
         },
         {
           "name": "Progress indicator"
+        },
+        {
+          "name": "Radios"
         },
         {
           "name": "Question"
