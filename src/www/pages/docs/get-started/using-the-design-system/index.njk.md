@@ -46,7 +46,7 @@ If you [installed the design system using the recommended setup](/docs/get-start
 
 ### Option 2: Prototype Kit or installed with npm
 
-If you are using the [Prototype Kit](/docs/get-started/prototyping/) or you [installed the design system using npm](/docs/get-started/production/#option-2-install-using-npm), you can copy the code from either the HTML markup or Nunjucks markup tab below any examples.
+If you are using the [Prototype Kit](/docs/get-started/prototype-kit/) or you [installed the design system using npm](/docs/get-started/production/#option-2-install-using-npm), you can copy the code from either the HTML markup or Nunjucks markup tab below any examples.
 
 As both of these methods use <a href="https://mozilla.github.io/nunjucks/templating.html" target="_blank" class="wmnds-link">Nunjucks templating</a>, you can use our nunjucks macros (Nunjucks markup tab) and use the Nunjucks properties tab as reference to speed up your development.
 

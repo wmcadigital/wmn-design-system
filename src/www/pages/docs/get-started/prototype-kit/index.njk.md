@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-docs.njk" %}
-{% set pageTitle = "Prototyping" %}
+{% set pageTitle = "Prototype Kit" %}
 {% set section = "Docs" %}
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 

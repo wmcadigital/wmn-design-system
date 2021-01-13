@@ -11,7 +11,7 @@ There are many different ways to get started with our design system. It all depe
 
 **These are our guides for getting started:**
 
-- [Prototyping](prototyping/)
+- [Prototype Kit](prototype-kit/)
 - [Production](production/)
 - [Mobile application](mobile-application/)
 - [Design](design/)
