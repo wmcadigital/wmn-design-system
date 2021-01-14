@@ -19,6 +19,9 @@
           "name": "Layout"
         },
         {
+          "name": "Lists"
+        },
+        {
           "name": "Maps"
         },
         {
@@ -67,9 +70,6 @@
         },
         {
           "name": "Links"
-        },
-        {
-          "name": "Lists"
         },
         {
           "name": "Loader"
