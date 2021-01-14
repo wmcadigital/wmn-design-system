@@ -4,34 +4,10 @@
 {{
   wmndsTable(
     {
-      title: "Table Title",
       caption: "Table Caption",
-      hideHeader: false,
+      title: "Table Title",
       firstCellIsHeader: true,
       classes: "wmnds-m-b-xl",
-      head: [
-        {
-          contentText: "Header 1",
-          contentHTML: null,
-          classes: null,
-          colspan: 1,
-          rowspan: 1,
-        },
-        {
-          contentText: "Header 2",
-          contentHTML: null,
-          classes: null,
-          colspan: 1,
-          rowspan: 1,
-        },
-        {
-          contentText: "Header 3",
-          contentHTML: null,
-          classes: null,
-          colspan: 1,
-          rowspan: 1,
-        }
-      ],
       rows: [
         [
           {
@@ -79,7 +55,31 @@
             rowspan: 1,
           }
         ]
-      ]
+      ],
+      head: [
+        {
+          contentText: "Header 1",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 2",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 3",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        }
+      ],
+      hideHeader: false
     })
 }}
 {% endraw %}
