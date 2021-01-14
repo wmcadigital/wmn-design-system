@@ -3,9 +3,10 @@
 {% set classes = " " + params.classes if params.classes else "" %}
 {% set yellowModifier = " wmnds-content-card--yellow" if params.yellow else "" %}
 {# Opening & closing tags #}
-{% set tag = "a" if params.href else "div" %}
-{% set href = params.href if params.href else "#" %}
-{% set _attributes = " href=\"" + href + "\" target=\"_self\"" if params.href else "" %}
+{% set tag = "a" if params.link else "div" %}
+{% set link = params.link if params.link else "#" %}
+{% set linkTitle = params.linkTitle if params.linkTitle else "" %}
+{% set _attributes = " href=\"" + link + "\" title=\""+ linkTitle +"\" target=\"_self\"" if params.link else "" %}
 {# HTML content #}
 {% set contentHTML = params.contentHTML if params.contentHTML else "
     <div class=\"wmnds-p-sm\">

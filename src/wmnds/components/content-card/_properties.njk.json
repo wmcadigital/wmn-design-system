@@ -6,9 +6,14 @@
       "description": "The id of the content card"
     },
     {
-      "name": "href",
+      "name": "link",
       "type": "string",
       "description": "Specifies the link to display the content card component as a clickable navigation card."
+    },
+    {
+      "name": "linkTitle",
+      "type": "string",
+      "description": "Specifies the title of the link to display the content card component as a clickable navigation card."
     },
     {
       "name": "classes",
