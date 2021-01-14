@@ -14,57 +14,19 @@
     {{
         wmndsQuestion({
             text: question
-        }) | trim | indent(4)
+        })
     }}
 
-    {%- if tables -%}
-        {%- for table in tables %}
-            {{ table | trim | indent(4) | safe }}
-        {%- endfor %}
+    {% if tables %}
+        {% for table in tables %}
+            {{ table | safe }}
+        {% endfor %}
     {% else %}
     {{
         [
             wmndsTable({
                 title: "Personal Details",
                 hideHeader: true,
-                tableRows: [
-                    [
-                        {
-                            contentText: "Name"
-                        },
-                        {
-                            contentText: "Andy Street"
-                        },
-                        {
-                            contentHTML: "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>",
-                            classes: "wmnds-text-align-right"
-                        }
-                    ],
-                    [
-                        {
-                            contentText: "Date of Birth"
-                        },
-                        {
-                            contentText: "1 January 2020"
-                        },
-                        {
-                            contentHTML: "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>",
-                            classes: "wmnds-text-align-right"
-                        }
-                    ],
-                    [
-                        {
-                            contentText: "Contact Details"
-                        },
-                        {
-                            contentHTML: "07700 900 457<br>andy.street@example.com"
-                        },
-                        {
-                            contentHTML: "<a href=\"#\" title=\"link title\" target=\"_self'\" class=\"wmnds-link\">Change</a>",
-                            classes: "wmnds-text-align-right"
-                        }
-                    ]
-                ],
                 classes: "wmnds-m-b-xl"
             }),
 
@@ -98,7 +60,7 @@
                     ]
                 ],
                 classes: "wmnds-m-b-xl"
-            })
+            }),
 
             wmndsTable({
                 title: "Direct Debit",
@@ -162,8 +124,8 @@
 
 
 
-    {{- html | trim | indent | safe }}
-    {{ params.button | trim | indent(4) | safe }}
+    {{ html | safe }}
+    {{ params.button | safe }}
 </div>
 
 {% endmacro %}

@@ -48,7 +48,7 @@
 
 <table class="wmnds-table{{classes}}{{_hideHeaderClass}}">
   {# Table Title #}
-  {%- if title %}
+  {% if title %}
   <h3>
     {{title}}
   </h3>
@@ -57,7 +57,7 @@
   {# Table Caption #}
   {%- if caption %}
   <caption class="wmnds-table__caption">
-    {{- caption -}}
+    {{ caption }}
   </caption>
   {% endif %}
 
