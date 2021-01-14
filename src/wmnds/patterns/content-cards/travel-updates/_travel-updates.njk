@@ -18,11 +18,11 @@
         <div class="wmnds-m-t-sm">
             {{
                 largeDisruption({
-                strongText: area,
-                text: "Usual traffic",
-                iconLeft: "modes-isolated-roads",
-                iconRight: "general-success"
-                }) | trim | indent(8)
+                    strongText: area,
+                    text: "Usual traffic",
+                    iconLeft: "modes-isolated-roads",
+                    iconRight: "general-success"
+                })
             }}
         </div>
         {% endfor %}
@@ -34,11 +34,11 @@
             <div class="wmnds-col-auto wmnds-m-r-md">
                 {{
                     mediumDisruption({
-                    text: bus,
-                    classModifiers: "wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
-                    iconLeft: "modes-isolated-bus",
-                    iconRight: "general-success"
-                    }) | trim | indent(12)
+                        text: bus,
+                        classModifiers: "wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
+                        iconLeft: "modes-isolated-bus",
+                        iconRight: "general-success"
+                    })
                 }}
                 <div class="wmnds-grid wmnds-grid--justify-around wmnds-p-t-sm wmnds-p-b-sm">
                     <svg class="wmnds-disruption-indicator-medium-star">
@@ -51,8 +51,8 @@
         <!-- Help message -->
         {{
             wmndsMsgHelp({
-                message: 'Save bus routes to your homepage by pressing the star icon'
-            }) | indent(12) | trim
+                contentText: 'Save bus routes to your homepage by pressing the star icon'
+            })
         }}
     </div>
 {% endcall %}
