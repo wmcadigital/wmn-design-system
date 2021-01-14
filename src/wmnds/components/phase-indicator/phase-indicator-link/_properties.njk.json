@@ -1,0 +1,19 @@
+{
+  "wmndsPhaseIndicatorLinkProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "Text content for the phase indicator link"
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "description": "Specifies the href to be used in the phase indicator link"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Title text for the phase indicator link"
+    }
+  ]
+}
