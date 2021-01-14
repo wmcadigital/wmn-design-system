@@ -4,7 +4,6 @@
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
 {% set _content = params.contentText if params.contentText else 'X15' %} {# set text, or default to X15 #}
-
 {% set classes = ' ' + params.classes if params.classes %}
 {% set _narrowClassModifier = " wmnds-disruption-indicator-medium--narrow" if params.displayNarrow %} 
 {% set _iconClassModifier = ' wmnds-disruption-indicator-medium--with-icon' if ( params.iconLeft or params.iconRight ) %}
