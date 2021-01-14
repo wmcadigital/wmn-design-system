@@ -4,7 +4,7 @@
 {% set primaryText = params.primaryText if params.primaryText else "Indicator text" %} {# set button text #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
-{% set classes = ' wmnds-disruption-indicator-large--' + params.classes if params.classes else "" %}
+{% set classes = ' ' + params.classes if params.classes else "" %}
 
 {{params.comment | safe}}
 <div class="wmnds-disruption-indicator-large{{classes}}">
