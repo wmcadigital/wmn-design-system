@@ -6,10 +6,11 @@
 {% set _content = params.contentText if params.contentText else 'X15' %} {# set text, or default to X15 #}
 
 {% set classes = ' ' + params.classes if params.classes %}
+{% set _narrowClassModifier = " wmnds-disruption-indicator-medium--narrow" if params.displayNarrow %} 
 {% set _iconClassModifier = ' wmnds-disruption-indicator-medium--with-icon' if ( params.iconLeft or params.iconRight ) %}
 
 {{params.comment | safe}}
-<div class="wmnds-disruption-indicator-medium{{_iconClassModifier}}{{classes}}">
+<div class="wmnds-disruption-indicator-medium{{_iconClassModifier}}{{classes}}{{_narrowClassModifier}}">
   {% if iconLeft %}
   {# Get SVG icon -#}
   {{

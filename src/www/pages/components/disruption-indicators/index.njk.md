@@ -284,33 +284,38 @@ There are three types all giving different levels of detail.
   compExample([
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (good service) -->',
-      classes: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-success'
+      iconRight: 'general-success',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--success'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (mindor disruption) -->',
-      classes: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-warning-circle'
+      iconRight: 'general-warning-circle',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--warning'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (major disruption) -->',
-      classes: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-warning-triangle'
+      iconRight: 'general-warning-triangle',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--error'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (severe disruption) -->',
-      classes: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-warning-triangle'
+      iconRight: 'general-warning-triangle',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--severe'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (delete) -->',
-      classes: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-trash'
+      iconRight: 'general-trash',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--error'
     })
   ],
   {
