@@ -14,30 +14,40 @@
         <p>All routes through this disruption</p>
         <!-- Large disruption indicators -->
         <h3>Roads</h3>
+        {# cycle through text, icon + classes to change colours etc #}
+        {% set largeClass = cycler("wmnds-disruption-indicator-large--success", "wmnds-disruption-indicator-large--warning") %}
+        {% set largeText = cycler("No traffic", "Usual traffic") %}
+        {% set largeIcon = cycler("success", "warning-triangle") %}
         {% for area in largeDisruptionsAreas %}
         <div class="wmnds-m-t-sm">
             {{
                 largeDisruption({
-                primaryText: area,
-                text: "Usual traffic",
-                iconLeft: "modes-isolated-roads",
-                iconRight: "general-success"
-                }) | trim | indent(8)
+                    primaryText: area,
+                    contentText: largeText.next(),
+                    classes: largeClass.next(),
+                    iconRight: "general-" + largeIcon.next(),
+                    iconLeft: "modes-isolated-roads"
+                })
             }}
         </div>
         {% endfor %}
         <!-- Medium disruptions indicators -->
         <h3>Bus routes</h3>
         <div class="wmnds-grid">
+            {# cycle through classes to change colours #}
+            {% set severityMediumClass = cycler(
+                "wmnds-disruption-indicator-medium--warning",
+                "wmnds-disruption-indicator-medium--error",
+                "wmnds-disruption-indicator-medium--severe") %}
             {#- Loop through buses -#}
-            {% for bus in buses %}
+            {% for bus in buses %} 
             <div class="wmnds-col-auto wmnds-m-r-md">
                 {{
                     mediumDisruption({
-                    text: bus,
-                    classes: "wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
-                    iconLeft: "modes-isolated-bus",
-                    iconRight: "general-success"
+                        primaryText: bus,
+                        classes: severityMediumClass.next() + " wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus",
+                        iconRight: "general-warning-triangle",
+                        iconLeft: "modes-isolated-bus"
                     }) 
                 }}
                 <div class="wmnds-grid wmnds-grid--justify-around wmnds-p-t-sm wmnds-p-b-sm">
@@ -52,7 +62,7 @@
         {{
             wmndsMsgHelp({
                 message: 'Save bus routes to your homepage by pressing the star icon'
-            }) | indent(12) | trim
+            })
         }}
     </div>
 {% endcall %}
