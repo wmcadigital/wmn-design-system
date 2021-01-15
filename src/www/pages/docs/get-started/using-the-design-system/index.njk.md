@@ -54,7 +54,7 @@ As both of these methods use <a href="https://mozilla.github.io/nunjucks/templat
 
 A Nunjucks macro is a simple template that generates more complex HTML. However, macros are more sensitive to mistakes than HTML, so it’s worth saving and previewing.
 
-When using Nunjucks macros in the Prototype Kit leave out the first line that starts with
+When using Nunjucks macros (Nunjucks markup tab) in the [Prototype Kit](/docs/get-started/prototype-kit/), leave out the first line that starts with <br/><code class="wmnds-website-inline-code">&lcub;&percnt; from ...</code>.
 
 {% endmarkdown %}
 {{
