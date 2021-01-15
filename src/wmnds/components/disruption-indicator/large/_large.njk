@@ -2,11 +2,14 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 {% set primaryText = params.primaryText if params.primaryText else "Indicator text" %} {# set button text #}
+{% set contentText = params.contentText if params.contentText %} {# set button text #}
+{% set mode = params.mode if params.mode else "bus" %} {# set mode #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
 {% set classes = ' ' + params.classes if params.classes else "" %}
+{% set comment = params.comment | safe if params.comment %}
 
-{{params.comment | safe}}
+{{ comment }}
 <div class="wmnds-disruption-indicator-large{{classes}}">
   <div class="wmnds-disruption-indicator-large__left-wrapper">
     <span class="wmnds-disruption-indicator-large__left-icon-wrapper">
@@ -16,17 +19,17 @@
           icon: iconLeft,
           class: 'wmnds-disruption-indicator-large__icon'
         })
-      }} <br>{{params.mode}}
+      }} <br>{{mode}}
     </span>
     <span class="wmnds-disruption-indicator-large__text">
       <strong>{{primaryText}}</strong><br>
-      {{ params.contentText }}
+      {{ contentText }}
     </span>
   </div>
 
   {#- If params.iconRightBtn is true -#}
   {% if params.iconRightBtn %}
-  <button class="wmnds-disruption-indicator-large__btn" aria-label="Delete favourite - {{params.mode}} - {{ params.text }}">
+  <button class="wmnds-disruption-indicator-large__btn" aria-label="Delete favourite - {{mode}} - {{ primaryText }}">
     {# Get SVG icon #}
     {{
       wmndsIcon({
