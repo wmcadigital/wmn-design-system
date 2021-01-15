@@ -76,7 +76,7 @@ The cards have many common use cases and applications, all of which can be found
 {{
     compExample([
         wmndsContentCard({
-            href: "https://designsystem.wmnetwork.co.uk/components/content-card/"
+            link: "https://designsystem.wmnetwork.co.uk/components/content-card/"
         })
     ], {
         componentPath: "wmnds/components/content-card/",
