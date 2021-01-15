@@ -19,7 +19,7 @@ This method also allows you to upgrade your project to the latest version of the
 
 ## Accessing a previous releases
 
-It is recommened that you use the latest release of West Midlands Network Design System in your project. This guide explains how to access a previous release for older documentation.
+It is recommended that you use the latest release of West Midlands Network Design System in your project. This guide explains how to access a previous release for older documentation.
 
 1. Install <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer" class="wmnds-link">Node.js</a>
    If you have not already installed version 4.2.0 or later of Node.js, install the latest Long Term Support(LTS) version.

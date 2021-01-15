@@ -11,7 +11,7 @@
 
 To start using our [styles](/styles/), [components](/components/) and [patterns](/patterns/) in your production project, you'll first need to include West Midlands Network Design System in your project.
 
-There are currently two ways of including the design system within your poject. You can either install it using node package manager (npm) or include the compiled files in your application.
+There are currently two ways of including the design system within your project. You can either install it using node package manager (npm) or include the compiled files in your application.
 
 ---
 
