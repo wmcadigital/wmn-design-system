@@ -314,6 +314,7 @@ There are three types all giving different levels of detail.
       comment: '<!-- Bus (delete) -->',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-trash',
+      iconRightBtn: true,
       displayNarrow: true,
       classes: 'wmnds-disruption-indicator-medium--error'
     })

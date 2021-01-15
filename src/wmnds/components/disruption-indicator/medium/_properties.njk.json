@@ -16,6 +16,11 @@
       "description": "The icon tag which specifies the icon to show to the left of the indicator (see <a href='/styles/icons/' rel='noopener noreferrer nofollow' target='_blank'>icon reference</a>). By default, no icon will be displayed."
     },
     {
+      "name": "iconRightBtn",
+      "type": "boolean",
+      "description": "If set to true the right icon will be displayed as a clickable button. Default value is false."
+    },
+    {
       "name": "displayNarrow",
       "type": "boolean",
       "description": "If set to true, the badge will be displayed in the narrow style. Default value is false."
