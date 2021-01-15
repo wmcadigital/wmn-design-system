@@ -23,6 +23,12 @@ There are two types of button used in this design system - buttons and [link bu
 
 Icons should only be used where it is deemed absolutely necessary to communicate the meaning of an action.
 
+### Button Size
+
+- The button width on desktop should be proportional with the text inside the button. Desktop buttons are aligned to the left edge of the content container.
+- Buttons are full-width on mobile. This is so users can easily tap on a button without stretching their thumb.
+- For the Question Form pattern, the ‘Continue’ call to action button should always be full-width within the container on desktop and mobile devices.
+
 ---
 
 ## Call to action buttons
@@ -454,15 +460,19 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 <h3>What does it do?</h3>
 
-- to be defined
+- Behaves the same as a button, but uses the Link styling
+- Performs an action on the page instead of directing the user to an internal or external page
+- Uses the tag for accessibility
 
 <h3>When to use it?</h3>
 
-- to be defined
+- When a user needs to perform an action on a page
+- When there is limited space for a button
 
 <h3>When not to use it?</h3>
 
-- to be defined
+- The start of a process
+- When you want to direct the user to an internal or external page
 
 {% endmarkdown %}
 
