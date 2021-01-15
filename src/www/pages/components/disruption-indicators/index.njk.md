@@ -370,7 +370,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (minor disruption) -->',
-        classes: 'warning',
+        classes: 'wmnds-disruption-indicator-large--warning',
         mode: 'Train',
         primaryText: 'Minor disruption',
         contentText: 'Cross City Line',
@@ -379,7 +379,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (major disruption) -->',
-        classes: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Train',
         primaryText: 'Major disruption',
         contentText: 'Cross City Line',
@@ -388,7 +388,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (severe disruption) -->',
-        classes: 'severe',
+        classes: 'wmnds-disruption-indicator-large--severe',
         mode: 'Train',
         primaryText: 'Severe disruption',
         contentText: 'Cross City Line',
@@ -397,7 +397,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (delete) -->',
-        classes: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Train',
         primaryText: 'Major disruption',
         contentText: 'Cross City Line',
@@ -434,7 +434,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (minor disruption) -->',
-        classes: 'warning',
+        classes: 'wmnds-disruption-indicator-large--warning',
         mode: 'Tram',
         primaryText: 'Minor disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
@@ -443,7 +443,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (major disruption) -->',
-        classes: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Tram',
         primaryText: 'Major disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
@@ -452,7 +452,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (severe disruption) -->',
-        classes: 'severe',
+        classes: 'wmnds-disruption-indicator-large--severe',
         mode: 'Tram',
         primaryText: 'Severe disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
@@ -461,7 +461,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (delete) -->',
-        classes: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Tram',
         primaryText: 'Major disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
@@ -498,7 +498,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (minor disruption) -->',
-        classes: 'warning',
+        classes: 'wmnds-disruption-indicator-large--warning',
         mode: 'Roads',
         primaryText: 'Minor disruption',
         contentText: 'A38',
@@ -507,7 +507,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (major disruption) -->',
-        classes: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Roads',
         primaryText: 'Major disruption',
         contentText: 'A38',
@@ -516,7 +516,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (severe disruption) -->',
-        classes: 'severe',
+        classes: 'wmnds-disruption-indicator-large--severe',
         mode: 'Roads',
         primaryText: 'Severe disruption',
         contentText: 'A38',
@@ -525,7 +525,7 @@ There are three types all giving different levels of detail.
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (delete) -->',
-        classes: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Roads',
         primaryText: 'Major disruption',
         contentText: 'A38',
