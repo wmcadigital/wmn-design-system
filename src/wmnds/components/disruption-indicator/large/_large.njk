@@ -6,6 +6,7 @@
 {% set mode = params.mode if params.mode else "bus" %} {# set mode #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set iconRightBtn = params.iconRightBtn if params.iconRightBtn else false %} {# set icon right btn value #}
 {% set classes = ' ' + params.classes if params.classes else "" %}
 {% set comment = params.comment | safe if params.comment %}
 
@@ -28,7 +29,7 @@
   </div>
 
   {#- If params.iconRightBtn is true -#}
-  {% if params.iconRightBtn %}
+  {% if iconRightBtn %}
   <button class="wmnds-disruption-indicator-large__btn" aria-label="Delete favourite - {{mode}} - {{ primaryText }}">
     {# Get SVG icon #}
     {{
