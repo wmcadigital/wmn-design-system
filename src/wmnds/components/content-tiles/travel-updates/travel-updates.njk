@@ -14,21 +14,22 @@
    <div class="wmnds-content-tile__container-wrapper">
       {{
          large({
-         strongText: "Hagley Road",
-         text: 'Usual traffic',
-         iconLeft: "modes-isolated-roads",
-         iconRight: 'general-success'
-         }) | trim | indent(4)
+            primaryText: "Hagley Road",
+            contentText: 'Usual traffic',
+            iconLeft: "modes-isolated-roads",
+            iconRight: 'general-success'
+         })
       }}
    </div>
    <div class="wmnds-content-tile__container-wrapper">
       {{
          large({
-         strongText: "Ring Road",
-         text: 'Usual traffic',
-         iconLeft: "modes-isolated-roads",
-         iconRight: 'general-success'
-         }) | trim | indent(4)
+            primaryText: "Ring Road",
+            contentText: 'Usual traffic',
+            iconLeft: "modes-isolated-roads",
+            iconRight: 'general-warning-triangle',
+            classes: 'wmnds-disruption-indicator-large--warning'
+         })
       }}
    </div>
    <h3>Bus Routes</h3>
@@ -36,11 +37,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '9',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               contentText: '9',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-success',
+               classes: 'wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus'
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -49,11 +50,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '12',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '12',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-success'
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -62,11 +63,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '13',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '13',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-warning-triangle'
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -75,11 +76,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '126',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '126',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-warning-triangle'
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -88,11 +89,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: 'X10',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: 'X10',
+               iconRight: "general-warning-triangle",
+               iconLeft: "modes-isolated-bus"
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -103,11 +104,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '10',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '10',
+               iconRight: "general-success",
+               iconLeft: "modes-isolated-bus"
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -116,11 +117,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '12A',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '12A',
+               iconRight: "general-success",
+               iconLeft: "modes-isolated-bus"
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -129,11 +130,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '13A',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+               classes: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '13A',
+               iconRight: "general-warning-triangle",
+               iconLeft: "modes-isolated-bus"
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -142,11 +143,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: 'X8',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+            classes: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+            contentText: 'X8',
+            iconRight: "general-warning-triangle",
+            iconLeft: "modes-isolated-bus"
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>
@@ -155,11 +156,11 @@
       <div class="wmnds-content-tile__container-bus">
          {{
             medium({
-            classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
-            text: '23',
-            iconLeft: "modes-isolated-bus",
-            iconRight: 'general-success'
-            }) | trim | indent(4)
+            classes: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow-travel-updates wmnds-disruption-indicator-medium--narrow-travel-updates-bus',
+            contentText: '23',
+            iconRight: "general-warning-triangle",
+            iconLeft: "modes-isolated-bus"
+            })
          }}
          <svg class="wmnds-content-tile__container-star">
             <use xlink:href="/img/wmnds-icons.min.svg#wmnds-general-star-empty" href="/img/wmnds-icons.min.svg#wmnds-general-star-empty"></use>

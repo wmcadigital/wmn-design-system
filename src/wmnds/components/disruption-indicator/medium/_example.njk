@@ -1,0 +1,14 @@
+{% raw %}
+{% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium %}
+
+{{
+  wmndsDisruptionIndicatorMedium({
+    contentText: "X15",
+    iconRight: "general-warning-triangle",
+    iconLeft: "modes-isolated-bus",
+    iconRightBtn: false,
+    displayNarrow: false,
+    classes: "wmnds-disruption-indicator-medium--error"
+  })
+}}
+{% endraw %}

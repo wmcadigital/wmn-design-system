@@ -131,7 +131,7 @@ within the <code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</
 
   <div class="wmnds-grid wmnds-grid--align-center">' +
     wmndsDisruptionIndicatorSmall({
-      classModifiers: "wmnds-col-auto wmnds-m-r-md",
+      classes: "wmnds-col-auto wmnds-m-r-md",
       mode: "bus"
     }) +
     '<div class="wmnds-col-auto">Resurfacing Works at
