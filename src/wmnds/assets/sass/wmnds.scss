@@ -4,13 +4,8 @@
 // Mixins
 @import "mixins";
 
-// Global styles
-@import "utilities";
-@import "typography";
-@import "general";
-
-// Grid
-@import "wmnds-grid/wmnds-grid";
+// General non-component Styles
+@import "styles/styles"; // Import general styles
 
 // Component Styles
 @import "../../components/components"; // Import all pattern styles

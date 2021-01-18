@@ -1,5 +1,6 @@
 {
   "navItems": [
+    { "name": "Docs", "subnavItems": [{ "name": "Get started" }, { "name": "Releases" }] },
     {
       "name": "Styles",
       "subnavItems": [
@@ -17,6 +18,9 @@
         },
         {
           "name": "Layout"
+        },
+        {
+          "name": "Lists"
         },
         {
           "name": "Maps"
@@ -79,9 +83,6 @@
         },
         {
           "name": "Links"
-        },
-        {
-          "name": "Lists"
         },
         {
           "name": "Loader"

@@ -18,30 +18,39 @@
 ] %}
 
 {% block content %}
+{% markdown %}
 {# About #}
-<h2>About</h2>
-<p>Disruption indicators are used to show the current service status within interfaces and maps.</p>
-<p>There are three types all giving different levels of detail.</p>
-<hr>
 
-<br><br>
+## About
+
+Disruption indicators are used to show the current service status within interfaces and maps.
+There are three types all giving different levels of detail.
+
+---
+
 {# Map pin #}
-<h2>Small</h2>
+
+## Small
+
 {# What #}
-<h3>What does it do?</h3>
-<ul>
-  <li>A pin to place on a map</li>
-  <li>Shows the modal icon</li>
-  <li>Shows severity of the disruption with background colour and icon</li>
-</ul>
+
+### What does it do?
+
+- A pin to place on a map
+- Shows the modal icon
+- Shows severity of the disruption with background colour and icon
+
 {# When #}
-<h3>When to use it?</h3>
-<ul>
-  <li>On a live map</li>
-</ul>
+
+### When to use it?
+
+- On a live map
 
 {# Small:Minor disruptions #}
-<h3>Minor disruption</h3>
+
+### Minor disruption
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorSmall({
@@ -70,388 +79,470 @@
     })
   ],
   {
-    displayInline: true
+    displayInline: true,
+    componentPath: "wmnds/components/disruption-indicator/small/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorSmallProps,
+    js: false,
+    iframe: false
   })
 }}
-
+{% markdown %}
 {# Small:Major disruptions #}
-<h3>Major disruption</h3>
+
+### Major disruption
+
+{% endmarkdown %}
+
 {{
   compExample([
     wmndsDisruptionIndicatorSmall({
       mode: 'bus',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'coach',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'cycle',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'metro',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'plane',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'rail',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'roads',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'walk',
-      classModifiers: 'wmnds-disruption-indicator-small--error',
+      classes: 'wmnds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
-    displayInline: true
+    displayInline: true,
+    componentPath: "wmnds/components/disruption-indicator/small/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorSmallProps,
+    js: false,
+    iframe: false
   })
 }}
-
+{% markdown %}
 {# Small:Severe disruptions #}
-<h3>Severe disruption</h3>
+
+### Severe disruption
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorSmall({
       mode: 'bus',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'coach',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'cycle',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'metro',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'plane',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'rail',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'roads',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorSmall({
       mode: 'walk',
-      classModifiers: 'wmnds-disruption-indicator-small--severe',
+      classes: 'wmnds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
-    displayInline: true
+    displayInline: true,
+    componentPath: "wmnds/components/disruption-indicator/small/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorSmallProps,
+    js: false,
+    iframe: false
   })
 }}
-
-<br><br>
+{% markdown %}
 {# Medium:Normal #}
-<h2>Medium - Normal</h2>
-{# What #}
-<h3>What does it do?</h3>
-<ul>
-  <li>Shows the route number</li>
-  <li>Shows the severity with the background colour and icon where there is data, purple where there is no data</li>
-</ul>
-{# When #}
-<h3>When to use it?</h3>
-<ul>
-  <li>In search results, when searching for a bus route</li>
-</ul>
 
+## Medium - Normal
+
+{# What #}
+
+<h3>What does it do?</h3>
+
+- Shows the route number
+- Shows the severity with the background colour and icon where there is data, purple where there is no data
+
+{# When #}
+
+<h3>When to use it?</h3>
+
+- In search results, when searching for a bus route
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorMedium(),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--success',
+      classes: 'wmnds-disruption-indicator-medium--success',
       iconRight: 'general-success'
     }),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--warning',
+      classes: 'wmnds-disruption-indicator-medium--warning',
       iconRight: 'general-warning-circle'
     }),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--error',
+      classes: 'wmnds-disruption-indicator-medium--error',
       iconRight: 'general-warning-triangle'
     }),
     wmndsDisruptionIndicatorMedium({
-      classModifiers: 'wmnds-disruption-indicator-medium--severe',
+      classes: 'wmnds-disruption-indicator-medium--severe',
       iconRight: 'general-warning-triangle'
     })
-  ])
+  ],
+  {
+    componentPath: "wmnds/components/disruption-indicator/medium/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorMediumProps,
+    js: false,
+    iframe: false
+  })
 }}
 
-<br><br>
 {# Medium - Narrow #}
 {% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %}
-<h2>Medium - Narrow</h2>
-{# What #}
-<h3>What does it do?</h3>
-<ul>
-  <li>Shows the route number</li>
-  <li>Shows the modal icon</li>
-  <li>Shows the disruption severity with the background</li>
-</ul>
-{# When #}
-<h3>When to use it?</h3>
-<ul>
-  <li>When showing a specific bus route's disruption status</li>
-  <li>Example: homepage travel updates widget or major roadworks sidebar</li>
-</ul>
-{# When not #}
-<h3>When not use it?</h3>
-<ul>
-  <li>If the service is not a route</li>
-</ul>
+{% markdown %}
 
+## Medium - Narrow
+
+{# What #}
+
+<h3>What does it do?</h3>
+
+- Shows the route number
+- Shows the modal icon
+- Shows the disruption severity with the background
+
+{# When #}
+
+<h3>When to use it?</h3>
+
+- When showing a specific bus route's disruption status
+- Example: homepage travel updates widget or major roadworks sidebar
+
+{# When not #}
+
+<h3>When not use it?</h3>
+
+- If the service is not a route
+
+{% endmarkdown %}
 {{
   compExample([
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (good service) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--success wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-success'
+      iconRight: 'general-success',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--success'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (mindor disruption) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--warning wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-warning-circle'
+      iconRight: 'general-warning-circle',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--warning'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (major disruption) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-warning-triangle'
+      iconRight: 'general-warning-triangle',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--error'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (severe disruption) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--severe wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-warning-triangle'
+      iconRight: 'general-warning-triangle',
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--severe'
     }),
     wmndsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (delete) -->',
-      classModifiers: 'wmnds-disruption-indicator-medium--error wmnds-disruption-indicator-medium--narrow',
       iconLeft: 'modes-isolated-bus',
-      iconRight: 'general-trash'
+      iconRight: 'general-trash',
+      iconRightBtn: true,
+      displayNarrow: true,
+      classes: 'wmnds-disruption-indicator-medium--error'
     })
   ],
   {
-    displayInline: true
+    componentPath: "wmnds/components/disruption-indicator/medium/",
+    njk: true,
+    njkProps: wmndsDisruptionIndicatorMediumProps,
+    js: false,
+    iframe: false
   })
 }}
 
-<br><br>
+{% markdown %}
+
 {# LARGE #}
-<h2>Large</h2>
+
+## Large</h2>
+
 {# What #}
+
 <h3>What does it do?</h3>
-<ul>
-  <li>Shows the route name or number</li>
-  <li>Shows the modal name and icon</li>
-  <li>Shows the disruption severity with the background colour, icon and text</li>
-</ul>
+
+- Shows the route name or number
+- Shows the modal name and icon
+- Shows the disruption severity with the background colour, icon and text
+
 {# When #}
+
 <h3>When to use it?</h3>
-<ul>
-  <li>Showing a specific train, tram or road's disruption status</li>
-  <li>Example: homepage travel updates widget or major roadworks sidebar</li>
-</ul>
+
+- Showing a specific train, tram or road's disruption status
+- Example: homepage travel updates widget or major roadworks sidebar
+
 {# Research #}
+
 <h3>Research</h3>
-<ul>
-  <li>During user testing for the home page travel update widget, users preferred having a text description of the mode in addition to the modal icons, as the train and tram brand icons are very similar when small</li>
-</ul>
-<h3>Train</h3>
+
+- During user testing for the home page travel update widget, users preferred having a text description of the mode in addition to the modal icons, as the train and tram brand icons are very similar when small
+
+### Train
+
+{% endmarkdown %}
 {{
   compExample(
     [
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (good service) -->',
         mode: 'Train',
-        strongText: 'Good service',
-        text: 'Cross City Line',
+        primaryText: 'Good service',
+        contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-success'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (minor disruption) -->',
-        classModifier: 'warning',
+        classes: 'wmnds-disruption-indicator-large--warning',
         mode: 'Train',
-        strongText: 'Minor disruption',
-        text: 'Cross City Line',
+        primaryText: 'Minor disruption',
+        contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-circle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (major disruption) -->',
-        classModifier: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Train',
-        strongText: 'Major disruption',
-        text: 'Cross City Line',
+        primaryText: 'Major disruption',
+        contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-triangle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (severe disruption) -->',
-        classModifier: 'severe',
+        classes: 'wmnds-disruption-indicator-large--severe',
         mode: 'Train',
-        strongText: 'Severe disruption',
-        text: 'Cross City Line',
+        primaryText: 'Severe disruption',
+        contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-triangle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Train (delete) -->',
-        classModifier: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Train',
-        strongText: 'Major disruption',
-        text: 'Cross City Line',
+        primaryText: 'Major disruption',
+        contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-trash',
         iconRightBtn: true
       })
-    ]
+    ],
+    {
+      componentPath: "wmnds/components/disruption-indicator/large/",
+      njk: true,
+      njkProps: wmndsDisruptionIndicatorLargeProps,
+      js: false,
+      iframe: false
+    }
   )
 }}
 
+{% markdown %}
 {# Tram #}
-<h3>Tram</h3>
+
+### Tram
+
+{% endmarkdown %}
 {{
   compExample(
     [
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (good service) -->',
         mode: 'Tram',
-        strongText: 'Good service',
+        primaryText: 'Good service',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-success'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (minor disruption) -->',
-        classModifier: 'warning',
+        classes: 'wmnds-disruption-indicator-large--warning',
         mode: 'Tram',
-        strongText: 'Minor disruption',
-        text: 'Between Jewellery Quarter and Wolverhampton',
+        primaryText: 'Minor disruption',
+        contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-circle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (major disruption) -->',
-        classModifier: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Tram',
-        strongText: 'Major disruption',
-        text: 'Between Jewellery Quarter and Wolverhampton',
+        primaryText: 'Major disruption',
+        contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-triangle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (severe disruption) -->',
-        classModifier: 'severe',
+        classes: 'wmnds-disruption-indicator-large--severe',
         mode: 'Tram',
-        strongText: 'Severe disruption',
-        text: 'Between Jewellery Quarter and Wolverhampton',
+        primaryText: 'Severe disruption',
+        contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-triangle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Tram (delete) -->',
-        classModifier: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Tram',
-        strongText: 'Major disruption',
-        text: 'Between Jewellery Quarter and Wolverhampton',
+        primaryText: 'Major disruption',
+        contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-trash',
         iconRightBtn: true
       })
-    ]
+    ],
+    {
+      componentPath: "wmnds/components/disruption-indicator/large/",
+      njk: true,
+      njkProps: wmndsDisruptionIndicatorLargeProps,
+      js: false,
+      iframe: false
+    }
   )
 }}
-
+{% markdown %}
 {# Roads #}
-<h3>Roads</h3>
+
+### Roads
+
+{% endmarkdown %}
 {{
   compExample(
     [
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (good service) -->',
         mode: 'Roads',
-        strongText: 'Usual traffic',
-        text: 'A38',
+        primaryText: 'Usual traffic',
+        contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-success'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (minor disruption) -->',
-        classModifier: 'warning',
+        classes: 'wmnds-disruption-indicator-large--warning',
         mode: 'Roads',
-        strongText: 'Minor disruption',
-        text: 'A38',
+        primaryText: 'Minor disruption',
+        contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-circle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (major disruption) -->',
-        classModifier: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Roads',
-        strongText: 'Major disruption',
-        text: 'A38',
+        primaryText: 'Major disruption',
+        contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-triangle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (severe disruption) -->',
-        classModifier: 'severe',
+        classes: 'wmnds-disruption-indicator-large--severe',
         mode: 'Roads',
-        strongText: 'Severe disruption',
-        text: 'A38',
+        primaryText: 'Severe disruption',
+        contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-triangle'
       }),
       wmndsDisruptionIndicatorLarge({
         comment: '<!-- Roads (delete) -->',
-        classModifier: 'error',
+        classes: 'wmnds-disruption-indicator-large--error',
         mode: 'Roads',
-        strongText: 'Major disruption',
-        text: 'A38',
+        primaryText: 'Major disruption',
+        contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-trash',
         iconRightBtn: true
       })
-    ]
+    ],
+    {
+      componentPath: "wmnds/components/disruption-indicator/large/",
+      njk: true,
+      njkProps: wmndsDisruptionIndicatorLargeProps,
+      js: false,
+      iframe: false
+    }
   )
 }}
-
 
 {% endblock %}

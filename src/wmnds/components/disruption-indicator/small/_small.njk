@@ -2,23 +2,23 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 {% set iconRight = params.iconRight if params.iconRight else 'general-warning-circle' %} {# set icon right classes #}
-{% set class = ' ' + params.classModifiers if params.classModifiers %}
+{% set classes = ' ' + params.classes if params.classes %}
 
 <!-- map pin for {{params.mode}} -->
-<span class="wmnds-disruption-indicator-small{{class}}">
+<span class="wmnds-disruption-indicator-small{{classes}}">
   {# Get SVG icon for mode #}
-  {{-
+  {{
     wmndsIcon({
       icon: 'modes-isolated-' + params.mode,
       class: 'wmnds-disruption-indicator-small__icon'
-    }) | indent(2) | trim
+    })
   }}
   {# Get SVG icon for type #}
-  {{-
+  {{
     wmndsIcon({
       icon: iconRight,
       class: 'wmnds-disruption-indicator-small__icon'
-    }) | indent(2) | trim
+    })
   }}
 </span>
 

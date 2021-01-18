@@ -6,9 +6,14 @@
       "description": "The id of the content card"
     },
     {
-      "name": "href",
+      "name": "link",
       "type": "string",
       "description": "Specifies the link to display the content card component as a clickable navigation card."
+    },
+    {
+      "name": "linkTitle",
+      "type": "string",
+      "description": "Specifies the title of the link to display the content card component as a clickable navigation card."
     },
     {
       "name": "classes",
@@ -19,6 +24,11 @@
       "name": "yellow",
       "type": "boolean",
       "description": "Displays the content card with a highlighted (yellow) background. Default value is <code class='wmnds-website-inline-code'>false</code>"
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "HTML to use within the content card."
     }
   ]
 }
