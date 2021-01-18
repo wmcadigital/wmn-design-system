@@ -1,9 +1,10 @@
 {% macro wmndsDisruptionIndicatorMedium(params) %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
-{% set _content = params.contentText if params.contentText else 'X15' %} {# set text, or default to X15 #}
+{% set _content = params.contentText if params.contentText %} {# set content text #}
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set hasIconLeft = true if params.iconLeft else false%} {# set svg left reference #}
 {% set iconRightBtn = params.iconRightBtn if params.iconRightBtn else false %} {# set icon right btn value #}
 {% set _narrowClassModifier = " wmnds-disruption-indicator-medium--narrow" if params.displayNarrow %} 
 {% set classes = ' ' + params.classes if params.classes %}
@@ -21,7 +22,15 @@
     })
   }}
   {% endif %}
-  {{ _content }}
+  {# set content #}
+  {% if _content %}
+    <span>{{ _content }}</span>
+  {% else %}
+  {# set default content if there is no iconLeft #}
+    {% if hasIconLeft !== true %}
+    <span>X15</span>
+    {% endif %}
+  {% endif %}
   {% if iconRightBtn %}
   <button class="wmnds-disruption-indicator-medium__btn" aria-label="Delete favourite - bus - {{ _content }}">
     {#- Get SVG icon -#}

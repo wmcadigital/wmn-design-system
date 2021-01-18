@@ -11,6 +11,7 @@
 {% set disruptions = [
     {
         mode: "bus",
+        title: "Bus",
         severityClass: "wmnds-disruption-indicator-medium--error",
         statusIcon: "general-warning-triangle",
         status: [
@@ -19,7 +20,8 @@
         ]
     },
     {
-        mode: "train",
+        mode: "rail",
+        title: "Train",
         severityClass: "wmnds-disruption-indicator-medium--success",
         statusIcon: "general-success",
         status: [
@@ -27,7 +29,8 @@
         ]
     },
     {
-        mode: "tram",
+        mode: "metro",
+        title: "Tram",
         severityClass: "wmnds-disruption-indicator-medium--error",
         statusIcon: "general-warning-triangle",
         status: [
@@ -36,6 +39,7 @@
     },
     {
         mode: "roads",
+        title: "Roads",
         severityClass: "wmnds-disruption-indicator-medium--warning",
         statusIcon: "general-warning-circle",
         status: [
@@ -55,12 +59,12 @@
                 <div class="wmnds-travel-update__mode">
                     {{
                         mediumDisruption({
-                            mode: disruption.mode,
+                            iconLeft: "modes-isolated-" + disruption.mode,
                             iconRight: disruption.statusIcon,
                             classes: disruption.severityClass
                         })
                     }}
-                    <h3 class="wmnds-m-none">{{ disruption.mode | capitalize }}</h3>
+                    <h3 class="wmnds-m-none">{{ disruption.title | capitalize }}</h3>
                 </div>
             </div>
             <div class="wmnds-col-sm-1-2 wmnds-col-1 wmnds-travel-update__status">

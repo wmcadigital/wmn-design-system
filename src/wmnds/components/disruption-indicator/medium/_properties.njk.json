@@ -3,7 +3,7 @@
     {
       "name": "contentText",
       "type": "string",
-      "description": "<strong>Required.</strong> Text to describe the route name or number of the mode of transport."
+      "description": "Text to describe the route name or number of the mode of transport."
     },
     {
       "name": "iconRight",
