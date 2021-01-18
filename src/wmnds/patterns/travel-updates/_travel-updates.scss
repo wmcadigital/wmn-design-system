@@ -1,0 +1,25 @@
+.wmnds-travel-update {
+  padding: $size-xsm;
+  justify-content: center;
+  align-items: center;
+
+  &__mode {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    h3 {
+      padding-left: $size-md;
+      flex-grow: 1;
+    }
+  }
+
+  &__status {
+    padding-top: $size-sm;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      padding-top: 0;
+      text-align: right;
+    }
+  }
+}
