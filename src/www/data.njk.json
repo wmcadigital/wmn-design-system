@@ -1,5 +1,6 @@
 {
   "navItems": [
+    { "name": "Docs", "subnavItems": [{ "name": "Get started" }, { "name": "Releases" }] },
     {
       "name": "Styles",
       "subnavItems": [

@@ -51,6 +51,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     color: get-color(primary);
     background-color: $white;
 
+    .wmnds-btn__icon {
+      fill: get-color(primary);
+    }
+
     &:hover {
       background-color: get-color(primary, 90);
     }
@@ -122,6 +126,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       border: 0;
       color: $white;
       background-color: get-color(primary);
+
+      .wmnds-btn__icon {
+        fill: $white;
+      }
 
       &:hover {
         background-color: get-color(primary, 10);
