@@ -1,0 +1,85 @@
+{% raw %}
+{% from "wmnds/components/table/_table.njk" import wmndsTable %}
+
+{{
+  wmndsTable(
+    {
+      caption: "Table Caption",
+      title: "Table Title",
+      firstCellIsHeader: true,
+      classes: "wmnds-m-b-xl",
+      rows: [
+        [
+          {
+            contentText: "Cell 1",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 2",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 3",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          }
+        ],
+        [
+          {
+            contentText: "Cell 1",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 2",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 3",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          }
+        ]
+      ],
+      head: [
+        {
+          contentText: "Header 1",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 2",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 3",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        }
+      ],
+      hideHeader: false
+    })
+}}
+{% endraw %}
