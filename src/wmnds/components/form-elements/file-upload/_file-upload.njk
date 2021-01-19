@@ -1,7 +1,6 @@
 {% macro wmndsFileUpload(params) %}
 
 {# Imports #}
-{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
@@ -11,8 +10,11 @@
 {% set classes = " " + params.classes if params.classes %}
 {% set required = params.required if params.required else false %}
 {% set disabled = params.disabled if params.disabled else null %}
+{% set fileSelect = true if params.fileSelected else false %}
+
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set error = true if params.error else false %}
 {% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please upload an image" %}
 {% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
 {% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
@@ -23,8 +25,8 @@
 
 <div class="wmnds-fe-group {{formGroupClasses}}{{groupErrorClass}}">
 
-    {% if params.fileSelected %}
-        {% if params.error -%}
+    {% if fileSelected %}
+        {% if error -%}
           {{
             wmndsFeErrorMessage(
               {
@@ -60,7 +62,7 @@
 
     {% else %}
       <div class="wmnds-fe-file-upload">
-        {% if params.error -%}
+        {% if error -%}
           {{
             wmndsFeErrorMessage(
               {
