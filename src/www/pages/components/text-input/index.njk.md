@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Text Input" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/form-elements/input/_input.njk" import wmndsInput %}
+{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsInput %}
 
 {% block content %}
 {% markdown %}
@@ -25,7 +25,7 @@
 
 {{
     compExample([wmndsInput()], {
-      componentPath: "wmnds/components/form-elements/input/",
+      componentPath: "wmnds/components/form-elements/text-input/",
       njk: true,
       njkProps: wmndsInputProps,
       js: false,
@@ -52,7 +52,7 @@
       })
     ],
     {
-      componentPath: "wmnds/components/form-elements/input/",
+      componentPath: "wmnds/components/form-elements/text-input/",
       njk: true,
       njkProps: wmndsInputProps,
       js: false,
