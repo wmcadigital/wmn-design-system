@@ -21,6 +21,11 @@
       "description": "If true, input is required/must be filled out. Defaults to <code class='wmnds-website-inline-code'>false</code>."
     },
     {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the input component."
+    },
+    {
       "name": "error",
       "type": "boolean",
       "description": "If true, error will be displayed. Defaults to <code class='wmnds-website-inline-code'>false</code>."
@@ -54,7 +59,7 @@
     },
     {
       "name": "label",
-      "type": "Object",
+      "type": "object",
       "description": "<strong>Required.</strong> Options for the label component. See label.",
       "arrayOptions": [
         {
@@ -76,7 +81,7 @@
     },
     {
       "name": "formGroup",
-      "type": "Object",
+      "type": "object",
       "description": "Options for the form-group wrapper. See formGroup options below.",
       "arrayOptions": [
         {
