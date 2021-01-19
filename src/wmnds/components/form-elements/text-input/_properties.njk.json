@@ -1,5 +1,5 @@
 {
-  "wmndsInputProps": [
+  "wmndsTextInputProps": [
     {
       "name": "id",
       "type": "string",
