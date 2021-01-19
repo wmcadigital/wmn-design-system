@@ -1,31 +1,29 @@
 {% macro wmndsRadios(params) %}
 
 {# Imports #}
-{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
-{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Set vars #}
-{% set class = ' wmnds-fe-radios--inline' if params.inline %}
 {% set items = params.items if params.items %}
-{% set groupClass = " " + params.classes if params.classes %}
 {% set name = params.name if params.name else "checkbox-example" %}
 {% set hintContentText = params.hint.contentText if params.hint.contentText else "Select all options that apply" %}
 {% set hintContentHTML = params.hint.contentHTML if params.hint.contentHTML else null %}
 {% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
-{% set hasDescription = false if _hintContent === "" else true %}
 {% set idPrefix = params.idPrefix if params.idPrefix else name %}
+{% set inlineClass = ' wmnds-fe-radios--inline' if params.inline %}
+{% set hintId = " " + params.hint.id if params.hint.id %}
 {% set hintClass = " " + params.hint.classes if params.hint.classes %}
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set error = true if params.error else false %}
 {% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
 {% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
 {% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
 <div class="wmnds-fe-group{{groupErrorClass}}">
-    <div class="wmnds-fe-radios{{class}}">
-      {% if params.error %}
+    <div class="wmnds-fe-radios{{inlineClass}}">
+      {% if error %}
         {{
           wmndsFeErrorMessage(
             {
@@ -37,7 +35,7 @@
           )
         }}
       {% endif %}
-      <span class="wmnds-fe-radios__desc{{hintClass}}" {% if params.hint.id %}id="{{params.hint.id}}"{% endif %}>
+      <span class="wmnds-fe-radios__desc{{hintClass}}" {% if hintId %}id="{{hintId}}"{% endif %}>
         {{ _hintContent }}
       </span>
       {% if items %}

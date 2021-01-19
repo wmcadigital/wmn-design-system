@@ -6,6 +6,11 @@
       "description": "<strong>Required.</strong> Array of radio items objects. See <code class='wmnds-website-inline-code'>items</code> below.",
       "arrayOptions": [
         {
+          "name": "id",
+          "type": "string",
+          "description": "Specific id attribute for the radio item. If omitted, then <code class='wmnds-website-inline-code'>idPrefix</code> string will be applied."
+        },
+        {
           "name": "contentText",
           "type": "string",
           "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within each radio item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
@@ -14,6 +19,11 @@
           "name": "contentHTML",
           "type": "string",
           "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within each radio item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "<strong>Required.</strong> Value for the radio input."
         },
         {
           "name": "checked",
@@ -31,6 +41,11 @@
           "description": "If true, radio will be disabled."
         }
       ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong> Name attribute for all radio items."
     },
     {
       "name": "hint",
@@ -68,11 +83,6 @@
       "name": "inline",
       "type": "boolean",
       "description": "Determines whether to the display the radios horizontally or vertically."
-    },
-    {
-      "name": "name",
-      "type": "string",
-      "description": "<strong>Required.</strong> Name attribute for all radio items."
     },
     {
       "name": "classes",
