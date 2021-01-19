@@ -3,17 +3,17 @@
     {
       "name": "contentText",
       "type": "string",
-      "description": "<strong>Required.</strong> Specifies the text that will be included in the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided this is not required and will be ignored."
+      "description": "<strong>Required.</strong> Text to use within the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided this is not required and will be ignored."
     },
     {
       "name": "contentHTML",
       "type": "string",
-      "description": "<strong>Required.</strong> Specifies the text that will be included in the label as HTML. If <code class='wmnds-website-inline-code'>contentText</code> is provided, this is not required."
+      "description": "<strong>Required.</strong> HTML to use within the label. If <code class='wmnds-website-inline-code'>contentText</code> is provided, this is not required."
     },
     {
       "name": "for",
       "type": "string",
-      "description": "<strong>Required.</strong> Specifies the id of the element this label should link to."
+      "description": "<strong>Required.</strong> The value of the for attribute, the id of the input the label is associated with."
     },
     {
       "name": "classes",
