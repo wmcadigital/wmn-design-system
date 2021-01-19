@@ -17,17 +17,16 @@
 {% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
 {% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{% set disabled = params.disabled if params.disabled else null %}
+{% set maxLength = params.maxLength if params.maxLength else null %}
+{% set placeholder = params.placeholder if params.placeholder else null %}
+{% set value = params.value if params.value else null %}
 {# Params of label #}
 {% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
 {% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
 {% set labelClasses = params.label.classes if params.label.classes else null %}
 {# Params of formGroup #}
 {% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
-{# Params of Attributes #}
-{% set disabled = params.attributes.disabled if params.attributes.disabled else null %}
-{% set maxLength = params.attributes.maxLength if params.attributes.maxLength else null %}
-{% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
-{% set value = params.attributes.value if params.attributes.value else null %}
 
 <div class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
   {{

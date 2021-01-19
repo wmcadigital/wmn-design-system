@@ -58,6 +58,26 @@
       ]
     },
     {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "If true, input should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "maxLength",
+      "type": "string",
+      "description": "The maxLength is the maximum number of characters allowed in the input. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder is a short hint that describes the expected value of a input. It's an <code class='wmnds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Optional initial value of the input."
+    },
+    {
       "name": "label",
       "type": "object",
       "description": "<strong>Required.</strong> Options for the label component. See label.",
@@ -88,33 +108,6 @@
           "name": "classes",
           "type": "string",
           "description": "Classes to add to the form group (e.g. to show error state for the whole group)"
-        }
-      ]
-    },
-    {
-      "name": "attributes",
-      "type": "object",
-      "description": "Attribute to identify input purpose, for instance <code class='wmnds-website-inline-code'>postal-code</code> or <code class='wmnds-website-inline-code'>username</code>. See autofill for full list of attributes that can be used.",
-      "arrayOptions": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "description": "If true, input should be disabled. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-        },
-        {
-          "name": "maxLength",
-          "type": "string",
-          "description": "The maxLength is the maximum number of characters allowed in the input. It's an <code class='wmnds-website-inline-code'>optional</code> field."
-        },
-        {
-          "name": "placeholder",
-          "type": "string",
-          "description": "Placeholder is a short hint that describes the expected value of a input. It's an <code class='wmnds-website-inline-code'>optional</code> field."
-        },
-        {
-          "name": "value",
-          "type": "string",
-          "description": "Optional initial value of the input."
         }
       ]
     }
