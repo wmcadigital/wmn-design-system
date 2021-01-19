@@ -1,7 +1,7 @@
 {% macro wmndsTextInput(params) %}
 
 {# Imports #}
-{% from "wmnds/components/form-elements/label/_label.njk" import wmndsLabel %}
+{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
 {% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
 
 {# Params #}
@@ -30,7 +30,7 @@
 
 <div class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
   {{
-    wmndsLabel({
+    wmndsFormLabel({
       contentText: labelContentText,
       contentHTML: labelContentHTML,
       classes: labelClasses,

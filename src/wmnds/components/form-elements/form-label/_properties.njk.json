@@ -1,5 +1,5 @@
 {
-  "wmndsLabelProps": [
+  "wmndsFormLabelProps": [
     {
       "name": "contentText",
       "type": "string",
