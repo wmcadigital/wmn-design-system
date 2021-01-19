@@ -10,7 +10,7 @@
 {% set classes = " " + params.classes if params.classes %}
 {% set required = params.required if params.required else false %}
 {% set disabled = params.disabled if params.disabled else null %}
-{% set fileSelect = true if params.fileSelected else false %}
+{% set fileSelected = true if params.fileSelected else false %}
 
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}

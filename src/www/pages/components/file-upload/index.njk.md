@@ -71,10 +71,10 @@ compExample(
     compExample([
       wmndsFileUpload({
         id: "error-fileupload",
-        fileSelected: false,
+        fileSelected: true,
         error: true,
         errorMessage : {
-          contentText: "Files must be jpeg or png file format and be less than 2mb"
+          contentText: "File must less than 2mb"
         }
       })
     ],{
