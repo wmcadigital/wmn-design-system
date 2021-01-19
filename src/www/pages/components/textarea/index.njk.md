@@ -45,12 +45,10 @@
           formGroup: {
             classes: "wmnds-m-t-20"
           },
-          attributes: {
-            disabled: false,
-            maxLength: "200",
-            placeholder: "Textarea placeholder...",
-            value: null
-          }
+          disabled: false,
+          maxLength: "200",
+          placeholder: "Textarea placeholder...",
+          value: ""
         }
       )],
       {
@@ -90,12 +88,10 @@
           formGroup: {
             classes: "wmnds-m-t-20"
           },
-          attributes: {
-            disabled: false,
-            maxLength: "200",
-            placeholder: "Textarea placeholder...",
-            value: null
-          }
+          disabled: false,
+          maxLength: "200",
+          placeholder: "Textarea placeholder...",
+          value: ""
         }
       )],
       {
