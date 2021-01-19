@@ -20,7 +20,7 @@
 {% set disabled = params.disabled if params.disabled else null %}
 {% set maxLength = params.maxLength if params.maxLength else null %}
 {% set placeholder = params.placeholder if params.placeholder else null %}
-{% set value = params.value if params.value else null %}
+{% set value = params.value if params.value else "" %}
 {# Params of label #}
 {% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
 {% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
@@ -54,6 +54,7 @@
     id="{{id}}" 
     name="{{name}}" 
     type="{{type}}"
+    value="{{value}}"
     {% if disabled %} disabled {% endif %}
     {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
     {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
