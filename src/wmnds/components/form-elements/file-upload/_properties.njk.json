@@ -11,11 +11,6 @@
       "description": "<strong>Required.</strong> Must be unique. The id of the input"
     },
     {
-      "name": "value",
-      "type": "string",
-      "description": "Optional initial value of the input"
-    },
-    {
       "name": "classes",
       "type": "string",
       "description": "Classes to add to the file upload component."
