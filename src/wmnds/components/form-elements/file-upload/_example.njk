@@ -3,19 +3,19 @@
 
 {{
    wmndsFileUpload({
-      id: "profile-image-upload",
       name: null,
+      id: "profile-image-upload",
       classes: null,
       required: true,
       disabled: false,
+      fileSelected: false,
       error: false,
       errorMessage: {
+         id: null,
          contentText: "Files must be jpeg or png file format and be less than 2mb",
          contentHTML: null,
-         classes: null,
-         id: null
+         classes: null
       }
-      fileSelected: false,
       formGroup: {
          classes: "wmnds-m-t-20"
       }
