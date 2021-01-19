@@ -48,7 +48,7 @@
         {
           "name": "contentHTML",
           "type": "string",
-          "description": "<strong>Required.</strong> HTML to use within the error message"
+          "description": "<strong>Required.</strong> HTML to use within the error message. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
         },
         {
           "name": "classes",
@@ -85,12 +85,12 @@
         {
           "name": "contentText",
           "type": "string",
-          "description": "<strong>Required.</strong> If `contentHTML` is set, this is not required. Text to use within the label. If `contentHTML` is provided, the `contentText`  argument will be ignored."
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code>  argument will be ignored."
         },
         {
           "name": "contentHTML",
           "type": "string",
-          "description": "<strong>Required.</strong> If `contentText` is set, this is not required. HTML to use within the label. If `contentHTML` is provided, the `contentText` argument will be ignored."
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code>  is set, this is not required. HTML to use within the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code>  argument will be ignored."
         },
         {
           "name": "classes",
