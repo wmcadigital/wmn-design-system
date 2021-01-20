@@ -1,16 +1,15 @@
 .wmnds-travel-update {
-  padding: $size-xsm;
+  padding: $size-xsm 0;
   justify-content: center;
   align-items: center;
 
-  &__mode {
+  &__disruption {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
-    h3 {
-      padding-left: $size-md;
-      flex-grow: 1;
+    .wmnds-disruption-indicator-medium {
+      margin-right: $size-md;
     }
   }
 
@@ -20,6 +19,75 @@
     @media screen and (min-width: $breakpoint-sm) {
       padding-top: 0;
       text-align: right;
+    }
+  }
+
+  &--personal {
+    .wmnds-travel-update__disruption-collapse-btn {
+      display: flex;
+      margin-bottom: $size-md;
+      justify-content: space-between;
+      align-items: center;
+      flex: 0 0 100%;
+
+      svg {
+        width: $size-lg;
+        height: $size-lg;
+        transform: rotate(90deg);
+        fill: get-color(primary);
+      }
+    }
+
+    .wmnds-travel-update__disruption {
+      flex-wrap: wrap;
+
+      &:not(:last-child) {
+        margin-bottom: $size-md;
+      }
+
+      .wmnds-travel-update__disruption-text {
+        strong {
+          display: block;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-sm - 1) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .wmnds-travel-update__disruption-collapse-toggle {
+        position: absolute;
+        opacity: 0;
+
+        &:checked {
+          & ~ .wmnds-travel-update__disruption-collapse-btn svg {
+            transform: rotate(-90deg);
+          }
+
+          & ~ .wmnds-travel-update__disruption .wmnds-travel-update__disruption-text {
+            display: block;
+          }
+        }
+      }
+
+      .wmnds-travel-update__disruption {
+        display: block;
+
+        .wmnds-travel-update__disruption-text {
+          display: none;
+          padding-top: $size-sm;
+        }
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-sm) {
+      .wmnds-travel-update__disruption-collapse-toggle,
+      .wmnds-travel-update__disruption-collapse-btn svg {
+        display: none;
+      }
     }
   }
 }
