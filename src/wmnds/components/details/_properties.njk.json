@@ -1,0 +1,29 @@
+{
+  "wmndsDetailsProps": [
+    {
+      "name": "headingText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Text content for heading line. If <code class='wmnds-website-inline-code'>headingHTML</code> is supplied, this is ignored."
+    },
+    {
+      "name": "headingHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> HTML content for heading line."
+    },
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> The text content of each section, which is hidden when the section is closed. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> The HTML content of each section, which is hidden when the section is closed."
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "description": "If true, details will be expanded upon initial load. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    }
+  ]
+}

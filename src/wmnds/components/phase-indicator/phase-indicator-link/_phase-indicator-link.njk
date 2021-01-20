@@ -1,0 +1,28 @@
+{% macro wmndsPhaseIndicatorLink(params) %}
+{% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
+{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{# Set vars #}
+{% set text = params.contentText if params.contentText %}
+{% set href = params.href if params.href %} {# set button text #}
+{% set title = params.title if params.title %} {# set button text #}
+<div class="wmnds-grid wmnds-banner-container">
+  <div class="wmnds-col-auto wmnds-float-left wmnds-m-r-xsm">
+    {{
+      wmndsPhaseIndicator()
+   }}
+  </div>
+  <div class="wmnds-col-auto">
+     <p class="wmnds-banner-container__text">
+      {{ 
+        wmndsLink({
+          contentText: text,
+          link: href,
+          linkTitle: title,
+          linkTarget: '_blank'
+        })
+     }}
+     </p>
+  </div>
+</div>
+
+{% endmacro %}

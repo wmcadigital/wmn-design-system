@@ -1,0 +1,65 @@
+{% macro wmndsTextInput(params) %}
+
+{# Imports #}
+{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
+
+{# Params #}
+{% set id = params.id if params.id else "input" %}
+{% set name = params.name if params.name else id %}
+{% set type = params.type if params.type else "text" %}
+{% set required = params.required if params.required else false %}
+{% set classes = " " + params.classes if params.classes %} {# set paramClass to params.classNames if any #}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set inputErrorClass = " wmnds-fe-input--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please enter a value" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{% set disabled = params.disabled if params.disabled else null %}
+{% set maxLength = params.maxLength if params.maxLength else null %}
+{% set placeholder = params.placeholder if params.placeholder else null %}
+{% set value = params.value if params.value else "" %}
+{# Params of label #}
+{% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
+{% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
+{% set labelClasses = params.label.classes if params.label.classes else null %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+
+<div class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
+  {{
+    wmndsFormLabel({
+      contentText: labelContentText,
+      contentHTML: labelContentHTML,
+      classes: labelClasses,
+      for: id
+    }) 
+  }}
+  {% if params.error %}
+    {{
+      wmndsFeErrorMessage(
+        {
+          contentText: errorContentText,
+          contentHTML: errorContentHTML,
+          classes: errorClasses,
+          id: errorId
+        }
+      )
+    }}
+  {% endif %}
+  <input 
+    class="wmnds-fe-input{{inputErrorClass}}{{classes}}" 
+    id="{{id}}" 
+    name="{{name}}" 
+    type="{{type}}"
+    value="{{value}}"
+    {% if disabled %} disabled {% endif %}
+    {% if maxLength %} maxLength="{{maxLength}}" {% endif %} 
+    {% if placeholder %} placeholder="{{placeholder}}" {% endif %} 
+    {% if required %} required {% endif %}
+  />
+</div>
+
+{% endmacro %}

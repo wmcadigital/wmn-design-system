@@ -1,4 +1,4 @@
-<ul>
+<ul class="wmnds-website-subnav">
   {# Foreach navItems #}
   {% for navItem in navItems %}
   {# If the name is equal to var #}
@@ -10,7 +10,7 @@
 
   <li>
     <a class="wmnds-col-1 wmnds-link"
-      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{endUrl}}/">{{ sectionItem.name | capitalize}}</a>
+      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{endUrl}}/">{{ sectionItem.name }}</a>
   </li>
   {% endfor %}
   {% endif %}

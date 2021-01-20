@@ -14,19 +14,19 @@
   {# Show a button to allow the user to see the component fullscreen #}
   {{
     wmndsButton({
-      classNames: 'wmnds-btn--link wmnds-m-md wmnds-website-code-example__view-fullscreen',
-      text: 'See this example in fullscreen'
+      type: 'link',
+      classes: 'wmnds-m-md wmnds-website-code-example__view-fullscreen',
+      contentText: 'See this example in fullscreen'
     })
   }}
   <hr class="wmnds-m-none" />
-
 
   {# PREVIEW COMPONENT #}
   <div class="wmnds-website-code-example__inner-wrap">
     {# Loop through components passed in and collect in componentsToRender var #}
     {% set componentsToRender %}
       {%- for item in components %}
-        {{item | trim}}
+        {{item | safe}}
         {% if loop.last == false %}
           {% if params.displayInline %}
             <div class="wmnds-m-b-md wmnds-website-mar--right"></div>
@@ -50,7 +50,6 @@
   {# END PREVIEW COMPONENT #}
 
 
-
   {# SHOW DETAIL TAB(S) #}
 
   {# HTML markup #}
@@ -59,7 +58,7 @@
     <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
     {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
     {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
-<pre><code class="html" tabindex="0">{% for item in components -%}{{ item | forceescape | trim }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
+    <pre><code class="html" tabindex="0">{% for item in components -%}{{ item | formatHTML }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
   </details>
 
   {# Njk markup #}
@@ -67,8 +66,12 @@
     <hr class="wmnds-m-none" />
     <details class="wmnds-details">
       <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
-{# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
-<pre><code class="njk" tabindex="0">{%- include componentPath + "_example.njk" -%}</code></pre>
+      {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
+      <pre><code class="json" tabindex="0">
+      {%- filter trim %}
+        {%- include componentPath + "_example.njk" -%}
+      {% endfilter -%}
+      </code></pre>
     </details>
   {% endif %}
 
@@ -96,6 +99,30 @@
             {% endfor %}
           </tbody>
         </table>
+
+        {% for prop in njkProps %}
+        {% if prop.arrayOptions %}
+        <h4 class="h3 wmnds-m-t-lg">Options for {{ prop.name }}</h4>
+        <table class="wmnds-table wmnds-p-md">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in prop.arrayOptions %}
+              <tr>
+                <th scope="row" data-header="Name">{{item.name}}</th>
+                <td data-header="Type">{{item.type}}</td>
+                <td data-header="Description">{{item.description | safe}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+        {% endfor %}
       </div>
     </details>
   {% endif %}
@@ -105,22 +132,26 @@
     <div class="wmnds-website-code-example__js">
       {# HIDING THIS SECTION until we can compile ES5 for IE11 #}
       {# Show recommended JS (ES2015) #}
-      {# <hr class="wmnds-m-none" />
+      <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--js">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
-<pre><code class="js" tabindex="0"></code></pre>
-      </details> #}
+        <pre><code class="js" tabindex="0">
+          {%- filter convertToES5 %}
+            {%- include componentPath + "_example.js" -%}
+          {% endfilter -%}
+        </code></pre>
+      </details>
 
       {# Show recommended JS (ES6) #}
       <hr class="wmnds-m-none" />
       <details class="wmnds-details wmnds-details--es6">
         <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
-<pre><code class="js" tabindex="0"></code></pre>
+        <pre><code class="js" tabindex="0">
+          {%- filter formatJS %}
+            {%- include componentPath + "_example.js" -%}
+          {% endfilter -%}
+        </code></pre>
       </details>
-
-      <script type="text/plain" class="wmnds-website-code-example__script">
-        {%- include componentPath + "_example.js" -%}
-      </script>
     </div>
   {% endif %}
 </div>

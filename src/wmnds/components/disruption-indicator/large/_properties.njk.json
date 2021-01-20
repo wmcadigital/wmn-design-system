@@ -1,0 +1,39 @@
+{
+  "wmndsDisruptionIndicatorLargeProps": [
+    {
+      "name": "primaryText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Primary text which describes the status/severity of the transport mode disruption."
+    },
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "Further text to describe the route of the mode of transport."
+    },
+    {
+      "name": "mode",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the travel mode which the disruption relates to. Accepted values are: <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>coach</code>, <code class='wmnds-website-inline-code'>cycle</code>, <code class='wmnds-website-inline-code'>metro</code>, <code class='wmnds-website-inline-code'>plane</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>roads</code> and <code class='wmnds-website-inline-code'>walk</code>. "
+    },
+    {
+      "name": "iconRight",
+      "type": "string",
+      "description": "The icon tag which specifies the icon to show to the right of the indicator (see <a href='/styles/icons/' rel='noopener noreferrer nofollow' target='_blank'>icon reference</a>). By default, no icon will be displayed."
+    },
+    {
+      "name": "iconLeft",
+      "type": "string",
+      "description": "The icon tag which specifies the icon to show to the left of the indicator (see <a href='/styles/icons/' rel='noopener noreferrer nofollow' target='_blank'>icon reference</a>). By default, no icon will be displayed."
+    },
+    {
+      "name": "iconRightBtn",
+      "type": "boolean",
+      "description": "If set to true the right icon will be displayed as a clickable button. Default value is false."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "List of additional classes which will be added to the disruption indicator. A typical use case is modifying the badge colour to indicate severity e.g. <code class='wmnds-website-inline-code'>wmnds-disruption-indicator-large--severe</code>"
+    }
+  ]
+}
