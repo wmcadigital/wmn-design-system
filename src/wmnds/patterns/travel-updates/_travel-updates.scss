@@ -5,20 +5,28 @@
 
   &__disruption {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      justify-content: space-between;
+    }
 
     .wmnds-disruption-indicator-medium {
       margin-right: $size-md;
     }
-  }
 
-  &__status {
-    padding-top: $size-sm;
+    .wmnds-travel-update__disruption-text {
+      padding-top: $size-xsm;
+      flex-grow: 1;
+      flex: 0 0 100%;
 
-    @media screen and (min-width: $breakpoint-sm) {
-      padding-top: 0;
-      text-align: right;
+      @media screen and (min-width: $breakpoint-sm) {
+        padding-top: 0;
+        text-align: right;
+        flex: auto;
+      }
     }
   }
 
@@ -46,6 +54,8 @@
       }
 
       .wmnds-travel-update__disruption-text {
+        text-align: left;
+
         strong {
           display: block;
         }

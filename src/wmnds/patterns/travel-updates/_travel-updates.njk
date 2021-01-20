@@ -9,7 +9,7 @@
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
 {% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
 {# Set #}
-{% set disruptions = [
+{# {% set disruptions = [
     {
         mode: "bus",
         title: "Bus",
@@ -17,6 +17,7 @@
         text: "Hamstead - Birmingham via Hockley",
         statusIcon: "general-warning-triangle",
         status: [
+            "1 severe disruptions",
             "2 major disruptions",
             "8 minor disruptions"
         ]
@@ -51,41 +52,93 @@
             "3 minor disruptions"
         ]
     }
-] %}
-{% set buses = ["9", "10", "12", "12A", "13", "13A", "126", "X8", "X10", "23"] %}
+] %} #}
 
+{% set myTravelUpdates = [
+    {
+        mode: "bus",
+        title: "Bus",
+        disruptions: [
+            {
+                service: "16",
+                description: "Hamstead - Birmingham via Hockley",
+                severityClass: "wmnds-disruption-indicator-medium--warning",
+                statusIcon: "general-warning-circle",
+                status: "Minor disruption"
+            },
+            {
+                service: "S16",
+                description: "Solihull - Yardley via Lyndon",
+                severityClass: "wmnds-disruption-indicator-medium--success",
+                statusIcon: "general-success",
+                status: "Good service"
+            }
+        ]
+    },
+    {
+        mode: "rail",
+        title: "Train",
+        disruptions: [
+            {
+                service: "Cross City Line",
+                severityClass: "wmnds-disruption-indicator-medium--warning",
+                statusIcon: "general-warning-circle",
+                status: "Minor disruption"
+            },
+            {
+                service: "Hereford via Worcester",
+                severityClass: "wmnds-disruption-indicator-medium--success",
+                statusIcon: "general-success",
+                status: "Good service"
+            }
+        ]
+    },
+    {
+        mode: "metro",
+        title: "Tram",
+        disruptions: [
+            {
+                service: "mm1",
+                description: "Grand Central - St Chad’s",
+                severityClass: "wmnds-disruption-indicator-medium--error",
+                statusIcon: "general-warning-triangle",
+                status: "Major disruption"
+            }
+        ]
+    }
+] %}
+
+{# 
 {% call wmndsContentCard({ classes: "wmnds-content-card--travel-updates"}) %}
     <div class="wmnds-p-sm wmnds-col-1">
         <h2 class="wmnds-content-card__title">Travel updates</h2>
         
         {% for disruption in disruptions %}
-        <div class="wmnds-travel-update wmnds-grid wmnds-grid--spacing-3-md">
-            <div class="wmnds-col-sm-1-2 wmnds-col-1">
-                <div class="wmnds-travel-update__disruption">
-                    {{
-                        mediumDisruption({
-                            iconLeft: "modes-isolated-" + disruption.mode,
-                            iconRight: disruption.statusIcon,
-                            classes: disruption.severityClass
-                        })
-                    }}
-                    <h3 class="wmnds-m-none">{{ disruption.title | capitalize }}</h3>
+        <div class="wmnds-travel-update">
+            <div class="wmnds-travel-update__disruption">
+                {{
+                    mediumDisruption({
+                        iconLeft: "modes-isolated-" + disruption.mode,
+                        iconRight: disruption.statusIcon,
+                        classes: disruption.severityClass
+                    })
+                }}
+                <h3 class="wmnds-m-none">{{ disruption.title | capitalize }}</h3>
+                <div class="wmnds-travel-update__disruption-text">
+                    {% for text in disruption.status %}
+                        {% if text === "Good service"%}
+                            <strong>{{text}}</strong>
+                        {% else %}
+                            <div>
+                                {{
+                                    wmndsLink({
+                                        contentText: text
+                                    })
+                                }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
-            </div>
-            <div class="wmnds-col-sm-1-2 wmnds-col-1 wmnds-travel-update__status">
-            {% for text in disruption.status %}
-            {% if text === "Good service"%}
-                <strong>{{text}}</strong>
-            {% else %}
-                <div>
-                    {{
-                        wmndsLink({
-                            contentText: text
-                        })
-                    }}
-                </div>
-            {% endif %}
-            {% endfor %}
             </div>
         </div>
         <hr>
@@ -113,99 +166,53 @@
             </div>
         </div>
     </div>
-{% endcall %}
+{% endcall %} #}
 
 {% call wmndsContentCard({ classes: "wmnds-content-card--travel-updates"}) %}
     <div class="wmnds-p-sm wmnds-col-1">
         <h2 class="wmnds-content-card__title">My travel updates</h2>
         
+        {% for update in myTravelUpdates %}
         <div class="wmnds-travel-update wmnds-travel-update--personal">
-            <input type="checkbox" id="collapse" class="wmnds-travel-update__disruption-collapse-toggle">
-            <label for="collapse" class="wmnds-travel-update__disruption-collapse-btn">
-                <h3 class="wmnds-m-none">Bus</h3>
+            <input type="checkbox" id="{{id}}-collapse-{{update.mode}}" class="wmnds-travel-update__disruption-collapse-toggle">
+            <label for="{{id}}-collapse-{{update.mode}}" class="wmnds-travel-update__disruption-collapse-btn">
+                <h3 class="wmnds-m-none">{{update.title}}</h3>
                 {{
                     wmndsIcon({
                         icon: "general-chevron-right"
                     })
                 }}
             </label>
-            <div class="wmnds-travel-update__disruption">
-                {{
-                    mediumDisruption({
-                        iconLeft: "modes-isolated-bus",
-                        iconRight: "general-warning-circle",
-                        contentText: "16",
-                        classes: "wmnds-disruption-indicator-medium--warning"
-                    })
-                }}
-                <div class="wmnds-travel-update__disruption-text">
-                    <strong>Hamstead - Birmingham via Hockley</strong>
-                    {{
-                        wmndsLink({
-                            contentText: "Minor disruption"
-                        })
-                    }}
-                </div>
-            </div>
-            <div class="wmnds-travel-update__disruption">
-                {{  
-                    mediumDisruption({
-                        iconLeft: "modes-isolated-bus",
-                        iconRight: "general-success",
-                        contentText: "S16",
-                        classes: "wmnds-disruption-indicator-medium--success"
-                    })
-                }}
-                <div class="wmnds-travel-update__disruption-text">
-                    <strong>Solihull - Yardley via Lyndon</strong>
-                    <strong>Good service</strong>
-                </div>
-            </div>
-        </div>
-        <hr>
 
-        <div class="wmnds-travel-update wmnds-travel-update--personal">
-            <input type="checkbox" id="collapse-train" class="wmnds-travel-update__disruption-collapse-toggle">
-            <label for="collapse-train" class="wmnds-travel-update__disruption-collapse-btn">
-                <h3 class="wmnds-m-none">Train</h3>
-                {{
-                    wmndsIcon({
-                        icon: "general-chevron-right"
-                    })
-                }}
-            </label>
+            {% for disruption in update.disruptions %}
             <div class="wmnds-travel-update__disruption">
                 {{
                     mediumDisruption({
-                        iconLeft: "modes-isolated-rail",
-                        iconRight: "general-warning-circle",
-                        contentText: "Cross City line",
-                        classes: "wmnds-disruption-indicator-medium--warning"
+                        iconLeft: "modes-isolated-" + update.mode,
+                        iconRight: disruption.statusIcon,
+                        contentText: disruption.service,
+                        classes: disruption.severityClass
                     })
                 }}
                 <div class="wmnds-travel-update__disruption-text">
+                    {% if disruption.description %}
+                    <strong>{{disruption.description}}</strong>
+                    {% endif %}
+                    {% if disruption.status === "Good service"%}
+                    <strong>{{disruption.status}}</strong>
+                    {% else %}
                     {{
                         wmndsLink({
-                            contentText: "Minor disruption"
+                            contentText: disruption.status
                         })
                     }}
+                    {% endif %}
                 </div>
             </div>
-            <div class="wmnds-travel-update__disruption">
-                {{  
-                    mediumDisruption({
-                        iconLeft: "modes-isolated-rail",
-                        iconRight: "general-success",
-                        contentText: "Hereford via Worcester",
-                        classes: "wmnds-disruption-indicator-medium--success"
-                    })
-                }}
-                <div class="wmnds-travel-update__disruption-text">
-                    <strong>Good service</strong>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <hr>
+        {% endfor %}
         
         <div class="wmnds-grid wmnds-grid--spacing-sm-2-lg wmnds-p-t-md">
             <div class="wmnds-col-1 wmnds-col-sm-1-2">
