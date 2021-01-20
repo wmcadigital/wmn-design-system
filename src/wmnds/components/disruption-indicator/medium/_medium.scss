@@ -37,6 +37,10 @@
     padding: $size-xs;
   }
 
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
   &__icon {
     display: inline-block;
     width: 22px;

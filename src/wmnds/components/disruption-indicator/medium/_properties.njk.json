@@ -26,6 +26,11 @@
       "description": "If set to true, the badge will be displayed in the narrow style. Default value is false."
     },
     {
+      "name": "capitalize",
+      "type": "boolean",
+      "description": "If set to true, the badge text will display in a title text format rather than uppercase. Default value is false."
+    },
+    {
       "name": "classes",
       "type": "string",
       "description": "List of additional classes which will be added to the disruption indicator. A typical use case is modifying the badge colour to indicate severity e.g. <code class='wmnds-website-inline-code'>wmnds-disruption-indicator-medium--severe</code>"

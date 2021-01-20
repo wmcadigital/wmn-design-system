@@ -7,12 +7,13 @@
 {% set hasIconLeft = true if params.iconLeft else false%} {# set svg left reference #}
 {% set iconRightBtn = params.iconRightBtn if params.iconRightBtn else false %} {# set icon right btn value #}
 {% set _narrowClassModifier = " wmnds-disruption-indicator-medium--narrow" if params.displayNarrow %} 
+{% set _capitalizeClassModifier = " wmnds-disruption-indicator-medium--capitalize" if params.capitalize %} 
 {% set classes = ' ' + params.classes if params.classes %}
 {% set _iconClassModifier = ' wmnds-disruption-indicator-medium--with-icon' if ( params.iconLeft or params.iconRight ) %}
 {% set comment = params.comment | safe if params.comment %} 
 
 {{ comment }}
-<div class="wmnds-disruption-indicator-medium{{_iconClassModifier}}{{classes}}{{_narrowClassModifier}}">
+<div class="wmnds-disruption-indicator-medium{{_iconClassModifier}}{{classes}}{{_narrowClassModifier}}{{_capitalizeClassModifier}}">
   {% if iconLeft %}
   {# Get SVG icon -#}
   {{

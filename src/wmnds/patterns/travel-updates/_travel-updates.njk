@@ -82,12 +82,14 @@
                 service: "Cross City Line",
                 severityClass: "wmnds-disruption-indicator-medium--warning",
                 statusIcon: "general-warning-circle",
+                capitalize: true,
                 status: "Minor disruption"
             },
             {
                 service: "Hereford via Worcester",
                 severityClass: "wmnds-disruption-indicator-medium--success",
                 statusIcon: "general-success",
+                capitalize: true,
                 status: "Good service"
             }
         ]
@@ -136,6 +138,7 @@
                         iconLeft: "modes-isolated-" + update.mode,
                         iconRight: null if isEditView else disruption.statusIcon,
                         contentText: disruption.service,
+                        capitalize: true if disruption.capitalize else false,
                         classes: null if isEditView else disruption.severityClass
                     })
                 }}
