@@ -85,11 +85,10 @@
 
       .wmnds-travel-update__disruption {
         display: block;
+      }
 
-        .wmnds-travel-update__disruption-text {
-          display: none;
-          padding-top: $size-sm;
-        }
+      .wmnds-travel-update__disruption-text {
+        padding-top: $size-sm;
       }
     }
 
@@ -97,6 +96,42 @@
       .wmnds-travel-update__disruption-collapse-toggle,
       .wmnds-travel-update__disruption-collapse-btn svg {
         display: none;
+      }
+    }
+
+    &:not(.wmnds-travel-update--edit) {
+      .wmnds-travel-update__disruption-text {
+        display: none;
+      }
+    }
+  }
+
+  &--edit {
+    @media screen and (max-width: $breakpoint-sm - 1) {
+      .wmnds-travel-update__disruption {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .wmnds-travel-update__disruption-text {
+        order: 1;
+      }
+    }
+
+    .wmnds-travel-update__disruption-delete {
+      padding: $size-sm;
+      border: 0;
+      border-radius: 5px;
+      background-color: get-color(error);
+      cursor: pointer;
+
+      svg {
+        width: 22px;
+        height: 22px;
+        fill: $white;
+        vertical-align: middle;
       }
     }
   }

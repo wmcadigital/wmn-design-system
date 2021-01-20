@@ -39,7 +39,9 @@
 
 {{
     compExample([
-        wmndsContentCardTravelUpdates()
+        wmndsContentCardTravelUpdates({
+          id: "default-example"
+        })
     ])
 }}
 
@@ -65,7 +67,10 @@
 
 {{
     compExample([
-        wmndsContentCardTravelUpdates()
+        wmndsContentCardTravelUpdates({
+          id: "personal-example",
+          personalView: true
+        })
     ])
 }}
 
@@ -90,7 +95,10 @@
 
 {{
     compExample([
-        wmndsContentCardTravelUpdates()
+        wmndsContentCardTravelUpdates({
+          id: "edit-example",
+          editView: true
+        })
     ])
 }}
 
