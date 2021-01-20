@@ -1,0 +1,33 @@
+{% raw %}
+{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
+
+{{
+   wmndsTextInput({
+      id: "example-input",
+      name: "example-input",
+      type: "text",
+      required: true,
+      classes: null,
+      error: false,
+      errorMessage: {
+         id: null,
+         contentText: "Custom error message for this example input",
+         contentHTML: null, 
+         classes: null
+      },
+      disabled: false,
+      maxLength: "200",
+      placeholder: "input placeholder...",
+      value: "",
+      label: {
+         contentText: "input label",
+         contentHTML: "<span>input label <em>updated</em></span>",
+         classes: "wmnds-m-t-20"
+      },
+      formGroup: {
+         classes: "wmnds-m-t-20"
+      }
+    })
+}}
+
+{% endraw %}

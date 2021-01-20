@@ -1,0 +1,24 @@
+{% raw %}
+{% from "wmnds/components/form-elements/file-upload/_file-upload.njk" import wmndsFileUpload %}
+
+{{
+   wmndsFileUpload({
+      name: null,
+      id: "profile-image-upload",
+      classes: null,
+      required: true,
+      disabled: false,
+      fileSelected: false,
+      error: false,
+      errorMessage: {
+         id: null,
+         contentText: "Files must be jpeg or png file format and be less than 2mb",
+         contentHTML: null,
+         classes: null
+      }
+      formGroup: {
+         classes: "wmnds-m-t-20"
+      }
+    })
+}}
+{% endraw %}
