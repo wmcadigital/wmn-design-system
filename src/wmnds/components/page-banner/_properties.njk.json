@@ -1,0 +1,9 @@
+{
+  "wmndsPageBannerProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": ""
+    }
+  ]
+}
