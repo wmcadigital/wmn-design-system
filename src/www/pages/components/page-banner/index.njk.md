@@ -46,7 +46,7 @@
     njk: true,
     njkProps: wmndsPageBannerProps,
     js: false,
-    iframe: false
+    iframe: true
   })
 }}
 

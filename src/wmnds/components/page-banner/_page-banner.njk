@@ -1,7 +1,29 @@
 {% macro wmndsPageBanner(params) %}
 
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
 <div class="wmnds-page-banner" >
-  Banner
+  <div class="wmnds-page-banner__container">
+    <div class="wmnds-page-banner__content">
+      <h2>Buses in the West Midlands</h2>
+      <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
+      <div class="wmnds-page-banner__logos">
+        {{
+          wmndsIcon({
+            icon: "modes-bg-bus"
+          })
+        }}
+        <img src="/img/logos/WM Bus/Landscape/White.png" alt="">
+      </div>
+
+    </div>
+  </div>
+  <div class="wmnds-page-banner__image wmnds-hide-mobile">
+    <svg class="wmnds-page-banner__background wmnds-hide-mobile" viewBox="0 0 40 200">
+      <path fill="#ea0029" d="M0,0v200h6.03l32.87-93.5c1.48-4.21,1.48-8.79,0-12.99L6.03,0H0z"/>
+    </svg>
+    <img src="" alt="">
+  </div>
 </div>
 
 {% endmacro %}

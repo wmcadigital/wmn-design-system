@@ -1,0 +1,84 @@
+.wmnds-page-banner {
+  position: relative;
+  padding: $size-lg $size-md;
+  color: $white;
+  background-color: get-color(bus);
+
+  h2 {
+    color: currentColor;
+  }
+
+  &__logos {
+    display: flex;
+
+    svg {
+      width: 3rem;
+      fill: currentColor;
+    }
+
+    svg,
+    img {
+      height: 3rem;
+
+      &:not(:last-child) {
+        margin-right: $size-lg;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-sm) {
+    &__container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    padding: $size-lg 0;
+
+    &__container {
+      position: relative;
+      z-index: 1;
+      max-width: $breakpoint-md;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__image {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: $black;
+    }
+
+    &__background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    &__container {
+      max-width: $breakpoint-lg;
+    }
+
+    &__content {
+      width: 60%;
+    }
+
+    &__image {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background-color: $black;
+    }
+  }
+}
