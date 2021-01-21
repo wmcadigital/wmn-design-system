@@ -1,9 +1,34 @@
 {
   "wmndsPageBannerProps": [
     {
-      "name": "contentText",
+      "name": "title",
       "type": "string",
-      "description": ""
+      "description": "<strong>Required.</strong> Title content to use in the banner."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> HTML content to use in the banner."
+    },
+    {
+      "name": "mode",
+      "type": "string",
+      "description": "<strong>Required.</strong> Transport mode the banner relates to. This will determine the icon and background colour which is displayed. Accepted values are <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>metro</code> and <code class='wmnds-website-inline-code'>roads</code>"
+    },
+    {
+      "name": "image",
+      "type": "string",
+      "description": "<strong>Required.</strong> Url for the image to be displayed in the banner."
+    },
+    {
+      "name": "logo",
+      "type": "string",
+      "description": "Url for the logo image to be displayed in the banner."
+    },
+    {
+      "name": "logoAltText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Alt text to describe the logo image. This value is not required if a logo is not used."
     }
   ]
 }
