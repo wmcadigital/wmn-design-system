@@ -1,8 +1,38 @@
 .wmnds-page-banner {
   position: relative;
-  padding: $size-lg $size-md;
   color: $white;
-  background-color: get-color(bus);
+
+  &--bus {
+    background-color: get-color(bus);
+
+    .wmnds-page-banner__svg-background {
+      fill: get-color(bus);
+    }
+  }
+
+  &--rail {
+    background-color: get-color(railway);
+
+    .wmnds-page-banner__svg-background {
+      fill: get-color(railway);
+    }
+  }
+
+  &--metro {
+    background-color: get-color(metro);
+
+    .wmnds-page-banner__svg-background {
+      fill: get-color(metro);
+    }
+  }
+
+  &--roads {
+    background-color: get-color(roads);
+
+    .wmnds-page-banner__svg-background {
+      fill: get-color(roads);
+    }
+  }
 
   h2 {
     color: currentColor;
@@ -26,23 +56,31 @@
     }
   }
 
+  &__content {
+    padding: $size-lg $size-md;
+  }
+
   @media screen and (min-width: $breakpoint-sm) {
     &__container {
-      max-width: 400px;
+      max-width: $breakpoint-sm;
       margin: 0 auto;
     }
-  }
-  @media screen and (min-width: $breakpoint-md) {
-    padding: $size-lg 0;
 
+    &__content {
+      padding: $size-lg;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
     &__container {
       position: relative;
-      z-index: 1;
+      z-index: 5;
       max-width: $breakpoint-md;
     }
 
     &__content {
       width: 50%;
+      padding: $size-lg $size-md;
     }
 
     &__image {
@@ -52,13 +90,18 @@
       right: 0;
       width: 50%;
       height: 100%;
-      background-color: $black;
+      overflow: hidden;
+      background-image: url("/img/component-images/banner/bus-banner-img.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
     }
 
-    &__background {
+    &__svg-background {
       position: absolute;
-      left: 0;
+      z-index: 2;
       top: 0;
+      left: 0;
       height: 100%;
     }
   }
@@ -78,7 +121,6 @@
       right: 0;
       width: 40%;
       height: 100%;
-      background-color: $black;
     }
   }
 }
