@@ -46,10 +46,16 @@
           "name": "Buttons"
         },
         {
+          "name": "Checkboxes"
+        },
+        {
           "name": "Content card"
         },
         {
           "name": "Content tiles"
+        },
+        {
+          "name": "Date Input"
         },
         {
           "name": "Details"
@@ -58,10 +64,16 @@
           "name": "Disruption indicators"
         },
         {
+          "name": "Dropdown"
+        },
+        {
           "name": "File download"
         },
         {
-          "name": "Form elements"
+          "name": "File upload"
+        },
+        {
+          "name": "Form label"
         },
         {
           "name": "Inset text"
@@ -82,7 +94,22 @@
           "name": "Phase indicator"
         },
         {
+          "name": "Progress indicator"
+        },
+        {
+          "name": "Radios"
+        },
+        {
+          "name": "Question"
+        },
+        {
           "name": "Table"
+        },
+        {
+          "name": "Textarea"
+        },
+        {
+          "name": "Text Input"
         },
         {
           "name": "Warning text"

@@ -1,0 +1,24 @@
+{
+  "wmndsFormLabelProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Text to use within the label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided this is not required and will be ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> HTML to use within the label. If <code class='wmnds-website-inline-code'>contentText</code> is provided, this is not required."
+    },
+    {
+      "name": "for",
+      "type": "string",
+      "description": "<strong>Required.</strong> The value of the for attribute, the id of the input the label is associated with."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the label tag."
+    }
+  ]
+}

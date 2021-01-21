@@ -17,25 +17,27 @@
       <div class="wmnds-cookies-manager__preferences wmnds-p-b-md wmnds-p-t-md">
         {{
           wmndsCheckboxes({
-            groupClass: "wmnds-m-none",
+            classes: "wmnds-m-none",
             question: "",
-            desc: "",
-            options: [
+            hint: {
+              contentText: ""
+            },
+            items: [
               {
                 checked: true,
-                editable: false,
-                title: 'Essential cookies',
-                desc: 'Without these cookies our website won’t work properly. They help you to access secure areas like accounts and tools such as the journey planner.'
+                disabled: true,
+                titleText: 'Essential cookies',
+                contentText: 'Without these cookies our website won’t work properly. They help you to access secure areas like accounts and tools such as the journey planner.'
               },
               {
                 checked: false,
-                title: 'Functional cookies',
-                desc: 'These cookies help us to personalise our services to suit your needs, like saving your favourite transport services.'
+                titleText: 'Functional cookies',
+                contentText: 'These cookies help us to personalise our services to suit your needs, like saving your favourite transport services.'
               },
               {
                 checked: false,
-                title: 'Performance cookies',
-                desc: 'These cookies collect information about how you’re using our services, for instance popular pages or errors. We use this information to make decisions when improving our services. We do not use any information collected to identify you as an individual.'
+                titleText: 'Performance cookies',
+                contentText: 'These cookies collect information about how you’re using our services, for instance popular pages or errors. We use this information to make decisions when improving our services. We do not use any information collected to identify you as an individual.'
               }
             ]
           })
