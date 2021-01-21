@@ -30,7 +30,10 @@
     }
   }
 
+  // Styles for personal view travel update card
   &--personal {
+    position: relative;
+
     .wmnds-travel-update__disruption-collapse-btn {
       display: flex;
       margin-bottom: $size-md;
@@ -70,13 +73,19 @@
 
       .wmnds-travel-update__disruption-collapse-toggle {
         position: absolute;
+        right: 0;
+        width: $size-lg;
+        height: $size-lg;
+        margin: 0;
         opacity: 0;
 
         &:checked {
+          // Rotate chevron icon if toggle is checked
           & ~ .wmnds-travel-update__disruption-collapse-btn svg {
             transform: rotate(-90deg);
           }
 
+          // Display disruption text content if toggle is checked
           & ~ .wmnds-travel-update__disruption .wmnds-travel-update__disruption-text {
             display: block;
           }
@@ -88,6 +97,7 @@
       }
 
       .wmnds-travel-update__disruption-text {
+        display: none;
         padding-top: $size-sm;
       }
     }
@@ -98,14 +108,9 @@
         display: none;
       }
     }
-
-    &:not(.wmnds-travel-update--edit) {
-      .wmnds-travel-update__disruption-text {
-        display: none;
-      }
-    }
   }
 
+  // Styles for edit view travel update card
   &--edit {
     @media screen and (max-width: $breakpoint-sm - 1) {
       .wmnds-travel-update__disruption {
@@ -116,7 +121,8 @@
       }
 
       .wmnds-travel-update__disruption-text {
-        order: 1;
+        display: block;
+        order: 1; // (make text to show after the delete button on mobile)
       }
     }
 
