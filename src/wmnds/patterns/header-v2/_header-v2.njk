@@ -77,8 +77,9 @@
                   <!-- Start submenu (level 2) -->
                   <ul class="wmnds-mega-menu__sub-menu">
                     {% for subnavItem in navItem.subnavItems -%}
+                    {% set hrefSubnav = subnavItem.href if subnavItem.href else navItem.name | lower | replace(" ", "-") + "/" + subnavItem.name | lower | replace(" ", "-") + "/" %}
                     <li class="wmnds-mega-menu__sub-menu-item">
-                      <a href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subnavItem.name | lower | replace(" ", "-") }}/" class="wmnds-mega-menu__sub-menu-link">
+                      <a href="{{hrefSubnav}}" class="wmnds-mega-menu__sub-menu-link">
                         {% if subnavItem.icon -%}
                         <!-- Show submenu (level 2) item icon if specified -->
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
@@ -91,9 +92,10 @@
                       <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
                       <!-- Start submenu child (level 3) list -->
                       <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
-                        {% for subnavchildItem in subnavItem.subnavItems -%}
+                        {% for subnavChildItem in subnavItem.subnavItems -%}
+                        {% set hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else "#" %}
                         <li class="wmnds-mega-menu__sub-menu-child-item">
-                          <a href="#" class="wmnds-mega-menu__sub-menu-child-link">{{subnavchildItem.name | capitalize}}</a>
+                          <a href="{{hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
                         </li>
                         {%- endfor %}
                       </ul>
