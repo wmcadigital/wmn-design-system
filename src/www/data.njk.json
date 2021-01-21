@@ -1,6 +1,70 @@
 {
   "navItems": [
-    { "name": "Docs", "subnavItems": [{ "name": "Get started" }, { "name": "Releases" }] },
+    {
+      "name": "Docs",
+      "subnavItems": [
+        {
+          "name": "Installation",
+          "icon": "general-caret-down",
+          "href": "/docs/get-started/",
+          "subnavItems": [
+            {
+              "name": "Get started",
+              "href": "/docs/get-started"
+            }
+          ]
+        },
+        {
+          "name": "Setup Guides",
+          "icon": "general-caret-down",
+          "href": "/docs/get-started/",
+          "subnavItems": [
+            {
+              "name": "Prototype Kit",
+              "href": "/docs/get-started/prototype-kit/"
+            },
+            {
+              "name": "Production",
+              "href": "/docs/get-started/production/"
+            },
+            {
+              "name": "Mobile application",
+              "href": "/docs/get-started/mobile-application/"
+            },
+            {
+              "name": "Design",
+              "href": "/docs/get-started/design/"
+            }
+          ]
+        },
+        {
+          "name": "Usage",
+          "icon": "general-caret-down",
+          "href": "/docs/get-started/",
+          "subnavItems": [
+            {
+              "name": "Using the design system",
+              "href": "/docs/get-started/using-the-design-system/"
+            }
+          ]
+        },
+        {
+          "name": "Other",
+          "icon": "general-caret-down",
+          "href": "/docs/get-started/",
+          "subnavItems": [
+            {
+              "name": "User research",
+              "href": "/user-research/"
+            },
+            {
+              "name": "Releases",
+              "href": "/docs/releases/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "Styles",
       "subnavItems": [
