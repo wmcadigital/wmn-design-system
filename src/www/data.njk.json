@@ -101,82 +101,105 @@
       "name": "Components",
       "subnavItems": [
         {
-          "name": "Accordion"
+          "name": "General",
+          "icon": "general-caret-down",
+          "subnavItems": [
+            {
+              "name": "Accordion"
+            },
+            {
+              "name": "Breadcrumb"
+            },
+            {
+              "name": "Buttons"
+            },
+            {
+              "name": "Content card"
+            },
+            {
+              "name": "Content tiles"
+            },
+            {
+              "name": "Details"
+            },
+            {
+              "name": "Disruption indicators"
+            },
+            {
+              "name": "File download"
+            },
+            {
+              "name": "Inset text"
+            },
+            {
+              "name": "In-text step"
+            },
+            {
+              "name": "Links"
+            },
+            {
+              "name": "Loader"
+            },
+            {
+              "name": "Message"
+            },
+            {
+              "name": "Phase indicator"
+            },
+            {
+              "name": "Table"
+            },
+            {
+              "name": "Warning text"
+            }
+          ]
         },
         {
-          "name": "Breadcrumb"
-        },
-        {
-          "name": "Buttons"
-        },
-        {
-          "name": "Checkboxes"
-        },
-        {
-          "name": "Content card"
-        },
-        {
-          "name": "Content tiles"
-        },
-        {
-          "name": "Date Input"
-        },
-        {
-          "name": "Details"
-        },
-        {
-          "name": "Disruption indicators"
-        },
-        {
-          "name": "Dropdown"
-        },
-        {
-          "name": "File download"
-        },
-        {
-          "name": "File upload"
-        },
-        {
-          "name": "Form label"
-        },
-        {
-          "name": "Inset text"
-        },
-        {
-          "name": "In-text step"
-        },
-        {
-          "name": "Links"
-        },
-        {
-          "name": "Loader"
-        },
-        {
-          "name": "Message"
-        },
-        {
-          "name": "Phase indicator"
-        },
-        {
-          "name": "Progress indicator"
-        },
-        {
-          "name": "Radios"
-        },
-        {
-          "name": "Question"
-        },
-        {
-          "name": "Table"
-        },
-        {
-          "name": "Textarea"
-        },
-        {
-          "name": "Text Input"
-        },
-        {
-          "name": "Warning text"
+          "name": "Form elements",
+          "link": "#",
+          "icon": "general-caret-down",
+          "subnavItems": [
+            {
+              "name": "Checkboxes",
+              "link": "/components/checkboxes"
+            },
+            {
+              "name": "Date Input",
+              "link": "/components/date-input"
+            },
+            {
+              "name": "Dropdown",
+              "link": "/components/dropdown"
+            },
+            {
+              "name": "File upload",
+              "link": "/components/file-upload"
+            },
+            {
+              "name": "Form label",
+              "link": "/components/form-label"
+            },
+            {
+              "name": "Progress indicator",
+              "link": "/components/progress-indicator"
+            },
+            {
+              "name": "Question",
+              "link": "/components/question"
+            },
+            {
+              "name": "Radios",
+              "link": "/components/radios"
+            },
+            {
+              "name": "Textarea",
+              "link": "/components/textarea"
+            },
+            {
+              "name": "Text Input",
+              "link": "/components/text-input"
+            }
+          ]
         }
       ]
     },
