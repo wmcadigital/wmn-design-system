@@ -6,6 +6,7 @@ import cookies from '../wmnds/patterns/cookies/_example';
 import headerJs from '../wmnds/patterns/header-v2/_example';
 import footerJs from '../wmnds/patterns/footer/_example';
 import accordionsJS from '../wmnds/components/accordion/_example';
+import travelUpdatesWidgetJs from '../wmnds/patterns/travel-updates/_example';
 import searchFilterJs from '../wmnds/patterns/search/search-filter/_example';
 
 import { componentExample, componentExampleIframe } from './_partials/component-example';
@@ -40,6 +41,7 @@ window.addEventListener(
   footerJs(),
   accordionsJS(),
   cookies(),
+  travelUpdatesWidgetJs(),
   searchFilterJs(),
   componentExampleIframe(),
   componentExample)

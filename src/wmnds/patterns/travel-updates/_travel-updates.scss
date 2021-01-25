@@ -34,18 +34,25 @@
   &--personal {
     position: relative;
 
-    .wmnds-travel-update__disruption-collapse-btn {
+    .wmnds-travel-update__disruption-title {
       display: flex;
       margin-bottom: $size-md;
       justify-content: space-between;
       align-items: center;
       flex: 0 0 100%;
 
-      svg {
-        width: $size-lg;
-        height: $size-lg;
-        transform: rotate(90deg);
-        fill: get-color(primary);
+      .wmnds-travel-update__disruption-collapse-toggle {
+        padding: 0;
+        border: 0;
+        background: none;
+
+        svg {
+          display: block;
+          width: $size-lg;
+          height: $size-lg;
+          transform: rotate(-90deg);
+          fill: get-color(primary);
+        }
       }
     }
 
@@ -54,6 +61,18 @@
 
       &:not(:last-child) {
         margin-bottom: $size-md;
+      }
+
+      .wmnds-travel-update__disruption-indicator-btn {
+        display: inline-block;
+        margin-right: $size-md;
+        padding: 0;
+        border: 0;
+        background: none;
+
+        .wmnds-disruption-indicator-medium {
+          margin: 0;
+        }
       }
 
       .wmnds-travel-update__disruption-text {
@@ -72,23 +91,9 @@
       align-items: flex-start;
 
       .wmnds-travel-update__disruption-collapse-toggle {
-        position: absolute;
-        right: 0;
-        width: $size-lg;
-        height: $size-lg;
-        margin: 0;
-        opacity: 0;
-
-        &:checked {
-          // Rotate chevron icon if toggle is checked
-          & ~ .wmnds-travel-update__disruption-collapse-btn svg {
-            transform: rotate(-90deg);
-          }
-
-          // Display disruption text content if toggle is checked
-          & ~ .wmnds-travel-update__disruption .wmnds-travel-update__disruption-text {
-            display: block;
-          }
+        // Rotate chevron icon if toggle is checked
+        &[data-collapse-all="true"] svg {
+          transform: rotate(90deg);
         }
       }
 
@@ -97,8 +102,11 @@
       }
 
       .wmnds-travel-update__disruption-text {
-        display: none;
         padding-top: $size-sm;
+
+        &[data-collapse="true"] {
+          display: none;
+        }
       }
     }
 

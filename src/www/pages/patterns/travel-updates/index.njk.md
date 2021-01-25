@@ -71,7 +71,12 @@
           id: "personal-example",
           personalView: true
         })
-    ])
+    ], {
+      componentPath: "wmnds/patterns/travel-updates/",
+      njk: false,
+      js: true,
+      iframe: true
+    })
 }}
 
 {% markdown %}

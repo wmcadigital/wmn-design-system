@@ -122,17 +122,18 @@
         <div class="wmnds-travel-update wmnds-travel-update--personal{{editViewClass}}">
             {# Show toggle if not in edit view #}
             {% if isEditView === false %}
-            <!-- Checkbox for toggling disruption details on mobile (w/ css) -->
-            <input type="checkbox" id="{{id}}-toggle-{{update.mode}}" name="{{id}}-toggle-{{update.mode}}" class="wmnds-travel-update__disruption-collapse-toggle">
-            <label for="{{id}}-toggle-{{update.mode}}" class="wmnds-travel-update__disruption-collapse-btn">
+            
+            <div for="{{id}}-toggle-{{update.mode}}" class="wmnds-travel-update__disruption-title">
                 <h3 class="wmnds-m-none">{{update.title}}</h3>
-                {{
-                    wmndsIcon({
-                        icon: "general-chevron-right",
-                        title: "Toggle details"
-                    })
-                }}
-            </label>
+                <button class="wmnds-travel-update__disruption-collapse-toggle" data-collapse-all="true">
+                    {{
+                        wmndsIcon({
+                            icon: "general-chevron-right",
+                            title: "Toggle details"
+                        })
+                    }}
+                </button>
+            </div>
             {# Else just show the title #}
             {% else %}
             <h3 class="wmnds-m-b-md">{{update.title}}</h3>
@@ -142,15 +143,17 @@
             {% for disruption in update.disruptions %}
             <div class="wmnds-travel-update__disruption">
                 {# Display disruption indicator #}
-                {{
-                    mediumDisruption({
-                        iconLeft: "modes-isolated-" + update.mode,
-                        iconRight: null if isEditView else disruption.statusIcon,
-                        contentText: disruption.service,
-                        capitalize: true if disruption.capitalize else false,
-                        classes: null if isEditView else disruption.severityClass
-                    })
-                }}
+                <button class="wmnds-travel-update__disruption-indicator-btn" aria-expanded="false">
+                    {{
+                        mediumDisruption({
+                            iconLeft: "modes-isolated-" + update.mode,
+                            iconRight: null if isEditView else disruption.statusIcon,
+                            contentText: disruption.service,
+                            capitalize: true if disruption.capitalize else false,
+                            classes: null if isEditView else disruption.severityClass
+                        })
+                    }}
+                </button>
 
                 {% if isEditView === false %}
                 {# Show description and status text/link #}
