@@ -10,17 +10,21 @@ const travelUpdatesWidgetJs = () => {
         const sectionToggleBtn = section.querySelector(
           '.wmnds-travel-update__disruption-detail-toggle'
         );
-        // All clickable disruption indicators
+        // Get clickable disruption indicators
         const detailToggleBtn = section.querySelectorAll(
           '.wmnds-travel-update__disruption-indicator-btn'
         );
+        // Variable to control whether the whole section is expanded or not
         let sectionExpanded = false;
+        // Toggle detail state
         const toggleDetail = (btn, state) => {
           btn.setAttribute('aria-expanded', state);
         };
+        // Toggle chevron icon state
         const toggleIcon = state => {
           sectionToggleBtn.dataset.showDetails = state;
         };
+        // Toggle section state
         const toggleSection = state => {
           sectionExpanded = state || !sectionExpanded;
           toggleIcon(sectionExpanded);
@@ -33,18 +37,21 @@ const travelUpdatesWidgetJs = () => {
             '.wmnds-travel-update__disruption-indicator-btn[aria-expanded="true"]'
           ) && true;
 
+        // Toggle whole section on click
         sectionToggleBtn.addEventListener('click', () => {
           toggleSection(!sectionExpanded);
         });
 
         detailToggleBtn.forEach(btn => {
           btn.addEventListener('click', () => {
+            // Toggle individual detail on click
             if (btn.getAttribute('aria-expanded') === 'false') {
               toggleDetail(btn, true);
             } else {
               toggleDetail(btn, false);
             }
 
+            // Set section icon state according to whether there are expanded details left or not
             if (isSectionExpanded()) {
               sectionExpanded = true;
               toggleIcon(sectionExpanded);
