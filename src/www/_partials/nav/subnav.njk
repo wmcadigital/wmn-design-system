@@ -1,18 +1,41 @@
 <ul class="wmnds-website-subnav">
   {# Foreach navItems #}
   {% for navItem in navItems %}
-  {# If the name is equal to var #}
-  {% if (navItem.name | lower) == ((section if section else "Components") |lower) %}
-  {# If no section has been set then default to Components node #}
-  {% for sectionItem in navItem.subnavItems | sort(attribute='name') %}
+    {# If the name is equal to var #}
+    {% if (navItem.name | lower) == ((section if section else "Components") |lower) %}
+      {% for sectionItem in navItem.subnavItems %}
+        {% if sectionItem.subnavItems %}
+          <li>
+            <h4>{{ sectionItem.name }}</h4>
+            <ul class="wmnds-website-subnav">
+            {# If section has child items #}
+            {# If no section has been set then default to Components node #}
+              {% for sectionSubItem in sectionItem.subnavItems | sort(attribute='name')  %}
+              {# Set auto generated href string for fallback - ignore 2nd level nav name if it is unlinked #}
+              {% set _href = "/" + navItem.name + "/" + sectionSubItem.name + "/" if sectionItem.unlinked else "/" + navItem.name + "/" + sectionItem.name + "/" + sectionSubItem.name + "/" %}
+              {# Set href if it is set else fallback to auto generated link #}
+              {% set _url = sectionSubItem.href if sectionSubItem.href else _href | lower | replace(" ", "-") %}
+              <li>
+                <a class="wmnds-col-1 wmnds-link"
+                  href="{{ _url }}">{{ sectionSubItem.name }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </li>
+          {# Show hr if this isn't the last item #}
+          {% if loop.last === false %}<hr class="wmnds-col-1 wmnds-col-sm-3-4">{% endif %}
+        {% else %}
+        {# Else just do one level #}
+          {% set _href = "/" + navItem.name + "/" + sectionItem.name %}
+          {% set _url = sectionItem.href if sectionItem.href else _href | lower | replace(" ", "-") %}
 
-  {% set endUrl = sectionItem.url if sectionItem.url else sectionItem.name | lower | replace(" ", "-") %}
+          <li>
+            <a class="wmnds-col-1 wmnds-link"
+              href="{{ _url }}">{{ sectionItem.name }}</a>
+          </li>
 
-  <li>
-    <a class="wmnds-col-1 wmnds-link"
-      href="/{{ navItem.name | lower | replace(" ", "-") }}/{{endUrl}}/">{{ sectionItem.name }}</a>
-  </li>
-  {% endfor %}
-  {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 </ul>

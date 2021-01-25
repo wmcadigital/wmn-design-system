@@ -19,16 +19,20 @@
           "unlinked": true,
           "subnavItems": [
             {
-              "name": "Prototype Kit"
+              "name": "Prototype Kit",
+              "href": "/docs/get-started/prototype-kit/"
             },
             {
-              "name": "Production"
+              "name": "Production",
+              "href": "/docs/get-started/production"
             },
             {
-              "name": "Mobile application"
+              "name": "Mobile application",
+              "href": "/docs/get-started/mobile-application/"
             },
             {
-              "name": "Design"
+              "name": "Design",
+              "href": "/docs/get-started/design/"
             }
           ]
         },
@@ -38,7 +42,8 @@
           "unlinked": true,
           "subnavItems": [
             {
-              "name": "Using the design system"
+              "name": "Using the design system",
+              "href": "/docs/get-started/using-the-design-system/"
             }
           ]
         },
@@ -48,7 +53,8 @@
           "unlinked": true,
           "subnavItems": [
             {
-              "name": "User research"
+              "name": "User research",
+              "href": "/user-research/"
             },
             {
               "name": "Releases"
