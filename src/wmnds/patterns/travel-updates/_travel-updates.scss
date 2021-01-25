@@ -105,6 +105,10 @@
 
       .wmnds-travel-update__disruption {
         display: block;
+
+        &.is-expanded {
+          flex: 0 0 100%;
+        }
       }
 
       .wmnds-travel-update__disruption-indicator-btn {

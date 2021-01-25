@@ -47,8 +47,12 @@ const travelUpdatesWidgetJs = () => {
             // Toggle individual detail on click
             if (btn.getAttribute('aria-expanded') === 'false') {
               toggleDetail(btn, true);
+              // Add expanded class to btn container
+              btn.parentNode.classList.add('is-expanded');
             } else {
               toggleDetail(btn, false);
+              // Remove expanded class from btn container
+              btn.parentNode.classList.remove('is-expanded');
             }
 
             // Set section icon state according to whether there are expanded details left or not
