@@ -6,60 +6,52 @@
         {
           "name": "Installation",
           "icon": "general-caret-down",
-          "href": "/docs/get-started/",
+          "unlinked": true,
           "subnavItems": [
             {
-              "name": "Get started",
-              "href": "/docs/get-started"
+              "name": "Get started"
             }
           ]
         },
         {
           "name": "Setup Guides",
           "icon": "general-caret-down",
-          "href": "/docs/get-started/",
+          "unlinked": true,
           "subnavItems": [
             {
-              "name": "Prototype Kit",
-              "href": "/docs/get-started/prototype-kit/"
+              "name": "Prototype Kit"
             },
             {
-              "name": "Production",
-              "href": "/docs/get-started/production/"
+              "name": "Production"
             },
             {
-              "name": "Mobile application",
-              "href": "/docs/get-started/mobile-application/"
+              "name": "Mobile application"
             },
             {
-              "name": "Design",
-              "href": "/docs/get-started/design/"
+              "name": "Design"
             }
           ]
         },
         {
           "name": "Usage",
           "icon": "general-caret-down",
-          "href": "/docs/get-started/",
+          "unlinked": true,
           "subnavItems": [
             {
-              "name": "Using the design system",
-              "href": "/docs/get-started/using-the-design-system/"
+              "name": "Using the design system"
             }
           ]
         },
         {
           "name": "Other",
           "icon": "general-caret-down",
-          "href": "/docs/get-started/",
+          "unlinked": true,
           "subnavItems": [
             {
-              "name": "User research",
-              "href": "/user-research/"
+              "name": "User research"
             },
             {
-              "name": "Releases",
-              "href": "/docs/releases/"
+              "name": "Releases"
             }
           ]
         }
@@ -102,6 +94,7 @@
       "subnavItems": [
         {
           "name": "General",
+          "unlinked": true,
           "icon": "general-caret-down",
           "subnavItems": [
             {
@@ -156,48 +149,38 @@
         },
         {
           "name": "Form elements",
-          "link": "#",
+          "unlinked": true,
           "icon": "general-caret-down",
           "subnavItems": [
             {
-              "name": "Checkboxes",
-              "link": "/components/checkboxes"
+              "name": "Checkboxes"
             },
             {
-              "name": "Date Input",
-              "link": "/components/date-input"
+              "name": "Date Input"
             },
             {
-              "name": "Dropdown",
-              "link": "/components/dropdown"
+              "name": "Dropdown"
             },
             {
-              "name": "File upload",
-              "link": "/components/file-upload"
+              "name": "File upload"
             },
             {
-              "name": "Form label",
-              "link": "/components/form-label"
+              "name": "Form label"
             },
             {
-              "name": "Progress indicator",
-              "link": "/components/progress-indicator"
+              "name": "Progress indicator"
             },
             {
-              "name": "Question",
-              "link": "/components/question"
+              "name": "Question"
             },
             {
-              "name": "Radios",
-              "link": "/components/radios"
+              "name": "Radios"
             },
             {
-              "name": "Textarea",
-              "link": "/components/textarea"
+              "name": "Textarea"
             },
             {
-              "name": "Text Input",
-              "link": "/components/text-input"
+              "name": "Text Input"
             }
           ]
         }
