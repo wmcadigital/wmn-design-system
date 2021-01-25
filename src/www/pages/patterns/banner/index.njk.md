@@ -164,8 +164,7 @@
 {{
   compExample([
     wmndsPageBanner({
-      logo: "/img/logos/WM Bus/Landscape/White.png",
-      logoAltText: "West Midlands Bus"
+      mode: "bus"
     })
   ], {
     componentPath: "wmnds/patterns/page-banner/",

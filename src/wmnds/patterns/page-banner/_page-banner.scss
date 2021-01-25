@@ -1,6 +1,11 @@
 .wmnds-page-banner {
   position: relative;
   color: $white;
+  background-color: get-color(primary);
+
+  .wmnds-page-banner__svg-background {
+    fill: get-color(primary);
+  }
 
   &--bus {
     background-color: get-color(bus);
@@ -31,6 +36,22 @@
 
     .wmnds-page-banner__svg-background {
       fill: get-color(roads);
+    }
+  }
+
+  &--walk {
+    background-color: get-color(susTravel);
+
+    .wmnds-page-banner__svg-background {
+      fill: get-color(susTravel);
+    }
+  }
+
+  &--cycle {
+    background-color: get-color(susTravel);
+
+    .wmnds-page-banner__svg-background {
+      fill: get-color(susTravel);
     }
   }
 

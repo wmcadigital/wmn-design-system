@@ -3,12 +3,14 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% set title = params.title if params.title else "Buses in the West Midlands" %}
 {% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
-{% set mode = params.mode if params.mode else "bus" %}
+{% set mode = params.mode if params.mode %}
+{% set _modeClass = " wmnds-page-banner--" + mode if mode %}
+
 {% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
 {% set logo = params.logo if params.logo else "/img/logos/WM Bus/Landscape/White.png" %}
 {% set logoAlt = params.logoAltText if params.logoAltText else "West Midlands Bus" %}
 
-<div class="wmnds-page-banner wmnds-page-banner--{{mode}}">
+<div class="wmnds-page-banner{{_modeClass}}">
   <div class="wmnds-page-banner__container">
     <div class="wmnds-page-banner__content">
       <h2>{{ title }}</h2>
@@ -18,11 +20,13 @@
         <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
       {% endif %}
       <div class="wmnds-page-banner__logos">
-        {{
-          wmndsIcon({
-            icon: "modes-bg-" + mode
-          })
-        }}
+        {% if mode %}
+          {{
+            wmndsIcon({
+              icon: "modes-bg-" + mode
+            })
+          }}
+        {% endif %}
         {% if logo %}
         <img src="{{logo}}" alt="{{logoAlt}}">
         {% endif %}
