@@ -123,9 +123,9 @@
             {# Show toggle if not in edit view #}
             {% if isEditView === false %}
             
-            <div for="{{id}}-toggle-{{update.mode}}" class="wmnds-travel-update__disruption-title">
+            <div class="wmnds-travel-update__disruption-title">
                 <h3 class="wmnds-m-none">{{update.title}}</h3>
-                <button class="wmnds-travel-update__disruption-collapse-toggle" data-collapse-all="true">
+                <button class="wmnds-travel-update__disruption-detail-toggle" data-show-details="false">
                     {{
                         wmndsIcon({
                             icon: "general-chevron-right",

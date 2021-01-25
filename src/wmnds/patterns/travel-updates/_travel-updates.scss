@@ -41,7 +41,7 @@
       align-items: center;
       flex: 0 0 100%;
 
-      .wmnds-travel-update__disruption-collapse-toggle {
+      .wmnds-travel-update__disruption-detail-toggle {
         padding: 0;
         border: 0;
         background: none;
@@ -52,6 +52,12 @@
           height: $size-lg;
           transform: rotate(-90deg);
           fill: get-color(primary);
+        }
+
+        &[data-show-details="false"] {
+          svg {
+            transform: rotate(90deg);
+          }
         }
       }
     }
@@ -90,7 +96,7 @@
       justify-content: flex-start;
       align-items: flex-start;
 
-      .wmnds-travel-update__disruption-collapse-toggle {
+      .wmnds-travel-update__disruption-detail-toggle {
         // Rotate chevron icon if toggle is checked
         &[data-collapse-all="true"] svg {
           transform: rotate(90deg);
@@ -101,18 +107,21 @@
         display: block;
       }
 
-      .wmnds-travel-update__disruption-text {
-        padding-top: $size-sm;
+      .wmnds-travel-update__disruption-indicator-btn {
+        .wmnds-travel-update__disruption-text {
+          padding-top: $size-sm;
+        }
 
-        &[data-collapse="true"] {
-          display: none;
+        &[aria-expanded="false"] {
+          & ~ .wmnds-travel-update__disruption-text {
+            display: none;
+          }
         }
       }
     }
 
     @media screen and (min-width: $breakpoint-sm) {
-      .wmnds-travel-update__disruption-collapse-toggle,
-      .wmnds-travel-update__disruption-collapse-btn svg {
+      .wmnds-travel-update__disruption-detail-toggle {
         display: none;
       }
     }
