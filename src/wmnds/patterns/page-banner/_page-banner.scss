@@ -79,30 +79,12 @@
   }
 
   &__content {
-    padding: $size-lg $size-md;
-  }
-
-  @media screen and (min-width: $breakpoint-sm) {
-    &__container {
-      max-width: $breakpoint-sm;
-      margin: 0 auto;
-    }
-
-    &__content {
-      padding: $size-lg;
-    }
+    padding: $size-lg 0;
   }
 
   @media screen and (min-width: $breakpoint-md) {
-    &__container {
-      position: relative;
-      z-index: 5;
-      max-width: $breakpoint-md;
-    }
-
     &__content {
       width: 50%;
-      padding: $size-lg $size-md;
     }
 
     &__image {
@@ -125,11 +107,6 @@
       top: 0;
       left: 0;
       height: 100%;
-    }
-  }
-  @media screen and (min-width: $breakpoint-xl) {
-    &__container {
-      max-width: $breakpoint-lg;
     }
   }
 }
