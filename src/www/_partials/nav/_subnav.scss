@@ -1,4 +1,13 @@
 .wmnds-website-subnav {
+  display: none;
   padding: 0;
   list-style: none;
+
+  hr {
+    margin: $size-md 0 $size-lg;
+  }
+
+  @media all and (min-width: $breakpoint-lg) {
+    display: block;
+  }
 }
