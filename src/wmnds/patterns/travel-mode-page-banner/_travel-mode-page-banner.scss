@@ -1,0 +1,112 @@
+.wmnds-travel-mode-page-banner {
+  position: relative;
+  min-height: 250px;
+  color: $white;
+  background-color: get-color(primary);
+
+  .wmnds-travel-mode-page-banner__svg-background {
+    fill: get-color(primary);
+  }
+
+  &--bus {
+    background-color: get-color(bus);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(bus);
+    }
+  }
+
+  &--rail {
+    background-color: get-color(railway);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(railway);
+    }
+  }
+
+  &--metro {
+    background-color: get-color(metro);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(metro);
+    }
+  }
+
+  &--roads {
+    background-color: get-color(roads);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(roads);
+    }
+  }
+
+  &--walk {
+    background-color: get-color(susTravel);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(susTravel);
+    }
+  }
+
+  &--cycle {
+    background-color: get-color(susTravel);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(susTravel);
+    }
+  }
+
+  h2 {
+    color: currentColor;
+  }
+
+  &__logos {
+    display: flex;
+
+    svg {
+      width: 3rem;
+      fill: currentColor;
+    }
+
+    svg,
+    img {
+      height: 3rem;
+
+      &:not(:last-child) {
+        margin-right: $size-lg;
+      }
+    }
+  }
+
+  &__content {
+    padding: $size-lg 0;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    &__content {
+      width: 50%;
+    }
+
+    &__image {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      background-image: url("/img/component-images/banner/bus-banner-img.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+
+    &__svg-background {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+}
