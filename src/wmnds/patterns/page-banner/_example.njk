@@ -1,7 +1,7 @@
 {% raw %}
-{% from "wmnds/components/page-banner/_page-banner.njk" import wmndsTravelModeBanner %}
+{% from "wmnds/patterns/page-banner/_page-banner.njk" import wmndsPageBanner %}
 
-{{ 
+{{
   wmndsPageBanner({
     title: "Buses in the West Midlands",
     contentHTML: "<p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>",
@@ -9,6 +9,6 @@
     mode: "bus",
     logo: "/img/logos/WM Bus/Landscape/White.png",
     logoAltText: "West Midlands Bus"
-  }) 
+  })
 }}
 {% endraw %}
