@@ -1,24 +1,24 @@
-{% macro wmndsPageBanner(params) %}
+{% macro wmndsTravelModePageBanner(params) %}
 
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% set mode = params.mode if params.mode %} {# Fallback for mode is set in the if/else statment below #}
 
 {# Set the logo and alt text to the correct mode based on mode selected #}
-{% if mode == "cycle" %}
-  {% set _logoFolder = "WM Cycle" %}
-  {% set _logoAlt = "West Midlands Cycle" %}
-{% elif mode == "walk" %}
-  {% set _logoFolder = "WM Walking" %}
-  {% set _logoAlt = "West Midlands Walking" %}
-{% elif mode == "roads" %}
-  {% set _logoFolder = "WM Roads" %}
-  {% set _logoAlt = "West Midlands Roads" %}
+{% if mode == "rail" %}
+  {% set _logoFolder = "WM Railway" %}
+  {% set _logoAlt = "West Midlands Railway" %}
 {% elif mode == "metro" %}
   {% set _logoFolder = "WM Metro" %}
   {% set _logoAlt = "West Midlands Metro" %}
-{% elif mode == "rail" %}
-  {% set _logoFolder = "WM Railway" %}
-  {% set _logoAlt = "West Midlands Railway" %}
+{% elif mode == "roads" %}
+  {% set _logoFolder = "WM Roads" %}
+  {% set _logoAlt = "West Midlands Roads" %}
+{% elif mode == "walk" %}
+  {% set _logoFolder = "WM Walking" %}
+  {% set _logoAlt = "West Midlands Walking" %}
+{% elif mode == "cycle" %}
+  {% set _logoFolder = "WM Cycle" %}
+  {% set _logoAlt = "West Midlands Cycle" %}
 {% else %}
   {# If no mode is selected(or is bus), then default to bus #}
   {% set _logoFolder = "WM Bus" %}

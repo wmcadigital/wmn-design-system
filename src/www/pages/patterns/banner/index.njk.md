@@ -159,17 +159,17 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/patterns/page-banner/_page-banner.njk" import wmndsPageBanner %}
+{% from "wmnds/patterns/travel-mode-page-banner/_travel-mode-page-banner.njk" import wmndsTravelModePageBanner %}
 
 {{
   compExample([
-    wmndsPageBanner({
+    wmndsTravelModePageBanner({
       mode: "bus"
     })
   ], {
-    componentPath: "wmnds/patterns/page-banner/",
+    componentPath: "wmnds/patterns/travel-mode-page-banner/",
     njk: true,
-    njkProps: wmndsPageBannerProps,
+    njkProps: wmndsTravelModePageBannerProps,
     js: false,
     iframe: true
   })
