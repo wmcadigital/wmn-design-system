@@ -1,14 +1,37 @@
 {% macro wmndsPageBanner(params) %}
 
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
-{% set title = params.title if params.title else "Buses in the West Midlands" %}
-{% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
-{% set mode = params.mode if params.mode %}
-{% set _modeClass = " wmnds-page-banner--" + mode if mode %}
+{% set mode = params.mode if params.mode %} {# Fallback for mode is set in the if/else statment below #}
 
+{# Set the logo and alt text to the correct mode based on mode selected #}
+{% if mode == "cycle" %}
+  {% set _logoFolder = "WM Cycle" %}
+  {% set _logoAlt = "West Midlands Cycle" %}
+{% elif mode == "walk" %}
+  {% set _logoFolder = "WM Walking" %}
+  {% set _logoAlt = "West Midlands Walking" %}
+{% elif mode == "roads" %}
+  {% set _logoFolder = "WM Roads" %}
+  {% set _logoAlt = "West Midlands Roads" %}
+{% elif mode == "metro" %}
+  {% set _logoFolder = "WM Metro" %}
+  {% set _logoAlt = "West Midlands Metro" %}
+{% elif mode == "rail" %}
+  {% set _logoFolder = "WM Railway" %}
+  {% set _logoAlt = "West Midlands Railway" %}
+{% else %}
+  {# If no mode is selected(or is bus), then default to bus #}
+  {% set _logoFolder = "WM Bus" %}
+  {% set _logoAlt = "West Midlands Bus" %}
+  {% set mode = "bus" %} {# Fallback for mode #}
+{% endif %}
+
+{# These variables are set after the if statement to make sure we get the fallback mode: bus if the user hasn't selected a mode or misstyped the mode param #}
+{% set _logo = "/img/logos/" + _logoFolder + "/Landscape/White.png" %} {# Set logo to the correct one based on if statements above #}
+{% set title = params.title if params.title else mode  | capitalize + " in the West Midlands" %} {# Set title else fallback to "mode in West Midlands") #}
+{% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
 {% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
-{% set logo = params.logo if params.logo else "/img/logos/WM Bus/Landscape/White.png" %}
-{% set logoAlt = params.logoAltText if params.logoAltText else "West Midlands Bus" %}
+{% set _modeClass = " wmnds-page-banner--" + mode if mode %} {# Set correct modifier class #}
 
 <div class="wmnds-page-banner{{_modeClass}}">
   <div class="wmnds-page-banner__container">
@@ -27,8 +50,8 @@
             })
           }}
         {% endif %}
-        {% if logo %}
-        <img src="{{logo}}" alt="{{logoAlt}}">
+        {% if _logo %}
+          <img src="{{_logo}}" alt="{{_logoAlt}}">
         {% endif %}
       </div>
 
