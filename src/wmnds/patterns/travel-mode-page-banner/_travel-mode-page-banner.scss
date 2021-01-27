@@ -1,17 +1,17 @@
-.wmnds-page-banner {
+.wmnds-travel-mode-page-banner {
   position: relative;
   min-height: 250px;
   color: $white;
   background-color: get-color(primary);
 
-  .wmnds-page-banner__svg-background {
+  .wmnds-travel-mode-page-banner__svg-background {
     fill: get-color(primary);
   }
 
   &--bus {
     background-color: get-color(bus);
 
-    .wmnds-page-banner__svg-background {
+    .wmnds-travel-mode-page-banner__svg-background {
       fill: get-color(bus);
     }
   }
@@ -19,7 +19,7 @@
   &--rail {
     background-color: get-color(railway);
 
-    .wmnds-page-banner__svg-background {
+    .wmnds-travel-mode-page-banner__svg-background {
       fill: get-color(railway);
     }
   }
@@ -27,7 +27,7 @@
   &--metro {
     background-color: get-color(metro);
 
-    .wmnds-page-banner__svg-background {
+    .wmnds-travel-mode-page-banner__svg-background {
       fill: get-color(metro);
     }
   }
@@ -35,7 +35,7 @@
   &--roads {
     background-color: get-color(roads);
 
-    .wmnds-page-banner__svg-background {
+    .wmnds-travel-mode-page-banner__svg-background {
       fill: get-color(roads);
     }
   }
@@ -43,7 +43,7 @@
   &--walk {
     background-color: get-color(susTravel);
 
-    .wmnds-page-banner__svg-background {
+    .wmnds-travel-mode-page-banner__svg-background {
       fill: get-color(susTravel);
     }
   }
@@ -51,7 +51,7 @@
   &--cycle {
     background-color: get-color(susTravel);
 
-    .wmnds-page-banner__svg-background {
+    .wmnds-travel-mode-page-banner__svg-background {
       fill: get-color(susTravel);
     }
   }
