@@ -1,5 +1,6 @@
 .wmnds-page-banner {
   position: relative;
+  min-height: 250px;
   color: $white;
   background-color: get-color(primary);
 
@@ -129,19 +130,6 @@
   @media screen and (min-width: $breakpoint-xl) {
     &__container {
       max-width: $breakpoint-lg;
-    }
-
-    &__content {
-      width: 60%;
-    }
-
-    &__image {
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      right: 0;
-      width: 40%;
-      height: 100%;
     }
   }
 }
