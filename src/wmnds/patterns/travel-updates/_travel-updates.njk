@@ -122,7 +122,7 @@
         <div class="wmnds-travel-update wmnds-travel-update--personal{{editViewClass}}">
             {# Show toggle if not in edit view #}
             {% if isEditView === false %}
-            
+
             <div class="wmnds-travel-update__disruption-title">
                 <h3 class="wmnds-m-none">{{update.title}}</h3>
                 <button class="wmnds-travel-update__disruption-detail-toggle" data-show-details="false">
@@ -166,7 +166,9 @@
                     {% else %}
                     {{
                         wmndsLink({
-                            contentText: disruption.status
+                            contentText: disruption.status,
+                            link: "//disruptions.wmnetwork.co.uk/",
+                            linkTarget: "_blank"
                         })
                     }}
                     {% endif %}
@@ -240,7 +242,9 @@
                             <div>
                                 {{
                                     wmndsLink({
-                                        contentText: text
+                                        contentText: text,
+                                        link: "//disruptions.wmnetwork.co.uk/",
+                                        linkTarget: "_blank"
                                     })
                                 }}
                             </div>
