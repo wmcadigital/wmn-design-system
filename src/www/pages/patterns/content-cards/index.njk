@@ -41,35 +41,6 @@
         wmndsContentCardMap()
     ])
 }}
-
-<br><br>
-{# Travel update card #}
-<h2>Travel update card</h2>
-{# What #}
-<h3>What is it?</h3>
-<ul>
-    <li>A card with disruption indicator components in, which show the live status of a bus, train or tram route and roads.</li>
-</ul>
-{# When to #}
-<h3>When to use it?</h3>
-<ul>
-    <li>When the live status of a mode of transport is useful to the content. For example, showing the live status of train lines next to content about trains.</li>
-</ul>
-{# When not to #}
-<h3>When not to use it?</h3>
-<ul>
-    <li>When the live status is irrelevant to the content. Users can find this information on the homepage.</li>
-</ul>
-
-{# Set up travel updates #}
-{% from "wmnds/patterns/content-cards/travel-updates/_travel-updates.njk" import wmndsContentCardTravelUpdates %}
-
-{{
-    compExample([
-        wmndsContentCardTravelUpdates()
-    ])
-}}
-
 <br><br>
 {# Button card #}
 <h2>Button card</h2>
