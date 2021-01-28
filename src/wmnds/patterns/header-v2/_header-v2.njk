@@ -91,7 +91,7 @@
                       <{{_tag}}{{_attributes | safe}} class="wmnds-mega-menu__sub-menu-link{{_classes}}">
                         {% if subnavItem.icon -%}
                         <!-- Show submenu (level 2) item icon if specified -->
-                        <svg class="wmnds-mega-menu__sub-menu-link-icon"> 
+                        <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
                         </svg>
                         {% endif -%}
@@ -198,7 +198,7 @@
     -}}
     {%- endif -%}
 
-    {%- if params.breadcrumbs and params.breadcrumbs.section != 'Home' %}
+    {%- if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
 
     <!-- Breadcrumbs -->
     {{
