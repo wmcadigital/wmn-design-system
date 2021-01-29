@@ -14,6 +14,7 @@
   "closed",
   "cross",
   "current-location",
+  "disabled",
   "electric",
   "expand",
   "favourite",
