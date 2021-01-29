@@ -13,3 +13,4 @@ debug.log
 # Local Netlify folder
 .netlify
 .DS_Store
+.eslint.cache
