@@ -3,7 +3,7 @@
     {
       "name": "contentText",
       "type": "string",
-      "description": "<strong>Required.</strong> Text to describe the route name or number of the mode of transport."
+      "description": "Text to describe the route name or number of the mode of transport."
     },
     {
       "name": "iconRight",
@@ -24,6 +24,11 @@
       "name": "displayNarrow",
       "type": "boolean",
       "description": "If set to true, the badge will be displayed in the narrow style. Default value is false."
+    },
+    {
+      "name": "capitalize",
+      "type": "boolean",
+      "description": "If set to true, the badge text will display in a title text format rather than uppercase. Default value is false."
     },
     {
       "name": "classes",

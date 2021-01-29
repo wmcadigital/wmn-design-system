@@ -1,0 +1,284 @@
+{% macro wmndsContentCardTravelUpdates(params) %}
+{# Imports #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge as largeDisruption %}
+{% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as mediumDisruption %}
+{% from "wmnds/components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall as smallDisruption %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
+{# Set #}
+{% set id = params.id if params.id else "travel-updates" %}
+{% set isPersonalView = params.personalView if params.personalView else false %}
+{% set isEditView = params.editView if params.editView else false %}
+{% set editViewClass = " wmnds-travel-update--edit" if params.editView %}
+{# Set data for default travel updates #}
+{% set travelUpdates = [
+    {
+        mode: "bus",
+        title: "Bus",
+        severityClass: "wmnds-disruption-indicator-medium--severe",
+        statusIcon: "general-warning-triangle",
+        disruptions: [
+            "1 severe disruption",
+            "2 major disruptions",
+            "8 minor disruptions"
+        ]
+    },
+    {
+        mode: "rail",
+        title: "Train",
+        severityClass: "wmnds-disruption-indicator-medium--success",
+        statusIcon: "general-success",
+        disruptions: [
+            "Good service"
+        ]
+    },
+    {
+        mode: "metro",
+        title: "Tram",
+        severityClass: "wmnds-disruption-indicator-medium--error",
+        statusIcon: "general-warning-triangle",
+        disruptions: [
+            "Major disruption"
+        ]
+    },
+    {
+        mode: "roads",
+        title: "Roads",
+        severityClass: "wmnds-disruption-indicator-medium--warning",
+        statusIcon: "general-warning-circle",
+        disruptions: [
+            "3 minor disruptions"
+        ]
+    }
+] %}
+{# Set data for personal travel updates #}
+{% set myTravelUpdates = [
+    {
+        mode: "bus",
+        title: "Bus",
+        disruptions: [
+            {
+                service: "16",
+                description: "Hamstead - Birmingham via Hockley",
+                severityClass: "wmnds-disruption-indicator-medium--warning",
+                statusIcon: "general-warning-circle",
+                status: "Minor disruption"
+            },
+            {
+                service: "S16",
+                description: "Solihull - Yardley via Lyndon",
+                severityClass: "wmnds-disruption-indicator-medium--success",
+                statusIcon: "general-success",
+                status: "Good service"
+            }
+        ]
+    },
+    {
+        mode: "rail",
+        title: "Train",
+        disruptions: [
+            {
+                service: "Cross City Line",
+                severityClass: "wmnds-disruption-indicator-medium--warning",
+                statusIcon: "general-warning-circle",
+                capitalize: true,
+                status: "Minor disruption"
+            },
+            {
+                service: "Hereford via Worcester",
+                severityClass: "wmnds-disruption-indicator-medium--success",
+                statusIcon: "general-success",
+                capitalize: true,
+                status: "Good service"
+            }
+        ]
+    },
+    {
+        mode: "metro",
+        title: "Tram",
+        disruptions: [
+            {
+                service: "mm1",
+                description: "Grand Central - St Chad’s",
+                severityClass: "wmnds-disruption-indicator-medium--error",
+                statusIcon: "general-warning-triangle",
+                status: "Major disruption"
+            }
+        ]
+    }
+] %}
+
+{# Start travel updates content card #}
+{% call wmndsContentCard({ classes: "wmnds-content-card--travel-updates"}) %}
+    <div class="wmnds-p-sm wmnds-col-1">
+    {# Show personal style if personal or edit view is true #}
+    {% if isPersonalView or isEditView  %}
+        <h2 class="wmnds-content-card__title">My travel updates</h2>
+        {# Loop through personal travel updates #}
+        {% for update in myTravelUpdates %}
+        <div class="wmnds-travel-update wmnds-travel-update--personal{{editViewClass}}">
+            {# Show toggle if not in edit view #}
+            {% if isEditView === false %}
+
+            <div class="wmnds-travel-update__disruption-title">
+                <h3 class="wmnds-m-none">{{update.title}}</h3>
+                <button class="wmnds-travel-update__disruption-detail-toggle" data-show-details="false">
+                    {{
+                        wmndsIcon({
+                            icon: "general-chevron-right",
+                            title: "Toggle details"
+                        })
+                    }}
+                </button>
+            </div>
+            {# Else just show the title #}
+            {% else %}
+            <h3 class="wmnds-m-b-md">{{update.title}}</h3>
+            {% endif %}
+
+            {# Loop through disruptions #}
+            {% for disruption in update.disruptions %}
+            <div class="wmnds-travel-update__disruption">
+                {# Display disruption indicator #}
+                <button class="wmnds-travel-update__disruption-indicator-btn" aria-expanded="false">
+                    {{
+                        mediumDisruption({
+                            iconLeft: "modes-isolated-" + update.mode,
+                            iconRight: null if isEditView else disruption.statusIcon,
+                            contentText: disruption.service,
+                            capitalize: true if disruption.capitalize else false,
+                            classes: null if isEditView else disruption.severityClass
+                        })
+                    }}
+                </button>
+
+                {% if isEditView === false %}
+                {# Show description and status text/link #}
+                <div class="wmnds-travel-update__disruption-text">
+                    {% if disruption.description %}
+                    <strong>{{disruption.description}}</strong>
+                    {% endif %}
+                    {% if disruption.status === "Good service"%}
+                    <strong>{{disruption.status}}</strong>
+                    {% else %}
+                    {{
+                        wmndsLink({
+                            contentText: disruption.status,
+                            link: "//disruptions.wmnetwork.co.uk/",
+                            linkTarget: "_blank"
+                        })
+                    }}
+                    {% endif %}
+                </div>
+                {# Only show description text if it exists and in edit view #}
+                {% elif disruption.description %}
+                <div class="wmnds-travel-update__disruption-text">
+                    <strong>{{disruption.description}}</strong>
+                </div>
+                {% endif %}
+                {# Show delete button if in edit view #}
+                {% if isEditView %}
+                    <button class="wmnds-travel-update__disruption-delete">
+                        {{
+                            wmndsIcon({
+                                icon: "general-trash",
+                                title: "Delete service"
+                            })
+                        }}
+                    </button>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <hr>
+        {% endfor %}
+        <!-- Content card actions -->
+        <div class="wmnds-grid wmnds-grid--spacing-sm-2-lg wmnds-p-t-md">
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                {{
+                    wmndsButton({
+                        classes: "wmnds-btn--block wmnds-m-b-md",
+                        type: "mode",
+                        contentText: "Add a new service" if isEditView else "Edit your services",
+                        iconRight: "general-expand" if isEditView else null
+                    })
+                }}
+            </div>
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                {{
+                    wmndsButton({
+                        classes: "wmnds-btn--block",
+                        contentText: "Save changes" if isEditView else "View all updates",
+                        iconRight: null if isEditView else "general-chevron-right"
+                    })
+                }}
+            </div>
+        </div>
+        {# End personal/edit card #}
+    {% else %}
+    {# Else show default travel updates view #}
+        <h2 class="wmnds-content-card__title">Travel updates</h2>
+        {# Loop through updates data #}
+        {% for update in travelUpdates %}
+        <div class="wmnds-travel-update">
+            <div class="wmnds-travel-update__disruption">
+                {{
+                    mediumDisruption({
+                        iconLeft: "modes-isolated-" + update.mode,
+                        iconRight: update.statusIcon,
+                        classes: update.severityClass
+                    })
+                }}
+                <h3 class="wmnds-m-none">{{ update.title }}</h3>
+                <div class="wmnds-travel-update__disruption-text">
+                    {# Loop through and show status text/link #}
+                    {% for text in update.disruptions %}
+                        {% if text === "Good service"%}
+                            <strong>{{text}}</strong>
+                        {% else %}
+                            <div>
+                                {{
+                                    wmndsLink({
+                                        contentText: text,
+                                        link: "//disruptions.wmnetwork.co.uk/",
+                                        linkTarget: "_blank"
+                                    })
+                                }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        <!-- Content card actions -->
+        <div class="wmnds-grid wmnds-grid--spacing-sm-2-lg wmnds-p-t-md">
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                {{
+                    wmndsButton({
+                        classes: "wmnds-btn--block wmnds-m-b-md",
+                        type: "mode",
+                        contentText: "Add services",
+                        iconRight: "general-expand"
+                    })
+                }}
+            </div>
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                {{
+                    wmndsButton({
+                        classes: "wmnds-btn--block",
+                        contentText: "View all updates",
+                        iconRight: "general-chevron-right"
+                    })
+                }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endcall %}
+
+{% endmacro %}

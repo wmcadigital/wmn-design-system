@@ -1,6 +1,68 @@
 {
   "navItems": [
-    { "name": "Docs", "subnavItems": [{ "name": "Get started" }, { "name": "Releases" }] },
+    {
+      "name": "Docs",
+      "subnavItems": [
+        {
+          "name": "Installation",
+          "icon": "general-caret-down",
+          "unlinked": true,
+          "subnavItems": [
+            {
+              "name": "Get started"
+            }
+          ]
+        },
+        {
+          "name": "Setup Guides",
+          "icon": "general-caret-down",
+          "unlinked": true,
+          "subnavItems": [
+            {
+              "name": "Prototype Kit",
+              "href": "/docs/get-started/prototype-kit/"
+            },
+            {
+              "name": "Production",
+              "href": "/docs/get-started/production"
+            },
+            {
+              "name": "Mobile application",
+              "href": "/docs/get-started/mobile-application/"
+            },
+            {
+              "name": "Design",
+              "href": "/docs/get-started/design/"
+            }
+          ]
+        },
+        {
+          "name": "Usage",
+          "icon": "general-caret-down",
+          "unlinked": true,
+          "subnavItems": [
+            {
+              "name": "Using the design system",
+              "href": "/docs/get-started/using-the-design-system/"
+            }
+          ]
+        },
+        {
+          "name": "Other",
+          "icon": "general-caret-down",
+          "unlinked": true,
+          "subnavItems": [
+            {
+              "name": "User research",
+              "href": "/user-research/"
+            },
+            {
+              "name": "Releases"
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "Styles",
       "subnavItems": [
@@ -37,82 +99,96 @@
       "name": "Components",
       "subnavItems": [
         {
-          "name": "Accordion"
+          "name": "General",
+          "unlinked": true,
+          "icon": "general-caret-down",
+          "subnavItems": [
+            {
+              "name": "Accordion"
+            },
+            {
+              "name": "Breadcrumb"
+            },
+            {
+              "name": "Buttons"
+            },
+            {
+              "name": "Content card"
+            },
+            {
+              "name": "Content tiles"
+            },
+            {
+              "name": "Details"
+            },
+            {
+              "name": "Disruption indicators"
+            },
+            {
+              "name": "File download"
+            },
+            {
+              "name": "Inset text"
+            },
+            {
+              "name": "In-text step"
+            },
+            {
+              "name": "Links"
+            },
+            {
+              "name": "Loader"
+            },
+            {
+              "name": "Message"
+            },
+            {
+              "name": "Phase indicator"
+            },
+            {
+              "name": "Table"
+            },
+            {
+              "name": "Warning text"
+            }
+          ]
         },
         {
-          "name": "Breadcrumb"
-        },
-        {
-          "name": "Buttons"
-        },
-        {
-          "name": "Checkboxes"
-        },
-        {
-          "name": "Content card"
-        },
-        {
-          "name": "Content tiles"
-        },
-        {
-          "name": "Date Input"
-        },
-        {
-          "name": "Details"
-        },
-        {
-          "name": "Disruption indicators"
-        },
-        {
-          "name": "Dropdown"
-        },
-        {
-          "name": "File download"
-        },
-        {
-          "name": "File upload"
-        },
-        {
-          "name": "Form label"
-        },
-        {
-          "name": "Inset text"
-        },
-        {
-          "name": "In-text step"
-        },
-        {
-          "name": "Links"
-        },
-        {
-          "name": "Loader"
-        },
-        {
-          "name": "Message"
-        },
-        {
-          "name": "Phase indicator"
-        },
-        {
-          "name": "Progress indicator"
-        },
-        {
-          "name": "Radios"
-        },
-        {
-          "name": "Question"
-        },
-        {
-          "name": "Table"
-        },
-        {
-          "name": "Textarea"
-        },
-        {
-          "name": "Text Input"
-        },
-        {
-          "name": "Warning text"
+          "name": "Form elements",
+          "unlinked": true,
+          "icon": "general-caret-down",
+          "subnavItems": [
+            {
+              "name": "Checkboxes"
+            },
+            {
+              "name": "Date Input"
+            },
+            {
+              "name": "Dropdown"
+            },
+            {
+              "name": "File upload"
+            },
+            {
+              "name": "Form label"
+            },
+            {
+              "name": "Progress indicator"
+            },
+            {
+              "name": "Question"
+            },
+            {
+              "name": "Radios"
+            },
+            {
+              "name": "Textarea"
+            },
+            {
+              "name": "Text Input"
+            }
+          ]
         }
       ]
     },
@@ -142,6 +218,9 @@
         },
         {
           "name": "Header"
+        },
+        {
+          "name": "Travel updates"
         },
         {
           "name": "Question form"

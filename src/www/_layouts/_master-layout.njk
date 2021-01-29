@@ -32,6 +32,8 @@
 {% from "wmnds/components/form-elements/radios/_radios.njk"                                import wmndsRadios %}
 {% from "wmnds/components/form-elements/text-input/_text-input.njk"                        import wmndsTextInput %}
 {% from "wmnds/components/form-elements/textarea/_textarea.njk"                            import wmndsTextarea %}
+{# Patterns #}
+{% from "wmnds/patterns/travel-mode-page-banner/_travel-mode-page-banner.njk"              import wmndsTravelModePageBanner %}
 
 <!DOCTYPE html>
 <html lang="en-gb" class="wmnds-html">
@@ -58,12 +60,12 @@
         linkTopLevel: true,
         breadcrumbs: {
           section: section,
-          pageTitle: pageTitle
+          pageTitle: pageTitle,
+          hideBreadcrumb: hideBreadcrumb
         }
       })
     }}
     {# header #}
-
 
     {# summary #}
     {% block summary %}{% endblock %}

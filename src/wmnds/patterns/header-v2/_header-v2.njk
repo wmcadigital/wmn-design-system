@@ -77,23 +77,37 @@
                   <!-- Start submenu (level 2) -->
                   <ul class="wmnds-mega-menu__sub-menu">
                     {% for subnavItem in navItem.subnavItems -%}
+                    {% if subnavItem.unlinked %}
+                      {% set _tag = 'button' %}
+                      {% set _classes = " wmnds-btn wmnds-btn--link" %}
+                    {% else %}
+                      {% set _tag = 'a' %}
+                      {# Set href if specified, else set an auto generated href #}
+                      {% set _hrefSubnav = subnavItem.href if subnavItem.href else "/" + navItem.name + "/" + subnavItem.name  + "/"%}
+                      {# Set href attribute for link #}
+                      {% set _attributes = " href=\"" + _hrefSubnav | lower | replace(" ", "-") + "\"" if _hrefSubnav else "" %}
+                    {% endif %}
                     <li class="wmnds-mega-menu__sub-menu-item">
-                      <a href="/{{ navItem.name | lower | replace(" ", "-") }}/{{ subnavItem.name | lower | replace(" ", "-") }}/" class="wmnds-mega-menu__sub-menu-link">
+                      <{{_tag}}{{_attributes | safe}} class="wmnds-mega-menu__sub-menu-link{{_classes}}">
                         {% if subnavItem.icon -%}
                         <!-- Show submenu (level 2) item icon if specified -->
                         <svg class="wmnds-mega-menu__sub-menu-link-icon">
                           <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
                         </svg>
                         {% endif -%}
-                        {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</a>
+                        {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</{{_tag}}>
                         {%- if subnavItem.subnavItems %}
                         <!-- collapse button for mobile nav level 3 menu items -->
                       <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
                       <!-- Start submenu child (level 3) list -->
                       <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
-                        {% for subnavchildItem in subnavItem.subnavItems -%}
+                        {% for subnavChildItem in subnavItem.subnavItems -%}
+                        {# Set auto generated href string for fallback - ignore 2nd level nav name if it is unlinked #}
+                        {% set _hrefString = "/" + navItem.name + "/" + subnavChildItem.name + "/" if subnavItem.unlinked else "/" + navItem.name + "/" + subnavItem.name + "/" + subnavChildItem.name + "/" %}
+                        {# Set href if it is set else fallback to auto generated link #}
+                        {% set _hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else _hrefString | lower | replace(" ", "-") %}
                         <li class="wmnds-mega-menu__sub-menu-child-item">
-                          <a href="#" class="wmnds-mega-menu__sub-menu-child-link">{{subnavchildItem.name | capitalize}}</a>
+                          <a href="{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
                         </li>
                         {%- endfor %}
                       </ul>
@@ -184,7 +198,7 @@
     -}}
     {%- endif -%}
 
-    {%- if params.breadcrumbs and params.breadcrumbs.section != 'Home' %}
+    {%- if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
 
     <!-- Breadcrumbs -->
     {{

@@ -37,6 +37,10 @@
     padding: $size-xs;
   }
 
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
   &__icon {
     display: inline-block;
     width: 22px;
@@ -46,6 +50,11 @@
 
     &--left {
       margin-right: $size-sm;
+
+      & + .wmnds-disruption-indicator-medium__icon--right {
+        // kill left margin if right icon is directly after left icon
+        margin-left: 0;
+      }
     }
 
     &--right {
