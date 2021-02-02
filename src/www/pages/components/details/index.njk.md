@@ -38,8 +38,6 @@
 
     - Make sure you include the polyfill in the recommended JavaScript below as the <code class="wmnds-website-inline-code">{{ "<details>" }}</code> and <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> elements are not supported at IE11.
 
----
-
 ## Closed
 
 {% endmarkdown %}

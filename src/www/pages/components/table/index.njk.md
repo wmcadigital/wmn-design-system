@@ -29,8 +29,6 @@
 - When comparing columns of numbers, align the numbers to the right in table cells.
 - If you are trying to display lots of columns, contact Design Team to discuss how best to achieve this.
 
----
-
 {# Table #}
 
 ## Table with Headers

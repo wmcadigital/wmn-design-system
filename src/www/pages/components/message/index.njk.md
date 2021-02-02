@@ -24,8 +24,6 @@
 - When user needs key information about upcoming change (Information message).
 - Real time inline validation to inform users about the correctness of provided data.
 
----
-
 {# Info message #}
 
 ## Information
@@ -204,7 +202,7 @@
 {{ compExample
   ([
     wmndsMsgHelp({
-      contentHTML: 'Details added what happened and what to do next.<br /> Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
+      contentHTML: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
   ],
   {

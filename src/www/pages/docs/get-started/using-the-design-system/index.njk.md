@@ -14,8 +14,6 @@ The West Midlands Network Design System provides lots of CSS classes for styling
 
 Explore the [Styles](/styles/) section of the design system to see what classes are available and how to apply them.
 
----
-
 ## Using components
 
 Components are reusable parts of the user interface, like [accordions](/components/accordion/), [buttons](/components/buttons/) and [tables](/components/table/). The components in the design system are designed to be accessible, responsive and have been user tested.

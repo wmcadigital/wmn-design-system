@@ -14,8 +14,6 @@
 Content cards contain components and text. Against the page background, they help to draw the users attention to important information and help users to navigate content.
 The cards have many common use cases and applications, all of which can be found on the <a href="/patterns/content-cards" target="_self">content cards pattern page</a>.
 
----
-
 {# Content card #}
 
 ## Content card

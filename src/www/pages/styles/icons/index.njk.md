@@ -102,8 +102,6 @@
 
 - Do not use it for unnecessary decoration.
 
----
-
 ## Using icons
 
 WMN Design System icons are available as an SVG sprite to include in your HTML page.
@@ -156,8 +154,6 @@ The <code class="wmnds-website-inline-code">ICON-TAG-NAME</code> should be repla
 - <a class="wmnds-link" target="\_blank" href="https://unpkg.com/wmn-design-system@$*version/build/img/wmnds-icons.min.svg" download="wmnds-icons.min.svg">Download the icon svg sprite</a>.
 - Include the downloaded icon sprite in to your project locally.
 - You can now start using the icon svg sprite sheet using the instructions from the "Displaying an icon" section abov
-
----
 
 ## Icons
 
