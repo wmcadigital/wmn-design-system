@@ -11,36 +11,36 @@
   }
   // Heading 1 (46px)
   @if $level == 1 {
-    margin-top: 1.5rem * $multiplier;
-    margin-bottom: 3rem * $multiplier;
+    margin-top: 3rem * $multiplier;
+    margin-bottom: 2rem * $multiplier;
     font-size: 2.875rem * $multiplier;
     line-height: 3rem * $multiplier;
   }
   // Heading 2 (32px)
   @if $level == 2 {
-    margin-top: 1.5rem * $multiplier;
-    margin-bottom: 1.5rem * $multiplier;
+    margin-top: 3rem * $multiplier;
+    margin-bottom: 1rem * $multiplier;
     font-size: 2rem * $multiplier;
     line-height: 2.225rem * $multiplier;
   }
   // Heading 3 (23px)
   @if $level == 3 {
-    margin-top: 1.5rem * $multiplier;
-    margin-bottom: 1.5rem * $multiplier;
+    margin-top: 2rem * $multiplier;
+    margin-bottom: 0.75rem * $multiplier;
     font-size: 1.4375rem * $multiplier;
     line-height: 1.5rem * $multiplier;
   }
   // Heading 4 (18px)
   @if $level == 4 {
     margin-top: 1.5rem * $multiplier;
-    margin-bottom: 0.75rem * $multiplier;
+    margin-bottom: 0.5rem * $multiplier;
     font-size: 1.125rem * $multiplier;
     line-height: 1.5rem * $multiplier;
   }
   // Heading 5 (16px)
   @if $level == 5 {
     margin-top: 1.5rem * $multiplier;
-    margin-bottom: 0.75rem * $multiplier;
+    margin-bottom: 0.5rem * $multiplier;
     font-size: 1rem * $multiplier;
     line-height: 1.5rem * $multiplier;
   }
