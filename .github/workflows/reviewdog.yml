@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '15'
       - name: eslint
-        uses: reviewdog/action-eslint@v1
+        uses: reviewdog/action-eslint@v1.11.3
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
