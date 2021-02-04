@@ -104,6 +104,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify-es": "^2.0.0",
     "marked": "^1.2.8",
+    "node-sass": "^4.14.1",
     "npm-check-updates": "^11.1.1",
     "nunjucks": "^3.2.2",
     "nunjucks-markdown": "^2.0.1",
