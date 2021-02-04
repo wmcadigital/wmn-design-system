@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.2.0...v1.3.0) (2021-01-29)
+
+
+### Features
+
+* bump version number ([#622](https://github.com/wmcadigital/wmn-design-system/issues/622)) ([26534cf](https://github.com/wmcadigital/wmn-design-system/commit/26534cfbed0faed660cd5301278f89db5a43c121))
+
 # [1.2.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.1.0...v1.2.0) (2021-01-20)
 
 
