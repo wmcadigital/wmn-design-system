@@ -98,7 +98,6 @@
     "gulp-react-native-stylesheet-css": "^1.4.4",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^3.0.0",
