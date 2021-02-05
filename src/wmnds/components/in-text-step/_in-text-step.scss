@@ -3,7 +3,8 @@
   position: relative;
   padding: 0;
 
-  &__item {
+  &__item,
+  li {
     position: relative;
     padding-top: $size-xs / 2;
     padding-left: $size-xl;
