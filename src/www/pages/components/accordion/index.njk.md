@@ -33,8 +33,6 @@
   require extra effort and click. Hiding content behind navigation diminishes user's awareness of
   it.
 
----
-
 ## Closed
 
 In its closed state, the accordions

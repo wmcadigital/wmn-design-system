@@ -19,8 +19,6 @@
 - Allows users who rely on assistive technology to access an offline version of the on-page content.
 - Shows users how big the file is so they can decide if they want to download it.
 
----
-
 {# Accessible file #}
 
 ## Accessible file

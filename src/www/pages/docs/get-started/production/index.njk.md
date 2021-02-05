@@ -13,8 +13,6 @@ To start using our [styles](/styles/), [components](/components/) and [patterns]
 
 There are currently two ways of including the design system within your project. You can either install it using node package manager (npm) or include the compiled files in your application.
 
----
-
 ### Option 1: include compiled files (recommended)
 
 Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application:
@@ -42,8 +40,6 @@ Getting started is as simple as including West Midlands Network Design System's 
 #### Start developing
 
 You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the HTML markup tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
-
----
 
 ### Option 2: install using npm
 

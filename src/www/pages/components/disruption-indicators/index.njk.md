@@ -26,8 +26,6 @@
 Disruption indicators are used to show the current service status within interfaces and maps.
 There are three types all giving different levels of detail.
 
----
-
 {# Map pin #}
 
 ## Small

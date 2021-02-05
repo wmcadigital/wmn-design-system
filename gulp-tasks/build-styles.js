@@ -2,6 +2,7 @@
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
+const sass = require('@selfisekai/gulp-sass'); // TODO: Change this back to original gulp-sass when they have updated to node-sass@5.0.0
 const paths = require('./paths.js');
 const { browserSync } = require('./browser-sync'); // BrowserSync server
 
@@ -20,7 +21,7 @@ const buildingStyles = () => {
       })
     )
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
+    .pipe(sass().on('error', sass.logError)) // Compile Sass
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
     .pipe(plugins.autoprefixer()) // Prefix css with older browser support
     .pipe(plugins.cleanCss({ level: 2 })) // Minify css
@@ -37,7 +38,7 @@ const buildingStyles = () => {
 const buildingReactNativeStyles = () => {
   return src(paths.styles.reactNativeSrc)
     .pipe(plugins.replace('$*cdn', packageJson.buildDirs[build].cdn))
-    .pipe(plugins.sass().on('error', plugins.sass.logError)) // Compile Sass
+    .pipe(sass().on('error', sass.logError)) // Compile Sass
     .pipe(plugins.autoprefixer()) // Prefix css with older browser support
     .pipe(plugins.reactNativeStylesheetCss()) // Converts CSS to React Native stylesheet
     .pipe(plugins.uglifyEs.default()) // Mangle var names etc.
