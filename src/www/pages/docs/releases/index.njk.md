@@ -15,8 +15,6 @@ Using this method of versioning enables West Midlands Network Design System to r
 
 This method also allows you to upgrade your project to the latest version of the design system when you are able to.
 
----
-
 ## Accessing a previous releases
 
 It is recommended that you use the latest release of West Midlands Network Design System in your project. This guide explains how to access a previous release for older documentation.

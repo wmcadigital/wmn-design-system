@@ -29,8 +29,6 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 - Buttons are full-width on mobile. This is so users can easily tap on a button without stretching their thumb.
 - For the Question Form pattern, the ‘Continue’ call to action button should always be full-width within the container on desktop and mobile devices.
 
----
-
 ## Call to action buttons
 
 <h3>What does it do?</h3>

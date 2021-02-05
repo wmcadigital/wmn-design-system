@@ -42,8 +42,6 @@ using screen readers will here the same text twice.
 - **\_top**: Will load clicked link in the full body of the window
 - **framename**: Will load clicked link in a named frame
 
----
-
 <br><br>
 
 ## Default link

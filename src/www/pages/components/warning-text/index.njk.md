@@ -30,8 +30,6 @@
 
 - Use the icon that represents the severity of the warning
 
----
-
 {# Warning Text #}
 
 ## Warning Text with exclamation mark icon - triangle
