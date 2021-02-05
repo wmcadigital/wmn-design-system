@@ -8,7 +8,7 @@ function aToZContentStyleGuide() {
       accordionBtn.setAttribute('aria-expanded', true);
     } else {
       accordionElem.classList.remove('wmnds-is--open');
-      accordionBtn.setAttribute('aria-expanded', false
+      accordionBtn.setAttribute('aria-expanded', false);
     }
   };
 
