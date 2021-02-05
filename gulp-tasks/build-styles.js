@@ -2,7 +2,7 @@
 const { src, dest } = require('gulp');
 const plugins = require('gulp-load-plugins')();
 // Local requires
-const sass = require('@selfisekai/gulp-sass'); // TODO: Change this back to original gulp-sass when they have updated to node-sass@5.0.0
+const sass = require('gulp-sass');
 const paths = require('./paths.js');
 const { browserSync } = require('./browser-sync'); // BrowserSync server
 
