@@ -36,191 +36,190 @@
         </a>
       </div>
       {#- If with a title #}
-      {% if params.withTitle -%}
-      <!-- Header title -->
-      <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
-        Reinstate your Direct Debit<br>(COVID-19)
-      </h1>
-      {%- else -%}
-      <!-- Mega menu nav items-->
-      <nav id="{{params.id}}" class="wmnds-mega-menu">
-        <!-- Mobile toggle button -->
-        <button class="wmnds-mega-menu__mobile-toggle wmnds-btn wmnds-btn--secondary wmnds-hide-desktop" aria-expanded="false" aria-controls="{{params.id}}-primary-menu">Menu
-          <svg class="wmnds-mega-menu__close-icon"><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
-        </button>
-        <!-- Container for mega menu - allows scrolling on mobile nav -->
-        <div id="{{params.id}}-primary-menu" class="wmnds-mega-menu__scroll-controller">
-          <!-- Start primary (level 1) navigation -->
-          <ul class="wmnds-mega-menu__primary-menu">
-          {% for navItem in navItems -%}
-            <li class="wmnds-mega-menu__primary-menu-item">
-            <!-- Show swift logo in nav if is swift & tickets link -->
-            {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(4) | trim if navItem.name === "Swift and tickets" else "" %}
-            {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name -%}
-              <!-- allow primary (level 1) item to link if specified -->
-              {% if params.linkTopLevel -%}{{navItemIcon}}
-              <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
-                {{navItemIcon}}{{ navItemContent }}
-              </a>
-              <!-- if not linked use a button -->
-              {% else -%}
-              <button target="_self" class="wmnds-mega-menu__primary-menu-link" >
-                {{navItemIcon}}{{ navItemContent }}
-              </button>
-              {% endif -%}
-              {% if navItem.subnavItems -%}
-              <!-- arrow icon for mobile nav -->
-              <button class="wmnds-mega-menu__link-arrow-icon-btn" data-label="{{ navItem.name }}" aria-label="toggle {{ navItem.name }}" aria-controls="{{params.id}}-container"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
-              <!-- Start mega menu container -->
-              <div id="{{params.id}}-container-{{ loop.index }}" class="wmnds-mega-menu__container">
-                <div class="wmnds-container">
-                  <!-- Start submenu (level 2) -->
-                  <ul class="wmnds-mega-menu__sub-menu">
-                    {% for subnavItem in navItem.subnavItems -%}
-                    {% if subnavItem.unlinked %}
-                      {% set _tag = 'button' %}
-                      {% set _classes = " wmnds-btn wmnds-btn--link" %}
-                    {% else %}
-                      {% set _tag = 'a' %}
-                      {# Set href if specified, else set an auto generated href #}
-                      {% set _hrefSubnav = subnavItem.href if subnavItem.href else "/" + navItem.name + "/" + subnavItem.name  + "/"%}
-                      {# Set href attribute for link #}
-                      {% set _attributes = " href=\"" + _hrefSubnav | lower | replace(" ", "-") + "\"" if _hrefSubnav else "" %}
-                    {% endif %}
-                    <li class="wmnds-mega-menu__sub-menu-item">
-                      <{{_tag}}{{_attributes | safe}} class="wmnds-mega-menu__sub-menu-link{{_classes}}">
-                        {% if subnavItem.icon -%}
-                        <!-- Show submenu (level 2) item icon if specified -->
-                        <svg class="wmnds-mega-menu__sub-menu-link-icon">
-                          <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
-                        </svg>
-                        {% endif -%}
-                        {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</{{_tag}}>
-                        {%- if subnavItem.subnavItems %}
-                        <!-- collapse button for mobile nav level 3 menu items -->
-                      <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
-                      <!-- Start submenu child (level 3) list -->
-                      <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
-                        {% for subnavChildItem in subnavItem.subnavItems -%}
-                        {# Set auto generated href string for fallback - ignore 2nd level nav name if it is unlinked #}
-                        {% set _hrefString = "/" + navItem.name + "/" + subnavChildItem.name + "/" if subnavItem.unlinked else "/" + navItem.name + "/" + subnavItem.name + "/" + subnavChildItem.name + "/" %}
-                        {# Set href if it is set else fallback to auto generated link #}
-                        {% set _hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else _hrefString | lower | replace(" ", "-") %}
-                        <li class="wmnds-mega-menu__sub-menu-child-item">
-                          <a href="{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
-                        </li>
-                        {%- endfor %}
-                      </ul>
-                      <!-- End submenu child (level 3) list -->
-                      {%- endif %}
-                    </li>
-                    {%- endfor %}
-                  </ul>
-                  <!-- End submenu (level 2) -->
-                </div>
-              </div>
-              <!-- End mega menu container -->
-              {%- endif %}
-            </li>
-          {%- endfor %}
-          </ul>
-          <!-- End primary (level 1) navigation -->
-        </div>
-        <!-- End scrollable container -->
-        {% if(params.search) %}
-        <div class="wmnds-mega-menu__primary-menu-item wmnds-mega-menu__search">
-          <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn">
-            <svg class="wmnds-mega-menu__search-icon">
-              <title>Search</title>
-              <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
-            </svg>
-            <svg class="wmnds-mega-menu__search-close-icon">
-              <title>Close</title>
-              <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
-            </svg>
+      {% if params.withTitle %}
+        <!-- Header title -->
+        <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
+          Reinstate your Direct Debit<br>(COVID-19)
+        </h1>
+      {% else %}
+        <!-- Mega menu nav items-->
+        <nav id="{{params.id}}" class="wmnds-mega-menu">
+          <!-- Mobile toggle button -->
+          <button class="wmnds-mega-menu__mobile-toggle wmnds-btn wmnds-btn--secondary wmnds-hide-desktop" aria-expanded="false" aria-controls="{{params.id}}-primary-menu">Menu
+            <svg class="wmnds-mega-menu__close-icon"><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
           </button>
-          <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
-            <div class="wmnds-search-container">
-              {{wmndsSearchbar()}}
-              {%- if(params.searchSuggestions) %}
-              <p class="wmnds-search-heading h1">I want to...</p>
-              <div class="wmnds-grid">
-                <div class="wmnds-col-1-2">
-                  <ul class="wmnds-search-list">
-                  {%- for i in range(0, 4) %}
-                    <li class="wmnds-search-list__item">
-                      <a href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
-                        {{wmndsIcon({
-                          class: 'wmnds-link__chevron wmnds-link__chevron--right',
-                          icon: 'general-chevron-right'
-                        })}}
-                      </a>
-                    </li>
-                  {%- endfor %}
-                  </ul>
-                </div>
-                <div class="wmnds-col-1-2">
-                  <ul class="wmnds-search-list">
-                  {%- for i in range(4, params.searchSuggestions.length) %}
-                    <li class="wmnds-search-list__item">
-                      <a href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
-                        {{wmndsIcon({
-                          class: 'wmnds-link__chevron wmnds-link__chevron--right',
-                          icon: 'general-chevron-right'
-                        })}}
-                      </a>
-                    </li>
-                  {%- endfor %}
-                  </ul>
-                </div>
+          <!-- Container for mega menu - allows scrolling on mobile nav -->
+          <div id="{{params.id}}-primary-menu" class="wmnds-mega-menu__scroll-controller">
+            <!-- Start primary (level 1) navigation -->
+            <ul class="wmnds-mega-menu__primary-menu">
+              {% for navItem in navItems %}
+                <li class="wmnds-mega-menu__primary-menu-item">
+                <!-- Show swift logo in nav if is swift & tickets link -->
+                {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) if navItem.name === "Swift and tickets" else "" %}
+                {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name %}
+                  <!-- allow primary (level 1) item to link if specified -->
+                  {% if params.linkTopLevel %}{{navItemIcon}}
+                    <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
+                      {{navItemIcon}}{{ navItemContent }}
+                    </a>
+                  <!-- if not linked use a button -->
+                  {% else %}
+                    <button target="_self" class="wmnds-mega-menu__primary-menu-link" >
+                      {{navItemIcon}}{{ navItemContent }}
+                    </button>
+                  {% endif %}
+                  {% if navItem.subnavItems %}
+                    <!-- arrow icon for mobile nav -->
+                    <button class="wmnds-mega-menu__link-arrow-icon-btn" data-label="{{ navItem.name }}" aria-label="toggle {{ navItem.name }}" aria-controls="{{params.id}}-container"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
+                    <!-- Start mega menu container -->
+                    <div id="{{params.id}}-container-{{ loop.index }}" class="wmnds-mega-menu__container">
+                      <div class="wmnds-container">
+                        <!-- Start submenu (level 2) -->
+                        <ul class="wmnds-mega-menu__sub-menu">
+                          {% for subnavItem in navItem.subnavItems %}
+                            {% if subnavItem.unlinked %}
+                              {% set _tag = 'button' %}
+                              {% set _classes = " wmnds-btn wmnds-btn--link" %}
+                            {% else %}
+                              {% set _tag = 'a' %}
+                              {# Set href if specified, else set an auto generated href #}
+                              {% set _hrefSubnav = subnavItem.href if subnavItem.href else "/" + navItem.name + "/" + subnavItem.name  + "/"%}
+                              {# Set href attribute for link #}
+                              {% set _attributes = " href=\"" + _hrefSubnav | lower | replace(" ", "-") + "\"" if _hrefSubnav else "" %}
+                            {% endif %}
+                            <li class="wmnds-mega-menu__sub-menu-item">
+                              <{{_tag}}{{_attributes | safe}} class="wmnds-mega-menu__sub-menu-link{{_classes}}">
+                                {% if subnavItem.icon %}
+                                <!-- Show submenu (level 2) item icon if specified -->
+                                <svg class="wmnds-mega-menu__sub-menu-link-icon">
+                                  <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
+                                </svg>
+                                {% endif %}
+                                {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</{{_tag}}>
+                                {% if subnavItem.subnavItems %}
+                                <!-- collapse button for mobile nav level 3 menu items -->
+                              <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
+                              <!-- Start submenu child (level 3) list -->
+                              <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
+                                {% for subnavChildItem in subnavItem.subnavItems %}
+                                {# Set auto generated href string for fallback - ignore 2nd level nav name if it is unlinked #}
+                                {% set _hrefString = "/" + navItem.name + "/" + subnavChildItem.name + "/" if subnavItem.unlinked else "/" + navItem.name + "/" + subnavItem.name + "/" + subnavChildItem.name + "/" %}
+                                {# Set href if it is set else fallback to auto generated link #}
+                                {% set _hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else _hrefString | lower | replace(" ", "-") %}
+                                <li class="wmnds-mega-menu__sub-menu-child-item">
+                                  <a href="{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
+                                </li>
+                                {% endfor %}
+                              </ul>
+                              <!-- End submenu child (level 3) list -->
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                        <!-- End submenu (level 2) -->
+                      </div>
+                    </div>
+                    <!-- End mega menu container -->
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            <!-- End primary (level 1) navigation -->
+          </div>
+          <!-- End scrollable container -->
+          {% if(params.search) %}
+          <div class="wmnds-mega-menu__primary-menu-item wmnds-mega-menu__search">
+            <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn">
+              <svg class="wmnds-mega-menu__search-icon">
+                <title>Search</title>
+                <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
+              </svg>
+              <svg class="wmnds-mega-menu__search-close-icon">
+                <title>Close</title>
+                <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
+              </svg>
+            </button>
+            <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
+              <div class="wmnds-search-container">
+                {{wmndsSearchbar()}}
+                {% if(params.searchSuggestions) %}
+                  <p class="wmnds-search-heading h1">I want to...</p>
+                  <div class="wmnds-grid">
+                    <div class="wmnds-col-1-2">
+                      <ul class="wmnds-search-list">
+                      {% for i in range(0, 4) %}
+                        <li class="wmnds-search-list__item">
+                          <a href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
+                            {{wmndsIcon({
+                              class: 'wmnds-link__chevron wmnds-link__chevron--right',
+                              icon: 'general-chevron-right'
+                            })}}
+                          </a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    </div>
+                    <div class="wmnds-col-1-2">
+                      <ul class="wmnds-search-list">
+                      {% for i in range(4, params.searchSuggestions.length) %}
+                        <li class="wmnds-search-list__item">
+                          <a href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
+                            {{wmndsIcon({
+                              class: 'wmnds-link__chevron wmnds-link__chevron--right',
+                              icon: 'general-chevron-right'
+                            })}}
+                          </a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                {% endif %}
               </div>
-              {%- endif %}
             </div>
           </div>
-        </div>
+          {% endif %}
+        </nav>
         {% endif %}
-      </nav>
-      {%- endif %}
+      </div>
     </div>
-  </div>
 
 
-  {%- if params.banner or params.breadcrumbs %}
-  <div class="wmnds-container">
-    {% if params.banner -%}
-    <!-- Phase banner -->
-    {{
-      wmndsBanner ({
-        link: 'https://github.com/wmcadigital/wmn-design-system/issues',
-        linkTitle: 'WMN Design System Github',
-        phase: true
-      }) | trim | indent(4)
-    -}}
-    {%- endif -%}
+    {% if params.banner or params.breadcrumbs %}
+      <div class="wmnds-container">
+        {% if params.banner %}
+          <!-- Phase banner -->
+          {{
+            wmndsBanner ({
+              link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+              linkTitle: 'WMN Design System Github',
+              phase: true
+            })
+          }}
+        {% endif %}
 
-    {%- if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
-
-    <!-- Breadcrumbs -->
-    {{
-      wmndsBreadcrumb({
-        items: [{
-          contentText: params.breadcrumbs.section or "Components"
-        },{
-          contentText: params.breadcrumbs.pageTitle
-        }],
-        label: params.label
-      }) | trim | indent(4)
-    -}}
-    {% endif %}
-  </div>
-  {%- endif %}
+        {% if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
+        <!-- Breadcrumbs -->
+        {{
+          wmndsBreadcrumb({
+            items: [{
+              contentText: params.breadcrumbs.section or "Components"
+            },{
+              contentText: params.breadcrumbs.pageTitle
+            }],
+            label: params.label
+          })
+        }}
+      {% endif %}
+    </div>
+  {% endif %}
 </header>
 
 {% if params.megaMenuDemo %}
-<!-- Content space for example purposes only. DO NOT INCLUDE -->
-<div class="demo-content">
-  <p>Example content <br> <a href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
-</div>
-<!-- END DO NOT INCLUDE -->
+  <!-- Content space for example purposes only. DO NOT INCLUDE -->
+  <div class="demo-content">
+    <p>Example content <br> <a href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
+  </div>
+  <!-- END DO NOT INCLUDE -->
 {% endif %}
 {% endmacro %}
