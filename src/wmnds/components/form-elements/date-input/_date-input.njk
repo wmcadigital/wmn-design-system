@@ -26,19 +26,20 @@
 
 <div id="{{id}}" class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
   <div class="wmnds-fe-date-input">
-
+    {# Error message #}
     {% if params.error %}
-    {{
-      wmndsFeErrorMessage(
-        {
-          contentText: errorContentText,
-          contentHTML: errorContentHTML,
-          classes: errorClasses,
-          id: errorId
-        }
-      )
-    }}
-  {% endif %}
+      {{
+        wmndsFeErrorMessage(
+          {
+            contentText: errorContentText,
+            contentHTML: errorContentHTML,
+            classes: errorClasses,
+            id: errorId
+          }
+        )
+      }}
+    {% endif %}
+    {# Day #}
     <div class="wmnds-fe-date-input__day">
       {{
         wmndsFormLabel({
@@ -46,9 +47,9 @@
           for: "LastUsedDateDay"
         })
       }}
-      <input autocomplete="day" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateDay" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
+      <input autocomplete="day" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateDay" inputmode="numeric" name="{{name}}" type="text" value="" maxLength="2" pattern="[0-9]*" {% if required %} required="true" {% endif %}>
     </div>
-
+    {# Month #}
     <div class="wmnds-fe-date-input__month">
       {{
         wmndsFormLabel({
@@ -56,9 +57,9 @@
           for: "LastUsedDateMonth"
         })
       }}
-      <input autocomplete="month" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateMonth" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
+      <input autocomplete="month" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateMonth" inputmode="numeric" name="{{name}}" type="text" value="" maxLength="2" pattern="[0-9]*" {% if required %} required="true" {% endif %}>
     </div>
-
+    {# Year #}
     <div class="wmnds-fe-date-input__year">
       {{
         wmndsFormLabel({
@@ -66,7 +67,7 @@
           for: "LastUsedDateYear"
         })
       }}
-      <input autocomplete="year" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateYear" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
+      <input autocomplete="year" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateYear" inputmode="numeric" name="{{name}}" type="text" value="" maxLength="4" pattern="[0-9]*" {% if required %} required="true" {% endif %}>
     </div>
 
   </div>
