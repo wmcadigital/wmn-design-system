@@ -23,6 +23,12 @@
 {% endmarkdown %}
 
 {{
+ wmndsInsetText ({
+      contentHTML: "If you are looking for how to format the date within content i.e. \"4 June 2017\", check the <a href=\"/styles/a-to-z-content-style-guide/#dates\" class=\"wmnds-link\">dates section within the A-Z content style guide</a>."
+  })
+}}
+
+{{
     compExample([wmndsDateInput()], {
       componentPath: "wmnds/components/form-elements/date-input/",
       njk: true,
