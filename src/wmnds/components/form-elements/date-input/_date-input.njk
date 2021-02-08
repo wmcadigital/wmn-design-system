@@ -24,9 +24,10 @@
 {% set placeholder = params.attributes.placeholder if params.attributes.placeholder else null %}
 {% set value = params.attributes.value if params.attributes.value else null %}
 
-<div id="{{id}}" class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}} wmnds-grid--spacing-3-md">
+<div id="{{id}}" class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
+  <div class="wmnds-fe-date-input">
 
-  {% if params.error %}
+    {% if params.error %}
     {{
       wmndsFeErrorMessage(
         {
@@ -35,40 +36,40 @@
           classes: errorClasses,
           id: errorId
         }
-      ) 
+      )
     }}
   {% endif %}
+    <div class="wmnds-fe-date-input__day">
+      {{
+        wmndsFormLabel({
+          contentText: "Day",
+          for: "LastUsedDateDay"
+        })
+      }}
+      <input autocomplete="day" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateDay" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
+    </div>
 
-  <div class="wmnds-col-1-3 wmnds-col-sm-1-12">
-    {{
-      wmndsFormLabel({
-        contentText: "Day",
-        for: "LastUsedDateDay"
-      }) 
-    }}
-    <input autocomplete="day" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateDay" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
-  </div>
-  
-  <div class="wmnds-col-1-3 wmnds-col-sm-1-12">
-    {{
-      wmndsFormLabel({
-        contentText: "Month",
-        for: "LastUsedDateMonth"
-      }) 
-    }}
-    <input autocomplete="month" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateMonth" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
-  </div>
-  
-  <div class="wmnds-col-1-3 wmnds-col-sm-1-8">
-    {{
-      wmndsFormLabel({
-        contentText: "Year",
-        for: "LastUsedDateYear"
-      }) 
-    }}
-    <input autocomplete="year" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateYear" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
-  </div>
+    <div class="wmnds-fe-date-input__month">
+      {{
+        wmndsFormLabel({
+          contentText: "Month",
+          for: "LastUsedDateMonth"
+        })
+      }}
+      <input autocomplete="month" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateMonth" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
+    </div>
 
+    <div class="wmnds-fe-date-input__year">
+      {{
+        wmndsFormLabel({
+          contentText: "Year",
+          for: "LastUsedDateYear"
+        })
+      }}
+      <input autocomplete="year" class="wmnds-fe-input {{inputErrorClass}}" id="{{id}}_LastUsedDateYear" inputmode="numeric" name="{{name}}" type="text" value="" {% if required %} required="true" {% endif %}>
+    </div>
+
+  </div>
 </div>
 
 {% endmacro %}
