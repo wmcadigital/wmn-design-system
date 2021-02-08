@@ -5,7 +5,7 @@
       "subnavItems": [
         {
           "name": "Installation",
-          "icon": "general-caret-down",
+          "icon": null,
           "unlinked": true,
           "subnavItems": [
             {
@@ -15,7 +15,7 @@
         },
         {
           "name": "Setup Guides",
-          "icon": "general-caret-down",
+          "icon": null,
           "unlinked": true,
           "subnavItems": [
             {
@@ -38,7 +38,7 @@
         },
         {
           "name": "Usage",
-          "icon": "general-caret-down",
+          "icon": null,
           "unlinked": true,
           "subnavItems": [
             {
@@ -49,7 +49,7 @@
         },
         {
           "name": "Other",
-          "icon": "general-caret-down",
+          "icon": null,
           "unlinked": true,
           "subnavItems": [
             {
@@ -101,7 +101,7 @@
         {
           "name": "General",
           "unlinked": true,
-          "icon": "general-caret-down",
+          "icon": null,
           "subnavItems": [
             {
               "name": "Accordion"
@@ -156,7 +156,7 @@
         {
           "name": "Form elements",
           "unlinked": true,
-          "icon": "general-caret-down",
+          "icon": null,
           "subnavItems": [
             {
               "name": "Checkboxes"
