@@ -1,11 +1,23 @@
-.wmnds-fe-input {
-  @include type-setting(0);
+.wmnds-fe-date-input {
+  display: block;
   width: 100%;
-  padding: $size-sm;
-  border: 1px solid get-color(primary);
-  color: get-color(text);
 
-  &--error {
-    border: 2px solid get-color(error);
+  &__day {
+    max-width: 5.4ex;
+  }
+
+  &__month {
+    max-width: 5.4ex;
+  }
+
+  &__year {
+    max-width: 9ex;
+  }
+
+  &__day,
+  &__month,
+  &__year {
+    display: inline-block;
+    margin-right: $size-md;
   }
 }
