@@ -22,6 +22,7 @@
   "filter",
   "id-card",
   "info",
+  "list",
   "location-arrow",
   "location-pin",
   "minimise",
