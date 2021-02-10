@@ -6,6 +6,7 @@ on:
 
 jobs:
   build-preview:
+    name: build preview
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
