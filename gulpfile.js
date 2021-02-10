@@ -108,7 +108,7 @@ exports.lintAll = series(lintStyles, lintTemplates, lintScripts);
 exports.clean = cleanBuild;
 // Building
 exports.buildScripts = series(buildScripts, lintScripts);
-exports.buildStyles = series(lintStyles, buildStyles, buildFonts, buildReactNativeStyles);
+exports.buildStyles = series(buildStyles, lintStyles, buildFonts, buildReactNativeStyles);
 exports.buildTemplates = series(buildJSONForTemplates, buildTemplates, lintTemplates);
 exports.buildComponents = buildComponents;
 exports.buildConfig = buildConfig;
