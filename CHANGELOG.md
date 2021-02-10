@@ -1,3 +1,22 @@
+# [1.4.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.3.0...v1.4.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* Change CTA button size to be text width within forms ([#638](https://github.com/wmcadigital/wmn-design-system/issues/638)) ([0b47e1a](https://github.com/wmcadigital/wmn-design-system/commit/0b47e1a63c69b7dc64de6317002965b10c47e469)), closes [#636](https://github.com/wmcadigital/wmn-design-system/issues/636)
+* Date input component now has the correct width and shows errors correctly ([#639](https://github.com/wmcadigital/wmn-design-system/issues/639)) ([0d7da79](https://github.com/wmcadigital/wmn-design-system/commit/0d7da794303132a1ccf411dbcb56f900eef2d8ea))
+* Github actions now work a bit quicker ([#646](https://github.com/wmcadigital/wmn-design-system/issues/646)) ([423c1fb](https://github.com/wmcadigital/wmn-design-system/commit/423c1fbcf788ab735784bdce6c35b5e9e22f5312))
+* Improved the release process ([#647](https://github.com/wmcadigital/wmn-design-system/issues/647)) ([0c4f31b](https://github.com/wmcadigital/wmn-design-system/commit/0c4f31b42205f7a2b6d71f8702ed7e61cc610ee9))
+* Removed "down arrow" icons from main nav within the design system ([#640](https://github.com/wmcadigital/wmn-design-system/issues/640)) ([950729b](https://github.com/wmcadigital/wmn-design-system/commit/950729b9e4096a3047c719650c1bffc3969f6c19)), closes [#629](https://github.com/wmcadigital/wmn-design-system/issues/629)
+* Updated broken links and preview image in readme docs ([#645](https://github.com/wmcadigital/wmn-design-system/issues/645)) ([47e2663](https://github.com/wmcadigital/wmn-design-system/commit/47e26630b97f89c094c865e581ade20aa60294b1))
+* Updated margins on headings and lists to improve readability ([#630](https://github.com/wmcadigital/wmn-design-system/issues/630)) ([e8f2f50](https://github.com/wmcadigital/wmn-design-system/commit/e8f2f5076a41fd7edaa63d9be63ddb14905b092c)), closes [#628](https://github.com/wmcadigital/wmn-design-system/issues/628) [#628](https://github.com/wmcadigital/wmn-design-system/issues/628)
+
+
+### Features
+
+* Added documentation for 'travel mode landing page' template ([#643](https://github.com/wmcadigital/wmn-design-system/issues/643)) ([1d9fc43](https://github.com/wmcadigital/wmn-design-system/commit/1d9fc43d2e46510cf3fe95472a4382ec4c6d68f6))
+* Added new general icon named "list" ([#641](https://github.com/wmcadigital/wmn-design-system/issues/641)) ([0f1a8bd](https://github.com/wmcadigital/wmn-design-system/commit/0f1a8bd90d978d6f04fb324ba100a793cc7252cc))
+
 # [1.3.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.2.0...v1.3.0) (2021-01-29)
 
 
