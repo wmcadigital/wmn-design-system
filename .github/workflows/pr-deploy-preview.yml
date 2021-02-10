@@ -5,8 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
-    name: Build preview
+  build preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch

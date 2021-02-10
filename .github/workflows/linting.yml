@@ -7,7 +7,6 @@ on:
 
 jobs:
   eslint:
-    name: eslint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,7 +31,6 @@ jobs:
           eslint_flags: 'src/'
 
   sass-lint:
-    name: sass-lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -53,7 +51,6 @@ jobs:
         run: npm run lint:styles
 
   lint-templates:
-    name: lint-templates
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
