@@ -96,8 +96,6 @@
 - The user can dismiss the Emergency banner through the 'Close' link. This will remove the current emergency banner from all pages they visit on the website.
 - The On-page variant is only shown when a user is on the Emergency advice page, which can be accessed through the 'Read our latest advice' link.
 
----
-
 {# Sitewide #}
 
 ### Sitewide

@@ -6,7 +6,8 @@ const paths = require('./paths.js');
 const lintingTemplates = () => {
   return src(`${paths.nunjucks.output}**/*.html`)
     .pipe(plugins.htmlhint('.htmlhintrc'))
-    .pipe(plugins.htmlhint.reporter());
+    .pipe(plugins.htmlhint.reporter())
+    .pipe(plugins.htmlhint.failOnError());
 };
 
 module.exports = lintingTemplates;

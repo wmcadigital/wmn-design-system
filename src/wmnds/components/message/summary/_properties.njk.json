@@ -3,7 +3,7 @@
     {
       "name": "type",
       "type": "string",
-      "description": "Type of the message component. As default it is <code class='wmnds-website-inline-code'>info</code>. Available types: <code class='wmnds-website-inline-code'>info</code>, <code class='wmnds-website-inline-code'>success</code>, <code class='wmnds-website-inline-code'>success-fill-no-icon</code>, <code class='wmnds-website-inline-code'>warning</code>, <code class='wmnds-website-inline-code'>error</code>"
+      "description": "Type of the message component. As default it is <code class='wmnds-website-inline-code'>info</code>. Available types: <code class='wmnds-website-inline-code'>info</code>, <code class='wmnds-website-inline-code'>success</code>, <code class='wmnds-website-inline-code'>success-fill</code>, <code class='wmnds-website-inline-code'>success-fill-no-icon</code>, <code class='wmnds-website-inline-code'>warning</code>, <code class='wmnds-website-inline-code'>error</code>"
     },
     {
       "name": "title",

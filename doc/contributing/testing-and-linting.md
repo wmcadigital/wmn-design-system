@@ -42,7 +42,7 @@ Note: There's a watch mode that keeps a testing session open waiting for changes
 
 ### Updating component snapshots
 
-[Snapshot tests](https://facebook.github.io/jest/docs/en/snapshot-testing.html) are used for preventing unintended changes - when the snapshot test runs, it compares the previously captured snapshot to the current markup. For components, the snapshots are stored in `[component-name directory]/_snapshots_`.
+[Snapshot tests](https://facebook.github.io/jest/doc/en/snapshot-testing.html) are used for preventing unintended changes - when the snapshot test runs, it compares the previously captured snapshot to the current markup. For components, the snapshots are stored in `[component-name directory]/_snapshots_`.
 
 If a snapshot test fails, review the difference in the console. If the change is the correct change to make, run:
 
