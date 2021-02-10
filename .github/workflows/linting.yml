@@ -1,4 +1,4 @@
-name: reviewdog
+name: linting
 on:
   pull_request:
     branches:
