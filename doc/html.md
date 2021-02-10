@@ -54,7 +54,7 @@ documentation has useful tips on creating an effective description.
 There are a few different options that you can use with the [`viewport` meta
 tag](https://docs.google.com/present/view?id=dkx3qtm_22dxsrgcf4 "Viewport and
 Media Queries - The Complete Idiot's Guide"). You can find out more in [the
-MDN Web Docs](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag).
+MDN Web Docs](https://developer.mozilla.org/en-US/doc/Mozilla/Mobile/Viewport_meta_tag).
 HTML5 Boilerplate comes with a simple setup that strikes a good balance for general use cases.
 
 ```html
@@ -81,7 +81,7 @@ It's linked to from the HTML as follows:
 ```
 
 Our [site.webmanifest](https://github.com/h5bp/html5-boilerplate/blob/master/src/site.webmanifest) contains a very skeletal "app" definition, just to show the basic usage.
-You should fill this file out with [more information about your site or application](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+You should fill this file out with [more information about your site or application](https://developer.mozilla.org/en-US/doc/Web/Manifest)
 
 ## Favicons and Touch Icon
 
