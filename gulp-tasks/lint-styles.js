@@ -11,7 +11,8 @@ const lintingStyles = () => {
         configFile: '.sass-lint.yml'
       })
     )
-    .pipe(plugins.sassLint.format());
+    .pipe(plugins.sassLint.format())
+    .pipe(plugins.sassLint.failOnError());
 };
 
 module.exports = lintingStyles;
