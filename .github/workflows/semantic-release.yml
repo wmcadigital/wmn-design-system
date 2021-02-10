@@ -57,7 +57,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SEMVER_GITHUB_TOKEN }}
       # Deploy build folder to Netlify IF the branch is master
       - name: Deploy to Netlify
-        needs: [Build site, Publish package] # This step needs build site and publish package to happen
         if: github.ref == 'refs/heads/master' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
         uses: nwtgck/actions-netlify@v1.1.11
         with:

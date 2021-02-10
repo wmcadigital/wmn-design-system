@@ -27,7 +27,6 @@ jobs:
           npm ci
           npm run build:all
       - name: Deploy netlify preview
-        needs: Build site
         uses: nwtgck/actions-netlify@v1.1.11
         with:
           publish-dir: './build'
