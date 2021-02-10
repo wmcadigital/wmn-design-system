@@ -18,9 +18,9 @@ jobs:
           persist-credentials: false
       # Setup node environment
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '14.x'
       # Dry run a release to check if one if necessary
       - name: Check for new release
         uses: cycjimmy/semantic-release-action@v2.5.0
@@ -33,6 +33,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SEMVER_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Get modules from cache
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       # Build site
       - name: Build site
         run: |
@@ -49,6 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SEMVER_GITHUB_TOKEN }}
       # Deploy build folder to Netlify IF the branch is master
       - name: Deploy to Netlify
+        needs: [Build site, Publish package] # This step needs build site and publish package to happen
         if: github.ref == 'refs/heads/master' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
         uses: nwtgck/actions-netlify@v1.1.11
         with:
