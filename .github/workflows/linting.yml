@@ -48,7 +48,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: sass-lint
-        run: npm run lint:styles
+        run: npm run build:styles
 
   lint-templates:
     runs-on: ubuntu-latest
@@ -67,7 +67,5 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies
         run: npm ci
-      - name: Build templates
-        run: npm run build:templates
       - name: Lint templates
-        run: npm run lint:templates
+        run: npm run build:templates
