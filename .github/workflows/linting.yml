@@ -72,5 +72,5 @@ jobs:
         run: npm ci
       - name: Build templates
         run: npm run build:templates
-      - name: lint templates
+      - name: Lint templates
         run: npm run lint:templates
