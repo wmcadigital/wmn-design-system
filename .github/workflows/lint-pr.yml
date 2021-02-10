@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    name: Lint PR
+    name: Linting PR title
     runs-on: ubuntu-latest
     if: "startsWith(github.base_ref, 'release')"
     steps:
