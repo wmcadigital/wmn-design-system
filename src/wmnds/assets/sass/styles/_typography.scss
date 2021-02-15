@@ -18,13 +18,21 @@ body {
 }
 
 .wmnds-grid h1[class*="wmnds-col"],
+.wmnds-grid .h1[class*="wmnds-col"],
 h1,
+.h1,
 .wmnds-grid h2[class*="wmnds-col"],
+.wmnds-grid .h2[class*="wmnds-col"],
 h2,
+.h2,
 .wmnds-grid h3[class*="wmnds-col"],
+.wmnds-grid .h3[class*="wmnds-col"],
 h3,
+.h3,
 .wmnds-grid h4[class*="wmnds-col"],
-h4 {
+.wmnds-grid .h4[class*="wmnds-col"],
+h4,
+.h4 {
   font-family: $x-heading-font-family;
 }
 
@@ -60,11 +68,13 @@ h2,
 
 h3,
 .h3 {
+  color: get-color(text);
   @include type-setting(3);
 }
 
 h4,
 .h4 {
+  color: get-color(text);
   @include type-setting(4);
 }
 
