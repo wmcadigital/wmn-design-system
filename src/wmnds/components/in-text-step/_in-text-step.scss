@@ -2,6 +2,7 @@
   display: block;
   position: relative;
   padding: 0;
+  counter-reset: item;
 
   &__item,
   li {
