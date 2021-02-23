@@ -13,6 +13,7 @@
   "clock",
   "closed",
   "cross",
+  "compress",
   "current-location",
   "disabled",
   "electric",
