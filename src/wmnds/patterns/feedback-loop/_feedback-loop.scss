@@ -4,7 +4,8 @@
     border-bottom: $size-sm solid get-color(cta);
   }
 
-  .wmnds-link {
+  .wmnds-link,
+  .wmnds-btn--link {
     color: $white;
   }
 
@@ -35,7 +36,8 @@
       background-color: $white;
     }
 
-    .wmnds-link {
+    .wmnds-link,
+    .wmnds-btn--link {
       color: get-color(cta);
     }
 
