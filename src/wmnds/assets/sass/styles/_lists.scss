@@ -29,10 +29,14 @@
     &:before {
       content: counters(item, ".") ".";
       position: absolute;
-      left: -1.5rem;
+      left: -3rem;
+      width: 2.75rem;
+      padding-right: 0.25rem;
+      text-align: right;
       counter-increment: item;
     }
   }
+
 
   // Create correct spacing for indent allowing for increase in counter length
   $selector: "ol:not([class*='wmnds-']) li";
