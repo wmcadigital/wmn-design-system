@@ -7,9 +7,11 @@
   }
 
   &__icon {
+    display: inline-bloc;
     width: 2.5rem;
     height: 2.5rem;
     fill: get-color(primary);
+    vertical-align: middle;
   }
 
   &__desc {
