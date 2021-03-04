@@ -1,5 +1,5 @@
 .wmnds-file-download {
-  display: flex;
+  display: block;
   align-items: center;
 
   &--non-accessible {
@@ -8,14 +8,15 @@
 
   &__icon {
     width: 2.5rem;
-    min-width: 2.5rem;
     height: 2.5rem;
-    min-height: 2.5rem;
     fill: get-color(primary);
   }
 
   &__desc {
-    padding-left: $size-sm;
+    display: inline-block;
+    width: calc(100% - 2.5rem - $size-sm);
+    padding: $size-sm;
+    vertical-align: middle;
   }
 
   &__warning {
