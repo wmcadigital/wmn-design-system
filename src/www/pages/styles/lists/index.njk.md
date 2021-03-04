@@ -39,6 +39,30 @@
 {{
   compExample([
     "<ol class='wmnds-ordered-list'>
+        <li class='h2'>Level 2
+          <ol>
+            <li class='h3'>Level 3
+              <ol>
+                <li class='h4'>Level 4</li>
+                <li class='h4'>Level 4
+                  <ol>
+                    <li class='h5'>Level 5
+                      <ol>
+                        <li>Text</li>
+                      </ol>
+                  </li>
+                  </ol>
+                </li>
+                <li class='h4'>Level 4</li>
+              </ol>
+            </li>
+            <li class='h3'>Level 3</li>
+          </ol>
+      </li>
+      <li class='h2'>Level 2</li>
+    </ol>
+    <br/><br/>
+    <ol class='wmnds-ordered-list'>
         <li>Text
           <ol>
             <li>Text
@@ -56,7 +80,8 @@
           </ol>
       </li>
       <li>Text</li>
-    </ol>"
+    </ol>
+    "
   ])
 }}
 {% markdown %}
