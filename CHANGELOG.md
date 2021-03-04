@@ -1,3 +1,13 @@
+## [1.4.1](https://github.com/wmcadigital/wmn-design-system/compare/v1.4.0...v1.4.1) (2021-03-04)
+
+
+### Bug Fixes
+
+* bug when creating ordered list with headers classes ([#668](https://github.com/wmcadigital/wmn-design-system/issues/668)) ([764c5f4](https://github.com/wmcadigital/wmn-design-system/commit/764c5f4926c4c8159987cd6d83819e7c852de404))
+* bugfix alignment issue with file download ([#667](https://github.com/wmcadigital/wmn-design-system/issues/667)) ([e932470](https://github.com/wmcadigital/wmn-design-system/commit/e9324709db7a6ebdbdc77dd406f10a64f6c4b2a4)), closes [#666](https://github.com/wmcadigital/wmn-design-system/issues/666)
+* update heading modifier classes ([#653](https://github.com/wmcadigital/wmn-design-system/issues/653)) ([13b51d8](https://github.com/wmcadigital/wmn-design-system/commit/13b51d8732ccf85a001921ba9343e52f6ff61324))
+* Updates A to Z Time/Date ([#656](https://github.com/wmcadigital/wmn-design-system/issues/656)) ([1c732e9](https://github.com/wmcadigital/wmn-design-system/commit/1c732e9d29de94a236e32f2dac98b157e202360b))
+
 # [1.4.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.3.0...v1.4.0) (2021-02-10)
 
 
