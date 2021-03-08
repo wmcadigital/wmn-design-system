@@ -199,14 +199,16 @@
         {% endif %}
 
         {% if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
+        {% set breadcrumbList = null if params.breadcrumbs.section === params.breadcrumbs.pageTitle else {
+              contentText: params.breadcrumbs.pageTitle
+            } %}
         <!-- Breadcrumbs -->
         {{
           wmndsBreadcrumb({
             items: [{
-              contentText: params.breadcrumbs.section or "Components"
-            },{
-              contentText: params.breadcrumbs.pageTitle
-            }],
+              contentText: params.breadcrumbs.section or "Components",
+              unlinkedItem: false if breadcrumbList else true
+            }, breadcrumbList],
             label: params.label
           })
         }}
