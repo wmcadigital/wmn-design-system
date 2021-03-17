@@ -14,4 +14,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
-        run: { echo "Only release is allowed to merge to master"; exit 1' }
+        run: echo "Only release is allowed to merge to master"; exit 1;
