@@ -14,6 +14,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
-        run: echo "\n\n \033[0;31mOnly release is allowed to merge to master"; exit 1;
-        # \n = new line
-        # \033[0;31m = red text
+        run: echo "Only release is allowed to merge to master"; exit 1;
