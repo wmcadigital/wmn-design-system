@@ -36,7 +36,6 @@
       counter-increment: item;
     }
   }
-  
 
   // Create correct spacing for indent allowing for increase in counter length
   $selector: "ol:not([class*='wmnds-']) li";
