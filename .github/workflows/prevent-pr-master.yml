@@ -17,5 +17,5 @@ jobs:
         run: |
           echo "";
           echo "*****";
-          echo"::error::Only release branch is allowed to merge to master";
+          echo "::error::Only release branch is allowed to merge to master";
           exit 1;
