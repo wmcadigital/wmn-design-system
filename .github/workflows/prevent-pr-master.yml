@@ -1,4 +1,4 @@
-name: 'Prevent PR to master unless release'
+name: 'Branch guard'
 
 on:
   pull_request:
@@ -7,11 +7,12 @@ on:
     types: [opened, edited, synchronize]
 
 jobs:
-  check-if-bad-PR:
-    name: Checking if bad PR to master
+  allowed-to-merge-to-master:
+    name: Check if allowed to merge to master
     if: "!(startsWith(github.head_ref, 'master'))"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Try to fail
+      - name: Allowed to merge to master
+        run: echo "Only release is allowed to merge to master"
         run: exit 1
