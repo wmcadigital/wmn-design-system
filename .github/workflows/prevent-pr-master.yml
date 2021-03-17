@@ -14,4 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
-        run: echo "::error::**Only release is allowed to merge to master**"; exit 1;
+        run: |
+          echo "::error::
+            *****
+            Only release branch is allowed to merge to master";
+            exit 1;
