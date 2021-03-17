@@ -1,0 +1,17 @@
+name: 'Prevent PR to master unless release'
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-if-bad-PR:
+    name: Checking if bad PR to master
+    if: "!(startsWith(github.head_ref, 'master'))"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Try to fail
+        run: exit 1
