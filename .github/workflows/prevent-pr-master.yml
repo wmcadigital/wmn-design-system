@@ -9,11 +9,11 @@ on:
 jobs:
   allowed-to-merge-to-master:
     name: Check if allowed to merge to master
-    if: "!(startsWith(github.head_ref, 'master'))"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
+        if: "!(startsWith(github.head_ref, 'release'))"
         run: |
           echo "";
           echo "*****";
