@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Checking if branch is allowed...
-        if: "github.base_ref == 'master' && !(startsWith(github.head_ref, 'release'))"
+        if: "github.base_ref == 'master' && github.head_ref != 'release'"
         run: |
           echo "";
           echo "::error::Not allowed to merge '$GITHUB_HEAD_REF' branch into '$GITHUB_BASE_REF' branch";
