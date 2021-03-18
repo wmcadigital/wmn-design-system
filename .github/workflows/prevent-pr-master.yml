@@ -11,10 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
-        if: "!(startsWith(github.head_ref, 'release'))"
+        if: "github.base = 'main' && !(startsWith(github.head_ref, 'release'))"
         run: |
           echo "";
-          echo "head branch is: $GITHUB_HEAD_REF"
+          echo "head branch is: $GITHUB_HEAD_REF";
+          echo "base branch is: $GITHUB_BASE_REF";
           echo "*****";
           echo "::error::Only release branch is allowed to merge to master";
           exit 1;
