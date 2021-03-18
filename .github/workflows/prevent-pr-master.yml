@@ -9,13 +9,13 @@ on:
 jobs:
   can-merge-to-branch:
     name: Can merge to branch
+    if: "github.base_ref == 'master' && !(startsWith(github.head_ref, 'release'))"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Allowed to merge to master
-        if: "github.base_ref == 'master' && !(startsWith(github.head_ref, 'release'))"
+      - name: Checking if branch is allowed...
         run: |
           echo "";
-          echo "*****";
-          echo "::error::Not allowed to merge $GITHUB_HEAD_REF branch into $GITHUB_BASE_REF branch";
+          echo "::error::Not allowed to merge '$GITHUB_HEAD_REF' branch into '$GITHUB_BASE_REF' branch";
+          echo "---";
           exit 1;
