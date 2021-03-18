@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
-        if: "github.base = 'main' && !(startsWith(github.head_ref, 'release'))"
+        if: "github.base == 'main' && !(startsWith(github.head_ref, 'release'))"
         run: |
           echo "";
           echo "head branch is: $GITHUB_HEAD_REF";
