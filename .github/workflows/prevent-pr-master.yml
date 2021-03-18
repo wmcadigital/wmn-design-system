@@ -14,6 +14,7 @@ jobs:
         if: "!(startsWith(github.head_ref, 'release'))"
         run: |
           echo "";
+          echo "head branch is: $GITHUB_HEAD_REF"
           echo "*****";
           echo "::error::Only release branch is allowed to merge to master";
           exit 1;
