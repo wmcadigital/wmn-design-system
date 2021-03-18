@@ -79,12 +79,18 @@
   }
 
   &__content {
+    display: flex;
     padding: $size-lg 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
   @media screen and (min-width: $breakpoint-md) {
+
     &__content {
       width: 50%;
+      min-height: 300px;
     }
 
     &__image {
