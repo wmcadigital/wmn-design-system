@@ -1,3 +1,6 @@
+# if the base_ref(target branch we want to merge to) is master and the head_ref(source branch we want to merge from)
+# Then throw an error, as only release is allowed to merge into master
+# Otherwise this action won't run and show as success
 name: 'Branch guard'
 
 on:
@@ -10,9 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Allowed to merge to master
-        # if the base_ref(target branch we want to merge to) is master and the head_ref(source branch we want to merge from)
-        # Then throw an error, as only release is allowed to merge into master
-        # Otherwise this action won't run and show as success
         if: "github.base_ref == 'master' && !(startsWith(github.head_ref, 'release'))"
         run: |
           echo "";
