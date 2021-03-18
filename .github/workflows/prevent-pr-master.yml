@@ -5,8 +5,8 @@ on:
     types: [opened, edited, synchronize]
 
 jobs:
-  allowed-to-merge-to-master:
-    name: Check if allowed to merge to master
+  can-merge-to-branch:
+    name: Can merge to branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
