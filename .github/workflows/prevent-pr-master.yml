@@ -5,6 +5,7 @@ name: 'Branch guard'
 
 on:
   pull_request:
+    types: [opened, edited, synchronize]
 
 jobs:
   can-merge-to-branch:
