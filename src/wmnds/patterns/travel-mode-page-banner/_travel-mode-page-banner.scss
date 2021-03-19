@@ -60,6 +60,11 @@
     color: currentColor;
   }
 
+
+  &__copy {
+    max-width: 100%;
+  }
+
   &__logos {
     display: flex;
 
@@ -114,5 +119,16 @@
       left: 0;
       height: 100%;
     }
+
+  }
+
+  /* only for IE 11 */
+  @media all and (-ms-high-contrast: none) {
+    .wmnds-travel-mode-page-banner__svg-background {
+      left: calc(-50% + 30px);
+    }
   }
 }
+
+
+
