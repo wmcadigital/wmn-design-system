@@ -24,9 +24,33 @@
 
   &__form {
     display: none;
+
+    .h3 {
+      color: get-color(text);
+      font-family: $x-heading-font-family;
+    }
+
+    .wmnds-fe-label {
+      font-weight: bold;
+    }
   }
 
-  &.wmnds-is-open {
+  // Sent state
+  &__sent-msg {
+    display: none;
+  }
+
+  .wmnds-is--sent {
+    & > * {
+      display: none;
+    }
+
+    > .wmnds-feedback-loop__sent-msg {
+      display: block;
+    }
+  }
+
+  &.wmnds-is--open {
     .wmnds-container {
       padding: $size-md;
       border-top: $size-sm solid get-color(cta);

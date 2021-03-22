@@ -1,69 +1,171 @@
 const feedbackLoopJS = () => {
-  const feedbackLoops = document.querySelectorAll('.wmnds-feedback-loop');
+  // CONSTANTS
+  const feedbackLoopClass = 'wmnds-feedback-loop';
+  const isOpenClass = 'wmnds-is--open';
+  const isSentClass = 'wmnds-is--sent';
 
+  const formGroupClass = 'wmnds-fe-group';
+  const formInputClass = 'wmnds-fe-input';
+  const formCheckBoxesClass = 'wmnds-fe-checkboxes';
+  const formTextareaClass = 'wmnds-fe-textarea';
+  const formGroupErrorClass = `${formGroupClass}--error`;
+  const inputErrorClass = `${formInputClass}--error`;
+  const errorMessageClass = 'wmnds-fe-error-message';
+
+  // Helper functions
+  const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);
+  const createErrorMessage = textContet => {
+    const element = document.createElement('span');
+    element.classList.add(errorMessageClass);
+    element.textContent = textContet;
+    return element;
+  };
+
+  // Form submission functions
   const sendFeedback = data => {
     // eslint-disable-next-line no-console
     console.log(data);
+    // Toggle sent class
   };
 
-  const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);
-
-  const parseFormData = (form, selector) => {
+  const parseFormData = nodeList => {
     const formData = {};
     // Add data from DOM
     formData.contentPath = document.location.pathname;
     // Add data from form fields
-    const formFields = nodeListToArray(form.querySelectorAll(selector));
+    const formFields = nodeListToArray(nodeList);
     formFields.forEach(field => {
       if (!field.value) return;
+      if (field.type === 'checkbox') return;
       if (field.type === 'radio' && !field.checked) return;
       formData[field.name] = field.value;
     });
     return formData;
   };
 
-  const sendPageUsefulFeedback = (form, selector, isPageUseful) => {
-    const formData = parseFormData(form, selector);
+  const sendPageUsefulFeedback = (inputElements, isPageUseful) => {
+    const formData = parseFormData(inputElements);
     formData.contentHelpful = isPageUseful;
     sendFeedback(formData);
   };
 
-  const sendSomethingWrongFeedback = (form, selector) => {
-    const formData = parseFormData(form, selector);
-    formData.contentWrong = true;
+  const sendSomethingWrongFeedback = inputElements => {
+    const formData = parseFormData(inputElements);
     sendFeedback(formData);
   };
 
+  // Form validation functions
+  const getFormGroupToValidate = form => {
+    const formGroups = nodeListToArray(form.querySelectorAll(`.${formGroupClass}`));
+    const filterFunc = group => group.querySelectorAll('[required="true"]').length;
+    const formGroupsToValidate = formGroups.filter(filterFunc);
+    return formGroupsToValidate;
+  };
+
+  const showInvalidState = (formGroup, type) => {
+    if (formGroup.classList.contains(formGroupErrorClass)) return;
+    formGroup.classList.add(formGroupErrorClass);
+
+    switch (type) {
+      case 'checkbox': {
+        const container = formGroup.querySelector(`.${formCheckBoxesClass}`);
+        const errorMsg = createErrorMessage('This field is requierd');
+        container.prepend(errorMsg);
+        break;
+      }
+
+      case 'textarea': {
+        const textareaElement = formGroup.querySelector(`.${formTextareaClass}`);
+        const { parentElement } = textareaElement;
+        const errorMsg = createErrorMessage('This field is required');
+        textareaElement.classList.add(inputErrorClass);
+        parentElement.insertBefore(errorMsg, textareaElement);
+        break;
+      }
+
+      case 'text': {
+        const inputElement = formGroup.querySelector(`.${formInputClass}`);
+        const { parentElement } = inputElement;
+        const errorMsg = createErrorMessage('This field is required');
+        inputElement.classList.add(inputErrorClass);
+        parentElement.insertBefore(errorMsg, inputElement);
+        break;
+      }
+
+      default:
+        break;
+    }
+  };
+
+  const clearInvalidState = formGroup => {
+    formGroup.classList.remove(formGroupErrorClass);
+    // Remove error messages
+    const errorMsg = formGroup.querySelector(`.${errorMessageClass}`);
+    if (errorMsg) errorMsg.remove();
+    // Remove error classes
+    const erroredInputs = formGroup.querySelectorAll(`.${inputErrorClass}`);
+    erroredInputs.forEach(input => input.classList.remove(inputErrorClass));
+  };
+
+  const addValidationEvents = form => {
+    const formGroups = getFormGroupToValidate(form);
+    // Loop through and add invalid validation
+    formGroups.forEach(group => {
+      const formElements = group.querySelectorAll('[required="true"]');
+      formElements.forEach(element => {
+        element.addEventListener('input', () => clearInvalidState(group));
+        element.addEventListener('invalid', event => {
+          event.preventDefault();
+          showInvalidState(group, element.type);
+        });
+      });
+    });
+  };
+
   // Set up all the feedback loops
+  const feedbackLoops = document.querySelectorAll(`.${feedbackLoopClass}`);
   feedbackLoops.forEach(feedbackLoop => {
-    const somethingWrongBtn = feedbackLoop.querySelector('.wmnds-feedback-loop__wrong > button');
-    const closeBtn = feedbackLoop.querySelector('.wmnds-feedback-loop__form legend + button');
-    const pageUsefulRef = feedbackLoop.querySelector('.wmnds-feedback-loop__useful');
-    const contentWrongRef = feedbackLoop.querySelector('.wmnds-feedback-loop__form');
+    const somethingWrongBtn = feedbackLoop.querySelector(`.${feedbackLoopClass}__wrong > button`);
+    const closeBtn = feedbackLoop.querySelector(`.${feedbackLoopClass}__form legend + button`);
+    const questionsRef = feedbackLoop.querySelector(`.${feedbackLoopClass}__questions`);
+    const contentWrongFormRef = feedbackLoop.querySelector(`.${feedbackLoopClass}__form`);
+    const pageUsefulRef = feedbackLoop.querySelector(`.${feedbackLoopClass}__useful`);
+    const pageUsefulBtns = nodeListToArray(pageUsefulRef.querySelectorAll('button'));
 
     // Form functions
-    const toggleFeedbackForm = event => {
-      event.preventDefault();
-      feedbackLoop.classList.toggle('wmnds-is-open');
+    const clearFormErrors = () => {
+      const formGroups = nodeListToArray(
+        contentWrongFormRef.querySelectorAll(`.${formGroupClass}`)
+      );
+      formGroups.forEach(group => clearInvalidState(group));
     };
 
-    const submitFeedbackForm = event => {
+    const toggleFeedbackForm = (event = false) => {
+      if (event) event.preventDefault();
+      feedbackLoop.classList.toggle(isOpenClass);
+      clearFormErrors();
+    };
+
+    const submitIsPageUseful = event => {
+      const inputElements = feedbackLoop.querySelectorAll('[type="hidden"]');
+      sendPageUsefulFeedback(inputElements, event.target.textContent);
+      pageUsefulRef.classList.add('wmnds-is--sent');
+    };
+
+    const submitContentWrongForm = event => {
       event.preventDefault();
-      // Check which type of submit we should do
-      const isPageUselfulSubmit = pageUsefulRef.contains(event.submitter);
-      const isContentWrongSubmit = contentWrongRef.contains(event.submitter);
-      // Submit the appropriate data
-      if (isPageUselfulSubmit && !isContentWrongSubmit) {
-        sendPageUsefulFeedback(feedbackLoop, 'input[type="hidden"]', event.submitter.textContent);
-      } else {
-        sendSomethingWrongFeedback(feedbackLoop, 'textarea, input');
-      }
+      const inputElements = feedbackLoop.querySelectorAll('textarea, input');
+      sendSomethingWrongFeedback(inputElements);
+      questionsRef.classList.add(isSentClass);
+      toggleFeedbackForm();
     };
 
     // Attach form event listeners
     somethingWrongBtn.addEventListener('click', toggleFeedbackForm);
     closeBtn.addEventListener('click', toggleFeedbackForm);
-    feedbackLoop.addEventListener('submit', submitFeedbackForm);
+    addValidationEvents(contentWrongFormRef);
+    pageUsefulBtns.forEach(btn => btn.addEventListener('click', submitIsPageUseful));
+    contentWrongFormRef.addEventListener('submit', submitContentWrongForm);
   });
 };
 
