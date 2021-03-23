@@ -149,7 +149,7 @@ const feedbackLoopJS = () => {
     const submitIsPageUseful = event => {
       const inputElements = feedbackLoop.querySelectorAll('[type="hidden"]');
       sendPageUsefulFeedback(inputElements, event.target.textContent);
-      pageUsefulRef.classList.add('wmnds-is--sent');
+      pageUsefulRef.classList.add(isSentClass);
     };
 
     const submitContentWrongForm = event => {
