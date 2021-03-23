@@ -62,7 +62,7 @@ const feedbackLoopJS = () => {
     return formGroupsToValidate;
   };
 
-  const showInvalidState = (formGroup, type) => {
+  const showErrorState = (formGroup, type) => {
     if (formGroup.classList.contains(formGroupErrorClass)) return;
     formGroup.classList.add(formGroupErrorClass);
 
@@ -97,7 +97,7 @@ const feedbackLoopJS = () => {
     }
   };
 
-  const clearInvalidState = formGroup => {
+  const clearErrorState = formGroup => {
     formGroup.classList.remove(formGroupErrorClass);
     // Remove error messages
     const errorMsg = formGroup.querySelector(`.${errorMessageClass}`);
@@ -113,10 +113,10 @@ const feedbackLoopJS = () => {
     formGroups.forEach(group => {
       const formElements = group.querySelectorAll('[required="true"]');
       formElements.forEach(element => {
-        element.addEventListener('input', () => clearInvalidState(group));
+        element.addEventListener('input', () => clearErrorState(group));
         element.addEventListener('invalid', event => {
           event.preventDefault();
-          showInvalidState(group, element.type);
+          showErrorState(group, element.type);
         });
       });
     });
@@ -137,7 +137,7 @@ const feedbackLoopJS = () => {
       const formGroups = nodeListToArray(
         contentWrongFormRef.querySelectorAll(`.${formGroupClass}`)
       );
-      formGroups.forEach(group => clearInvalidState(group));
+      formGroups.forEach(group => clearErrorState(group));
     };
 
     const toggleFeedbackForm = (event = false) => {
