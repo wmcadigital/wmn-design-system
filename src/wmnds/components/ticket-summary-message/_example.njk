@@ -1,0 +1,15 @@
+{% raw %}
+{% from "wmnds/components/ticket-summary-message/_ticket-summary-message.njk" import wmndsTicketSummaryMsg %}
+
+{{
+   wmndsTicketSummaryMsg({
+      type: 'you-can',
+      listItems: [
+        'Travel as much as you like for one month',
+        'Travel by bus in the Regional bus area',
+        'Travel using any bus operator',
+        'Get <a href="#">discounts for local attractions</a>'
+      ]
+   })
+}}
+{% endraw %}
