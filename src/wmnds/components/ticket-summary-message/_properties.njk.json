@@ -1,0 +1,39 @@
+{
+  "wmndsTicketSummaryMsgProps": [
+    {
+      "name": "type",
+      "type": "string",
+      "description": "<strong>Required.</strong> Type of the ticket summary message component. Available types: <code class='wmnds-website-inline-code'>you-can</code>, <code class='wmnds-website-inline-code'>you-cannot</code>, <code class='wmnds-website-inline-code'>you-must</code>, <code class='wmnds-website-inline-code'>swift</code>"
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the ticket summary message container"
+    },
+    {
+      "name": "contentBeforeText",
+      "type": "string",
+      "description": "The text that displays before the list in the ticket summary message component. You can use any string with this option. If you set <code class='wmnds-website-inline-code'>contentBeforeHTML</code>, this option is ignored."
+    },
+    {
+      "name": "contentBeforeHTML",
+      "type": "string",
+      "description": "The HTML to use before the list within the ticket summary message component. You can use any string with this option. If you set <code class='wmnds-website-inline-code'>contentBeforeHTML</code>, <code class='wmnds-website-inline-code'>contentBeforeText</code> is ignored."
+    },
+    {
+      "name": "listItemsHTML",
+      "type": "array",
+      "description": "<strong>Required.</strong> Array of HTML strings used as list items. Each item in the array will be wrapped in <code class='wmnds-website-inline-code'>li</code> tags."
+    },
+    {
+      "name": "contentAfterText",
+      "type": "string",
+      "description": "The text that displays after the list in the ticket summary message component. You can use any string with this option. If you set <code class='wmnds-website-inline-code'>contentAfterHTML</code>, this option is ignored."
+    },
+    {
+      "name": "contentAfterHTML",
+      "type": "string",
+      "description": "The HTML to use after the list within the ticket summary message component. You can use any string with this option. If you set <code class='wmnds-website-inline-code'>contentAfterHTML</code>, <code class='wmnds-website-inline-code'>contentAfterText</code> is ignored."
+    }
+  ]
+}
