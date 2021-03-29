@@ -21,7 +21,14 @@
     padding-inline-start: $size-lg;
   }
 
-  li {
+  // avoid styles inheritance
+  & > li:not(li[class]) {
+    font-family: "Noto Sans Display", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  & > li {
     display: block;
     position: relative;
     margin-bottom: $size-xsm;
@@ -38,7 +45,7 @@
   }
 
   // Create correct spacing for indent allowing for increase in counter length
-  $selector: "ol:not([class*='wmnds-']) li";
+  $selector: "ol:not([class*='wmnds-'])>li";
   @for $i from 0 through 5 {
     #{repeater($selector, $i, " > ")}:before {
       left: -#{1.5 + (($i + 1) * 0.8rem)};
@@ -58,6 +65,13 @@
   a,
   .wmnds-link {
     display: inline;
+  }
+
+  // avoid styles inheritance
+  & > li:not(li[class]) {
+    color: get-color(text);
+    font-family: $x-font-family;
+    @include type-setting(0);
   }
 
   li {
