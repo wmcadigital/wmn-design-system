@@ -149,6 +149,9 @@
               "name": "Table"
             },
             {
+              "name": "Ticket summary message"
+            },
+            {
               "name": "Warning text"
             }
           ]
