@@ -34,7 +34,7 @@
 {% set title = params.title if params.title else mode  | capitalize + " in the West Midlands" %} {# Set title else fallback to "mode in West Midlands") #}
 {% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
 {% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
-{% set _modeClass = " wmnds-travel-mode-page-banner--" + mode if mode %} {# Set correct modifier class #}
+{% set _modeClass = " wmnds-travel-mode-page-banner--" + mode | lower if mode %} {# Set correct modifier class #}
 
 <div class="wmnds-travel-mode-page-banner{{_modeClass}}">
   <div class="wmnds-container">
