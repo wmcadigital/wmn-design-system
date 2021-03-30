@@ -5,6 +5,8 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
 
+{% set metaFields = [{name: 'contentType', value: 'content'}, {name: 'contentName', value: 'PageTitle'}, {name: 'contentLastEditor', value: 'Editor name'}, {name: 'serviceName', value: 'West Midlands Network Design system'}, {name: 'contentLastUpdated', value: '2021-03-19T11:18:15.532Z'}] %}
+
 {% block content %}
 {# About #}
 <h2>About</h2>
@@ -27,7 +29,34 @@
 {{
   compExample([
     wmndsFeedbackLoop({
-      id: 'fb'
+      id: 'fb',
+      metaFields: metaFields,
+      formFields: [
+        {
+          type: 'textarea',
+          name: 'contentWrongComment',
+          labelText: 'What is wrong with this page?',
+          placeholder: 'Text',
+          required: true
+        },
+        {
+          type: 'input',
+          name: 'emailAddress',
+          labelText: 'Email address (optional)',
+          placeholder: 'Text'
+        },
+        {
+          type: 'checkbox',
+          name: 'consent',
+          labelText: 'I consent to being contacted about the issue I am reporting (optional)'
+        },
+        {
+          type: 'checkbox',
+          name: 'privacy',
+          labelHTML: 'I agree to <a href="#">WMCA’s Privacy Policy</a>',
+          required: true
+        }
+      ]
     })
   ],
   {
@@ -43,7 +72,17 @@
   compExample([
     wmndsFeedbackLoop({
       isOpen: true,
-      id: 'fb-open'
+      id: 'fb-open',
+      metaFields: metaFields,
+      formFields: [
+        {
+          type: 'textarea',
+          name: 'contentWrongComment',
+          labelText: 'What would make this page more useful?',
+          placeholder: 'Text',
+          required: true
+        }
+      ]
     })
   ],
   {
