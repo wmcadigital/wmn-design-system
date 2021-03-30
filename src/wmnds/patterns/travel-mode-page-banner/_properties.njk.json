@@ -18,7 +18,7 @@
     {
       "name": "mode",
       "type": "string",
-      "description": "Transport mode the banner relates to. This will determine the icon and background colour which is displayed. Accepted values are <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>metro</code>, <code class='wmnds-website-inline-code'>roads</code>, <code class='wmnds-website-inline-code'>walk</code> and <code class='wmnds-website-inline-code'>cycle</code>. If not set, will default to <code class='wmnds-website-inline-code'>bus</code>."
+      "description": "Transport mode the banner relates to. This will determine the icon and background colour which is displayed. Accepted values are <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>metro</code>, <code class='wmnds-website-inline-code'>roads</code>, <code class='wmnds-website-inline-code'>walk</code>, <code class='wmnds-website-inline-code'>cycle</code> and <code class='wmnds-website-inline-code'>eScooter</code>. If not set, will default to <code class='wmnds-website-inline-code'>bus</code>."
     }
   ]
 }
