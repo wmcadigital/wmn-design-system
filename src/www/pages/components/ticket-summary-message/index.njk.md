@@ -33,7 +33,7 @@
       type: 'you-can',
       listItemsHTML: [
         'Travel as much as you like for one month',
-        'Travel by bus in the Regional bus area',
+        'Travel by bus in the <b>Regional bus area</b>',
         'Travel using any bus operator',
         'Get <a href="#">discounts for local attractions</a>'
       ]
@@ -57,9 +57,10 @@
 {{
   compExample([
     wmndsTicketSummaryMsg({
-      type: 'you-must',
+      type: 'you-cannot',
       listItemsHTML: [
-        'Be 5 to 15 years old or have a 16 to 18 Swift photocard'
+        'Travel by train or tram',
+        'Share your ticket with other people'
       ]
     })
   ],
@@ -85,10 +86,9 @@
 {{
   compExample([
     wmndsTicketSummaryMsg({
-      type: 'you-cannot',
+      type: 'you-must',
       listItemsHTML: [
-        'Travel by train or tram',
-        'Share your ticket with other people'
+        'Be 5 to 15 years old or have a 16 to 18 Swift photocard'
       ]
     })
   ],
