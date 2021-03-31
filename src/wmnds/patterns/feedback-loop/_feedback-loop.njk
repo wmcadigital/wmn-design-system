@@ -9,28 +9,36 @@
 
 {# Set params #}
 {% set _feedbackLoopId = params.id if params.id else "feedback-loop" %} {# this is to pass unique id to this macro, to stop clashing of duplicate IDs with the preview page and the ACTUAL feedback loop in the footer #}
-{% set isOpen = " wmnds-is--open" if params.isOpen %}
-{% set isUsefulSent = " wmnds-is--sent" if params.isUsefulSent %}
-{% set usefulSentMessage = params.usefulSentMessage if params.usefulSentMessage else 'Thank you for letting us know' %}
 {% set formTitle = params.formTitle if params.formTitle else 'Help us improve West Midlands Network' %}
+{% set isOpen = " wmnds-is--open" if params.isOpen %}
+
+{% set isUsefulSent = " wmnds-is--sent" if params.isUsefulSent %}
+{% set usefulSentMessageText = params.usefulSentMessage.contentText if params.usefulSentMessage.contentText else 'Thank you for letting us know' %}
+{% set usefulSentMessageHTML = params.usefulSentMessage.contentHTMl if params.usefulSentMessage.contentHTML else null %}
+{% set _usefulSentMessage = usefulSentMessageHTML | safe if usefulSentMessageHTML else usefulSentMessageText %}
+
+{% set isFormSent = " wmnds-is--sent" if params.isFormSent %}
+{% set formSentMessageText = params.formSentMessage.contentText if params.formSentMessage.contentText else '' %}
+{% set formSentMessageHTML = params.formSentMessage.contentHTMl if params.formSentMessage.contentHTML else '<span>Thank you for letting us know. If you require urgent help, please contact our <a class="wmnds-link" href="#">Customer Service</a> team.</span>' %}
+{% set _formSentMessage = formSentMessageText if formSentMessageText else formSentMessageHTML | safe %}
 
 <div class="wmnds-feedback-loop{{isOpen}}">
   {% for field in params.metaFields %}
     {# Prepopulated meta fields #}
     <input type="hidden" name="{{field.name}}" value="{{field.value}}"/>
   {% endfor %}
-  <div class="wmnds-container wmnds-feedback-loop__questions">
+  <div class="wmnds-container wmnds-feedback-loop__questions{{isFormSent}}">
     <div class="wmnds-feedback-loop__useful{{isUSefulSent}}">
       <span>Is this page useful?</span>
       <button class="wmnds-btn wmnds-btn--link wmnds-m-l-sm">Yes</button>
       <button class="wmnds-btn wmnds-btn--link wmnds-m-l-sm">No</button>
-      <span class="wmnds-feedback-loop__sent-msg wmnds-m-b-none">{{ usefulSentMessage }}</span>
+      <span class="wmnds-feedback-loop__sent-msg wmnds-m-b-none">{{ _usefulSentMessage }}</span>
     </div>
     <div class="wmnds-feedback-loop__wrong">
       <button class="wmnds-btn wmnds-btn--link">Is there anything wrong with this page?</button>
     </div>
     <div class="wmnds-feedback-loop__sent-msg">
-      <span>Thank you for letting us know. If you require urgent help, please contact our <a class="wmnds-link" href="#">Customer Service</a> team.</span>
+      {{ _formSentMessage }}
     </div>
   </div>
 
