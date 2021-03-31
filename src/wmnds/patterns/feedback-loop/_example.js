@@ -23,9 +23,22 @@ const feedbackLoopJS = () => {
 
   // Form submission functions
   const sendFeedback = data => {
-    // eslint-disable-next-line no-console
-    console.log(data);
-    // Toggle sent class
+    // Send data
+    const url =
+      'https://prod-10.uksouth.logic.azure.com/workflows/8bf9c75f399246de96cf505a1331e738/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=qSXrjDmMgHoPORSob4-uqonyJyF8mB8addKURnOhL1E';
+
+    fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        return response.text();
+      })
+      .then(text => {
+        // eslint-disable-next-line no-console
+        console.log(text);
+      });
   };
 
   const parseFormData = nodeList => {
