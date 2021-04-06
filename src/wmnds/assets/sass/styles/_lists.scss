@@ -21,7 +21,14 @@
     padding-inline-start: $size-lg;
   }
 
-  li {
+  // avoid styles inheritance
+  & > li:not(li[class]) {
+    font-family: "Noto Sans Display", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  & > li {
     display: block;
     position: relative;
     margin-bottom: $size-xsm;
@@ -38,7 +45,7 @@
   }
 
   // Create correct spacing for indent allowing for increase in counter length
-  $selector: "ol:not([class*='wmnds-']) li";
+  $selector: "ol:not([class*='wmnds-'])>li";
   @for $i from 0 through 5 {
     #{repeater($selector, $i, " > ")}:before {
       left: -#{1.5 + (($i + 1) * 0.8rem)};
@@ -46,6 +53,7 @@
     }
   }
 }
+
 // Unordered list styles
 // Included the ol tag too incase dev forgets to add .wmnds-unordered-list class.
 // The ul:not([class*="wmnds-"]) line makes sure we don't target any wmnds components that are using the a tag such as the breadcrumbs
@@ -60,7 +68,22 @@
     display: inline;
   }
 
-  li {
+  ul,
+  ol:not(.wmnds-ordered-list) {
+    position: relative;
+    margin-top: $size-xsm;
+    counter-reset: item;
+    padding-inline-start: $size-lg;
+  }
+
+  // avoid styles inheritance
+  & > li:not(li[class]) {
+    color: get-color(text);
+    font-family: $x-font-family;
+    @include type-setting(0);
+  }
+
+  & > li {
     position: relative;
     margin-bottom: $size-xsm;
 
@@ -71,14 +94,36 @@
     }
   }
 
-  ul:not([class*="wmnds-"]),
-  ol {
+  ul:not([class*="wmnds-"]) {
     margin-top: $size-xsm;
     list-style: none;
     padding-inline-start: $size-lg;
 
-    li:before {
+    & > li:before {
       content: "–";
+    }
+  }
+
+  ol {
+    margin-top: $size-xsm;
+    list-style: none;
+    padding-inline-start: $size-lg;
+    counter-reset: newitem;
+
+    & > li {
+      display: block;
+      position: relative;
+      margin-bottom: $size-xsm;
+
+      &:before {
+        content: counters(newitem, ".") ".";
+        position: absolute;
+        left: -3rem;
+        width: 2.75rem;
+        padding-right: 0.25rem;
+        text-align: right;
+        counter-increment: newitem;
+      }
     }
   }
 }
