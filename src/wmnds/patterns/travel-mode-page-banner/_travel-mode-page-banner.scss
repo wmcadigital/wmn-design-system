@@ -56,6 +56,14 @@
     }
   }
 
+  &--escooter {
+    background-color: get-color(susTravel);
+
+    .wmnds-travel-mode-page-banner__svg-background {
+      fill: get-color(susTravel);
+    }
+  }
+
   h2 {
     color: currentColor;
   }
