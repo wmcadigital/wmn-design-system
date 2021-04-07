@@ -25,7 +25,6 @@
   // Modifiers
   &--yellow {
     background-color: get-color(plannedDisruption);
-    @include accessibility-hover;
   }
 
   // Elements
