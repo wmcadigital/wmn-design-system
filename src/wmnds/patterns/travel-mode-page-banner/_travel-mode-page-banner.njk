@@ -39,12 +39,14 @@
 <div class="wmnds-travel-mode-page-banner{{_modeClass}}">
   <div class="wmnds-container">
     <div class="wmnds-travel-mode-page-banner__content">
-      <h2>{{ title }}</h2>
-      {% if contentHTML %}
-        {{ contentHTML }}
-      {% else %}
-        <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
-      {% endif %}
+      <div class="wmnds-travel-mode-page-banner__copy">
+        <h2>{{ title }}</h2>
+        {% if contentHTML %}
+          {{ contentHTML }}
+        {% else %}
+          <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
+        {% endif %}
+      </div>
       <div class="wmnds-travel-mode-page-banner__logos">
         {% if mode %}
           {{
