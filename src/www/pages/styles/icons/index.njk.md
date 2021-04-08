@@ -49,7 +49,9 @@
   "bird-icon",
   "card",
   "card-full-logo",
-  "full-logo"
+  "full-logo",
+  "historical-journey",
+  "journey-removed"
 ] %}
 
 {% set iconSocial = [
