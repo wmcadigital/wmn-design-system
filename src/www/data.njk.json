@@ -88,7 +88,8 @@
           "name": "Maps"
         },
         {
-          "name": "Create a short URL"
+          "name": "Friendly links (short URLs)",
+          "href": "/styles/create-a-short-url/"
         },
         {
           "name": "Typography"
