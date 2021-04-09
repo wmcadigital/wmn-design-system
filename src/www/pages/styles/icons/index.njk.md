@@ -49,7 +49,9 @@
   "bird-icon",
   "card",
   "card-full-logo",
-  "full-logo"
+  "full-logo",
+  "historical-journey",
+  "journey-removed"
 ] %}
 
 {% set iconSocial = [
@@ -67,7 +69,8 @@
   "plane",
   "rail",
   "roads",
-  "walk"
+  "walk",
+  "eScooter"
 ] %}
 
 {% set iconModesBackground = [
@@ -81,7 +84,8 @@
   "rail-nr",
   "rail",
   "roads",
-  "walk"
+  "walk",
+  "eScooter"
 ] %}
 
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
