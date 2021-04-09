@@ -1,0 +1,22 @@
+# if the base_ref(target branch we want to merge to) is master and the head_ref(source branch we want to merge from)
+# Then throw an error, as only release is allowed to merge into master
+# Otherwise this action won't run and show as success
+name: 'Branch guard 🛡️'
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  can-merge-to-branch:
+    name: Can merge to branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checking if branch is allowed...
+        if: "github.base_ref == 'master' && github.head_ref != 'release'"
+        run: |
+          echo "";
+          echo "::error::Not allowed to merge '$GITHUB_HEAD_REF' branch into '$GITHUB_BASE_REF' branch";
+          echo "---";
+          exit 1;
