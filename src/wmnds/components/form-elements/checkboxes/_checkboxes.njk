@@ -44,6 +44,7 @@
           {%- set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
           {%- set inputValue = item.value if item.value else "option" + loop.index | string %}
           {%- set inputId = item.id if item.id else idPrefix + "_" + inputValue %}
+          {%- set isRequired = (' required="true"' | safe) if item.required else "" %}
           {%- set isNotEditable = (' disabled="disabled"' | safe) if item.disabled === true else "" %}
           {% set itemContentText = item.contentText if item.contentText else "Select all options that apply" %}
           {% set itemContentHTML = item.contentHTML if item.contentHTML else null %}
@@ -55,7 +56,16 @@
               {%- endif -%}
               {{ _itemContent }}
             </div>
-            <input id="{{inputId}}" class="wmnds-fe-checkboxes__input" value="{{inputValue}}" name="{{name}}" {{isChecked}} type="checkbox" {{isNotEditable}}/>
+            <input 
+              id="{{inputId}}" 
+              class="wmnds-fe-checkboxes__input" 
+              value="{{inputValue}}" 
+              name="{{name}}" 
+              type="checkbox"  
+              {{isChecked}} 
+              {{isRequired}} 
+              {{isNotEditable}} 
+            />
             <span class="wmnds-fe-checkboxes__checkmark">
               {{
                 wmndsIcon({
