@@ -14,10 +14,10 @@ const feedbackLoopJS = () => {
 
   // Helper functions
   const nodeListToArray = nodeList => Array.prototype.slice.call(nodeList);
-  const createErrorMessage = textContet => {
+  const createErrorMessage = textContent => {
     const element = document.createElement('span');
     element.classList.add(errorMessageClass);
-    element.textContent = textContet;
+    element.textContent = textContent;
     return element;
   };
 
@@ -82,7 +82,7 @@ const feedbackLoopJS = () => {
     switch (type) {
       case 'checkbox': {
         const container = formGroup.querySelector(`.${formCheckBoxesClass}`);
-        const errorMsg = createErrorMessage('This field is requierd');
+        const errorMsg = createErrorMessage('This field is required');
         container.prepend(errorMsg);
         break;
       }

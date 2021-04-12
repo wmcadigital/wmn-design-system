@@ -28,7 +28,7 @@
         {
           "name": "contentHTML",
           "type": "string",
-          "description": "HTMl shown once 'Is this page useful?' feedback is submitted. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+          "description": "HTML shown once 'Is this page useful?' feedback is submitted. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
         }
       ]
     },
@@ -94,7 +94,7 @@
         {
           "name": "labelHTML",
           "type": "string",
-          "description": "<strong>Required</strong> HTMl to be used in the input label. If <code class='wmnds-website-inline-code'>labelHTML</code> is provided, <code class='wmnds-website-inline-code'>labelText</code> will be ignored."
+          "description": "<strong>Required</strong> HTML to be used in the input label. If <code class='wmnds-website-inline-code'>labelHTML</code> is provided, <code class='wmnds-website-inline-code'>labelText</code> will be ignored."
         },
         {
           "name": "required",
