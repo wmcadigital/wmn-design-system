@@ -19,6 +19,9 @@
 {% elif mode == "cycle" %}
   {% set _logoFolder = "WM Cycle" %}
   {% set _logoAlt = "West Midlands Cycle" %}
+{% elif mode == "eScooter" %}
+  {% set _logoFolder = "WM eScooter" %}
+  {% set _logoAlt = "West Midlands eScooter" %}
 {% else %}
   {# If no mode is selected(or is bus), then default to bus #}
   {% set _logoFolder = "WM Bus" %}
@@ -31,17 +34,19 @@
 {% set title = params.title if params.title else mode  | capitalize + " in the West Midlands" %} {# Set title else fallback to "mode in West Midlands") #}
 {% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
 {% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
-{% set _modeClass = " wmnds-travel-mode-page-banner--" + mode if mode %} {# Set correct modifier class #}
+{% set _modeClass = " wmnds-travel-mode-page-banner--" + mode | lower if mode %} {# Set correct modifier class #}
 
 <div class="wmnds-travel-mode-page-banner{{_modeClass}}">
   <div class="wmnds-container">
     <div class="wmnds-travel-mode-page-banner__content">
-      <h2>{{ title }}</h2>
-      {% if contentHTML %}
-        {{ contentHTML }}
-      {% else %}
-        <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
-      {% endif %}
+      <div class="wmnds-travel-mode-page-banner__copy">
+        <h2>{{ title }}</h2>
+        {% if contentHTML %}
+          {{ contentHTML }}
+        {% else %}
+          <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
+        {% endif %}
+      </div>
       <div class="wmnds-travel-mode-page-banner__logos">
         {% if mode %}
           {{

@@ -55,7 +55,7 @@
               {% for navItem in navItems %}
                 <li class="wmnds-mega-menu__primary-menu-item">
                 <!-- Show swift logo in nav if is swift & tickets link -->
-                {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) if navItem.name === "Swift and tickets" else "" %}
+                {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon', title: 'Swift'}) if navItem.name === "Swift and tickets" else "" %}
                 {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name %}
                   <!-- allow primary (level 1) item to link if specified -->
                   {% if params.linkTopLevel %}{{navItemIcon}}
@@ -95,7 +95,7 @@
                                   <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
                                 </svg>
                                 {% endif %}
-                                {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon'}) | indent(6) | trim) | safe}}</{{_tag}}>
+                                {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon', title: 'Swift'}) | indent(6) | trim) | safe}}</{{_tag}}>
                                 {% if subnavItem.subnavItems %}
                                 <!-- collapse button for mobile nav level 3 menu items -->
                               <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
@@ -199,14 +199,16 @@
         {% endif %}
 
         {% if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
+        {% set breadcrumbList = null if params.breadcrumbs.section === params.breadcrumbs.pageTitle else {
+              contentText: params.breadcrumbs.pageTitle
+            } %}
         <!-- Breadcrumbs -->
         {{
           wmndsBreadcrumb({
             items: [{
-              contentText: params.breadcrumbs.section or "Components"
-            },{
-              contentText: params.breadcrumbs.pageTitle
-            }],
+              contentText: params.breadcrumbs.section or "Components",
+              unlinkedItem: false if breadcrumbList else true
+            }, breadcrumbList],
             label: params.label
           })
         }}

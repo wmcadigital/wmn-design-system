@@ -88,6 +88,10 @@
           "name": "Maps"
         },
         {
+          "name": "Friendly links (short URLs)",
+          "href": "/styles/create-a-short-url/"
+        },
+        {
           "name": "Typography"
         },
         {
@@ -147,6 +151,9 @@
             },
             {
               "name": "Table"
+            },
+            {
+              "name": "Ticket summary message"
             },
             {
               "name": "Warning text"

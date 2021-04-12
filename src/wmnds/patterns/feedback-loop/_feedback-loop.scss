@@ -4,7 +4,8 @@
     border-bottom: $size-sm solid get-color(cta);
   }
 
-  .wmnds-link {
+  .wmnds-link,
+  .wmnds-btn--link {
     color: $white;
   }
 
@@ -23,9 +24,28 @@
 
   &__form {
     display: none;
+
+    .wmnds-fe-label {
+      font-weight: bold;
+    }
   }
 
-  &.wmnds-is-open {
+  // Sent state
+  &__sent-msg {
+    display: none;
+  }
+
+  .wmnds-is--sent {
+    & > * {
+      display: none;
+    }
+
+    > .wmnds-feedback-loop__sent-msg {
+      display: block;
+    }
+  }
+
+  &.wmnds-is--open {
     .wmnds-container {
       padding: $size-md;
       border-top: $size-sm solid get-color(cta);
@@ -35,7 +55,8 @@
       background-color: $white;
     }
 
-    .wmnds-link {
+    .wmnds-link,
+    .wmnds-btn--link {
       color: get-color(cta);
     }
 

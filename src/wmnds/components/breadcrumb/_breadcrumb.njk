@@ -22,16 +22,18 @@
       {%- endfor %}
       {% set _href = breadcrumb.href if breadcrumb.href else _pageUrl %} {# if href is set use this, else use pageUrl constructed above #}
       {% set isCurrentPage = loop.index === items.length %}
-    <li class="wmnds-breadcrumb__list-item">
-      {% if breadcrumb.unlinkedItem === true %} 
-        {{ breadcrumb.contentText }}
-      {% else %}
-        <a href="{{ _href }}" class="wmnds-breadcrumb__link{% if isCurrentPage %} wmnds-breadcrumb__link--current{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
+    
+      {% if breadcrumb.contentText.length > 0 %} 
+      <li class="wmnds-breadcrumb__list-item">
+        {% if breadcrumb.unlinkedItem === true %} 
           {{ breadcrumb.contentText }}
-        </a>
+        {% else %}
+          <a href="{{ _href }}" class="wmnds-breadcrumb__link{% if isCurrentPage %} wmnds-breadcrumb__link--current{% endif %}" {% if isCurrentPage %}aria-current="page"{% endif %}>
+            {{ breadcrumb.contentText }}
+          </a>
+        {% endif %}
+      </li>
       {% endif %}
-
-    </li>
     {% endfor %}
   </ol>
 </nav>

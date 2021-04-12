@@ -1,17 +1,21 @@
-name: 'Lint PR title'
+name: Release-Notes-Preview
 
 on:
   pull_request:
-    branches:
-      - release
-    types: [opened, edited, synchronize]
+    branches: [master]
+  issue_comment:
+    types: [edited]
 
 jobs:
-  lint:
-    name: Linting PR title
+  preview:
     runs-on: ubuntu-latest
-    if: "startsWith(github.base_ref, 'release')"
     steps:
-      - uses: amannn/action-semantic-pull-request@v1.2.0
+      - uses: actions/checkout@v2
+      - run: |
+          git fetch --prune --unshallow --tags
+      - uses: snyk/release-notes-preview@v1.6.1
+        with:
+          releaseBranch: master
         env:
+          GITHUB_PR_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
