@@ -33,7 +33,7 @@
 {{
     compExample([
         wmndsInsetText({
-            contentHTML: "<strong>Example of inset text</strong>"
+            contentHTML: "Example of inset text"
         })
     ], {
       componentPath: "wmnds/components/inset-text/",
