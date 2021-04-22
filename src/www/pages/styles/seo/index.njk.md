@@ -18,7 +18,7 @@ We have installed an extension called SEO Checker on our content management syst
 On every piece of content, you can set:
 - [Focus keywords](https://yoast.com/focus-keyword/), keywords you want to rank the page for
 - [An SEO title](https://yoast.com/page-titles-seo/), the title of the page for search engines
-- [An SEO drescription](https://yoast.com/meta-descriptions/), the description of the page for search engines
+- [An SEO description](https://yoast.com/meta-descriptions/), the description of the page for search engines
 
 You can also use the SEO Checker's validator to check for errors. Errors negatively impact your content's performance.
 
