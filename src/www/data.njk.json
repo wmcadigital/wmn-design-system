@@ -251,8 +251,7 @@
       { "varName": "metro", "name": "Metro" },
       { "varName": "railway", "name": "WM Railway" },
       { "varName": "susTravel", "name": "Sustainable Travel" },
-      { "varName": "roads", "name": "Roads" },
-      { "varName": "taxi", "name": "Taxi" }
+      { "varName": "roads", "name": "Roads" }
     ],
     "web": [
       { "varName": "text", "name": "Text" },
