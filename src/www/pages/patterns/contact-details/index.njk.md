@@ -45,9 +45,9 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 {{
     compExample([
-        wmndsInsetText(
+        wmndsContactDetails(
             {
-                contentHTML: "Customer Services<br>Transport for West Midlands<br>16 Summer Lane<br>Birmingham<br>B19 3SD"
+                contentBeforeWarning: "Customer Services<br>Transport for West Midlands<br>16 Summer Lane<br>Birmingham<br>B19 3SD"
             }
         )
     ])
@@ -57,16 +57,14 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 {{
     compExample([
-        wmndsInsetText({
-            contentHTML:
-            wmndsContactDetails({
-                warningText: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
-                warningIcon: "general-warning-triangle",
-                content: "<a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
-                Telephone: <a href=\"tel:03453036760\">0345 303 6760</a><br>
-                Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
-                Wednesday, 9.30am - 5pm"
-            })
+        wmndsContactDetails({
+            contentBeforeWarning: "Transport for West Midlands",
+            warningText: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
+            warningIcon: "general-warning-triangle",
+            contentAfterWarning: "<p><a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
+            Telephone: <a href=\"tel:03453036760\">0345 303 6760</a></p>
+            Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
+            Wednesday, 9.30am - 5pm"
         })
     ])
 }}
