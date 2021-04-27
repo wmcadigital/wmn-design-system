@@ -3,26 +3,54 @@
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 {% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {# Set vars #}
-{% set title = params.title if params.title else "Transport for West Midlands" %} {# set title #}
-{% set warningText = params.warningText if params.warningText %} {# set warning text #}
-{% set warningIcon = params.warningIcon if params.warningIcon %} {# set warning text #}
-{% set contentBeforeWarning = params.contentBeforeWarning if params.contentBeforeWarning %} {# set content #}
-{% set contentAfterWarning = params.contentAfterWarning if params.contentAfterWarning %} {# set content #}
+{# Address #}
+{% set department = params.department + "<br/>" if params.department %}
+{% set organisation = params.organisation + "<br/>" if params.organisation %}
+{% set address = params.address if params.address %}
+{# Alert #}
+{% set alertIcon = params.alertIcon if params.alertIcon %}
+{% set alertMessage = params.alertMessage if params.alertMessage %}
+{# Socials #}
+{% set twitter = "<a href='" + params.twitter + "' target='_blank' class='wmnds-link'>Twitter</a><br />" if params.twitter %}
+{% set facebook = "<a href='" + params.facebook + "' target='_blank' class='wmnds-link'>Facebook</a><br />"  if params.facebook %}
+{# Other contact #}
+{% set enquiryLink = params.enquiryLink if params.enquiryLink %}
+{% set telephone = params.telephone if params.telephone %}
+{% set email = params.email if params.email %}
+{# Opening hours #}
+{% set workingHours = params.workingHours if params.workingHours %}
 
-{% set warning=
-wmndsWarningText({
-    contentHTML: warningText,
-    icon: warningIcon,
-    classes: "wmnds-p-b-sm"
-}) if warningText and warningIcon %}
 
-{% set contactDetailsHTML = "
-<address class='wmnds-contact-details'>" +
-    (contentBeforeWarning | safe)
-    + warning +
-    (contentAfterWarning | safe) +
-"</address>"
+{% set addressSection =
+    "<p>" +
+        department  +
+        organisation +
+        address +
+    "</p>"
+    if department or organisation or address
 %}
+
+{% set alertSection =
+    wmndsWarningText({
+        contentHTML: alertMessage,
+        icon: alertIcon,
+        classes: "wmnds-p-b-sm"
+    })
+    if alertMessage
+%}
+
+{% set socialsSection =
+    "<p>" +
+        twitter +
+        facebook +
+    "</p>"
+    if twitter or facebook
+%}
+
+
+{% set contactDetailsHTML = "<address class='wmnds-contact-details'>"
+    + addressSection + alertSection + socialsSection +
+"</address>" %}
 
 {{
     wmndsInsetText({

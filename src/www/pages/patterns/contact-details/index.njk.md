@@ -3,7 +3,6 @@
 {% set section="Patterns" %}
 {# Imports #}
 {% from "wmnds/patterns/contact-details/_contact-details.njk" import wmndsContactDetails %}
-{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -55,16 +54,22 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 <h2>Contact Details - Template</h2>
 
+{% set contactDetailsTemplateAfter = "
+
+<p>
+    <a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
+    Telephone: <a href=\"tel:03453036760\">0345 303 6760</a>
+</p>
+Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
+Wednesday, 9.30am - 5pm" %}
+
 {{
     compExample([
         wmndsContactDetails({
             contentBeforeWarning: "Transport for West Midlands",
             warningText: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
             warningIcon: "general-warning-triangle",
-            contentAfterWarning: "<p><a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
-            Telephone: <a href=\"tel:03453036760\">0345 303 6760</a></p>
-            Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
-            Wednesday, 9.30am - 5pm"
+            contentAfterWarning: contactDetailsTemplateAfter
         })
     ])
 }}
@@ -90,12 +95,11 @@ GOV.UK has detailed information about [how to display contact details](https://d
 %}
 
 {{
-compExample([
-wmndsInsetText({
-contentHTML: templateTFWMExample
-})
-])
-
+    compExample([
+        wmndsContactDetails({
+            facebook: "https://www.facebook.com/westmidlandsnetwork"
+        })
+    ])
 }}
 
 {% endblock %}
