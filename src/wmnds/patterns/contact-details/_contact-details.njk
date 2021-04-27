@@ -7,7 +7,7 @@
 {% set warningIcon = params.warningIcon if params.warningIcon %} {# set warning text #}
 {% set content = params.content if params.content %} {# set content #}
 
-<div class="wmnds-contact-details">
+<address class="wmnds-contact-details">
     <p>{{title}}</p>
     {{
         wmndsWarningText({
@@ -17,5 +17,5 @@
         })
     }}
     {{content | safe}}
-</div>
+</address>
 {% endmacro %}
