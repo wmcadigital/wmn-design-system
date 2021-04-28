@@ -14,12 +14,11 @@
 {% set twitter = "<a href='" + params.twitter + "' target='_blank' class='wmnds-link'>Twitter</a><br />" if params.twitter %}
 {% set facebook = "<a href='" + params.facebook + "' target='_blank' class='wmnds-link'>Facebook</a><br />"  if params.facebook %}
 {# Other contact #}
-{% set enquiryLink = params.enquiryLink if params.enquiryLink %}
-{% set telephone = params.telephone if params.telephone %}
-{% set email = params.email if params.email %}
+{% set enquiryLink = "<a href='" + params.enquiryLink + "' target='_blank' class='wmnds-link'>Submit an enquiry</a><br />" if params.enquiryLink %}
+{% set email = "<a href='mailto:" + params.email + "' target='_blank' class='wmnds-link'>" + params.email +"</a><br />" if params.email %}
+{% set telephone = "Telephone: <a href='tel:" + params.telephone + "' target='_blank' class='wmnds-link'>" + params.telephone +"</a>" if params.telephone %}
 {# Opening hours #}
 {% set workingHours = params.workingHours if params.workingHours %}
-
 
 {% set addressSection =
     "<p>" +
@@ -47,10 +46,31 @@
     if twitter or facebook
 %}
 
+{% set otherSection =
+    "<p>" +
+        enquiryLink +
+        email +
+        telephone +
+    "</p>"
+    if enquiryLink or email or telephone
+%}
 
-{% set contactDetailsHTML = "<address class='wmnds-contact-details'>"
-    + addressSection + alertSection + socialsSection +
-"</address>" %}
+{% set openHoursSection =
+    "<p>" +
+        workingHours +
+    "</p>"
+    if twitter or facebook
+%}
+
+{% set contactDetailsHTML =
+    "<address class='wmnds-contact-details'>" +
+        addressSection +
+        alertSection +
+        socialsSection +
+        otherSection +
+        workingHours +
+    "</address>"
+%}
 
 {{
     wmndsInsetText({

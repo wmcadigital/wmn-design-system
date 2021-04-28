@@ -44,60 +44,40 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 {{
     compExample([
-        wmndsContactDetails(
-            {
-                contentBeforeWarning: "Customer Services<br>Transport for West Midlands<br>16 Summer Lane<br>Birmingham<br>B19 3SD"
-            }
-        )
+        wmndsContactDetails({
+            department: "Customer Services",
+            organisation: "Transport for West Midlands",
+            address: "16 Summer Lane<br>Birmingham<br>B19 3SD"
+        })
     ])
 }}
 
 <h2>Contact Details - Template</h2>
 
-{% set contactDetailsTemplateAfter = "
-
-<p>
-    <a href=\"mailto:customerservice@tfwm.org.uk\">customerservice@tfwm.org.uk</a><br>
-    Telephone: <a href=\"tel:03453036760\">0345 303 6760</a>
-</p>
-Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
-Wednesday, 9.30am - 5pm" %}
-
 {{
     compExample([
         wmndsContactDetails({
-            contentBeforeWarning: "Transport for West Midlands",
-            warningText: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
-            warningIcon: "general-warning-triangle",
-            contentAfterWarning: contactDetailsTemplateAfter
+            organisation: "Transport for West Midlands",
+            alertMessage: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
+            alertIcon: "general-warning-triangle",
+            email: "customerservice@tfwm.org.uk",
+            telephone: "0345 303 6760",
+            workingHours: "Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm"
         })
     ])
 }}
 
 <h2>Contact Details - Template TfWM</h2>
 
-{% set templateTFWMExample= "
-
-<address class='wmnds-contact-details'>
-    <p>Transport for West Midlands</p>
-    <p>
-        <a href=\"https://twitter.com/wmnetwork\">Twitter</a><br>
-        <a href=\"https://www.facebook.com/westmidlandsnetwork\">Facebook</a><br>
-    </p>
-    <p>
-        <a href=\"https://www.wmnetwork.co.uk/get-in-touch/contact-us/\">Submit an enquiry</a><br>
-        Telephone: <a href=\"tel:03453036760\">0345 303 6760<br></a>
-    </p>
-    Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>
-    Wednesday, 9.30am - 5pm<br>
-    Saturday and Sunday, closed
-    </address>"
-%}
-
 {{
     compExample([
         wmndsContactDetails({
-            facebook: "https://www.facebook.com/westmidlandsnetwork"
+            organisation: "Transport for West Midlands",
+            twitter: "https://twitter.com/wmnetwork",
+            facebook: "https://www.facebook.com/westmidlandsnetwork",
+            enquiryLink: "https://www.wmnetwork.co.uk/get-in-touch/contact-us/",
+            telephone: "0345 303 6760",
+            workingHours: " Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm<br>Saturday and Sunday, closed"
         })
     ])
 }}
