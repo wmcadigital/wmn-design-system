@@ -77,7 +77,7 @@ GOV.UK has detailed information about [how to display contact details](https://d
             facebook: "https://www.facebook.com/westmidlandsnetwork",
             enquiryLink: "https://www.wmnetwork.co.uk/get-in-touch/contact-us/",
             telephone: "0345 303 6760",
-            workingHours: " Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm<br>Saturday and Sunday, closed"
+            workingHours: "Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm<br>Saturday and Sunday, closed"
         })
     ])
 }}

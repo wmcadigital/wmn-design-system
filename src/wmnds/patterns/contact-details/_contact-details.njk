@@ -3,23 +3,31 @@
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 {% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 {# Set vars #}
+
 {# Address #}
 {% set department = params.department + "<br/>" if params.department %}
 {% set organisation = params.organisation + "<br/>" if params.organisation %}
 {% set address = params.address if params.address %}
+
 {# Alert #}
 {% set alertIcon = params.alertIcon if params.alertIcon %}
 {% set alertMessage = params.alertMessage if params.alertMessage %}
+
 {# Socials #}
 {% set twitter = "<a href='" + params.twitter + "' target='_blank' class='wmnds-link'>Twitter</a><br />" if params.twitter %}
 {% set facebook = "<a href='" + params.facebook + "' target='_blank' class='wmnds-link'>Facebook</a><br />"  if params.facebook %}
+
 {# Other contact #}
 {% set enquiryLink = "<a href='" + params.enquiryLink + "' target='_blank' class='wmnds-link'>Submit an enquiry</a><br />" if params.enquiryLink %}
 {% set email = "<a href='mailto:" + params.email + "' target='_blank' class='wmnds-link'>" + params.email +"</a><br />" if params.email %}
 {% set telephone = "Telephone: <a href='tel:" + params.telephone + "' target='_blank' class='wmnds-link'>" + params.telephone +"</a>" if params.telephone %}
-{# Opening hours #}
+
+{# Working hours #}
 {% set workingHours = params.workingHours if params.workingHours %}
 
+{# Set each section of our template and only show if one(or more) of the vars is available #}
+
+{# Address #}
 {% set addressSection =
     "<p>" +
         department  +
@@ -29,6 +37,7 @@
     if department or organisation or address
 %}
 
+{# Alert #}
 {% set alertSection =
     wmndsWarningText({
         contentHTML: alertMessage,
@@ -38,6 +47,7 @@
     if alertMessage
 %}
 
+{# Socials #}
 {% set socialsSection =
     "<p>" +
         twitter +
@@ -46,6 +56,7 @@
     if twitter or facebook
 %}
 
+{# Other contact #}
 {% set otherSection =
     "<p>" +
         enquiryLink +
@@ -55,23 +66,26 @@
     if enquiryLink or email or telephone
 %}
 
-{% set openHoursSection =
+{# Working hours #}
+{% set workingHoursSection =
     "<p>" +
         workingHours +
     "</p>"
     if twitter or facebook
 %}
 
+{# Combine all our sections into a nice HTML template #}
 {% set contactDetailsHTML =
     "<address class='wmnds-contact-details'>" +
         addressSection +
         alertSection +
         socialsSection +
         otherSection +
-        workingHours +
+        workingHoursSection  +
     "</address>"
 %}
 
+{# Pass our HTML template to the inset text component as it the contact details pattern relies on it as a wrapper #}
 {{
     wmndsInsetText({
         contentHTML: contactDetailsHTML
