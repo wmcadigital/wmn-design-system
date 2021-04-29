@@ -23,7 +23,7 @@ Therefore, features will be useable when text size is increased up to 200% and c
 
 ## Fonts
 
-We utilise <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> in our typography and all fonts used are pre-bundled in our design system CSS, so you won't need to include them seperately.
+We utilise <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> in our typography and all fonts used are pre-bundled in our design system CSS, so you won't need to include them separately.
 
 Find below, various examples of our typography in use.
 
