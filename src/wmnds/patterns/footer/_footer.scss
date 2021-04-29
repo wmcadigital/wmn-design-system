@@ -66,7 +66,7 @@
 
     @media screen and (max-width: $breakpoint-md - 1) {
       margin-bottom: $size-md;
-      font-weight: normal;
+      font-weight: 700;
 
       &.wmnds-collapse-heading {
         margin: 0;
@@ -131,6 +131,7 @@
     .wmnds-footer__copyright {
       margin: 0;
       font-family: $x-heading-font-family;
+      font-weight: 700;
     }
   }
 

@@ -44,6 +44,26 @@ $black: #000000;
   // sass-lint:enable indentation
 }
 
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: italic;
+  font-weight: normal;
+  // sass-lint:disable-block indentation
+  src: url("../fonts/notosansdisplay-italic-webfont.woff2") format("woff2"),
+    url("../fonts/notosansdisplay-italic-webfont.woff") format("woff");
+  // sass-lint:enable indentation
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: italic;
+  font-weight: bold;
+  // sass-lint:disable-block indentation
+  src: url("../fonts/notosansdisplay-bolditalic-webfont.woff2") format("woff2"),
+    url("../fonts/notosansdisplay-bolditalic-webfont.woff") format("woff");
+  // sass-lint:enable indentation
+}
+
 // TEXT
 $text-color: get-color($black);
 $x-font-family: "Noto Sans Display", sans-serif;
