@@ -20,22 +20,28 @@
             classes: "wmnds-m-none",
             question: "",
             hint: {
-              contentText: ""
+              contentText: " "
             },
             items: [
               {
                 checked: true,
                 disabled: true,
+                id: 'essential-cookies',
+                name: 'essential-cookies',
                 titleText: 'Essential cookies',
                 contentText: 'Without these cookies our website won’t work properly. They help you to access secure areas like accounts and tools such as the journey planner.'
               },
               {
                 checked: false,
+                id: 'functional-cookies',
+                name: 'functional-cookies',
                 titleText: 'Functional cookies',
                 contentText: 'These cookies help us to personalise our services to suit your needs, like saving your favourite transport services.'
               },
               {
                 checked: false,
+                id: 'performance-cookies',
+                name: 'performance-cookies',
                 titleText: 'Performance cookies',
                 contentText: 'These cookies collect information about how you’re using our services, for instance popular pages or errors. We use this information to make decisions when improving our services. We do not use any information collected to identify you as an individual.'
               }
@@ -47,7 +53,7 @@
       {{
         wmndsButton({
           classses: "wmnds-cookies-manager__save-preferences wmnds-col-1 wmnds-col-sm-1 wmnds-col-md-12-24",
-          contentText: "Save Preferences",
+          contentText: "Save preferences",
           role: "submit"
         })
       }}
