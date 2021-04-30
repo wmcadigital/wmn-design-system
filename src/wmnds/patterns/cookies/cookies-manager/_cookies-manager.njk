@@ -3,11 +3,27 @@
 {# Imports of components #}
 {% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
+
+{% set successMessageStyling = "" if params.showSuccessMessage else "display: none" %}
+
 
 <div class="wmnds-p-md wmnds-cookies-manager">
   <div class="wmnds-container wmnds-col-1 wmnds-col-sm-1 wmnds-col-lg-3-4">
+    <h1 class="wmnds-p-t-lg wmnds-m-b-lg">Manage Cookies</h1>
+    <div class="wmnds-cookies-manager__success-message wmnds-m-b-md" style="{{successMessageStyling}}">
+      {{
+        wmndsMsgSummary({
+          type: 'success-fill',
+          title: 'Your cookie settings were saved',
+          contentHTML: '<p>You can change these settings at any time by clicking the link in the page footer.</p>
+            <p class="wmnds-cookies-manager__previous-page">
+              <a class="wmnds-link wmnds-cookies-manager__previous-page" href="" style="color: white">Go back to the page you were looking at</a>
+            </p>'
+        })
+      }}
+    </div>
     <form class="wmnds-cookies-manager__form" action="#">
-      <h1>Manage Cookies</h1>
       <p class="wmnds-m-b-md">
         Check your settings below and select the cookies you’re happy with.
       </p>

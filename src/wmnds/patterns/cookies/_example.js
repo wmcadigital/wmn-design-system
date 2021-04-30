@@ -80,6 +80,23 @@ const cookies = () => {
     hideCookieBanner();
   };
 
+  const updateAndShowSuccessMessage = () => {
+    const message = document.querySelector('.wmnds-cookies-manager__success-message');
+    if (message) {
+      const link = message.querySelector('.wmnds-cookies-manager__previous-page a');
+      if (link) {
+        if (document.referrer === '' || document.referrer === window.location.href) {
+          link.parentElement.style.display = 'none';
+        } else {
+          // sends user to the previous page - the one opened before he/she open the cookies manager page
+          link.href = document.referrer;
+        }
+      }
+      // display the success message (updated)
+      message.style.display = 'block';
+    }
+  };
+
   const savePreferences = () => {
     if (document.querySelector('.wmnds-cookies-manager__form')) {
       const elements = document
@@ -91,6 +108,8 @@ const cookies = () => {
       }
       setCookiePolicy(...selectedOptions);
       setCookie('cookies-preference', true, 181);
+
+      updateAndShowSuccessMessage();
     }
   };
 
