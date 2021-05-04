@@ -34,6 +34,14 @@
   // Leave and arrive
   &__when {
 
+		position: relative;
+
+		&-controller {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
     &--expanded {
       display: none;
     }

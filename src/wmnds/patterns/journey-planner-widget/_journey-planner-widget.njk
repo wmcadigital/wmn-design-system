@@ -5,7 +5,7 @@
 {% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
-{# {% from "wmnds/components/dropdown/_dropdown.njk" import wmndsDropdown %} #}
+{% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
 
 {# Set params #}
 {% set formTitle = params.formTitle if params.formTitle else "Plan your journey" %}
@@ -99,7 +99,7 @@
                         </div>
                         <div class="wmnds-journey-planner-widget__when--expanded">
 
-                            <div class="wmnds-journey-planner-widget__when--controller">
+                            <div class="wmnds-journey-planner-widget__when-controller">
                                 {{
                                     wmndsButton({
                                         type: "link",
@@ -108,10 +108,11 @@
                                     })
                                 }}
                             </div>
-{#
+
+                            <h4>Leave</h4>
                             {{
                                 wmndsDropdown({
-                                    id: ("leave" + suffix + leaveSuffix + modeSuffix),
+                                    id: ("leaveday" + suffix + leaveSuffix + modeSuffix),
                                     name: "leave",
                                     items: [
                                         {
@@ -128,8 +129,10 @@
                                         }
                                     ],
                                     describedBy: null,
-                                    label: "Leave",
+                                    label: "Leave Day",
+                                    labelClasses: "wmnds-screenreaders-only",
                                     classes: null,
+                                    groupClasses: "wmnds-m-b-sm",
                                     error: false,
                                     errorMessage: {
                                         id: null,
@@ -143,12 +146,14 @@
  
                             {{
                                 wmndsDropdown({
-                                    id: ("leave" + suffix + leaveSuffix + modeSuffix),
+                                    id: ("leavetime" + suffix + leaveSuffix + modeSuffix),
                                     name: "time",
                                     type: "time",
                                     describedBy: null,
-                                    label: "",
+                                    label: "Time",
+                                    labelClasses: "wmnds-screenreaders-only",
                                     classes: null,
+                                    groupClasses: "wmnds-m-b-md",
                                     error: false,
                                     errorMessage: {
                                         id: null,
@@ -157,7 +162,7 @@
                                         classes: null
                                     }
                                 })
-                            }} #}
+                            }} 
 
                         </div>
                     </div>
