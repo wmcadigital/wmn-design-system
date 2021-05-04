@@ -41,7 +41,7 @@
       iframe: false
     }
   )
-}}
+}} 
 
 {% markdown %}
 
@@ -50,6 +50,20 @@
 
 {% endmarkdown %}
 
+{{
+  compExample([
+      wmndsJourneyPlannerWidget({
+        isOpen: true
+      })
+    ], {
+      componentPath: "wmnds/patterns/journey-planner-widget/",
+      njk: true,
+      njkProps: wmndsJourneyPlannerWidgetProps,
+      js: false,
+      iframe: false
+    }
+  )
+}}
 
 
 
@@ -61,7 +75,21 @@
 {% endmarkdown %}
 
 
-
+{{
+  compExample([
+      wmndsJourneyPlannerWidget({
+        isOpen: true,
+        isWhenOpen: true
+      })
+    ], {
+      componentPath: "wmnds/patterns/journey-planner-widget/",
+      njk: true,
+      njkProps: wmndsJourneyPlannerWidgetProps,
+      js: false,
+      iframe: false
+    }
+  )
+}}
 
 
 {% markdown %}

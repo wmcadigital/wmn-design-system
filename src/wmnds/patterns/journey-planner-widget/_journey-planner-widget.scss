@@ -1,0 +1,57 @@
+.wmnds-journey-planner-widget {
+  &__form {
+    & > div:not(.wmnds-journey-planner-widget__from) {
+      display: none;
+    }
+  }
+
+  &.wmnds-is--open {
+    .wmnds-journey-planner-widget__form > div {
+      display: block;
+    }
+  }
+
+  &__to {
+    position: relative;
+  }
+
+  &__switch {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__switch-icon {
+    width: 17px;
+    height: 23px;
+    margin-left: 8px;
+    fill: get-color(secondary);
+  }
+
+  // Leave and arrive
+  &__when {
+
+    &--expanded {
+      display: none;
+    }
+
+    &--collapsed {
+      display: block;
+    }
+
+    &.wmnds-is--open {
+
+      .wmnds-journey-planner-widget__when--expanded {
+        display: block;
+      }
+
+      .wmnds-journey-planner-widget__when--collapsed {
+        display: none;
+      }
+
+    }
+  }
+}
