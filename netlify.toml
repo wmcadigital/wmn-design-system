@@ -7,6 +7,11 @@
     [headers.values]
       Access-Control-Allow-Origin = "*"
 
+[[headers]]
+  for = '/*.css'
+    [headers.values]
+      Content-Type = "text/css"
+
 # Generate sitemap
 [[plugins]]
 package = "@netlify/plugin-sitemap"
