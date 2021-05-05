@@ -99,6 +99,21 @@
 
 {% endmarkdown %}
 
+{{
+  compExample([
+      wmndsJourneyPlannerWidget({
+        isOpen: true,
+        isHowOpen: true
+      })
+    ], {
+      componentPath: "wmnds/patterns/journey-planner-widget/",
+      njk: true,
+      njkProps: wmndsJourneyPlannerWidgetProps,
+      js: false,
+      iframe: false
+    }
+  )
+}}
 
 {% markdown %}
   ## Anything else

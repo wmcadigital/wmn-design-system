@@ -31,16 +31,16 @@
     fill: get-color(secondary);
   }
 
-  // Leave and arrive
-  &__when {
+  // Leave and arrive for when, modes for how
+  &__when,
+  &__how {
+    position: relative;
 
-		position: relative;
-
-		&-controller {
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
+    &-controller {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
 
     &--expanded {
       display: none;
@@ -51,15 +51,15 @@
     }
 
     &.wmnds-is--open {
-
-      .wmnds-journey-planner-widget__when--expanded {
+      .wmnds-journey-planner-widget__when--expanded,
+      .wmnds-journey-planner-widget__how--expanded {
         display: block;
       }
 
-      .wmnds-journey-planner-widget__when--collapsed {
+      .wmnds-journey-planner-widget__when--collapsed,
+      .wmnds-journey-planner-widget__how--collapsed {
         display: none;
       }
-
     }
   }
 }

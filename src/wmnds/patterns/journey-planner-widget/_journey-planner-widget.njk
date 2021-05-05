@@ -12,9 +12,9 @@
 {% set isOpen = " wmnds-is--open" if params.isOpen %}
 {% set suffix = "--opened" if params.isOpen else "--collapsed" %}
 {% set leaveSuffix = "--leave-opened" if params.isWhenOpen else "--leave-collapsed" %}
-{% set modeSuffix = "--mode-opened" if params.isModeOpen else "--mode-collapsed" %}
+{% set modeSuffix = "--mode-opened" if params.isHowOpen else "--mode-collapsed" %}
 {% set isWhenOpen = " wmnds-is--open" if params.isWhenOpen %}
-{% set isModeOpen = " wmnds-is--open" if params.isModeOpen %}
+{% set isHowOpen = " wmnds-is--open" if params.isHowOpen %}
 
 
 <div style="max-width: 288px">
@@ -167,18 +167,92 @@
                         </div>
                     </div>
 
-                    <div class="wmnds-journey-planner-widget__travel-by">
-                        <div class="wmnds-grid wmnds-grid--justify-between">
-                            <h4 class="wmnds-col-1-2 wmnds-m-b-none">Travel by</h4>
-                            {{ 
-                                wmndsButton({
-                                    type: "link",
-                                    contentText: "Change",
-                                    classes: "wmnds-m-t--lg"
-                                })
-                            }}
+                    <div class="wmnds-journey-planner-widget__how {{isHowOpen}}">
+                        <div class="wmnds-journey-planner-widget__how--collapsed">
+                            <div class="wmnds-grid wmnds-grid--justify-between">
+                                <h4 class="wmnds-col-1-2 wmnds-m-b-none">Travel by</h4>
+                                {{ 
+                                    wmndsButton({
+                                        type: "link",
+                                        contentText: "Change",
+                                        classes: "wmnds-m-t--lg"
+                                    })
+                                }}
+                            </div>
+                            <p>All transport modes</p>
                         </div>
-                        <p>All transport modes</p>
+                        <div class="wmnds-journey-planner-widget__how--expanded">
+                            <h4 class="wmnds-col-1-2 wmnds-m-b-none">Travel by</h4>
+                            <div class="wmnds-journey-planner-widget__how-controller">
+                                {{
+                                    wmndsButton({
+                                        type: "link",
+                                        contentText: "Select all",
+                                        classes: "wmnds-m-t--lg"
+                                    })
+                                }}
+                            </div>
+                            <div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-m-t-sm">
+                                <div class="wmnds-col-1-2">
+                                    {{
+                                        wmndsButton({
+                                            iconLeft: "modes-isolated-bus",
+                                            contentText: "Bus",
+                                            type: "mode",
+                                            iconClasses: "wmnds-btn__coloured-icon--bus",
+                                            classes:"wmnds-col-1 wmnds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <div class="wmnds-col-1-2">
+                                    {{
+                                        wmndsButton({
+                                            iconLeft: "modes-isolated-metro",
+                                            contentText: "Tram",
+                                            type: "mode",
+                                            iconClasses: "wmnds-btn__coloured-icon--metro",
+                                            classes:"wmnds-col-1 wmnds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <div class="wmnds-col-1-2">
+                                
+                                    {{
+                                        wmndsButton({
+                                            iconLeft: "modes-isolated-rail",
+                                            contentText: "Train",
+                                            type: "mode",
+                                            iconClasses: "wmnds-btn__coloured-icon--train",
+                                            classes:"wmnds-col-1 wmnds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <p class="wmnds-col-1">Or</p>
+                                
+                                <div class="wmnds-col-1-2">
+                                {{
+                                    wmndsButton({
+                                        iconLeft: "modes-isolated-walk",
+                                        contentText: "Walk",
+                                        type: "mode",
+                                        iconClasses: "wmnds-btn__coloured-icon--walk",
+                                        classes:"wmnds-col-1 wmnds-m-b-sm"
+                                    })
+                                }}
+                                </div>
+                                <div class="wmnds-col-1-2">
+                                {{
+                                    wmndsButton({
+                                        iconLeft: "modes-isolated-cycle",
+                                        contentText: "Cycle",
+                                        type: "mode",
+                                        iconClasses: "wmnds-btn__coloured-icon--cycle",
+                                        classes:"wmnds-col-1 wmnds-m-b-sm"
+                                    })
+                                }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="wmnds-journey-planner-widget__advanced-search">

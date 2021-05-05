@@ -195,6 +195,27 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       fill: get-color(primary);
     }
 
+    .wmnds-btn__coloured-icon {
+      &--bus {
+        fill: get-color(bus);
+      }
+
+      &--train,
+      &--rail {
+        fill: get-color(railway);
+      }
+
+      &--tram,
+      &--metro {
+        fill: get-color(metro);
+      }
+
+      &--cycle,
+      &--walk {
+        fill: get-color(susTravel);
+      }
+    }
+
     &:hover {
       background-color: get-color(secondary, 70);
     }
