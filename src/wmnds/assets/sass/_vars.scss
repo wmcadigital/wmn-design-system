@@ -7,10 +7,9 @@ $palettes: (
   bus: #ea0029,
   metro: #0075c9,
   railway: #e07709,
-  susTravel: #679500,
+  susTravel: #658d1b,
   roads: #df1683,
-  taxi: #773dbe,
-  text: #231f20,
+  text: #080607,
   cta: #1d7bbf,
   error: #d4351c,
   warning: #b75e00,
@@ -42,6 +41,26 @@ $black: #000000;
   // sass-lint:disable-block indentation
   src: url("../fonts/notosansdisplay-bold-webfont.woff2") format("woff2"),
     url("../fonts/notosansdisplay-bold-webfont.woff") format("woff");
+  // sass-lint:enable indentation
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: italic;
+  font-weight: normal;
+  // sass-lint:disable-block indentation
+  src: url("../fonts/notosansdisplay-italic-webfont.woff2") format("woff2"),
+    url("../fonts/notosansdisplay-italic-webfont.woff") format("woff");
+  // sass-lint:enable indentation
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: italic;
+  font-weight: bold;
+  // sass-lint:disable-block indentation
+  src: url("../fonts/notosansdisplay-bolditalic-webfont.woff2") format("woff2"),
+    url("../fonts/notosansdisplay-bolditalic-webfont.woff") format("woff");
   // sass-lint:enable indentation
 }
 
