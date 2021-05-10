@@ -13,8 +13,11 @@
 {% set contentHTML = params.contentHTML if params.contentHTML else null %}
 {% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
 {% set isOpen = " wmnds-is--open" if params.isOpen %}
-{% set isActive = " wmnds-is--active" if params.isOpen %}
+{% set isBusActive = " wmnds-is--active" if params.showSuggestions %}
+{% set isTramActive = " wmnds-is--active" if params.showSuggestions !== true and params.isOpen %}
+{% set suffix = "--showing-suggestions" if params.showSuggestions %}
 {% set placeholder = "" if params.placeholder else "Enter a service number" %}
+
 
 
 <div style="max-width: 448px">
@@ -39,7 +42,7 @@
                                     iconLeft: "modes-isolated-bus",
                                     contentText: "Bus",
                                     type: "mode",
-                                    classes: ("wmnds-col-1 wmnds-m-b-sm " + isActive)
+                                    classes: ("wmnds-col-1 wmnds-m-b-sm " + isBusActive)
                                 })
                             }}
                         </div>
@@ -49,7 +52,7 @@
                                     iconLeft: "modes-isolated-metro",
                                     contentText: "Tram",
                                     type: "mode",
-                                    classes:"wmnds-col-1 wmnds-m-b-sm"
+                                    classes: ("wmnds-col-1 wmnds-m-b-sm " + isTramActive)
                                 })
                             }}
                         </div>
@@ -66,11 +69,33 @@
                     </div>
 
                     {% if params.isOpen %}
-                        <div class="wmnds-find-timetable-widget__services wmnds-find-timetable-widget__services--train wmnds-find-timetable-widget__services--tram">
+                    <div class="wmnds-find-timetable-widget__services">
+                        {% if params.showSuggestions %}
+                            {{
+                                wmndsAutocomplete({
+                                    label: {
+                                        contentText: 'Bus Services',
+                                        classes: 'wmnds-screenreaders-only'
+                                    },
+                                    id: ("bus-service"+ suffix),
+                                    placeholder: 'Enter a service number',
+                                    loading: false,
+                                    query: "X15",
+                                    showSuggestions: params.showSuggestions,
+                                    textSuggestions: false,
+                                    required: true,
+                                    formGroup: {
+                                        classes: 'wmnds-m-b-md'
+                                    }
+                                })
+                            }}
+
+                        {% else %}
+                    
                             {{
                                 wmndsTextInput({
-                                    id: "services",
-                                    name: "from",
+                                    id: ("services"+ suffix),
+                                    name: "services",
                                     label: {
                                         contentText: 'Services',
                                         classes: 'wmnds-screenreaders-only'
@@ -83,25 +108,8 @@
                                 })
                             }}
 
-                            {{
-                                wmndsAutocomplete({
-                                    label: {
-                                        contentText: 'Bus Services',
-                                        classes: 'wmnds-screenreaders-only'
-                                    },
-                                    id: "bus-service",
-                                    placeholder: 'Enter a service number',
-                                    loading: false,
-                                    showSuggestions: false,
-                                    textSuggestions: true,
-                                    required: true,
-                                    formGroup: {
-                                        classes: 'wmnds-m-b-md'
-                                    }
-                                })
-                            }}
-
-                        </div>
+                        {% endif %}
+                    </div>
                     {% endif %}
 
                 </form>

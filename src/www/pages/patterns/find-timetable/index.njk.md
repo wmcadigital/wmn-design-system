@@ -42,7 +42,7 @@
 
 {% markdown %}
 
-### Expanded
+### Expanded (bus)
 
 
 {% endmarkdown %}
@@ -50,7 +50,8 @@
 {{
   compExample([
       wmndsFindTimetableWidget({
-        isOpen: true
+        isOpen: true,
+        showSuggestions: true
       })
     ], {
       componentPath: "wmnds/patterns/find-timetable-widget/",
@@ -62,6 +63,28 @@
   )
 }}
 
+{% markdown %}
+
+### Expanded (tram or train)
+
+
+{% endmarkdown %}
+
+{{
+  compExample([
+      wmndsFindTimetableWidget({
+        isOpen: true,
+        showSuggestions: false
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-timetable-widget/",
+      njk: true,
+      njkProps: wmndsFindTimetableWidgetProps,
+      js: false,
+      iframe: false
+    }
+  )
+}}
 
 {% markdown %}
 
