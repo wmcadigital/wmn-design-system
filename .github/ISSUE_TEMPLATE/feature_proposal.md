@@ -16,11 +16,11 @@ If you need help putting your proposal together, you can message Design Team usi
 
 ## Why
 
-> Explain why you think this should be added to the Transport for West Midlands Design System (WMN DS).
+> Explain why you think this should be added to the Transport for West Midlands Design System (TfWM DS).
 >
 > - What evidence do you have that it's needed by multiple services across government?
 > - What evidence do you have that it meets the needs of the users of those services?
-> - Have you checked that it doesn't already exist in the WMN DS?
+> - Have you checked that it doesn't already exist in the TfWM DS?
 
 ## Anything else
 
