@@ -2,7 +2,7 @@
 
 {# Imports of components #}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
-{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
@@ -28,25 +28,23 @@
 
                 <form class="wmnds-journey-planner-widget__form">
                     
-                    <div class="wmnds-journey-planner-widget__from">
+                    <div class="wmnds-journey-planner-widget__from wmnds-m-b-md">
                         {{
-                            wmndsTextInput({
+                            wmndsAutocomplete({
                                 id: ("from" + suffix + leaveSuffix + modeSuffix),
                                 name: "from",
                                 label: {
                                     contentText: 'From'
                                 },
                                 placeholder: 'Enter station or postcode',
-                                required: true,
-                                formGroup: {
-                                    classes: 'wmnds-m-b-md'
-                                }
+                                loading: false,
+                                showSuggestions: false,
+                                textSuggestions: true
                             })
                         }}
                     </div>
 
-                    <div class="wmnds-journey-planner-widget__to">
-
+                    <div class="wmnds-journey-planner-widget__to wmnds-m-b-md">
                         <div class="wmnds-journey-planner-widget__switch">
                             {{
                                 wmndsButton({
@@ -63,23 +61,21 @@
                                 }) | safe 
                             }}
                         </div>
-
+                        
                         {{
-                            wmndsTextInput(
-                                {
-                                    id: ("to" + suffix + leaveSuffix + modeSuffix),
-                                    name: "to",
-                                    label: {
-                                        contentText: 'To'
-                                    },
-                                    placeholder: 'Enter station or postcode',
-                                    required: true,
-                                    formGroup: {
-                                        classes: 'wmnds-m-b-md'
-                                    }
-                                }
-                            )
+                            wmndsAutocomplete({
+                                id: ("to" + suffix + leaveSuffix + modeSuffix),
+                                name: "to",
+                                label: {
+                                    contentText: 'To'
+                                },
+                                placeholder: 'Enter station or postcode',
+                                loading: false,
+                                showSuggestions: false,
+                                textSuggestions: true
+                            })
                         }}
+                        
                     </div>
                     
 
