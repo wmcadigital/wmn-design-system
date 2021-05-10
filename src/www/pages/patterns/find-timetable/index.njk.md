@@ -1,0 +1,73 @@
+{% extends "www/_layouts/layout-left-pane.njk" %} 
+{% set pageTitle = "Find timetable" %}
+
+{% set section="Patterns" %}
+{% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/patterns/find-timetable-widget/_find-timetable-widget.njk" import wmndsFindTimetableWidget %}
+
+{% block content %}
+
+{% markdown %}
+
+## What does it do?
+* Helps users to find a timetable for their chosen service
+
+
+## When to use it?
+* On the homepage
+
+
+## How it works?
+* This will direct users to the timetables page
+* Users can only select one travel mode
+* Users will need to enter a service number if they select bus. If train or tram are selected, then users can go straight to the timetables page through the [Call to action button](https://designsystem.wmnetwork.co.uk/components/buttons/).
+
+
+### Default
+
+{% endmarkdown %}
+
+{{
+  compExample([
+      wmndsFindTimetableWidget()
+    ], {
+      componentPath: "wmnds/patterns/find-timetable-widget/",
+      njk: true,
+      njkProps: wmndsFindTimetableWidgetProps,
+      js: false,
+      iframe: false
+    }
+  )
+}} 
+
+{% markdown %}
+
+### Expanded
+
+
+{% endmarkdown %}
+
+{{
+  compExample([
+      wmndsFindTimetableWidget({
+        isOpen: true
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-timetable-widget/",
+      njk: true,
+      njkProps: wmndsFindTimetableWidgetProps,
+      js: false,
+      iframe: false
+    }
+  )
+}}
+
+
+{% markdown %}
+
+## Anything else
+[Zeplin link](https://zpl.io/ag3AQD0)
+
+{% endmarkdown %}
+
+{% endblock %}

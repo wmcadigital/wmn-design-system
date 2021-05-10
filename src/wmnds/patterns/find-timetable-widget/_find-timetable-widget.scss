@@ -1,0 +1,13 @@
+.wmnds-find-timetable-widget {
+  &__form {
+    & > div:not(.wmnds-find-timetable-widget__travel-modes) {
+      display: none;
+    }
+  }
+
+  &.wmnds-is--open {
+    .wmnds-journey-planner-widget__form > div {
+      display: block;
+    }
+  }
+}
