@@ -10,13 +10,15 @@
 {% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
 {% set isLoading = " wmnds-is--loading" if params.loading %}
 {% set id = params.id if params.id else "genericInput" %}
+{% set label = params.label.contentText if params.label.contentText else "Autocomplete label" %}
 
 {# Label #}
 {{
   wmndsFormLabel({
     for: id,
-    contentText: 'Autocomplete label'
-  }) | trim
+    contentText: label,
+    classes: params.label.classes
+  })
 }}
 
 <div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
