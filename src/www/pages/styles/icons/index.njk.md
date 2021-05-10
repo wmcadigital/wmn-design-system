@@ -124,7 +124,7 @@ To get started, include the below snippet of javascript somewhere in your codeba
 
 - the latest SVG icon spritesheet to be used within your web app or service
 - Will ensure the icons work with older browsers such as Internet Explorer 11
-- Keep the icon set consistent with other West Midlands Network Servic
+- Keep the icon set consistent with other Transport for West Midlands Servic
 
   <pre>
     <code class="html wmnds-show-more-ignore" tabindex="0">

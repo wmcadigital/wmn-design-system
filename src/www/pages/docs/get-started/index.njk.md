@@ -5,7 +5,7 @@
 
 {% block content %}
 {% markdown %}
-The West Midlands Network Design System provides a collection of reusable HTML components to build custom services and experiences that adhere to West Midlands Network's design standards.
+The Transport for West Midlands Design System provides a collection of reusable HTML components to build custom services and experiences that adhere to Transport for West Midlands's design standards.
 
 There are many different ways to get started with our design system. It all depends on your project's needs and whether you are developing, designing or somewhere in the middle.
 
@@ -18,9 +18,9 @@ There are many different ways to get started with our design system. It all depe
 
 ## Using styles, components and patterns
 
-When something is published in the West Midlands Network design system as a [style](/styles/), [component](/components/) or [pattern](/patterns/) we include details of what it is, how to use it, and when to use it based on our [user research](/user-research/). This should help you decide whether it’s something you can use or adapt for your service.
+When something is published in the Transport for West Midlands design system as a [style](/styles/), [component](/components/) or [pattern](/patterns/) we include details of what it is, how to use it, and when to use it based on our [user research](/user-research/). This should help you decide whether it’s something you can use or adapt for your service.
 
-The guide, [using the design system](using-the-design-system/) contains more information on how to use the West Midlands Network Design System.
+The guide, [using the design system](using-the-design-system/) contains more information on how to use the Transport for West Midlands Design System.
 
 ## Before making a service live
 

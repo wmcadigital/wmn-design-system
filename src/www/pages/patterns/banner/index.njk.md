@@ -146,14 +146,14 @@
 
 <h3>When not to use it?</h3>
 
-- On pages where the mode of travel is not operated by West Midlands Network, such as E-scooters
+- On pages where the mode of travel is not operated by Transport for West Midlands, such as E-scooters
 
 <h3>How it works</h3>
 
 - The image container width will expand if users are viewing the page with a browser width higher than 1280px.
 - The image within the container will zoom to fill the size of the image container.
 - The image will be hidden on mobile devices. Our previous research found mobile users do not see the value of images on mobile pages.
-- The image, modal icon and the West Midlands Network logo variant will change for each travel mode landing page.
+- The image, modal icon and the Transport for West Midlands logo variant will change for each travel mode landing page.
 
 {% endmarkdown %}
 
