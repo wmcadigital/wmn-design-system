@@ -1,4 +1,19 @@
 .wmnds-buy-a-ticket {
   padding: $size-md;
   background: get-color(primary);
+
+  &__title,
+  &__label {
+    color: $white;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: $size-sm;
+    font-weight: 600;
+  }
+
+  &__question {
+    margin-bottom: $size-xsm + $size-md;
+  }
 }
