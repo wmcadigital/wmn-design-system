@@ -34,7 +34,7 @@ These are common applications of the content card component.
 <h3>When not to use it?</h3>
 
 - When it is the sole way of presenting the information, you must provide an alternative.
-- When the map is a screenshot or image. This is called a static map. Do not use static maps on West Midlands Network products.
+- When the map is a screenshot or image. This is called a static map. Do not use static maps on Transport for West Midlands products.
 - When there is no user need for a map, use text description instead.
 
 {% endmarkdown %}
