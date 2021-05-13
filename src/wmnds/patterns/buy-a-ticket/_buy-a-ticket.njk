@@ -6,7 +6,7 @@
 <div class="wmnds-buy-a-ticket">
     <h2 class="wmnds-buy-a-ticket__title">Buy a ticket</h2>
     {# Mode select #}
-    <div class="wmnds-buy-a-ticket__question">
+    <div class="wmnds-m-b-md wmnds-p-b-xsm">
         <label for="" class="wmnds-buy-a-ticket__label">Which modes of transport will you use?</label>
         <div class="wmnds-grid wmnds-grid--spacing-3-sm wmnds-grid--spacing-sm-3-md">
             <div class="wmnds-col-1-3">
@@ -15,7 +15,7 @@
                         iconLeft: "modes-isolated-bus",
                         contentText: "Bus",
                         type: "mode",
-                        classes: "wmnds-btn--block"
+                        classes: "wmnds-btn--block wmnds-is--active"
                     })
                 }}
             </div>
@@ -23,7 +23,7 @@
                 {{ 
                     wmndsButton({
                         iconLeft: "modes-isolated-rail",
-                        contentText: "train",
+                        contentText: "Train",
                         type: "mode",
                         classes: "wmnds-btn--block"
                     })
@@ -42,67 +42,63 @@
         </div>
     </div>
     {# Traveller dropdown #}
-    <div>
-        {{
-            wmndsDropdown({
-                id: 'buyATicketTraveller',
-                groupClasses: 'wmnds-buy-a-ticket__question',
-                label: "Who will be travelling?",
-                labelClasses: 'wmnds-buy-a-ticket__label',
-                secondaryColor: true,
-                items: [
-                    {
-                        contentText: 'Select traveller',
-                        selected: true,
-                        disabled: true
-                    },
-                    {
-                        contentText: 'Option 1',
-                        value: 'option1'
-                    },
-                    {
-                        contentText: 'Option 2',
-                        value: 'option2'
-                    },
-                    {
-                        contentText: 'Option 3',
-                        value: 'option3'
-                    }
-                ]
-            })
-        }}
-    </div>
+    {{
+        wmndsDropdown({
+            id: 'buyATicketTraveller',
+            groupClasses: 'wmnds-m-b-md wmnds-p-b-xsm',
+            label: "Who will be travelling?",
+            labelClasses: 'wmnds-buy-a-ticket__label',
+            secondaryColor: true,
+            items: [
+                {
+                    contentText: 'Select traveller',
+                    selected: true,
+                    disabled: true
+                },
+                {
+                    contentText: 'Option 1',
+                    value: 'option1'
+                },
+                {
+                    contentText: 'Option 2',
+                    value: 'option2'
+                },
+                {
+                    contentText: 'Option 3',
+                    value: 'option3'
+                }
+            ]
+        })
+    }}
     {# Duration dropdown #}
-    <div>
-        {{
-            wmndsDropdown({
-                id: "buyATicketDuration",
-                groupClasses: 'wmnds-buy-a-ticket__question',
-                label: "How long will the ticket last for?",
-                labelClasses: 'wmnds-buy-a-ticket__label',
-                secondaryColor: true,
-                items: [
-                    {
-                        contentText: 'Select ticket length',
-                        selected: true,
-                        disabled: true
-                    },
-                    {
-                        contentText: 'Option 1',
-                        value: 'option1'
-                    },
-                    {
-                        contentText: 'Option 2',
-                        value: 'option2'
-                    },
-                    {
-                        contentText: 'Option 3',
-                        value: 'option3'
-                    }
-                ]
-            })
-        }}
-    </div>
+    {{
+        wmndsDropdown({
+            id: "buyATicketDuration",
+            groupClasses: 'wmnds-m-b-md wmnds-p-b-xsm',
+            label: "How long will the ticket last for?",
+            labelClasses: 'wmnds-buy-a-ticket__label',
+            secondaryColor: true,
+            items: [
+                {
+                    contentText: 'Select ticket length',
+                    selected: true,
+                    disabled: true
+                },
+                {
+                    contentText: 'Option 1',
+                    value: 'option1'
+                },
+                {
+                    contentText: 'Option 2',
+                    value: 'option2'
+                },
+                {
+                    contentText: 'Option 3',
+                    value: 'option3'
+                }
+            ]
+        })
+    }}
     {# Submit button #}
     {{
         wmndsButton({
