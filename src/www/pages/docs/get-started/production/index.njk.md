@@ -9,13 +9,13 @@
 
 ## About
 
-To start using our [styles](/styles/), [components](/components/) and [patterns](/patterns/) in your production project, you'll first need to include West Midlands Network Design System in your project.
+To start using our [styles](/styles/), [components](/components/) and [patterns](/patterns/) in your production project, you'll first need to include Transport for West Midlands Design System in your project.
 
 There are currently two ways of including the design system within your project. You can either install it using node package manager (npm) or include the compiled files in your application.
 
 ### Option 1: include compiled files (recommended)
 
-Getting started is as simple as including West Midlands Network Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application:
+Getting started is as simple as including Transport for West Midlands Design System's minified CSS file and adding <code class="wmnds-website-inline-code">.wmnds-html</code> to the html element in your service/application:
 
 #### Quick setup
 
@@ -35,15 +35,15 @@ Getting started is as simple as including West Midlands Network Design System's 
      {%- endfilter %}
      </code></pre>
 
-2. Add <a href='/styles/icons/#using-icons' title='Documentation about using icons' target='_blank'>West Midlands Network Design System icons</a> to your project.
+2. Add <a href='/styles/icons/#using-icons' title='Documentation about using icons' target='_blank'>Transport for West Midlands Design System icons</a> to your project.
 
 #### Start developing
 
-You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the HTML markup tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
+You should now be able to include Transport for West Midlands Design System components and patterns using the design system documentation. Expand the HTML markup tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
 
 ### Option 2: install using npm
 
-West Midlands Network Design System is available on npm as <a href="https://www.npmjs.com/package/wmn-design-system" target="_blank" rel="noopener noreferrer" class="wmnds-link">wmn-design-system</a>. This package contains all of West Midlands Network Design System [styles](/styles/), [components](/components/) or [patterns](/patterns/) and documentation.
+Transport for West Midlands Design System is available on npm as <a href="https://www.npmjs.com/package/wmn-design-system" target="_blank" rel="noopener noreferrer" class="wmnds-link">wmn-design-system</a>. This package contains all of Transport for West Midlands Design System [styles](/styles/), [components](/components/) or [patterns](/patterns/) and documentation.
 
 #### Add design system package to your project
 
@@ -62,7 +62,7 @@ West Midlands Network Design System is available on npm as <a href="https://www.
 
 #### Setup CSS
 
-1. Add the following to the main Sass file in your project, so that your compiler adds all of West Midlands Network Design System's styles to your compiled CSS file.
+1. Add the following to the main Sass file in your project, so that your compiler adds all of Transport for West Midlands Design System's styles to your compiled CSS file.
 
    <pre><code class="scss wmnds-show-more-ignore" tabindex="0">@import "node_modules/wmn-design-system/src/wmnds/sass/wmnds.scss</code></pre>
 
@@ -77,7 +77,7 @@ West Midlands Network Design System is available on npm as <a href="https://www.
 
 #### Start developing
 
-You should now be able to include West Midlands Network Design System components and patterns using the design system documentation. Expand the nunjucks markup and properties tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
+You should now be able to include Transport for West Midlands Design System components and patterns using the design system documentation. Expand the nunjucks markup and properties tabs on each page to see [how to include that component/pattern to your project](/docs/get-started/using-the-design-system/).
 
 {% endmarkdown %}
 
