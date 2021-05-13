@@ -1,3 +1,14 @@
+// This is a helper which will spit out the correct height/width for any svgs within a heading tag
+// This is used to overwrite .wmnds-n-icon__svg class defaults in _n-icon.scss
+@mixin n-icon-styling($height-and-font-size: 1rem) {
+  $width-mulitplier: 0.9995467185761957; // If we times the height by this value we got the correct width for the n-icon svg
+
+  .wmnds-n-icon__svg {
+    width: calc(#{$height-and-font-size * $width-mulitplier});
+    height: $height-and-font-size;
+  }
+}
+
 // TYPE
 // This is to get the size of the font to be used,
 // and to scale the line heights based on the font size
@@ -6,43 +17,61 @@
 
   // Default (16px)
   @if $level == 0 {
-    font-size: 1rem;
+    $height-and-font-size: 1rem;
+    font-size: $height-and-font-size;
     line-height: 1.5rem;
+
+    @include n-icon-styling($height-and-font-size);
   }
   // Heading 1 (46px)
   @if $level == 1 {
+    $height-and-font-size: 2.875rem * $multiplier;
     margin-top: 3rem * $multiplier;
     margin-bottom: 2rem * $multiplier;
-    font-size: 2.875rem * $multiplier;
+    font-size: $height-and-font-size;
     line-height: 3rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
   }
   // Heading 2 (32px)
   @if $level == 2 {
+    $height-and-font-size: 2rem * $multiplier;
     margin-top: 3rem * $multiplier;
     margin-bottom: 1rem * $multiplier;
-    font-size: 2rem * $multiplier;
+    font-size: $height-and-font-size;
     line-height: 2.225rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
   }
   // Heading 3 (23px)
   @if $level == 3 {
+    $height-and-font-size: 1.4375rem * $multiplier;
     margin-top: 2rem * $multiplier;
     margin-bottom: 0.75rem * $multiplier;
-    font-size: 1.4375rem * $multiplier;
+    font-size: $height-and-font-size;
     line-height: 1.5rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
   }
   // Heading 4 (18px)
   @if $level == 4 {
+    $height-and-font-size: 1.125rem * $multiplier;
     margin-top: 1.5rem * $multiplier;
     margin-bottom: 0.5rem * $multiplier;
-    font-size: 1.125rem * $multiplier;
+    font-size: $height-and-font-size;
     line-height: 1.5rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
   }
   // Heading 5 (16px)
   @if $level == 5 {
+    $height-and-font-size: 1rem * $multiplier;
     margin-top: 1.5rem * $multiplier;
     margin-bottom: 0.5rem * $multiplier;
-    font-size: 1rem * $multiplier;
+    font-size: $height-and-font-size;
     line-height: 1.5rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
   }
 }
 
