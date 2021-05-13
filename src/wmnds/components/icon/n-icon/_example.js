@@ -1,39 +1,40 @@
 const nIcons = () => {
-  const svgIcon = () => {
-    return `
+  // Function to replace text with our icon
+  const replaceTextWithIcon = (textNode, text) => {
+    if (!textNode.includes(text)) return textNode; // If textNode doesn't include our matched text, then return
+
+    // Otherwise...
+    const textWithoutN = text.substring(1); // Chop the first character from our string (the 'n') as it will be replaced with an icon
+    const svgIcon = `
     <svg class="wmnds-n-icon__svg">
-      <title>Network icon</title>
-      <desc>A light green rectangle with rounded corners and a dark green border.</desc>
+      <title>N-Network icon</title>
+      <desc>A hexagon with the letter 'n' inside of it.</desc>
       <use xlink:href="#wmnds-general-n-ticket" href="#wmnds-general-n-ticket"></use>
-    </svg>`;
+    </svg>`; // HTML/SVG of icon we will use
+    const modifiedTextNode = textNode.replace(
+      new RegExp(text, 'ig'),
+      `<span class="wmnds-n-icon">${svgIcon}${textWithoutN}</span>`
+    ); // Then replace our found text with 'n' icon and text without 'n'
+
+    return modifiedTextNode; // Return modified textNode back
   };
 
-  function highlightInHtml(html, textToHighlight) {
-    const text = textToHighlight;
-    const textWithoutN = text.substring(1);
+  function replaceTextInHTML(htmlEle, textToChange) {
+    const text = textToChange;
+    const insideHTMLTags = new RegExp('(<.+?>|&\\w+;)'); // Get items within HTML </> tags
+    const textNodes = htmlEle.split(insideHTMLTags).filter(Boolean); // Split on the HTML tags to avoid manipulating attributes etc.
 
-    const tagsRe = new RegExp('(<.+?>|&\\w+;)');
+    // Loop through textNodes and any that match 'insideHTMLTags', return straight away
+    // Otherwise, that textNode is ready to be searched for our textToChange
+    const updatedDOM = textNodes
+      .map(DOMText => (insideHTMLTags.test(DOMText) ? DOMText : replaceTextWithIcon(DOMText, text)))
+      .join('');
 
-    const htmlParts = html.split(tagsRe).filter(Boolean);
-
-    const replaceText = item => {
-      if (!item.includes(textToHighlight)) return item;
-
-      return item.replace(
-        new RegExp(text, 'ig'),
-        `<span class="wmnds-n-icon">${svgIcon()}${textWithoutN}</span>`
-      );
-    };
-
-    const r = htmlParts.map(item => (tagsRe.test(item) ? item : replaceText(item))).join('');
-
-    return r;
+    return updatedDOM;
   }
 
-  document.querySelector('body').innerHTML = highlightInHtml(
-    document.querySelector('body').innerHTML,
-    'nBus'
-  );
+  const bodyElement = document.querySelector('body');
+  bodyElement.innerHTML = replaceTextInHTML(bodyElement.innerHTML, 'nBus');
 };
 
 export default nIcons();
