@@ -10,7 +10,7 @@
 
 ## Styling page elements
 
-The West Midlands Network Design System provides lots of CSS classes for styling page elements, so you should not need to write as much of your own Sass or CSS.
+The Transport for West Midlands Design System provides lots of CSS classes for styling page elements, so you should not need to write as much of your own Sass or CSS.
 
 Explore the [Styles](/styles/) section of the design system to see what classes are available and how to apply them.
 

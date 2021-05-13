@@ -9,7 +9,7 @@
 
 ## About
 
-West Midlands Network Design System currently supports one method of including styles within your mobile application.
+Transport for West Midlands Design System currently supports one method of including styles within your mobile application.
 
 ### Developing an app for mobile devices - React Native
 
@@ -22,7 +22,7 @@ import wmndsStyles from "https://unpkg.com/wmn-design-system@$*version/build/css
 {%- endfilter -%}
 </code></pre>
 
-When you have added the code to your project, you can start using the West Midlands Network Design System. See [using the design system](../using-the-design-system/).
+When you have added the code to your project, you can start using the Transport for West Midlands Design System. See [using the design system](../using-the-design-system/).
 
 {% endmarkdown %}
 
