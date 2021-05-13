@@ -258,4 +258,33 @@ Use this content card when you want to send users to an external Campaign Monito
     ])
 }}
 
+{% from "wmnds/patterns/content-cards/swift-card/_swift-card.njk" import wmndsContentCardSwiftCard %}
+{% markdown %}
+{# Swift card #}
+
+## Swift card
+
+<h3>What does it do?</h3>
+
+Shows the image of Swift card and explains how to purchase it
+
+<h3>When to use it?</h3>
+
+Only on Swift product landing pages such as Swift Go and PAYG
+
+<h3>How it works</h3>
+
+- User can add Swift card image
+- User can edit title
+- User can add description with bullet points and links
+- This card is not clickable
+
+{% endmarkdown %}
+
+{{
+    compExample([
+        wmndsContentCardSwiftCard()
+    ])
+}}
+
 {% endblock %}
