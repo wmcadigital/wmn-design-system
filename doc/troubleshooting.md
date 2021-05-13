@@ -2,7 +2,7 @@
 
 ## npm and Node.js
 
-The West Midlands Network Styleguide uses `npm` to manage dependencies. Please [install Node.js](https://nodejs.org), and try running `npm install` again.
+The Transport for West Midlands Styleguide uses `npm` to manage dependencies. Please [install Node.js](https://nodejs.org), and try running `npm install` again.
 
 If Node.js is already installed, make sure you’re running v8 or up.
 

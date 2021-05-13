@@ -23,7 +23,7 @@
 
 ### Guidance for content editors
 
-- Only use a header image when there is a clear user need for the image and it serves a purpose. For example, on a 'Travel by tram' page, you may want to use a header image of a tram so users unfamiliar with the West Midlands Network will instantly know what our trams look like throughout the region.
+- Only use a header image when there is a clear user need for the image and it serves a purpose. For example, on a 'Travel by tram' page, you may want to use a header image of a tram so users unfamiliar with the Transport for West Midlands will instantly know what our trams look like throughout the region.
 - Use the [Link component](/components/links/) in your body content if you want to direct the user to additional content. Do not use buttons for any links. Do not use the same link twice as this confuses users.
 - Only use [buttons](/components/buttons/) in your body content when a user needs to complete an action as part of a process, or if a user is confirming their details e.g. newsletter sign-up.
 
@@ -55,7 +55,7 @@
 
 ### What does it do?
 
-- A template for the different travel modes which West Midlands Network offers
+- A template for the different travel modes which Transport for West Midlands offers
 - The template layout has been designed to showcase each of our travel mode brands
 
 ### When to use it?
@@ -64,13 +64,13 @@
 
 ### When not to use it?
 
-- For modes of travel which are not operated by West Midlands Network, such as E-scooters
+- For modes of travel which are not operated by Transport for West Midlands, such as E-scooters
 
 ### Guidance for content editors
 
 - Each landing page heading should follow the same title structure: '[transport mode] in the West Midlands'
-- Use an attractive header image that focuses on the mode of transport. Do not use a busy image. This will help users who are unfamiliar with the West Midlands Network to know what out transport looks like across the region.
-- The appropriate modal icon and West Midlands Network logo variant should be used for each travel landing page
+- Use an attractive header image that focuses on the mode of transport. Do not use a busy image. This will help users who are unfamiliar with the Transport for West Midlands to know what out transport looks like across the region.
+- The appropriate modal icon and Transport for West Midlands logo variant should be used for each travel landing page
 - Where content cards are used, the coloured line should be changed from primary purple to the appropriate travel mode brand colour
 
 ## Creating effective content
