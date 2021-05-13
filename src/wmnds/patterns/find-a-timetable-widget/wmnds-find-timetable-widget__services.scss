@@ -1,0 +1,12 @@
+.wmnds-find-a-timetable-widget {
+  &__services {
+    display: none;
+  }
+
+  &.wmnds-is--open {
+    .wmnds-find-a-timetable-widget__services {
+      display: block;
+    }
+  }
+
+}

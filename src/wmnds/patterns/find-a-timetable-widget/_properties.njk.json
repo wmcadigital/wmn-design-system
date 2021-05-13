@@ -1,5 +1,5 @@
 {
-  "wmndsFindTimetableProps": [
+  "wmndsFindATimetableProps": [
     {
       "name": "isOpen",
       "type": "boolean",

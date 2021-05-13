@@ -1,9 +1,9 @@
 {% extends "www/_layouts/layout-left-pane.njk" %} 
-{% set pageTitle = "Find timetable" %}
+{% set pageTitle = "Find a timetable" %}
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/find-timetable-widget/_find-timetable-widget.njk" import wmndsFindTimetableWidget %}
+{% from "wmnds/patterns/find-a-timetable-widget/_find-a-timetable-widget.njk" import wmndsFindATimetableWidget %}
 
 {% block content %}
 
@@ -29,11 +29,11 @@
 
 {{
   compExample([
-      wmndsFindTimetableWidget()
+      wmndsFindATimetableWidget()
     ], {
-      componentPath: "wmnds/patterns/find-timetable-widget/",
+      componentPath: "wmnds/patterns/find-a-timetable-widget/",
       njk: true,
-      njkProps: wmndsFindTimetableWidgetProps,
+      njkProps: wmndsFindATimetableWidgetProps,
       js: false,
       iframe: false
     }
@@ -49,14 +49,14 @@
 
 {{
   compExample([
-      wmndsFindTimetableWidget({
+      wmndsFindATimetableWidget({
         isOpen: true,
         showSuggestions: true
       })
     ], {
-      componentPath: "wmnds/patterns/find-timetable-widget/",
+      componentPath: "wmnds/patterns/find-a-timetable-widget/",
       njk: true,
-      njkProps: wmndsFindTimetableWidgetProps,
+      njkProps: wmndsFindATimetableWidgetProps,
       js: false,
       iframe: false
     }
@@ -65,28 +65,6 @@
 
 {% markdown %}
 
-### Expanded (tram or train)
-
-
-{% endmarkdown %}
-
-{{
-  compExample([
-      wmndsFindTimetableWidget({
-        isOpen: true,
-        showSuggestions: false
-      })
-    ], {
-      componentPath: "wmnds/patterns/find-timetable-widget/",
-      njk: true,
-      njkProps: wmndsFindTimetableWidgetProps,
-      js: false,
-      iframe: false
-    }
-  )
-}}
-
-{% markdown %}
 
 ## Anything else
 [Zeplin link](https://zpl.io/ag3AQD0)
