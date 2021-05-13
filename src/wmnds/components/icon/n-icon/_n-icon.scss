@@ -1,0 +1,14 @@
+$width-mulitplier: 0.9995467185761957;
+
+.wmnds-n-icon {
+  font-size: inherit;
+  line-height: inherit;
+
+  &__svg {
+    display: inline-block;
+    width: calc(1rem * #{$width-mulitplier});
+    height: 1rem;
+    fill: currentColor;
+    vertical-align: revert;
+  }
+}
