@@ -1,5 +1,5 @@
 {% extends "www/_layouts/layout-left-pane.njk" %} 
-{% set pageTitle = "Journey planner widget" %}
+{% set pageTitle = "Journey planner" %}
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
@@ -9,6 +9,8 @@
 {% block content %}
 
 {% markdown %}
+
+  # Widget
 
   ## What does it do?
   * For users to quickly access journey information from any page of the West Midlands Network website

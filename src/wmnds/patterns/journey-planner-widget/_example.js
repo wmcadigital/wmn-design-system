@@ -1,5 +1,3 @@
-const journeyPlannerWidgetJS = () => {
-
-};
+const journeyPlannerWidgetJS = () => {};
 
 export default journeyPlannerWidgetJS;
