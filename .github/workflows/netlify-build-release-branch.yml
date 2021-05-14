@@ -33,7 +33,7 @@ jobs:
           npm run build:all
       # Deploy build folder to Netlify IF the branch is master
       - name: Deploy to Netlify
-        if: github.ref == 'refs/heads/master' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
+        if: github.ref == 'refs/heads/ds/feat/netlify-release-build' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
         uses: nwtgck/actions-netlify@v1.1.11
         with:
           publish-dir: './build'
