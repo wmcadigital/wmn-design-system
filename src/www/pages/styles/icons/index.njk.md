@@ -43,6 +43,7 @@
   "sync",
   "ticket",
   "trash",
+  "user",
   "wallet",
   "warning-circle",
   "warning-triangle"
