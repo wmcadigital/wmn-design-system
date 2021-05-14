@@ -192,7 +192,6 @@
 <h3>How it works</h3>
 
 - The banner container width will expand if users are viewing the page with a browser width higher than 1280px
-- The image within the container will zoom to fill the size of the image container
 - User can add/remove text and call to action button
 - User can add a logo in the title
 
