@@ -202,9 +202,7 @@
 
 {{
   compExample([
-    wmndsBrandedBanner({
-      mode: "bus"
-    })
+    wmndsBrandedBanner()
   ], {
     componentPath: "wmnds/patterns/branded-banner/",
     njk: true,
