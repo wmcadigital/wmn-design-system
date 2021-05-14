@@ -46,6 +46,16 @@
     }
   }
 
+  &__content {
+    @media (max-width: $breakpoint-sm - 1) {
+      margin-top: $size-md;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &__image {
     width: 100%;
     object-fit: cover;

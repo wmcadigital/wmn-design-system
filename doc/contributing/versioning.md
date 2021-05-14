@@ -1,6 +1,6 @@
 # 1. Versioning
 
-The process of versioning The West Midlands Network Design System is automated via GitHub Actions, mainly through the use of [semantic-release](https://github.com/semantic-release/semantic-release).
+The process of versioning The Transport for West Midlands Design System is automated via GitHub Actions, mainly through the use of [semantic-release](https://github.com/semantic-release/semantic-release).
 
 The Design System is [available on Node Package Manager](https://www.npmjs.com/package/wmn-design-system) (npm) for download for node based projects. You can also view the website for a given version of the [Design System on UNPKG](https://unpkg.com/wmn-design-system@1.0.0/build/index.html).
 
