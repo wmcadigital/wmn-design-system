@@ -33,22 +33,37 @@ jobs:
           npm run build:all
       # Deploy build folder to Netlify IF the branch is master
       - name: Deploy to Netlify
-        if: github.ref == 'refs/heads/ds/feat/netlify-release-build' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
-        uses: nwtgck/actions-netlify@v1.1.11
+      # Sets the branch name as environment variable
+      - uses: nelonoel/branch-name@v1.0.1
+      - uses: jsmrcaga/action-netlify-deploy@master
         with:
-          publish-dir: './build'
-          production-branch: release
-          production-deploy: false
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: '${{ github.event.head_commit.message }}'
-          enable-pull-request-comment: false
-          overwrites-pull-request-comment: false
-          enable-commit-comment: false
-          enable-commit-status: false
-          netlify-config-path: ./netlify.toml
-          alias: release
-          github-deployment-environment: 'branch'
-          # functions-dir: ./functions
-        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          deploy_alias: release
+
+      # Creates a status check with link to preview
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: https://release--my-site.netlify.app
+        # if: github.ref == 'refs/heads/ds/feat/netlify-release-build' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
+        # uses: nwtgck/actions-netlify@v1.1.11
+        # with:
+        #   publish-dir: './build'
+
+        #   github-token: ${{ secrets.GITHUB_TOKEN }}
+        #   deploy-message: '${{ github.event.head_commit.message }}'
+        #   enable-pull-request-comment: false
+        #   overwrites-pull-request-comment: false
+        #   enable-commit-comment: false
+        #   enable-commit-status: false
+        #   netlify-config-path: ./netlify.toml
+        #   alias: release
+        #   github-deployment-environment: 'branch'
+        #   # functions-dir: ./functions
+        # env:
+        #   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        #   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
