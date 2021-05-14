@@ -11,6 +11,7 @@
 {% set classes = " " + params.classes if params.classes %}
 {% set describedBy = params.describedBy if params.describedBy %}
 {% set groupClasses =  params.groupClasses if params.groupClasses %}
+{% set secondaryColorClass =  "wmnds-fe-dropdown__select--secondary" if params.secondaryColor %}
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
 {% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
@@ -39,7 +40,7 @@
         for: id
       })
     }}
-    <select class="wmnds-fe-dropdown__select" id="{{id}}" name="{{name}}" {%if describedBy%}aria-describedBy="{{describedBy}}"{%endif%}>
+    <select class="wmnds-fe-dropdown__select {{secondaryColorClass}}" id="{{id}}" name="{{name}}" {%if describedBy%}aria-describedBy="{{describedBy}}"{%endif%}>
       {% if items %}
         {% for option in items %}
           {% set selected = "selected=\"true\"" | safe if option.selected %}
