@@ -16,10 +16,19 @@
     color: currentColor;
 
     svg {
-      width: 3.6em;
-      height: 1.3em;
+      width: 1em;
+      height: 1em;
       fill: currentColor;
       vertical-align: text-top;
     }
+  }
+
+  // helper class for aligning swift logo icon
+  .wmnds-swift-logo-inline {
+    width: 3.6em;
+    height: 1.3em;
+    margin-top: -0.175em;
+    fill: currentColor;
+    vertical-align: middle;
   }
 }
