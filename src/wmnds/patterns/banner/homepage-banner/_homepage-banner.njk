@@ -1,0 +1,17 @@
+{% macro wmndsHomepageBanner(params) %}
+{# Vars #}
+{% set image = params.image if params.image else "/img/component-images/banner/homepage-banner-img.png" %}
+{# Title #}
+{% set titleText = params.titleText if params.titleText else null %}
+{% set titleHTML = params.titleHTML if params.titleHTML else 'Bringing transport <br>together' %}
+{% set _title = titleText if titleText else titleHTML | safe %}
+
+<div class="wmnds-homepage-banner" style="background-image: url({{image}});">
+    <div class="wmnds-container">
+        <h1 class="wmnds-homepage-banner__title">
+            <span class="wmnds-homepage-banner__title-content">{{_title}}</span>
+        </h1>
+    </div>
+</div>
+
+{% endmacro %}
