@@ -1,0 +1,48 @@
+.wmnds-journey-planner {
+  color: $white;
+  background-color: get-color(primary);
+
+  h2,
+  .wmnds-btn--link {
+    color: $white;
+  }
+
+  &__form {
+    & > div:not(.wmnds-journey-planner__from):not(.wmnds-journey-planner__to):not(.wmnds-journey-planner__submit) {
+      display: none;
+    }
+  }
+
+  &.wmnds-is--open {
+    & .wmnds-journey-planner__form > div {
+      display: block !important;
+    }
+  }
+
+  &__to {
+    position: relative;
+  }
+
+  &__switch {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__switch-icon {
+    width: 17px;
+    height: 23px;
+    margin-left: 8px;
+    fill: get-color(secondary);
+  }
+
+  // Leave and arrive for when, modes for how
+  &__when,
+  &__how {
+    position: relative;
+
+  }
+}
