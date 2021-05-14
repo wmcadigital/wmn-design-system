@@ -173,4 +173,20 @@
   })
 }}
 
+{% from "wmnds/patterns/branded-banner/_branded-banner.njk" import wmndsBrandedBanner %}
+
+{{
+  compExample([
+    wmndsBrandedBanner({
+      mode: "bus"
+    })
+  ], {
+    componentPath: "wmnds/patterns/branded-banner/",
+    njk: true,
+    njkProps: wmndsBrandedBannerProps,
+    js: false,
+    iframe: true
+  })
+}}
+
 {% endblock %}
