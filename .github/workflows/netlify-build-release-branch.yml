@@ -3,22 +3,16 @@ on:
   push:
 
 jobs:
-  release:
-    name: Release
+  build-preview:
+    name: build preview
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      # Checkout branch
       - name: Checkout branch
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-      # Setup node environment
       - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
-      # Get modules from cache
       - name: Cache Node.js modules
         uses: actions/cache@v2
         with:
@@ -26,44 +20,25 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      # Build site
       - name: Build site
         run: |
           npm ci
           npm run build:all
-      # Deploy build folder to Netlify IF the branch is master
-      - name: Deploy to Netlify
-        # Sets the branch name as environment variable
-        uses: nelonoel/branch-name@v1.0.1
-      - uses: jsmrcaga/action-netlify-deploy@master
+      - name: Deploy netlify preview
+        uses: nwtgck/actions-netlify@v1.1.11
         with:
+          publish-dir: './build'
+          production-branch: master
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'PR #${{ github.event.number }}'
+          enable-pull-request-comment: true
+          overwrites-pull-request-comment: true
+          enable-commit-comment: true
+          enable-commit-status: true
+          alias: release
+          netlify-config-path: ./netlify.toml
+          # functions-dir: ./functions
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          deploy_alias: release
-
-      # Creates a status check with link to preview
-      - name: Status check
-        uses: Sibz/github-status-action@v1.1.1
-        with:
-          authToken: ${{ secrets.GITHUB_TOKEN }}
-          context: Netlify preview
-          state: success
-          target_url: https://release--my-site.netlify.app
-        # if: github.ref == 'refs/heads/ds/feat/netlify-release-build' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
-        # uses: nwtgck/actions-netlify@v1.1.11
-        # with:
-        #   publish-dir: './build'
-
-        #   github-token: ${{ secrets.GITHUB_TOKEN }}
-        #   deploy-message: '${{ github.event.head_commit.message }}'
-        #   enable-pull-request-comment: false
-        #   overwrites-pull-request-comment: false
-        #   enable-commit-comment: false
-        #   enable-commit-status: false
-        #   netlify-config-path: ./netlify.toml
-        #   alias: release
-        #   github-deployment-environment: 'branch'
-        #   # functions-dir: ./functions
-        # env:
-        #   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        #   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
