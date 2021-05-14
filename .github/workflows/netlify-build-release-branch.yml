@@ -1,8 +1,6 @@
 name: Build netlify for release branch
 on:
   push:
-    branches:
-      - release
 
 jobs:
   release:
