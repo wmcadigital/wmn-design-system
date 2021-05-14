@@ -3,22 +3,49 @@
     {
       "name": "title",
       "type": "string",
-      "description": "<strong>Required.</strong> Title content to use in the banner."
+      "description": "<strong>Required.</strong> HTML content to use as the title in the banner."
     },
     {
-      "name": "contentHTML",
+      "name": "contentCol1",
       "type": "string",
-      "description": "<strong>Required.</strong> HTML content to use in the banner."
+      "description": "<strong>Required.</strong> HTML content to use in the first column of the banner."
     },
     {
-      "name": "image",
+      "name": "contentCol2",
       "type": "string",
-      "description": "<strong>Required.</strong> Url for the image to be displayed in the banner."
+      "description": "HTML content to use in the second column of the banner. If left blank, this column will not display."
     },
     {
-      "name": "mode",
-      "type": "string",
-      "description": "Transport mode the banner relates to. This will determine the icon and background colour which is displayed. Accepted values are <code class='wmnds-website-inline-code'>bus</code>, <code class='wmnds-website-inline-code'>rail</code>, <code class='wmnds-website-inline-code'>metro</code>, <code class='wmnds-website-inline-code'>roads</code>, <code class='wmnds-website-inline-code'>walk</code>, <code class='wmnds-website-inline-code'>cycle</code> and <code class='wmnds-website-inline-code'>eScooter</code>. If not set, will default to <code class='wmnds-website-inline-code'>bus</code>."
+      "name": "breadcrumbItems",
+      "type": "array",
+      "description": "Array of breadcrumb items to show in the banner. See the <code class='wmnds-website-inline-code'>items</code> property under <a href='/components/breadcrumb/'>Breadcrumb</a>."
+    },
+    {
+      "name": "ctaButton",
+      "type": "object",
+      "description": "Call to action link (displayed as a button) to use in the banner. If not supplied, no button will be displayed.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the button."
+        },
+        {
+          "name": "link",
+          "type": "string",
+          "description": "<strong>Required.</strong> Link for the button."
+        },
+        {
+          "name": "linkTitle",
+          "type": "string",
+          "description": "Text to use as the link title."
+        },
+        {
+          "name": "linkTarget",
+          "type": "string",
+          "description": "Target attribute for the link. Defaults to \"_self\""
+        }
+      ]
     }
   ]
 }
