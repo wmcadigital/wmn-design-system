@@ -47,4 +47,4 @@ const nIcons = () => {
   });
 };
 
-export default nIcons();
+export default nIcons;
