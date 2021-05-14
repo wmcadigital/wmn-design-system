@@ -53,7 +53,7 @@
 
 ### Mobile app variant of breadcrumb
 
-When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the West Midlands Network breadcrumb component.
+When developing a mobile app, if you are limited for space and need extra room then it is recommended to use the mobile app variant of the Transport for West Midlands breadcrumb component.
 
 The mobile app version of the breadcrumb ensures that it will not show on devices with a screen width less than 768px. This means the breadcrumb will only show on devices with a screen resolution bigger than 768px.
 

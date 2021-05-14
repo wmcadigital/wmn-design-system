@@ -9,7 +9,7 @@
 
 {# Set params #}
 {% set _feedbackLoopId = params.id if params.id else "feedback-loop" %} {# this is to pass unique id to this macro, to stop clashing of duplicate IDs with the preview page and the ACTUAL feedback loop in the footer #}
-{% set formTitle = params.formTitle if params.formTitle else 'Help us improve West Midlands Network' %}
+{% set formTitle = params.formTitle if params.formTitle else 'Help us improve Transport for West Midlands' %}
 {% set isOpen = " wmnds-is--open" if params.isOpen %}
 
 {% set isUsefulSent = " wmnds-is--sent" if params.isUsefulSent %}
