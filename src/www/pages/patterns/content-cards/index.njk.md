@@ -266,11 +266,15 @@ Use this content card when you want to send users to an external Campaign Monito
 
 <h3>What does it do?</h3>
 
-Shows the image of Swift card and explains how to purchase it
+- Shows the image of Swift card and explains how to purchase it
 
 <h3>When to use it?</h3>
 
-Only on Swift product landing pages such as Swift Go and PAYG
+- Only on Swift product landing pages such as Swift Go and PAYG
+
+<h3>When not to use it?</h3>
+
+- On informational content pages. If you need to use a content card use a standard content card pattern.
 
 <h3>How it works</h3>
 
