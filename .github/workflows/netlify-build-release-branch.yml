@@ -33,8 +33,8 @@ jobs:
           npm run build:all
       # Deploy build folder to Netlify IF the branch is master
       - name: Deploy to Netlify
-      # Sets the branch name as environment variable
-      - uses: nelonoel/branch-name@v1.0.1
+        # Sets the branch name as environment variable
+        uses: nelonoel/branch-name@v1.0.1
       - uses: jsmrcaga/action-netlify-deploy@master
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
