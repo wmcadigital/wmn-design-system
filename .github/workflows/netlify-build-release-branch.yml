@@ -46,6 +46,7 @@ jobs:
           enable-commit-comment: false
           enable-commit-status: false
           netlify-config-path: ./netlify.toml
+          alias: release
           # functions-dir: ./functions
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
