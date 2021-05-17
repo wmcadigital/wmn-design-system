@@ -1,5 +1,5 @@
-{% extends "www/_layouts/layout-left-pane.njk" %}
-{% set pageTitle = "Journey planner widget" %}
+{% extends "www/_layouts/layout-left-pane.njk" %} 
+{% set pageTitle = "Journey planner" %}
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
@@ -9,14 +9,11 @@
 
 {% markdown %}
 
-## What does it do?
+  # Widget
 
-- For users to quickly access journey information from any page of the Transport for West Midlands website
-- This widget directs users to the full journey planner service from the right sidebar of a page
-
-## When to use it?
-
-- When the content on a page is related to Transport for West Midlands travel modes or travel information
+  ## What does it do?
+  * For users to quickly access journey information from any page of the West Midlands Network website
+  * This widget directs users to the full journey planner service from the right sidebar of a page
 
 ## How it works?
 

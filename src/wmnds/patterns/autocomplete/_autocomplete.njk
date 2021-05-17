@@ -10,13 +10,19 @@
 {% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
 {% set isLoading = " wmnds-is--loading" if params.loading %}
 {% set id = params.id if params.id else "genericInput" %}
+{% set label = params.label.contentText if params.label.contentText else "Autocomplete label" %}
+{% set name = params.name if params.name else id %}
+{% set isRequired = params.isRequired if params.isRequired else false %}
+
+
 
 {# Label #}
 {{
   wmndsFormLabel({
     for: id,
-    contentText: 'Autocomplete label'
-  }) | trim
+    contentText: label,
+    classes: params.label.classes
+  })
 }}
 
 <div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
@@ -35,7 +41,7 @@
     wmndsLoader() | indent(2) | trim
   }}
   <!-- Autocomplete input box -->
-  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="searchExample" aria-label="{{ placeholder }}"  type="text" id="{{id}}">
+  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="{{ name }}" aria-label="{{ placeholder }}"  type="text" id="{{id}}" required="{{isRequired}}" autocomplete="off">
 </div>
 
 {#- If showSuggestions is true #}
@@ -69,5 +75,6 @@
 {% endif -%}
 </ul>
 {%- endif %}
+
 
 {% endmacro %}
