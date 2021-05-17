@@ -36,7 +36,13 @@
     width: 17px;
     height: 23px;
     margin-left: 8px;
-    fill: get-color(secondary);
+    fill: $white;
+  }
+
+  .wmnds-btn--mode:active,
+  .wmnds-btn--mode:focus,
+  .wmnds-btn--mode:target {
+    background-color: get-color(secondary, 50);
   }
 
   // Leave and arrive for when, modes for how
