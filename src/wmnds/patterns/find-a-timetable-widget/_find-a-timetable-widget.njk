@@ -7,7 +7,7 @@
 {% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
 
 {# Set params #}
-{% set formTitle = params.formTitle if params.formTitle else "Find timetable" %}
+{% set formTitle = params.formTitle if params.formTitle else "Find a timetable" %}
 {% set contentText = params.contentText if params.contentText else "Select your transport mode" %}
 {% set contentHTML = params.contentHTML if params.contentHTML else null %}
 {% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
