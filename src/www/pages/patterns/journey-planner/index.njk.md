@@ -182,13 +182,5 @@
   )
 }}
 
-{% markdown %}
-  ## Anything else
-  [JP Widget Zeplin link](https://zpl.io/V1EwnoZ)
-  [JP Homepage Zeplin link](https://zpl.io/br3wXp1)
-
-{% endmarkdown %}
-
-
 
 {% endblock %}
