@@ -63,12 +63,4 @@
   )
 }}
 
-{% markdown %}
-
-
-## Anything else
-[Zeplin link](https://zpl.io/ag3AQD0)
-
-{% endmarkdown %}
-
 {% endblock %}
