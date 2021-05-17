@@ -181,3 +181,5 @@ Specific transport mode(s) can be chosen by the user to filter their journey
     }
   )
 }}
+
+{% endblock %}
