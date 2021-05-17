@@ -10,6 +10,7 @@
 {% block content %}
 
 {% markdown %}
+
   ## Homepage
 {% endmarkdown %} 
 
@@ -72,9 +73,6 @@
 
 {% markdown %} 
 
-
-
-
   ## Widget
 
   ### What does it do?
@@ -95,6 +93,7 @@
   #### Collapsed
   This is the default widget view
 
+
 {% endmarkdown %}
 
 {{
@@ -108,12 +107,14 @@
       iframe: false
     }
   )
-}} 
+
+}}
 
 {% markdown %}
 
-  #### Expanded
-  When a user selects the ‘From’ field, the full journey details are expanded
+#### Expanded
+When a user selects the ‘From’ field, the full journey details are expanded
+
 
 {% endmarkdown %}
 
@@ -132,12 +133,10 @@
   )
 }}
 
-
-
 {% markdown %}
 
-  #### Change departure or arrival time
-  Users can manually change the departure or arrival time of their journey
+#### Change departure or arrival time
+Users can manually change the departure or arrival time of their journey
 
 {% endmarkdown %}
 
@@ -161,8 +160,9 @@
 
 {% markdown %}
 
-  #### Transport mode
-  Specific transport mode(s) can be chosen by the user to filter their journey
+#### Transport mode
+Specific transport mode(s) can be chosen by the user to filter their journey
+
 
 {% endmarkdown %}
 
@@ -181,6 +181,3 @@
     }
   )
 }}
-
-
-{% endblock %}
