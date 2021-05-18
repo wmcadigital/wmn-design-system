@@ -34,7 +34,7 @@
       componentPath: "wmnds/patterns/find-a-timetable-widget/",
       njk: true,
       njkProps: wmndsFindATimetableWidgetProps,
-      js: false,
+      js: true,
       iframe: false
     }
   )
@@ -50,14 +50,13 @@
 {{
   compExample([
       wmndsFindATimetableWidget({
-        isOpen: true,
-        showSuggestions: true
+        isOpen: true
       })
     ], {
       componentPath: "wmnds/patterns/find-a-timetable-widget/",
       njk: true,
       njkProps: wmndsFindATimetableWidgetProps,
-      js: false,
+      js: true,
       iframe: false
     }
   )
