@@ -34,7 +34,7 @@
                     <div class="wmnds-find-a-timetable-widget__travel-modes wmnds-grid wmnds-grid--spacing-3-sm wmnds-m-t-sm">
 
                         <label class="wmnds-col-1-3">
-                            <input type="checkbox" class="wmnds-find-a-timetable-widget__mode-checkbox wmnds-screenreaders-only" name="useBus" {{ isChecked }}>
+                            <input type="checkbox" class="wmnds-find-a-timetable-widget__mode-checkbox wmnds-screenreaders-only" name="mode" value="Bus" {{ isChecked }}>
                             <div class="wmnds-btn wmnds-btn--mode wmnds-btn--block">
                                 {{
                                     wmndsIcon({
@@ -81,7 +81,7 @@
                         {{
                             wmndsTextInput({
                                 id: "busServices",
-                                name: "busServices",
+                                name: "serviceNo",
                                 label: {
                                     contentText: 'Bus Services',
                                     classes: 'wmnds-screenreaders-only'
