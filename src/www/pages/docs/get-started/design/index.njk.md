@@ -9,7 +9,7 @@
 
 ## About
 
-We use <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a> to create and prototype designs for our [styles](/styles/), [components](/components/) and [patterns](/patterns/) within the West Midlands Network Design System.
+We use <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a> to create and prototype designs for our [styles](/styles/), [components](/components/) and [patterns](/patterns/) within the Transport for West Midlands Design System.
 
 ## Sketch library
 

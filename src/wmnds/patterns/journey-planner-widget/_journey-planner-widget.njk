@@ -2,10 +2,13 @@
 
 {# Imports of components #}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
-{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
+{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
+
 
 {# Set params #}
 {% set formTitle = params.formTitle if params.formTitle else "Plan your journey" %}
@@ -26,27 +29,26 @@
 
                 <h2>{{formTitle}}</h2>
 
-                <form class="wmnds-journey-planner-widget__form">
+                <form class="wmnds-journey-planner-widget__form" action="//journeyplanner.wmnetwork.co.uk/Home/HandleWidgetQuery" method="GET" name="planYourJourneySmallForm">
                     
-                    <div class="wmnds-journey-planner-widget__from">
+                    <div class="wmnds-journey-planner-widget__from wmnds-m-b-md">
                         {{
-                            wmndsTextInput({
+                            wmndsAutocomplete({
                                 id: ("from" + suffix + leaveSuffix + modeSuffix),
-                                name: "from",
+                                name: "origin",
                                 label: {
                                     contentText: 'From'
                                 },
                                 placeholder: 'Enter station or postcode',
-                                required: true,
-                                formGroup: {
-                                    classes: 'wmnds-m-b-md'
-                                }
+                                loading: false,
+                                showSuggestions: false,
+                                textSuggestions: true,
+                                isRequired: true
                             })
                         }}
                     </div>
 
-                    <div class="wmnds-journey-planner-widget__to">
-
+                    <div class="wmnds-journey-planner-widget__to wmnds-m-b-md">
                         <div class="wmnds-journey-planner-widget__switch">
                             {{
                                 wmndsButton({
@@ -63,23 +65,22 @@
                                 }) | safe 
                             }}
                         </div>
-
+                        
                         {{
-                            wmndsTextInput(
-                                {
-                                    id: ("to" + suffix + leaveSuffix + modeSuffix),
-                                    name: "to",
-                                    label: {
-                                        contentText: 'To'
-                                    },
-                                    placeholder: 'Enter station or postcode',
-                                    required: true,
-                                    formGroup: {
-                                        classes: 'wmnds-m-b-md'
-                                    }
-                                }
-                            )
+                            wmndsAutocomplete({
+                                id: ("to" + suffix + leaveSuffix + modeSuffix),
+                                name: "destination",
+                                label: {
+                                    contentText: 'To'
+                                },
+                                placeholder: 'Enter station or postcode',
+                                loading: false,
+                                showSuggestions: false,
+                                textSuggestions: true,
+                                isRequired: true
+                            })
                         }}
+                        
                     </div>
                     
 
@@ -110,10 +111,12 @@
                             </div>
 
                             <h4>Leave</h4>
+                            <input type="hidden" name="journeyTimeType" value="leave" aria-label="leave"/>
+
                             {{
                                 wmndsDropdown({
-                                    id: ("leaveday" + suffix + leaveSuffix + modeSuffix),
-                                    name: "leave",
+                                    id: ("day" + suffix + leaveSuffix + modeSuffix),
+                                    name: "day",
                                     items: [
                                         {
                                             value: "today",
@@ -129,7 +132,7 @@
                                         }
                                     ],
                                     describedBy: null,
-                                    label: "Leave Day",
+                                    label: "Day",
                                     labelClasses: "wmnds-screenreaders-only",
                                     classes: null,
                                     groupClasses: "wmnds-m-b-sm",
@@ -146,8 +149,8 @@
  
                             {{
                                 wmndsDropdown({
-                                    id: ("leavetime" + suffix + leaveSuffix + modeSuffix),
-                                    name: "time",
+                                    id: ("time" + suffix + leaveSuffix + modeSuffix),
+                                    name: "SelectJourneyTime",
                                     type: "time",
                                     describedBy: null,
                                     label: "Time",
@@ -194,6 +197,7 @@
                             </div>
                             <div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-m-t-sm">
                                 <div class="wmnds-col-1-2">
+                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useBus" checked aria-label="bus"/>
                                     {{
                                         wmndsButton({
                                             iconLeft: "modes-isolated-bus",
@@ -205,6 +209,7 @@
                                     }}
                                 </div>
                                 <div class="wmnds-col-1-2">
+                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useTrain" checked aria-label="train"/>
                                     {{
                                         wmndsButton({
                                             iconLeft: "modes-isolated-metro",
@@ -216,7 +221,7 @@
                                     }}
                                 </div>
                                 <div class="wmnds-col-1-2">
-                                
+                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useTram" checked aria-label="Tram"/>
                                     {{
                                         wmndsButton({
                                             iconLeft: "modes-isolated-rail",
@@ -227,39 +232,43 @@
                                         })
                                     }}
                                 </div>
-                                <p class="wmnds-col-1">Or</p>
-                                
+                                <p class="wmnds-col-1 wmnds-m-b-sm">Or</p>
+
                                 <div class="wmnds-col-1-2">
-                                {{
-                                    wmndsButton({
-                                        iconLeft: "modes-isolated-walk",
-                                        contentText: "Walk",
-                                        type: "mode",
-                                        iconClasses: "wmnds-btn__coloured-icon--walk",
-                                        classes:"wmnds-col-1 wmnds-m-b-sm"
-                                    })
-                                }}
+                                    <input type="radio" class="wmnds-screenreaders-only" name="altjp" aria-label="walk"/>
+                                    {{
+                                        wmndsButton({
+                                            iconLeft: "modes-isolated-walk",
+                                            contentText: "Walk",
+                                            type: "mode",
+                                            iconClasses: "wmnds-btn__coloured-icon--walk",
+                                            classes:"wmnds-col-1 wmnds-m-b-sm"
+                                        })
+                                    }}
                                 </div>
                                 <div class="wmnds-col-1-2">
-                                {{
-                                    wmndsButton({
-                                        iconLeft: "modes-isolated-cycle",
-                                        contentText: "Cycle",
-                                        type: "mode",
-                                        iconClasses: "wmnds-btn__coloured-icon--cycle",
-                                        classes:"wmnds-col-1 wmnds-m-b-sm"
-                                    })
-                                }}
+                                    <input type="radio" class="wmnds-screenreaders-only" name="altjp" aria-label="cycle"/>
+                                    {{
+                                        wmndsButton({
+                                            iconLeft: "modes-isolated-cycle",
+                                            contentText: "Cycle",
+                                            type: "mode",
+                                            iconClasses: "wmnds-btn__coloured-icon--cycle",
+                                            classes:"wmnds-col-1 wmnds-m-b-sm"
+                                        })
+                                    }}
                                 </div>
+                                    
                             </div>
                         </div>
                     </div>
 
                     <div class="wmnds-journey-planner-widget__advanced-search">
                         {{ 
-                            wmndsButton({
-                                type: "link",
+                            wmndsLink({
                                 contentText: "Mobility and advanced search",
+                                link: "http://journeyplanner.networkwestmidlands.com/",
+                                linkTitle: "Go to mobility and advanced search",
                                 classes: "wmnds-m-t--lg"
                             })
                         }}

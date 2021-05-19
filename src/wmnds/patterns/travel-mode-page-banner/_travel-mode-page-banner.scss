@@ -64,12 +64,12 @@
     }
   }
 
-  h2 {
-    color: currentColor;
-  }
-
   &__copy {
     max-width: 100%;
+
+    & > * {
+      color: $white;
+    }
   }
 
   &__logos {
@@ -77,7 +77,7 @@
 
     svg {
       width: 3rem;
-      fill: currentColor;
+      fill: $white;
     }
 
     svg,

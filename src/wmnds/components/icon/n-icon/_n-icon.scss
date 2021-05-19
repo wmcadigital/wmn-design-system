@@ -1,0 +1,15 @@
+$base-height: 1rem;
+$width-multiplier: 0.9995467185761957; // If we times the height by this value we got the correct width for the n-icon svg
+
+.wmnds-n-icon {
+  font-size: inherit;
+  line-height: inherit;
+
+  &__svg {
+    display: inline-block;
+    width: calc($base-height * #{$width-multiplier});
+    height: $base-height;
+    fill: currentColor;
+    vertical-align: revert;
+  }
+}

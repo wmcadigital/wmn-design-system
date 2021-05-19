@@ -1,15 +1,11 @@
 {% raw %}
-{% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
+{% from "wmnds/components/journey-planner-widget/_journey-planner-widget.njk" import wmndsJourneyPlannerWidget %}
 
 {{
-   wmndsAccordion({
-      id: "accordion-01",
-      headingText: "Accordion",
-      headingHTML: null,
-      contentText: null,
-      contentHTML: "<p><strong>Some random subtitle</strong></p>
-      <p>Lorem ipsum dolor sit...</p>",
-      isOpen: false
-    })
+   wmndsJourneyPlannerWidget({
+        isOpen: true,
+        isHowOpen: false,
+        isWhenOpen: false
+   })
 }}
 {% endraw %}
