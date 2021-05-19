@@ -127,7 +127,7 @@
 }}
 {% markdown %}
 
-{# About #}
+{# Travel mode page banner #}
 
 ## Travel Mode Page Banner
 
@@ -170,6 +170,48 @@
     njkProps: wmndsTravelModePageBannerProps,
     js: false,
     iframe: true
+  })
+}}
+
+{% markdown %}
+
+{# Homepage banner #}
+
+## Homepage
+
+{# What #}
+
+<h3>What does it do?</h3>
+
+- Provides a visual illustration of our most popular transport modes
+- Highlights a welcome message for visitors of the West Midlands Network site
+
+{# When #}
+
+<h3>When to use it?</h3>
+
+- On the homepage
+
+<h3>When not to use it?</h3>
+
+- On pages where the mode of travel is not operated by Transport for West Midlands, such as E-scooters
+
+<h3>How it works</h3>
+
+- The banner image will change on each page refresh. There are three images that will be shown in the banner, one for bus, train and tram
+- The welcome message requires a Primary Purple highlight to provide sufficient colour contrast against the banner image
+
+{% endmarkdown %}
+
+{% from "wmnds/patterns/banner/homepage-banner/_homepage-banner.njk" import wmndsHomepageBanner %}
+
+{{
+  compExample([
+    wmndsHomepageBanner()
+  ], {
+    componentPath: "wmnds/patterns/banner/homepage-banner/",
+    njk: true,
+    njkProps: wmndsHomepageBannerProps
   })
 }}
 

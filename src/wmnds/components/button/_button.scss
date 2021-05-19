@@ -265,6 +265,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     width: 100%;
   }
 
+  // block modifier for full width buttons
+  &--align-left {
+    text-align: left;
+  }
+
   // Show button like a normal link modifier
   &--link {
     display: inline;
