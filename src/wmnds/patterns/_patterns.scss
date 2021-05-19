@@ -1,7 +1,8 @@
 // This file is imported from ./assets/sass/wmnds-components.scss
 
 @import "autocomplete/autocomplete"; // Autocomplete
-@import "banner/banner"; // Banner styles
+@import "banner/banner"; // Header styles
+@import "branded-banner/branded-banner"; // Header styles
 @import "buy-a-ticket/buy-a-ticket"; // Buy a ticket styles
 @import "cookies/cookies"; // Cookies styles
 @import "contact-details/contact-details"; // contact-details styles
@@ -12,5 +13,6 @@
 @import "travel-updates/travel-updates"; // Travel updates styles
 @import "travel-mode-page-banner/travel-mode-page-banner"; // page-banner
 @import "search/search"; // Search pattern styles
-@import "journey-planner-widget/journey-planner-widget"; // Journey planner widget styles
 @import "journey-planner/journey-planner"; // Journey planner styles
+@import "journey-planner-widget/journey-planner-widget"; // Journey planner widget styles
+@import "find-a-timetable-widget/find-a-timetable-widget"; // Find a timetable widget pattern styles
