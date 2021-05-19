@@ -1,0 +1,78 @@
+{# Uses the components: wmnds-loader, wmnds-icon #}
+
+{% macro wmndsAutocomplete(params) %}
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium %}
+{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
+{# Params #}
+{% set query = params.query if params.query else "" %} {# default to x15 as query text if one isn't available #}
+{% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
+{% set isLoading = " wmnds-is--loading" if params.loading %}
+{% set id = params.id if params.id else "genericInput" %}
+{% set label = params.label.contentText if params.label.contentText else "Autocomplete label" %}
+{% set name = params.name if params.name else id %}
+{% set isRequired = params.isRequired if params.isRequired else false %}
+
+{# Label #}
+{{
+  wmndsFormLabel({
+    for: id,
+    contentText: label,
+    classes: params.label.classes
+  })
+}}
+
+<div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
+  {% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
+  {#- Get SVG icon and pass class -#}
+  <!-- Search icon -->
+  {{
+    wmndsIcon({
+      icon: 'general-search',
+      class: 'wmnds-autocomplete__icon'
+    }) | indent(2) | trim
+  -}}
+
+  {# Loading spinner #}
+  {{
+    wmndsLoader() | indent(2) | trim
+  }}
+  <!-- Autocomplete input box -->
+  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="{{ name }}" aria-label="{{ placeholder }}"  type="text" id="{{id}}" required="{{isRequired}}" autocomplete="off">
+</div>
+
+{#- If showSuggestions is true #}
+{% if params.showSuggestions %}
+<!-- Autocomplete suggestions -->
+<ul class="wmnds-autocomplete-suggestions">
+{#- If textOnly suggestions -#}
+{% if params.textSuggestions -%}
+  {%- for i in range(1,4) %}
+  <li class="wmnds-autocomplete-suggestions__li" title="Search result {{i}}" tabindex="0">
+    This is <strong>my query</strong> result {{i}}
+  </li>
+  {%- endfor %}
+{% else -%}
+  {# Disruption indicator suggestions #}
+  {%- for i in range(1,6) %}
+  <li class="wmnds-autocomplete-suggestions__li wmnds-grid" title="Good service on X15" tabindex="0">
+    <div class="wmnds-col-auto" >
+      {{
+        wmndsDisruptionIndicatorMedium({
+          classModifiers: 'wmnds-disruption-indicator-medium',
+          text: query
+        }) | indent(8) | trim
+      }}
+    </div>
+    <div class="wmnds-col-1-2 wmnds-col-sm-2-3">
+      <strong>Oldbury to Dudley {{i}}</strong><br>and return journey
+    </div>
+  </li>
+  {%- endfor %}
+{% endif -%}
+</ul>
+{%- endif %}
+
+
+{% endmacro %}
