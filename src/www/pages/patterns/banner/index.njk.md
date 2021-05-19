@@ -129,7 +129,7 @@
 
 {# Travel mode page banner #}
 
-## Travel Mode Page Banner
+## Travel mode page banner
 
 {# What #}
 
@@ -168,6 +168,44 @@
     componentPath: "wmnds/patterns/travel-mode-page-banner/",
     njk: true,
     njkProps: wmndsTravelModePageBannerProps,
+    js: false,
+    iframe: true
+  })
+}}
+
+{% markdown %}
+
+## Purple branded banner
+
+<h3>What does it do?</h3>
+
+- Helps user to identify the brand or a service provider
+
+<h3>When to use it?</h3>
+
+- Only on Swift product landing pages such as Swift Go, PAYG, Swift and tickets and TfWM corporate landing page
+
+<h3>When not to use it?</h3>
+
+- On informational content pages
+
+<h3>How it works</h3>
+
+- The banner container width will expand if users are viewing the page with a browser width higher than 1280px
+- User can add/remove text and call to action button
+- User can add a logo in the title
+
+{% endmarkdown %}
+
+{% from "wmnds/patterns/branded-banner/_branded-banner.njk" import wmndsBrandedBanner %}
+
+{{
+  compExample([
+    wmndsBrandedBanner()
+  ], {
+    componentPath: "wmnds/patterns/branded-banner/",
+    njk: true,
+    njkProps: wmndsBrandedBannerProps,
     js: false,
     iframe: true
   })
