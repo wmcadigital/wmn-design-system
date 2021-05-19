@@ -9,6 +9,7 @@ import accordionsJS from '../wmnds/components/accordion/_example';
 import travelUpdatesWidgetJs from '../wmnds/patterns/travel-updates/_example';
 import searchFilterJs from '../wmnds/patterns/search/search-filter/_example';
 import feedbackLoopsJS from '../wmnds/patterns/feedback-loop/_example';
+import nIcons from '../wmnds/components/icon/n-icon/_example';
 
 import { componentExample, componentExampleIframe } from './_partials/component-example';
 
@@ -35,6 +36,7 @@ const icons = () => {
 window.addEventListener(
   'DOMContentLoaded',
   (polyfills,
+  nIcons(), // Make sure this runs first as it breaks event listeners via innerHTML method, TODO: Update this function so it focuses on classes rather than the whole DOM body
   icons(),
   aToZContentStyleGuide(),
   colorPalettes(),
