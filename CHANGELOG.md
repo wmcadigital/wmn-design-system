@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.0...v1.7.1) (2021-05-20)
+
+
+### Bug Fixes
+
+* Reverted logo back to WMNetwork ([#797](https://github.com/wmcadigital/wmn-design-system/issues/797)) ([224c6dd](https://github.com/wmcadigital/wmn-design-system/commit/224c6dde04fafbe3a10802dc4a743f1e9b2b14f4))
+
 # [1.7.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.6.0...v1.7.0) (2021-05-19)
 
 
