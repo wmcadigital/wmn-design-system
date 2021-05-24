@@ -1,15 +1,17 @@
-$base-height: 1rem;
-$width-multiplier: 0.9995467185761957; // If we times the height by this value we got the correct width for the n-icon svg
+// Part of this file is generated via n-icon-styling function in mixins. This is to ensure we get the right SVG height & width based on the parent font-size.
+$base-width: 1rem * 0.75; // Multiply by 0.75 as the font height is is actually 1/4 smaller than
+$height-multiplier: 1.04741812336749; // If we multiply the height by this value we got the correct width for the n-icon svg
 
 .wmnds-n-icon {
   display: inline-block;
   font-size: inherit;
   line-height: inherit;
+  text-decoration: inherit;
 
   &__svg {
     display: inline-block;
-    width: calc($base-height * #{$width-multiplier});
-    height: $base-height;
+    width: $base-width;
+    height: calc(#{$base-width} * #{$height-multiplier});
     fill: currentColor;
     vertical-align: revert;
   }
