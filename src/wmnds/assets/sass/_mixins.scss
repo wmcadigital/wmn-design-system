@@ -1,11 +1,13 @@
 // This is a helper which will spit out the correct height/width for any svgs within a heading tag
 // This is used to overwrite .wmnds-n-icon__svg class defaults in _n-icon.scss
 @mixin n-icon-styling($height-and-font-size: 1rem) {
-  $width-multiplier: 0.9995467185761957; // If we times the height by this value we got the correct width for the n-icon svg
+  $height-multiplier: 1.04741812336749; // If we multiply the height by this value we got the correct width for the n-icon svg
+  $rescaled-font: $height-and-font-size * 0.75; // Multiply by 0.75 as the font height is is actually 1/4 smaller than
 
   .wmnds-n-icon__svg {
-    width: calc(#{$height-and-font-size * $width-multiplier});
-    height: $height-and-font-size;
+    width: $rescaled-font;
+    height: calc(#{$rescaled-font * $height-multiplier});
+    //
   }
 }
 
