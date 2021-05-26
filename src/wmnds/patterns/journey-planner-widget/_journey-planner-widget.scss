@@ -11,6 +11,15 @@
     }
   }
 
+  .wmnds-autocomplete__input {
+    font-weight: 400;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+  }
+
   &__to {
     position: relative;
   }
