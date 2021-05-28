@@ -36,8 +36,8 @@ const icons = () => {
 window.addEventListener(
   'DOMContentLoaded',
   (polyfills,
-  nIcons(), // Make sure this runs first as it breaks event listeners via innerHTML method, TODO: Update this function so it focuses on classes rather than the whole DOM body
   icons(),
+  nIcons(),
   aToZContentStyleGuide(),
   colorPalettes(),
   headerJs(),
