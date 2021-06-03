@@ -22,7 +22,7 @@
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
 <div class="wmnds-fe-group{{groupErrorClass}}">
-    <div class="wmnds-fe-radios{{inlineClass}}">
+    <div class="wmnds-fe-radios{{inlineClass}}" role="radiogroup">
       {% if error %}
         {{
           wmndsFeErrorMessage(

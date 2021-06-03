@@ -146,6 +146,7 @@
                 <button class="wmnds-travel-update__disruption-indicator-btn" aria-expanded="false">
                     {{
                         mediumDisruption({
+                            displayNarrow: true,
                             iconLeft: "modes-isolated-" + update.mode,
                             iconRight: null if isEditView else disruption.statusIcon,
                             contentText: disruption.service,
@@ -227,6 +228,7 @@
             <div class="wmnds-travel-update__disruption">
                 {{
                     mediumDisruption({
+                        displayNarrow: true,
                         iconLeft: "modes-isolated-" + update.mode,
                         iconRight: update.statusIcon,
                         classes: update.severityClass
