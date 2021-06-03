@@ -1,3 +1,13 @@
+## [1.7.2](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.1...v1.7.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* n-icons now replace text without removing event handlers ([#800](https://github.com/wmcadigital/wmn-design-system/issues/800)) ([546550f](https://github.com/wmcadigital/wmn-design-system/commit/546550f7d374b82a17689ea3cd3930d5e2b9616c))
+* plan your journey font weight ([#802](https://github.com/wmcadigital/wmn-design-system/issues/802)) ([999579a](https://github.com/wmcadigital/wmn-design-system/commit/999579a82678bfc652d685605ffb4a0545e2c8b6))
+* remove deprecated 'addListener' in footer js ([#811](https://github.com/wmcadigital/wmn-design-system/issues/811)) ([acb572b](https://github.com/wmcadigital/wmn-design-system/commit/acb572bc36cac9488d9e535d6e43d843d8e92a68))
+* update travel updates widget styling ([#803](https://github.com/wmcadigital/wmn-design-system/issues/803)) ([fbabc99](https://github.com/wmcadigital/wmn-design-system/commit/fbabc992ed35b7eb3c1912d46bdd68b2eed34ace))
+
 ## [1.7.1](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.0...v1.7.1) (2021-05-20)
 
 
