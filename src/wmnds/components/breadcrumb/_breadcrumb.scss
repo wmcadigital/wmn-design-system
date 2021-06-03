@@ -11,6 +11,7 @@
 
   &__list-item {
     display: inline-block;
+    margin-bottom: 0;
 
     // Put ">" before every list item other than first one
     &:not(:first-child)::before {
