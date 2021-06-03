@@ -22,7 +22,7 @@
       flex-grow: 1;
       flex: 0 0 100%;
 
-      @media screen and (min-width: $breakpoint-sm) {
+      @media screen and (min-width: 391px) {
         padding-top: 0;
         text-align: right;
         flex: auto;
