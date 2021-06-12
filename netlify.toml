@@ -19,7 +19,7 @@ package = "@netlify/plugin-sitemap"
 [plugins.inputs]
   buildDir = "build"
 
-# Submite sitemap
+# Submit sitemap
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
