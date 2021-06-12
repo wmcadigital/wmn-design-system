@@ -227,7 +227,8 @@ rules:
 
   # Rule no-url-protocols will enforce that protocols and domains are not used within urls.
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/no-url-protocols.md
-  no-url-protocols: 2
+  no-url-protocols: 0
+  no-url-domains: 0
 
   # Rule no-vendor-prefixes will enforce that vendor prefixes are not allowed to be used.
   # https://github.com/sasstools/sass-lint/blob/master/docs/rules/no-vendor-prefixes.md
