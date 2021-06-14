@@ -1,3 +1,11 @@
+## [1.7.3](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.2...v1.7.3) (2021-06-14)
+
+
+### Bug Fixes
+
+* Cookies are now set for parent and sub domains of TfWM ([#816](https://github.com/wmcadigital/wmn-design-system/issues/816)) ([28ae6dd](https://github.com/wmcadigital/wmn-design-system/commit/28ae6dd17cd504ecbfef0f8774c6ce6a31a1e177))
+* Fonts now point to absolute URL ([#815](https://github.com/wmcadigital/wmn-design-system/issues/815)) ([79ca2bb](https://github.com/wmcadigital/wmn-design-system/commit/79ca2bb2da41a35eff635198b2776fdbf91fc8a3))
+
 ## [1.7.2](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.1...v1.7.2) (2021-06-03)
 
 
