@@ -165,7 +165,7 @@ const headerJs = () => {
 
         // handle sub menu open/close
         topLevelMenuBtn.forEach(menuBtn => {
-          menuBtn.addEventListener('click', () => {
+          const handleSubMenus = () => {
             mobileMenuIsOpen.primary = !mobileMenuIsOpen.primary;
             const targetListItem = menuBtn.parentNode;
             if (mobileMenuIsOpen.primary) {
@@ -176,7 +176,9 @@ const headerJs = () => {
               targetListItem.classList.remove('open');
               headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
             }
-          });
+          };
+          menuBtn.previousElementSibling.addEventListener('click', handleSubMenus);
+          menuBtn.addEventListener('click', handleSubMenus);
         });
 
         // mobile collapse for third level menus
