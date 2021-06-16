@@ -186,7 +186,7 @@ const headerJs = () => {
           '.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle'
         );
         collapseMenus.forEach(collapseToggle => {
-          collapseToggle.addEventListener('click', () => {
+          const handleThirdLevelMenus = () => {
             const panel = collapseToggle.nextElementSibling;
             collapseToggle.classList.toggle('open');
             if (panel.style.maxHeight) {
@@ -194,7 +194,9 @@ const headerJs = () => {
             } else {
               panel.style.maxHeight = `${panel.scrollHeight}px`;
             }
-          });
+          };
+          collapseToggle.previousElementSibling.addEventListener('click', handleThirdLevelMenus);
+          collapseToggle.addEventListener('click', handleThirdLevelMenus);
         });
       }
     }
