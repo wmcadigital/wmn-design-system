@@ -1,22 +1,21 @@
-const cookies = () => {
+const cookiesJS = () => {
   const cookiesBanner = document.querySelector('header .wmnds-cookies-banner');
 
   const hideCookieBanner = () => {
     cookiesBanner.style.display = 'none';
   };
   const showCookieBanner = () => {
-    const codeExample = document.querySelector('.wmnds-website-code-example .wmnds-cookies-banner');
-
     cookiesBanner.style.display = 'block';
-    if (codeExample) codeExample.style.display = 'block'; // Ensure the cookie banner in the component example stays visible even if the user has already accepted cookies
   };
 
   // Set cookie based on name, value and expiry date supplied
   const setCookie = (cname, cvalue, exdays) => {
+    const cookieDomain = 'tfwm.org.uk';
+
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = `expires=${d.toUTCString()}`;
-    const domain = `domain=${window.location.hostname}`;
+    const domain = `domain=.${cookieDomain}`;
     document.cookie = `${cname}=${cvalue};${expires};${domain};path=/`;
   };
 
@@ -81,14 +80,19 @@ const cookies = () => {
   };
 
   const updateAndShowSuccessMessage = () => {
+    // searchs for the hidden message element
     const message = document.querySelector('.wmnds-cookies-manager__success-message');
+    // if message exists, edit its button link and turn it visible
     if (message) {
       const link = message.querySelector('.wmnds-cookies-manager__previous-page a');
       if (link) {
+        // if document referrer is empty (no reference of previous page) or if document referrer points to the cookies manager page then hide the button to go to previous page
         if (document.referrer === '' || document.referrer === window.location.href) {
           link.parentElement.style.display = 'none';
-        } else {
-          // sends user to the previous page - the one opened before he/she open the cookies manager page
+        }
+        // else: change "go to previous page" button link using the document referrer information
+        // previous page is the page opened before user opened the cookies manager page
+        else {
           link.href = document.referrer;
         }
       }
@@ -108,7 +112,6 @@ const cookies = () => {
       }
       setCookiePolicy(...selectedOptions);
       setCookie('cookies-preference', true, 181);
-
       updateAndShowSuccessMessage();
     }
   };
@@ -127,7 +130,7 @@ const cookies = () => {
   const isInIframe = window.frameElement && window.frameElement.nodeName === 'IFRAME'; // check if we are in an iframe
 
   // Creation of default Cookies permissions when the DOM is fully loaded
-  if (!isInIframe) document.addEventListener('DOMContentLoaded', cookiesScan);
+  if (!isInIframe) cookiesScan();
 
   // When Accept all cookies button is triggered
   const acceptAllCookiesBtn = document.querySelector('.wmnds-cookies-banner__accept-all-cookies');
@@ -147,4 +150,4 @@ const cookies = () => {
   if (cookieForm) cookieForm.addEventListener('submit', savePreferences);
 };
 
-export default cookies;
+export default cookiesJS;
