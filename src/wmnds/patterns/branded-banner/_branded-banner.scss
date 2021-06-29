@@ -23,6 +23,42 @@
     }
   }
 
+  &__modals {
+    display: flex;
+  }
+
+  &__modal {
+    display: flex;
+    margin-right: 1.5rem; // 24px
+    align-items: center;
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+
+    &--bus {
+      fill: get-color(bus);
+    }
+
+    &--train,
+    &--rail {
+      fill: get-color(railway);
+    }
+
+    &--tram,
+    &--metro {
+      fill: get-color(metro);
+    }
+
+    &--cycle,
+    &--walk {
+      fill: get-color(susTravel);
+    }
+  }
+
+
   // helper class for aligning swift logo icon
   .wmnds-swift-logo-inline {
     width: 3.6em;
