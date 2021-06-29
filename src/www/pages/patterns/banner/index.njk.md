@@ -218,7 +218,7 @@
     wmndsBrandedBanner({
       title: "<svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> pay as you go",
       contentCol1: "<p class=\"h3\">The cashless way to buy tickets on the bus and tram</p><p>A Swift card is a smartcard for public transport in the West Midlands. You load a Swift pay as you go card with credit to pay for journeys.</p>",
-      transportModals: ["Bus", "Metro", "Park and ride"],
+      transportModals: ["Bus", "Train", "Tram", "Park and ride"],
       ctaButton: {
         contentText: 'Get a Swift Pay as you go',
         link: '#',
