@@ -199,6 +199,7 @@ const headerJs = () => {
             collapseToggle.previousElementSibling.addEventListener('click', handleThirdLevelMenus);
           }
           collapseToggle.addEventListener('click', handleThirdLevelMenus);
+
         });
       }
     }
