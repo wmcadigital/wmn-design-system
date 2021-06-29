@@ -195,11 +195,8 @@ const headerJs = () => {
               panel.style.maxHeight = `${panel.scrollHeight}px`;
             }
           };
-          if (collapseToggle.previousElementSibling.tagName !== 'A') {
-            collapseToggle.previousElementSibling.addEventListener('click', handleThirdLevelMenus);
-          }
+          collapseToggle.previousElementSibling.addEventListener('click', handleThirdLevelMenus);
           collapseToggle.addEventListener('click', handleThirdLevelMenus);
-
         });
       }
     }
