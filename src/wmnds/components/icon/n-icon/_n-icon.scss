@@ -4,7 +4,9 @@ $height-multiplier: 1.04741812336749; // If we multiply the height by this value
 
 .wmnds-n-icon {
   display: inline-block;
+  color: currentColor;
   font-size: inherit;
+  font-weight: inherit;
   line-height: inherit;
   text-decoration: inherit;
   text-transform: capitalize;
