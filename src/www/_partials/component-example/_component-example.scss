@@ -43,13 +43,7 @@ linear-gradient(-45deg, transparent 75%, get-color(background, 20, dark) 75%);
     max-width: 100%;
     resize: both;
     background: get-color(background);
-
-    .wmnds-cookies-banner {
-      display: block;
-    }
-
   }
-
 
   pre {
     margin: 0;
@@ -135,4 +129,8 @@ span[class^="hljs-"] {
       text-decoration: none;
     }
   }
+}
+
+.wmnds-iframe-content > .wmnds-cookies-banner {
+  display: block !important;
 }
