@@ -81,7 +81,7 @@
     componentPath: "wmnds/components/table/",
     njk: true,
     njkProps: wmndsTableProps,
-    js: false,
+    js: true,
     iframe: false
   })
 }}
@@ -105,7 +105,7 @@
     componentPath: "wmnds/components/table/",
     njk: true,
     njkProps: wmndsTableProps,
-    js: false,
+    js: true,
     iframe: false
   })
 }}

@@ -15,7 +15,7 @@
 
 ### What does it do?
 
-- The travel updates widget gives users an overview of any disruptions to transport across the West Midlands Network
+- The travel updates widget gives users an overview of any disruptions to transport across the Transport for West Midlands
 - It uses the small Disruption indicator component to show how severe the disruption is for a transport mode. The disruption service levels are severe, major, minor and good
 - Users can personalise the travel updates widget by adding a specific transport route. This is so users can access disruptions relevant to them straight from the homepage
 

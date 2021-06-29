@@ -491,4 +491,45 @@ Icons should only be used where it is deemed absolutely necessary to communicate
   )
 }}
 
+{% markdown %}
+
+## Accordion Buttons
+
+<h3>What does it do?</h3>
+
+- Automatically opens or closes all [accordions](/components/accordion) on the page
+
+<h3>When to use it?</h3>
+
+- When 5 or more accordions are grouped together on a page
+
+<h3>When not to use it?</h3>
+
+- When there are less than 4 accordions grouped together
+- For any components other than accordions
+
+{% endmarkdown %}
+
+{%- from "wmnds/components/button/_button.njk" import wmndsButton -%}
+
+{{
+  compExample([
+    wmndsButton({
+      contentText: "Open all",
+      type: "primary"
+    }),
+    wmndsButton({
+      contentText: "Close all",
+      classes: "wmnds-m-l-xs",
+      type: "primary"
+    })
+  ],
+  {
+    displayInline: true,
+    njk: true,
+    js: false,
+    iframe: false
+  })
+}}
+
 {% endblock %}
