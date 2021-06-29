@@ -37,6 +37,8 @@
     width: 36px;
     height: 36px;
     margin-right: 10px;
+    border-radius: 4px;
+    background: $white;
 
     &--bus {
       fill: get-color(bus);
@@ -56,8 +58,16 @@
     &--walk {
       fill: get-color(susTravel);
     }
-  }
 
+    &--p-r,
+    &--park-and-ride {
+      fill: get-color(primary);
+
+      svg {
+        border: 1px solid $white;
+      }
+    }
+  }
 
   // helper class for aligning swift logo icon
   .wmnds-swift-logo-inline {
