@@ -29,8 +29,10 @@ $black: #000000;
   font-style: normal;
   font-weight: normal;
   // sass-lint:disable-block indentation
-  src: url("../fonts/notosansdisplay-regular-webfont.woff2") format("woff2"),
-    url("../fonts/notosansdisplay-regular-webfont.woff") format("woff");
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-regular-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-regular-webfont.woff")
+      format("woff");
   // sass-lint:enable indentation
 }
 
@@ -39,8 +41,10 @@ $black: #000000;
   font-style: normal;
   font-weight: bold;
   // sass-lint:disable-block indentation
-  src: url("../fonts/notosansdisplay-bold-webfont.woff2") format("woff2"),
-    url("../fonts/notosansdisplay-bold-webfont.woff") format("woff");
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bold-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bold-webfont.woff")
+      format("woff");
   // sass-lint:enable indentation
 }
 
@@ -49,8 +53,10 @@ $black: #000000;
   font-style: italic;
   font-weight: normal;
   // sass-lint:disable-block indentation
-  src: url("../fonts/notosansdisplay-italic-webfont.woff2") format("woff2"),
-    url("../fonts/notosansdisplay-italic-webfont.woff") format("woff");
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-italic-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-italic-webfont.woff")
+      format("woff");
   // sass-lint:enable indentation
 }
 
@@ -59,8 +65,10 @@ $black: #000000;
   font-style: italic;
   font-weight: bold;
   // sass-lint:disable-block indentation
-  src: url("../fonts/notosansdisplay-bolditalic-webfont.woff2") format("woff2"),
-    url("../fonts/notosansdisplay-bolditalic-webfont.woff") format("woff");
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bolditalic-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bolditalic-webfont.woff")
+      format("woff");
   // sass-lint:enable indentation
 }
 

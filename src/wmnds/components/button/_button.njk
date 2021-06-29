@@ -15,7 +15,7 @@
 {% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
 {% set role = params.role if params.role else "button" %}
 {% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
-
+{% set iconClasses = " " + params.iconClasses if params.iconClasses %} 
 
 <button class="wmnds-btn{{type}}{{classes}}{{isActive}}{{isDarkBg}}{{isDisabled}}" {% if params.isDisabled %}disabled="disabled"{% endif %} type="{{role}}">
     {#- iconLeft -#}
@@ -23,7 +23,7 @@
       {{
         wmndsIcon({
           icon: iconLeft,
-          class: 'wmnds-btn__icon'
+          class: ('wmnds-btn__icon '+iconClasses)
         })
       }}
 
@@ -36,7 +36,7 @@
       {{
         wmndsIcon({
           icon: iconRight,
-          class: 'wmnds-btn__icon wmnds-btn__icon--right'
+          class: ('wmnds-btn__icon wmnds-btn__icon--right ' + iconClasses)
         })
       }}
 

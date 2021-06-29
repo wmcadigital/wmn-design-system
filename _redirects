@@ -1,4 +1,5 @@
 # domain redirects
-https://westmidlands.network/* https://designsystem.wmnetwork.co.uk/:splat 301!
-https://wmnetwork.netlify.app/* https://designsystem.wmnetwork.co.uk/:splat 301!
+https://westmidlands.network/* https://designsystem.tfwm.org.uk/:splat 301!
+https://wmnetwork.netlify.app/* https://designsystem.tfwm.org.uk/:splat 301!
+https://designsystem.wmnetwork.co.uk/* https://designsystem.tfwm.org.uk/:splat 301!
 /docs /docs/get-started/ 301!

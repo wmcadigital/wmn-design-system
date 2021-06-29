@@ -1,0 +1,29 @@
+{% macro wmndsSignIn(params) %}
+
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
+<nav class="wmnds-sign-in">
+  <div class="wmnds-container">
+    <div class="wmnds-grid wmnds-grid--justify-end">
+      <div class="wmnds-col-auto">
+        <a href="https://my.swiftcard.org.uk" class="wmnds-sign-in__link">
+          {{
+            wmndsIcon({
+                icon: 'swift-bird-icon',
+                class: 'wmnds-btn__icon'
+            })
+          }}
+          Sign in or register
+          {{
+            wmndsIcon({
+                icon: 'general-user',
+                class: 'wmnds-btn__icon wmnds-m-l-sm'
+            })
+          }}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{% endmacro %}

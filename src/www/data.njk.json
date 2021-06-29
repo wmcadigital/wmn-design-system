@@ -154,6 +154,9 @@
               "name": "Phase indicator"
             },
             {
+              "name": "Sign in"
+            },
+            {
               "name": "Table"
             },
             {
@@ -213,6 +216,9 @@
           "name": "Banner"
         },
         {
+          "name": "Buy a ticket"
+        },
+        {
           "name": "Cookies"
         },
         {
@@ -225,10 +231,16 @@
           "name": "Feedback loop"
         },
         {
+          "name": "Find a timetable"
+        },
+        {
           "name": "Footer"
         },
         {
           "name": "Header"
+        },
+        {
+          "name": "Journey planner"
         },
         {
           "name": "Travel updates"

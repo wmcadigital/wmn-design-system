@@ -13,10 +13,11 @@ const cookies = () => {
 
   // Set cookie based on name, value and expiry date supplied
   const setCookie = (cname, cvalue, exdays) => {
+    const cookieDomain = 'tfwm.org.uk';
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = `expires=${d.toUTCString()}`;
-    const domain = `domain=${window.location.hostname}`;
+    const domain = `domain=.${cookieDomain}`;
     document.cookie = `${cname}=${cvalue};${expires};${domain};path=/`;
   };
 

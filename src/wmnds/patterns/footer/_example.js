@@ -1,11 +1,17 @@
 const footerJs = () => {
-  const mobileFooter = window.matchMedia('(max-width: 767px)');
   const collapseMenus = document.querySelectorAll('.wmnds-collapse-heading');
-  const handleMobileFooter = mq => {
-    if (mq.matches) {
+  let eventListenersAdded = false;
+
+  const handleMobileFooter = () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth < 768 && !eventListenersAdded) {
+      eventListenersAdded = true; // Stop multiple event listeners being added as collapse functionality forces 'resize' call on window.
+
       collapseMenus.forEach(collapseToggle => {
         let toggleActive = false;
-        const panel = collapseToggle.nextElementSibling;
+        const panel = document.getElementById(collapseToggle.getAttribute('aria-controls'));
+
         const handleToggle = () => {
           if (toggleActive) {
             collapseToggle.setAttribute('aria-expanded', 'true');
@@ -15,7 +21,9 @@ const footerJs = () => {
             panel.style.maxHeight = null;
           }
         };
+
         handleToggle();
+
         collapseToggle.addEventListener('click', () => {
           toggleActive = !toggleActive;
           handleToggle();
@@ -24,8 +32,8 @@ const footerJs = () => {
     }
   };
   // init mobile nav function
-  handleMobileFooter(mobileFooter);
-  mobileFooter.addListener(handleMobileFooter);
+  handleMobileFooter();
+  window.addEventListener('resize', handleMobileFooter);
 };
 
 export default footerJs;

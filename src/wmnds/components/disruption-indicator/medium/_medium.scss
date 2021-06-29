@@ -35,10 +35,15 @@
 
   &--narrow {
     padding: $size-xs;
+    border-radius: 3px;
   }
 
   &--capitalize {
     text-transform: capitalize;
+  }
+
+  &__service {
+    padding-right: $size-xs;
   }
 
   &__icon {

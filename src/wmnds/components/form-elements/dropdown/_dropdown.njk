@@ -10,6 +10,8 @@
 {% set items = params.items if params.items %}
 {% set classes = " " + params.classes if params.classes %}
 {% set describedBy = params.describedBy if params.describedBy %}
+{% set groupClasses =  params.groupClasses if params.groupClasses %}
+{% set secondaryColorClass =  "wmnds-fe-dropdown__select--secondary" if params.secondaryColor %}
 {# Error Message Params #}
 {% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
 {% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
@@ -17,7 +19,7 @@
 {% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
 {% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
 
-<div class="wmnds-fe-group{{groupErrorClass}}">
+<div class="wmnds-fe-group {{groupClasses}} {{groupErrorClass}}">
   <div class="wmnds-fe-dropdown{{classes}}">
     {% if params.error %}
       {{
@@ -34,10 +36,11 @@
     {{
       wmndsFormLabel({
         contentText: params.label,
+        classes: params.labelClasses,
         for: id
       })
     }}
-    <select class="wmnds-fe-dropdown__select" id="{{id}}" name="{{name}}" {%if describedBy%}aria-describedBy="{{describedBy}}"{%endif%}>
+    <select class="wmnds-fe-dropdown__select {{secondaryColorClass}}" id="{{id}}" name="{{name}}" {%if describedBy%}aria-describedBy="{{describedBy}}"{%endif%}>
       {% if items %}
         {% for option in items %}
           {% set selected = "selected=\"true\"" | safe if option.selected %}
@@ -46,11 +49,22 @@
             {{option.contentText}}
           </option>
         {% endfor %}
-      {% else %}
-        <option value="" selected="true">Choose from list</option>
-        {% for i in range(1,6) %}
-          <option value="{{i}}">Option {{i}}</option>
-        {% endfor %}
+      {% else %} 
+        {% if (params.type === "time") %}
+          {% set quarterHours = ["00", "15", "30", "45"] %}
+          {% for i in range(0,24) %}
+            {% for j in range (0,4) %}
+              <option value="{{i}}:{{quarterHours[j]}}">{{i}}:{{quarterHours[j]}}</option>            
+            {% endfor %}
+          {% endfor %}
+        
+        {% else %}
+          <option value="" selected="true">Choose from list</option>
+          {% for i in range(1,6) %}
+            <option value="{{i}}">Option {{i}}</option>
+          {% endfor %}
+        {% endif %}
+
       {% endif %}
     </select>
   </div>
