@@ -278,10 +278,10 @@ const headerJs = () => {
 
       // if top level link doesn't have a mega-menu child add class to menu to hide overlay when hovered
       // has to be added/removed on mouseover to cover menus that have a mix of items with/without mega menus
-      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container')
-        .length;
+      // eslint-disable-next-line prettier/prettier
+      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container').length;
 
-      if (isTopLevelWithMenu > 0) {
+      if (isTopLevelWithMenu) {
         topLevelLink.addEventListener('mouseover', () => {
           if (!menuDelay) {
             // if no menuDelay is active just open the menu
