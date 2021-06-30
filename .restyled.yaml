@@ -44,4 +44,5 @@ restylers:
 
   - prettier:
       enabled: true
-      arguments: ['--print-width 100']
+      arguments:
+        ['--print-width 100', '--trailing-comma none', '--arrow-parens avoid', '--end-of-line auto']
