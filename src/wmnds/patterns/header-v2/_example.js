@@ -4,7 +4,7 @@ const headerJs = () => {
 
   const mobileMenu = window.matchMedia('(max-width: 767px)');
 
-  /* 
+  /*
       Mega menu helper functions
   */
 
