@@ -44,3 +44,4 @@ restylers:
 
   - prettier:
       enabled: true
+      arguments: ['--print-width 100']
