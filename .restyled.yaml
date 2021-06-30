@@ -43,5 +43,4 @@ restylers:
       enabled: false
 
   - name: prettier
-    arguments:
-      ['--print-width=120', '--trailing-comma none', '--arrow-parens avoid', '--end-of-line auto']
+    arguments: ['--config=./.prettierrc', '--ignore-path=./.prettierignore']
