@@ -42,7 +42,6 @@ restylers:
   - clang-format:
       enabled: false
 
-  - prettier:
-      enabled: true
-      arguments:
-        ['--print-width 120', '--trailing-comma none', '--arrow-parens avoid', '--end-of-line auto']
+  - name: prettier
+    arguments:
+      ['--print-width 120', '--trailing-comma none', '--arrow-parens avoid', '--end-of-line auto']
