@@ -8,7 +8,7 @@ const findATimetableJS = () => {
     e.preventDefault();
     const data = new FormData(e.target);
     const queryString = new URLSearchParams(data).toString();
-    window.location.href = `https://www.wmnetwork.co.uk/plan-your-journey/timetables/#/?${queryString}`;
+    window.location.href = `https://legacy.wmnetwork.co.uk/timetables/#/?${queryString}`;
   };
 
   findATimetableComponents.forEach(findATimetableComponent => {
@@ -21,4 +21,4 @@ const findATimetableJS = () => {
   });
 };
 
-export default findATimetableJS();
+export default findATimetableJS;
