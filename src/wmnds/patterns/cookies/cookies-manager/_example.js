@@ -8,9 +8,15 @@ const cookiesJS = () => {
     cookiesBanner.style.display = 'block';
   };
 
+  const setCookieDomain = () => {
+    const url = window.location.host.split('.');
+    const urlLength = url.length;
+    return `${url[urlLength - 3]}.${url[urlLength - 2]}.${url[urlLength - 1]}`;
+  };
+
   // Set cookie based on name, value and expiry date supplied
   const setCookie = (cname, cvalue, exdays) => {
-    const cookieDomain = 'tfwm.org.uk';
+    const cookieDomain = setCookieDomain();
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = `expires=${d.toUTCString()}`;
