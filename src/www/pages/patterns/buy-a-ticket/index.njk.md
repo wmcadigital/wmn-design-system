@@ -22,10 +22,16 @@
 
 {% endmarkdown %}
 
+
 {{
-    compExample([
-        wmndsBuyATicket()
-    ])
+  compExample([
+    wmndsBuyATicket()
+  ], {
+    componentPath: "wmnds/patterns/buy-a-ticket/",
+    njk: true,
+    js: true,
+    iframe: true
+  })
 }}
 
 {% endblock %}

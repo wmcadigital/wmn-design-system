@@ -2,7 +2,7 @@ import * as Sentry from '@sentry/browser';
 import * as polyfills from './assets/vendor/js/polyfills/polyfills';
 import colorPalettes from './pages/styles/colour-palettes/_color-palettes';
 import aToZContentStyleGuide from './pages/styles/a-to-z-content-style-guide/_a-to-z-content-style-guide';
-import cookies from '../wmnds/patterns/cookies/_example';
+import cookies from '../wmnds/patterns/cookies/cookies-manager/_example';
 import headerJs from '../wmnds/patterns/header-v2/_example';
 import footerJs from '../wmnds/patterns/footer/_example';
 import accordionsJS from '../wmnds/components/accordion/_example';
