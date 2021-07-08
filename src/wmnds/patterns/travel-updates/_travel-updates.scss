@@ -70,11 +70,12 @@
       }
 
       .wmnds-travel-update__disruption-indicator-btn {
-        display: inline-block;
+        display: inline-flex;
         margin-right: $size-md;
         padding: 0;
         border: 0;
         background: none;
+        flex-direction: column;
 
         .wmnds-disruption-indicator-medium {
           margin: 0;
@@ -82,7 +83,10 @@
       }
 
       .wmnds-travel-update__disruption-text {
+        display: inline-flex;
         text-align: left;
+        flex-direction: column;
+        flex: 1;
 
         strong {
           display: block;
