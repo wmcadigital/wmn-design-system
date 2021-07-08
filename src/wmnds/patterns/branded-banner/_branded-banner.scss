@@ -23,6 +23,54 @@
     }
   }
 
+  &__modals {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__modal {
+    display: flex;
+    margin-right: 1.5rem; // 24px
+    margin-bottom: $size-sm; // 12px
+    align-items: center;
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    border-radius: 4px;
+    background: $white;
+
+    &--bus {
+      fill: get-color(bus);
+    }
+
+    &--train,
+    &--rail {
+      fill: get-color(railway);
+    }
+
+    &--tram,
+    &--metro {
+      fill: get-color(metro);
+    }
+
+    &--cycle,
+    &--walk {
+      fill: get-color(susTravel);
+    }
+
+    &--p-r,
+    &--park-and-ride {
+      fill: get-color(primary);
+
+      svg {
+        border: 1px solid $white;
+      }
+    }
+  }
+
   // helper class for aligning swift logo icon
   .wmnds-swift-logo-inline {
     width: 3.6em;
