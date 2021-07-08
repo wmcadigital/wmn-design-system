@@ -42,9 +42,10 @@
       {% if items %}
         {%- for item in items %}
           {%- set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
-          {%- set inputValue = item.value if item.value else "option" + loop.index | string %}
+          {%- set inputValue = item.value if item.value else null %}
           {%- set inputId = item.id if item.id else idPrefix + "_" + inputValue %}
-          {%- set isRequired = (' required="true"' | safe) if item.required else "" %}
+          {%- set inputName = item.name if item.name else idPrefix + "_" + inputValue %}
+          {%- set isRequired = (' required="true"' | safe) if item.required else null %}
           {%- set isNotEditable = (' disabled="disabled"' | safe) if item.disabled === true else "" %}
           {% set itemContentText = item.contentText if item.contentText else "Select all options that apply" %}
           {% set itemContentHTML = item.contentHTML if item.contentHTML else null %}
@@ -60,7 +61,7 @@
               id="{{inputId}}" 
               class="wmnds-fe-checkboxes__input" 
               value="{{inputValue}}" 
-              name="{{name}}" 
+              name="{{inputName}}" 
               type="checkbox"  
               {{isChecked}} 
               {{isRequired}} 
