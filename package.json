@@ -113,6 +113,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^6.2.5",
+    "axios": "^0.21.1",
     "findandreplacedomtext": "^0.4.6",
     "gulp-sass": "^4.1.0",
     "iframe-resizer": "^4.3.1",
