@@ -177,6 +177,62 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% markdown %}
 
+## Pay with Swift buttons
+
+<h3>What does it do?</h3>
+
+- Enables users to pay for [West Midlands Cycle Hire](https://www.wmcyclehire.co.uk/) using Swift
+
+<h3>When to use it?</h3>
+
+- When a ticket or fare can be purchased using Swift in a travel operator app
+
+<h3>When not to use it?</h3>
+
+- When buying a ticket on the Transport for West Midlands website
+
+{% endmarkdown %}
+
+{%- from "wmnds/components/button/_button.njk" import wmndsButton as primary -%}
+{{
+  compExample([
+    primary({
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>", 
+      type: "primary"
+    }),
+    primary({
+      isActive: true,
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (active)", 
+      type: "primary"
+    }),
+    primary({
+      isDisabled: true,
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)", 
+      type: "primary"
+    }),
+    primary({
+      iconRight: "general-chevron-right",
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>", 
+      type: "primary"
+    }),
+    primary({
+      iconRight: "general-chevron-right",
+      isDisabled: true,
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)", 
+      type: "primary"
+    })
+  ],
+  {
+    componentPath: "wmnds/components/button/",
+    njk: true,
+    njkProps: wmndsButtonProps,
+    js: false,
+    iframe: false
+  })
+}}
+
+{% markdown %}
+
 ## Secondary buttons
 
 <h3>What does it do?</h3>
