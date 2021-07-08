@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable global-require */
 /* eslint-disable no-param-reassign */
+import axios from 'axios';
+
 const journeyPlannerWidgetJS = () => {
   // Constants
   const activeClass = 'wmnds-is--active';
   const loadingClass = 'wmnds-is--loading';
   const openClass = 'wmnds-is--open';
-  const axios = require('axios');
+
   let axiosCancelToken;
   let axiosSource;
 
