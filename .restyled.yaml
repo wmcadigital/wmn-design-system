@@ -42,5 +42,5 @@ restylers:
   - clang-format:
       enabled: false
 
-  - prettier:
-      enabled: true
+  - name: prettier
+    arguments: ['--config=./.prettierrc', '--ignore-path=./.prettierignore']
