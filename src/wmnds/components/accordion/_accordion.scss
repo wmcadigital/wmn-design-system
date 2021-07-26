@@ -27,6 +27,12 @@
     width: calc(100% - 32px);
     padding-right: $size-md;
     vertical-align: middle;
+
+    > h4,
+    .wmnds-accordion__heading-text {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   &__icon {
