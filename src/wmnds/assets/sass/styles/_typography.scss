@@ -113,46 +113,48 @@
   }
 }
 
-div,
-span,
-li,
-ul,
-ol,
-p,
-a {
-  @include type-setting(0);
-}
+[class*="wmnds-"] {
+  div,
+  span,
+  li,
+  ul,
+  ol,
+  p,
+  a {
+    @include type-setting(0);
+  }
 
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-  margin-top: 0;
-  margin-bottom: $base-line-height;
-}
+  p,
+  ul,
+  ol,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+  }
 
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-// Let's make sure all's aligned
-sub,
-sup {
-  position: relative;
-  line-height: 0;
-  vertical-align: baseline;
-}
+  // Let's make sure all's aligned
+  sub,
+  sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+  }
 
-sup {
-  top: -0.5em;
-}
+  sup {
+    top: -0.5em;
+  }
 
-sub {
-  bottom: -0.25em;
+  sub {
+    bottom: -0.25em;
+  }
 }
