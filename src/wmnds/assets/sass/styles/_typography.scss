@@ -1,53 +1,48 @@
-html,
-body {
+// Get rid of margin for the first header item in main content
+.wmnds-html {
   margin: 0;
   padding: 0;
   color: get-color(text);
   font-family: $x-font-family;
   @include type-setting(0);
-}
 
-// Get rid of margin for the first header item in main content
-* {
   h1:first-child,
   h2:first-child,
   h3:first-child,
   h4:first-child {
     margin-top: 0;
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: get-color(text);
+    font-family: $x-font-family;
+    @include type-setting(0);
+  }
 }
 
 .wmnds-grid h1[class*="wmnds-col"],
 .wmnds-grid .h1[class*="wmnds-col"],
-h1,
-.h1,
+.wmnds-html h1,
+.wmnds-html .h1,
 .wmnds-grid h2[class*="wmnds-col"],
 .wmnds-grid .h2[class*="wmnds-col"],
-h2,
-.h2,
+.wmnds-html h2,
+.wmnds-html .h2,
 .wmnds-grid h3[class*="wmnds-col"],
 .wmnds-grid .h3[class*="wmnds-col"],
-h3,
-.h3,
+.wmnds-html h3,
+.wmnds-html .h3,
 .wmnds-grid h4[class*="wmnds-col"],
 .wmnds-grid .h4[class*="wmnds-col"],
-h4,
-.h4 {
+.wmnds-html h4,
+.wmnds-html .h4 {
   font-family: $x-heading-font-family;
 }
 
-div,
-span,
-li,
-ul,
-ol,
-p,
-a {
-  @include type-setting(0);
-}
-
-h1,
-.h1 {
+.wmnds-html h1,
+.wmnds-html .h1 {
   color: get-color(primary);
   @include type-setting(1, 0.85);
   // On desktop devices
@@ -56,8 +51,8 @@ h1,
   }
 }
 
-h2,
-.h2 {
+.wmnds-html h2,
+.wmnds-html .h2 {
   color: get-color(primary);
   @include type-setting(2, 0.85);
   font-weight: bold;
@@ -67,15 +62,15 @@ h2,
   }
 }
 
-h3,
-.h3 {
+.wmnds-html h3,
+.wmnds-html .h3 {
   color: inherit;
   @include type-setting(3);
   font-weight: bold;
 }
 
-h4,
-.h4 {
+.wmnds-html h4,
+.wmnds-html .h4 {
   color: inherit;
   @include type-setting(4);
   font-weight: bold;
@@ -85,56 +80,68 @@ h4,
   }
 }
 
-h5,
-.h5 {
+.wmnds-html h5,
+.wmnds-html .h5 {
   @include type-setting(5);
   font-weight: bold;
 }
 
-h6,
-.h6 {
+.wmnds-html h6,
+.wmnds-html .h6 {
   @include type-setting(5);
   font-weight: normal;
 }
 
-.h2 > *,
-.h3 > *,
-.h4 > *,
-.h5 > * {
+.wmnds-html .h2 > *,
+.wmnds-html .h3 > *,
+.wmnds-html .h4 > *,
+.wmnds-html .h5 > * {
   color: initial;
   font-weight: initial;
 }
 
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-  margin-top: 0;
-  margin-bottom: $base-line-height;
-}
+.wmnds-html {
+  div,
+  span,
+  li,
+  ul,
+  ol,
+  p,
+  a {
+    @include type-setting(0);
+  }
 
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  p,
+  ul,
+  ol,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+  }
 
-// Let's make sure all's aligned
-sub,
-sup {
-  position: relative;
-  line-height: 0;
-  vertical-align: baseline;
-}
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-sup {
-  top: -0.5em;
-}
+  // Let's make sure all's aligned
+  sub,
+  sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+  }
 
-sub {
-  bottom: -0.25em;
+  sup {
+    top: -0.5em;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
 }

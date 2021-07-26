@@ -1,11 +1,11 @@
 // When setting the primary font stack, apply it to the Pure grid units along
 // with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
 // specific font stacks to ensure the greatest OS/browser compatibility.
-html,
-button,
-input,
-select,
-textarea,
+.wmnds-html,
+.wmnds-html button,
+.wmnds-html input,
+.wmnds-html select,
+.wmnds-html textarea,
 .wmnds-grid [class*="wmnds-col-"] {
   font-family: $x-font-family;
   -webkit-font-smoothing: antialiased;
