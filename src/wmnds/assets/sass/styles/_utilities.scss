@@ -106,7 +106,8 @@
   }
 }
 
-.wmnds-html body {
+.wmnds-html > body,
+.wmnds-iframe-content {
   .wmnds {
     // Generate all margin classes
     &-m {

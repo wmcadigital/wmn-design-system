@@ -6,13 +6,6 @@
   font-family: $x-font-family;
   @include type-setting(0);
 
-  h1:first-child,
-  h2:first-child,
-  h3:first-child,
-  h4:first-child {
-    margin-top: 0;
-  }
-
   body {
     margin: 0;
     padding: 0;
@@ -22,85 +15,92 @@
   }
 }
 
-.wmnds-grid h1[class*="wmnds-col"],
-.wmnds-grid .h1[class*="wmnds-col"],
-.wmnds-html h1,
-.wmnds-html .h1,
-.wmnds-grid h2[class*="wmnds-col"],
-.wmnds-grid .h2[class*="wmnds-col"],
-.wmnds-html h2,
-.wmnds-html .h2,
-.wmnds-grid h3[class*="wmnds-col"],
-.wmnds-grid .h3[class*="wmnds-col"],
-.wmnds-html h3,
-.wmnds-html .h3,
-.wmnds-grid h4[class*="wmnds-col"],
-.wmnds-grid .h4[class*="wmnds-col"],
-.wmnds-html h4,
-.wmnds-html .h4 {
-  font-family: $x-heading-font-family;
-}
-
-.wmnds-html h1,
-.wmnds-html .h1 {
-  color: get-color(primary);
-  @include type-setting(1, 0.85);
-  // On desktop devices
-  @media all and (min-width: $breakpoint-md) {
-    @include type-setting(1);
+.wmnds-html {
+  .wmnds-grid h1[class*="wmnds-col"],
+  .wmnds-grid .h1[class*="wmnds-col"],
+  h1,
+  .h1,
+  .wmnds-grid h2[class*="wmnds-col"],
+  .wmnds-grid .h2[class*="wmnds-col"],
+  h2,
+  .h2,
+  .wmnds-grid h3[class*="wmnds-col"],
+  .wmnds-grid .h3[class*="wmnds-col"],
+  h3,
+  .h3,
+  .wmnds-grid h4[class*="wmnds-col"],
+  .wmnds-grid .h4[class*="wmnds-col"],
+  h4,
+  .h4 {
+    font-family: $x-heading-font-family;
   }
-}
 
-.wmnds-html h2,
-.wmnds-html .h2 {
-  color: get-color(primary);
-  @include type-setting(2, 0.85);
-  font-weight: bold;
-  // On desktop devices
-  @media all and (min-width: $breakpoint-md) {
-    @include type-setting(2);
+  h1,
+  .h1 {
+    color: get-color(primary);
+    @include type-setting(1, 0.85);
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(1);
+    }
   }
-}
 
-.wmnds-html h3,
-.wmnds-html .h3 {
-  color: inherit;
-  @include type-setting(3);
-  font-weight: bold;
-}
+  h2,
+  .h2 {
+    color: get-color(primary);
+    @include type-setting(2, 0.85);
+    font-weight: bold;
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(2);
+    }
+  }
 
-.wmnds-html h4,
-.wmnds-html .h4 {
-  color: inherit;
-  @include type-setting(4);
-  font-weight: bold;
+  h3,
+  .h3 {
+    color: inherit;
+    @include type-setting(3);
+    font-weight: bold;
+  }
 
-  &.wmnds-weight-400 {
+  h4,
+  .h4 {
+    color: inherit;
+    @include type-setting(4);
+    font-weight: bold;
+
+    &.wmnds-weight-400 {
+      font-weight: normal;
+    }
+  }
+
+  h5,
+  .h5 {
+    @include type-setting(5);
+    font-weight: bold;
+  }
+
+  h6,
+  .h6 {
+    @include type-setting(5);
     font-weight: normal;
   }
-}
 
-.wmnds-html h5,
-.wmnds-html .h5 {
-  @include type-setting(5);
-  font-weight: bold;
-}
+  .h2 > *,
+  .h3 > *,
+  .h4 > *,
+  .h5 > * {
+    color: initial;
+    font-weight: initial;
+  }
 
-.wmnds-html h6,
-.wmnds-html .h6 {
-  @include type-setting(5);
-  font-weight: normal;
-}
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child {
+    margin-top: 0;
+  }
 
-.wmnds-html .h2 > *,
-.wmnds-html .h3 > *,
-.wmnds-html .h4 > *,
-.wmnds-html .h5 > * {
-  color: initial;
-  font-weight: initial;
-}
-
-.wmnds-html {
   div,
   span,
   li,
@@ -108,7 +108,9 @@
   ol,
   p,
   a {
-    @include type-setting(0);
+    &:not([class*="wmnds-"]) {
+      @include type-setting(0);
+    }
   }
 
   p,
@@ -117,8 +119,10 @@
   pre,
   table,
   blockquote {
-    margin-top: 0;
-    margin-bottom: $base-line-height;
+    &:not([class*="wmnds-"]) {
+      margin-top: 0;
+      margin-bottom: $base-line-height;
+    }
   }
 
   ul ul,
