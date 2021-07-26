@@ -99,12 +99,14 @@
   font-weight: initial;
 }
 
-.wmnds-html {
+.wmnds-html * {
   h1:first-child,
   h2:first-child,
   h3:first-child,
   h4:first-child {
-    margin-top: 0;
+    &:not([class*="wmnds-"]) {
+      margin-top: 0;
+    }
   }
 
   div,
@@ -135,23 +137,31 @@
   ol ol,
   ul ol,
   ol ul {
-    margin-top: 0;
-    margin-bottom: 0;
+    &:not([class*="wmnds-"]) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   // Let's make sure all's aligned
   sub,
   sup {
-    position: relative;
-    line-height: 0;
-    vertical-align: baseline;
+    &:not([class*="wmnds-"]) {
+      position: relative;
+      line-height: 0;
+      vertical-align: baseline;
+    }
   }
 
   sup {
-    top: -0.5em;
+    &:not([class*="wmnds-"]) {
+      top: -0.5em;
+    }
   }
 
   sub {
-    bottom: -0.25em;
+    &:not([class*="wmnds-"]) {
+      bottom: -0.25em;
+    }
   }
 }
