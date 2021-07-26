@@ -1,5 +1,5 @@
 // footer
-.wmnds-footer {
+&.wmnds-footer {
   padding: $size-lg;
   color: $white;
   background-color: get-color(primary, 50, dark);
@@ -229,13 +229,13 @@ $collapse-indicator-transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355,
 }
 
 // Text highlighting color
-.wmnds-footer *::-moz-selection {
+&.wmnds-footer *::-moz-selection {
   // Code for Firefox
   color: $white;
   background: get-color(secondary);
 }
 
-.wmnds-footer *::selection {
+&.wmnds-footer *::selection {
   color: $white;
   background: get-color(secondary);
 }

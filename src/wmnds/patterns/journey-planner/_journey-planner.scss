@@ -1,4 +1,4 @@
-.wmnds-journey-planner {
+&.wmnds-journey-planner {
   color: $white;
   background-color: get-color(primary);
 
@@ -8,7 +8,8 @@
   }
 
   &__form {
-    & > div:not(.wmnds-journey-planner__from):not(.wmnds-journey-planner__to):not(.wmnds-journey-planner__submit) {
+    &
+      > div:not(.wmnds-journey-planner__from):not(.wmnds-journey-planner__to):not(.wmnds-journey-planner__submit) {
       display: none;
     }
   }
@@ -29,7 +30,6 @@
     &::placeholder {
       font-weight: 400;
     }
-
   }
 
   &__to {
@@ -67,6 +67,5 @@
   &__when,
   &__how {
     position: relative;
-
   }
 }
