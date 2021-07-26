@@ -15,8 +15,13 @@
   }
 }
 
-.wmnds-grid,
-.wmnds-html {
+[class*="wmnds-"] {
+  color: get-color(text);
+  font-family: $x-font-family;
+  @include type-setting(0);
+}
+
+[class*="wmnds-"] {
   h1,
   h1[class*="wmnds-col"],
   h2,
@@ -40,7 +45,7 @@
   font-family: $x-heading-font-family;
 }
 
-.wmnds-html h1,
+[class*="wmnds-"] h1,
 .wmnds-h1 {
   color: get-color(primary);
   @include type-setting(1, 0.85);
@@ -50,7 +55,7 @@
   }
 }
 
-.wmnds-html h2,
+[class*="wmnds-"] h2,
 .wmnds-h2 {
   color: get-color(primary);
   @include type-setting(2, 0.85);
@@ -61,14 +66,14 @@
   }
 }
 
-.wmnds-html h3,
+[class*="wmnds-"] h3,
 .wmnds-h3 {
   color: inherit;
   @include type-setting(3);
   font-weight: bold;
 }
 
-.wmnds-html h4,
+[class*="wmnds-"] h4,
 .wmnds-h4 {
   color: inherit;
   @include type-setting(4);
@@ -79,13 +84,13 @@
   }
 }
 
-.wmnds-html h5,
+[class*="wmnds-"] h5,
 .wmnds-h5 {
   @include type-setting(5);
   font-weight: bold;
 }
 
-.wmnds-html h6,
+[class*="wmnds-"] h6,
 .wmnds-h6 {
   @include type-setting(5);
   font-weight: normal;
@@ -99,69 +104,55 @@
   font-weight: initial;
 }
 
-.wmnds-html * {
+[class*="wmnds-"] * {
   h1:first-child,
   h2:first-child,
   h3:first-child,
   h4:first-child {
-    &:not([class*="wmnds-"]) {
-      margin-top: 0;
-    }
+    margin-top: 0;
   }
+}
 
-  div,
-  span,
-  li,
-  ul,
-  ol,
-  p,
-  a {
-    &:not([class*="wmnds-"]) {
-      @include type-setting(0);
-    }
-  }
+div,
+span,
+li,
+ul,
+ol,
+p,
+a {
+  @include type-setting(0);
+}
 
-  p,
-  ul,
-  ol,
-  pre,
-  table,
-  blockquote {
-    &:not([class*="wmnds-"]) {
-      margin-top: 0;
-      margin-bottom: $base-line-height;
-    }
-  }
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: 0;
+  margin-bottom: $base-line-height;
+}
 
-  ul ul,
-  ol ol,
-  ul ol,
-  ol ul {
-    &:not([class*="wmnds-"]) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-  // Let's make sure all's aligned
-  sub,
-  sup {
-    &:not([class*="wmnds-"]) {
-      position: relative;
-      line-height: 0;
-      vertical-align: baseline;
-    }
-  }
+// Let's make sure all's aligned
+sub,
+sup {
+  position: relative;
+  line-height: 0;
+  vertical-align: baseline;
+}
 
-  sup {
-    &:not([class*="wmnds-"]) {
-      top: -0.5em;
-    }
-  }
+sup {
+  top: -0.5em;
+}
 
-  sub {
-    &:not([class*="wmnds-"]) {
-      bottom: -0.25em;
-    }
-  }
+sub {
+  bottom: -0.25em;
 }

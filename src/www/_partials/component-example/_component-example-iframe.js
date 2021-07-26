@@ -34,6 +34,7 @@ const componentExampleIframe = () => {
               ${svgSprite}
               ${html || ''}
             </div>
+            <h1>Nice to meet you!</h1>
             <script src="https://unpkg.com/iframe-resizer@3.5.7/js/iframeResizer.contentWindow.min.js"></script>
             <script src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CObject.assign%2CString.prototype.includes%2CNumber.isNaN"></script>
             <script src="${host}/js/wmnds-website.min.js"></script>
