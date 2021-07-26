@@ -192,7 +192,7 @@
   }
 }
 
-.bdr {
+.wmnds-bdr {
   &-primary {
     @include x-default-border(get-color(primary));
   }
@@ -211,7 +211,7 @@
 }
 
 //Background
-.bg {
+.wmnds-bg {
   &-default {
     background-color: get-color(background);
   }

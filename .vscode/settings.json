@@ -17,21 +17,5 @@
       "format": "svg"
     }
   ],
-  "files.eol": "\n",
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#dfb4f4",
-    "activityBar.activeBorder": "#a77818",
-    "activityBar.background": "#dfb4f4",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#a77818",
-    "activityBarBadge.foreground": "#e7e7e7",
-    "statusBar.background": "#cc87ee",
-    "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#b95ae8",
-    "titleBar.activeBackground": "#cc87ee",
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveBackground": "#cc87ee99",
-    "titleBar.inactiveForeground": "#15202b99"
-  }
+  "files.eol": "\n"
 }
