@@ -7,8 +7,8 @@
 // General non-component Styles
 @import "styles/styles"; // Import general styles
 
-// Component Styles
 [class*="wmnds-"] {
+  // Component Styles
   @import "../../components/components"; // Import all pattern styles
 
   // Pattern Styles

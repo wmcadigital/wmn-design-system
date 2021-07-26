@@ -3,8 +3,9 @@
 // The a[class*="wmnds-col-"] line is to orrived the above not line, as a wmnds-col tag as an 'a' is fine to treat as normal tag
 
 .wmnds-link {
-  @at-root [class*="wmnds-"] a:not([class*="wmnds-"]),
-    & {
+  @at-root [class*="wmnds-"] > a:not([class*="wmnds-"]),
+  // sass-lint:disable-next-line identation
+  & {
     color: get-color(cta, 10, dark);
     font-weight: bold;
     text-decoration: underline;
