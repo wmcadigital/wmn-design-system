@@ -1,9 +1,13 @@
 .wmnds-html {
+  min-width: 320px;
   margin: 0;
   padding: 0;
+  overflow-y: auto;
   color: get-color(text);
+  background: get-color(background);
   font-family: $x-font-family;
   @include type-setting(0);
+  scroll-behavior: smooth;
 
   body {
     margin: 0;
@@ -19,13 +23,6 @@
   color: get-color(text);
   font-family: $x-font-family;
   @include type-setting(0);
-}
-
-.wmnds-html {
-  min-width: 320px;
-  overflow-y: auto;
-  background: get-color(background);
-  scroll-behavior: smooth;
 
   // Images
   img {
