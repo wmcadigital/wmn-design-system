@@ -35,7 +35,7 @@
 }
 
 [class*="wmnds-"] h2,
-.wmnds-h2 {
+[class*="wmnds-"].wmnds-h2 {
   color: get-color(primary);
   @include type-setting(2, 0.85);
   font-weight: bold;
@@ -46,14 +46,14 @@
 }
 
 [class*="wmnds-"] h3,
-.wmnds-h3 {
+[class*="wmnds-"].wmnds-h3 {
   color: inherit;
   @include type-setting(3);
   font-weight: bold;
 }
 
 [class*="wmnds-"] h4,
-.wmnds-h4 {
+[class*="wmnds-"].wmnds-h4 {
   color: inherit;
   @include type-setting(4);
   font-weight: bold;
@@ -64,21 +64,21 @@
 }
 
 [class*="wmnds-"] h5,
-.wmnds-h5 {
+[class*="wmnds-"].wmnds-h5 {
   @include type-setting(5);
   font-weight: bold;
 }
 
 [class*="wmnds-"] h6,
-.wmnds-h6 {
+[class*="wmnds-"].wmnds-h6 {
   @include type-setting(5);
   font-weight: normal;
 }
 
-.wmnds-h2 > *,
-.wmnds-h3 > *,
-.wmnds-h4 > *,
-.wmnds-h5 > * {
+[class*="wmnds-"].wmnds-h2 > *,
+[class*="wmnds-"].wmnds-h3 > *,
+[class*="wmnds-"].wmnds-h4 > *,
+[class*="wmnds-"].wmnds-h5 > * {
   color: initial;
   font-weight: initial;
 }
