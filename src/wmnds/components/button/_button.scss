@@ -3,7 +3,7 @@ $btn-border-width: 1px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
 // default button styles aka cta btn
-.wmnds-btn {
+&.wmnds-btn {
   box-sizing: border-box;
   display: inline-block;
   position: relative;

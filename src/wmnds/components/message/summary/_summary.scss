@@ -4,7 +4,7 @@ $wmnds-msg-icon-margin-right: $size-sm;
 // controls close button width and ensures header padding right is offset correctly
 $wmnds-msg-close-btn-width: 5rem;
 
-.wmnds-msg-summary {
+&.wmnds-msg-summary {
   position: relative;
   padding: $size-sm;
   border: 1px solid get-color(information);
