@@ -11,6 +11,7 @@ $wmnds-msg-close-btn-width: 5rem;
 
   &__header {
     display: block;
+    color: inherit;
   }
 
   &__icon {
@@ -33,11 +34,14 @@ $wmnds-msg-close-btn-width: 5rem;
   &__icon,
   &__title {
     display: inline-block;
+    color: inherit;
     vertical-align: middle;
   }
 
   &__info {
     display: block;
+    color: inherit;
+
     @media all and (min-width: $breakpoint-md) {
       padding-left: calc(#{$wmnds-msg-icon-size} + #{$wmnds-msg-icon-margin-right});
     }
