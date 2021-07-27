@@ -16,6 +16,7 @@
 }
 
 [class*="wmnds-"] {
+  box-sizing: border-box;
   color: get-color(text);
   font-family: $x-font-family;
   @include type-setting(0);

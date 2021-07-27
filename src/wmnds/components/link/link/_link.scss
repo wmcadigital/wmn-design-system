@@ -4,7 +4,7 @@
 
 .wmnds-link {
   @at-root [class*="wmnds-"] a:not([class*="wmnds-"]),
-    & {
+  & {
     color: get-color(cta, 10, dark);
     font-weight: bold;
     text-decoration: underline;

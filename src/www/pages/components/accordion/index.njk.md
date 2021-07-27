@@ -63,7 +63,7 @@ Take note that:
       njk: true,
       njkProps: wmndsAccordionProps,
       js: true,
-      iframe: true
+      iframe: false
     }
   )
 }}

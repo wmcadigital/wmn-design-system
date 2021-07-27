@@ -8,7 +8,7 @@
 @import "styles/styles"; // Import general styles
 
 // Component Styles
-[class*="wmnds-"] {
+html > body {
   @import "../../components/components"; // Import all pattern styles
 
   // Pattern Styles
