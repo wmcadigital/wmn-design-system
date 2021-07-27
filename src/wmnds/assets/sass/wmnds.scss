@@ -8,9 +8,8 @@
 @import "styles/styles"; // Import general styles
 
 // Component Styles
-html > body {
-  @import "../../components/components"; // Import all pattern styles
 
-  // Pattern Styles
-  @import "../../patterns/patterns"; // Import all pattern styles
-}
+@import "../../components/components"; // Import all pattern styles
+
+// Pattern Styles
+@import "../../patterns/patterns"; // Import all pattern styles
