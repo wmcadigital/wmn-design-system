@@ -69,8 +69,13 @@
   }
 
   &__list {
+    margin-top: 0;
     margin-bottom: $size-sm;
     padding-left: $size-md;
+
+    li {
+      margin-bottom: $size-xsm;
+    }
 
     &:last-child {
       margin-bottom: 0;
