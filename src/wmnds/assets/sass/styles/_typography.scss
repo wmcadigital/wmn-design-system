@@ -1,26 +1,4 @@
 // Get rid of margin for the first header item in main content
-.wmnds-html {
-  margin: 0;
-  padding: 0;
-  color: get-color(text);
-  font-family: $x-font-family;
-  @include type-setting(0);
-
-  body {
-    margin: 0;
-    padding: 0;
-    color: get-color(text);
-    font-family: $x-font-family;
-    @include type-setting(0);
-  }
-}
-
-[class*="wmnds-"] {
-  box-sizing: border-box;
-  color: get-color(text);
-  font-family: $x-font-family;
-  @include type-setting(0);
-}
 
 [class*="wmnds-"] {
   h1,

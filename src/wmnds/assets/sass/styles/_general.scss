@@ -1,12 +1,31 @@
 .wmnds-html {
+  margin: 0;
+  padding: 0;
+  color: get-color(text);
+  font-family: $x-font-family;
+  @include type-setting(0);
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: get-color(text);
+    font-family: $x-font-family;
+    @include type-setting(0);
+  }
+}
+
+[class*="wmnds-"] {
+  box-sizing: border-box;
+  color: get-color(text);
+  font-family: $x-font-family;
+  @include type-setting(0);
+}
+
+.wmnds-html {
   min-width: 320px;
   overflow-y: auto;
   background: get-color(background);
   scroll-behavior: smooth;
-
-  * {
-    box-sizing: border-box;
-  }
 
   li {
     margin-bottom: $size-xsm;
