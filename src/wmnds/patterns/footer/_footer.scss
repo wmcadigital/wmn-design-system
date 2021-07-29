@@ -5,6 +5,10 @@
   background-color: get-color(primary, 50, dark);
   box-shadow: 0 100vh 0 100vh get-color(primary, 50, dark);
 
+  * {
+    color: inherit;
+  }
+
   &__link.wmnds-link {
     color: $white;
 
@@ -63,6 +67,7 @@
     margin-bottom: $size-md;
     padding-bottom: $size-md;
     border-bottom: 1px solid get-color(secondary, 70);
+    color: $white;
 
     @media screen and (max-width: $breakpoint-md - 1) {
       margin-bottom: $size-md;
