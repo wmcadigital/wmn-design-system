@@ -115,7 +115,11 @@
   h1:first-child,
   h2:first-child,
   h3:first-child,
-  h4:first-child {
+  h4:first-child,
+  h1:first-child[class*="wmnds-"],
+  h2:first-child[class*="wmnds-"],
+  h3:first-child[class*="wmnds-"],
+  h4:first-child[class*="wmnds-"] {
     margin-top: 0;
   }
 }
