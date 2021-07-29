@@ -1,43 +1,55 @@
 .wmnds-html {
   min-width: 320px;
+  margin: 0;
+  padding: 0;
   overflow-y: auto;
+  color: get-color(text);
   background: get-color(background);
+  font-family: $x-font-family;
+  @include type-setting(0);
   scroll-behavior: smooth;
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: get-color(text);
+    font-family: $x-font-family;
+    @include type-setting(0);
+  }
 }
 
-* {
+[class*="wmnds-"] {
   box-sizing: border-box;
-}
+  color: get-color(text);
+  font-family: $x-font-family;
+  @include type-setting(0);
 
-li {
-  margin-bottom: $size-xsm;
-}
+  // Images
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-// Images
-img {
-  max-width: 100%;
-  height: auto;
-}
+  // Text highlighting color
+  ::-moz-selection {
+    // Code for Firefox
+    color: $white;
+    background: get-color(primary);
+  }
 
-// Text highlighting color
-::-moz-selection {
-  // Code for Firefox
-  color: $white;
-  background: get-color(primary);
-}
+  ::selection {
+    color: $white;
+    background: get-color(primary);
+  }
 
-::selection {
-  color: $white;
-  background: get-color(primary);
-}
+  // Controls how elements look when focused (helps with accesibility/keyboard-only users)
+  *:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+  }
 
-// Controls how elements look when focused (helps with accesibility/keyboard-only users)
-*:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
-}
-
-// This gets rid of firefox default focus dash-border
-*::-moz-focus-inner {
-  border: 0;
+  // This gets rid of firefox default focus dash-border
+  *::-moz-focus-inner {
+    border: 0;
+  }
 }

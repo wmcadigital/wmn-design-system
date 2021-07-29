@@ -1,4 +1,4 @@
-.wmnds-find-a-timetable-widget {
+&.wmnds-find-a-timetable-widget {
   &__services {
     display: none;
   }
@@ -19,5 +19,4 @@
       background-color: get-color(secondary, 50);
     }
   }
-
 }
