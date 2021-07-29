@@ -3,6 +3,7 @@
 // specific font stacks to ensure the greatest OS/browser compatibility.
 [class*="wmnds-"] {
   &.wmnds-grid [class*="wmnds-col-"] {
+    color: inherit;
     font-family: $x-font-family;
     -webkit-font-smoothing: antialiased;
   }

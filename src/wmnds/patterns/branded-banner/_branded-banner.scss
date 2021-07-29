@@ -3,6 +3,10 @@
   color: $white;
   background-color: get-color(primary);
 
+  *:not(a):not(button) {
+    color: inherit;
+  }
+
   .wmnds-breadcrumb {
     padding: 0;
 
@@ -13,7 +17,7 @@
   }
 
   &__title {
-    color: currentColor;
+    color: $white;
 
     svg {
       width: 1em;
