@@ -2,9 +2,8 @@
 // with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
 // specific font stacks to ensure the greatest OS/browser compatibility.
 [class*="wmnds-"] {
-  &.wmnds-grid [class*="wmnds-col-"] {
-    color: inherit;
-    font-family: $x-font-family;
+  * {
+    font-family: inherit;
     -webkit-font-smoothing: antialiased;
   }
 
