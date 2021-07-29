@@ -9,7 +9,7 @@
 
   &__form {
     &
-    > div:not(.wmnds-journey-planner__from):not(.wmnds-journey-planner__to):not(.wmnds-journey-planner__submit) {
+      > div:not(.wmnds-journey-planner__from):not(.wmnds-journey-planner__to):not(.wmnds-journey-planner__submit) {
       display: none;
     }
   }
@@ -34,6 +34,11 @@
 
   &__to {
     position: relative;
+  }
+
+  &__from,
+  &__to {
+    color: $white;
   }
 
   &__switch {
@@ -67,5 +72,6 @@
   &__when,
   &__how {
     position: relative;
+    color: $white;
   }
 }
