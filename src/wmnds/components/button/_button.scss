@@ -3,7 +3,7 @@ $btn-border-width: 1px;
 $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
 // default button styles aka cta btn
-&.wmnds-btn {
+.wmnds-btn {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -40,10 +40,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     vertical-align: top;
   }
 
-  .wmnds-swift-logo-inline {
-    fill: $white;
-  }
-
   // button icon right style
   &__icon--right {
     margin-left: $size-sm;
@@ -55,8 +51,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     color: get-color(primary);
     background-color: $white;
 
-    .wmnds-btn__icon,
-    .wmnds-swift-logo-inline {
+    .wmnds-btn__icon {
       fill: get-color(primary);
     }
 
@@ -97,8 +92,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     color: get-color(primary);
     background-color: transparent;
 
-    .wmnds-btn__icon,
-    .wmnds-swift-logo-inline {
+    .wmnds-btn__icon {
       fill: get-color(primary);
     }
 
@@ -122,8 +116,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       color: get-color(disable);
       background: transparent;
 
-      .wmnds-btn__icon,
-      .wmnds-swift-logo-inline {
+      .wmnds-btn__icon {
         fill: get-color(disable);
       }
     }
@@ -134,8 +127,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       color: $white;
       background-color: get-color(primary);
 
-      .wmnds-btn__icon,
-      .wmnds-swift-logo-inline {
+      .wmnds-btn__icon {
         fill: $white;
       }
 
@@ -198,8 +190,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     color: get-color(primary);
     background-color: $white;
 
-    .wmnds-btn__icon,
-    .wmnds-swift-logo-inline {
+    .wmnds-btn__icon {
       margin-right: $size-xs;
       fill: get-color(primary);
     }
@@ -245,8 +236,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       color: get-color(disable);
       background: $white;
 
-      .wmnds-btn__icon,
-      .wmnds-swift-logo-inline {
+      .wmnds-btn__icon {
         fill: get-color(disable);
       }
     }
@@ -257,8 +247,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     background-color: get-color(disable);
     cursor: not-allowed;
 
-    .wmnds-btn__icon,
-    .wmnds-swift-logo-inline {
+    .wmnds-btn__icon {
       fill: $white;
     }
 

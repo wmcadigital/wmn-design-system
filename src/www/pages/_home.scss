@@ -18,8 +18,8 @@
   }
 
   // Make links white in the purple banner
-  &__link.wmnds-link,
-  &__link.wmnds-link:visited {
+  &__link,
+  &__link:visited {
     color: $white;
 
     &:hover {

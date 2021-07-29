@@ -29,7 +29,7 @@
             <h2>{{formTitle}}</h2>
 
             <form class="wmnds-journey-planner__form" name="jphome" action="//journeyplanner.tfwm.org.uk/Home/HandleWidgetQuery" method="GET">
-
+                
                 <div class="wmnds-journey-planner__from">
                     {{
                         wmndsAutocomplete({
@@ -37,7 +37,7 @@
                             name: "Origin",
                             label: {
                                 contentText: 'From',
-                                classes: "wmnds-h5 wmnds-m-t-xsm"
+                                classes: "h5 wmnds-m-t-xsm"
                             },
                             placeholder: 'Enter station or postcode',
                             loading: false,
@@ -58,21 +58,21 @@
                             })
                         }}
 
-                        {{
+                        {{ 
                             wmndsIcon({
                                 icon: 'general-swap',
                                 class: 'wmnds-journey-planner__switch-icon'
-                            }) | safe
+                            }) | safe 
                         }}
                     </div>
-
+                    
                     {{
                         wmndsAutocomplete({
                             id: ("mainjp-to" + suffix),
                             name: "Destination",
                             label: {
                                 contentText: 'To',
-                                classes: "wmnds-h5"
+                                classes: "h5"
                             },
                             placeholder: 'Enter station or postcode',
                             loading: false,
@@ -81,9 +81,9 @@
                             isRequired: true
                         })
                     }}
-
+                    
                 </div>
-
+                
 
                 <div class="wmnds-journey-planner__how">
                     <h5>Which modes of transport will you use?</h5>
@@ -123,12 +123,12 @@
                                 }}
                                 Tram
                             </div>
-                        </label>
+                        </label>   
                     </div>
                 </div>
-
+                
                 <div class="wmnds-journey-planner__when">
-
+                    
                     <h5>Leaving</h5>
                     <input type="hidden" name="journeyTimeType" value="leave"/>
 
@@ -186,7 +186,7 @@
                                         classes: null
                                     }
                                 })
-                            }}
+                            }} 
                         </div>
                     </div>
 

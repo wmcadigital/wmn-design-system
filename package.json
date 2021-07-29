@@ -117,7 +117,6 @@
     "findandreplacedomtext": "^0.4.6",
     "gulp-sass": "^4.1.0",
     "iframe-resizer": "^4.3.1",
-    "path": "^0.12.7",
-    "tfwm-travel-updates-widget": "^1.0.0"
+    "path": "^0.12.7"
   }
 }

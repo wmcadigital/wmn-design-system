@@ -4,14 +4,13 @@ $wmnds-msg-icon-margin-right: $size-sm;
 // controls close button width and ensures header padding right is offset correctly
 $wmnds-msg-close-btn-width: 5rem;
 
-&.wmnds-msg-summary {
+.wmnds-msg-summary {
   position: relative;
   padding: $size-sm;
   border: 1px solid get-color(information);
 
   &__header {
     display: block;
-    color: inherit;
   }
 
   &__icon {
@@ -34,14 +33,11 @@ $wmnds-msg-close-btn-width: 5rem;
   &__icon,
   &__title {
     display: inline-block;
-    color: inherit;
     vertical-align: middle;
   }
 
   &__info {
     display: block;
-    color: inherit;
-
     @media all and (min-width: $breakpoint-md) {
       padding-left: calc(#{$wmnds-msg-icon-size} + #{$wmnds-msg-icon-margin-right});
     }

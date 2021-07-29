@@ -1,116 +1,113 @@
-[class*="wmnds-"] {
-  // ensures sticky footer
-  &.wmnds-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    align-items: stretch;
+.wmnds-grid {
+  & > * {
+    box-sizing: border-box;
   }
 
-  // Container sizes
-  &.wmnds-container {
-    display: block;
-    width: 100%;
-    max-width: $breakpoint-lg;
-    margin: auto;
-    padding: 0 $size-sm;
+  // How to align child flex items of a grid
+  &.wmnds-grid--justify-between {
+    justify-content: space-between;
+  }
 
-    @media screen and (min-width: $breakpoint-lg) {
-      padding: 0 $size-md;
-    }
+  &.wmnds-grid--justify-around {
+    justify-content: space-around;
+  }
 
-    &--main {
-      margin-top: $size-md;
-      margin-bottom: $size-lg;
-      flex-grow: 1;
-    }
+  &.wmnds-grid--justify-end {
+    justify-content: flex-end;
+  }
+
+  &.wmnds-grid--align-center {
+    align-items: center;
   }
 }
 
-html body [class*="wmnds-"] {
-  &.wmnds-grid {
-    & > * {
-      box-sizing: border-box;
-    }
+// ensures sticky footer
+.wmnds-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: stretch;
+}
 
-    // How to align child flex items of a grid
-    &.wmnds-grid--justify-between {
-      justify-content: space-between;
-    }
+// Container sizes
+.wmnds-container {
+  display: block;
+  width: 100%;
+  max-width: $breakpoint-lg;
+  margin: auto;
+  padding: 0 $size-sm;
 
-    &.wmnds-grid--justify-around {
-      justify-content: space-around;
-    }
-
-    &.wmnds-grid--justify-end {
-      justify-content: flex-end;
-    }
-
-    &.wmnds-grid--align-center {
-      align-items: center;
-    }
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 0 $size-md;
   }
 
-  //Text align
-  &.wmnds-text-align {
-    &-left {
-      text-align: left;
-    }
+  &--main {
+    margin-top: $size-md;
+    margin-bottom: $size-lg;
+    flex-grow: 1;
+  }
+}
 
-    &-center {
-      text-align: center;
-    }
-
-    &-right {
-      text-align: right;
-    }
+//Text align
+.wmnds-text-align {
+  &-left {
+    text-align: left;
   }
 
-  // Floats
-  &.wmnds-float {
-    &-left {
-      float: left;
-    }
-
-    &-right {
-      float: right;
-    }
+  &-center {
+    text-align: center;
   }
 
-  // MARGINS AND PADDINGS
-  // Helper mixin used to generate various sizes of margin/padding
-  @mixin x-mar-pad($side, $type: "margin") {
-    &-xs {
-      #{$type}#{$side}: $size-xs;
-    }
+  &-right {
+    text-align: right;
+  }
+}
 
-    &-xsm {
-      #{$type}#{$side}: $size-xsm;
-    }
-
-    &-sm {
-      #{$type}#{$side}: $size-sm;
-    }
-
-    &-md {
-      #{$type}#{$side}: $size-md;
-    }
-
-    &-lg {
-      #{$type}#{$side}: $size-lg;
-    }
-
-    &-xl {
-      #{$type}#{$side}: $size-xl;
-    }
-
-    &-none {
-      #{$type}#{$side}: 0 !important;
-    }
+// Floats
+.wmnds-float {
+  &-left {
+    float: left;
   }
 
-  &.wmnds,
-  &.wmnds {
+  &-right {
+    float: right;
+  }
+}
+
+// MARGINS AND PADDINGS
+// Helper mixin used to generate various sizes of margin/padding
+@mixin x-mar-pad($side, $type: "margin") {
+  &-xs {
+    #{$type}#{$side}: $size-xs;
+  }
+
+  &-xsm {
+    #{$type}#{$side}: $size-xsm;
+  }
+
+  &-sm {
+    #{$type}#{$side}: $size-sm;
+  }
+
+  &-md {
+    #{$type}#{$side}: $size-md;
+  }
+
+  &-lg {
+    #{$type}#{$side}: $size-lg;
+  }
+
+  &-xl {
+    #{$type}#{$side}: $size-xl;
+  }
+
+  &-none {
+    #{$type}#{$side}: 0 !important;
+  }
+}
+
+body {
+  .wmnds {
     // Generate all margin classes
     &-m {
       @include x-mar-pad("");
@@ -153,93 +150,93 @@ html body [class*="wmnds-"] {
       }
     }
   }
+}
 
-  // Show/hide on desktop devices only
-  &.wmnds-hide-mobile {
-    @media screen and (max-width: $breakpoint-md) {
-      display: none;
-    }
+// Show/hide on desktop devices only
+.wmnds-hide-mobile {
+  @media screen and (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.wmnds-hide-desktop {
+  @media screen and (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.wmnds-screenreaders-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Borders
+// Border generator mixin
+@mixin x-default-border($border-color) {
+  border: 2px solid $border-color;
+
+  &-left {
+    border-left: 2px solid $border-color;
   }
 
-  &.wmnds-hide-desktop {
-    @media screen and (min-width: $breakpoint-md) {
-      display: none;
-    }
+  &-right {
+    border-right: 2px solid $border-color;
   }
 
-  &.wmnds-screenreaders-only {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+  &-bottom {
+    border-bottom: 2px solid $border-color;
+  }
+}
+
+.bdr {
+  &-primary {
+    @include x-default-border(get-color(primary));
   }
 
-  // Borders
-  // Border generator mixin
-  @mixin x-default-border($border-color) {
-    border: 2px solid $border-color;
-
-    &-left {
-      border-left: 2px solid $border-color;
-    }
-
-    &-right {
-      border-right: 2px solid $border-color;
-    }
-
-    &-bottom {
-      border-bottom: 2px solid $border-color;
-    }
+  &-white {
+    @include x-default-border($white);
   }
 
-  &.wmnds-bdr {
-    &-primary {
-      @include x-default-border(get-color(primary));
-    }
-
-    &-white {
-      @include x-default-border($white);
-    }
-
-    &-gray {
-      @include x-default-border(get-color(secondary));
-    }
-
-    &-transparent {
-      @include x-default-border(transparent);
-    }
+  &-gray {
+    @include x-default-border(get-color(secondary));
   }
 
-  //Background
-  &.wmnds-bg {
-    &-default {
-      background-color: get-color(background);
-    }
+  &-transparent {
+    @include x-default-border(transparent);
+  }
+}
 
-    &-white {
-      background-color: $white;
-    }
-
-    &-planned-disruption {
-      background-color: get-color(plannedDisruption);
-    }
-
-    &-disabled-elements {
-      background-color: get-color(disable);
-    }
-
-    &-transparent {
-      background-color: transparent;
-    }
+//Background
+.bg {
+  &-default {
+    background-color: get-color(background);
   }
 
-  // helper class for aligning swift logo icon
-  &.wmnds-swift-logo-inline {
-    width: 3.6em;
-    height: 1.3em;
-    margin-top: -0.175em;
-    fill: currentColor;
-    vertical-align: middle;
+  &-white {
+    background-color: $white;
   }
+
+  &-planned-disruption {
+    background-color: get-color(plannedDisruption);
+  }
+
+  &-disabled-elements {
+    background-color: get-color(disable);
+  }
+
+  &-transparent {
+    background-color: transparent;
+  }
+}
+
+// helper class for aligning swift logo icon
+.wmnds-swift-logo-inline {
+  width: 3.6em;
+  height: 1.3em;
+  margin-top: -0.175em;
+  fill: currentColor;
+  vertical-align: middle;
 }

@@ -1,6 +1,6 @@
 @import "./homepage-banner/homepage-banner";
 
-&.wmnds-banner-container {
+.wmnds-banner-container {
   $self: &;
   padding: $size-md 0;
   border-bottom: 1px solid get-color(text);

@@ -1,4 +1,4 @@
-&.wmnds-branded-banner {
+.wmnds-branded-banner {
   padding: $size-lg 0;
   color: $white;
   background-color: get-color(primary);
@@ -13,20 +13,14 @@
   }
 
   &__title {
-    color: $white;
+    color: currentColor;
 
     svg {
       width: 1em;
       height: 1em;
-      color: inherit;
       fill: currentColor;
       vertical-align: text-top;
     }
-  }
-
-  &__title ~ * *,
-  &__title ~ * {
-    color: $white;
   }
 
   &__modals {

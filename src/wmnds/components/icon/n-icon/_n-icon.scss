@@ -2,7 +2,7 @@
 $base-width: 1rem * 0.75; // Multiply by 0.75 as the font height is is actually 1/4 smaller than
 $height-multiplier: 1.04741812336749; // If we multiply the height by this value we got the correct width for the n-icon svg
 
-&.wmnds-n-icon {
+.wmnds-n-icon {
   display: inline-block;
   color: currentColor;
   font-size: inherit;
