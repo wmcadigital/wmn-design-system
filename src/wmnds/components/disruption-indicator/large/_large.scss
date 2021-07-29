@@ -1,4 +1,4 @@
-.wmnds-disruption-indicator-large {
+&.wmnds-disruption-indicator-large {
   display: block;
   position: relative;
   padding: $size-sm calc(#{$size-sm} + 36px) $size-sm $size-sm;
@@ -26,6 +26,7 @@
   &__left-icon-wrapper {
     display: inline-block;
     width: 47px;
+    color: $white;
     text-align: center;
     vertical-align: middle;
   }
@@ -57,6 +58,7 @@
   &__text {
     width: calc(100% - (47px + (#{$size-sm} * 2)));
     margin: 0 $size-sm;
+    color: $white;
   }
 
   &__text,
