@@ -17,10 +17,10 @@
   padding: $size-xs;
   color: get-color(primary);
   background: $white;
-  @include type-setting(4);
+  @include type-setting(5);
 }
 
 // This is to style how the sub-heading appears above the h1 on component/pattern pages
-.h3 + h1 {
+.wmnds-h3 + h1 {
   margin-top: 0.5rem;
 }

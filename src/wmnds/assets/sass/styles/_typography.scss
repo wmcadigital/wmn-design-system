@@ -1,140 +1,125 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  color: get-color(text);
-  font-family: $x-font-family;
-  @include type-setting(0);
+// Get rid of margin for the first header item in main content
+[class*="wmnds-"] {
+  div,
+  span,
+  p,
+  a {
+    @include type-setting(0);
+  }
+
+  p,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+  }
+
+  // Let's make sure all's aligned
+  sub,
+  sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  // Set heading font for heading elements
+  h1,
+  h1[class*="wmnds-col"],
+  h2,
+  h2[class*="wmnds-col"],
+  h3,
+  h3[class*="wmnds-col"],
+  h4,
+  h4[class*="wmnds-col"] {
+    font-family: $x-heading-font-family;
+  }
+
+  h1,
+  &.wmnds-h1 {
+    color: get-color(primary);
+    @include type-setting(1, 0.85);
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(1);
+    }
+  }
+
+  h2,
+  &.wmnds-h2 {
+    color: get-color(primary);
+    @include type-setting(2, 0.85);
+    font-weight: bold;
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(2);
+    }
+  }
+
+  h3,
+  &.wmnds-h3 {
+    color: inherit;
+    @include type-setting(3);
+    font-weight: bold;
+  }
+
+  h4,
+  &.wmnds-h4 {
+    color: inherit;
+    @include type-setting(4);
+    font-weight: bold;
+
+    &.wmnds-weight-400 {
+      font-weight: normal;
+    }
+  }
+
+  h5,
+  &.wmnds-h5 {
+    @include type-setting(5);
+    font-weight: bold;
+  }
+
+  h6,
+  &.wmnds-h6 {
+    @include type-setting(5);
+    font-weight: normal;
+  }
+
+  &.wmnds-h2 > *,
+  &.wmnds-h3 > *,
+  &.wmnds-h4 > *,
+  &.wmnds-h5 > * {
+    color: initial;
+    font-weight: initial;
+  }
 }
 
-// Get rid of margin for the first header item in main content
+// Set heading font for heading elements
+.wmnds-h1[class*="wmnds-"],
+.wmnds-h2[class*="wmnds-"],
+.wmnds-h3[class*="wmnds-"],
+.wmnds-h4[class*="wmnds-"] {
+  font-family: $x-heading-font-family;
+}
+
 * {
   h1:first-child,
   h2:first-child,
   h3:first-child,
-  h4:first-child {
+  h4:first-child,
+  h1:first-child[class*="wmnds-"],
+  h2:first-child[class*="wmnds-"],
+  h3:first-child[class*="wmnds-"],
+  h4:first-child[class*="wmnds-"] {
     margin-top: 0;
   }
-}
-
-.wmnds-grid h1[class*="wmnds-col"],
-.wmnds-grid .h1[class*="wmnds-col"],
-h1,
-.h1,
-.wmnds-grid h2[class*="wmnds-col"],
-.wmnds-grid .h2[class*="wmnds-col"],
-h2,
-.h2,
-.wmnds-grid h3[class*="wmnds-col"],
-.wmnds-grid .h3[class*="wmnds-col"],
-h3,
-.h3,
-.wmnds-grid h4[class*="wmnds-col"],
-.wmnds-grid .h4[class*="wmnds-col"],
-h4,
-.h4 {
-  font-family: $x-heading-font-family;
-}
-
-div,
-span,
-li,
-ul,
-ol,
-p,
-a {
-  @include type-setting(0);
-}
-
-h1,
-.h1 {
-  color: get-color(primary);
-  @include type-setting(1, 0.85);
-  // On desktop devices
-  @media all and (min-width: $breakpoint-md) {
-    @include type-setting(1);
-  }
-}
-
-h2,
-.h2 {
-  color: get-color(primary);
-  @include type-setting(2, 0.85);
-  font-weight: bold;
-  // On desktop devices
-  @media all and (min-width: $breakpoint-md) {
-    @include type-setting(2);
-  }
-}
-
-h3,
-.h3 {
-  color: inherit;
-  @include type-setting(3);
-  font-weight: bold;
-}
-
-h4,
-.h4 {
-  color: inherit;
-  @include type-setting(4);
-  font-weight: bold;
-
-  &.wmnds-weight-400 {
-    font-weight: normal;
-  }
-}
-
-h5,
-.h5 {
-  @include type-setting(5);
-  font-weight: bold;
-}
-
-h6,
-.h6 {
-  @include type-setting(5);
-  font-weight: normal;
-}
-
-.h2 > *,
-.h3 > *,
-.h4 > *,
-.h5 > * {
-  color: initial;
-  font-weight: initial;
-}
-
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-  margin-top: 0;
-  margin-bottom: $base-line-height;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-// Let's make sure all's aligned
-sub,
-sup {
-  position: relative;
-  line-height: 0;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
 }
