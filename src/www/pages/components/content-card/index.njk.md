@@ -2,7 +2,7 @@
 {% set pageTitle = "Content card" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {# Imports #}
-{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
 
 {% block content %}
 
@@ -35,11 +35,11 @@ The cards have many common use cases and applications, all of which can be found
 
 {{
     compExample([
-        wmndsContentCard()
+        tfwmdsContentCard()
     ], {
-        componentPath: "wmnds/components/content-card/",
+        componentPath: "tfwmds/components/content-card/",
         njk: true,
-        njkProps: wmndsContentCardProps,
+        njkProps: tfwmdsContentCardProps,
         js: false,
         iframe: false
     })
@@ -73,13 +73,13 @@ The cards have many common use cases and applications, all of which can be found
 
 {{
     compExample([
-        wmndsContentCard({
+        tfwmdsContentCard({
             link: "https://designsystem.wmnetwork.co.uk/components/content-card/"
         })
     ], {
-        componentPath: "wmnds/components/content-card/",
+        componentPath: "tfwmds/components/content-card/",
         njk: true,
-        njkProps: wmndsContentCardProps,
+        njkProps: tfwmdsContentCardProps,
         js: false,
         iframe: false
     })
@@ -116,13 +116,13 @@ The cards have many common use cases and applications, all of which can be found
 
 {{
     compExample([
-        wmndsContentCard({
+        tfwmdsContentCard({
             yellow: true
         })
     ], {
-        componentPath: "wmnds/components/content-card/",
+        componentPath: "tfwmds/components/content-card/",
         njk: true,
-        njkProps: wmndsContentCardProps,
+        njkProps: tfwmdsContentCardProps,
         js: false,
         iframe: false
     })

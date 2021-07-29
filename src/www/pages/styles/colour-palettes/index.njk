@@ -24,17 +24,17 @@
 
 {# Using in development #}
 <h2>Using in development</h2>
-<h3>WMNDS SCSS</h3>
-<p>If you are using WMN Design System's SCSS in development, you shouldn't use the HEX values! Instead you should always use the scss variables instead, for example use <code class="wmnds-website-inline-code">get-color(primary)</code> instead of <code class="wmnds-website-inline-code">#3c1053</code>. This ensures you are always using the most up-to-date colour. To find out more on how to use the <code class="wmnds-website-inline-code">get-color()</code> function in SCSS, please refer to the notes for <code class="wmnds-website-inline-code">@function get-color()</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/wmnds/assets/sass/_mixins.scss" target="_blank">_mixins.scss</a>.</p>
+<h3>tfwmds SCSS</h3>
+<p>If you are using WMN Design System's SCSS in development, you shouldn't use the HEX values! Instead you should always use the scss variables instead, for example use <code class="tfwmds-website-inline-code">get-color(primary)</code> instead of <code class="tfwmds-website-inline-code">#3c1053</code>. This ensures you are always using the most up-to-date colour. To find out more on how to use the <code class="tfwmds-website-inline-code">get-color()</code> function in SCSS, please refer to the notes for <code class="tfwmds-website-inline-code">@function get-color()</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/tfwmds/assets/sass/_mixins.scss" target="_blank">_mixins.scss</a>.</p>
 
-<h3>Without WMNDS SCSS</h3>
+<h3>Without tfwmds SCSS</h3>
 <p>If you are not using WMN Design System's SCSS then it is recommended to use the hex values below. It is highly adviseable to set these up as variables in your development enviornment, this ensures that you can easily change them to keep up-to-date with our colour palettes.</p>
-<p>If you'd like to see how we have set the variables up, you can check out <code class="wmnds-website-inline-code">$palettes</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/wmnds/src/assets/sass/_vars.scss" target="_blank">_vars.scss</a> and <code class="wmnds-website-inline-code">@function get-color()</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/wmnds/assets/sass/_mixins.scss" target="_blank">_mixins.scss</a>.</p>
+<p>If you'd like to see how we have set the variables up, you can check out <code class="tfwmds-website-inline-code">$palettes</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/tfwmds/src/assets/sass/_vars.scss" target="_blank">_vars.scss</a> and <code class="tfwmds-website-inline-code">@function get-color()</code> in <a href="https://github.com/wmcadigital/wmn-design-system/blob/master/src/tfwmds/assets/sass/_mixins.scss" target="_blank">_mixins.scss</a>.</p>
 
 {# Brand colours #}
 
 <h2>Brand colours</h2>
-<div class="wmnds-grid">
+<div class="tfwmds-grid">
   {% for color in colors.brand %}
     {{
       colorPalette({
@@ -48,7 +48,7 @@
 {# Modal colours #}
 
 <h2>Modal colours</h2>
-<div class="wmnds-grid">
+<div class="tfwmds-grid">
   {% for color in colors.modal %}
     {{
       colorPalette({
@@ -62,7 +62,7 @@
 {# Web colours #}
 
 <h2>Web colours</h2>
-<div class="wmnds-grid">
+<div class="tfwmds-grid">
   {% for color in colors.web %}
     {{
       colorPalette({
@@ -76,7 +76,7 @@
 {# Background Only colours #}
 
 <h2>Background only colours</h2>
-<div class="wmnds-grid">
+<div class="tfwmds-grid">
   {% for color in colors.backgroundOnly %}
     {{
       colorPalette({

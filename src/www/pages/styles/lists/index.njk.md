@@ -38,15 +38,15 @@
 
 {{
   compExample([
-    "<ol class='wmnds-ordered-list'>
-        <li class='wmnds-h2'>Level 2
+    "<ol class='tfwmds-ordered-list'>
+        <li class='tfwmds-h2'>Level 2
           <ol>
-            <li class='wmnds-h3'>Level 3
+            <li class='tfwmds-h3'>Level 3
               <ol>
-                <li class='wmnds-h4'>Level 4</li>
-                <li class='wmnds-h4'>Level 4
+                <li class='tfwmds-h4'>Level 4</li>
+                <li class='tfwmds-h4'>Level 4
                   <ol>
-                    <li class='wmnds-h5'>Level 5
+                    <li class='tfwmds-h5'>Level 5
                       <ol>
                         <li>Text</li>
                         <ul>
@@ -58,16 +58,16 @@
                   </li>
                   </ol>
                 </li>
-                <li class='wmnds-h4'>Level 4</li>
+                <li class='tfwmds-h4'>Level 4</li>
               </ol>
             </li>
-            <li class='wmnds-h3'>Level 3</li>
+            <li class='tfwmds-h3'>Level 3</li>
           </ol>
       </li>
-      <li class='wmnds-h2'>Level 2</li>
+      <li class='tfwmds-h2'>Level 2</li>
     </ol>
     <br/><br/>
-    <ol class='wmnds-ordered-list'>
+    <ol class='tfwmds-ordered-list'>
         <li>Text
           <ol>
             <li>Text
@@ -123,22 +123,22 @@
 
 {{
 compExample([
-"<ul class='wmnds-unordered-list'>
+"<ul class='tfwmds-unordered-list'>
 
-  <li class='wmnds-h2'>Level 2
+  <li class='tfwmds-h2'>Level 2
     <ul>
-      <li class='wmnds-h3'>Level 3
+      <li class='tfwmds-h3'>Level 3
         <ul>
-          <li class='wmnds-h4'>Level 4</li>
-          <li class='wmnds-h4'>Level 4
+          <li class='tfwmds-h4'>Level 4</li>
+          <li class='tfwmds-h4'>Level 4
             <ul>
-              <li class='wmnds-h5'>Level 5
+              <li class='tfwmds-h5'>Level 5
                 <ul>
                   <li>Text</li>
-                  <ol class='wmnds-ordered-list'>
+                  <ol class='tfwmds-ordered-list'>
                     <li>a</li>
                     <li>b
-                      <ol class='wmnds-ordered-list'>
+                      <ol class='tfwmds-ordered-list'>
                         <li>bb</li>
                       </ol>
                     </li>
@@ -149,18 +149,18 @@ compExample([
               </li>
             </ul>
           </li>
-          <li class='wmnds-h4'>Level 4</li>
+          <li class='tfwmds-h4'>Level 4</li>
         </ul>
       </li>
-      <li class='wmnds-h3'>Level 3</li>
+      <li class='tfwmds-h3'>Level 3</li>
     </ul>
   </li>
-  <li class='wmnds-h2'>Level 2</li>
+  <li class='tfwmds-h2'>Level 2</li>
 </ul>
 
 <br/><br/>
 
-<ul class='wmnds-unordered-list'>
+<ul class='tfwmds-unordered-list'>
   <li>Text
     <ul>
       <li>Text

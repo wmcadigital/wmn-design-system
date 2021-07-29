@@ -1,0 +1,227 @@
+{% macro tfwmdsHeaderV2(params) %}
+{# Set navItems #}
+{% set navItems = params.navItems %}
+{% set appClass = " tfwmds-header--mobile-app" if params.app else "" %}
+{% set menuClass = "" if params.legacyMenu else " tfwmds-header--mega-menu" %}
+
+{% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/patterns/banner/_banner.njk" import tfwmdsBanner %}
+{% from "tfwmds/components/breadcrumb/_breadcrumb.njk" import tfwmdsBreadcrumb %}
+{% from "tfwmds/patterns/cookies/cookies-banner/_cookies-banner.njk" import tfwmdsCookiesBanner %}
+{% from "tfwmds/patterns/search/search-bar/_search-bar.njk" import tfwmdsSearchbar %}
+
+<!-- Skip to content link -->
+{{
+  tfwmdsLink({
+    link: '#tfwmds-main-content',
+    linkTitle: 'Skip to main content',
+    contentText: 'Skip to main content',
+    classes: 'tfwmds-header__skip-link'
+  })
+}}
+<!-- Main header section -->
+<header>
+  {{
+    tfwmdsCookiesBanner()
+  }}
+  <div class="tfwmds-header{{appClass}}{{menuClass}}">
+    <div class="tfwmds-container tfwmds-grid tfwmds-grid--align-center tfwmds-grid--justify-between">
+      <div class="tfwmds-header__vertical-align tfwmds-col-auto">
+        <!-- Logo -->
+        <a class="tfwmds-header__logo-link" href="/" title="Transport for West Midlands Design System">
+          <img class="tfwmds-header__logo" alt="Transport for West Midlands logo" src="/img/logo.svg" />
+        </a>
+      </div>
+      {#- If with a title #}
+      {% if params.withTitle %}
+        <!-- Header title -->
+        <h1 class="tfwmds-header__title tfwmds-col-1 tfwmds-col-sm-auto">
+          Reinstate your Direct Debit<br>(COVID-19)
+        </h1>
+      {% else %}
+        <!-- Mega menu nav items-->
+        <nav id="{{params.id}}" class="tfwmds-mega-menu">
+          <!-- Mobile toggle button -->
+          <button class="tfwmds-mega-menu__mobile-toggle tfwmds-btn tfwmds-btn--secondary tfwmds-hide-desktop" aria-expanded="false" aria-controls="{{params.id}}-primary-menu">Menu
+            <svg class="tfwmds-mega-menu__close-icon"><use xlink:href="#tfwmds-general-cross" href="#tfwmds-general-cross"></use></svg>
+          </button>
+          <!-- Container for mega menu - allows scrolling on mobile nav -->
+          <div id="{{params.id}}-primary-menu" class="tfwmds-mega-menu__scroll-controller">
+            <!-- Start primary (level 1) navigation -->
+            <ul class="tfwmds-mega-menu__primary-menu">
+              {% for navItem in navItems %}
+                <li class="tfwmds-mega-menu__primary-menu-item">
+                <!-- Show swift logo in nav if is swift & tickets link -->
+                {% set navItemIcon = tfwmdsIcon({icon: 'swift-full-logo', class: 'tfwmds-swift-icon', title: 'Swift'}) if navItem.name === "Swift and tickets" else "" %}
+                {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name %}
+                  <!-- allow primary (level 1) item to link if specified -->
+                  {% if params.linkTopLevel %}{{navItemIcon}}
+                    <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="tfwmds-mega-menu__primary-menu-link" >
+                      {{navItemIcon}}{{ navItemContent }}
+                    </a>
+                  <!-- if not linked use a button -->
+                  {% else %}
+                    <button target="_self" class="tfwmds-mega-menu__primary-menu-link" >
+                      {{navItemIcon}}{{ navItemContent }}
+                    </button>
+                  {% endif %}
+                  {% if navItem.subnavItems %}
+                    <!-- arrow icon for mobile nav -->
+                    <button class="tfwmds-mega-menu__link-arrow-icon-btn" data-label="{{ navItem.name }}" aria-label="toggle {{ navItem.name }}" aria-controls="{{params.id}}-container"><svg class="tfwmds-mega-menu__link-arrow-icon"><use xlink-href="#tfwmds-general-chevron-right" href="#tfwmds-general-chevron-right"></use></svg></button>
+                    <!-- Start mega menu container -->
+                    <div id="{{params.id}}-container-{{ loop.index }}" class="tfwmds-mega-menu__container">
+                      <div class="tfwmds-container">
+                        <!-- Start submenu (level 2) -->
+                        <ul class="tfwmds-mega-menu__sub-menu">
+                          {% for subnavItem in navItem.subnavItems %}
+                            {% if subnavItem.unlinked %}
+                              {% set _tag = 'button' %}
+                              {% set _classes = " tfwmds-btn tfwmds-btn--link" %}
+                            {% else %}
+                              {% set _tag = 'a' %}
+                              {# Set href if specified, else set an auto generated href #}
+                              {% set _hrefSubnav = subnavItem.href if subnavItem.href else "/" + navItem.name + "/" + subnavItem.name  + "/"%}
+                              {# Set href attribute for link #}
+                              {% set _attributes = " href=\"" + _hrefSubnav | lower | replace(" ", "-") + "\"" if _hrefSubnav else "" %}
+                            {% endif %}
+                            <li class="tfwmds-mega-menu__sub-menu-item">
+                              <{{_tag}}{{_attributes | safe}} class="tfwmds-mega-menu__sub-menu-link{{_classes}}">
+                                {% if subnavItem.icon %}
+                                <!-- Show submenu (level 2) item icon if specified -->
+                                <svg class="tfwmds-mega-menu__sub-menu-link-icon">
+                                  <use xlink:href="#tfwmds-{{subnavItem.icon}}" href="#tfwmds-{{subnavItem.icon}}"></use>
+                                </svg>
+                                {% endif %}
+                                {{subnavItem.name| replace("Swift", tfwmdsIcon({icon: 'swift-full-logo', class: 'tfwmds-swift-icon', title: 'Swift'}) | indent(6) | trim) | safe}}</{{_tag}}>
+                                {% if subnavItem.subnavItems %}
+                                <!-- collapse button for mobile nav level 3 menu items -->
+                              <button class="tfwmds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="tfwmds-mega-menu__link-arrow-icon"><use xlink-href="#tfwmds-general-chevron-right" href="#tfwmds-general-chevron-right"></use></svg></button>
+                              <!-- Start submenu child (level 3) list -->
+                              <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="tfwmds-mega-menu__sub-menu-child-menu">
+                                {% for subnavChildItem in subnavItem.subnavItems %}
+                                {# Set auto generated href string for fallback - ignore 2nd level nav name if it is unlinked #}
+                                {% set _hrefString = "/" + navItem.name + "/" + subnavChildItem.name + "/" if subnavItem.unlinked else "/" + navItem.name + "/" + subnavItem.name + "/" + subnavChildItem.name + "/" %}
+                                {# Set href if it is set else fallback to auto generated link #}
+                                {% set _hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else _hrefString | lower | replace(" ", "-") %}
+                                <li class="tfwmds-mega-menu__sub-menu-child-item">
+                                  <a href="{{_hrefSubnavChild}}" class="tfwmds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
+                                </li>
+                                {% endfor %}
+                              </ul>
+                              <!-- End submenu child (level 3) list -->
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                        <!-- End submenu (level 2) -->
+                      </div>
+                    </div>
+                    <!-- End mega menu container -->
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            <!-- End primary (level 1) navigation -->
+          </div>
+          <!-- End scrollable container -->
+          {% if(params.search) %}
+          <div class="tfwmds-mega-menu__primary-menu-item tfwmds-mega-menu__search">
+            <button class="tfwmds-mega-menu__primary-menu-link tfwmds-mega-menu__search-btn">
+              <svg class="tfwmds-mega-menu__search-icon">
+                <title>Search</title>
+                <use xlink:href="#tfwmds-general-search" href="#tfwmds-general-search"></use>
+              </svg>
+              <svg class="tfwmds-mega-menu__search-close-icon">
+                <title>Close</title>
+                <use xlink:href="#tfwmds-general-cross" href="#tfwmds-general-cross"></use>
+              </svg>
+            </button>
+            <div class="tfwmds-mega-menu__container tfwmds-mega-menu__search-container">
+              <div class="tfwmds-search-container">
+                {{tfwmdsSearchbar()}}
+                {% if(params.searchSuggestions) %}
+                  <p class="tfwmds-search-heading tfwmds-h1">I want to...</p>
+                  <div class="tfwmds-grid">
+                    <div class="tfwmds-col-1-2">
+                      <ul class="tfwmds-search-list">
+                      {% for i in range(0, 4) %}
+                        <li class="tfwmds-search-list__item">
+                          <a href="#" class="tfwmds-link tfwmds-link--with-chevron">{{params.searchSuggestions[i]}}
+                            {{tfwmdsIcon({
+                              class: 'tfwmds-link__chevron tfwmds-link__chevron--right',
+                              icon: 'general-chevron-right'
+                            })}}
+                          </a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    </div>
+                    <div class="tfwmds-col-1-2">
+                      <ul class="tfwmds-search-list">
+                      {% for i in range(4, params.searchSuggestions.length) %}
+                        <li class="tfwmds-search-list__item">
+                          <a href="#" class="tfwmds-link tfwmds-link--with-chevron">{{params.searchSuggestions[i]}}
+                            {{tfwmdsIcon({
+                              class: 'tfwmds-link__chevron tfwmds-link__chevron--right',
+                              icon: 'general-chevron-right'
+                            })}}
+                          </a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </nav>
+        {% endif %}
+      </div>
+    </div>
+
+
+    {% if params.banner or params.breadcrumbs %}
+      <div class="tfwmds-container">
+        {% if params.banner %}
+          <!-- Phase banner -->
+          {{
+            tfwmdsBanner ({
+              link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+              linkTitle: 'WMN Design System Github',
+              phase: true
+            })
+          }}
+        {% endif %}
+
+        {% if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
+        {% set breadcrumbList = null if params.breadcrumbs.section === params.breadcrumbs.pageTitle else {
+              contentText: params.breadcrumbs.pageTitle
+            } %}
+        <!-- Breadcrumbs -->
+        {{
+          tfwmdsBreadcrumb({
+            items: [{
+              contentText: params.breadcrumbs.section or "Components",
+              unlinkedItem: false if breadcrumbList else true
+            }, breadcrumbList],
+            label: params.label
+          })
+        }}
+      {% endif %}
+    </div>
+  {% endif %}
+</header>
+
+{% if params.megaMenuDemo %}
+  <!-- Content space for example purposes only. DO NOT INCLUDE -->
+  <div class="demo-content">
+    <p>Example content <br> <a href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
+  </div>
+  <!-- END DO NOT INCLUDE -->
+{% endif %}
+{% endmacro %}

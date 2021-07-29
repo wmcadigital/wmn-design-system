@@ -1,0 +1,16 @@
+// Vars
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"; // Google Fonts
+@import "vars";
+// Mixins
+@import "mixins";
+
+// General non-component Styles
+@import "styles/styles"; // Import general styles
+
+// Component Styles
+[class*="tfwmds-"] {
+  @import "../../components/components"; // Import all pattern styles
+
+  // Pattern Styles
+  @import "../../patterns/patterns"; // Import all pattern styles
+}

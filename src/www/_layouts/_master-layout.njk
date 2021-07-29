@@ -1,42 +1,42 @@
 {# IMPORTS - import each component so it is ready to use in every template, the Prototype Toolkit references this too #}
 {# Components #}
-{% from "wmnds/components/accordion/_accordion.njk"                                        import wmndsAccordion %}
-{% from "wmnds/components/breadcrumb/_breadcrumb.njk"                                      import wmndsBreadcrumb %}
-{% from "wmnds/components/button/_button.njk"                                              import wmndsButton %}
-{% from "wmnds/components/content-card/_content-card.njk"                                  import wmndsContentCard %}
-{% from "wmnds/components/details/_details.njk"                                            import wmndsDetails %}
-{% from "wmnds/components/disruption-indicator/small/_small.njk"                           import wmndsDisruptionIndicatorSmall %}
-{% from "wmnds/components/disruption-indicator/medium/_medium.njk"                         import wmndsDisruptionIndicatorMedium %}
-{% from "wmnds/components/disruption-indicator/large/_large.njk"                           import wmndsDisruptionIndicatorLarge %}
-{% from "wmnds/components/file-download/_file-download.njk"                                import wmndsFileDownload %}
-{% from "wmnds/components/icon/_icon.njk"                                                  import wmndsIcon %}
-{% from "wmnds/components/in-text-step/_in-text-step.njk"                                  import wmndsInTextStep %}
-{% from "wmnds/components/inset-text/_inset-text.njk"                                      import wmndsInsetText %}
-{% from "wmnds/components/link/link/_link.njk"                                             import wmndsLink %}
-{% from "wmnds/components/link/as-button/_as-button.njk"                                   import wmndsLinkAsButton %}
-{% from "wmnds/components/loader/_loader.njk"                                              import wmndsLoader %}
-{% from "wmnds/components/message/help/_help.njk"                                          import wmndsMsgHelp %}
-{% from "wmnds/components/message/summary/_summary.njk"                                    import wmndsMsgSummary %}
-{% from "wmnds/components/phase-indicator/_phase-indicator.njk"                            import wmndsPhaseIndicator %}
-{% from "wmnds/components/phase-indicator/phase-indicator-link/_phase-indicator-link.njk"  import wmndsPhaseIndicatorLink %}
-{% from "wmnds/components/table/_table.njk"                                                import wmndsTable %}
-{% from "wmnds/components/warning-text/_warning-text.njk"                                  import wmndsWarningText %}
+{% from "tfwmds/components/accordion/_accordion.njk"                                        import tfwmdsAccordion %}
+{% from "tfwmds/components/breadcrumb/_breadcrumb.njk"                                      import tfwmdsBreadcrumb %}
+{% from "tfwmds/components/button/_button.njk"                                              import tfwmdsButton %}
+{% from "tfwmds/components/content-card/_content-card.njk"                                  import tfwmdsContentCard %}
+{% from "tfwmds/components/details/_details.njk"                                            import tfwmdsDetails %}
+{% from "tfwmds/components/disruption-indicator/small/_small.njk"                           import tfwmdsDisruptionIndicatorSmall %}
+{% from "tfwmds/components/disruption-indicator/medium/_medium.njk"                         import tfwmdsDisruptionIndicatorMedium %}
+{% from "tfwmds/components/disruption-indicator/large/_large.njk"                           import tfwmdsDisruptionIndicatorLarge %}
+{% from "tfwmds/components/file-download/_file-download.njk"                                import tfwmdsFileDownload %}
+{% from "tfwmds/components/icon/_icon.njk"                                                  import tfwmdsIcon %}
+{% from "tfwmds/components/in-text-step/_in-text-step.njk"                                  import tfwmdsInTextStep %}
+{% from "tfwmds/components/inset-text/_inset-text.njk"                                      import tfwmdsInsetText %}
+{% from "tfwmds/components/link/link/_link.njk"                                             import tfwmdsLink %}
+{% from "tfwmds/components/link/as-button/_as-button.njk"                                   import tfwmdsLinkAsButton %}
+{% from "tfwmds/components/loader/_loader.njk"                                              import tfwmdsLoader %}
+{% from "tfwmds/components/message/help/_help.njk"                                          import tfwmdsMsgHelp %}
+{% from "tfwmds/components/message/summary/_summary.njk"                                    import tfwmdsMsgSummary %}
+{% from "tfwmds/components/phase-indicator/_phase-indicator.njk"                            import tfwmdsPhaseIndicator %}
+{% from "tfwmds/components/phase-indicator/phase-indicator-link/_phase-indicator-link.njk"  import tfwmdsPhaseIndicatorLink %}
+{% from "tfwmds/components/table/_table.njk"                                                import tfwmdsTable %}
+{% from "tfwmds/components/warning-text/_warning-text.njk"                                  import tfwmdsWarningText %}
 {# Form elements #}
-{% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk"                        import wmndsCheckboxes %}
-{% from "wmnds/components/form-elements/date-input/_date-input.njk"                        import wmndsDateInput %}
-{% from "wmnds/components/form-elements/dropdown/_dropdown.njk"                            import wmndsDropdown %}
-{% from "wmnds/components/form-elements/file-upload/_file-upload.njk"                      import wmndsFileUpload %}
-{% from "wmnds/components/form-elements/form-label/_form-label.njk"                        import wmndsFormLabel %}
-{% from "wmnds/components/form-elements/progress-indicator/_progress-indicator.njk"        import wmndsProgressIndicator %}
-{% from "wmnds/components/form-elements/question/_question.njk"                            import wmndsQuestion %}
-{% from "wmnds/components/form-elements/radios/_radios.njk"                                import wmndsRadios %}
-{% from "wmnds/components/form-elements/text-input/_text-input.njk"                        import wmndsTextInput %}
-{% from "wmnds/components/form-elements/textarea/_textarea.njk"                            import wmndsTextarea %}
+{% from "tfwmds/components/form-elements/checkboxes/_checkboxes.njk"                        import tfwmdsCheckboxes %}
+{% from "tfwmds/components/form-elements/date-input/_date-input.njk"                        import tfwmdsDateInput %}
+{% from "tfwmds/components/form-elements/dropdown/_dropdown.njk"                            import tfwmdsDropdown %}
+{% from "tfwmds/components/form-elements/file-upload/_file-upload.njk"                      import tfwmdsFileUpload %}
+{% from "tfwmds/components/form-elements/form-label/_form-label.njk"                        import tfwmdsFormLabel %}
+{% from "tfwmds/components/form-elements/progress-indicator/_progress-indicator.njk"        import tfwmdsProgressIndicator %}
+{% from "tfwmds/components/form-elements/question/_question.njk"                            import tfwmdsQuestion %}
+{% from "tfwmds/components/form-elements/radios/_radios.njk"                                import tfwmdsRadios %}
+{% from "tfwmds/components/form-elements/text-input/_text-input.njk"                        import tfwmdsTextInput %}
+{% from "tfwmds/components/form-elements/textarea/_textarea.njk"                            import tfwmdsTextarea %}
 {# Patterns #}
-{% from "wmnds/patterns/travel-mode-page-banner/_travel-mode-page-banner.njk"              import wmndsTravelModePageBanner %}
+{% from "tfwmds/patterns/travel-mode-page-banner/_travel-mode-page-banner.njk"              import tfwmdsTravelModePageBanner %}
 
 <!DOCTYPE html>
-<html lang="en-gb" class="wmnds-html">
+<html lang="en-gb" class="tfwmds-html">
   <!-- Head -->
   {% include "www/_partials/_head.njk" %}
   <!-- end: Head -->
@@ -51,9 +51,9 @@
     <![endif]-->
 
     {# header #}
-    {% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
+    {% from "tfwmds/patterns/header-v2/_header-v2.njk" import tfwmdsHeaderV2 %}
     {{
-      wmndsHeaderV2 ({
+      tfwmdsHeaderV2 ({
         id: "mega-menu",
         navItems: navItems,
         banner: true,
@@ -72,15 +72,15 @@
     {# end:summary #}
 
     {# main #}
-    <main class="wmnds-container wmnds-container--main">
+    <main class="tfwmds-container tfwmds-container--main">
       {% block body %}{% endblock %}
     </main>
     {# end:main #}
 
     {# footer #}
-    {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+    {% from "tfwmds/patterns/footer/_footer.njk" import tfwmdsFooter %}
     {{
-      wmndsFooter({
+      tfwmdsFooter({
         feedback: true,
         bottomMenu: [{
           name: "Privacy & Cookies Policy",

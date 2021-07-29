@@ -1,0 +1,23 @@
+&.tfwmds-fe-date-input {
+  display: block;
+  width: 100%;
+
+  &__day {
+    max-width: 2.7em;
+  }
+
+  &__month {
+    max-width: 2.7em;
+  }
+
+  &__year {
+    max-width: 4.5em;
+  }
+
+  &__day,
+  &__month,
+  &__year {
+    display: inline-block;
+    margin-right: $size-md;
+  }
+}

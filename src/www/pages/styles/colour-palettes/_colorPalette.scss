@@ -1,6 +1,6 @@
 $cp-swatch-height: 50px;
 
-.wmnds-website-color-swatch {
+.tfwmds-website-color-swatch {
   padding: $size-sm;
 
   &__inner {
@@ -12,7 +12,7 @@ $cp-swatch-height: 50px;
 }
 
 @each $color, $hex in $palettes {
-  .wmnds-website-bg-color-#{$color} {
+  .tfwmds-website-bg-color-#{$color} {
     background-color: $hex;
   }
 }

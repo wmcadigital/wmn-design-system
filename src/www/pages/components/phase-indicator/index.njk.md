@@ -27,15 +27,15 @@ A service can either be in Alpha (prototype stage) or Beta (when it is on a publ
 
 {% endmarkdown %}
 
-{% from "wmnds/components/phase-indicator/_phase-indicator.njk" import wmndsPhaseIndicator %}
-{% from "wmnds/components/phase-indicator/phase-indicator-link/_phase-indicator-link.njk" import wmndsPhaseIndicatorLink %}
+{% from "tfwmds/components/phase-indicator/_phase-indicator.njk" import tfwmdsPhaseIndicator %}
+{% from "tfwmds/components/phase-indicator/phase-indicator-link/_phase-indicator-link.njk" import tfwmdsPhaseIndicatorLink %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {{
   compExample([
-    wmndsPhaseIndicator()
+    tfwmdsPhaseIndicator()
   ], {
-    componentPath: "wmnds/components/phase-indicator/",
+    componentPath: "tfwmds/components/phase-indicator/",
     njk: true,
     js: false,
     iframe: false
@@ -48,15 +48,15 @@ A service can either be in Alpha (prototype stage) or Beta (when it is on a publ
 {% endmarkdown %}
 {{
   compExample([
-    wmndsPhaseIndicatorLink({
+    tfwmdsPhaseIndicatorLink({
       href:'#',
       linkTitle: 'Link title',
       contentText: 'Try our new disruptions page'
     })
   ], {
-    componentPath: "wmnds/components/phase-indicator/phase-indicator-link/",
+    componentPath: "tfwmds/components/phase-indicator/phase-indicator-link/",
     njk: true,
-    njkProps: wmndsPhaseIndicatorLinkProps,
+    njkProps: tfwmdsPhaseIndicatorLinkProps,
     js: false,
     iframe: false
   })

@@ -26,7 +26,7 @@ See [JavaScript Coding Standards](coding-standards/js.md#formatting-and-linting)
 
 We use [Jest](https://jestjs.io/), an automated testing platform with an assertion library, and [Puppeteer](https://pptr.dev/) that is used to control [headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome).
 
-We test individual components and for instance global Sass files. See [all.test.js](../../src/wmnds/all.test.js). for examples of global tests we run, and [checkboxes.test.js](../../src/wmnds/components/checkboxes/checkboxes.test.js) for an example of component tests.
+We test individual components and for instance global Sass files. See [all.test.js](../../src/tfwmds/all.test.js). for examples of global tests we run, and [checkboxes.test.js](../../src/tfwmds/components/checkboxes/checkboxes.test.js) for an example of component tests.
 
 We aim to write the description of our tests in as "natural language" as possible, for instance "back-link component fails to render if the required fields are not included".
 
@@ -34,11 +34,11 @@ We aim to write the description of our tests in as "natural language" as possibl
 
 You can run a subset of the test suite that only tests components by running:
 
-    `npm test -- src/wmnds/components/button`
+    `npm test -- src/tfwmds/components/button`
 
 Note: There's a watch mode that keeps a testing session open waiting for changes that can be used with:
 
-    `npm test -- --watch src/wmnds/components/button`
+    `npm test -- --watch src/tfwmds/components/button`
 
 ### Updating component snapshots
 
@@ -46,6 +46,6 @@ Note: There's a watch mode that keeps a testing session open waiting for changes
 
 If a snapshot test fails, review the difference in the console. If the change is the correct change to make, run:
 
-`npm test -- -u src/wmnds/components/button`
+`npm test -- -u src/tfwmds/components/button`
 
 This will update the snapshot file. Commit this file separately with a commit message that explains you're updating the snapshot file and an explanation of what caused the change.

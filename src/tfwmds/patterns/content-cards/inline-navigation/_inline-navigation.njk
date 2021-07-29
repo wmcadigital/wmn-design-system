@@ -1,0 +1,38 @@
+{% macro tfwmdsContentCardInlineNavigation(params) %}
+{# imports #}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
+{% from "tfwmds/components/inset-text/_inset-text.njk" import tfwmdsInsetText %}
+{# Set #}
+{% set title = "Page contents" if params.withCurrentPage else "Related content" %}
+{# Set up nav links #}
+{% set navLinks = ["Information for drivers", "Information for bus passengers", "Information for tram passengers", "Information for pedestrians", "Getting  to venues and attractions"] %}
+
+{% call tfwmdsContentCard() %}
+    <nav class="tfwmds-p-sm">
+        <h3 class="tfwmds-content-card__title">{{title}}</h3>
+        <ul class="tfwmds-content-card__list tfwmds-m-b-none">
+            {#- Current page -#}
+            {% if params.withCurrentPage %}
+            <li class="tfwmds-content-card__list-item">
+                {{
+                    tfwmdsInsetText({
+                        html: "
+    <span aria-current=\"page\">
+        Overview
+    </span>
+                        "
+                    }) | indent(14) | trim
+                }}
+            </li>
+            {% endif -%}
+            {#- Loop through links  -#}
+            {% for link in navLinks %}
+            <li class="tfwmds-content-card__list-item">
+                <a href="#" target="_self" title="Link title" class="tfwmds-link">{{link}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endcall %}
+
+{% endmacro %}

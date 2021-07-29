@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "File upload" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/form-elements/file-upload/_file-upload.njk" import wmndsFileUpload %}
+{% from "tfwmds/components/form-elements/file-upload/_file-upload.njk" import tfwmdsFileUpload %}
 
 {% block content %}
 {% markdown %}
@@ -26,14 +26,14 @@
 {{
 compExample(
     [
-      wmndsFileUpload({
+      tfwmdsFileUpload({
         fileSelected: false
       })
     ],
     {
-      componentPath: "wmnds/components/form-elements/file-upload/",
+      componentPath: "tfwmds/components/form-elements/file-upload/",
       njk: true,
-      njkProps: wmndsFileUploaderProps,
+      njkProps: tfwmdsFileUploaderProps,
       js: false,
       iframe: false
     }
@@ -48,14 +48,14 @@ compExample(
 
 {{
     compExample([
-      wmndsFileUpload({
+      tfwmdsFileUpload({
         id: "uploaded-fileupload",
         fileSelected: true
       })
     ],{
-      componentPath: "wmnds/components/form-elements/file-upload/",
+      componentPath: "tfwmds/components/form-elements/file-upload/",
       njk: true,
-      njkProps: wmndsFileUploaderProps,
+      njkProps: tfwmdsFileUploaderProps,
       js: false,
       iframe: false
     })
@@ -69,7 +69,7 @@ compExample(
 
 {{
     compExample([
-      wmndsFileUpload({
+      tfwmdsFileUpload({
         id: "error-fileupload",
         fileSelected: true,
         error: true,
@@ -78,9 +78,9 @@ compExample(
         }
       })
     ],{
-      componentPath: "wmnds/components/form-elements/file-upload/",
+      componentPath: "tfwmds/components/form-elements/file-upload/",
       njk: true,
-      njkProps: wmndsFileUploaderProps,
+      njkProps: tfwmdsFileUploaderProps,
       js: false,
       iframe: false
     })

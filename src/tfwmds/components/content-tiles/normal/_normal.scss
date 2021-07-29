@@ -1,0 +1,51 @@
+&.tfwmds-content-tile {
+  height: 100%;
+  padding: $size-sm;
+  border-bottom: 5px solid get-color(primary);
+  background-color: $white;
+
+  &__legend {
+    padding-left: $size-sm;
+    border-left: 3px solid get-color(information);
+  }
+
+  &__copy {
+    // Constraints for iframe
+    iframe {
+      width: 100%;
+    }
+
+    .tfwmds-link {
+      position: relative;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+
+  // One main link modifier
+  &--with-one-link {
+    display: flex;
+    position: relative;
+    padding-bottom: $size-md;
+    flex-direction: column;
+  }
+
+  // Nav modifier
+  &--nav {
+    li {
+      margin-top: $size-sm;
+    }
+  }
+
+  // Yellow modifier
+  &--yellow {
+    background-color: get-color(plannedDisruption);
+
+    .tfwmds-link {
+      color: get-color(text);
+    }
+  }
+}

@@ -1,15 +1,15 @@
 {% extends "www/_layouts/layout-fullwidth.njk" %}
 {% set pageTitle="A to Z content style guide" %} {% set section = "Styles" %}
 {# Imports #}
-{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
-{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
-{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{%- from "tfwmds/components/content-tiles/normal/_normal.njk" import tfwmdsContentTilesNormal -%}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
 {# Set array of tiles #}
 {% block content %}
 
 {# About the style guide #}
-<div class="wmnds-grid">
-  <div class="wmnds-col-1 wmnds-col-md-3-4">
+<div class="tfwmds-grid">
+  <div class="tfwmds-col-1 tfwmds-col-md-3-4">
     <h2>Writing content for Transport for West Midlands</h2>
     <p>
       You should create all content with user-focused content design principles. This means content has an identified
@@ -26,7 +26,7 @@
     <ul>
       <li>
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: 'https://readabilityguidelines.co.uk/clear-language/',
             linkTitle: 'advice about clear language',
             contentText: 'advice about clear language'
@@ -37,7 +37,7 @@
       <li>
         the
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: 'http://www.plainenglish.co.uk/the-a-z-of-alternative-words.html',
             linkTitle: 'plain English Campaign’s A to Z of alternative words',
             contentText: 'plain English Campaign’s A to Z of alternative words'
@@ -50,7 +50,7 @@
     <p>
       Read the
       {{
-        wmndsLink({
+        tfwmdsLink({
           link: 'https://www.gov.uk/guidance/content-design/what-is-content-design',
           linkTitle: 'GOV.UK introduction to content design',
           contentText: 'GOV.UK introduction to content design'
@@ -65,7 +65,7 @@
     <p>
       If something is not covered by this style guide, check the
       {{
-        wmndsLink({
+        tfwmdsLink({
           link: 'https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style',
           linkTitle: 'GOV.UK Style Guide',
           contentText: 'GOV.UK style guide'
@@ -80,43 +80,43 @@
 
 
     {# A to Z accordions #}
-    <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--align-center">
-      <div class="wmnds-col-1 wmnds-col-md-1-2">
+    <div class="tfwmds-grid tfwmds-grid--justify-between tfwmds-grid--align-center">
+      <div class="tfwmds-col-1 tfwmds-col-md-1-2">
         <h3 id="atozofstyle">A to Z of style</h3>
       </div>
-      <div class="wmnds-col-1 wmnds-col-md-auto wmnds-m-b-md js-accordion-controls">
-        <button class="wmnds-btn wmnds-btn--primary js-accordion-controls-open">Open all</button>
-        <button class="wmnds-btn wmnds-btn--primary js-accordion-controls-close wmnds-m-l-xs">Close all</button>
+      <div class="tfwmds-col-1 tfwmds-col-md-auto tfwmds-m-b-md js-accordion-controls">
+        <button class="tfwmds-btn tfwmds-btn--primary js-accordion-controls-open">Open all</button>
+        <button class="tfwmds-btn tfwmds-btn--primary js-accordion-controls-close tfwmds-m-l-xs">Close all</button>
       </div>
     </div>
-    <div class="wmnds-col-1">
+    <div class="tfwmds-col-1">
       {% for section in aToZOfStyles %}
-        <div class="wmnds-accordion wmnds-m-b-sm">
-          <button id="{{section.letter | lower}}" aria-controls="{{section.letter | lower}}" class="wmnds-accordion__summary-wrapper" aria-expanded="false">
-            <div class="wmnds-accordion__summary">
-              <h4 class="wmnds-m-b-none">{{section.letter}}</h4>
+        <div class="tfwmds-accordion tfwmds-m-b-sm">
+          <button id="{{section.letter | lower}}" aria-controls="{{section.letter | lower}}" class="tfwmds-accordion__summary-wrapper" aria-expanded="false">
+            <div class="tfwmds-accordion__summary">
+              <h4 class="tfwmds-m-b-none">{{section.letter}}</h4>
             </div>
             <!-- plus icon -->
             {{
-              wmndsIcon({
+              tfwmdsIcon({
                 icon: 'general-expand',
-                class: 'wmnds-accordion__icon'
+                class: 'tfwmds-accordion__icon'
               }) | indent(4) | trim
             }}
             <!-- minus icon -->
             {{
-              wmndsIcon({
+              tfwmdsIcon({
                 icon: 'general-minimise',
-                class: 'wmnds-accordion__icon wmnds-accordion__icon--minimise'
+                class: 'tfwmds-accordion__icon tfwmds-accordion__icon--minimise'
               }) | indent(4) | trim
             }}
           </button>
-          <div class="wmnds-accordion__content" id="accordion-{{section.letter | lower}}">
+          <div class="tfwmds-accordion__content" id="accordion-{{section.letter | lower}}">
             {% for style in section.styles %}
             {# If custom id use that, else generate an id #}
             {% set id = style.id if style.id else style.title | replace(r/\W/gi, '') | replace(' ', '-') | lower %}
 
-            <h5 id="{{id}}" class="{{'wmnds-m-t-xl' if not loop.first}}">
+            <h5 id="{{id}}" class="{{'tfwmds-m-t-xl' if not loop.first}}">
               <span>{{style.title }}</span>
             </h5>
             {{style.content | replace('&', '&amp;') | safe}}

@@ -1,0 +1,177 @@
+{% macro tfwmdsContentTileTravelUpdates(params) %}
+{# Imports #}
+{%- from "tfwmds/components/disruption-indicator/large/_large.njk" import tfwmdsDisruptionIndicatorLarge as large -%}
+{%- from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium as medium -%}
+{%- from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium as star -%}
+
+<div class="tfwmds-content-tile tfwmds-content-tile__container">
+   <h2 class="tfwmds-content-tile__title">Travel updates</h2>
+   <div class="tfwmds-content-tile__copy">
+      <p>All routes through this disruption.</p>
+   </div>
+   <h3>Roads</h3>
+
+   <div class="tfwmds-content-tile__container-wrapper">
+      {{
+         large({
+            primaryText: "Hagley Road",
+            contentText: 'Usual traffic',
+            iconLeft: "modes-isolated-roads",
+            iconRight: 'general-success'
+         })
+      }}
+   </div>
+   <div class="tfwmds-content-tile__container-wrapper">
+      {{
+         large({
+            primaryText: "Ring Road",
+            contentText: 'Usual traffic',
+            iconLeft: "modes-isolated-roads",
+            iconRight: 'general-warning-triangle',
+            classes: 'tfwmds-disruption-indicator-large--warning'
+         })
+      }}
+   </div>
+   <h3>Bus Routes</h3>
+   <div class="tfwmds-col-1-3 tfwmds-col-md-auto">
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               contentText: '9',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-success',
+               classes: 'tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus'
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--success tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '12',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-success'
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--warning tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '13',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-warning-triangle'
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--error tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '126',
+               iconLeft: "modes-isolated-bus",
+               iconRight: 'general-warning-triangle'
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--severe tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: 'X10',
+               iconRight: "general-warning-triangle",
+               iconLeft: "modes-isolated-bus"
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+   </div>
+   <div class="tfwmds-col-1-3 tfwmds-col-md-auto">
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '10',
+               iconRight: "general-success",
+               iconLeft: "modes-isolated-bus"
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--success tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '12A',
+               iconRight: "general-success",
+               iconLeft: "modes-isolated-bus"
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+               classes: 'tfwmds-disruption-indicator-medium--warning tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+               contentText: '13A',
+               iconRight: "general-warning-triangle",
+               iconLeft: "modes-isolated-bus"
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+            classes: 'tfwmds-disruption-indicator-medium--error tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+            contentText: 'X8',
+            iconRight: "general-warning-triangle",
+            iconLeft: "modes-isolated-bus"
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+      <div class="tfwmds-content-tile__container-bus">
+         {{
+            medium({
+            classes: 'tfwmds-disruption-indicator-medium--severe tfwmds-disruption-indicator-medium--narrow-travel-updates tfwmds-disruption-indicator-medium--narrow-travel-updates-bus',
+            contentText: '23',
+            iconRight: "general-warning-triangle",
+            iconLeft: "modes-isolated-bus"
+            })
+         }}
+         <svg class="tfwmds-content-tile__container-star">
+            <use xlink:href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty" href="/img/tfwmds-icons.min.svg#tfwmds-general-star-empty"></use>
+         </svg>
+      </div>
+   </div>
+   {% from "tfwmds/components/message/help/_help.njk" import tfwmdsMsgHelp %}
+   {{
+      tfwmdsMsgHelp({
+         contentText: 'Save bus routes to your homepage by pressing the star icon'
+      })
+   }}
+</div>
+{% endmacro %}

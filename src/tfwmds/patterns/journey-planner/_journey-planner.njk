@@ -1,0 +1,229 @@
+{% macro tfwmdsJourneyPlanner(params) %}
+
+{# Imports of components #}
+{% from "tfwmds/patterns/autocomplete/_autocomplete.njk" import tfwmdsAutocomplete %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/form-elements/dropdown/_dropdown.njk" import tfwmdsDropdown %}
+{% from "tfwmds/components/message/summary/_summary.njk" import tfwmdsMsgSummary %}
+
+
+{# Set params #}
+{% set formTitle = params.formTitle if params.formTitle else "Plan your journey" %}
+{% set isOpen = " tfwmds-is--open" if params.isOpen %}
+{% set suffix = "--opened" if params.isOpen else "--collapsed" %}
+{% set detailsBtnText = "Hide details" if params.isOpen else "Add details" %}
+{% set detailsBtnIcon = "general-minimise" if params.isOpen else "general-expand" %}
+{% set marginTopClass = "" if params.isOpen else "tfwmds-m-t-lg" %}
+
+
+
+
+<div style="max-width: 448px">
+
+    <div class="tfwmds-journey-planner {{isOpen}}">
+
+        <div class="tfwmds-p-md">
+
+            <h2>{{formTitle}}</h2>
+
+            <form class="tfwmds-journey-planner__form" name="jphome" action="//journeyplanner.tfwm.org.uk/Home/HandleWidgetQuery" method="GET">
+
+                <div class="tfwmds-journey-planner__from">
+                    {{
+                        tfwmdsAutocomplete({
+                            id: ("mainjp-from" + suffix ),
+                            name: "Origin",
+                            label: {
+                                contentText: 'From',
+                                classes: "tfwmds-h5 tfwmds-m-t-xsm"
+                            },
+                            placeholder: 'Enter station or postcode',
+                            loading: false,
+                            showSuggestions: false,
+                            textSuggestions: true,
+                            isRequired: true
+                        })
+                    }}
+                </div>
+
+                <div class="tfwmds-journey-planner__to">
+                    <div class="tfwmds-journey-planner__switch">
+                        {{
+                            tfwmdsButton({
+                                type: "link",
+                                contentText: "Switch",
+                                classes: "tfwmds-m-t--lg"
+                            })
+                        }}
+
+                        {{
+                            tfwmdsIcon({
+                                icon: 'general-swap',
+                                class: 'tfwmds-journey-planner__switch-icon'
+                            }) | safe
+                        }}
+                    </div>
+
+                    {{
+                        tfwmdsAutocomplete({
+                            id: ("mainjp-to" + suffix),
+                            name: "Destination",
+                            label: {
+                                contentText: 'To',
+                                classes: "tfwmds-h5"
+                            },
+                            placeholder: 'Enter station or postcode',
+                            loading: false,
+                            showSuggestions: false,
+                            textSuggestions: true,
+                            isRequired: true
+                        })
+                    }}
+
+                </div>
+
+
+                <div class="tfwmds-journey-planner__how">
+                    <h5>Which modes of transport will you use?</h5>
+                    <div class="tfwmds-grid tfwmds-grid--spacing-3-sm tfwmds-grid--spacing-sm-3-md">
+                        <label class="tfwmds-col-1-3">
+                            <input type="checkbox" class="tfwmds-buy-a-ticket__mode-checkbox tfwmds-screenreaders-only" name="useBus">
+                            <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                                {{
+                                    tfwmdsIcon({
+                                        icon: 'modes-isolated-bus',
+                                        class: 'tfwmds-btn__icon '
+                                    })
+                                }}
+                                Bus
+                            </div>
+                        </label>
+                        <label class="tfwmds-col-1-3">
+                            <input type="checkbox" class="tfwmds-buy-a-ticket__mode-checkbox tfwmds-screenreaders-only" name="useTrain">
+                            <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                                {{
+                                    tfwmdsIcon({
+                                        icon: 'modes-isolated-rail',
+                                        class: 'tfwmds-btn__icon '
+                                    })
+                                }}
+                                Train
+                            </div>
+                        </label>
+                        <label class="tfwmds-col-1-3">
+                            <input type="checkbox" class="tfwmds-buy-a-ticket__mode-checkbox tfwmds-screenreaders-only" name="useTram">
+                            <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                                {{
+                                    tfwmdsIcon({
+                                        icon: 'modes-isolated-metro',
+                                        class: 'tfwmds-btn__icon '
+                                    })
+                                }}
+                                Tram
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tfwmds-journey-planner__when">
+
+                    <h5>Leaving</h5>
+                    <input type="hidden" name="journeyTimeType" value="leave"/>
+
+                    <div class="tfwmds-grid tfwmds-grid--spacing-2-lg">
+                        <div class="tfwmds-col-2-3">
+                            {{
+                                tfwmdsDropdown({
+                                    id: ("mainjp-day" + suffix ),
+                                    secondaryColor: true,
+                                    name: "day",
+                                    items: [
+                                        {
+                                            value: "today",
+                                            contentText: "Today",
+                                            selected: true,
+                                            disabled: false
+                                        },
+                                        {
+                                            value: "tomorrow",
+                                            contentText: "Tomorrow",
+                                            selected: false,
+                                            disabled: false
+                                        }
+                                    ],
+                                    describedBy: null,
+                                    label: "Day",
+                                    labelClasses: "tfwmds-screenreaders-only",
+                                    classes: null,
+                                    error: false,
+                                    errorMessage: {
+                                        id: null,
+                                        contentText: "Please select an option",
+                                        contentHTML: null,
+                                        classes: null
+                                    }
+                                })
+                            }}
+                        </div>
+                        <div class="tfwmds-col-1-3">
+                            {{
+                                tfwmdsDropdown({
+                                    id: ("mainjp-time" + suffix),
+                                    name: "SelectedJourneyTime",
+                                    secondaryColor: true,
+                                    type: "time",
+                                    describedBy: null,
+                                    label: "Time",
+                                    labelClasses: "tfwmds-screenreaders-only",
+                                    classes: null,
+                                    error: false,
+                                    errorMessage: {
+                                        id: null,
+                                        contentText: "Please select an option",
+                                        contentHTML: null,
+                                        classes: null
+                                    }
+                                })
+                            }}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tfwmds-journey-planner__submit {{marginTopClass}}">
+                    <div class="tfwmds-grid tfwmds-grid--spacing-sm-2-lg">
+                        <div class="tfwmds-col-1 tfwmds-col-sm-1-2">
+                        {{
+                            tfwmdsButton({
+                                contentText: detailsBtnText,
+                                classes: "tfwmds-btn--block tfwmds-btn--align-left tfwmds-m-b-md",
+                                role: "button",
+                                isDarkBg: true,
+                                iconRight: detailsBtnIcon
+                            })
+                        }}
+                        </div>
+                        <div class="tfwmds-col-1 tfwmds-col-sm-1-2">
+                        {{
+                            tfwmdsButton({
+                                contentText: "Plan my journey",
+                                classes: "tfwmds-btn--block tfwmds-btn--align-left",
+                                role: "submit",
+                                iconRight: "general-chevron-right"
+                            })
+                        }}
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endmacro %}

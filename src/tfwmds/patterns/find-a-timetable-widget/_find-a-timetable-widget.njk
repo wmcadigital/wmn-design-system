@@ -1,0 +1,115 @@
+{% macro tfwmdsFindATimetableWidget(params) %}
+
+{# Imports of components #}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
+{% from "tfwmds/components/form-elements/text-input/_text-input.njk" import tfwmdsTextInput %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+
+{# Set params #}
+{% set formTitle = params.formTitle if params.formTitle else "Find a timetable" %}
+{% set contentText = params.contentText if params.contentText else "Select your transport mode" %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
+{% set isOpen = " tfwmds-is--open" if params.isOpen %}
+{% set placeholder = "" if params.placeholder else "Enter a service number" %}
+{% set isChecked = "checked" if params.isOpen else "" %}
+
+
+<div style="max-width: 448px">
+
+    <div class="tfwmds-find-a-timetable-widget {{isOpen}}">
+
+        {% call tfwmdsContentCard() %}
+            <div class="tfwmds-p-md">
+
+                <h2>{{formTitle}}</h2>
+                <div class="tfwmds-find-a-timetable__content">
+                    {{_content}}
+                </div>
+
+                <form class="tfwmds-find-a-timetable-widget__form">
+
+                    <div class="tfwmds-find-a-timetable-widget__travel-modes tfwmds-grid tfwmds-grid--spacing-3-sm tfwmds-m-t-sm">
+
+                        <label class="tfwmds-col-1-3">
+                            <input type="checkbox" class="tfwmds-find-a-timetable-widget__mode-checkbox tfwmds-screenreaders-only" name="mode" value="Bus" {{ isChecked }}>
+                            <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                                {{
+                                    tfwmdsIcon({
+                                        icon: 'modes-isolated-bus',
+                                        class: 'tfwmds-btn__icon '
+                                    })
+                                }}
+                                Bus
+                            </div>
+                        </label>
+                        
+                        <div class="tfwmds-col-1-3">
+                            
+                            {{
+                                tfwmdsLinkAsButton({
+                                    type: "mode",
+                                    contentText: "Train",
+                                    link: "https://legacy.wmnetwork.co.uk/timetables/#/?mode=Train",
+                                    linkTarget: "_blank",
+                                    classes:"tfwmds-col-1 tfwmds-m-b-sm",
+                                    iconLeft: "modes-isolated-rail"
+                                })
+                            }}
+
+                        </div>
+                        <div class="tfwmds-col-1-3">
+                            
+                            {{
+                                tfwmdsLinkAsButton({
+                                    type: "mode",
+                                    contentText: "Tram",
+                                    link: "https://legacy.wmnetwork.co.uk/timetables/#/?mode=Tram&serviceNo=MM1&limit=6",
+                                    linkTarget: "_blank",
+                                    classes:"tfwmds-col-1 tfwmds-m-b-sm",
+                                    iconLeft: "modes-isolated-metro"
+                                })
+                            }}
+
+                        </div>
+                    </div>
+
+                    {% if params.isOpen %}
+                    <div class="tfwmds-find-a-timetable-widget__services">
+                        {{
+                            tfwmdsTextInput({
+                                id: "busServices",
+                                name: "serviceNo",
+                                label: {
+                                    contentText: 'Bus Services',
+                                    classes: 'tfwmds-screenreaders-only'
+                                },
+                                placeholder: 'Enter a service number',
+                                required: true,
+                                formGroup: {
+                                    classes: 'tfwmds-m-b-md'
+                                }
+                            })
+                        }}
+                        {{
+                            tfwmdsButton({
+                                classes: "tfwmds-col-1 tfwmds-col-sm-1-2 tfwmds-btn--align-left",
+                                role: "submit",
+                                contentText: "Find a timetable",
+                                iconRight: "general-chevron-right"
+                            })
+                        }}
+                    </div>
+                    {% endif %}
+
+                </form>
+            </div>
+        {% endcall %}
+
+    </div>
+</div>
+
+
+{% endmacro %}

@@ -1,0 +1,59 @@
+{% raw %}
+{% from "tfwmds/patterns/feedback-loop/_feedback-loop.njk" import tfwmdsFeedbackLoop %}
+
+{{
+   tfwmdsFeedbackLoop({
+      id: 'fb',
+      formTitle: 'Help us improve Transport for West Midlands',
+      isOpen: false,
+      metaFields: [
+        {
+          name: 'contentType', 
+          value: 'content'
+        }, 
+        {
+          name: 'contentName', 
+          value: 'PageTitle'
+        }, 
+        {
+          name: 'contentLastEditor', 
+          value: 'Editor name'
+        }, 
+        {
+          name: 'serviceName', 
+          value: 'Transport for West Midlands Design system'
+        }, 
+        {
+          name: 'contentLastUpdated', 
+          value: '2021-03-19T11:18:15.532Z'
+        }
+      ],
+      formFields: [
+        {
+          type: 'textarea',
+          name: 'contentWrongComment',
+          labelText: 'What is wrong with this page?',
+          placeholder: 'Text',
+          required: true
+        },
+        {
+          type: 'input',
+          name: 'emailAddress',
+          labelText: 'Email address (optional)',
+          placeholder: 'Text'
+        },
+        {
+          type: 'checkbox',
+          name: 'consent',
+          labelText: 'I consent to being contacted about the issue I am reporting (optional)'
+        },
+        {
+          type: 'checkbox',
+          name: 'privacy',
+          labelHTML: 'I agree to <a href="#">WMCA’s Privacy Policy</a>',
+          required: true
+        }
+      ]
+    })
+}}
+{% endraw %}

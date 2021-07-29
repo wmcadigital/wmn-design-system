@@ -3,19 +3,19 @@
   "styleguides": ["5d95b0aaad77af16c796a476"],
   "components": [
     {
-      "path": "src/wmnds/components/phase-indicator/_phase-indicator.njk",
+      "path": "src/tfwmds/components/phase-indicator/_phase-indicator.njk",
       "zeplinNames": ["Phase indicator / Mobile", "Phase indicator / Desktop"],
-      "wmnds": {
+      "tfwmds": {
         "urlPath": "components/phase-indicator/"
       }
     },
     {
-      "path": "src/wmnds/components/disruption-indicator/small/_small.njk",
+      "path": "src/tfwmds/components/disruption-indicator/small/_small.njk",
       "zeplinNames": []
     },
     {
-      "path": "src/wmnds/components/disruption-indicator/large/_large.njk",
-      "wmnds": {
+      "path": "src/tfwmds/components/disruption-indicator/large/_large.njk",
+      "tfwmds": {
         "urlPath": "components/disruption-indicators/"
       },
       "zeplinNames": [
@@ -38,7 +38,7 @@
   "links": [
     {
       "name": "Transport for West Midlands Design System",
-      "type": "wmnds",
+      "type": "tfwmds",
       "url": "https://wmnetwork.netlify.com/"
     }
   ]

@@ -1,0 +1,38 @@
+&.tfwmds-fe {
+  &-group {
+    margin-bottom: $size-xl;
+
+    &--error {
+      padding-left: $size-md;
+      border-left: 5px solid get-color(error);
+    }
+  }
+
+  &-fieldset {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    &__legend {
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+  }
+}
+
+@import "form-label/form-label";
+@import "checkboxes/checkboxes";
+@import "date-input/date-input";
+@import "dropdown/dropdown";
+@import "error-message/error-message";
+@import "file-upload/file-upload";
+@import "text-input/text-input";
+@import "question/question";
+@import "radios/radios";
+@import "textarea/textarea";

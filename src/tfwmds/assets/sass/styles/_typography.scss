@@ -1,0 +1,125 @@
+// Get rid of margin for the first header item in main content
+[class*="tfwmds-"] {
+  div,
+  span,
+  p,
+  a {
+    @include type-setting(0);
+  }
+
+  p,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0;
+    margin-bottom: $base-line-height;
+  }
+
+  // Let's make sure all's aligned
+  sub,
+  sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  // Set heading font for heading elements
+  h1,
+  h1[class*="tfwmds-col"],
+  h2,
+  h2[class*="tfwmds-col"],
+  h3,
+  h3[class*="tfwmds-col"],
+  h4,
+  h4[class*="tfwmds-col"] {
+    font-family: $x-heading-font-family;
+  }
+
+  h1,
+  &.tfwmds-h1 {
+    color: get-color(primary);
+    @include type-setting(1, 0.85);
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(1);
+    }
+  }
+
+  h2,
+  &.tfwmds-h2 {
+    color: get-color(primary);
+    @include type-setting(2, 0.85);
+    font-weight: bold;
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(2);
+    }
+  }
+
+  h3,
+  &.tfwmds-h3 {
+    color: inherit;
+    @include type-setting(3);
+    font-weight: bold;
+  }
+
+  h4,
+  &.tfwmds-h4 {
+    color: inherit;
+    @include type-setting(4);
+    font-weight: bold;
+
+    &.tfwmds-weight-400 {
+      font-weight: normal;
+    }
+  }
+
+  h5,
+  &.tfwmds-h5 {
+    @include type-setting(5);
+    font-weight: bold;
+  }
+
+  h6,
+  &.tfwmds-h6 {
+    @include type-setting(5);
+    font-weight: normal;
+  }
+
+  &.tfwmds-h2 > *,
+  &.tfwmds-h3 > *,
+  &.tfwmds-h4 > *,
+  &.tfwmds-h5 > * {
+    color: initial;
+    font-weight: initial;
+  }
+}
+
+// Set heading font for heading elements
+.tfwmds-h1[class*="tfwmds-"],
+.tfwmds-h2[class*="tfwmds-"],
+.tfwmds-h3[class*="tfwmds-"],
+.tfwmds-h4[class*="tfwmds-"] {
+  font-family: $x-heading-font-family;
+}
+
+* {
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h1:first-child[class*="tfwmds-"],
+  h2:first-child[class*="tfwmds-"],
+  h3:first-child[class*="tfwmds-"],
+  h4:first-child[class*="tfwmds-"] {
+    margin-top: 0;
+  }
+}

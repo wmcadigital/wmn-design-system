@@ -1,8 +1,8 @@
 {% macro compExample(components, params) %}
-{% from "wmnds/components/button/_button.njk" import wmndsButton %}
-{% from "wmnds/components/table/_table.njk" import wmndsTable %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/table/_table.njk" import tfwmdsTable %}
 
-{% set components = components if components else [wmndsButton({text: "No component specified to example"})] %}
+{% set components = components if components else [tfwmdsButton({text: "No component specified to example"})] %}
 {% set showAsIframe = true if params.iframe else false %}
 {% set componentPath = params.componentPath if params.componentPath else false %}
 
@@ -10,28 +10,28 @@
 {% set js = params.js if params.js else false %}
 {% set njkProps = params.njkProps if params.njkProps else false %}
 
-<div class="wmnds-website-code-example">
+<div class="tfwmds-website-code-example">
   {# Show a button to allow the user to see the component fullscreen #}
   {{
-    wmndsButton({
+    tfwmdsButton({
       type: 'link',
-      classes: 'wmnds-m-md wmnds-website-code-example__view-fullscreen',
+      classes: 'tfwmds-m-md tfwmds-website-code-example__view-fullscreen',
       contentText: 'See this example in fullscreen'
     })
   }}
-  <hr class="wmnds-m-none" />
+  <hr class="tfwmds-m-none" />
 
   {# PREVIEW COMPONENT #}
-  <div class="wmnds-website-code-example__inner-wrap">
+  <div class="tfwmds-website-code-example__inner-wrap">
     {# Loop through components passed in and collect in componentsToRender var #}
     {% set componentsToRender %}
       {%- for item in components %}
         {{item | safe}}
         {% if loop.last == false %}
           {% if params.displayInline %}
-            <div class="wmnds-m-b-md wmnds-website-mar--right"></div>
+            <div class="tfwmds-m-b-md tfwmds-website-mar--right"></div>
           {% else %}
-            <div class="wmnds-m-b-md"></div>
+            <div class="tfwmds-m-b-md"></div>
           {% endif %}
         {% endif %}
       {% endfor -%}
@@ -39,10 +39,10 @@
 
     {# If iframe var set the show components in iframe #}
     {% if showAsIframe %}
-      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="wmnds-website-code-example__iframe wmnds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%" data-path="{{componentPath}}"></iframe>
+      <iframe sandbox="allow-same-origin allow-scripts" title="Component example" class="tfwmds-website-code-example__iframe tfwmds-col-1" src="about:blank" data-src="{{componentsToRender | e | trim}}" frameBorder="0" loading="lazy" allowtransparency="true" scrolling="no" allow="fullscreen" width="100%" data-path="{{componentPath}}"></iframe>
     {% else %}
     {# Else show components like normal #}
-      <div class="wmnds-website-code-example__njk wmnds-col-1">
+      <div class="tfwmds-website-code-example__njk tfwmds-col-1">
         {{componentsToRender | safe}}
       </div>
     {% endif %}
@@ -53,9 +53,9 @@
   {# SHOW DETAIL TAB(S) #}
 
   {# HTML markup #}
-  <hr class="wmnds-m-none" />
-  <details class="wmnds-details">
-    <summary class="wmnds-link wmnds-p-md">HTML markup</summary>
+  <hr class="tfwmds-m-none" />
+  <details class="tfwmds-details">
+    <summary class="tfwmds-link tfwmds-p-md">HTML markup</summary>
     {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
     {# The loop.revindex checks to see if last in array, if not add a linebreak (again, the fight for making nice whitespace continues) #}
     <pre><code class="html" tabindex="0">{% for item in components -%}{{ item | formatHTML }}{% if loop.revindex !== 1 %}<br/>{% endif %}{% endfor -%}</code></pre>
@@ -63,9 +63,9 @@
 
   {# Njk markup #}
   {% if njk and componentPath %}
-    <hr class="wmnds-m-none" />
-    <details class="wmnds-details">
-      <summary class="wmnds-link wmnds-p-md">Nunjucks markup</summary>
+    <hr class="tfwmds-m-none" />
+    <details class="tfwmds-details">
+      <summary class="tfwmds-link tfwmds-p-md">Nunjucks markup</summary>
       {# Be careful with the below, the whitespace is extremely delicate (like a flower 🌸) #}
       <pre><code class="json" tabindex="0">
       {%- filter trim %}
@@ -77,11 +77,11 @@
 
   {# Njk props #}
   {% if njkProps %}
-    <hr class="wmnds-m-none" />
-    <details class="wmnds-details">
-      <summary class="wmnds-link wmnds-p-md">Nunjucks properties</summary>
-      <div class="wmnds-p-md">
-        <table class="wmnds-table wmnds-p-md">
+    <hr class="tfwmds-m-none" />
+    <details class="tfwmds-details">
+      <summary class="tfwmds-link tfwmds-p-md">Nunjucks properties</summary>
+      <div class="tfwmds-p-md">
+        <table class="tfwmds-table tfwmds-p-md">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -102,8 +102,8 @@
 
         {% for prop in njkProps %}
         {% if prop.arrayOptions %}
-        <h4 class="wmnds-h3 wmnds-m-t-lg">Options for {{ prop.name }}</h4>
-        <table class="wmnds-table wmnds-p-md">
+        <h4 class="tfwmds-h3 tfwmds-m-t-lg">Options for {{ prop.name }}</h4>
+        <table class="tfwmds-table tfwmds-p-md">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -129,12 +129,12 @@
 
   {# JS markup #}
   {% if js and componentPath %}
-    <div class="wmnds-website-code-example__js">
+    <div class="tfwmds-website-code-example__js">
       {# HIDING THIS SECTION until we can compile ES5 for IE11 #}
       {# Show recommended JS (ES2015) #}
-      <hr class="wmnds-m-none" />
-      <details class="wmnds-details wmnds-details--js">
-        <summary class="wmnds-link wmnds-p-md">Recommended javascript (browser compatible)</summary>
+      <hr class="tfwmds-m-none" />
+      <details class="tfwmds-details tfwmds-details--js">
+        <summary class="tfwmds-link tfwmds-p-md">Recommended javascript (browser compatible)</summary>
         <pre><code class="js" tabindex="0">
           {%- filter convertToES5 %}
             {%- include componentPath + "_example.js" -%}
@@ -143,9 +143,9 @@
       </details>
 
       {# Show recommended JS (ES6) #}
-      <hr class="wmnds-m-none" />
-      <details class="wmnds-details wmnds-details--es6">
-        <summary class="wmnds-link wmnds-p-md">Recommended javascript (ES6)</summary>
+      <hr class="tfwmds-m-none" />
+      <details class="tfwmds-details tfwmds-details--es6">
+        <summary class="tfwmds-link tfwmds-p-md">Recommended javascript (ES6)</summary>
         <pre><code class="js" tabindex="0">
           {%- filter formatJS %}
             {%- include componentPath + "_example.js" -%}

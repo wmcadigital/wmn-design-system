@@ -1,0 +1,85 @@
+{% raw %}
+{% from "tfwmds/components/table/_table.njk" import tfwmdsTable %}
+
+{{
+  tfwmdsTable(
+    {
+      caption: "Table Caption",
+      title: "Table Title",
+      firstCellIsHeader: true,
+      classes: "tfwmds-m-b-xl",
+      rows: [
+        [
+          {
+            contentText: "Cell 1",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 2",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 3",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          }
+        ],
+        [
+          {
+            contentText: "Cell 1",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 2",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          },
+          {
+            contentText: "Cell 3",
+            contentHTML: null,
+            classes: null,
+            colspan: 1,
+            rowspan: 1,
+          }
+        ]
+      ],
+      head: [
+        {
+          contentText: "Header 1",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 2",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        },
+        {
+          contentText: "Header 3",
+          contentHTML: null,
+          classes: null,
+          colspan: 1,
+          rowspan: 1,
+        }
+      ],
+      hideHeader: false
+    })
+}}
+{% endraw %}

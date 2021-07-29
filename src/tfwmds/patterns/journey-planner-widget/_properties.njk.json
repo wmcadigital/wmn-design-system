@@ -1,0 +1,24 @@
+{
+  "tfwmdsJourneyPlannerWidgetProps": [
+    {
+      "name": "formTitle",
+      "type": "string",
+      "description": "Component's title. If empty, form title will be 'Plan your journey' as default."
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "description": "If true, journey planner widget will be expanded. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "isWhenOpen",
+      "type": "boolean",
+      "description": "If true, journey planner widget area to define when you want to travel will be expanded. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "isHowOpen",
+      "type": "boolean",
+      "description": "If true, journey planner widget area to define how (the mode of travel) do you want to travel will be expanded. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    }
+  ]
+}

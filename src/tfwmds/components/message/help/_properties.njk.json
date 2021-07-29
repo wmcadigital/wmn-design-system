@@ -1,0 +1,19 @@
+{
+  "tfwmdsMsgHelpProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> The text that displays in the help message component. You can use any string with this option. If you set <code class='tfwmds-website-inline-code'>contentHTML</code>, this option is not required and is ignored."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> The HTML to use within the help message component. You can use any string with this option. If you set <code class='tfwmds-website-inline-code'>contentHTML</code>, <code class='tfwmds-website-inline-code'>contentText</code> is not required and is ignored."
+    },
+    {
+      "name": "dismissable",
+      "type": "boolean",
+      "description": "If dismissable is set to true, the component will display a close icon. Defaults to <code class='tfwmds-website-inline-code'>true</code>"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{% macro tfwmdsCookiesBanner(params) %}
+
+{# Imports of components #}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{%- from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton as cta %}
+
+
+<div class="tfwmds-bg-white tfwmds-p-t-md tfwmds-p-b-md tfwmds-cookies-banner">
+  <div class="tfwmds-container">
+    <div class="tfwmds-col-1 tfwmds-col-md-3-4 tfwmds-col-lg-2-3">
+      <h3>Your privacy settings</h3>
+      <p>
+        We use cookies to help you with journey planning and relevant disruptions, remember your login and show you
+        content you might be interested in. If you’re happy with the use of cookies by West Midlands Combined Authority
+        and our selected partners, click ‘Accept all cookies’. Or click ‘Manage cookies’ to learn more.
+      </p>
+      <div class="tfwmds-grid tfwmds-grid--justify-between tfwmds-cookies-banner__group-buttons">
+        {{
+          tfwmdsButton({
+            classes: "tfwmds-col-1 tfwmds-col-sm-1 tfwmds-col-md-12-24  tfwmds-cookies-banner__accept-all-cookies",
+            contentText: "Accept all cookies"
+          })
+        }}
+        {{
+          cta({
+            contentText: "Manage Cookies",
+            classes: "tfwmds-btn tfwmds-col-1 tfwmds-col-sm-1 tfwmds-col-md-12-24",
+            link: "https://www.tfwm.org.uk/manage-cookies/"
+          })
+        }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}

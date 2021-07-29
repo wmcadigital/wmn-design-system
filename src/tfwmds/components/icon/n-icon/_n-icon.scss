@@ -1,0 +1,21 @@
+// Part of this file is generated via n-icon-styling function in mixins. This is to ensure we get the right SVG height & width based on the parent font-size.
+$base-width: 1rem * 0.75; // Multiply by 0.75 as the font height is is actually 1/4 smaller than
+$height-multiplier: 1.04741812336749; // If we multiply the height by this value we got the correct width for the n-icon svg
+
+&.tfwmdss-n-icon {
+  display: inline-block;
+  color: currentColor;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: inherit;
+  text-transform: capitalize;
+
+  &__svg {
+    display: inline-block;
+    width: $base-width;
+    height: calc(#{$base-width} * #{$height-multiplier});
+    fill: currentColor;
+    vertical-align: revert;
+  }
+}

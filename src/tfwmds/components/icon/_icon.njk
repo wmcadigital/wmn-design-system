@@ -1,0 +1,10 @@
+{% macro tfwmdsIcon(params) %}
+
+<svg {% if params.class %}class="{{params.class}}"{% endif %}>
+  {% if params.title %}
+    <title>{{ params.title }}</title>
+  {% endif %}
+  <use xlink:href="#tfwmds-{{params.icon}}" href="#tfwmds-{{params.icon}}"></use>
+</svg>
+
+{% endmacro %}

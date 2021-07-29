@@ -2,8 +2,8 @@
 {% set pageTitle="User research" %}
 {% set section = "User research" %}
 {# Imports #}
-{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
-{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{%- from "tfwmds/components/content-tiles/normal/_normal.njk" import tfwmdsContentTilesNormal -%}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
 {# Set array of tiles #}
 
 {# Set the title and copy of all the tiles, we loop through them below #}
@@ -84,8 +84,8 @@
 
 {% block content %}
 {# User research #}
-<div class="wmnds-grid">
-  <div class="wmnds-col-1 wmnds-col-md-3-4">
+<div class="tfwmds-grid">
+  <div class="tfwmds-col-1 tfwmds-col-md-3-4">
     <h2>Introduction</h2>
     <p>User research helps teams learn about users and create services that meet their needs.</p>
     <p>Without it, you won’t know what problems you’re trying to solve, what to build or if the service you create will work well for users.</p>
@@ -96,7 +96,7 @@
     <ul>
       <li>
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: "https://maze.design",
             linkTitle: "Maze",
             contentText: "Maze"
@@ -106,7 +106,7 @@
       </li>
       <li>
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: "https://miro.com",
             linkTitle: "Miro",
             contentText: "Miro"
@@ -116,7 +116,7 @@
       </li>
       <li>
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: "https://hotjar.com",
             linkTitle: "Hotjar",
             contentText: "Hotjar"
@@ -126,7 +126,7 @@
       </li>
       <li>
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: "https://google.com/analytics",
             linkTitle: "Google Analytics",
             contentText: "Google Analytics"
@@ -136,7 +136,7 @@
       </li>
       <li>
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: "https://campaignmonitor.com",
             linkTitle: "Campaign Monitor",
             contentText: "Campaign Monitor"
@@ -151,12 +151,12 @@
 
 <h2>Research method toolbox</h2>
 
-<div class="wmnds-grid">
+<div class="tfwmds-grid">
   {# Loop through each of the title/copy set at top of file and display in content tile component #}
   {% for method in userResearchMethods %}
-    <div class="wmnds-col-1 wmnds-col-md-1-3 wmnds-col-lg-1-4 wmnds-p-sm">
+    <div class="tfwmds-col-1 tfwmds-col-md-1-3 tfwmds-col-lg-1-4 tfwmds-p-sm">
         {{
-          wmndsContentTilesNormal({
+          tfwmdsContentTilesNormal({
             title: method.title,
             copy: method.copy,
             smallTitle: true
@@ -176,7 +176,7 @@
   <li>
     UK
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://www.gov.uk/service-manual/communities/user-research-community",
         linkTitle: "Cross-government user research community",
         contentText: "Cross-government user research community"
@@ -185,7 +185,7 @@
   </li>
   <li>
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://dwpdigital.blog.gov.uk/2019/01/28/designing-letters-as-part-of-the-whole-user-journey/",
         linkTitle: "Designing letters as part of the whole user journey blog",
         contentText: "Designing letters as part of the whole user journey blog"
@@ -196,7 +196,7 @@
   <li>
     Hippo Digital's
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://medium.com/hippo-digital/tagged/user-research",
         linkTitle: "Hippo Digital user research blog",
         contentText: "Hippo Digital user research blog"
@@ -206,7 +206,7 @@
   <li>
     The US Government's
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://methods.18f.gov",
         linkTitle: "18F Methods library",
         contentText: "18F Methods library"
@@ -216,7 +216,7 @@
   <li>
     Nielson Norman Group's blogpost on
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://www.nngroup.com/articles/which-ux-research-methods/",
         linkTitle: "When to use which user-experience research methods blog by Nielson Norman Group",
         contentText: "when to use which user-experience research method"
@@ -226,7 +226,7 @@
   <li>
     The
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://github.com/alphagov/govuk-design-system-backlog",
         linkTitle: "GOV.UK Design System Backlog",
         contentText: "GOV.UK Design System Backlog"
@@ -236,7 +236,7 @@
   <li>
     The
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://service-manual.nhs.uk",
         linkTitle: "NHS digital service manual",
         contentText: "NHS digital service manual"
@@ -246,7 +246,7 @@
   <li>
     The
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://www.gov.uk/service-manual/user-research",
         linkTitle: "GOV.UK user research service manual",
         contentText: "GOV.UK user research service manual"
@@ -256,7 +256,7 @@
   <li>
     GOV.UK's blog about
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "https://userresearch.blog.gov.uk/2020/05/20/conducting-remote-research-with-people-with-access-needs/",
         linkTitle: "conducting remote research with people with access needs",
         contentText: "conducting remote research with people with access needs"

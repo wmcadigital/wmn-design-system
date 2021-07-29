@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-docs.njk" %}
 {% set pageTitle = "Mobile application" %}
 {% set section = "Docs" %}
-{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "tfwmds/components/warning-text/_warning-text.njk" import tfwmdsWarningText %}
 
 {% block content %}
 
@@ -18,7 +18,7 @@ If you are using React Native, you can import our styles by adding the following
 <pre><code class="javascript" tabindex="0">
 {%- filter forceescape -%}
 // Import react native styles for WMN Design System
-import wmndsStyles from "https://unpkg.com/wmn-design-system@$*version/build/css/react-native/wmnds.min.js"
+import tfwmdsStyles from "https://unpkg.com/wmn-design-system@$*version/build/css/react-native/tfwmds.min.js"
 {%- endfilter -%}
 </code></pre>
 

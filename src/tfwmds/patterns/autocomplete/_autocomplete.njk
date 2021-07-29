@@ -1,0 +1,78 @@
+{# Uses the components: tfwmds-loader, tfwmds-icon #}
+
+{% macro tfwmdsAutocomplete(params) %}
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium %}
+{% from "tfwmds/components/form-elements/form-label/_form-label.njk" import tfwmdsFormLabel %}
+{# Params #}
+{% set query = params.query if params.query else "" %} {# default to x15 as query text if one isn't available #}
+{% set placeholder = params.placeholder if params.placeholder else "Tap to search" %}
+{% set isLoading = " tfwmds-is--loading" if params.loading %}
+{% set id = params.id if params.id else "genericInput" %}
+{% set label = params.label.contentText if params.label.contentText else "Autocomplete label" %}
+{% set name = params.name if params.name else id %}
+{% set isRequired = params.isRequired if params.isRequired else false %}
+
+{# Label #}
+{{
+  tfwmdsFormLabel({
+    for: id,
+    contentText: label,
+    classes: params.label.classes
+  })
+}}
+
+<div class="tfwmds-autocomplete tfwmds-grid{{isLoading}}">
+  {% from "tfwmds/components/loader/_loader.njk" import tfwmdsLoader %}
+  {#- Get SVG icon and pass class -#}
+  <!-- Search icon -->
+  {{
+    tfwmdsIcon({
+      icon: 'general-search',
+      class: 'tfwmds-autocomplete__icon'
+    }) | indent(2) | trim
+  -}}
+
+  {# Loading spinner #}
+  {{
+    tfwmdsLoader() | indent(2) | trim
+  }}
+  <!-- Autocomplete input box -->
+  <input class="tfwmds-fe-input tfwmds-autocomplete__input tfwmds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="{{ name }}" aria-label="{{ placeholder }}"  type="text" id="{{id}}" required="{{isRequired}}" autocomplete="off">
+</div>
+
+{#- If showSuggestions is true #}
+{% if params.showSuggestions %}
+<!-- Autocomplete suggestions -->
+<ul class="tfwmds-autocomplete-suggestions">
+{#- If textOnly suggestions -#}
+{% if params.textSuggestions -%}
+  {%- for i in range(1,4) %}
+  <li class="tfwmds-autocomplete-suggestions__li" title="Search result {{i}}" tabindex="0">
+    This is <strong>my query</strong> result {{i}}
+  </li>
+  {%- endfor %}
+{% else -%}
+  {# Disruption indicator suggestions #}
+  {%- for i in range(1,6) %}
+  <li class="tfwmds-autocomplete-suggestions__li tfwmds-grid" title="Good service on X15" tabindex="0">
+    <div class="tfwmds-col-auto" >
+      {{
+        tfwmdsDisruptionIndicatorMedium({
+          classModifiers: 'tfwmds-disruption-indicator-medium',
+          text: query
+        }) | indent(8) | trim
+      }}
+    </div>
+    <div class="tfwmds-col-1-2 tfwmds-col-sm-2-3">
+      <strong>Oldbury to Dudley {{i}}</strong><br>and return journey
+    </div>
+  </li>
+  {%- endfor %}
+{% endif -%}
+</ul>
+{%- endif %}
+
+
+{% endmacro %}

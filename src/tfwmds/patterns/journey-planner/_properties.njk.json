@@ -1,0 +1,14 @@
+{
+  "tfwmdsJourneyPlannerProps": [
+    {
+      "name": "formTitle",
+      "type": "string",
+      "description": "If empty, form title will be 'Plan your journey' as default."
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "description": "If true, journey planner will be expanded. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    }
+  ]
+}

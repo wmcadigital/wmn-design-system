@@ -1,0 +1,13 @@
+&.tfwmds-content-tile {
+  &__block {
+    display: block !important;
+    margin-bottom: $size-sm;
+    padding: $size-sm;
+    color: get-color(primary);
+    background-color: get-color(background);
+  }
+
+  &__underline {
+    text-decoration: underline;
+  }
+}

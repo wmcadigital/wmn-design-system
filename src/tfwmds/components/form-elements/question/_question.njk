@@ -1,0 +1,9 @@
+{% macro tfwmdsQuestion(params) %}
+{# Set vars and defaults #}
+{% set _text = params.contentText if params.contentText else "How would you...?" %}
+
+<h2 class="tfwmds-fe-question">
+  {{_text}}
+</h2>
+
+{% endmacro %}

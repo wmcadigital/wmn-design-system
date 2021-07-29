@@ -2,9 +2,9 @@
 
 ## Class naming convention
 
-## `wmnds` namespacing
+## `tfwmds` namespacing
 
-All class names start with a `.wmnds-` namespace to reduce the likelihood of
+All class names start with a `.tfwmds-` namespace to reduce the likelihood of
 conflicting with existing classes in your application. It also helps to identify
 where the styling for a particular element is coming from.
 
@@ -24,9 +24,9 @@ The naming convention follows this pattern:
 .block__element {}
 .block--modifier {}
 
-.wmnds-card               // Block - the root of a component
-.wmnds-card__body         // Element - a part of the block
-.wmnds-card--active       // Modifier - a variant of the block
+.tfwmds-card               // Block - the root of a component
+.tfwmds-card__body         // Element - a part of the block
+.tfwmds-card--active       // Modifier - a variant of the block
 ```
 
 It uses double hyphens (`--`) and underscores (`__`) so that the block, element
@@ -35,9 +35,9 @@ or modifiers themselves can be hyphen delimited without causing ambiguity.
 For example:
 
 ```scss
-.wmnds-phase-banner
-.wmnds-phase-banner__phase-tag
-.wmnds-phase-banner__phase-tag--light-blue
+.tfwmds-phase-banner
+.tfwmds-phase-banner__phase-tag
+.tfwmds-phase-banner__phase-tag--light-blue
 ```
 
 ### Further reading:
@@ -57,7 +57,7 @@ given class name. It also discourages excessive nesting.
 Bad:
 
 ```
-.wmnds-breadcrumb {
+.tfwmds-breadcrumb {
   ...
   &__item {
     ...
@@ -68,11 +68,11 @@ Bad:
 Good:
 
 ```
-.wmnds-breadcrumb {
+.tfwmds-breadcrumb {
   ...
 }
 
-.wmnds-breadcrumb__item {
+.tfwmds-breadcrumb__item {
   ...
 }
 ```
@@ -98,11 +98,11 @@ other components.
 
 Keep all of the variants of a component in the same place.
 
-`.wmnds-error-summary` modifies the `.wmnds-list` component.
+`.tfwmds-error-summary` modifies the `.tfwmds-list` component.
 
 Component modifiers use an extra class, scoped to the component:
 
-`.wmnds-error-summary__list`
+`.tfwmds-error-summary__list`
 
 This class is part of the component, rather than a parent of a component.
 
@@ -165,7 +165,7 @@ Good:
 
 ```
 .selector {
-  color: $wmnds-blue;
+  color: $tfwmds-blue;
 }
 ```
 
@@ -214,7 +214,7 @@ Bad:
 Good:
 
 ```
-.wmnds-wrapper {
+.tfwmds-wrapper {
   ...
 }
 ```
@@ -256,7 +256,7 @@ a {
 Bad:
 
 ```
-.wmnds-breadcrumb {
+.tfwmds-breadcrumb {
   ...
   &__item {
     ...
@@ -267,11 +267,11 @@ Bad:
 Good:
 
 ```
-.wmnds-breadcrumb {
+.tfwmds-breadcrumb {
   ...
 }
 
-.wmnds-breadcrumb__item {
+.tfwmds-breadcrumb__item {
   ...
 }
 ```
@@ -420,7 +420,7 @@ Bad:
 
 ```
 @mixin FONT_STACK() {
-  font-family: $wmnds-font-stack;
+  font-family: $tfwmds-font-stack;
 }
 ```
 
@@ -428,7 +428,7 @@ Good:
 
 ```
 @mixin font-stack() {
-  font-family: $wmnds-font-stack;
+  font-family: $tfwmds-font-stack;
 }
 ```
 
@@ -498,6 +498,6 @@ More write up on [supported rules](https://github.com/sasstools/sass-lint/tree/m
 
 We document SCSS using [SassDoc](http://sassdoc.com/file-level-annotations/). This includes most of the settings, helpers and tools layers, with variables, functions and mixins being marked as private or public.
 
-The syntax is used to generate a [SassDoc application](http://wmnds-frontend-review.herokuapp.com/doc/) that documents SCSS in a readable format.
+The syntax is used to generate a [SassDoc application](http://tfwmds-frontend-review.herokuapp.com/doc/) that documents SCSS in a readable format.
 
-See [colour.scss](../../../src/wmnds/helpers/_colour.scss) for an example of SassDoc syntax.
+See [colour.scss](../../../src/tfwmds/helpers/_colour.scss) for an example of SassDoc syntax.

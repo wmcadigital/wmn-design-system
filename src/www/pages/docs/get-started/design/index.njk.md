@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-docs.njk" %}
 {% set pageTitle = "Design" %}
 {% set section = "Docs" %}
-{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "tfwmds/components/warning-text/_warning-text.njk" import tfwmdsWarningText %}
 
 {% block content %}
 

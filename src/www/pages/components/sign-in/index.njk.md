@@ -31,14 +31,14 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/sign-in/_sign-in.njk" import wmndsSignIn %}
+{% from "tfwmds/components/sign-in/_sign-in.njk" import tfwmdsSignIn %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {{
   compExample([
-    wmndsSignIn()
+    tfwmdsSignIn()
   ], {
-    componentPath: "wmnds/components/sign-in/",
+    componentPath: "tfwmds/components/sign-in/",
     njk: true,
     js: false,
     iframe: false

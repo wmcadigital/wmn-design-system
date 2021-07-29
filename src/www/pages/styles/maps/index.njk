@@ -3,7 +3,7 @@
 {% set section = "Styles" %}
 
 {# Imports #}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{%- from "tfwmds/components/link/link/_link.njk" import tfwmdsLink -%}
 
 {% block content %}
 {# ESRI ArcGIS #}
@@ -14,7 +14,7 @@
 <p>
   When it comes to mapping, Transport for West Midlands uses
   {{
-  wmndsLink({
+  tfwmdsLink({
     link: "https://developers.arcgis.com/labs/what-is-arcgis/",
     linkTitle: "ESRI ArcGIS products",
     linkTarget: "_blank",
@@ -23,7 +23,7 @@
   }}
   to create, manage and share data on maps. Therefore, when developing maps use
   {{
-    wmndsLink({
+    tfwmdsLink({
       link: "https://developers.arcgis.com/documentation/core-concepts/apis-sdks-apps/#choosing-an-arcgis-api-or-sdk",
       linkTitle: "ArcGIS APIs and SDKs",
       linkTarget: "_blank",
@@ -34,13 +34,13 @@
 
 {# Basemap #}
 <h3>Basemap</h3>
-  <a href="//disruptions.wmnetwork.co.uk/" class="wmnds-col-1" target="_blank" rel="noopener noreferrer">
-    <img class="wmnds-col-1 wmnds-m-b-md" src="/img/component-images/maps/base-map.png" alt="A screenshot showing an example of a map">
+  <a href="//disruptions.wmnetwork.co.uk/" class="tfwmds-col-1" target="_blank" rel="noopener noreferrer">
+    <img class="tfwmds-col-1 tfwmds-m-b-md" src="/img/component-images/maps/base-map.png" alt="A screenshot showing an example of a map">
   </a>
 <p>
   When creating a map use the
   {{
-    wmndsLink({
+    tfwmdsLink({
       link: "https://tfwm.maps.arcgis.com/home/item.html?id=53f165a8863c4d40ba017042e248355e",
       linkTitle: "WMCA Basemap",
       linkTarget: "_blank",
@@ -50,7 +50,7 @@
 </p>
 <p>The WMCA Basemap is a portal item, you can use the
 {{
-   wmndsLink({
+   tfwmdsLink({
     link: "https://developers.arcgis.com/javascript/latest/api-reference/esri-Basemap.html",
     linkTitle: "ArcGIS Basemap documentation",
     linkTarget: "_blank",
@@ -62,7 +62,7 @@
 {# Example of code #}
 <h3>Example of the ESRI ArcGIS JavaScript API</h3>
 <pre>
-  <code class="js wmnds-show-more-ignore" tabindex="0">
+  <code class="js tfwmds-show-more-ignore" tabindex="0">
     // ESRI ArcGIS JS code...
     const basemap = new Basemap({
       baseLayers: [
@@ -88,7 +88,7 @@
 <p>
   We understand that you may not always be able to use
   {{
-    wmndsLink({
+    tfwmdsLink({
       link: "https://developers.arcgis.com/documentation/core-concepts/apis-sdks-apps/#choosing-an-arcgis-api-or-sdk",
       linkTitle: "ArcGIS APIs and SDKs",
       linkTarget: "_blank",
@@ -97,7 +97,7 @@
   }}.
   In these situations, style your map as closely to the
   {{
-    wmndsLink({
+    tfwmdsLink({
       link: "https://tfwm.maps.arcgis.com/home/item.html?id=53f165a8863c4d40ba017042e248355e",
       linkTitle: "WMCA Basemap",
       linkTarget: "_blank",
@@ -123,7 +123,7 @@
   <li>
     The background/fill colour of the buttons must use the
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "/styles/colour-palettes/",
         linkTitle: "Information colour",
         linkTarget: "_blank",
@@ -134,7 +134,7 @@
       <li>
         If it is the location button, the background/fill colour must be transparent and the border/icon colour must use the
         {{
-          wmndsLink({
+          tfwmdsLink({
             link: "/styles/colour-palettes/",
             linkTitle: "Primary Purple colour",
             linkTarget: "_blank",
@@ -147,7 +147,7 @@
   <li>
     When hovered, the background/fill colour must be 30% darker (mixed with black) of the
     {{
-      wmndsLink({
+      tfwmdsLink({
         link: "/styles/colour-palettes/",
         linkTitle: "Information colour",
         linkTarget: "_blank",
@@ -159,7 +159,7 @@
       <li>
         If it is the location button, the background/fill colour must be 70% lighter (mixed with white) of the
          {{
-          wmndsLink({
+          tfwmdsLink({
             link: "/styles/colour-palettes/",
             linkTitle: "Secondary Purple colour",
             linkTarget: "_blank",

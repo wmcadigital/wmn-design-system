@@ -1,0 +1,29 @@
+{% macro tfwmdsSignIn(params) %}
+
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+
+<nav class="tfwmds-sign-in">
+  <div class="tfwmds-container">
+    <div class="tfwmds-grid tfwmds-grid--justify-end">
+      <div class="tfwmds-col-auto">
+        <a href="https://my.swiftcard.org.uk" class="tfwmds-sign-in__link">
+          {{
+            tfwmdsIcon({
+                icon: 'swift-bird-icon',
+                class: 'tfwmds-btn__icon'
+            })
+          }}
+          Sign in or register
+          {{
+            tfwmdsIcon({
+                icon: 'general-user',
+                class: 'tfwmds-btn__icon tfwmds-m-l-sm'
+            })
+          }}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{% endmacro %}

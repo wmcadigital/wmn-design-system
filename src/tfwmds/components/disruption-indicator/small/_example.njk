@@ -1,0 +1,11 @@
+{% raw %}
+{% from "tfwmds/components/disruption-indicator/small/_small.njk" import tfwmdsDisruptionIndicatorSmall %}
+
+{{
+  tfwmdsDisruptionIndicatorSmall({
+    mode: "bus",
+    iconRight: "general-warning-triangle",
+    classes: "tfwmds-disruption-indicator-small--error"
+  })
+}}
+{% endraw %}

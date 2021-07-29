@@ -4,7 +4,7 @@ linear-gradient(-45deg, get-color(background, 20, dark) 25%, transparent 25%),
 linear-gradient(45deg, transparent 75%, get-color(background, 20, dark) 75%),
 linear-gradient(-45deg, transparent 75%, get-color(background, 20, dark) 75%);
 
-.wmnds-website-code-example {
+.tfwmds-website-code-example {
   margin-top: $size-xl;
   overflow: hidden;
   border: 1px solid get-color(primary, 20);
@@ -21,7 +21,7 @@ linear-gradient(-45deg, transparent 75%, get-color(background, 20, dark) 75%);
     background-position: 0 0, 0 10px, 10px -10px, -10px 0;
     background-size: 20px 20px;
 
-    & > .wmnds-col-1 {
+    & > .tfwmds-col-1 {
       padding: $size-md;
       overflow: hidden;
     }
@@ -49,13 +49,13 @@ linear-gradient(-45deg, transparent 75%, get-color(background, 20, dark) 75%);
     margin: 0;
   }
 
-  & + .wmnds-website-code-example {
+  & + .tfwmds-website-code-example {
     margin-top: 0;
     border-top: 0;
   }
 
   // make background grey on the white table background
-  .wmnds-website-inline-code {
+  .tfwmds-website-inline-code {
     background-color: get-color(background);
   }
 
@@ -94,7 +94,7 @@ span[class^="hljs-"] {
 }
 
 // These classes are used to display components better
-.wmnds-website-mar {
+.tfwmds-website-mar {
   &--right {
     display: inline-block;
     margin-right: 10px;
@@ -102,22 +102,22 @@ span[class^="hljs-"] {
   }
 }
 
-.wmnds-js-show-code {
+.tfwmds-js-show-code {
   margin: $size-md;
   float: right;
 }
 
-.wmnds-code-toggle {
+.tfwmds-code-toggle {
   display: block;
   padding: $size-xsm $size-md;
   color: $white;
   background: get-color(secondary);
 
-  .wmnds-btn {
+  .tfwmds-btn {
     margin-left: $size-sm;
   }
 
-  .wmnds-btn:not(.wmnds-btn--dark-bg) {
+  .tfwmds-btn:not(.tfwmds-btn--dark-bg) {
     border: 0;
     color: currentColor;
     background-color: transparent;
@@ -131,6 +131,6 @@ span[class^="hljs-"] {
   }
 }
 
-.wmnds-iframe-content > .wmnds-cookies-banner {
+.tfwmds-iframe-content > .tfwmds-cookies-banner {
   display: block !important;
 }

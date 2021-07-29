@@ -1,0 +1,73 @@
+{% macro tfwmdsTravelModePageBanner(params) %}
+
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% set mode = params.mode if params.mode %} {# Fallback for mode is set in the if/else statment below #}
+
+{# Set the logo and alt text to the correct mode based on mode selected #}
+{% if mode == "rail" %}
+  {% set _logoFolder = "WM Railway" %}
+  {% set _logoAlt = "West Midlands Railway" %}
+{% elif mode == "metro" %}
+  {% set _logoFolder = "WM Metro" %}
+  {% set _logoAlt = "West Midlands Metro" %}
+{% elif mode == "roads" %}
+  {% set _logoFolder = "WM Roads" %}
+  {% set _logoAlt = "West Midlands Roads" %}
+{% elif mode == "walk" %}
+  {% set _logoFolder = "WM Walking" %}
+  {% set _logoAlt = "West Midlands Walking" %}
+{% elif mode == "cycle" %}
+  {% set _logoFolder = "WM Cycle" %}
+  {% set _logoAlt = "West Midlands Cycle" %}
+{% elif mode == "eScooter" %}
+  {% set _logoFolder = "WM eScooter" %}
+  {% set _logoAlt = "West Midlands eScooter" %}
+{% else %}
+  {# If no mode is selected(or is bus), then default to bus #}
+  {% set _logoFolder = "WM Bus" %}
+  {% set _logoAlt = "West Midlands Bus" %}
+  {% set mode = "bus" %} {# Fallback for mode #}
+{% endif %}
+
+{# These variables are set after the if statement to make sure we get the fallback mode: bus if the user hasn't selected a mode or misstyped the mode param #}
+{% set _logo = "https://designsystem.wmnetwork.co.uk/img/logos/" + _logoFolder + "/Landscape/White.png" %} {# Set logo to the correct one based on if statements above. Set to designsystem.wmnetwork.co.uk so anyone using prototype kit or using via npm can use our logos #}
+{% set title = params.title if params.title else mode  | capitalize + " in the West Midlands" %} {# Set title else fallback to "mode in West Midlands") #}
+{% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
+{% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
+{% set _modeClass = " tfwmds-travel-mode-page-banner--" + mode | lower if mode %} {# Set correct modifier class #}
+
+<div class="tfwmds-travel-mode-page-banner{{_modeClass}}">
+  <div class="tfwmds-container">
+    <div class="tfwmds-travel-mode-page-banner__content">
+      <div class="tfwmds-travel-mode-page-banner__copy">
+        <h2>{{ title }}</h2>
+        {% if contentHTML %}
+          {{ contentHTML }}
+        {% else %}
+          <p>It’s easy to travel by bus in the West Midlands. Buses are frequent, with many routes operating late into the evening and on Sundays.</p>
+        {% endif %}
+      </div>
+      <div class="tfwmds-travel-mode-page-banner__logos">
+        {% if mode %}
+          {{
+            tfwmdsIcon({
+              icon: "modes-bg-" + mode
+            })
+          }}
+        {% endif %}
+        {% if _logo %}
+          <img src="{{_logo}}" alt="{{_logoAlt}}">
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+  {# The arrow indent shape in the desktop banner #}
+  <div class="tfwmds-travel-mode-page-banner__image tfwmds-hide-mobile" style="background-image: url({{image}});">
+    <svg class="tfwmds-travel-mode-page-banner__svg-background" viewBox="0 0 40 200">
+      <path d="M0,0v200h6.03l32.87-93.5c1.48-4.21,1.48-8.79,0-12.99L6.03,0H0z"/>
+    </svg>
+  </div>
+</div>
+
+{% endmacro %}

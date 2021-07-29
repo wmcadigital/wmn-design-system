@@ -1,4 +1,4 @@
-.wmnds-website-homepage-icons {
+.tfwmds-website-homepage-icons {
   width: 20px;
   max-height: 16px;
   margin-right: $size-sm;
@@ -8,7 +8,7 @@
   }
 }
 
-.wmnds-website-summary-content {
+.tfwmds-website-summary-content {
   margin-top: -1px;
   color: $white;
   background: get-color(primary);
@@ -18,8 +18,8 @@
   }
 
   // Make links white in the purple banner
-  &__link.wmnds-link,
-  &__link.wmnds-link:visited {
+  &__link.tfwmds-link,
+  &__link.tfwmds-link:visited {
     color: $white;
 
     &:hover {
@@ -28,7 +28,7 @@
     }
   }
 
-  .wmnds-content-card {
+  .tfwmds-content-card {
     border-bottom-color: get-color(secondary);
     color: get-color(text);
   }

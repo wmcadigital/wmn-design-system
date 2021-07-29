@@ -1,0 +1,170 @@
+&.tfwmds-travel-update {
+  padding: $size-xsm 0;
+  justify-content: center;
+  align-items: center;
+
+  &__disruption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      justify-content: space-between;
+    }
+
+    .tfwmds-disruption-indicator-medium {
+      margin-right: $size-md;
+    }
+
+    .tfwmds-travel-update__disruption-text {
+      padding-top: $size-xsm;
+      flex-grow: 1;
+      flex: 0 0 100%;
+
+      @media screen and (min-width: 392px) {
+        padding-top: 0;
+        text-align: right;
+        flex: auto;
+      }
+    }
+  }
+
+  // Styles for personal view travel update card
+  &--personal {
+    position: relative;
+
+    .tfwmds-travel-update__disruption-title {
+      display: flex;
+      margin-bottom: $size-md;
+      justify-content: space-between;
+      align-items: center;
+      flex: 0 0 100%;
+
+      .tfwmds-travel-update__disruption-detail-toggle {
+        padding: 0;
+        border: 0;
+        background: none;
+
+        svg {
+          display: block;
+          width: $size-lg;
+          height: $size-lg;
+          transform: rotate(-90deg);
+          fill: get-color(primary);
+        }
+
+        &[data-show-details="false"] {
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    .tfwmds-travel-update__disruption {
+      flex-wrap: wrap;
+
+      &:not(:last-child) {
+        margin-bottom: $size-md;
+      }
+
+      .tfwmds-travel-update__disruption-indicator-btn {
+        display: inline-flex;
+        margin-right: $size-md;
+        padding: 0;
+        border: 0;
+        background: none;
+        flex-direction: column;
+
+        .tfwmds-disruption-indicator-medium {
+          margin: 0;
+        }
+      }
+
+      .tfwmds-travel-update__disruption-text {
+        display: inline-flex;
+        text-align: left;
+        flex-direction: column;
+        flex: 1;
+
+        strong {
+          display: block;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-sm - 1) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .tfwmds-travel-update__disruption-detail-toggle {
+        // Rotate chevron icon if toggle is checked
+        &[data-collapse-all="true"] svg {
+          transform: rotate(90deg);
+        }
+      }
+
+      .tfwmds-travel-update__disruption {
+        display: block;
+
+        &.is-expanded {
+          flex: 0 0 100%;
+        }
+      }
+
+      .tfwmds-travel-update__disruption-indicator-btn {
+        .tfwmds-travel-update__disruption-text {
+          padding-top: $size-sm;
+        }
+
+        &[aria-expanded="false"] {
+          & ~ .tfwmds-travel-update__disruption-text {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-sm) {
+      .tfwmds-travel-update__disruption-detail-toggle {
+        display: none;
+      }
+    }
+  }
+
+  // Styles for edit view travel update card
+  &--edit {
+    @media screen and (max-width: $breakpoint-sm - 1) {
+      .tfwmds-travel-update__disruption {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .tfwmds-travel-update__disruption-text {
+        display: block;
+        order: 1; // (make text to show after the delete button on mobile)
+      }
+    }
+
+    .tfwmds-travel-update__disruption-delete {
+      width: $size-lg;
+      height: $size-lg;
+      border: 0;
+      border-radius: 5px;
+      background-color: get-color(error);
+      cursor: pointer;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $white;
+        vertical-align: middle;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+&.tfwmds-phase-indicator {
+  padding: $size-xs;
+  border-radius: 4px;
+  color: $white;
+  background-color: get-color(secondary);
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @media screen and(min-width: $breakpoint-md) {
+    padding: $size-xs $size-sm;
+  }
+}

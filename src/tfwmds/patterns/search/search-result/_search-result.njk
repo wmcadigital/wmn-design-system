@@ -1,0 +1,24 @@
+{% macro tfwmdsSearchResult(params) %}
+
+{# Imports #}
+{% from "../../../components/breadcrumb/_breadcrumb.njk" import tfwmdsBreadcrumb %}
+
+<div class="tfwmds-search-result">
+    <h2 class="tfwmds-m-b-none"><a href="#" class="tfwmds-h2 tfwmds-search-result__title">{{params.pageTitle}}</a></h2>
+    {{
+        tfwmdsBreadcrumb({
+            items: [{
+                contentText: "Swift and Tickets",
+                href: "#"
+            },{
+                contentText: "Swift",
+                href: "#"
+            }],
+            label: "Main",
+            isMobileApp: true
+        }) | trim
+    }}
+    <p class="tfwmds-search-result__excerpt">{{params.excerpt | safe}}</p>
+</div>
+
+{% endmacro %}

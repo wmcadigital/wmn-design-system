@@ -12,7 +12,7 @@ const spritingSVGs = () => {
         const newName = file;
         const name = file.dirname.split(path.sep);
         name.push(file.basename);
-        name.unshift('wmnds');
+        name.unshift('tfwmds');
         newName.basename = name.join('-');
       })
     )
@@ -36,7 +36,7 @@ const spritingSVGs = () => {
       })
     )
     .pipe(plugins.svgstore())
-    .pipe(plugins.rename({ basename: 'wmnds-icons', extname: '.min.svg' }))
+    .pipe(plugins.rename({ basename: 'tfwmds-icons', extname: '.min.svg' }))
     .pipe(dest(paths.svgs.dest));
 };
 

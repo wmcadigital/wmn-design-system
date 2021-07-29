@@ -1,0 +1,102 @@
+{% macro tfwmdsFileUpload(params) %}
+
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/form-elements/error-message/_error-message.njk" import tfwmdsFeErrorMessage %}
+
+{# Params #}
+{% set id = params.id if params.id else "fileUploader" %}
+{% set name = params.name if params.name else id %}
+{% set classes = " " + params.classes if params.classes %}
+{% set required = params.required if params.required else false %}
+{% set disabled = params.disabled if params.disabled else null %}
+{% set fileSelected = true if params.fileSelected else false %}
+
+{# Error Message Params #}
+{% set groupErrorClass = " tfwmds-fe-group--error" if params.error %}
+{% set error = true if params.error else false %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please upload an image" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+
+
+<div class="tfwmds-fe-group {{formGroupClasses}}{{groupErrorClass}}">
+
+    {% if fileSelected %}
+        {% if error -%}
+          {{
+            tfwmdsFeErrorMessage(
+              {
+                contentText: errorContentText,
+                contentHTML: errorContentHTML,
+                classes: errorClasses,
+                id: errorId
+              }
+            )
+          }}
+        {% endif %}
+      <div class="tfwmds-fe-file-upload">
+        <input
+          type="file"
+          name="{{name}}"
+          id="{{id}}"
+          class="tfwmds-fe-file-upload__input tfwmds-fe-file-upload__input--file-selected {{classes}}"
+          {% if required %} required {% endif %}
+          {% if disabled %} disabled {% endif %}
+        />
+        <label for="{{name}}" class="tfwmds-btn tfwmds-btn--primary tfwmds-fe-file-upload__label">
+          Remove file
+          <!-- trash icon -->
+          {{ tfwmdsIcon({
+            icon: 'general-trash',
+            class: 'tfwmds-btn__icon tfwmds-btn__icon--right'
+          }) | safe }}
+        </label>
+        <span>
+          test-file.jpg
+        </span>
+      </div>
+
+    {% else %}
+      <div class="tfwmds-fe-file-upload">
+        {% if error -%}
+          {{
+            tfwmdsFeErrorMessage(
+              {
+                contentText: errorContentText,
+                contentHTML: errorContentHTML,
+                classes: errorClasses,
+                id: errorId
+              }
+            )
+          }}
+        {% endif %}
+        <input
+          type="file"
+          name="{{name}}"
+          id="{{id}}"
+          class="tfwmds-fe-file-upload__input {{classes}}"
+          {% if required %} required {% endif %}
+          {% if disabled %} disabled {% endif %}
+        />
+
+        <label for="{{name}}" class="tfwmds-btn tfwmds-btn--primary tfwmds-fe-file-upload__label">
+          Choose file
+          <!-- paper click icon -->
+          {{ tfwmdsIcon({
+            icon: 'general-paperclip',
+            class: 'tfwmds-btn__icon tfwmds-btn__icon--right'
+          }) | safe }}
+        </label>
+        <span>
+          no file selected
+        </span>
+      </div>
+    {% endif %}
+
+</div>
+
+{% endmacro %}

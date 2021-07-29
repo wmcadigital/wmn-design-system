@@ -24,15 +24,15 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
+{% from "tfwmds/components/form-elements/form-label/_form-label.njk" import tfwmdsFormLabel %}
 {{
   compExample([
-    wmndsFormLabel()
+    tfwmdsFormLabel()
   ],
   {
-    componentPath: "wmnds/components/form-elements/form-label/",
+    componentPath: "tfwmds/components/form-elements/form-label/",
     njk: true,
-    njkProps: wmndsFormLabelProps,
+    njkProps: tfwmdsFormLabelProps,
     js: false,
     iframe: false
   })

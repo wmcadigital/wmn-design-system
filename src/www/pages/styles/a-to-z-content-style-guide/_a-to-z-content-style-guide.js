@@ -2,19 +2,19 @@ function aToZContentStyleGuide() {
   // FUNCTIONS
   // Change accordion state
   const changeAccordionState = (accordionElem, changeStateToOpen = true) => {
-    const accordionBtn = accordionElem.querySelector('.wmnds-accordion__summary-wrapper');
+    const accordionBtn = accordionElem.querySelector('.tfwmds-accordion__summary-wrapper');
     if (changeStateToOpen) {
-      accordionElem.classList.add('wmnds-is--open');
+      accordionElem.classList.add('tfwmds-is--open');
       accordionBtn.setAttribute('aria-expanded', true);
     } else {
-      accordionElem.classList.remove('wmnds-is--open');
+      accordionElem.classList.remove('tfwmds-is--open');
       accordionBtn.setAttribute('aria-expanded', false);
     }
   };
 
   // Change all accordion states at once
   const changeAllAccordionStates = changeStateToOpen => {
-    const accordions = document.querySelectorAll('main .wmnds-accordion');
+    const accordions = document.querySelectorAll('main .tfwmds-accordion');
     accordions.forEach(accordion => changeAccordionState(accordion, changeStateToOpen));
   };
 
@@ -22,7 +22,7 @@ function aToZContentStyleGuide() {
   const scrollToAnchor = idWithHash => {
     // Check if element is on the page
     const elem = document.querySelector(idWithHash);
-    if (!elem || elem.classList.contains('wmnds-accordion__summary-wrapper')) {
+    if (!elem || elem.classList.contains('tfwmds-accordion__summary-wrapper')) {
       return;
     }
     // Open accordion and scroll to element

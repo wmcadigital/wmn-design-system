@@ -1,0 +1,80 @@
+&.tfwmds-autocomplete {
+  // The container for autocomplete
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  // autocomplete icon embeded in container to overwrite FontAwesome defaults
+  .tfwmds-autocomplete__icon,
+  .tfwmds-loader {
+    display: block;
+    position: absolute;
+    top: calc(#{$size-sm} + 1px);
+    bottom: calc(#{$size-sm} + 1px);
+    left: calc(#{$size-sm} + 1px);
+    width: 22px;
+    height: 22px;
+    fill: get-color(disable);
+  }
+
+  &__input {
+    padding-left: 45px;
+
+    &::placeholder {
+      color: get-color(text);
+      font-weight: bold;
+    }
+  }
+
+  // Loading state
+  .tfwmds-loader {
+    display: none;
+    border-width: 3px;
+  }
+
+  // When loading class is added, show tfwmds-loader but hide normal icon
+  &.tfwmds-is--loading {
+    .tfwmds-autocomplete__icon {
+      display: none;
+    }
+
+    .tfwmds-loader {
+      display: inline-block;
+    }
+  }
+}
+
+// Autocomplete suggestions/results styling
+.tfwmds-autocomplete-suggestions {
+  width: 100%;
+  max-height: 300px;
+  margin-top: 0;
+  padding: 0;
+  overflow-y: auto;
+  border-bottom: 1px solid get-color(primary);
+  background-color: $white;
+
+  &__li {
+    margin-bottom: 0;
+    padding: 10px;
+    list-style: none;
+    border-right: 1px solid get-color(primary);
+    border-bottom: 1px solid get-color(primary);
+    border-left: 1px solid get-color(primary);
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: get-color(information, 80);
+      box-shadow: none;
+    }
+
+    .tfwmds-disruption-indicator-medium {
+      margin-right: 15px;
+    }
+  }
+}

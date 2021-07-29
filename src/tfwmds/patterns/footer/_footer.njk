@@ -1,0 +1,115 @@
+{% macro tfwmdsFooter(params) %}
+{% set appClass = " tfwmds-footer--mobile-app" if params.app else "" %}
+{# Imports #}
+{% from "tfwmds/patterns/feedback-loop/_feedback-loop.njk" import tfwmdsFeedbackLoop %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+
+
+<footer>
+  {% if params.feedback -%}
+  <!-- Feedback loop -->
+  {{
+    tfwmdsFeedbackLoop({
+      id: 'fb-footer',
+      metaFields: [
+        {name: 'contentType', value: 'content'}, 
+        {name: 'contentName', value: 'PageTitle'}, 
+        {name: 'contentLastEditor', value: 'Editor name'}, 
+        {name: 'serviceName', value: 'Transport for West Midlands Design system'}, 
+        {name: 'contentLastUpdated', value: '2021-03-19T11:18:15.532Z'}
+      ],
+      formFields: [
+        {
+          type: 'textarea',
+          name: 'contentWrongComment',
+          labelText: 'What is wrong with this page?',
+          placeholder: 'Text',
+          required: true
+        },
+        {
+          type: 'input',
+          name: 'emailAddress',
+          labelText: 'Email address (optional)',
+          placeholder: 'Text'
+        },
+        {
+          type: 'checkbox',
+          name: 'consent',
+          labelText: 'I consent to being contacted about the issue I am reporting (optional)'
+        },
+        {
+          type: 'checkbox',
+          name: 'privacy',
+          labelHTML: 'I agree to <a href="#">WMCA’s Privacy Policy</a>',
+          required: true
+        }
+      ]
+    })
+  }}
+  <!-- End feedback loop -->
+  {% endif -%}
+  <div class="tfwmds-footer{{appClass}} tfwmds-footer--v2">
+    <div class="tfwmds-container tfwmds-grid">
+      <div class="tfwmds-col-1 tfwmds-col-lg-1-3 tfwmds-footer__updates-col">
+        <h3 class="tfwmds-footer__heading">Stay up to date</h3>
+        <p>Don’t miss out on vital information, subscribe today and be in the know at all times.</p>
+        <a href="#" class="tfwmds-btn tfwmds-footer__btn tfwmds-footer__btn--block">Sign up to updates</a>
+      </div>
+      {# loop through footer menus and get items #}
+      {% if(params.menu1) %}
+      {% set menu1Name = params.menu1.name | replace(r/[^\w\ ]/gi, '') | replace(' ', '-') | lower %}
+        <div class="tfwmds-col-1 tfwmds-col-lg-1-3">
+          <h3 class="tfwmds-footer__heading tfwmds-collapse-heading" aria-controls="footer-menu-{{menu2Name}}" aria-expanded="true">
+            {{params.menu1.name}}
+            {{tfwmdsIcon({class: 'tfwmds-collapse-heading__indicator', icon: 'general-chevron-right'}) | trim}}
+          </h3>
+          <ul class="tfwmds-footer__menu tfwmds-collapse-panel" id="footer-menu-{{menu2Name}}">
+          {% for menuItem in params.menu1.menuItems-%}
+            <li><a class="tfwmds-footer__link" href="#">{{menuItem.name}}</a></li>
+          {% endfor -%}
+          </ul>
+        </div>
+      {% endif %}
+      {% if(params.menu2) %}
+      {% set menu2Name = params.menu2.name | replace(r/[^\w\ ]/gi, '') | replace(' ', '-') | lower %}
+        <div class="tfwmds-col-1 tfwmds-col-lg-1-3">
+          <h3 class="tfwmds-footer__heading tfwmds-collapse-heading" aria-controls="footer-menu-{{menu2Name}}" aria-expanded="true">
+            {{params.menu2.name}}
+            {{tfwmdsIcon({class: 'tfwmds-collapse-heading__indicator', icon: 'general-chevron-right'}) | trim}}
+          </h3>
+          <ul class="tfwmds-footer__menu tfwmds-collapse-panel" id="footer-menu-{{menu2Name}}">
+          {% for menuItem in params.menu2.menuItems-%}
+            <li><a class="tfwmds-footer__link" href="#">{{menuItem.name}}</a></li>
+          {% endfor -%}
+          </ul>
+          <h3 class="tfwmds-footer__heading">Social media</h3>
+          <ul class="tfwmds-footer__social-media">
+            <li><a href="https://www.facebook.com/westmidlandsnetwork/" title="Facebook">{{tfwmdsIcon({icon: 'social-facebook'}) | trim}}</a></li>
+            <li><a href="https://twitter.com/WMNetwork" title="Twitter">{{tfwmdsIcon({icon: 'social-twitter'}) | trim}}</a></li>
+            <li><a href="https://www.instagram.com/wmnetwork/" title="Instagram">{{tfwmdsIcon({icon: 'social-instagram'}) | trim}}</a></li>
+          </ul>
+        </div>
+      {% endif %}
+      </div>
+      <div class="tfwmds-container">
+        <div class="tfwmds-footer__bottom tfwmds-grid">
+          <div class="tfwmds-col-1 tfwmds-col-md-1-2">
+            <p class="tfwmds-footer__copyright">&copy; West Midlands Combined Authority {{currentYear}}</p>
+          </div>
+          {% if params.bottomMenu -%}
+          <div class="tfwmds-col-1 tfwmds-col-md-1-2">
+            <ul class="tfwmds-footer__bottom-menu">
+              {# loop through bottom menu items #}
+              {% for bottomMenuItem in params.bottomMenu -%}
+              {% set bottomMenuLink = bottomMenuItem.link if bottomMenuItem.link else "" -%}
+              <li><a class="tfwmds-footer__link" href="{{bottomMenuItem.link}}">{{bottomMenuItem.name}}</a></li>
+              {% endfor -%}
+            </ul>
+          </div>
+          {% endif -%}
+        </div>
+      </div>
+  </div>
+</footer>
+
+{% endmacro %}

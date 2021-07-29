@@ -43,10 +43,10 @@ Build commands are used for when code is to be compiled to an output that is sui
 - Uses [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) to parse CSS and add vendor prefixes
 - Minifies CSS
 - Creates two files in `{root}/build/css/`
-  - `wmnds-website.css`
+  - `tfwmds-website.css`
     - For styleguide specific styling
-  - `wmn.css`
-    - For any styling related to WMN components
+  - `tfwm.css`
+    - For any styling related to TfWM components
 - Creates sourcemaps in `{route}/_sourcemaps/`
 
 ## 1.3. Templates (HTML)
@@ -74,14 +74,14 @@ Build commands are used for when code is to be compiled to an output that is sui
 - Concatenates all smaller javascript files together into one file
 - Mangles and minifies the file
 - Creates three files in `{root}/build/js/`
-  - `wmnds-website.min.js`
-    - Created from any javascript files found in `{root}/src/wmnds-website/**/*.js`
+  - `tfwmds-website.min.js`
+    - Created from any javascript files found in `{root}/src/tfwmds-website/**/*.js`
     - For styleguide specific items only
   - `vendor.min.js`
     - Created from any javascript files found in `{root}/src/assets/js/vendor/**/*.js`
     - For any vendor/third-party scripts that are required for components
-  - `wmn.min.js`
-    - Created from any javascript files found in `['src/assets/js/wmn.js', 'src/components/**/*.js']`
+  - `tfwm.min.js`
+    - Created from any javascript files found in `['src/assets/js/tfwm.js', 'src/components/**/*.js']`
     - For any custom javascript associated with a component
 - Creates sourcemaps in `{route}/_sourcemaps/`
 

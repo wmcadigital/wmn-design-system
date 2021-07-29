@@ -1,0 +1,117 @@
+// PALETTE COLOURS
+// All of our palette colours with their respective tints (mix white in at 10% intervals)
+// All brand colours, see styles/colour-palettes page for more...
+$palettes: (
+  primary: #3c1053,
+  secondary: #9d5baf,
+  bus: #ea0029,
+  metro: #0075c9,
+  railway: #e07709,
+  susTravel: #658d1b,
+  roads: #df1683,
+  text: #080607,
+  cta: #1d7bbf,
+  error: #d4351c,
+  warning: #b75e00,
+  success: #00703c,
+  information: #84329b,
+  disable: #676869,
+  plannedDisruption: #ffdd00,
+  background: #f3f2f1
+);
+
+$white: #ffffff;
+$black: #000000;
+
+// FONT-FACE
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: normal;
+  font-weight: normal;
+  // sass-lint:disable-block indentation
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-regular-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-regular-webfont.woff")
+      format("woff");
+  // sass-lint:enable indentation
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: normal;
+  font-weight: bold;
+  // sass-lint:disable-block indentation
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bold-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bold-webfont.woff")
+      format("woff");
+  // sass-lint:enable indentation
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: italic;
+  font-weight: normal;
+  // sass-lint:disable-block indentation
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-italic-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-italic-webfont.woff")
+      format("woff");
+  // sass-lint:enable indentation
+}
+
+@font-face {
+  font-family: "Noto Sans Display";
+  font-style: italic;
+  font-weight: bold;
+  // sass-lint:disable-block indentation
+  src: url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bolditalic-webfont.woff2")
+      format("woff2"),
+    url("https://unpkg.com/wmn-design-system@latest/build/fonts/notosansdisplay-bolditalic-webfont.woff")
+      format("woff");
+  // sass-lint:enable indentation
+}
+
+// TEXT
+$text-color: get-color($black);
+$x-font-family: "Noto Sans Display", sans-serif;
+$x-heading-font-family: "DM Sans", sans-serif;
+
+// Base font size and line height
+$base-font-size: 16px; // 16px
+$base-line-height: 1.5rem; // 24px
+// Font sizes can be found in _mixins.scss
+
+// Sizing (used for margin, padding, line heights etc.)
+// [DON'T TOUCH EXISTING, ONLY ADD NEW ONES]
+$size-xs: 0.25rem; // 4px
+$size-xsm: 0.5rem; // 8px
+$size-sm: 0.75rem; // 12px
+$size-md: 1rem; // 16px
+$size-lg: 2rem; // 32px
+$size-xl: 3rem; // 48px
+
+// Breakpoints
+$breakpoint-xs: 0; // Extra small screen / phone
+$breakpoint-sm: 568px; // Small screen / phone
+$breakpoint-md: 768px; // Medium screen / tablet
+$breakpoint-lg: 992px; // Large screen / desktop (this is used for tfwmds-container size)
+$breakpoint-xl: 1280px; // Extra large screen / wide desktop
+
+// Grid vars
+$cols: 1 2 3 4 5 6 12 24;
+$grid-breakpoint-map: (
+  "sm": 35.5,
+  "md": 48,
+  "lg": 62,
+  "xl": 80
+);
+$grid-max-cols: 5;
+$spacing-map: (
+  "xs": $size-xs,
+  "xsm": $size-xsm,
+  "sm": $size-sm,
+  "md": $size-md,
+  "lg": $size-lg,
+  "xl": $size-xl
+);

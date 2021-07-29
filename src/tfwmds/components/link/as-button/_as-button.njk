@@ -1,0 +1,49 @@
+{% macro tfwmdsLinkAsButton(params) %}
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{# Set vars #}
+{% set type = " tfwmds-btn--" + params.type if params.type %}
+{% set contentText = params.contentText if params.contentText else "Button text" %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+{% set link = params.link if params.link else "#" %} {# set link url #}
+{% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
+{% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
+{% set classes = " " + params.classes if params.classes %} {# set params.classNames if any #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set _linkRel = "noopener noreferrer" if linkTarget === "_blank" %} {# if target is blank then add rel noopener noreferrer to link #}
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
+
+<a href="{{ link }}" title="{{ linkTitle }}" target="{{ linkTarget }}" class="tfwmds-btn{{ classes }}{{ type }}" {% if _linkRel %}rel="{{linkRel}}"{% endif %}>
+  {#- iconLeft -#}
+  {% if iconLeft %}
+    {{
+      tfwmdsIcon({
+        icon: iconLeft,
+        class: 'tfwmds-btn__icon'
+      })
+    }}
+
+   {{_content}}
+
+  {#- iconRight -#}
+  {% elseif iconRight %}
+
+   {{_content}}
+
+    {{
+      tfwmdsIcon({
+        icon: iconRight,
+        class: 'tfwmds-btn__icon tfwmds-btn__icon--right'
+      })
+    }}
+
+  {#- noIcon -#}
+  {% else %}
+
+   {{_content}}
+
+  {%- endif %}
+</a>
+
+{% endmacro %}

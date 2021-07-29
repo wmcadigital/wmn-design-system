@@ -1,0 +1,112 @@
+&.tfwmds-header {
+  display: block;
+  padding: $size-md 0;
+  background-color: get-color(primary);
+  text-align: left;
+
+  // Skip link styling
+  &__skip-link {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: $size-md;
+    clip: rect(0 0 0 0);
+    color: $white;
+    background-color: get-color(cta);
+
+    &:visited {
+      color: $white;
+    }
+
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      clip: auto;
+      box-shadow: none;
+    }
+  }
+
+  // Logo styles
+  &__logo-link {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-right: $size-sm;
+    overflow: hidden;
+    vertical-align: middle;
+
+    @media screen and(min-width: $breakpoint-md) {
+      width: auto;
+    }
+  }
+
+  &__logo {
+    width: 88px;
+    max-width: 88px;
+    height: 34px;
+    float: left;
+  }
+
+  // To vertical align the logo's and nav
+  &__vertical-align,
+  .tfwmds-phase-indicator {
+    vertical-align: middle;
+  }
+
+  // Title variant
+  &__title {
+    @include type-setting(3);
+    margin-bottom: 0;
+    color: $white;
+
+    @media all and(min-width: $breakpoint-sm) {
+      max-width: calc(100% - 200px); // Give some padding for the logos on the left
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  // Nav links
+  &__links {
+    display: block;
+    margin: 0;
+    padding: 0;
+    float: right;
+
+    @media screen and(min-width: $breakpoint-md) {
+      text-align: right;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0 $size-xs;
+
+    @media screen and(min-width: $breakpoint-sm) {
+      margin: 0 $size-sm;
+    }
+
+    .tfwmds-link {
+      color: $white;
+    }
+  }
+
+  // App specific header styles
+  &--mobile-app {
+    .tfwmds-header__main-links {
+      display: none;
+
+      @media screen and(min-width: $breakpoint-md) {
+        display: inline-block;
+      }
+    }
+
+    .tfwmds-header__back-btn {
+      @media screen and(min-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{% macro tfwmdsHeader(params) %}
+{# Set navItems #}
+{% set navItems = params.navItems %}
+{% set appClass = " tfwmds-header--mobile-app" if params.app else "" %}
+{% set navigationAriaLabel = params.exampleAria + " example navigation" if params.exampleAria else "Navigation" %}
+{# Imports #}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/patterns/banner/_banner.njk" import tfwmdsBanner %}
+{% from "tfwmds/components/breadcrumb/_breadcrumb.njk" import tfwmdsBreadcrumb %}
+{% from "tfwmds/patterns/cookies/cookies-banner/_cookies-banner.njk" import tfwmdsCookiesBanner %}
+
+<!-- Skip to content link -->
+{{
+  tfwmdsLink({
+    link: '#tfwmds-main-content',
+    linkTitle: 'Skip to main content',
+    contentText: 'Skip to main content',
+    classes: 'tfwmds-header__skip-link'
+  })
+}}
+<!-- Main header section -->
+<header>
+  {{
+    tfwmdsCookiesBanner()
+  }}
+  <div class="tfwmds-header{{appClass}}">
+    <div class="tfwmds-container tfwmds-grid tfwmds-grid--align-center tfwmds-grid--justify-between">
+      <div class="tfwmds-header__vertical-align tfwmds-col-auto">
+        <!-- Logo -->
+        <a class="tfwmds-header__logo-link" href="/" title="Transport for West Midlands Design System">
+          <img class="tfwmds-header__logo" alt="Transport for West Midlands logo" src="/img/logo.svg" />
+        </a>
+      </div>
+
+      {#- If with a title #}
+      {% if params.withTitle -%}
+      <!-- Header title -->
+      <h1 class="tfwmds-header__title tfwmds-col-1 tfwmds-col-sm-auto">
+        Reinstate your Direct Debit<br>(COVID-19)
+      </h1>
+      {%- else %}
+      {#- Else with a navigation -#}
+      <!-- Nav items -->
+      <nav class="tfwmds-header__vertical-align tfwmds-col-auto" aria-label="{{navigationAriaLabel}}">
+        <ul class="tfwmds-header__links tfwmds-header__main-links">
+          {% for navItem in navItems -%}
+          <li class="tfwmds-header__link">
+            <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="tfwmds-link" >
+              {{ navItem.name}}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+
+        {%- if params.app %}
+        <!-- Back button -->
+        <ul class="tfwmds-header__links tfwmds-header__back-btn">
+          <li class="tfwmds-header__link">
+            <a
+              href="#"
+              title="Go back to previous page"
+              target="_self"
+              class="tfwmds-link"
+              onClick="goBack(event);"
+            >
+              Back
+            </a>
+          </li>
+        </ul>
+        <script>
+          // Function that sends user to previous page they were on,
+          // This can be included in your local javascript file
+          function goBack(e) {
+            e.preventDefault();
+            window.history.back();
+          }
+        </script>
+        <!-- End back button -->
+        {%- endif %}
+      </nav>
+      {%- endif %}
+    </div>
+  </div>
+
+  {%- if params.banner or params.breadcrumbs %}
+  <div class="tfwmds-container">
+    {% if params.banner -%}
+    <!-- Phase banner -->
+    {{
+      tfwmdsBanner ({
+        link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+        linkTitle: 'WMN Design System Github',
+        phase: true
+      }) | trim | indent(4)
+    -}}
+    {%- endif -%}
+
+    {%- if params.breadcrumbs and params.breadcrumbs.section != 'Home' %}
+    <!-- Breadcrumbs -->
+    {{
+      tfwmdsBreadcrumb({
+        items: [{
+          contentText: params.breadcrumbs.section or "Components"
+        },{
+          contentText: params.breadcrumbs.pageTitle
+        }],
+        label: params.label
+      }) | trim | indent(4)
+    -}}
+    {% endif %}
+  </div>
+  {%- endif %}
+</header>
+
+{% endmacro %}

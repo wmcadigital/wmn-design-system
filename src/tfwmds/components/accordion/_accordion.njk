@@ -1,0 +1,43 @@
+{% macro tfwmdsAccordion(params) %}
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{# Params #}
+{% set isOpen = " tfwmds-is--open" if params.isOpen %}
+{% set _isExpanded = "true" if params.isOpen else "false" %}
+{% set id = params.id if params.id else "accordion-01" %}
+{% set headingText = params.headingText if params.headingText else "Accordion heading" %}
+{% set headingHTML = params.headingHTML if params.headingHTML else null %}
+{% set contentText = params.contentText if params.contentText else "Lorem ipsum dolar sit..." %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
+
+<div class="tfwmds-accordion{{isOpen}}">
+  <button aria-controls="{{id}}" class="tfwmds-accordion__summary-wrapper" aria-expanded="{{_isExpanded}}">
+    <!-- accordion summary -->
+    <div class="tfwmds-accordion__summary">
+      {% if headingHTML -%}
+      <!-- custom summary using grid -->
+        {{headingHTML | safe}}
+      {%- else -%}
+        <h4 class="tfwmds-accordion__heading-text">{{headingText}}</h4>
+      {%- endif %}
+    </div>
+    <!-- plus icon -->
+    {{ tfwmdsIcon({
+      icon: 'general-expand',
+      class: 'tfwmds-accordion__icon'
+    }) | safe }}
+    <!-- minus icon -->
+    {{ tfwmdsIcon({
+      icon: 'general-minimise',
+      class: 'tfwmds-accordion__icon tfwmds-accordion__icon--minimise'
+    }) | safe }}
+  </button>
+
+  <!-- accordion content -->
+  <div class="tfwmds-accordion__content" id="{{id}}">
+    {{_content}}
+  </div>
+</div>
+
+{% endmacro %}

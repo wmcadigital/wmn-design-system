@@ -1,0 +1,20 @@
+{% raw %}
+{% from "tfwmds/components/form-elements/date-input/_date-input.njk" import tfwmdsDateInput %}
+
+{{
+   tfwmdsDateInput({
+      id: "passport-date",
+      required: true,
+      error: false, 
+      errorMessage: {
+         id: null,
+         contextText: "The date your passport was issued must be in the past",
+         contextHTML: null,
+         classes: null
+      },
+      formGroup: {
+         classes: "tfwmds-m-t-20"
+      }
+    })
+}}
+{% endraw %}

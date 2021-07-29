@@ -1,0 +1,54 @@
+// THIS IS USED BY 'AUTOCOMPLETE' COMPONENT/PATTERN, ANY CHANGES TO THIS COMPONENT COULD EFFECT IT.
+$tfwmds-loader-animation-speed: 1s;
+
+&.tfwmds-loader {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  animation: spin $tfwmds-loader-animation-speed linear infinite;
+  border: 10px solid get-color(background);
+  border-top: 10px solid get-color(primary);
+  border-radius: 50%;
+
+  // These settings are aligned with the &__icon, &__icon--right in button.scss
+  &--btn {
+    width: 22px;
+    height: 22px;
+    margin-left: $size-sm;
+    border-width: 2px;
+    border-top-color: get-color(cta);
+  }
+
+  &--small {
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+  }
+
+  &--large {
+    width: 200px;
+    height: 200px;
+    border-width: 20px;
+  }
+
+  &__content {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

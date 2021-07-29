@@ -1,0 +1,125 @@
+{
+  "tfwmdsRadiosProps": [
+    {
+      "name": "items",
+      "type": "array",
+      "description": "<strong>Required.</strong> Array of radio items objects. See <code class='tfwmds-website-inline-code'>items</code> below.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='tfwmds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within each radio item label. If <code class='tfwmds-website-inline-code'>contentHTML</code> is provided, the <code class='tfwmds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='tfwmds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within each radio item label. If <code class='tfwmds-website-inline-code'>contentHTML</code> is provided, the <code class='tfwmds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "<strong>Required.</strong> Value for the radio input."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Specific id attribute for the radio item. If omitted, then <code class='tfwmds-website-inline-code'>idPrefix</code> string will be applied."
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "description": "If true, radio will be checked."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Specific name for the radio item. If omitted, then component global name string will be applied."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "If true, radio will be disabled."
+        }
+      ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong> Name attribute for all radio items."
+    },
+    {
+      "name": "hint",
+      "type": "object",
+      "description": "Options for the hint component (e.g. text). See <code class='tfwmds-website-inline-code'>hint</code> options below.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='tfwmds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within the hint. If <code class='tfwmds-website-inline-code'>contentHTML</code> is provided, the <code class='tfwmds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='tfwmds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within the hint. If <code class='tfwmds-website-inline-code'>contentHTML</code> is provided, the <code class='tfwmds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Optional id attribute to add to the hint span tag."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the hint span tag."
+        }
+      ]
+    },
+    {
+      "name": "idPrefix",
+      "type": "string",
+      "description": "String to prefix id for each radio item if no id is specified on each item. If not passed, fall back to using the name option instead."
+    },
+    {
+      "name": "inline",
+      "type": "boolean",
+      "description": "Determines whether to the display the radios horizontally or vertically."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the radios container."
+    },
+    {
+      "name": "error",
+      "type": "boolean",
+      "description": "If true, errorMessage will show. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "errorMessage",
+      "type": "object",
+      "description": "Options for the error message component. See <code class='tfwmds-website-inline-code'>errorMessage</code> options below.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the error message. If <code class='tfwmds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> HTML to use within the error message"
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Id attribute to add to the error message span tag."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the error message span tag."
+        }
+      ]
+    }
+  ]
+}

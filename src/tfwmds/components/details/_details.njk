@@ -1,0 +1,27 @@
+{% macro tfwmdsDetails(params) %}
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{# Params  #}
+{% set isOpen = true if params.isOpen else false %}
+{% set headingText = params.headingText if params.headingText else "Detail heading" %}
+{% set headingHTML = params.headingHTML if params.headingHTML else null %}
+{% set contentText = params.contentText if params.contentText else "Lorem ipsum dolar sit..." %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+
+<details class="tfwmds-details" {%- if isOpen == true %} open="true" {%- endif -%}>
+    <summary class="tfwmds-link">
+        {% if headingHTML -%}
+            {{headingHTML | safe}}
+        {%- else -%}
+            {{headingText}}
+        {%- endif %}
+    </summary>
+    <div class="tfwmds-details__content">
+        {% if contentHTML %}
+            {{contentHTML | safe}}
+        {% else %}
+            <p>{{contentText}}</p>
+        {% endif %}
+    </div>
+</details>
+{% endmacro %}

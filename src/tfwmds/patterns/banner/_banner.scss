@@ -1,0 +1,104 @@
+@import "./homepage-banner/homepage-banner";
+
+&.tfwmds-banner-container {
+  $self: &;
+  padding: $size-md 0;
+  border-bottom: 1px solid get-color(text);
+
+  &--emergency {
+    padding: $size-md;
+    border-bottom: solid 3px get-color(error);
+    color: $white;
+    background-color: get-color(text);
+
+    *,
+    .tfwmds-link:hover,
+    .tfwmds-link:focus,
+    .tfwmds-link:visited {
+      color: currentColor;
+    }
+  }
+
+  &__phase-wrapper {
+    margin-right: $size-xsm;
+    float: left;
+
+    // Add line height only when phase is present
+    @media screen and (max-width: $breakpoint-sm) {
+      + #{$self}__text {
+        line-height: $size-lg;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__emergency {
+    &-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: currentColor;
+
+      &-error {
+        width: $size-lg;
+        height: $size-lg;
+        fill: get-color(error);
+      }
+    }
+
+    &-link,
+    &-close {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-close {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      font-size: $size-md;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    // Ordering
+    &-icon-col {
+      order: 0;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        padding-top: $size-xs;
+        order: 1;
+      }
+    }
+
+    &-title-col {
+      order: 1;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        padding-left: $size-md;
+      }
+    }
+
+    &-link-col {
+      margin-top: $size-md;
+      order: 1;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        margin: 0;
+        text-align: right;
+      }
+    }
+
+    &-close-col {
+      text-align: right;
+      order: 0;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        order: 1;
+      }
+    }
+  }
+}

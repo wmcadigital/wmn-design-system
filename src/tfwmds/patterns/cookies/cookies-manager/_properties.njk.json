@@ -1,0 +1,9 @@
+{
+  "tfwmdsCookiesManagerProps": [
+    {
+      "name": "showSuccessMessage",
+      "type": "boolean",
+      "description": "If true, it will display a success message. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    }
+  ]
+}

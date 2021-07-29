@@ -33,15 +33,15 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/form-elements/question/_question.njk" import wmndsQuestion %}
+{% from "tfwmds/components/form-elements/question/_question.njk" import tfwmdsQuestion %}
 {{
   compExample([
-    wmndsQuestion()
+    tfwmdsQuestion()
   ],
   {
-    componentPath: "wmnds/components/form-elements/question/",
+    componentPath: "tfwmds/components/form-elements/question/",
     njk: true,
-    njkProps: wmndsQuestionProps,
+    njkProps: tfwmdsQuestionProps,
     js: false,
     iframe: false
   })

@@ -7,30 +7,30 @@ module.exports = {
   },
   styles: {
     src: ['src/**/*.scss'], // src of styles to watch
-    minifySrc: ['src/wmnds/assets/sass/wmnds.scss', 'src/www/wmnds-website.scss'], // List of scss file(s) which should be processed, linted & minified
+    minifySrc: ['src/tfwmds/assets/sass/tfwmds.scss', 'src/www/tfwmds-website.scss'], // List of scss file(s) which should be processed, linted & minified
     output: 'build/css/', // output location of minified styles
-    reactNativeSrc: 'src/wmnds/assets/sass/wmnds.scss'
+    reactNativeSrc: 'src/tfwmds/assets/sass/tfwmds.scss'
   },
   scripts: {
     src: ['src/**/*.js'], // Src of JS files to watch
     // List of JS folders to concatenate, lint and minified to one file (DON'T LINT ASSETS AS IT WILL TAKE TOO LONG TO SCAN MINIFIED LIBS)
     minifySrc: [
       {
-        src: 'src/www/wmnds-website.js',
-        minName: 'wmnds-website.min.js',
+        src: 'src/www/tfwmds-website.js',
+        minName: 'tfwmds-website.min.js',
         lint: true
       }
     ],
     output: 'build/js/' // Output location of minified JS files
   },
   fonts: {
-    src: 'src/wmnds/assets/fonts/**/*',
+    src: 'src/tfwmds/assets/fonts/**/*',
     output: 'build/fonts/'
   },
   nunjucks: {
     src: 'src/**/*.{njk,md,html}', // Used for watching njk files
     websiteSrc: 'src/www/pages/**/*.{njk,md,html}',
-    componentSrc: 'src/wmnds/**/*.{njk,md,html}',
+    componentSrc: 'src/tfwmds/**/*.{njk,md,html}',
     output: 'build/',
     componentOutput: 'build/njk'
   },
@@ -39,12 +39,12 @@ module.exports = {
     output: 'build/json/'
   },
   svgs: {
-    src: 'src/wmnds/assets/icon/**/*.svg',
+    src: 'src/tfwmds/assets/icon/**/*.svg',
     dest: 'build/img/'
   },
   images: {
-    src: ['src/wmnds/assets/img/**/*.{png,gif,jpg}'],
-    output: 'src/wmnds/assets/img/**/*',
+    src: ['src/tfwmds/assets/img/**/*.{png,gif,jpg}'],
+    output: 'src/tfwmds/assets/img/**/*',
     dest: 'build/img/'
   },
   config: {

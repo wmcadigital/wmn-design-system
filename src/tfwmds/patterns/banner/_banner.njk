@@ -1,0 +1,83 @@
+{% macro tfwmdsBanner(params) %}
+{# Imports #}
+{% from "tfwmds/components/phase-indicator/_phase-indicator.njk" import tfwmdsPhaseIndicator %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+
+{# Set vars #}
+{% set link = params.link if params.link %} {# set button text #}
+{% set linkTitle = params.linkTitle if params.linkTitle %} {# set button text #}
+{# Emergency vars #}
+{% set emergencyModifier = " tfwmds-banner-container--emergency" if params.emergency %}
+{% set emergencyTitle = params.emergencyTitle or "Emergency notification title" %}
+{% set titleColClass = "tfwmds-col-xl-20-24" if params.onPage else "tfwmds-col-xl-10-24" %}
+
+
+<div class="tfwmds-banner-container{{emergencyModifier}}">
+   {% if params.emergency -%}
+   <div class="tfwmds-container tfwmds-grid tfwmds-grid--align-center">
+      <div class="tfwmds-col-xl-1-24 tfwmds-col-1-2 tfwmds-banner-container__emergency-icon-col">
+      {{
+         tfwmdsIcon({
+            class: "tfwmds-banner-container__emergency-icon-error",
+            icon: "general-warning-triangle"
+         }) | indent(8) | trim
+      }}
+      </div>
+      <div class="{{titleColClass}} tfwmds-col-1 tfwmds-banner-container__emergency-title-col">
+         <h2 class="tfwmds-h4 tfwmds-m-b-none">{{emergencyTitle}}</h2>
+      </div>
+      {% if not params.onPage -%}
+      <div class="tfwmds-col-xl-10-24 tfwmds-col-1 tfwmds-banner-container__emergency-link-col">
+         <a href="#" target="_self" class="tfwmds-link tfwmds-banner-container__emergency-link">
+            Read our latest advice
+            {{
+               tfwmdsIcon({
+                  class: "tfwmds-banner-container__emergency-icon tfwmds-m-l-sm",
+                  icon: "general-chevron-right"
+               }) | indent(12) | trim
+            }}
+         </a>
+      </div>
+      {%- endif %}
+      <div class="tfwmds-col-xl-3-24 tfwmds-col-1-2 tfwmds-banner-container__emergency-close-col">
+         <button class="tfwmds-banner-container__emergency-close">
+         Close
+         {{
+            tfwmdsIcon({
+               class: "tfwmds-banner-container__emergency-icon tfwmds-m-l-sm",
+               icon: "general-cross"
+            }) | indent(12) | trim
+         }}
+         </button>
+      </div>
+   </div>
+   {% else -%}
+   <div class="tfwmds-col-1">
+      {% if params.phase -%}
+      <div class="tfwmds-banner-container__phase-wrapper">
+         {{
+            tfwmdsPhaseIndicator() | indent(6) | trim
+         }}
+      </div>
+      {% endif -%}
+      {#- Banner content -#}
+      {% if params.html -%}
+      {{- html | safe -}}
+      {%- else -%}
+      <p class="tfwmds-banner-container__text">
+         This is a new service - your
+         {{ tfwmdsLink({
+               contentText: 'feedback',
+               link: link,
+               linkTitle: linkTitle,
+               linkTarget: '_blank'
+            })
+         }}
+         will help us to improve it.
+      </p>
+      {%- endif %}
+   </div>
+   {%- endif %}
+</div>
+{% endmacro %}

@@ -1,9 +1,9 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Disruption indicators" %}
 {# Get macros #}
-{% from "wmnds/components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
-{% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium %}
-{% from "wmnds/components/disruption-indicator/large/_large.njk" import wmndsDisruptionIndicatorLarge %}
+{% from "tfwmds/components/disruption-indicator/small/_small.njk" import tfwmdsDisruptionIndicatorSmall %}
+{% from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium %}
+{% from "tfwmds/components/disruption-indicator/large/_large.njk" import tfwmdsDisruptionIndicatorLarge %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% set modes = [
@@ -51,36 +51,36 @@ There are three types all giving different levels of detail.
 {% endmarkdown %}
 {{
   compExample([
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'bus'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'coach'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'cycle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'metro'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'plane'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'rail'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'roads'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'walk'
     })
   ],
   {
     displayInline: true,
-    componentPath: "wmnds/components/disruption-indicator/small/",
+    componentPath: "tfwmds/components/disruption-indicator/small/",
     njk: true,
-    njkProps: wmndsDisruptionIndicatorSmallProps,
+    njkProps: tfwmdsDisruptionIndicatorSmallProps,
     js: false,
     iframe: false
   })
@@ -94,52 +94,52 @@ There are three types all giving different levels of detail.
 
 {{
   compExample([
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'bus',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'coach',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'cycle',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'metro',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'plane',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'rail',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'roads',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'walk',
-      classes: 'wmnds-disruption-indicator-small--error',
+      classes: 'tfwmds-disruption-indicator-small--error',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
     displayInline: true,
-    componentPath: "wmnds/components/disruption-indicator/small/",
+    componentPath: "tfwmds/components/disruption-indicator/small/",
     njk: true,
-    njkProps: wmndsDisruptionIndicatorSmallProps,
+    njkProps: tfwmdsDisruptionIndicatorSmallProps,
     js: false,
     iframe: false
   })
@@ -152,52 +152,52 @@ There are three types all giving different levels of detail.
 {% endmarkdown %}
 {{
   compExample([
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'bus',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'coach',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'cycle',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'metro',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'plane',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'rail',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'roads',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorSmall({
+    tfwmdsDisruptionIndicatorSmall({
       mode: 'walk',
-      classes: 'wmnds-disruption-indicator-small--severe',
+      classes: 'tfwmds-disruption-indicator-small--severe',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
     displayInline: true,
-    componentPath: "wmnds/components/disruption-indicator/small/",
+    componentPath: "tfwmds/components/disruption-indicator/small/",
     njk: true,
-    njkProps: wmndsDisruptionIndicatorSmallProps,
+    njkProps: tfwmdsDisruptionIndicatorSmallProps,
     js: false,
     iframe: false
   })
@@ -223,35 +223,35 @@ There are three types all giving different levels of detail.
 {% endmarkdown %}
 {{
   compExample([
-    wmndsDisruptionIndicatorMedium(),
-    wmndsDisruptionIndicatorMedium({
-      classes: 'wmnds-disruption-indicator-medium--success',
+    tfwmdsDisruptionIndicatorMedium(),
+    tfwmdsDisruptionIndicatorMedium({
+      classes: 'tfwmds-disruption-indicator-medium--success',
       iconRight: 'general-success'
     }),
-    wmndsDisruptionIndicatorMedium({
-      classes: 'wmnds-disruption-indicator-medium--warning',
+    tfwmdsDisruptionIndicatorMedium({
+      classes: 'tfwmds-disruption-indicator-medium--warning',
       iconRight: 'general-warning-circle'
     }),
-    wmndsDisruptionIndicatorMedium({
-      classes: 'wmnds-disruption-indicator-medium--error',
+    tfwmdsDisruptionIndicatorMedium({
+      classes: 'tfwmds-disruption-indicator-medium--error',
       iconRight: 'general-warning-triangle'
     }),
-    wmndsDisruptionIndicatorMedium({
-      classes: 'wmnds-disruption-indicator-medium--severe',
+    tfwmdsDisruptionIndicatorMedium({
+      classes: 'tfwmds-disruption-indicator-medium--severe',
       iconRight: 'general-warning-triangle'
     })
   ],
   {
-    componentPath: "wmnds/components/disruption-indicator/medium/",
+    componentPath: "tfwmds/components/disruption-indicator/medium/",
     njk: true,
-    njkProps: wmndsDisruptionIndicatorMediumProps,
+    njkProps: tfwmdsDisruptionIndicatorMediumProps,
     js: false,
     iframe: false
   })
 }}
 
 {# Medium - Narrow #}
-{% from "wmnds/components/disruption-indicator/medium/_medium.njk" import wmndsDisruptionIndicatorMedium as wmndsDisruptionIndicatorNarrow %}
+{% from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium as tfwmdsDisruptionIndicatorNarrow %}
 {% markdown %}
 
 ## Medium - Narrow
@@ -280,47 +280,47 @@ There are three types all giving different levels of detail.
 {% endmarkdown %}
 {{
   compExample([
-    wmndsDisruptionIndicatorNarrow({
+    tfwmdsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (good service) -->',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-success',
       displayNarrow: true,
-      classes: 'wmnds-disruption-indicator-medium--success'
+      classes: 'tfwmds-disruption-indicator-medium--success'
     }),
-    wmndsDisruptionIndicatorNarrow({
+    tfwmdsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (mindor disruption) -->',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-circle',
       displayNarrow: true,
-      classes: 'wmnds-disruption-indicator-medium--warning'
+      classes: 'tfwmds-disruption-indicator-medium--warning'
     }),
-    wmndsDisruptionIndicatorNarrow({
+    tfwmdsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (major disruption) -->',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-triangle',
       displayNarrow: true,
-      classes: 'wmnds-disruption-indicator-medium--error'
+      classes: 'tfwmds-disruption-indicator-medium--error'
     }),
-    wmndsDisruptionIndicatorNarrow({
+    tfwmdsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (severe disruption) -->',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-warning-triangle',
       displayNarrow: true,
-      classes: 'wmnds-disruption-indicator-medium--severe'
+      classes: 'tfwmds-disruption-indicator-medium--severe'
     }),
-    wmndsDisruptionIndicatorNarrow({
+    tfwmdsDisruptionIndicatorNarrow({
       comment: '<!-- Bus (delete) -->',
       iconLeft: 'modes-isolated-bus',
       iconRight: 'general-trash',
       iconRightBtn: true,
       displayNarrow: true,
-      classes: 'wmnds-disruption-indicator-medium--error'
+      classes: 'tfwmds-disruption-indicator-medium--error'
     })
   ],
   {
-    componentPath: "wmnds/components/disruption-indicator/medium/",
+    componentPath: "tfwmds/components/disruption-indicator/medium/",
     njk: true,
-    njkProps: wmndsDisruptionIndicatorMediumProps,
+    njkProps: tfwmdsDisruptionIndicatorMediumProps,
     js: false,
     iframe: false
   })
@@ -359,7 +359,7 @@ There are three types all giving different levels of detail.
 {{
   compExample(
     [
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Train (good service) -->',
         mode: 'Train',
         primaryText: 'Good service',
@@ -367,36 +367,36 @@ There are three types all giving different levels of detail.
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-success'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Train (minor disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--warning',
+        classes: 'tfwmds-disruption-indicator-large--warning',
         mode: 'Train',
         primaryText: 'Minor disruption',
         contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-circle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Train (major disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--error',
+        classes: 'tfwmds-disruption-indicator-large--error',
         mode: 'Train',
         primaryText: 'Major disruption',
         contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Train (severe disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--severe',
+        classes: 'tfwmds-disruption-indicator-large--severe',
         mode: 'Train',
         primaryText: 'Severe disruption',
         contentText: 'Cross City Line',
         iconLeft: 'modes-isolated-rail',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Train (delete) -->',
-        classes: 'wmnds-disruption-indicator-large--error',
+        classes: 'tfwmds-disruption-indicator-large--error',
         mode: 'Train',
         primaryText: 'Major disruption',
         contentText: 'Cross City Line',
@@ -406,9 +406,9 @@ There are three types all giving different levels of detail.
       })
     ],
     {
-      componentPath: "wmnds/components/disruption-indicator/large/",
+      componentPath: "tfwmds/components/disruption-indicator/large/",
       njk: true,
-      njkProps: wmndsDisruptionIndicatorLargeProps,
+      njkProps: tfwmdsDisruptionIndicatorLargeProps,
       js: false,
       iframe: false
     }
@@ -424,43 +424,43 @@ There are three types all giving different levels of detail.
 {{
   compExample(
     [
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Tram (good service) -->',
         mode: 'Tram',
         primaryText: 'Good service',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-success'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Tram (minor disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--warning',
+        classes: 'tfwmds-disruption-indicator-large--warning',
         mode: 'Tram',
         primaryText: 'Minor disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-circle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Tram (major disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--error',
+        classes: 'tfwmds-disruption-indicator-large--error',
         mode: 'Tram',
         primaryText: 'Major disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Tram (severe disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--severe',
+        classes: 'tfwmds-disruption-indicator-large--severe',
         mode: 'Tram',
         primaryText: 'Severe disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
         iconLeft: 'modes-isolated-metro',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Tram (delete) -->',
-        classes: 'wmnds-disruption-indicator-large--error',
+        classes: 'tfwmds-disruption-indicator-large--error',
         mode: 'Tram',
         primaryText: 'Major disruption',
         contentText: 'Between Jewellery Quarter and Wolverhampton',
@@ -470,9 +470,9 @@ There are three types all giving different levels of detail.
       })
     ],
     {
-      componentPath: "wmnds/components/disruption-indicator/large/",
+      componentPath: "tfwmds/components/disruption-indicator/large/",
       njk: true,
-      njkProps: wmndsDisruptionIndicatorLargeProps,
+      njkProps: tfwmdsDisruptionIndicatorLargeProps,
       js: false,
       iframe: false
     }
@@ -487,7 +487,7 @@ There are three types all giving different levels of detail.
 {{
   compExample(
     [
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Roads (good service) -->',
         mode: 'Roads',
         primaryText: 'Usual traffic',
@@ -495,36 +495,36 @@ There are three types all giving different levels of detail.
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-success'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Roads (minor disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--warning',
+        classes: 'tfwmds-disruption-indicator-large--warning',
         mode: 'Roads',
         primaryText: 'Minor disruption',
         contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-circle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Roads (major disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--error',
+        classes: 'tfwmds-disruption-indicator-large--error',
         mode: 'Roads',
         primaryText: 'Major disruption',
         contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Roads (severe disruption) -->',
-        classes: 'wmnds-disruption-indicator-large--severe',
+        classes: 'tfwmds-disruption-indicator-large--severe',
         mode: 'Roads',
         primaryText: 'Severe disruption',
         contentText: 'A38',
         iconLeft: 'modes-isolated-roads',
         iconRight: 'general-warning-triangle'
       }),
-      wmndsDisruptionIndicatorLarge({
+      tfwmdsDisruptionIndicatorLarge({
         comment: '<!-- Roads (delete) -->',
-        classes: 'wmnds-disruption-indicator-large--error',
+        classes: 'tfwmds-disruption-indicator-large--error',
         mode: 'Roads',
         primaryText: 'Major disruption',
         contentText: 'A38',
@@ -534,9 +534,9 @@ There are three types all giving different levels of detail.
       })
     ],
     {
-      componentPath: "wmnds/components/disruption-indicator/large/",
+      componentPath: "tfwmds/components/disruption-indicator/large/",
       njk: true,
-      njkProps: wmndsDisruptionIndicatorLargeProps,
+      njkProps: tfwmdsDisruptionIndicatorLargeProps,
       js: false,
       iframe: false
     }

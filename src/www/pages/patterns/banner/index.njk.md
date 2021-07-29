@@ -2,7 +2,7 @@
 {% set pageTitle = "Banner" %}
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
+{% from "tfwmds/patterns/banner/_banner.njk" import tfwmdsBanner %}
 
 {% block content %}
 
@@ -14,7 +14,7 @@
 
 {{
   compExample([
-    wmndsBanner()
+    tfwmdsBanner()
   ])
 }}
 
@@ -47,14 +47,14 @@
 ### How it works
 
 - A service can be in Alpha (prototype stage) or Beta (when it is on a publicly-accessible website)
-- The survey link must point to a Hotjar or service feedback survey, with the service name within the URL. For example, <code class="wmnds-website-inline-code">/?serviceName=descriptiveName</code>.
+- The survey link must point to a Hotjar or service feedback survey, with the service name within the URL. For example, <code class="tfwmds-website-inline-code">/?serviceName=descriptiveName</code>.
   A service can either be in Alpha (prototype stage) or Beta (when it is on a publicly accessible website).
 
 {% endmarkdown %}
 
 {{
   compExample([
-    wmndsBanner({
+    tfwmdsBanner({
       phase: true
     })
   ])
@@ -104,7 +104,7 @@
 
 {{
   compExample([
-    wmndsBanner({
+    tfwmdsBanner({
       emergency: true
     })
   ])
@@ -119,7 +119,7 @@
 
 {{
   compExample([
-    wmndsBanner({
+    tfwmdsBanner({
       emergency: true,
       onPage: true
     })
@@ -157,17 +157,17 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/patterns/travel-mode-page-banner/_travel-mode-page-banner.njk" import wmndsTravelModePageBanner %}
+{% from "tfwmds/patterns/travel-mode-page-banner/_travel-mode-page-banner.njk" import tfwmdsTravelModePageBanner %}
 
 {{
   compExample([
-    wmndsTravelModePageBanner({
+    tfwmdsTravelModePageBanner({
       mode: "bus"
     })
   ], {
-    componentPath: "wmnds/patterns/travel-mode-page-banner/",
+    componentPath: "tfwmds/patterns/travel-mode-page-banner/",
     njk: true,
-    njkProps: wmndsTravelModePageBannerProps,
+    njkProps: tfwmdsTravelModePageBannerProps,
     js: false,
     iframe: true
   })
@@ -197,15 +197,15 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/patterns/branded-banner/_branded-banner.njk" import wmndsBrandedBanner %}
+{% from "tfwmds/patterns/branded-banner/_branded-banner.njk" import tfwmdsBrandedBanner %}
 
 {{
   compExample([
-    wmndsBrandedBanner()
+    tfwmdsBrandedBanner()
   ], {
-    componentPath: "wmnds/patterns/branded-banner/",
+    componentPath: "tfwmds/patterns/branded-banner/",
     njk: true,
-    njkProps: wmndsBrandedBannerProps,
+    njkProps: tfwmdsBrandedBannerProps,
     js: false,
     iframe: true
   })
@@ -215,9 +215,9 @@
 
 {{
   compExample([
-    wmndsBrandedBanner({
-      title: "<svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> pay as you go",
-      contentCol1: "<p class=\"wmnds-h3\">The cashless way to buy tickets on the bus and tram</p><p>A Swift card is a smartcard for public transport in the West Midlands. You load a Swift pay as you go card with credit to pay for journeys.</p>",
+    tfwmdsBrandedBanner({
+      title: "<svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg> pay as you go",
+      contentCol1: "<p class=\"tfwmds-h3\">The cashless way to buy tickets on the bus and tram</p><p>A Swift card is a smartcard for public transport in the West Midlands. You load a Swift pay as you go card with credit to pay for journeys.</p>",
       transportModals: ["Bus", "Train", "Tram", "Park and ride"],
       ctaButton: {
         contentText: 'Get a Swift Pay as you go',
@@ -226,9 +226,9 @@
       }
     })
   ], {
-    componentPath: "wmnds/patterns/branded-banner/",
+    componentPath: "tfwmds/patterns/branded-banner/",
     njk: true,
-    njkProps: wmndsBrandedBannerProps,
+    njkProps: tfwmdsBrandedBannerProps,
     js: false,
     iframe: true
   })
@@ -245,7 +245,7 @@
 <h3>What does it do?</h3>
 
 - Provides a visual illustration of our most popular transport modes
-- Highlights a welcome message for visitors of the West Midlands Network site
+- Highlights a welcome message for visitors of the Transports for West Midlands site
 
 {# When #}
 
@@ -264,15 +264,15 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/patterns/banner/homepage-banner/_homepage-banner.njk" import wmndsHomepageBanner %}
+{% from "tfwmds/patterns/banner/homepage-banner/_homepage-banner.njk" import tfwmdsHomepageBanner %}
 
 {{
   compExample([
-    wmndsHomepageBanner()
+    tfwmdsHomepageBanner()
   ], {
-    componentPath: "wmnds/patterns/banner/homepage-banner/",
+    componentPath: "tfwmds/patterns/banner/homepage-banner/",
     njk: true,
-    njkProps: wmndsHomepageBannerProps
+    njkProps: tfwmdsHomepageBannerProps
   })
 }}
 

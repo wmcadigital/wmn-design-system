@@ -1,0 +1,19 @@
+&.tfwmds-warning-text {
+  display: block;
+  position: relative;
+  min-height: 2.5rem;
+  padding-top: $size-xsm;
+  padding-left: 3.25rem;
+  font-weight: 700;
+  align-items: center;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: $size-sm;
+    fill: $black;
+  }
+}

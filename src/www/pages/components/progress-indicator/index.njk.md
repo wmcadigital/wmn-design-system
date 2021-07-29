@@ -24,15 +24,15 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/form-elements/progress-indicator/_progress-indicator.njk" import wmndsProgressIndicator %}
+{% from "tfwmds/components/form-elements/progress-indicator/_progress-indicator.njk" import tfwmdsProgressIndicator %}
 {{
   compExample([
-    wmndsProgressIndicator()
+    tfwmdsProgressIndicator()
   ],
   {
-    componentPath: "wmnds/components/form-elements/progress-indicator/",
+    componentPath: "tfwmds/components/form-elements/progress-indicator/",
     njk: true,
-    njkProps: wmndsProgressIndicatorProps,
+    njkProps: tfwmdsProgressIndicatorProps,
     js: false,
     iframe: false
   })

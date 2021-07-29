@@ -1,0 +1,56 @@
+{% macro tfwmdsDisruptionIndicatorMedium(params) %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+
+{% set _content = params.contentText if params.contentText %} {# set content text #}
+{% set iconRight = params.iconRight if params.iconRight %} {# set icon right classes #}
+{% set iconLeft = params.iconLeft if params.iconLeft %} {# set svg left reference #}
+{% set _hasIconLeft = true if params.iconLeft else false%} {# set svg left reference #}
+{% set iconRightBtn = params.iconRightBtn if params.iconRightBtn else false %} {# set icon right btn value #}
+{% set _narrowClassModifier = " tfwmds-disruption-indicator-medium--narrow" if params.displayNarrow %} {# set narrow display class value #}
+{% set _capitalizeClassModifier = " tfwmds-disruption-indicator-medium--capitalize" if params.capitalize %} {# set capitalize class #}
+{% set classes = ' ' + params.classes if params.classes %}
+{% set _iconClassModifier = ' tfwmds-disruption-indicator-medium--with-icon' if ( params.iconLeft or params.iconRight ) %}
+{% set comment = params.comment | safe if params.comment %}
+
+{{ comment }}
+<div class="tfwmds-disruption-indicator-medium{{_iconClassModifier}}{{classes}}{{_narrowClassModifier}}{{_capitalizeClassModifier}}">
+  {% if iconLeft %}
+  {# Get SVG icon -#}
+  {{
+    tfwmdsIcon({
+      icon: iconLeft,
+      class: 'tfwmds-disruption-indicator-medium__icon tfwmds-disruption-indicator-medium__icon--left'
+    })
+  }}
+  {% endif %}
+  {# set content #}
+  {% if _content %}
+    <span class="tfwmds-disruption-indicator-medium__service">{{ _content }}</span>
+  {% else %}
+  {# set default content if there is no iconLeft #}
+    {% if _hasIconLeft !== true %}
+    <span class="tfwmds-disruption-indicator-medium__service">X15</span>
+    {% endif %}
+  {% endif %}
+  {% if iconRightBtn %}
+  <button class="tfwmds-disruption-indicator-medium__btn" aria-label="Delete favourite - bus - {{ _content }}">
+    {#- Get SVG icon -#}
+    {{
+      tfwmdsIcon({
+        icon: iconRight,
+        class: 'tfwmds-disruption-indicator-medium__icon'
+      })
+    }}
+  </button>
+  {% elif iconRight %}
+  {#- Get SVG icon -#}
+  {{
+    tfwmdsIcon({
+      icon: iconRight,
+      class: 'tfwmds-disruption-indicator-medium__icon tfwmds-disruption-indicator-medium__icon--right'
+    })
+  }}
+  {% endif %}
+</div>
+
+{% endmacro %}

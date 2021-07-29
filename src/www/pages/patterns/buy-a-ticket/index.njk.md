@@ -2,7 +2,7 @@
 {% set pageTitle = "Buy a ticket" %}
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/buy-a-ticket/_buy-a-ticket.njk" import wmndsBuyATicket %}
+{% from "tfwmds/patterns/buy-a-ticket/_buy-a-ticket.njk" import tfwmdsBuyATicket %}
 
 {% block content %}
 
@@ -22,12 +22,11 @@
 
 {% endmarkdown %}
 
-
 {{
   compExample([
-    wmndsBuyATicket()
+    tfwmdsBuyATicket()
   ], {
-    componentPath: "wmnds/patterns/buy-a-ticket/",
+    componentPath: "tfwmds/patterns/buy-a-ticket/",
     njk: true,
     js: true,
     iframe: true

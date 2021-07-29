@@ -1,0 +1,100 @@
+{% macro tfwmdsTable(params) %}
+
+{# Params #}
+{% set title = params.title if params.title %}
+{% set caption = params.caption if params.caption %}
+{% set classes = " " + params.classes if params.classes %}
+{% set hideHeader = params.hideHeader if params.hideHeader else false %}
+{% set _hideHeaderClass = " tfwmds-table--without-header" if params.hideHeader else "" %}
+{% set _firstCellIsHeader = false if params.firstCellIsHeader === false else true %}
+
+
+{# Set row params #}
+{% if params.tableRows %}
+  {% set rows = params.tableRows %}
+{% else %}
+  {% set rows = [
+    [
+      {
+        contentText: "Cell 1"
+      },
+      {
+        contentText: "Cell 2"
+      }
+    ],
+    [
+      {
+        contentText: "Cell 1"
+      },
+      {
+        contentText: "Cell 2"
+      }
+    ]
+  ] %}
+{% endif %}
+{# Set head row params #}
+{% if params.head %}
+  {% set head = params.head %}
+{% else %}
+  {% set head = [
+    {
+      contentText: "Header 1"
+    },
+    {
+      contentText: "Header 2"
+    }
+  ] %}
+{% endif %}
+
+<table class="tfwmds-table{{classes}}{{_hideHeaderClass}}">
+  {# Table Title #}
+  {% if title %}
+  <h3>
+    {{title}}
+  </h3>
+  {% endif -%}
+
+  {# Table Caption #}
+  {%- if caption %}
+  <caption class="tfwmds-table__caption">
+    {{ caption }}
+  </caption>
+  {% endif %}
+
+  {%- if hideHeader === false %}
+      <thead>
+        <tr>
+            {% for cell in head -%}
+              {% set _headCellContent = cell.contentHTML | safe if cell.contentHTML else cell.contentText %}
+              <th scope="col">{{ _headCellContent }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+  {% endif %}
+
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      {% for cell in row %}
+      {% set _cellContent = cell.contentHTML | safe if cell.contentHTML else cell.contentText %}
+  
+      {% if head %}
+        {% set _dataHeaderContent = head[loop.index0].contentText %}
+      {% endif %}
+  
+      {% if loop.index === 1 and _firstCellIsHeader === true %}
+      <th scope="row" {% if cell.colspan %}colspan="{{ cell.colspan }}"{% endif %} {% if cell.rowspan %}rowspan="{{ cell.rowspan }}"{% endif %} {% if cell.classes %}class="{{ cell.classes }}"{% endif %} {% if _dataHeaderContent %}data-header="{{ _dataHeaderContent }}"{% endif %}>
+        {{ _cellContent }}
+      </th>
+      {% else %}
+      <td {% if cell.classes %}class="{{ cell.classes }}"{% endif %} {% if cell.colspan %}colspan="{{ cell.colspan }}"{% endif %} {% if cell.rowspan %}rowspan="{{ cell.rowspan }}"{% endif %} {% if _dataHeaderContent %}data-header="{{ _dataHeaderContent }}"{% endif %}>
+        {{ _cellContent }}
+      </td>
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endmacro %}

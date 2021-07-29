@@ -2,8 +2,8 @@
 {% set pageTitle="Breadcrumb" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {# Imports #}
-{% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "tfwmds/components/breadcrumb/_breadcrumb.njk" import tfwmdsBreadcrumb %}
+{%- from "tfwmds/components/link/link/_link.njk" import tfwmdsLink -%}
 
 {% block content %}
 
@@ -19,8 +19,8 @@
 ### When to use it?
 
 - When you need to help users understand and move between the multiple levels of a website.
-- Always make sure that the breadcrumb is contained within a <code class="wmnds-website-inline-code">.wmnds-container</code> element. This ensures that the breadcrumb doesn't scale the size of large browser windows.
-- When displaying the current page within the breadcrumb, ensure that the modifier class <code class="wmnds-website-inline-code">.wmnds-breadcrumb\_\_link--current</code> is used as seen below.
+- Always make sure that the breadcrumb is contained within a <code class="tfwmds-website-inline-code">.tfwmds-container</code> element. This ensures that the breadcrumb doesn't scale the size of large browser windows.
+- When displaying the current page within the breadcrumb, ensure that the modifier class <code class="tfwmds-website-inline-code">.tfwmds-breadcrumb\_\_link--current</code> is used as seen below.
 
 ### When not to use it?
 
@@ -30,7 +30,7 @@
 
 {{
   compExample([
-    wmndsBreadcrumb({
+    tfwmdsBreadcrumb({
       items: [{
         contentText: "Components",
         href: "#"
@@ -41,9 +41,9 @@
       label: "Main"
     })
   ], {
-    componentPath: "wmnds/components/breadcrumb/",
+    componentPath: "tfwmds/components/breadcrumb/",
     njk: true,
-    njkProps: wmndsBreadcrumbProps,
+    njkProps: tfwmdsBreadcrumbProps,
     js: false,
     iframe: false
   })
@@ -59,14 +59,14 @@ The mobile app version of the breadcrumb ensures that it will not show on device
 
 To use the mobile app variant:
 
-- Add the modifier class <code class="wmnds-website-inline-code">wmnds-breadcrumb--mobile-app</code> to the wmnds-breadcrumb element
+- Add the modifier class <code class="tfwmds-website-inline-code">tfwmds-breadcrumb--mobile-app</code> to the tfwmds-breadcrumb element
 
-You will most likely want to use this with the mobile variants of the <a href="/patterns/header-and-footer/#mobile-app-header" class="wmnds-link">header and footer patterns</a>.
+You will most likely want to use this with the mobile variants of the <a href="/patterns/header-and-footer/#mobile-app-header" class="tfwmds-link">header and footer patterns</a>.
 {% endmarkdown %}
 
 {{
   compExample([
-    wmndsBreadcrumb({
+    tfwmdsBreadcrumb({
       items: [{
         contentText: "Components",
         href: "#"
@@ -78,9 +78,9 @@ You will most likely want to use this with the mobile variants of the <a href="/
       label: "Mobile app"
     })
   ], {
-    componentPath: "wmnds/components/breadcrumb/",
+    componentPath: "tfwmds/components/breadcrumb/",
     njk: true,
-    njkProps: wmndsBreadcrumbProps,
+    njkProps: tfwmdsBreadcrumbProps,
     js: false,
     iframe: false
   })

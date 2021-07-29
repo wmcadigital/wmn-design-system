@@ -19,7 +19,7 @@ function Checkboxes($module) {
   // code goes here
 }
 
-Checkboxes.prototype.init = function() {
+Checkboxes.prototype.init = function () {
   // code goes here
 };
 
@@ -67,13 +67,13 @@ Assign methods to the prototype object. Do not overwrite the prototype with a ne
 ```js
 // bad
 Checkboxes.prototype = {
-  init: function() {
+  init: function () {
     // code goes here
   }
 };
 
 // good
-Checkboxes.prototype.init = function() {
+Checkboxes.prototype.init = function () {
   // code goes here
 };
 ```
@@ -104,7 +104,7 @@ Use default export over named export.
 
 ## Polyfilling
 
-If you need to support older browsers, import the necessary [polyfills](/src/wmnds/vendor/polyfills) and they will be added to the environment when the feature is not supported.
+If you need to support older browsers, import the necessary [polyfills](/src/tfwmds/vendor/polyfills) and they will be added to the environment when the feature is not supported.
 
 For example, if you want to polyfill `addEventListener` for IE8, import the Event polyfills.
 

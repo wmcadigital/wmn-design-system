@@ -35,24 +35,24 @@
 **By default you should aim to use the 'normal sized loader'.** <br>
 Only when the normal sized loader is not fit for purpose should you use the large or small sized loader.
 
-Change the text within <code class="wmnds-website-inline-code">.wmnds-loader\_\_content</code> from 'Content is loading...' to something that describes what it is you are loading, this will help with accessibility.
+Change the text within <code class="tfwmds-website-inline-code">.tfwmds-loader\_\_content</code> from 'Content is loading...' to something that describes what it is you are loading, this will help with accessibility.
 
 {% endmarkdown %}
 
-{% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
+{% from "tfwmds/components/loader/_loader.njk" import tfwmdsLoader %}
 {{
   compExample([
-    wmndsLoader({
+    tfwmdsLoader({
       size: 'small'
     }),
-    wmndsLoader(),
-    wmndsLoader({
+    tfwmdsLoader(),
+    tfwmdsLoader({
       size: 'large'
     })
   ], {
-    componentPath: "wmnds/components/loader/",
+    componentPath: "tfwmds/components/loader/",
     njk: true,
-    njkProps: wmndsLoaderProps,
+    njkProps: tfwmdsLoaderProps,
     js: false,
     iframe: false
   })

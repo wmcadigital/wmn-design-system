@@ -1,0 +1,19 @@
+{
+  "tfwmdsHomepageBannerProps": [
+    {
+      "name": "titleText",
+      "type": "string",
+      "description": "Title text to use in the banner."
+    },
+    {
+      "name": "titleHTML",
+      "type": "string",
+      "description": "HTML title content to use in the banner. If <code class='tfwmds-website-inline-code'>titleText</code> is provided, the <code class='tfwmds-website-inline-code'>titleHTML</code>  argument will be ignored."
+    },
+    {
+      "name": "image",
+      "type": "string",
+      "description": "Url for the image to be displayed in the banner."
+    }
+  ]
+}

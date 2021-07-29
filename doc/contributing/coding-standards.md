@@ -1,10 +1,10 @@
 # Components
 
-Find components in `src/wmnds/components`.
+Find components in `src/tfwmds/components`.
 
-Components must use the `.wmnds-` namespace.
+Components must use the `.tfwmds-` namespace.
 
-For example, `.wmnds-button`.
+For example, `.tfwmds-button`.
 
 ## Writing CSS for components
 

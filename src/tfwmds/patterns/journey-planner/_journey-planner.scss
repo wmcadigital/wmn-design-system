@@ -1,0 +1,77 @@
+&.tfwmds-journey-planner {
+  color: $white;
+  background-color: get-color(primary);
+
+  h2,
+  .tfwmds-btn--link {
+    color: $white;
+  }
+
+  &__form {
+    &
+    > div:not(.tfwmds-journey-planner__from):not(.tfwmds-journey-planner__to):not(.tfwmds-journey-planner__submit) {
+      display: none;
+    }
+  }
+
+  &.tfwmds-is--open {
+    & .tfwmds-journey-planner__form > div {
+      display: block !important;
+    }
+  }
+
+  .tfwmds-autocomplete-suggestions {
+    color: $black;
+  }
+
+  .tfwmds-autocomplete__input {
+    font-weight: 400;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+  }
+
+  &__to {
+    position: relative;
+  }
+
+  &__from,
+  &__to {
+    color: $white;
+  }
+
+  &__switch {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__switch-icon {
+    width: 17px;
+    height: 23px;
+    margin-left: 8px;
+    fill: $white;
+  }
+
+  &__mode-checkbox {
+    &:focus + .tfwmds-btn--mode {
+      background-color: $white;
+      box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+    }
+
+    &:checked + .tfwmds-btn--mode {
+      background-color: get-color(secondary, 50);
+    }
+  }
+
+  // Leave and arrive for when, modes for how
+  &__when,
+  &__how {
+    position: relative;
+    color: $white;
+  }
+}

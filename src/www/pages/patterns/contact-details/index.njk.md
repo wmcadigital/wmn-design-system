@@ -2,7 +2,7 @@
 {% set pageTitle="Contact details" %}
 {% set section="Patterns" %}
 {# Imports #}
-{% from "wmnds/patterns/contact-details/_contact-details.njk" import wmndsContactDetails %}
+{% from "tfwmds/patterns/contact-details/_contact-details.njk" import tfwmdsContactDetails %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -44,7 +44,7 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 {{
     compExample([
-        wmndsContactDetails({
+        tfwmdsContactDetails({
             department: "Customer Services",
             organisation: "Transport for West Midlands",
             address: "16 Summer Lane<br>Birmingham<br>B19 3SD"
@@ -56,7 +56,7 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 {{
     compExample([
-        wmndsContactDetails({
+        tfwmdsContactDetails({
             organisation: "Transport for West Midlands",
             alertMessage: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
             alertIcon: "general-warning-triangle",
@@ -71,7 +71,7 @@ GOV.UK has detailed information about [how to display contact details](https://d
 
 {{
     compExample([
-        wmndsContactDetails({
+        tfwmdsContactDetails({
             organisation: "Transport for West Midlands",
             twitter: "https://twitter.com/wmnetwork",
             facebook: "https://www.facebook.com/westmidlandsnetwork",

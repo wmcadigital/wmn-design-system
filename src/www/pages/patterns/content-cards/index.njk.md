@@ -40,11 +40,11 @@ These are common applications of the content card component.
 {% endmarkdown %}
 
 {# Map example #}
-{% from "wmnds/patterns/content-cards/map/_map.njk" import wmndsContentCardMap %}
+{% from "tfwmds/patterns/content-cards/map/_map.njk" import tfwmdsContentCardMap %}
 
 {{
     compExample([
-        wmndsContentCardMap()
+        tfwmdsContentCardMap()
     ])
 }}
 
@@ -77,11 +77,11 @@ These are common applications of the content card component.
 {% endmarkdown %}
 
 {# Set up buttons #}
-{% from "wmnds/patterns/content-cards/buttons/_buttons.njk" import wmndsContentCardButtons %}
+{% from "tfwmds/patterns/content-cards/buttons/_buttons.njk" import tfwmdsContentCardButtons %}
 
 {{
     compExample([
-        wmndsContentCardButtons()
+        tfwmdsContentCardButtons()
     ])
 }}
 
@@ -114,11 +114,11 @@ These are common applications of the content card component.
 {% endmarkdown %}
 
 {# Set up image #}
-{% from "wmnds/patterns/content-cards/image/_image.njk" import wmndsContentCardImage %}
+{% from "tfwmds/patterns/content-cards/image/_image.njk" import tfwmdsContentCardImage %}
 
 {{
     compExample([
-        wmndsContentCardImage()
+        tfwmdsContentCardImage()
     ])
 }}
 
@@ -161,11 +161,11 @@ These are common applications of the content card component.
 {% endmarkdown %}
 
 {# Set up inline navigation #}
-{% from "wmnds/patterns/content-cards/inline-navigation/_inline-navigation.njk" import wmndsContentCardInlineNavigation %}
+{% from "tfwmds/patterns/content-cards/inline-navigation/_inline-navigation.njk" import tfwmdsContentCardInlineNavigation %}
 
 {{
     compExample([
-        wmndsContentCardInlineNavigation()
+        tfwmdsContentCardInlineNavigation()
     ])
 }}
 
@@ -178,7 +178,7 @@ These are common applications of the content card component.
 
 {{
     compExample([
-        wmndsContentCardInlineNavigation({
+        tfwmdsContentCardInlineNavigation({
             withCurrentPage: true
         })
     ])
@@ -211,7 +211,7 @@ They have been changed in the following examples to avoid accessibility errors.
 {% endmarkdown %}
 
 {# Set up email sign up #}
-{% from "wmnds/patterns/content-cards/email-sign-up/_email-sign-up.njk" import wmndsContentCardEmailSignUp %}
+{% from "tfwmds/patterns/content-cards/email-sign-up/_email-sign-up.njk" import tfwmdsContentCardEmailSignUp %}
 
 {% markdown %}
 {# Collapsed #}
@@ -224,7 +224,7 @@ This is the default state for the email sign up card.
 
 {{
     compExample([
-        wmndsContentCardEmailSignUp({ exampleSuffix: "example-1"})
+        tfwmdsContentCardEmailSignUp({ exampleSuffix: "example-1"})
     ])
 }}
 
@@ -239,7 +239,7 @@ The collapsed card will expand when the 'continue' button is pressed/tapped.
 
 {{
     compExample([
-        wmndsContentCardEmailSignUp({ expanded: true, exampleSuffix: "example-2" })
+        tfwmdsContentCardEmailSignUp({ expanded: true, exampleSuffix: "example-2" })
     ])
 }}
 
@@ -254,11 +254,11 @@ Use this content card when you want to send users to an external Campaign Monito
 
 {{
     compExample([
-        wmndsContentCardEmailSignUp({ externalLink: true, exampleSuffix: "example-3" })
+        tfwmdsContentCardEmailSignUp({ externalLink: true, exampleSuffix: "example-3" })
     ])
 }}
 
-{% from "wmnds/patterns/content-cards/swift-card/_swift-card.njk" import wmndsContentCardSwiftCard %}
+{% from "tfwmds/patterns/content-cards/swift-card/_swift-card.njk" import tfwmdsContentCardSwiftCard %}
 {% markdown %}
 {# Swift card #}
 
@@ -287,7 +287,7 @@ Use this content card when you want to send users to an external Campaign Monito
 
 {{
     compExample([
-        wmndsContentCardSwiftCard()
+        tfwmdsContentCardSwiftCard()
     ])
 }}
 

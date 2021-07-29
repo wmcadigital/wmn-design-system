@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Ticket summary message" %}
 
-{% from "wmnds/components/ticket-summary-message/_ticket-summary-message.njk" import wmndsTicketSummaryMsg %}
+{% from "tfwmds/components/ticket-summary-message/_ticket-summary-message.njk" import tfwmdsTicketSummaryMsg %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -29,7 +29,7 @@
 
 {{
   compExample([
-    wmndsTicketSummaryMsg({
+    tfwmdsTicketSummaryMsg({
       type: 'you-can',
       listItemsHTML: [
         'Travel as much as you like for one month',
@@ -40,9 +40,9 @@
     })
   ],
   {
-    componentPath: "wmnds/components/ticket-summary-message/",
+    componentPath: "tfwmds/components/ticket-summary-message/",
     njk: true,
-    njkProps: wmndsTicketSummaryMsgProps
+    njkProps: tfwmdsTicketSummaryMsgProps
   })
 }}
 
@@ -56,7 +56,7 @@
 
 {{
   compExample([
-    wmndsTicketSummaryMsg({
+    tfwmdsTicketSummaryMsg({
       type: 'you-cannot',
       listItemsHTML: [
         'Travel by train or tram',
@@ -65,9 +65,9 @@
     })
   ],
   {
-    componentPath: "wmnds/components/ticket-summary-message/",
+    componentPath: "tfwmds/components/ticket-summary-message/",
     njk: true,
-    njkProps: wmndsTicketSummaryMsgProps
+    njkProps: tfwmdsTicketSummaryMsgProps
   })
 }}
 
@@ -85,7 +85,7 @@
 
 {{
   compExample([
-    wmndsTicketSummaryMsg({
+    tfwmdsTicketSummaryMsg({
       type: 'you-must',
       listItemsHTML: [
         'Be 5 to 15 years old or have a 16 to 18 Swift photocard'
@@ -93,9 +93,9 @@
     })
   ],
   {
-    componentPath: "wmnds/components/ticket-summary-message/",
+    componentPath: "tfwmds/components/ticket-summary-message/",
     njk: true,
-    njkProps: wmndsTicketSummaryMsgProps
+    njkProps: tfwmdsTicketSummaryMsgProps
   })
 }}
 
@@ -114,7 +114,7 @@
 
 {{
   compExample([
-    wmndsTicketSummaryMsg({
+    tfwmdsTicketSummaryMsg({
       type: 'swift',
       listItemsHTML: [
         'This ticket will be on a Swift card with your photo on',
@@ -127,9 +127,9 @@
     })
   ],
   {
-    componentPath: "wmnds/components/ticket-summary-message/",
+    componentPath: "tfwmds/components/ticket-summary-message/",
     njk: true,
-    njkProps: wmndsTicketSummaryMsgProps
+    njkProps: tfwmdsTicketSummaryMsgProps
   })
 }}
 

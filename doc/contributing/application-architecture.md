@@ -4,7 +4,7 @@
 
   Source files. See [README.md](../../src/README.md) in the src directory for details.
 
-  - `wmnds/`
+  - `tfwmds/`
 
     This is where the core library of all components/patterns are built using nunjucks for the WMN Design System. These are then referenced by the Design System Website to show examples to other collaborators.
 
@@ -18,7 +18,7 @@
 
       - `sass/`
 
-        Any core SASS/SCSS that is used for styling components/patterns etc. should be placed in here and then referenced in `src/wmnds/assets/sass/wmnds.scss`. Note: Anything referenced will appear in the live build.
+        Any core SASS/SCSS that is used for styling components/patterns etc. should be placed in here and then referenced in `src/tfwmds/assets/sass/tfwmds.scss`. Note: Anything referenced will appear in the live build.
 
         - `components/`
 
@@ -42,7 +42,7 @@
 
         - `js/`
 
-          Any javascript files located in here will be concatenated and compiled into `build/js/wmnds-vendor.min.js` via the [javascript build task](tasks.md#markdown-header-141-scripts-javascript).
+          Any javascript files located in here will be concatenated and compiled into `build/js/tfwmds-vendor.min.js` via the [javascript build task](tasks.md#markdown-header-141-scripts-javascript).
 
 - `build/` **contains auto-generated files**
 

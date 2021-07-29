@@ -1,0 +1,40 @@
+{% macro tfwmdsPagination(params) %}
+
+{# Imports #}
+{% from "../../../components/breadcrumb/_breadcrumb.njk" import tfwmdsBreadcrumb %}
+
+<div class="tfwmds-pagination">
+    <ol class="tfwmds-pagination__nav">
+    {% for i in range(1, params.pageCount + 1) -%}
+    {% if(i == params.activePage - 1) %}
+        <li class="tfwmds-pagination__item tfwmds-pagination__item--previous">
+            <a class="tfwmds-link" href="#">{{ i }}</a>
+        </li>
+    {% elseif(i == params.activePage) %}
+        <li class="tfwmds-pagination__item tfwmds-pagination__item--active">
+            {{ i }}
+        </li>
+    {% else %}
+        <li class="tfwmds-pagination__item">
+            <a class="tfwmds-link" href="#">{{ i }}</a>
+        </li>
+    {% endif %}
+    {% endfor -%}
+    </ol>
+    {% if(params.activePage > 1) %}
+    <a href="#" target="_self" class="tfwmds-pagination__prev tfwmds-link tfwmds-link--with-chevron" >
+        <svg class="tfwmds-link__chevron tfwmds-link__chevron--left">
+            <use xlink:href="#tfwmds-general-chevron-right" href="#tfwmds-general-chevron-right"></use>
+        </svg> Previous page
+    </a>
+    {% endif %}
+    {% if(params.activePage < params.pageCount) %}
+    <a href="#" target="_self" class="tfwmds-pagination__next tfwmds-link tfwmds-link--with-chevron" >
+        Next page <svg class="tfwmds-link__chevron tfwmds-link__chevron--right">
+        <use xlink:href="#tfwmds-general-chevron-right" href="#tfwmds-general-chevron-right"></use>
+        </svg>
+    </a>
+    {% endif %}
+</div>
+
+{% endmacro %}

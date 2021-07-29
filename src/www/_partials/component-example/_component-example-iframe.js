@@ -1,7 +1,7 @@
 import 'iframe-resizer/js/iframeResizer'; // Import iframe resizer logic
 
 const componentExampleIframe = () => {
-  const iframeExamples = document.querySelectorAll('.wmnds-website-code-example__iframe');
+  const iframeExamples = document.querySelectorAll('.tfwmds-website-code-example__iframe');
 
   iframeExamples.forEach(iframeElement => {
     const ifrm = iframeElement;
@@ -14,7 +14,7 @@ const componentExampleIframe = () => {
     const host = `//${window.location.host}`;
 
     const ajax = new XMLHttpRequest();
-    ajax.open('GET', `${host}/img/wmnds-icons.min.svg`, true); // Fire off ajax to get spritesheet
+    ajax.open('GET', `${host}/img/tfwmds-icons.min.svg`, true); // Fire off ajax to get spritesheet
     ajax.send();
     // When spritesheet has loaded
     ajax.onload = () => {
@@ -26,17 +26,17 @@ const componentExampleIframe = () => {
         <html>
           <head>
             <base href="${host}" target="_blank">
-            <link rel="stylesheet" type="text/css" href="${host}/css/wmnds.min.css" />
-            <link rel="stylesheet" type="text/css" href="${host}/css/wmnds-website.min.css" />
+            <link rel="stylesheet" type="text/css" href="${host}/css/tfwmds.min.css" />
+            <link rel="stylesheet" type="text/css" href="${host}/css/tfwmds-website.min.css" />
           </head>
           <body>
-            <div class="wmnds-p-md wmnds-iframe-content">
+            <div class="tfwmds-p-md tfwmds-iframe-content">
               ${svgSprite}
               ${html || ''}
             </div>
             <script src="https://unpkg.com/iframe-resizer@3.5.7/js/iframeResizer.contentWindow.min.js"></script>
             <script src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CObject.assign%2CString.prototype.includes%2CNumber.isNaN"></script>
-            <script src="${host}/js/wmnds-website.min.js"></script>
+            <script src="${host}/js/tfwmds-website.min.js"></script>
           </body>
         </html>
       `;

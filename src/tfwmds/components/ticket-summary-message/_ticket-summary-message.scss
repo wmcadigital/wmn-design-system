@@ -1,0 +1,84 @@
+&.tfwmds-ticket-summary-msg {
+  $base: &;
+  border-width: 1px;
+  border-style: solid;
+
+  &--you-can {
+    border-color: get-color(success);
+
+    #{$base}__header {
+      background-color: get-color(success);
+    }
+  }
+
+  &--you-cannot {
+    border-color: get-color(error);
+
+    #{$base}__header {
+      background-color: get-color(error);
+    }
+  }
+
+  &--you-must {
+    border-color: get-color(secondary);
+
+    #{$base}__header {
+      background-color: get-color(secondary);
+    }
+  }
+
+  &--swift {
+    border-color: get-color(primary);
+
+    #{$base}__header {
+      background-color: get-color(primary);
+    }
+
+    #{$base}__icon {
+      width: 60px;
+      margin-right: $size-xs;
+    }
+  }
+
+  &__header {
+    display: flex;
+    padding: $size-xsm;
+    color: $white;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: $size-sm;
+    fill: $white;
+  }
+
+  &__title {
+    @include type-setting(4);
+    margin: 0;
+  }
+
+  &__info {
+    padding: $size-sm $size-md $size-xs;
+
+    > *:last-child {
+      display: inline-block;
+      margin-bottom: $size-xsm;
+    }
+  }
+
+  &__list {
+    margin-top: 0;
+    margin-bottom: $size-sm;
+    padding-left: $size-md;
+
+    li {
+      margin-bottom: $size-xsm;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

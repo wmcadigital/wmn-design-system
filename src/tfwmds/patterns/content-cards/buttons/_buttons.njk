@@ -1,0 +1,28 @@
+{% macro tfwmdsContentCardButtons(params) %}
+{# imports #}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
+{% from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton %}
+{# Set #}
+{% set buttons = ["I drive", "I use the bus", "I use the train", "I use the tram", "I walk or cycle", "I want to visit an attraction or venue"] %}
+
+{% call tfwmdsContentCard() %}
+    <div class="tfwmds-p-sm">
+        <h2 class="tfwmds-content-card__title">Advice to keep moving</h2>
+        <ul class="tfwmds-content-card__list tfwmds-m-b-none">
+            {% for buttonText in buttons -%}
+            <li class="tfwmds-content-card__list-item">
+                {{
+                    tfwmdsLinkAsButton({
+                        classes: "tfwmds-content-card__list-item-btn",
+                        iconRight: "general-chevron-right",
+                        contentText: buttonText,
+                        type: "primary"
+                    })
+                }}
+            </li>
+            {% endfor -%}
+        </ul>
+    </div>
+{% endcall %}
+
+{% endmacro %}

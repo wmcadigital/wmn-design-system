@@ -1,0 +1,12 @@
+{% macro tfwmdsFeErrorMessage(params) %}
+
+{# Params #}
+{% set contentText = params.contentText if params.contentText else "This is an example error message" %}
+{% set contentHTML = params.contentHTML if params.contentHTML else null %}
+{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
+{% set id = params.id if params.id else null %}
+{% set classes = " " + params.classes if params.classes else null %}
+
+<span class="tfwmds-fe-error-message{{classes}}" {% if id %} id="{{id}}" {% endif %}>{{_content}}</span>
+
+{% endmacro %}

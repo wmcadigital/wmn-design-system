@@ -1,0 +1,13 @@
+{% raw %}
+{% from "tfwmds/components/file-download/_file-download.njk" import tfwmdsFileDownload %}
+
+{{
+    tfwmdsFileDownload({
+        fileName: "example file",
+        fileType: "pdf",
+        fileSize: "1MB",
+        downloadLinkText: "Download file",
+        accessible: true
+    })
+}}
+{% endraw %}

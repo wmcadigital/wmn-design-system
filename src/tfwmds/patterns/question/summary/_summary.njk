@@ -1,0 +1,158 @@
+{% macro tfwmdsSummary(params) %}
+{# Imports #}
+{% from "tfwmds/components/form-elements/question/_question.njk" import tfwmdsQuestion %}
+{% from "tfwmds/components/table/_table.njk" import tfwmdsTable %}
+
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+{% set html = params.html if params.html %}
+{% set tables = params.tables if params.tables %}
+{% set button = params.button if params.button %}
+
+
+<div class="tfwmds-bg-white tfwmds-p-lg">
+    {{
+        tfwmdsQuestion({
+            contentText: question
+        })
+    }}
+
+    {% if tables %}
+        {% for table in tables %}
+            {{ table | safe }}
+        {% endfor %}
+    {% else %}
+    {{
+        [
+            tfwmdsTable({
+                title: "Personal Details",
+                hideHeader: true,
+                classes: "tfwmds-m-b-xl",
+                hideHeader: true,
+                tableRows: [
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ]
+                ]
+            }),
+
+            tfwmdsTable({
+                title: "Ticket Details",
+                hideHeader: true,
+                tableRows: [
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ]
+                ],
+                classes: "tfwmds-m-b-xl"
+            }),
+
+            tfwmdsTable({
+                title: "Direct Debit",
+                hideHeader: true,
+                firstCellIsHeader: true,
+                tableRows: [
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ],
+                    [
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentText: "Cell"
+                        },
+                        {
+                            contentHTML: "<button type='button' class='tfwmds-btn tfwmds-btn--link'>Change</button>",
+                            classes: "tfwmds-text-align-right"
+                        }
+                    ]
+                ],
+                classes: "tfwmds-m-b-xl"
+            })
+        ] | join("\n    ") | safe
+    }}
+    {% endif %}
+
+
+
+    {{ html | safe }}
+    {{ params.button | safe }}
+</div>
+
+{% endmacro %}

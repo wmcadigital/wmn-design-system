@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Links" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
 
 {% block content %}
 {% markdown %}
@@ -64,15 +64,15 @@ using screen readers will here the same text twice.
 
 {{
 compExample([
-  wmndsLink( {
+  tfwmdsLink( {
       contentText: "Button text"
     }
   )
 ],
 {
-componentPath: "wmnds/components/link/link/",
+componentPath: "tfwmds/components/link/link/",
 njk: true,
-njkProps: wmndsLinkProps,
+njkProps: tfwmdsLinkProps,
 js: false,
 iframe: false
 })
@@ -107,12 +107,12 @@ iframe: false
 
 {{
   compExample([
-    wmndsLink( { isBackLink: true } )
+    tfwmdsLink( { isBackLink: true } )
   ],
   {
-    componentPath: "wmnds/components/link/link/",
+    componentPath: "tfwmds/components/link/link/",
     njk: true,
-    njkProps: wmndsLinkProps,
+    njkProps: tfwmdsLinkProps,
     js: false,
     iframe: false
   })
@@ -146,19 +146,19 @@ iframe: false
 {% endmarkdown %}
 {{
   compExample([
-    wmndsLink({
+    tfwmdsLink({
       text: "Link",
       withChevronLeft: true
     }),
-    wmndsLink({
+    tfwmdsLink({
       text: "Link",
       withChevronRight: true
     })
   ],
   {
-    componentPath: "wmnds/components/link/link/",
+    componentPath: "tfwmds/components/link/link/",
     njk: true,
-    njkProps: wmndsLinkProps,
+    njkProps: tfwmdsLinkProps,
     js: false,
     iframe: false
   })
@@ -187,7 +187,7 @@ iframe: false
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as cta %}
+{%- from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton as cta %}
 {{
   compExample([
     cta({
@@ -201,9 +201,9 @@ iframe: false
     })
   ],
   {
-    componentPath: "wmnds/components/link/as-button/",
+    componentPath: "tfwmds/components/link/as-button/",
     njk: true,
-    njkProps: wmndsLinkAsButtonProps,
+    njkProps: tfwmdsLinkAsButtonProps,
     js: false,
     iframe: false
   })
@@ -232,7 +232,7 @@ iframe: false
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as primary -%}
+{%- from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton as primary -%}
 {{
   compExample([
     primary({
@@ -248,9 +248,9 @@ iframe: false
     })
   ],
   {
-    componentPath: "wmnds/components/link/as-button/",
+    componentPath: "tfwmds/components/link/as-button/",
     njk: true,
-    njkProps: wmndsLinkAsButtonProps,
+    njkProps: tfwmdsLinkAsButtonProps,
     js: false,
     iframe: false
   })
@@ -282,7 +282,7 @@ iframe: false
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as secondary -%}
+{%- from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton as secondary -%}
 {{
   compExample([
     secondary({
@@ -298,9 +298,9 @@ iframe: false
     })
   ],
   {
-    componentPath: "wmnds/components/link/as-button/",
+    componentPath: "tfwmds/components/link/as-button/",
     njk: true,
-    njkProps: wmndsLinkAsButtonProps,
+    njkProps: tfwmdsLinkAsButtonProps,
     js: false,
     iframe: false
   })
@@ -327,7 +327,7 @@ iframe: false
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as destructive -%}
+{%- from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton as destructive -%}
 {{
   compExample([
     destructive({
@@ -343,9 +343,9 @@ iframe: false
     })
   ],
   {
-    componentPath: "wmnds/components/link/as-button/",
+    componentPath: "tfwmds/components/link/as-button/",
     njk: true,
-    njkProps: wmndsLinkAsButtonProps,
+    njkProps: tfwmdsLinkAsButtonProps,
     js: false,
     iframe: false
   })
@@ -372,7 +372,7 @@ iframe: false
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton as start -%}
+{%- from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton as start -%}
 {{
   compExample([
     start({
@@ -388,9 +388,9 @@ iframe: false
     })
   ],
   {
-    componentPath: "wmnds/components/link/as-button/",
+    componentPath: "tfwmds/components/link/as-button/",
     njk: true,
-    njkProps: wmndsLinkAsButtonProps,
+    njkProps: tfwmdsLinkAsButtonProps,
     js: false,
     iframe: false
   })

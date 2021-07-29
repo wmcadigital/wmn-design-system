@@ -1,0 +1,286 @@
+{% macro tfwmdsContentCardTravelUpdates(params) %}
+{# Imports #}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
+{% from "tfwmds/components/disruption-indicator/large/_large.njk" import tfwmdsDisruptionIndicatorLarge as largeDisruption %}
+{% from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium as mediumDisruption %}
+{% from "tfwmds/components/disruption-indicator/small/_small.njk" import tfwmdsDisruptionIndicatorSmall as smallDisruption %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/message/help/_help.njk" import tfwmdsMsgHelp %}
+{# Set #}
+{% set id = params.id if params.id else "travel-updates" %}
+{% set isPersonalView = params.personalView if params.personalView else false %}
+{% set isEditView = params.editView if params.editView else false %}
+{% set editViewClass = " tfwmds-travel-update--edit" if params.editView %}
+{# Set data for default travel updates #}
+{% set travelUpdates = [
+    {
+        mode: "bus",
+        title: "Bus",
+        severityClass: "tfwmds-disruption-indicator-medium--severe",
+        statusIcon: "general-warning-triangle",
+        disruptions: [
+            "1 severe disruption",
+            "2 major disruptions",
+            "8 minor disruptions"
+        ]
+    },
+    {
+        mode: "rail",
+        title: "Train",
+        severityClass: "tfwmds-disruption-indicator-medium--success",
+        statusIcon: "general-success",
+        disruptions: [
+            "Good service"
+        ]
+    },
+    {
+        mode: "metro",
+        title: "Tram",
+        severityClass: "tfwmds-disruption-indicator-medium--error",
+        statusIcon: "general-warning-triangle",
+        disruptions: [
+            "Major disruption"
+        ]
+    },
+    {
+        mode: "roads",
+        title: "Roads",
+        severityClass: "tfwmds-disruption-indicator-medium--warning",
+        statusIcon: "general-warning-circle",
+        disruptions: [
+            "3 minor disruptions"
+        ]
+    }
+] %}
+{# Set data for personal travel updates #}
+{% set myTravelUpdates = [
+    {
+        mode: "bus",
+        title: "Bus",
+        disruptions: [
+            {
+                service: "16",
+                description: "Hamstead - Birmingham via Hockley",
+                severityClass: "tfwmds-disruption-indicator-medium--warning",
+                statusIcon: "general-warning-circle",
+                status: "Minor disruption"
+            },
+            {
+                service: "S16",
+                description: "Solihull - Yardley via Lyndon",
+                severityClass: "tfwmds-disruption-indicator-medium--success",
+                statusIcon: "general-success",
+                status: "Good service"
+            }
+        ]
+    },
+    {
+        mode: "rail",
+        title: "Train",
+        disruptions: [
+            {
+                service: "Cross City Line",
+                severityClass: "tfwmds-disruption-indicator-medium--warning",
+                statusIcon: "general-warning-circle",
+                capitalize: true,
+                status: "Minor disruption"
+            },
+            {
+                service: "Hereford via Worcester",
+                severityClass: "tfwmds-disruption-indicator-medium--success",
+                statusIcon: "general-success",
+                capitalize: true,
+                status: "Good service"
+            }
+        ]
+    },
+    {
+        mode: "metro",
+        title: "Tram",
+        disruptions: [
+            {
+                service: "mm1",
+                description: "Grand Central - St Chad’s",
+                severityClass: "tfwmds-disruption-indicator-medium--error",
+                statusIcon: "general-warning-triangle",
+                status: "Major disruption"
+            }
+        ]
+    }
+] %}
+
+{# Start travel updates content card #}
+{% call tfwmdsContentCard({ classes: "tfwmds-content-card--travel-updates"}) %}
+    <div class="tfwmds-p-sm tfwmds-col-1">
+    {# Show personal style if personal or edit view is true #}
+    {% if isPersonalView or isEditView  %}
+        <h2 class="tfwmds-content-card__title">My travel updates</h2>
+        {# Loop through personal travel updates #}
+        {% for update in myTravelUpdates %}
+        <div class="tfwmds-travel-update tfwmds-travel-update--personal{{editViewClass}}">
+            {# Show toggle if not in edit view #}
+            {% if isEditView === false %}
+
+            <div class="tfwmds-travel-update__disruption-title">
+                <h3 class="tfwmds-m-none">{{update.title}}</h3>
+                <button class="tfwmds-travel-update__disruption-detail-toggle" data-show-details="false">
+                    {{
+                        tfwmdsIcon({
+                            icon: "general-chevron-right",
+                            title: "Toggle details"
+                        })
+                    }}
+                </button>
+            </div>
+            {# Else just show the title #}
+            {% else %}
+            <h3 class="tfwmds-m-b-md">{{update.title}}</h3>
+            {% endif %}
+
+            {# Loop through disruptions #}
+            {% for disruption in update.disruptions %}
+            <div class="tfwmds-travel-update__disruption">
+                {# Display disruption indicator #}
+                <button class="tfwmds-travel-update__disruption-indicator-btn" aria-expanded="false">
+                    {{
+                        mediumDisruption({
+                            displayNarrow: true,
+                            iconLeft: "modes-isolated-" + update.mode,
+                            iconRight: null if isEditView else disruption.statusIcon,
+                            contentText: disruption.service,
+                            capitalize: true if disruption.capitalize else false,
+                            classes: null if isEditView else disruption.severityClass
+                        })
+                    }}
+                </button>
+
+                {% if isEditView === false %}
+                {# Show description and status text/link #}
+                <div class="tfwmds-travel-update__disruption-text">
+                    {% if disruption.description %}
+                    <strong>{{disruption.description}}</strong>
+                    {% endif %}
+                    {% if disruption.status === "Good service"%}
+                    <strong>{{disruption.status}}</strong>
+                    {% else %}
+                    {{
+                        tfwmdsLink({
+                            contentText: disruption.status,
+                            link: "//disruptions.wmnetwork.co.uk/",
+                            linkTarget: "_blank"
+                        })
+                    }}
+                    {% endif %}
+                </div>
+                {# Only show description text if it exists and in edit view #}
+                {% elif disruption.description %}
+                <div class="tfwmds-travel-update__disruption-text">
+                    <strong>{{disruption.description}}</strong>
+                </div>
+                {% endif %}
+                {# Show delete button if in edit view #}
+                {% if isEditView %}
+                    <button class="tfwmds-travel-update__disruption-delete">
+                        {{
+                            tfwmdsIcon({
+                                icon: "general-trash",
+                                title: "Delete service"
+                            })
+                        }}
+                    </button>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <hr>
+        {% endfor %}
+        <!-- Content card actions -->
+        <div class="tfwmds-grid tfwmds-grid--spacing-sm-2-lg tfwmds-p-t-md">
+            <div class="tfwmds-col-1 tfwmds-col-sm-1-2">
+                {{
+                    tfwmdsButton({
+                        classes: "tfwmds-btn--block tfwmds-m-b-md",
+                        type: "mode",
+                        contentText: "Add a new service" if isEditView else "Edit your services",
+                        iconRight: "general-expand" if isEditView else null
+                    })
+                }}
+            </div>
+            <div class="tfwmds-col-1 tfwmds-col-sm-1-2">
+                {{
+                    tfwmdsButton({
+                        classes: "tfwmds-btn--block",
+                        contentText: "Save changes" if isEditView else "View all updates",
+                        iconRight: null if isEditView else "general-chevron-right"
+                    })
+                }}
+            </div>
+        </div>
+        {# End personal/edit card #}
+    {% else %}
+    {# Else show default travel updates view #}
+        <h2 class="tfwmds-content-card__title">Travel updates</h2>
+        {# Loop through updates data #}
+        {% for update in travelUpdates %}
+        <div class="tfwmds-travel-update">
+            <div class="tfwmds-travel-update__disruption">
+                {{
+                    mediumDisruption({
+                        displayNarrow: true,
+                        iconLeft: "modes-isolated-" + update.mode,
+                        iconRight: update.statusIcon,
+                        classes: update.severityClass
+                    })
+                }}
+                <h3 class="tfwmds-m-none">{{ update.title }}</h3>
+                <div class="tfwmds-travel-update__disruption-text">
+                    {# Loop through and show status text/link #}
+                    {% for text in update.disruptions %}
+                        {% if text === "Good service"%}
+                            <strong>{{text}}</strong>
+                        {% else %}
+                            <div>
+                                {{
+                                    tfwmdsLink({
+                                        contentText: text,
+                                        link: "//disruptions.wmnetwork.co.uk/",
+                                        linkTarget: "_blank"
+                                    })
+                                }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        <!-- Content card actions -->
+        <div class="tfwmds-grid tfwmds-grid--spacing-sm-2-lg tfwmds-p-t-md">
+            <div class="tfwmds-col-1 tfwmds-col-sm-1-2">
+                {{
+                    tfwmdsButton({
+                        classes: "tfwmds-btn--block tfwmds-m-b-md",
+                        type: "mode",
+                        contentText: "Add services",
+                        iconRight: "general-expand"
+                    })
+                }}
+            </div>
+            <div class="tfwmds-col-1 tfwmds-col-sm-1-2">
+                {{
+                    tfwmdsButton({
+                        classes: "tfwmds-btn--block",
+                        contentText: "View all updates",
+                        iconRight: "general-chevron-right"
+                    })
+                }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endcall %}
+
+{% endmacro %}

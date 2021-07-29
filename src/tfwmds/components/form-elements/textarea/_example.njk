@@ -1,0 +1,32 @@
+{% raw %}
+{% from "tfwmds/components/form-elements/textarea/_textarea.njk" import tfwmdsTextarea %}
+
+{{
+   tfwmdsTextarea({
+      id: "example-textarea",
+      name: "example-textarea",
+      rows: "2",
+      required: true,
+      error: false,
+      errorMessage: {
+         id: null,
+         contentText: null,
+         contentHTML: "<span>Custom <em>error message</em></span>",
+         classes: null
+      }
+      classes: null,
+      value: "",
+      label: {
+         contentText: "Textarea label",
+         contentHTML: "<span>Textarea label <em>updated</em></span>",
+         classes: "tfwmds-m-t-20"
+      },
+      disabled: false,
+      maxLength: "200",
+      placeholder: "Textarea placeholder...",
+      formGroup: {
+         classes: "tfwmds-m-t-20"
+      },
+   })
+}}
+{% endraw %}

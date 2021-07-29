@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Date Input" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/form-elements/date-input/_date-input.njk" import wmndsDateInput %}
+{% from "tfwmds/components/form-elements/date-input/_date-input.njk" import tfwmdsDateInput %}
 
 {% block content %}
 {% markdown %}
@@ -23,16 +23,16 @@
 {% endmarkdown %}
 
 {{
- wmndsInsetText ({
-      contentHTML: "If you are looking for how to format the date within content i.e. \"4 June 2017\", check the <a href=\"/styles/a-to-z-content-style-guide/#dates\" class=\"wmnds-link\">dates section within the A to Z content style guide</a>."
+ tfwmdsInsetText ({
+      contentHTML: "If you are looking for how to format the date within content i.e. \"4 June 2017\", check the <a href=\"/styles/a-to-z-content-style-guide/#dates\" class=\"tfwmds-link\">dates section within the A to Z content style guide</a>."
   })
 }}
 
 {{
-    compExample([wmndsDateInput()], {
-      componentPath: "wmnds/components/form-elements/date-input/",
+    compExample([tfwmdsDateInput()], {
+      componentPath: "tfwmds/components/form-elements/date-input/",
       njk: true,
-      njkProps: wmndsDateInputProps,
+      njkProps: tfwmdsDateInputProps,
       js: false,
       iframe: false
     })
@@ -47,7 +47,7 @@
 
 {{
     compExample([
-      wmndsDateInput({
+      tfwmdsDateInput({
         id: "error-date",
         error: true,
         errorMessage: {
@@ -55,9 +55,9 @@
         }
       })
     ], {
-      componentPath: "wmnds/components/form-elements/date-input/",
+      componentPath: "tfwmds/components/form-elements/date-input/",
       njk: true,
-      njkProps: wmndsDateInputProps,
+      njkProps: tfwmdsDateInputProps,
       js: false,
       iframe: false
     })

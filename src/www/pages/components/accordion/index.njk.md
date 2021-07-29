@@ -1,8 +1,8 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Accordion" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
-{% from "wmnds/components/disruption-indicator/small/_small.njk" import wmndsDisruptionIndicatorSmall %}
+{% from "tfwmds/components/accordion/_accordion.njk" import tfwmdsAccordion %}
+{% from "tfwmds/components/disruption-indicator/small/_small.njk" import tfwmdsDisruptionIndicatorSmall %}
 
 {% block content %}
 
@@ -36,32 +36,32 @@
 ## Closed
 
 In its closed state, the accordions
-<code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</code> is hidden from view.
+<code class="tfwmds-website-inline-code">.tfwmds-accordion\_\_content</code> is hidden from view.
 
 Everything you can see whilst the accordion is in this state is nested within the
-<code class="wmnds-website-inline-code">button.wmnds-accordion-summary-wrapper</code> element.
+<code class="tfwmds-website-inline-code">button.tfwmds-accordion-summary-wrapper</code> element.
 
 Take note that:
 
-- The attribute <code class="wmnds-website-inline-code">aria-controls</code> is equal to the id
-  set on the <code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</code> element.
+- The attribute <code class="tfwmds-website-inline-code">aria-controls</code> is equal to the id
+  set on the <code class="tfwmds-website-inline-code">.tfwmds-accordion\_\_content</code> element.
   This helps with accessibility, so that screen readers understand that x button controls x
   content.
-- The attribute <code class="wmnds-website-inline-code">aria-expanded</code> is set to "false"
+- The attribute <code class="tfwmds-website-inline-code">aria-expanded</code> is set to "false"
   when in the closed state. Again, this helps with accessibility.
 - The only thing not visible in the
-  <code class="wmnds-website-inline-code">button.wmnds-accordion-summary-wrapper</code> is the
+  <code class="tfwmds-website-inline-code">button.tfwmds-accordion-summary-wrapper</code> is the
   minimise icon.
 
 {% endmarkdown %}
 
 {{
   compExample([
-      wmndsAccordion()
+      tfwmdsAccordion()
     ], {
-      componentPath: "wmnds/components/accordion/",
+      componentPath: "tfwmds/components/accordion/",
       njk: true,
-      njkProps: wmndsAccordionProps,
+      njkProps: tfwmdsAccordionProps,
       js: true,
       iframe: false
     }
@@ -73,16 +73,16 @@ Take note that:
 ## Open
 
 In the open state, the accordion shows all of the content it was initially hiding in the
-<code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</code> element.
+<code class="tfwmds-website-inline-code">.tfwmds-accordion\_\_content</code> element.
 
 To change the accordion to this state, you need to add the modifier class
-<code class="wmnds-website-inline-code">wmnds-is--open</code> to the main
-<code class="wmnds-website-inline-code">.wmnds-accordion</code> element as shown in the code
+<code class="tfwmds-website-inline-code">tfwmds-is--open</code> to the main
+<code class="tfwmds-website-inline-code">.tfwmds-accordion</code> element as shown in the code
 snippet.
 
 Take note that:
 
-- The attribute <code class="wmnds-website-inline-code">aria-expanded</code> is set to "true" when
+- The attribute <code class="tfwmds-website-inline-code">aria-expanded</code> is set to "true" when
   in the open state. Again, this helps with accessibility.
 - The minus icon becomes visible in this state, whilst the plus icon is hidden.</li>
 
@@ -90,14 +90,14 @@ Take note that:
 
 {{
   compExample([
-    wmndsAccordion({
+    tfwmdsAccordion({
         id: 'accordion-open-01',
         isOpen: true
       })
   ], {
-    componentPath: "wmnds/components/accordion/",
+    componentPath: "tfwmds/components/accordion/",
     njk: true,
-    njkProps: wmndsAccordionProps,
+    njkProps: tfwmdsAccordionProps,
     js: true,
     iframe: false
   })
@@ -109,7 +109,7 @@ Take note that:
 
 In the example below, you can see that we have customised the summary section of the accordion so
 that it contains an
-<a href="/components/disruption-indicator/" title="Disruption indicator component" target="\_self" class="wmnds-link">disruption indicator</a>
+<a href="/components/disruption-indicator/" title="Disruption indicator component" target="\_self" class="tfwmds-link">disruption indicator</a>
 and some text.
 
 The accordion has been built so that it can easily be customised. You can customise both the
@@ -117,22 +117,22 @@ summary and the content elements.
 
 To customise the summary (title) section of the accordion, ensure that you nest valid and
 accessible html within the
-<code class="wmnds-website-inline-code">.wmnds-accordion\_\_summary</code> element.
+<code class="tfwmds-website-inline-code">.tfwmds-accordion\_\_summary</code> element.
 
 To customise the content section of the accordion, ensure that you nest valid and accessible html
-within the <code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</code> element.
+within the <code class="tfwmds-website-inline-code">.tfwmds-accordion\_\_content</code> element.
 
 {% endmarkdown %}
 
 {# Set vars for use in custom example below #}
 {% set customheadingHTML ='
 
-  <div class="wmnds-grid wmnds-grid--align-center">' +
-    wmndsDisruptionIndicatorSmall({
-      classes: "wmnds-col-auto wmnds-m-r-md",
+  <div class="tfwmds-grid tfwmds-grid--align-center">' +
+    tfwmdsDisruptionIndicatorSmall({
+      classes: "tfwmds-col-auto tfwmds-m-r-md",
       mode: "bus"
     }) +
-    '<div class="wmnds-col-auto">Resurfacing Works at
+    '<div class="tfwmds-col-auto">Resurfacing Works at
       <strong>Abbey Street, Lower Gornal</strong>
     </div>
   </div>'
@@ -150,16 +150,16 @@ within the <code class="wmnds-website-inline-code">.wmnds-accordion\_\_content</
 
 {{
   compExample([
-    wmndsAccordion({
+    tfwmdsAccordion({
       id: 'accordion-custom-01',
       isOpen: true,
       headingHTML: customheadingHTML ,
       contentHTML: customContentHTML
     })
   ], {
-    componentPath: "wmnds/components/accordion/",
+    componentPath: "tfwmds/components/accordion/",
     njk: true,
-    njkProps: wmndsAccordionProps,
+    njkProps: tfwmdsAccordionProps,
     js: true,
     iframe: false
   })

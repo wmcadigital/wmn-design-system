@@ -22,10 +22,10 @@
     <br><br>
     {# Search bar #}
     <h2>Search bar</h2>
-    {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
+    {% from "tfwmds/patterns/search/search-bar/_search-bar.njk" import tfwmdsSearchbar %}
     {{
         compExample([
-            wmndsSearchbar()
+            tfwmdsSearchbar()
         ])
     }}
     {# End Search bar #}
@@ -40,10 +40,10 @@
             This gives the user the option to sort search results by relevance or when a page was last updated
         </li>
     </ul>
-     {% from "wmnds/patterns/search/sort/_sort.njk" import wmndsSearchSort %}
+     {% from "tfwmds/patterns/search/sort/_sort.njk" import tfwmdsSearchSort %}
     {{
         compExample([
-            wmndsSearchSort()
+            tfwmdsSearchSort()
         ])
     }}
     {# End sort #}
@@ -60,10 +60,10 @@
         <li>The filters will narrow down the search results by displaying pages which only match the filter criteria</li>
         <li>On mobile, the filter options will appear when a user clicks on the ‘Filter your results button’. This will trigger an overlay where users can select and apply filters. This is to reduce page size on smaller devices</li>
     </ul>
-    {% from "wmnds/patterns/search/search-filter/_search-filter.njk" import wmndsSearchFilter %}
+    {% from "tfwmds/patterns/search/search-filter/_search-filter.njk" import tfwmdsSearchFilter %}
     {{
         compExample([
-            wmndsSearchFilter(
+            tfwmdsSearchFilter(
                 {
                     accordion: [{
                         summaryTitle: "Topic",
@@ -80,7 +80,7 @@
                 ]}
             )
         ], {
-            componentPath: "wmnds/patterns/search/search-filter/",
+            componentPath: "tfwmds/patterns/search/search-filter/",
             njk: false,
             js: true,
             iframe: false
@@ -102,10 +102,10 @@
         <li>If the user’s search query is in the page description, it will be highlighted in bold. This is to help them understand the context of the page</li>
         <li>The horizontal rule at the bottom of a search result is to make the results list easier to scan.</li>
     </ul>
-    {% from "wmnds/patterns/search/search-result/_search-result.njk" import wmndsSearchResult %}
+    {% from "tfwmds/patterns/search/search-result/_search-result.njk" import tfwmdsSearchResult %}
     {{
         compExample([
-            wmndsSearchResult(
+            tfwmdsSearchResult(
                 {
                     pageTitle: "Swift: The smarter way to travel",
                     breadcrumbs: ['Home', 'Swift'],
@@ -122,18 +122,18 @@
     <ul>
         <li>Allows the user to navigate through search results.</li>
     </ul>
-    {% from "wmnds/patterns/search/pagination/_pagination.njk" import wmndsPagination %}
+    {% from "tfwmds/patterns/search/pagination/_pagination.njk" import tfwmdsPagination %}
     {{
         compExample([
-            wmndsPagination({
+            tfwmdsPagination({
                 pageCount: 8,
                 activePage: 1
             }),
-            wmndsPagination({
+            tfwmdsPagination({
                 pageCount: 8,
                 activePage: 5
             }),
-            wmndsPagination({
+            tfwmdsPagination({
                 pageCount: 8,
                 activePage: 8
             })

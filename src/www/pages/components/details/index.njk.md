@@ -5,7 +5,7 @@
 {% block content %}
 
 {# Details component #}
-{%- from "wmnds/components/details/_details.njk" import wmndsDetails -%}
+{%- from "tfwmds/components/details/_details.njk" import tfwmdsDetails -%}
 
 {% markdown %}
 
@@ -31,24 +31,24 @@
 ### How it works?
 
     - The details component expands into more detailed text when a user clicks on it.
-    - Inside the <code class="wmnds-website-inline-code">{{ "<details>" }}</code> tag, include 1 <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> and 1 <code class="wmnds-website-inline-code">{{ "<div>" }}</code> tag as direct children of <code class="wmnds-website-inline-code">{{ "<details>" }}</code>
-    - Place your link text inside <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> and the important information inside the <code class="wmnds-website-inline-code">{{ "<div>" }}</code>.
+    - Inside the <code class="tfwmds-website-inline-code">{{ "<details>" }}</code> tag, include 1 <code class="tfwmds-website-inline-code">{{ "<summary>" }}</code> and 1 <code class="tfwmds-website-inline-code">{{ "<div>" }}</code> tag as direct children of <code class="tfwmds-website-inline-code">{{ "<details>" }}</code>
+    - Place your link text inside <code class="tfwmds-website-inline-code">{{ "<summary>" }}</code> and the important information inside the <code class="tfwmds-website-inline-code">{{ "<div>" }}</code>.
 
 ### Using with IE11?
 
-    - Make sure you include the polyfill in the recommended JavaScript below as the <code class="wmnds-website-inline-code">{{ "<details>" }}</code> and <code class="wmnds-website-inline-code">{{ "<summary>" }}</code> elements are not supported at IE11.
+    - Make sure you include the polyfill in the recommended JavaScript below as the <code class="tfwmds-website-inline-code">{{ "<details>" }}</code> and <code class="tfwmds-website-inline-code">{{ "<summary>" }}</code> elements are not supported at IE11.
 
 ## Closed
 
 {% endmarkdown %}
 {{
     compExample([
-        wmndsDetails()
+        tfwmdsDetails()
     ],
     {
-      componentPath: "wmnds/components/details/",
+      componentPath: "tfwmds/components/details/",
       njk: true,
-      njkProps: wmndsDetailsProps,
+      njkProps: tfwmdsDetailsProps,
       js: true,
       iframe: false
     })
@@ -61,15 +61,15 @@
 {% endmarkdown %}
 {{
     compExample([
-        wmndsDetails({
+        tfwmdsDetails({
             isOpen: true,
             contentHTML: "<p><strong>Some random subtitle</strong></p><p>Lorem ipsum dolor sit...</p>"
         })
     ],
     {
-      componentPath: "wmnds/components/details/",
+      componentPath: "tfwmds/components/details/",
       njk: true,
-      njkProps: wmndsDetailsProps,
+      njkProps: tfwmdsDetailsProps,
       js: true,
       iframe: false
     })

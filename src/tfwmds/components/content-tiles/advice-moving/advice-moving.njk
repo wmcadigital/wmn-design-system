@@ -1,0 +1,58 @@
+{% macro tfwmdsContentTileAdviceMoving(params) %}
+{% from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton -%}
+
+<div class="tfwmds-content-tile">
+  <h2 class="tfwmds-content-tile__title">Advice to keep moving</h2>
+  <div class="tfwmds-content-tile__buttons">
+
+    {{
+      tfwmdsLinkAsButton({
+        classes: "tfwmds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I drive",
+        type: 'primary'
+      })
+    }}
+    {{
+      tfwmdsLinkAsButton({
+        classes: "tfwmds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I use the bus",
+        type: 'primary'
+      })
+    }}
+    {{
+      tfwmdsLinkAsButton({
+        classes: "tfwmds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I use the train",
+        type: 'primary'
+      })
+    }}
+    {{
+      tfwmdsLinkAsButton({
+        classes: "tfwmds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I use the tram",
+        type: 'primary'
+      })
+    }}
+    {{
+      tfwmdsLinkAsButton({
+        classes: "tfwmds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I walk or cycle",
+        type: 'primary'
+      })
+    }}
+    {{
+      tfwmdsLinkAsButton({
+        classes: "tfwmds-content-tile__button",
+        iconRight: "general-chevron-right",
+        contentText: "I want to visit an attraction or venue",
+        type: 'primary'
+      })
+    }}
+  </div>
+</div>
+{% endmacro %}

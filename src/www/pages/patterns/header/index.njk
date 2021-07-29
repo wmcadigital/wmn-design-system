@@ -3,11 +3,11 @@
 {% set section="Patterns" %}
 {# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/header/_header.njk" import wmndsHeader %}
-{% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
-{% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
-{% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
-{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "tfwmds/patterns/header/_header.njk" import tfwmdsHeader %}
+{% from "tfwmds/patterns/header-v2/_header-v2.njk" import tfwmdsHeaderV2 %}
+{% from "tfwmds/patterns/footer/_footer.njk" import tfwmdsFooter %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/components/warning-text/_warning-text.njk" import tfwmdsWarningText %}
 
 {% block content %}
 {# About #}
@@ -33,7 +33,7 @@
 {# Skip Link #}
 <h3>Skip link</h3>
 <p>There is a hidden <a href="https://design-system.service.gov.uk/components/skip-link/" target="_blank">skip link</a> for users with screen reader assistive technology. This allows users to quickly access the main content. All pages must include this.</p>
-<p>Ensure there is a HTML element on the page with the ID of <code class="wmnds-website-inline-code">wmnds-main-content</code> so the user can skip to this section.</p>
+<p>Ensure there is a HTML element on the page with the ID of <code class="tfwmds-website-inline-code">tfwmds-main-content</code> so the user can skip to this section.</p>
 {# Logo #}
 <h3>Logo</h3>
 <p>This must always be the Transport for West Midlands logo.</p>
@@ -56,7 +56,7 @@
 
 {{
   compExample([
-    wmndsHeaderV2({
+    tfwmdsHeaderV2({
       id: "mega-menu-example-full",
       navItems: [{
         name: "Styles"
@@ -75,7 +75,7 @@
       exampleAria: "Full header"
     })
   ], {
-    componentPath: "wmnds/patterns/header-v2/",
+    componentPath: "tfwmds/patterns/header-v2/",
     njk: false,
     js: true,
     iframe: true
@@ -87,7 +87,7 @@
 
 {{
   compExample([
-    wmndsHeaderV2({
+    tfwmdsHeaderV2({
       id: "mega-menu-example",
       search: true,
       searchSuggestions: ["See live departures", "Find a timetable", "Check for disruptions", "Manage my Swift card", "Find ticket prices", "Get a refund", "Update Direct Debit", "Apply for a 16-18 photocard"],
@@ -263,7 +263,7 @@
       megaMenuDemo: true
     })
   ], {
-    componentPath: "wmnds/patterns/header-v2/",
+    componentPath: "tfwmds/patterns/header-v2/",
     njk: false,
     js: true,
     iframe: true
@@ -276,18 +276,18 @@
 
 <p>To use the title variant:</p>
 <ul>
-  <li>Add the h1 element and ensure it has the classes <code class="wmnds-website-inline-code">.wmnds-header__title .wmnds-col-1 .wmnds-col-sm-auto</code> on the element</li>
+  <li>Add the h1 element and ensure it has the classes <code class="tfwmds-website-inline-code">.tfwmds-header__title .tfwmds-col-1 .tfwmds-col-sm-auto</code> on the element</li>
 </ul>
 
 
 {{
   compExample([
-    wmndsHeaderV2({
+    tfwmdsHeaderV2({
       withTitle: true,
       legacyMenu: true
     })
   ], {
-    componentPath: "wmnds/patterns/header-v2/",
+    componentPath: "tfwmds/patterns/header-v2/",
     njk: false,
     js: true,
     iframe: true
@@ -297,15 +297,15 @@
 {# Archived Header #}
 <h2>Archived header</h2>
 {{
- wmndsWarningText ({
-      contentHTML: "<p>This is an old version fo the header pattern for reference only. Use the <a href=\"#wmnds-main-content\" class=\"wmnds-link\" title=\"Current version of header pattern\">current version</a> instead.</p>",
+ tfwmdsWarningText ({
+      contentHTML: "<p>This is an old version fo the header pattern for reference only. Use the <a href=\"#tfwmds-main-content\" class=\"tfwmds-link\" title=\"Current version of header pattern\">current version</a> instead.</p>",
       icon: "general-info"
     })
 }}
 
 {{
   compExample([
-    wmndsHeader({
+    tfwmdsHeader({
       navItems: navItems,
       banner: true,
       breadcrumbs: {
@@ -323,19 +323,19 @@
 
 <p>To use the mobile app variant:</p>
 <ul>
-  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-header--mobile-app</code> to the wmnds-header element</li>
+  <li>Add the modifier class <code class="tfwmds-website-inline-code">tfwmds-header--mobile-app</code> to the tfwmds-header element</li>
   <li>Copy the code for the back button section below and insert it into your existing header</li>
   <li>Finally, add the script for the back button in your local javascript file</li>
 </ul>
 
 <p>
   You will most likely want to use this with the mobile variants of the
-  {{ wmndsLink({
+  {{ tfwmdsLink({
     contentText: 'breadcrumb component',
     link: '/components/breadcrumb/#mobile-app-breadcrumb'
     })
   }} and
-  {{ wmndsLink({
+  {{ tfwmdsLink({
     contentText: 'footer pattern',
     link: '#mobile-app-footer'
     })
@@ -344,7 +344,7 @@
 
 {{
   compExample([
-    wmndsHeader({
+    tfwmdsHeader({
       navItems: navItems,
       app: true,
       exampleAria: "Mobile app header"

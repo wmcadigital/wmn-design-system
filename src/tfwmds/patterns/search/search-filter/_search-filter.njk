@@ -1,0 +1,67 @@
+    {% macro tfwmdsSearchFilter(params) %}
+
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+
+<!-- Mobile show filter button -->
+<div class="tfwmds-hide-desktop">
+    <button class="tfwmds-btn tfwmds-btn--primary tfwmds-btn--block " id="show_filter_btn" aria-controls="search_filter" aria-expanded="false">
+        Filter your results
+    </button>
+</div>
+
+<div id="search_filter" class="tfwmds-search-filter">
+    <div class="tfwmds-search-filter__header">
+        <h3 class="tfwmds-search-filter__header-title">Filter</h3>
+        <a href="#" class="tfwmds-link tfwmds-search-filter__clear-all">Clear all</a>
+        <a href="#" id="hide_filter_btn" class="tfwmds-search-filter__close">
+            <svg>
+                <title>Close</title>
+                <use xlink:href="#tfwmds-general-cross" href="#tfwmds-general-cross"></use>
+            </svg>
+        </a>
+    </div>
+    {# loop through accordion items #}
+    {% for accordion in params.accordion -%}
+    <div class="tfwmds-accordion">
+      <button aria-controls="accordion-{{accordion.summaryTitle}}" class="tfwmds-accordion__summary-wrapper" aria-expanded="false">
+        <!-- accordion summary -->
+        <div class="tfwmds-accordion__summary">
+          <h4 class="tfwmds-accordion__summary-title tfwmds-m-b-none">{{accordion.summaryTitle}}</h4>
+        </div>
+        <!-- plus icon -->
+        {{tfwmdsIcon({class: 'tfwmds-accordion__icon', icon: 'general-expand'}) | trim}}
+        <!-- minus icon -->
+        {{tfwmdsIcon({class: 'tfwmds-accordion__icon tfwmds-accordion__icon--minimise', icon: 'general-minimise'}) | trim}}
+      </button>
+    
+      <!-- accordion content -->
+      <div class="tfwmds-accordion__content" id="accordion-{{accordion.summaryTitle}}">
+        <fieldset class="tfwmds-fe-fieldset">
+            <div class="tfwmds-fe-checkboxes">
+            {%- for option in accordion.options %}
+                <label class="tfwmds-fe-checkboxes__container">
+                    {{option}}
+                    <input class="tfwmds-fe-checkboxes__input" value="{{option}}" type="checkbox"/>
+                    <span class="tfwmds-fe-checkboxes__checkmark">
+                    {{tfwmdsIcon({class: 'tfwmds-fe-checkboxes__icon', icon: 'general-checkmark'}) | trim}}
+                    </span>
+                </label>
+            {%- endfor %}
+            </div>
+        </fieldset>
+      </div>
+    </div>
+    {% endfor -%}
+    <div class="tfwmds-search-filter__mobile-filter-update tfwmds-hide-desktop">
+        <button id="show_results_btn" class="tfwmds-btn tfwmds-btn--block">Show 80 results</button>
+    </div>
+    <a href="#" class="tfwmds-search-filter__clear-all tfwmds-hide-mobile">
+        <svg>
+            <title>Close</title>
+            <use xlink:href="#tfwmds-general-cross" href="#tfwmds-general-cross"></use>
+        </svg> Clear all filters
+    </a>
+</div>
+
+{% endmacro %}

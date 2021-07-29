@@ -1,0 +1,124 @@
+{% macro tfwmdsBrandedBanner(params) %}
+{# Imports #}
+{% from "tfwmds/components/breadcrumb/_breadcrumb.njk" import tfwmdsBreadcrumb %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/link/as-button/_as-button.njk" import tfwmdsLinkAsButton %}
+
+{# Set vars #}
+{% set titleHTML = params.title if params.title else "" %}
+{% set breadcrumbItems = params.breadcrumbItems %}
+{% set contentCol1 = params.contentCol1 %}
+{% set contentCol2 = params.contentCol2 %}
+{% set ctaButton = params.ctaButton %}
+{% set transportModals = params.transportModals %}
+
+<div class="tfwmds-branded-banner">
+   <div class="tfwmds-container">
+      <div class="tfwmds-grid tfwmds-grid--spacing-lg-2-xl tfwmds-m-t-sm tfwmds-m-b-sm">
+         <div class="tfwmds-col-1 tfwmds-col-md-2-3">
+         {% if breadcrumbItems %}
+            {{
+               tfwmdsBreadcrumb({
+                  items: breadcrumbItems
+               })
+            }}
+         {% endif %}
+         {% if titleHTML %}
+            <h1 class="tfwmds-branded-banner__title">
+               {{ titleHTML | safe }}
+            </h1>
+         {% endif %}
+         {% if contentCol1 %}
+            {{ contentCol1 | safe }}
+         {% else %}
+            {% if titleHtml !== null %}
+               <h1 class="tfwmds-branded-banner__title">
+                  {{
+                     tfwmdsIcon({
+                        icon: 'swift-full-logo',
+                        class: 'tfwmds-swift-logo-inline'
+                     })
+                  }} and tickets
+               </h1>
+            {% endif %}
+            <p class="tfwmds-h3">We sell lots of tickets for bus, train and tram travel in the West Midlands</p>
+            <p>You can also combine different modes of travel to suit your needs. <br>Tickets can last from 1 day to a year.</p>
+         {% endif %}
+
+         {% if transportModals %}
+            <div class="tfwmds-branded-banner__modals tfwmds-m-b-lg">
+               {% for modal in transportModals %}
+                  {% if modal === "Train" %}
+                     <div class="tfwmds-branded-banner__modal">
+                        <svg class="tfwmds-branded-banner__icon  tfwmds-branded-banner__icon--train">
+                           <use xlink:href="#tfwmds-modes-bg-rail" href="#tfwmds-modes-bg-rail"></use>
+                        </svg>
+                        Train
+                     </div>
+                  {% elif modal === "Tram" %}
+                     <div class="tfwmds-branded-banner__modal">
+                        <svg class="tfwmds-branded-banner__icon  tfwmds-branded-banner__icon--tram">
+                           <use xlink:href="#tfwmds-modes-bg-metro" href="#tfwmds-modes-bg-metro"></use>
+                        </svg>
+                        {{modal}}
+                     </div>
+                  {% elif modal === "Park and ride" %}
+                     <div class="tfwmds-branded-banner__modal tfwmds-branded-banner__icon--p-r">
+                        <svg class="tfwmds-branded-banner__icon">
+                           <use xlink:href="#tfwmds-modes-bg-p-r" href="#tfwmds-modes-bg-p-r"></use>
+                        </svg>
+                        Park and ride
+                     </div>
+                  {% else %}
+                     <div class="tfwmds-branded-banner__modal">
+                        <svg class="tfwmds-branded-banner__icon  tfwmds-branded-banner__icon--{{ modal | lower }}">
+                           <use xlink:href="#tfwmds-modes-bg-{{ modal | lower }}" href="#tfwmds-modes-bg-{{ modal | lower }}"></use>
+                        </svg>
+                        {{ modal }}
+                     </div>
+                  {% endif %}
+
+               {% endfor %}
+            </div>
+         {% endif %}
+         </div>
+
+         {% if contentCol2 %}
+         <div class="tfwmds-col-1 tfwmds-col-md-1-3">
+            <div class="tfwmds-col-1">
+               {{ contentCol2 | safe }}
+            </div>
+         </div>
+         {% endif %}
+      </div>
+
+
+      {% if ctaButton %}
+         <div class="tfwmds-col-1">
+            {{
+               tfwmdsLinkAsButton({
+                  contentText: ctaButton.contentText if ctaButton.contentText else "Button text",
+                  link: ctaButton.link if ctaButton.link else "#",
+                  linkTitle: ctaButton.linkTitle if ctaButton.linkTitle else ctaButton.contentText,
+                  linkTarget: ctaButton.linkTarget if ctaButton.linkTarget else "_self",
+                  iconRight: 'general-chevron-right',
+                  classes: 'tfwmds-btn--dark-bg'
+               })
+            }}
+         </div>
+      {% else %}
+         <div class="tfwmds-col-1">
+            {{
+               tfwmdsLinkAsButton({
+                  contentText: 'Find a ticket',
+                  iconRight: 'general-chevron-right',
+                  iconRight: 'general-chevron-right',
+                  classes: 'tfwmds-btn--dark-bg'
+               })
+            }}
+         </div>
+      {% endif %}
+
+   </div>
+</div>
+{% endmacro %}

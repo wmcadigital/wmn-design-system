@@ -1,0 +1,15 @@
+{% raw %}
+{% from "tfwmds/components/accordion/_accordion.njk" import tfwmdsAccordion %}
+
+{{
+   tfwmdsAccordion({
+      id: "accordion-01",
+      headingText: "Accordion",
+      headingHTML: null,
+      contentText: null,
+      contentHTML: "<p><strong>Some random subtitle</strong></p>
+      <p>Lorem ipsum dolor sit...</p>",
+      isOpen: false
+    })
+}}
+{% endraw %}

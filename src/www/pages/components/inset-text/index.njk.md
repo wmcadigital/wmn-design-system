@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Inset Text" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
+{% from "tfwmds/components/inset-text/_inset-text.njk" import tfwmdsInsetText %}
 
 {% block content %}
 
@@ -26,19 +26,19 @@
 ### How to use it?
 
 - Use inset text sparingly. They're less effective if overused.
-- Users with visual disabilities may not be able to see the colour that helps it stand out. Instead, they may rely on a hidden label to recognise it. Hide <span>Information:</span> inside the Inset Text <code class="wmnds-website-inline-code"> div </code> so that users with screen readers understand this information is different to body text.
+- Users with visual disabilities may not be able to see the colour that helps it stand out. Instead, they may rely on a hidden label to recognise it. Hide <span>Information:</span> inside the Inset Text <code class="tfwmds-website-inline-code"> div </code> so that users with screen readers understand this information is different to body text.
 
 {% endmarkdown %}
 
 {{
     compExample([
-        wmndsInsetText({
+        tfwmdsInsetText({
             contentHTML: "Example of inset text"
         })
     ], {
-      componentPath: "wmnds/components/inset-text/",
+      componentPath: "tfwmds/components/inset-text/",
       njk: true,
-      njkProps: wmndsInsetTextProps,
+      njkProps: tfwmdsInsetTextProps,
       js: false,
       iframe: false
     })
@@ -67,20 +67,20 @@
 
 - Use a concise heading that a user can easily scan and understand.
 - Make sure the heading is relevant to both the content it's supporting and the context it is providing in the main body text.
-- Add an <code class="wmnds-website-inline-code">aria-label</code> to the parent Example Callout <code class="wmnds-website-inline-code"> div </code> so that users with screen readers understand that the information is important.
+- Add an <code class="tfwmds-website-inline-code">aria-label</code> to the parent Example Callout <code class="tfwmds-website-inline-code"> div </code> so that users with screen readers understand that the information is important.
 
 {% endmarkdown %}
 
 {{
     compExample([
-        wmndsInsetText({
+        tfwmdsInsetText({
             contentHTML:  "Example Callout title<br>Example callout description.",
             label: "Example Callout"
         })
     ], {
-      componentPath: "wmnds/components/inset-text/",
+      componentPath: "tfwmds/components/inset-text/",
       njk: true,
-      njkProps: wmndsInsetTextProps,
+      njkProps: tfwmdsInsetTextProps,
       js: false,
       iframe: false
     })

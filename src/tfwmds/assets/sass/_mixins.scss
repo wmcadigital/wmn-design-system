@@ -1,0 +1,109 @@
+// This is a helper which will spit out the correct height/width for any svgs within a heading tag
+// This is used to overwrite .tfwmds-n-icon__svg class defaults in _n-icon.scss
+@mixin n-icon-styling($height-and-font-size: 1rem) {
+  $height-multiplier: 1.04741812336749; // If we multiply the height by this value we got the correct width for the n-icon svg
+  $rescaled-font: $height-and-font-size * 0.75; // Multiply by 0.75 as the font height is is actually 1/4 smaller than
+
+  .tfwmds-n-icon__svg {
+    width: $rescaled-font;
+    height: calc(#{$rescaled-font * $height-multiplier});
+    //
+  }
+}
+
+// TYPE
+// This is to get the size of the font to be used,
+// and to scale the line heights based on the font size
+@mixin type-setting($level, $multiplier: 1) {
+  // $mulitplier var gives the option to multiply(scale) the values below. This is often used to scale the headers depending on device size
+
+  // Default (16px)
+  @if $level == 0 {
+    $height-and-font-size: 1rem;
+    font-size: $height-and-font-size;
+    line-height: 1.5rem;
+
+    @include n-icon-styling($height-and-font-size);
+  }
+  // Heading 1 (46px)
+  @if $level == 1 {
+    $height-and-font-size: 2.875rem * $multiplier;
+    margin-top: 3rem * $multiplier;
+    margin-bottom: 2rem * $multiplier;
+    font-size: $height-and-font-size;
+    line-height: 3rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
+  }
+  // Heading 2 (32px)
+  @if $level == 2 {
+    $height-and-font-size: 2rem * $multiplier;
+    margin-top: 3rem * $multiplier;
+    margin-bottom: 1rem * $multiplier;
+    font-size: $height-and-font-size;
+    line-height: 2.225rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
+  }
+  // Heading 3 (23px)
+  @if $level == 3 {
+    $height-and-font-size: 1.4375rem * $multiplier;
+    margin-top: 2rem * $multiplier;
+    margin-bottom: 0.75rem * $multiplier;
+    font-size: $height-and-font-size;
+    line-height: 1.5rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
+  }
+  // Heading 4 (18px)
+  @if $level == 4 {
+    $height-and-font-size: 1.125rem * $multiplier;
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 0.5rem * $multiplier;
+    font-size: $height-and-font-size;
+    line-height: 1.5rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
+  }
+  // Heading 5 (16px)
+  @if $level == 5 {
+    $height-and-font-size: 1rem * $multiplier;
+    margin-top: 1.5rem * $multiplier;
+    margin-bottom: 0.5rem * $multiplier;
+    font-size: $height-and-font-size;
+    line-height: 1.5rem * $multiplier;
+
+    @include n-icon-styling($height-and-font-size);
+  }
+}
+
+// get-color() notes
+//
+// This is to get one of the brand colors in the $palettes map in vars.scss
+// Use it like so... get-color(primary);
+// If you'd like to get a tint of a color, use it like so...
+// get-color(primary, 50); by default it mixes with white
+// If you add dark to the end it will mix black instead of white
+// e.g. get-color(primary, 50, dark);
+@function get-color($color, $percent: 0, $shade: $white) {
+  // If shade is null, then by default set to white else set to shade selected
+  $shade: if($shade == dark, $black, $white);
+  $color: map-get($palettes, $color);
+
+  @return mix($shade, $color, $percent);
+}
+
+// repeater() notes
+//
+// Repeats a string with an optional separator
+@function repeater($item, $count, $separator: "") {
+  @if $count == 0 {
+    @return $item;
+  }
+
+  $string: $item;
+  @for $i from 1 through $count {
+    $string: $string + $separator + $item;
+  }
+  @return "#{$string}";
+}

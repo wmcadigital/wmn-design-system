@@ -1,0 +1,28 @@
+{% macro tfwmdsPhaseIndicatorLink(params) %}
+{% from "tfwmds/components/phase-indicator/_phase-indicator.njk" import tfwmdsPhaseIndicator %}
+{%- from "tfwmds/components/link/link/_link.njk" import tfwmdsLink -%}
+{# Set vars #}
+{% set text = params.contentText if params.contentText %}
+{% set href = params.href if params.href %} {# set button text #}
+{% set title = params.title if params.title %} {# set button text #}
+<div class="tfwmds-grid tfwmds-banner-container">
+  <div class="tfwmds-col-auto tfwmds-float-left tfwmds-m-r-xsm">
+    {{
+      tfwmdsPhaseIndicator()
+   }}
+  </div>
+  <div class="tfwmds-col-auto">
+     <p class="tfwmds-banner-container__text">
+      {{ 
+        tfwmdsLink({
+          contentText: text,
+          link: href,
+          linkTitle: title,
+          linkTarget: '_blank'
+        })
+     }}
+     </p>
+  </div>
+</div>
+
+{% endmacro %}

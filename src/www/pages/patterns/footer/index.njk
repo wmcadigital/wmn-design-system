@@ -3,8 +3,8 @@
 {% set section="Patterns" %}
 {# Imports #}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
-{%- from "wmnds/components/link/link/_link.njk" import wmndsLink -%}
+{% from "tfwmds/patterns/footer/_footer.njk" import tfwmdsFooter %}
+{%- from "tfwmds/components/link/link/_link.njk" import tfwmdsLink -%}
 
 {% block content %}
 {# About #}
@@ -28,7 +28,7 @@
 <p>To enable the collapsible footer menus on smaller screens you can include the recommended javascript below:</p>
 {{
   compExample([
-    wmndsFooter({
+    tfwmdsFooter({
       menu1: {
         name: "Resources & support",
         menuItems: [{
@@ -60,7 +60,7 @@
       }]
     })
   ], {
-    componentPath: "wmnds/patterns/footer/",
+    componentPath: "tfwmds/patterns/footer/",
     njk: false,
     js: true,
     iframe: true
@@ -77,17 +77,17 @@
 
 <p>To use the mobile app variant:</p>
 <ul>
-  <li>Add the modifier class <code class="wmnds-website-inline-code">wmnds-footer--mobile-app</code> to the wmnds-footer element</li>
+  <li>Add the modifier class <code class="tfwmds-website-inline-code">tfwmds-footer--mobile-app</code> to the tfwmds-footer element</li>
 </ul>
 
 <p>
   You will most likely want to use this with the mobile variants of the
-  {{ wmndsLink({
+  {{ tfwmdsLink({
     contentText: 'breadcrumb component',
     link: '/components/breadcrumb/#mobile-app-breadcrumb'
     })
   }} and
-  {{ wmndsLink({
+  {{ tfwmdsLink({
     contentText: 'header pattern',
     link: '#mobile-app-header'
     })
@@ -96,11 +96,11 @@
 
 {{
   compExample([
-    wmndsFooter({
+    tfwmdsFooter({
       app: true
     })
   ], {
-    componentPath: "wmnds/patterns/footer/",
+    componentPath: "tfwmds/patterns/footer/",
     njk: false,
     js: true
   })

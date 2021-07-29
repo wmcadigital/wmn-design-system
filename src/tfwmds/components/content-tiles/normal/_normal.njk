@@ -1,0 +1,65 @@
+{% macro tfwmdsContentTilesNormal(params) %}
+{# Imports #}
+{%- from "tfwmds/components/link/link/_link.njk" import tfwmdsLink -%}
+{# Set vars #}
+{% set class = ' ' + params.classModifiers if params.classModifiers %}
+{% set title = params.title if params.title else "Major Roadworks and events" %} {# set title #}
+{# Link vars #}
+{% set linkText = params.linkText if params.linkText else "Read more" %} {# set link text #}
+{% set link = params.link if params.link else "#" %} {# set link url #}
+{% set linkTitle = params.linkTitle if params.linkTitle else "link title" %} {# set link title #}
+{% set linkTarget = params.linkTarget if params.linkTarget else "_self" %} {# set link target #}
+
+
+<div class="tfwmds-content-tile{{class}}">
+  {#- Title #}
+  {%- if params.smallTitle %}
+    <h3>{{ title }}</h3>
+  {%- else %}
+    <h2>{{ title }}</h2>
+  {%- endif %}
+
+  {#- Legend -#}
+  {%- if params.legend %}
+    <span class="tfwmds-content-tile__legend">
+      {{ params.legend }}
+    </span>
+  {%- endif %}
+
+  {%- if params.copy %}
+    {#- Copy #}
+    <div class="tfwmds-content-tile__copy">
+      {{ params.copy | safe | trim  -}}
+      {#- Read more -#}
+      {%- if params.readMore %}
+      {{ tfwmdsLink({
+        link: link,
+        linkTarget: linkTarget,
+        linkTitle: linkTitle,
+        contentText: linkText,
+        classes: 'tfwmds-float-right'
+        })
+      }}
+      {%- endif %}
+    </div>
+  {%- else %}
+    <ul class="tfwmds-content-tile__list">
+      <li class="tfwmds-content-tile__list-item">
+        {{ tfwmdsLink({contentText: 'Information for drivers'}) }}
+      </li>
+      <li class="tfwmds-content-tile__list-item">
+        {{ tfwmdsLink({contentText: 'Information for bus passengers'}) }}
+      </li>
+      <li class="tfwmds-content-tile__list-item">
+        {{ tfwmdsLink({contentText: 'Information for tram passengers'}) }}
+      </li>
+      <li class="tfwmds-content-tile__list-item">
+        {{ tfwmdsLink({contentText: 'Information for pedestrians'}) }}
+      </li>
+      <li class="tfwmds-content-tile__list-item">
+        {{ tfwmdsLink({contentText: 'Getting to venues and attractions'}) }}
+      </li>
+    </ul>
+  {%- endif %}
+</div>
+{% endmacro %}

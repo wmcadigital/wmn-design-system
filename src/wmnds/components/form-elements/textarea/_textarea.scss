@@ -1,8 +1,0 @@
-&.wmnds-fe-textarea {
-  display: block;
-  width: 100%;
-  @include type-setting(0);
-  padding: $size-sm;
-  border: 1px solid get-color(primary);
-  color: get-color(text);
-}

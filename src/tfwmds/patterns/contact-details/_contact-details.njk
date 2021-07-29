@@ -1,0 +1,95 @@
+{% macro tfwmdsContactDetails(params) %}
+{# Imports #}
+{% from "tfwmds/components/warning-text/_warning-text.njk" import tfwmdsWarningText %}
+{% from "tfwmds/components/inset-text/_inset-text.njk" import tfwmdsInsetText %}
+{# Set vars #}
+
+{# Address #}
+{% set department = params.department + "<br/>" if params.department %}
+{% set organisation = params.organisation + "<br/>" if params.organisation %}
+{% set address = params.address if params.address %}
+
+{# Alert #}
+{% set alertIcon = params.alertIcon if params.alertIcon %}
+{% set alertMessage = params.alertMessage if params.alertMessage %}
+
+{# Socials #}
+{% set twitter = "<a href='" + params.twitter + "' target='_blank' class='tfwmds-link'>Twitter</a><br />" if params.twitter %}
+{% set facebook = "<a href='" + params.facebook + "' target='_blank' class='tfwmds-link'>Facebook</a><br />"  if params.facebook %}
+
+{# Other contact #}
+{% set enquiryLink = "<a href='" + params.enquiryLink + "' target='_blank' class='tfwmds-link'>Submit an enquiry</a><br />" if params.enquiryLink %}
+{% set email = "<a href='mailto:" + params.email + "' target='_blank' class='tfwmds-link'>" + params.email +"</a><br />" if params.email %}
+{% set telephone = "Telephone: <a href='tel:" + params.telephone + "' target='_blank' class='tfwmds-link'>" + params.telephone +"</a>" if params.telephone %}
+
+{# Working hours #}
+{% set workingHours = params.workingHours if params.workingHours %}
+
+{# Set each section of our template and only show if one(or more) of the vars is available #}
+
+{# Address #}
+{% set addressSection =
+    "<p>" +
+        department  +
+        organisation +
+        address +
+    "</p>"
+    if department or organisation or address
+%}
+
+{# Alert #}
+{% set alertSection =
+    tfwmdsWarningText({
+        contentHTML: alertMessage,
+        icon: alertIcon,
+        classes: "tfwmds-p-b-sm"
+    })
+    if alertMessage
+%}
+
+{# Socials #}
+{% set socialsSection =
+    "<p>" +
+        twitter +
+        facebook +
+    "</p>"
+    if twitter or facebook
+%}
+
+{# Other contact #}
+{% set otherSection =
+    "<p>" +
+        enquiryLink +
+        email +
+        telephone +
+    "</p>"
+    if enquiryLink or email or telephone
+%}
+
+{# Working hours #}
+{% set workingHoursSection =
+    "<p>" +
+        workingHours +
+    "</p>"
+    if twitter or facebook
+%}
+
+{# Combine all our sections into a nice HTML template #}
+{% set contactDetailsHTML =
+    "<address class='tfwmds-contact-details'>" +
+        addressSection +
+        alertSection +
+        socialsSection +
+        otherSection +
+        workingHoursSection  +
+    "</address>"
+%}
+
+{# Pass our HTML template to the inset text component as it the contact details pattern relies on it as a wrapper #}
+{{
+    tfwmdsInsetText({
+        contentHTML: contactDetailsHTML
+    })
+}}
+
+{% endmacro %}

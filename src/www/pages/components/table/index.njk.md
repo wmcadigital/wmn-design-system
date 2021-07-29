@@ -1,6 +1,6 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Table" %}
-{% from "wmnds/components/table/_table.njk" import wmndsTable %}
+{% from "tfwmds/components/table/_table.njk" import tfwmdsTable %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -24,7 +24,7 @@
 
 ### How it works
 
-- You need to create a heading (title) for the table using <code class="wmnds-website-inline-code"> &lt;caption&gt; </code> tags. A caption helps users find, navigate and understand tables.
+- You need to create a heading (title) for the table using <code class="tfwmds-website-inline-code"> &lt;caption&gt; </code> tags. A caption helps users find, navigate and understand tables.
 - Use table headers to tell users what the rows and columns represent. Use the scope attribute to help users of assistive technology distinguish between row and column headers.
 - When comparing columns of numbers, align the numbers to the right in table cells.
 - If you are trying to display lots of columns, contact Design Team to discuss how best to achieve this.
@@ -37,7 +37,7 @@
 
 {{
   compExample([
-    wmndsTable({
+    tfwmdsTable({
       caption: "Table caption",
       title: "Table title",
       firstCellIsHeader: true,
@@ -78,9 +78,9 @@
         ]
     })
   ], {
-    componentPath: "wmnds/components/table/",
+    componentPath: "tfwmds/components/table/",
     njk: true,
-    njkProps: wmndsTableProps,
+    njkProps: tfwmdsTableProps,
     js: true,
     iframe: false
   })
@@ -95,16 +95,16 @@
 {% endmarkdown %}
 {{
   compExample([
-    wmndsTable({
+    tfwmdsTable({
       rows: 3,
       cols: 3,
       caption: "Table Title",
       hideHeader: true
     })
   ], {
-    componentPath: "wmnds/components/table/",
+    componentPath: "tfwmds/components/table/",
     njk: true,
-    njkProps: wmndsTableProps,
+    njkProps: tfwmdsTableProps,
     js: true,
     iframe: false
   })

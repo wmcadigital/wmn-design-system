@@ -33,9 +33,9 @@ You do not need a friendly link if:
 - You want to link to an external website, we have removed this restriction
 - You are renaming a page or section, the system automatically handles this
 
-<div class="wmnds-inset-text">
-  You should not use our website as a link shortener for a different or external website. For example, redirecting <code class="wmnds-website-inline-code">wmnetwork.co.uk/google</code> to <code class="wmnds-website-inline-code">google.com</code>.
-  <p class="wmnds-m-none">Users associate these redirects with scams and viruses. Instead, link straight to the external website.
+<div class="tfwmds-inset-text">
+  You should not use our website as a link shortener for a different or external website. For example, redirecting <code class="tfwmds-website-inline-code">wmnetwork.co.uk/google</code> to <code class="tfwmds-website-inline-code">google.com</code>.
+  <p class="tfwmds-m-none">Users associate these redirects with scams and viruses. Instead, link straight to the external website.
 </div>
 
 ## Choosing a friendly link
@@ -50,19 +50,19 @@ Do not use:
 
 - articles, for example 'a', 'an' or 'the'
 - special characters
-- abbreviations, for example <code class="wmnds-website-inline-code">bham</code> and <code class="wmnds-website-inline-code">westmids</code>
+- abbreviations, for example <code class="tfwmds-website-inline-code">bham</code> and <code class="tfwmds-website-inline-code">westmids</code>
 - uppercase
-- <code class="wmnds-website-inline-code">wmn</code>, <code class="wmnds-website-inline-code">tfwm</code> or <code class="wmnds-website-inline-code">wmca</code>
+- <code class="tfwmds-website-inline-code">wmn</code>, <code class="tfwmds-website-inline-code">tfwm</code> or <code class="tfwmds-website-inline-code">wmca</code>
 
 ### Examples of good links
 
-- <code class="wmnds-website-inline-code">/baby-on-board</code>
-- <code class="wmnds-website-inline-code">/cycle-hire</code>
-- <code class="wmnds-website-inline-code">/dudley</code>
-- <code class="wmnds-website-inline-code">/tram</code>
-- <code class="wmnds-website-inline-code">/16-18</code>
-- <code class="wmnds-website-inline-code">/sms-feedback</code>
-- <code class="wmnds-website-inline-code">/2041</code>
+- <code class="tfwmds-website-inline-code">/baby-on-board</code>
+- <code class="tfwmds-website-inline-code">/cycle-hire</code>
+- <code class="tfwmds-website-inline-code">/dudley</code>
+- <code class="tfwmds-website-inline-code">/tram</code>
+- <code class="tfwmds-website-inline-code">/16-18</code>
+- <code class="tfwmds-website-inline-code">/sms-feedback</code>
+- <code class="tfwmds-website-inline-code">/2041</code>
 
 ## Creating a friendly link
 
@@ -75,8 +75,8 @@ Content editors can create a friendly link for a piece of content using the <str
 Only administrators can set up this type of link.
 These links are accessed in the SEO Checker part of the Back Office. Click <strong>redirect manager</strong> to see all active redirects and friendly links.
 
-<div class="wmnds-inset-text">
-  <p class="wmnds-m-none">You do not need to create a redirect if you are linking to an external website
+<div class="tfwmds-inset-text">
+  <p class="tfwmds-m-none">You do not need to create a redirect if you are linking to an external website
 </div>
 
 ## Checking if your friendly link is being used

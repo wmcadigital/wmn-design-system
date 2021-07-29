@@ -2,7 +2,7 @@
 {% set pageTitle = "File download" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {# Macros #}
-{% from "wmnds/components/file-download/_file-download.njk" import wmndsFileDownload %}
+{% from "tfwmds/components/file-download/_file-download.njk" import tfwmdsFileDownload %}
 
 {% block content %}
 
@@ -40,15 +40,15 @@
 
 {{
     compExample([
-        wmndsFileDownload({
+        tfwmdsFileDownload({
             fileName: "example file",
             fileType: "pdf",
             fileSize: "3MB"
         })
     ], {
-        componentPath: "wmnds/components/file-download/",
+        componentPath: "tfwmds/components/file-download/",
         njk: true,
-        njkProps: wmndsFileDownloadProps,
+        njkProps: tfwmdsFileDownloadProps,
         js: false,
         iframe: false
     })
@@ -84,13 +84,13 @@
 
 {{
     compExample([
-        wmndsFileDownload({
+        tfwmdsFileDownload({
             accessible: false
         })
     ], {
-        componentPath: "wmnds/components/file-download/",
+        componentPath: "tfwmds/components/file-download/",
         njk: true,
-        njkProps: wmndsFileDownloadProps,
+        njkProps: tfwmdsFileDownloadProps,
         js: false,
         iframe: false
     })

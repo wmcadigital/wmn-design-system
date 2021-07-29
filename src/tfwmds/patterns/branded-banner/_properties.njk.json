@@ -1,0 +1,51 @@
+{
+  "tfwmdsBrandedBannerProps": [
+    {
+      "name": "title",
+      "type": "string",
+      "description": "<strong>Required.</strong> HTML content to use as the title in the banner."
+    },
+    {
+      "name": "contentCol1",
+      "type": "string",
+      "description": "<strong>Required.</strong> HTML content to use in the first column of the banner."
+    },
+    {
+      "name": "contentCol2",
+      "type": "string",
+      "description": "HTML content to use in the second column of the banner. If left blank, this column will not display."
+    },
+    {
+      "name": "breadcrumbItems",
+      "type": "array",
+      "description": "Array of breadcrumb items to show in the banner. See the <code class='tfwmds-website-inline-code'>items</code> property under <a href='/components/breadcrumb/'>Breadcrumb</a>."
+    },
+    {
+      "name": "ctaButton",
+      "type": "object",
+      "description": "Call to action link (displayed as a button) to use in the banner. If not supplied, no button will be displayed.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the button."
+        },
+        {
+          "name": "link",
+          "type": "string",
+          "description": "<strong>Required.</strong> Link for the button."
+        },
+        {
+          "name": "linkTitle",
+          "type": "string",
+          "description": "Text to use as the link title."
+        },
+        {
+          "name": "linkTarget",
+          "type": "string",
+          "description": "Target attribute for the link. Defaults to \"_self\""
+        }
+      ]
+    }
+  ]
+}

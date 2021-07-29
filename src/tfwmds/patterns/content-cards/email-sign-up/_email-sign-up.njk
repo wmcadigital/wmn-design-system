@@ -1,0 +1,62 @@
+{% macro tfwmdsContentCardEmailSignUp(params) %}
+{# imports #}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{# Set #}
+{% set formClass = " tfwmds-is--open" if params.expanded else "" %}
+{# Button variables #}
+{% set btnText = "Sign up for updates" if params.expanded or params.externalLink else "Continue" %}
+{% set btnClass = " tfwmds-btn--primary" if not params.externalLink else ""  %}
+{% set btnSpacingClass = " tfwmds-m-t-xsm" if not params.expanded else ""  %}
+{% set btnType = "type=\"submit\"" if params.expanded or params.externalLink else "" %}
+{# Create a string where we can use the nunjucks '| replace' #}
+{% set exampleSuffix = "--" + params.exampleSuffix if params.exampleSuffix else "" %}
+
+{% call tfwmdsContentCard() %}
+    <div class="tfwmds-p-sm tfwmds-col-1">
+        <h2 class="tfwmds-content-card__title">Stay up to date</h2>
+        <p class="tfwmds-m-b-md">Receive an email notification when this information changes.</p>
+        {#- External link -#}
+        {% if params.externalLink %}
+        <a href="#" target="_blank" class="tfwmds-btn {{btnClass}} tfwmds-col-1">{{btnText}}</a>
+        {%- else %}
+        <form class="js-cm-form tfwmds-content-card__form{{formClass}}" id="subForm-{{params.exampleSuffix}}" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A99364085B43530088A4D2FC306FC12C93064C1C79B7ABC5EE4710A358CB5FBFB9279A45ECC576F3F096FDC1EFB755F64">
+            <div class="tfwmds-m-b-sm">
+                <label class="tfwmds-fe-label" for="fieldEmail{{exampleSuffix}}">Email address</label>
+                <input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email tfwmds-fe-input" id="fieldEmail{{exampleSuffix}}" maxlength="200" name="cm-nllddr-nllddr" required="" type="email"/>
+            </div>
+            <!-- Expanding content -->
+            <div class="tfwmds-content-card__form-collapse">
+                <div class="tfwmds-m-b-sm">
+                    <label class="tfwmds-fe-label" for="fieldName{{exampleSuffix}}">Name</label>
+                    <input class="tfwmds-fe-input" aria-label="Name" id="fieldName{{exampleSuffix}}" maxlength="200" name="cm-name"/>
+                </div>
+                <div class="tfwmds-m-b-sm">
+                    <label class="tfwmds-fe-label" for="fieldkdyhlr{{exampleSuffix}}">Postcode</label>
+                    <p class="tfwmds-m-b-sm">We'll use this to send relevant emails to your location</p>
+                    <input class="tfwmds-fe-input" aria-label="Home Postcode" id="fieldkdyhlr{{exampleSuffix}}" maxlength="200" name="cm-f-kdyhlr" required=""/>
+                </div>
+                <label class="tfwmds-fe-checkboxes__container tfwmds-m-t-md">
+                    I agree to WMCA's Privacy Policy
+                    <input class="tfwmds-fe-checkboxes__input" aria-required="" id="cm-privacy-consent{{exampleSuffix}}" name="cm-privacy-consent" required="" type="checkbox"/>
+                    <span class="tfwmds-fe-checkboxes__checkmark">
+                    {# Get SVG icon and pass class #}
+                    {{-
+                        tfwmdsIcon({
+                        icon: 'general-checkmark',
+                        class: 'tfwmds-fe-checkboxes__icon'
+                        }) | indent(20) | trim
+                    }}
+                    </span>
+                </label>
+                <input id="cm-privacy-consent-hidden{{exampleSuffix}}" name="cm-privacy-consent-hidden" type="hidden" value="true">
+            </div>
+            <button class="tfwmds-btn{{btnClass + btnSpacingClass}} tfwmds-col-1" {{ btnType | safe -}}>{{btnText}}</button>
+        </form>
+
+        <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+        {%- endif %}
+    </div>
+{% endcall %}
+
+{% endmacro %}

@@ -1,0 +1,18 @@
+{% macro tfwmdsFormElement(params) %}
+{# Imports #}
+{% from "tfwmds/components/form-elements/question/_question.njk" import tfwmdsQuestion %}
+{% from "tfwmds/components/form-elements/radios/_radios.njk" import tfwmdsRadios %}
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+
+<form class="tfwmds-bg-white tfwmds-p-lg">
+    {{
+        tfwmdsQuestion({
+            contentText: question
+        })
+    }}
+    {{ tfwmdsRadios() }}
+    {{ params.button  | safe  }}
+</form>
+
+{% endmacro %}

@@ -1,0 +1,42 @@
+{% macro tfwmdsReference(params) %}
+{# Imports #}
+{% from "tfwmds/components/form-elements/question/_question.njk" import tfwmdsQuestion %}
+{% from "tfwmds/components/form-elements/progress-indicator/_progress-indicator.njk" import tfwmdsProgressIndicator %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+
+{# Set vars and defaults #}
+{% set question = params.question if params.question else "How would you...?" %}
+{% set text = params.text if params.text %}
+{% set fields = params.fields if params.fields %}
+{% set currentSection = params.currentSection if params.currentSection else "1" %}
+{% set totalSections = params.totalSections if params.totalSections else "X" %}
+{% set sectionName = params.sectionName if params.sectionName else "Section Name" %}
+
+{{
+    tfwmdsLink( { isBackLink: true } )
+}}
+<form class="tfwmds-bg-white tfwmds-m-t-lg">
+    <div class="tfwmds-col-1  tfwmds-p-lg ">
+        {{
+            tfwmdsProgressIndicator({
+                currentSection: currentSection,
+                totalSections: totalSections,
+                sectionName: sectionName
+            })
+        }}
+        {{
+            tfwmdsQuestion({
+                contentText: question
+            })
+        }}
+        {{ text | safe }}
+        <div class="tfwmds-p-t-md tfwmds-col-1 tfwmds-col-lg-3-4">
+            {{ fields  | safe  }}
+        </div>
+        <div class="tfwmds-col-1">
+            {{ params.button  | safe }}
+        </div>
+    </div>
+</form>
+
+{% endmacro %}

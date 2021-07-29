@@ -1,0 +1,88 @@
+&.tfwmds-feedback-loop {
+  // Add full-width blue border on desktop large display
+  @media all and(min-width: $breakpoint-xl) {
+    border-bottom: $size-sm solid get-color(cta);
+  }
+
+  .tfwmds-link,
+  .tfwmds-btn--link {
+    color: $white;
+  }
+
+  // Override container defaults
+  .tfwmds-container {
+    padding: $size-xs $size-md;
+    overflow: hidden;
+    color: $white;
+    background-color: get-color(cta);
+  }
+
+  // A bite more spacing on mobile
+  &__useful {
+    margin-bottom: $size-md;
+    color: $white;
+  }
+
+  &__form {
+    display: none;
+
+    .tfwmds-fe-label {
+      font-weight: bold;
+    }
+  }
+
+  // Sent state
+  &__sent-msg {
+    display: none;
+  }
+
+  .tfwmds-is--sent {
+    & > * {
+      display: none;
+    }
+
+    > .tfwmds-feedback-loop__sent-msg {
+      display: block;
+    }
+  }
+
+  &.tfwmds-is--open {
+    .tfwmds-container {
+      padding: $size-md;
+      border-top: $size-sm solid get-color(cta);
+      border-right: 1px solid get-color(cta);
+      border-left: 1px solid get-color(cta);
+      color: initial;
+      background-color: $white;
+    }
+
+    .tfwmds-link,
+    .tfwmds-btn--link {
+      color: get-color(cta);
+    }
+
+    .tfwmds-feedback-loop {
+      &__questions {
+        display: none;
+      }
+
+      &__form {
+        display: block;
+      }
+    }
+  }
+}
+
+// When on desktop then the feedback-loop should appear on one line
+@media all and(min-width: $breakpoint-md) {
+  .tfwmds-feedback-loop {
+    &__useful {
+      margin: 0;
+      float: left;
+    }
+
+    &__wrong {
+      float: right;
+    }
+  }
+}

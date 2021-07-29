@@ -1,7 +1,7 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Textarea" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/form-elements/textarea/_textarea.njk" import wmndsTextarea %}
+{% from "tfwmds/components/form-elements/textarea/_textarea.njk" import tfwmdsTextarea %}
 
 {% block content %}
 
@@ -28,7 +28,7 @@
 
 {{
     compExample(
-      [wmndsTextarea({
+      [tfwmdsTextarea({
           id: "example-textarea",
           name: "example-textarea",
           rows: "2",
@@ -40,10 +40,10 @@
           },
           label: {
             contentText: "Textarea label",
-            classes: "wmnds-m-t-20"
+            classes: "tfwmds-m-t-20"
           },
           formGroup: {
-            classes: "wmnds-m-t-20"
+            classes: "tfwmds-m-t-20"
           },
           disabled: false,
           maxLength: "200",
@@ -52,9 +52,9 @@
         }
       )],
       {
-        componentPath: "wmnds/components/form-elements/textarea/",
+        componentPath: "tfwmds/components/form-elements/textarea/",
         njk: true,
-        njkProps: wmndsTextareaProps,
+        njkProps: tfwmdsTextareaProps,
         js: false,
         iframe: false
       }
@@ -70,7 +70,7 @@
 
 {{
     compExample(
-      [wmndsTextarea(
+      [tfwmdsTextarea(
         {
           id: "error-textarea",
           name: "error-textarea",
@@ -83,10 +83,10 @@
           },
           label: {
             contentText: "Textarea label",
-            classes: "wmnds-m-t-20"
+            classes: "tfwmds-m-t-20"
           },
           formGroup: {
-            classes: "wmnds-m-t-20"
+            classes: "tfwmds-m-t-20"
           },
           disabled: false,
           maxLength: "200",
@@ -95,9 +95,9 @@
         }
       )],
       {
-        componentPath: "wmnds/components/form-elements/textarea/",
+        componentPath: "tfwmds/components/form-elements/textarea/",
         njk: true,
-        njkProps: wmndsTextareaProps,
+        njkProps: tfwmdsTextareaProps,
         js: false,
         iframe: false
       }

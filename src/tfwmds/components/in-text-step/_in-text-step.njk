@@ -1,0 +1,12 @@
+{% macro tfwmdsInTextStep(params) %}
+
+<ol class="tfwmdss-in-text-step">
+    {% for item in params.items %}
+    {% set contentText = item.contentText if item.contentText else 'Step text must end with a full stop.' %}
+    {% set contentHTML = item.contentHTML if item.contentHTML else null %}
+    {% set _content = contentHTML | safe if contentHTML else contentText %}
+    <li class="tfwmds-in-text-step__item">{{ _content }}</li>
+    {% endfor %}
+</ol>
+
+{% endmacro %}

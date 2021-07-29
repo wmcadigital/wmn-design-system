@@ -5,17 +5,17 @@ const { src, dest } = require('gulp');
 const paths = require('./paths.js');
 
 const movingOldCSS = () => {
-  return src('src/wmnds/assets/old/css/wmnds-components.min.css').pipe(dest(paths.styles.output));
+  return src('src/tfwmds/assets/old/css/tfwmds-components.min.css').pipe(dest(paths.styles.output));
 };
 
 const movingOldReactNativeStyles = () => {
-  return src('src/wmnds/assets/old/css/react-native/wmnds-components.min.js').pipe(
+  return src('src/tfwmds/assets/old/css/react-native/tfwmds-components.min.js').pipe(
     dest(`${paths.styles.output}react-native/`)
   );
 };
 
 const movingOldIcons = () => {
-  return src('src/wmnds/assets/old/img/wmnds-sprite.min.svg').pipe(dest(paths.svgs.dest)); // move config files to build
+  return src('src/tfwmds/assets/old/img/tfwmds-sprite.min.svg').pipe(dest(paths.svgs.dest)); // move config files to build
 };
 
 module.exports.moveOldCSS = movingOldCSS;

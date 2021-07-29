@@ -24,14 +24,14 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/form-elements/radios/_radios.njk" import wmndsRadios %}
+{% from "tfwmds/components/form-elements/radios/_radios.njk" import tfwmdsRadios %}
 {{
   compExample([
-    wmndsRadios()
+    tfwmdsRadios()
   ], {
-    componentPath: "wmnds/components/form-elements/radios/",
+    componentPath: "tfwmds/components/form-elements/radios/",
     njk: true,
-    njkProps: wmndsRadiosProps,
+    njkProps: tfwmdsRadiosProps,
     js: false,
     iframe: false
   })
@@ -45,14 +45,14 @@
 
 {{
   compExample([
-    wmndsRadios({
+    tfwmdsRadios({
       inline: true,
       name: "inline-example"
     })
   ], {
-    componentPath: "wmnds/components/form-elements/radios/",
+    componentPath: "tfwmds/components/form-elements/radios/",
     njk: true,
-    njkProps: wmndsRadiosProps,
+    njkProps: tfwmdsRadiosProps,
     js: false,
     iframe: false
   })
@@ -67,15 +67,15 @@
 
 {{
   compExample([
-    wmndsRadios({
+    tfwmdsRadios({
       inline: true,
       name: "inline-example",
       error: true
     })
   ], {
-    componentPath: "wmnds/components/form-elements/radios/",
+    componentPath: "tfwmds/components/form-elements/radios/",
     njk: true,
-    njkProps: wmndsRadiosProps,
+    njkProps: tfwmdsRadiosProps,
     js: false,
     iframe: false
   })

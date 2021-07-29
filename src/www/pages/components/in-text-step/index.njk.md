@@ -24,10 +24,10 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/in-text-step/_in-text-step.njk" import wmndsInTextStep %}
+{% from "tfwmds/components/in-text-step/_in-text-step.njk" import tfwmdsInTextStep %}
 {{
     compExample([
-        wmndsInTextStep({
+        tfwmdsInTextStep({
             items: [
                 {
                     contentText: "Step text must end with a full stop."
@@ -42,9 +42,9 @@
         })
     ],
     {
-        componentPath: "wmnds/components/in-text-step/",
+        componentPath: "tfwmds/components/in-text-step/",
         njk: true,
-        njkProps: wmndsInTextStepProps,
+        njkProps: tfwmdsInTextStepProps,
         js: false,
         iframe: false
     })

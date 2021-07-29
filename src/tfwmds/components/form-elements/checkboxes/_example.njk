@@ -1,0 +1,53 @@
+{% raw %}
+{% from "tfwmds/components/form-elements/checkboxes/_checkboxes.njk" import tfwmdsCheckboxes %}
+
+{{
+   tfwmdsCheckboxes({
+      items: [
+         {
+            id: null,
+            contentText: "Option 1",
+            contentHTML: null,
+            value: "option1",
+            checked: false,
+            titleText: null,
+            disabled: false
+         },
+         {
+            id: null,
+            contentText: "Option 2",
+            contentHTML: null,
+            value: "option2",
+            checked: true,
+            titleText: null,
+            disabled: true
+         },
+         {
+            id: null,
+            contentText: "Option 3",
+            contentHTML: null,
+            value: "option3",
+            checked: false,
+            titleText: null,
+            disabled: false
+         }
+      ],
+      hint: {
+         id: null,
+         contentHTML: null,
+         contentText: "Select all options that apply",
+         classes: null
+      },
+      idPrefix: "checkbox",
+      name: "checkboxes-example",
+      classes: null,
+      error: false,
+      errorMessage: {
+         id: null,
+         contentText: "Please select at least one option",
+         contentHTML: null,
+         classes: null
+      }
+   })
+}}
+{% endraw %}

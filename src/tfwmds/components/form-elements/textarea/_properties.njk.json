@@ -1,0 +1,115 @@
+{
+  "tfwmdsTextareaProps": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> Must be unique. The id of the textarea."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong> The name of the textarea, which is submitted with the form data."
+    },
+    {
+      "name": "rows",
+      "type": "string",
+      "description": "Optional number of textarea rows. Default is <code class='tfwmds-website-inline-code'>3 rows</code>."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "description": "If true, textarea is required/must be filled out. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "error",
+      "type": "boolean",
+      "description": "If true, an error will be displayed. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "errorMessage",
+      "type": "object",
+      "description": "Options for the error message component. See errorMessage.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Id attribute to add to the error message span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the error message. If <code class='tfwmds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> HTML to use within the error message"
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the error message span tag."
+        }
+      ]
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the textarea."
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Optional initial value of the textarea."
+    },
+    {
+      "name": "label",
+      "type": "Object",
+      "description": "<strong>Required.</strong> Options for the label component. See label.",
+      "arrayOptions": [
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='tfwmds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within the label. If <code class='tfwmds-website-inline-code'>contentHTML</code> is provided, the <code class='tfwmds-website-inline-code'>contentText</code>  argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='tfwmds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within the label. If <code class='tfwmds-website-inline-code'>contentHTML</code> is provided, the <code class='tfwmds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the label tag."
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "If true, textarea should be disabled. Defaults to <code class='tfwmds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "maxLength",
+      "type": "string",
+      "description": "The maxLength is the maximum number of characters allowed in the text area. It's an <code class='tfwmds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder is a short hint that describes the expected value of a text area. It's an <code class='tfwmds-website-inline-code'>optional</code> field."
+    },
+    {
+      "name": "formGroup",
+      "type": "Object",
+      "description": "Options for the form-group wrapper See formGroup below.",
+      "arrayOptions": [
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the form group (e.g. to show error state for the whole group)"
+        }
+      ]
+    }
+  ]
+}

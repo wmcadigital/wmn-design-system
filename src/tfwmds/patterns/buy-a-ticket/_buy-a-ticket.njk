@@ -1,0 +1,137 @@
+{% macro tfwmdsBuyATicket() %}
+{# Imports #}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/form-elements/dropdown/_dropdown.njk" import tfwmdsDropdown %}
+
+<form class="tfwmds-buy-a-ticket">
+    <h2 class="tfwmds-buy-a-ticket__title">Buy a ticket</h2>
+    {# Mode select #}
+    <div class="tfwmds-m-b-md tfwmds-p-b-xsm">
+        <fieldset class="tfwmds-buy-a-ticket__mode-checkboxes">
+            <legend class="tfwmds-buy-a-ticket__label">Which modes of transport will you use?</legend>
+            <div class="tfwmds-grid tfwmds-grid--spacing-3-sm tfwmds-grid--spacing-sm-3-md">
+                <label class="tfwmds-col-1-3">
+                    <input type="checkbox" class="tfwmds-buy-a-ticket__mode-checkbox tfwmds-screenreaders-only" name="useBus" value="allowBus">
+                    <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                        {{
+                            tfwmdsIcon({
+                                icon: 'modes-isolated-bus',
+                                class: 'tfwmds-btn__icon '
+                            })
+                        }}
+                        Bus
+                    </div>
+                </label>
+                <label class="tfwmds-col-1-3">
+                    <input type="checkbox" class="tfwmds-buy-a-ticket__mode-checkbox tfwmds-screenreaders-only" name="useTrain" value="allowTrain">
+                    <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                        {{
+                            tfwmdsIcon({
+                                icon: 'modes-isolated-rail',
+                                class: 'tfwmds-btn__icon '
+                            })
+                        }}
+                        Train
+                    </div>
+                </label>
+                <label class="tfwmds-col-1-3">
+                    <input type="checkbox" class="tfwmds-buy-a-ticket__mode-checkbox tfwmds-screenreaders-only" name="useTram" value="allowMetro">
+                    <div class="tfwmds-btn tfwmds-btn--mode tfwmds-btn--block">
+                        {{
+                            tfwmdsIcon({
+                                icon: 'modes-isolated-metro',
+                                class: 'tfwmds-btn__icon '
+                            })
+                        }}
+                        Tram
+                    </div>
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    {# Traveller dropdown #}
+    {{
+        tfwmdsDropdown({
+            id: 'buyATicketPassengerType',
+            name: 'passengerType',
+            groupClasses: 'tfwmds-m-b-md tfwmds-p-b-xsm',
+            label: "Who will be travelling?",
+            labelClasses: 'tfwmds-buy-a-ticket__label',
+            secondaryColor: true,
+            items: [
+                {
+                    contentText: 'Select traveller',
+                    selected: true,
+                    disabled: true
+                },
+                {
+                    contentText: 'Adult',
+                    value: 'Adult'
+                },
+                {
+                    contentText: 'Child',
+                    value: 'Child'
+                },
+                {
+                    contentText: 'Student',
+                    value: 'Student'
+                },
+                {
+                    contentText: 'Group / Family',
+                    value: 'Family'
+                },
+                {
+                    contentText: 'Concession',
+                    value: 'Concessionary'
+                }
+            ]
+        })
+    }}
+    {# Duration dropdown #}
+    {{
+        tfwmdsDropdown({
+            id: "buyATicketDuration",
+            name: "timeBand",
+            groupClasses: 'tfwmds-m-b-md tfwmds-p-b-xsm',
+            label: "How long will the ticket last for?",
+            labelClasses: 'tfwmds-buy-a-ticket__label',
+            secondaryColor: true,
+            items: [
+                {
+                    contentText: 'Select ticket length',
+                    selected: true,
+                    disabled: true
+                },
+                {
+                    contentText: 'A day',
+                    value: 'Pay on day / 1 day'
+                },
+                {
+                    contentText: 'Less than a month',
+                    value: 'Less than a month'
+                },
+                {
+                    contentText: 'About a month',
+                    value: 'About a month'
+                },
+                {
+                    contentText: 'Longer than a month',
+                    value: 'Longer than a month'
+                }
+            ]
+        })
+    }}
+    {# Submit button #}
+    {{
+        tfwmdsButton({
+            iconRight: "general-chevron-right",
+            contentText: "Find tickets",
+            role: "submit",
+            classes: "tfwmds-col-1 tfwmds-col-sm-1-2 tfwmds-btn--align-left"
+        })
+    }}
+</form>
+
+
+{% endmacro %}

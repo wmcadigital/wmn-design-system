@@ -33,11 +33,11 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/patterns/travel-updates/_travel-updates.njk" import wmndsContentCardTravelUpdates %}
+{% from "tfwmds/patterns/travel-updates/_travel-updates.njk" import tfwmdsContentCardTravelUpdates %}
 
 {{
     compExample([
-        wmndsContentCardTravelUpdates({
+        tfwmdsContentCardTravelUpdates({
           id: "default-example"
         })
     ])
@@ -65,12 +65,12 @@
 
 {{
     compExample([
-        wmndsContentCardTravelUpdates({
+        tfwmdsContentCardTravelUpdates({
           id: "personal-example",
           personalView: true
         })
     ], {
-      componentPath: "wmnds/patterns/travel-updates/",
+      componentPath: "tfwmds/patterns/travel-updates/",
       njk: false,
       js: true,
       iframe: true
@@ -98,7 +98,7 @@
 
 {{
     compExample([
-        wmndsContentCardTravelUpdates({
+        tfwmdsContentCardTravelUpdates({
           id: "edit-example",
           editView: true
         })

@@ -92,7 +92,7 @@
   "eScooter"
 ] %}
 
-{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
 
 {% block content %}
 
@@ -128,12 +128,12 @@ To get started, include the below snippet of javascript somewhere in your codeba
 - Keep the icon set consistent with other Transport for West Midlands services
 
   <pre>
-    <code class="html wmnds-show-more-ignore" tabindex="0">
+    <code class="html tfwmds-show-more-ignore" tabindex="0">
     {%- filter forceescape -%}
     <!-- Ajax SVGs from WMN Design System -->
     <script>
       const ajax = new XMLHttpRequest();
-      ajax.open('GET', 'https://unpkg.com/wmn-design-system@$*version/build/img/wmnds-icons.min.svg', true);
+      ajax.open('GET', 'https://unpkg.com/wmn-design-system@$*version/build/img/tfwmds-icons.min.svg', true);
       ajax.send();
       ajax.onload = function () {
         const div = document.createElement('div');
@@ -149,11 +149,11 @@ To get started, include the below snippet of javascript somewhere in your codeba
 #### Displaying an icon
 
 To display an icon or glyph, use an icon tag (from the icon section at the bottom of the page) with a href attribute and xlink:href (as a fallback). Make sure that the xlink and href tags are pointing to the location of your downloaded icon sprite sheet.
-The <code class="wmnds-website-inline-code">ICON-TAG-NAME</code> should be replaced with the icon tag name of the icon you want to show from the Icons section below, for example <code class="wmnds-website-inline-code">#wmnds-general-arrow</code> should be in the <code class="wmnds-website-inline-code">xlink:href</code> and <code class="wmnds-website-inline-code">href</code> attributes of the svg's <code class="wmnds-website-inline-code">&lt;use&gt;</code> element.
+The <code class="tfwmds-website-inline-code">ICON-TAG-NAME</code> should be replaced with the icon tag name of the icon you want to show from the Icons section below, for example <code class="tfwmds-website-inline-code">#tfwmds-general-arrow</code> should be in the <code class="tfwmds-website-inline-code">xlink:href</code> and <code class="tfwmds-website-inline-code">href</code> attributes of the svg's <code class="tfwmds-website-inline-code">&lt;use&gt;</code> element.
 
 <pre><code class="html " tabindex="0" >
     {{-
-      wmndsIcon({
+      tfwmdsIcon({
         icon: 'ICON-TAG-NAME'
       }) | formatHTML
     -}}
@@ -161,23 +161,23 @@ The <code class="wmnds-website-inline-code">ICON-TAG-NAME</code> should be repla
 
 #### Can't include via recommended method? Try hosting the sprites locally
 
-- <a class="wmnds-link" target="\_blank" href="https://unpkg.com/wmn-design-system@$*version/build/img/wmnds-icons.min.svg" download="wmnds-icons.min.svg">Download the icon svg sprite</a>.
+- <a class="tfwmds-link" target="\_blank" href="https://unpkg.com/wmn-design-system@$*version/build/img/tfwmds-icons.min.svg" download="tfwmds-icons.min.svg">Download the icon svg sprite</a>.
 - Include the downloaded icon sprite in to your project locally.
 - You can now start using the icon svg sprite sheet using the instructions from the "Displaying an icon" section abov
 
 ## Icons
 
-Find below a list of all our icons and their tags below. To use, don't forget to prefix the tag with 'wmnds-'
+Find below a list of all our icons and their tags below. To use, don't forget to prefix the tag with 'tfwmds-'
 
 ### General
 
 {% endmarkdown %}
 
-<div class="wmnds-grid website-icons">
+<div class="tfwmds-grid website-icons">
   {% for icon in iconGeneral %}
-    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+    <div class="tfwmds-col-1-2 tfwmds-col-sm-1-6 text-center">
       {{
-        wmndsIcon({
+        tfwmdsIcon({
           icon: 'general-' + icon
         }) | safe
       }}
@@ -192,11 +192,11 @@ Find below a list of all our icons and their tags below. To use, don't forget to
 
 {% endmarkdown %}
 
-<div class="wmnds-grid website-icons">
+<div class="tfwmds-grid website-icons">
   {% for icon in iconSwift %}
-    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+    <div class="tfwmds-col-1-2 tfwmds-col-sm-1-6 text-center">
       {{
-        wmndsIcon({
+        tfwmdsIcon({
           icon: 'swift-' + icon
         })
       }}
@@ -211,11 +211,11 @@ Find below a list of all our icons and their tags below. To use, don't forget to
 
 {% endmarkdown %}
 
-<div class="wmnds-grid website-icons">
+<div class="tfwmds-grid website-icons">
   {% for icon in iconSocial %}
-    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+    <div class="tfwmds-col-1-2 tfwmds-col-sm-1-6 text-center">
       {{
-        wmndsIcon({
+        tfwmdsIcon({
           icon: 'social-' + icon
         })
       }}
@@ -231,11 +231,11 @@ Find below a list of all our icons and their tags below. To use, don't forget to
 **Isolated**
 {% endmarkdown %}
 
-<div class="wmnds-grid website-icons">
+<div class="tfwmds-grid website-icons">
   {% for icon in iconModesIsolated %}
-    <div class="wmnds-col-1-2 wmnds-col-lg-1-4 text-center">
+    <div class="tfwmds-col-1-2 tfwmds-col-lg-1-4 text-center">
       {{
-        wmndsIcon({
+        tfwmdsIcon({
           icon: 'modes-isolated-' + icon
         })
       }}
@@ -249,11 +249,11 @@ Find below a list of all our icons and their tags below. To use, don't forget to
 
 {% endmarkdown %}
 
-<div class="wmnds-grid website-icons">
+<div class="tfwmds-grid website-icons">
   {% for icon in iconModesBackground %}
-    <div class="wmnds-col-1-2 wmnds-col-lg-1-4 text-center">
+    <div class="tfwmds-col-1-2 tfwmds-col-lg-1-4 text-center">
       {{
-        wmndsIcon({
+        tfwmdsIcon({
           icon: 'modes-bg-' + icon
         })
       }}

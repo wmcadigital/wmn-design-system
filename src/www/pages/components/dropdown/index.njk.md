@@ -27,12 +27,12 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
+{% from "tfwmds/components/form-elements/dropdown/_dropdown.njk" import tfwmdsDropdown %}
 {{
-compExample([wmndsDropdown()], {
-    componentPath: "wmnds/components/form-elements/dropdown/",
+compExample([tfwmdsDropdown()], {
+    componentPath: "tfwmds/components/form-elements/dropdown/",
     njk: true,
-    njkProps: wmndsDropdownProps,
+    njkProps: tfwmdsDropdownProps,
     js: false,
     iframe: false
   })
@@ -45,13 +45,13 @@ compExample([wmndsDropdown()], {
 {% endmarkdown %}
 
 {{
-compExample([wmndsDropdown({
+compExample([tfwmdsDropdown({
   id: "dropdown-error",
   error: true
 })], {
-    componentPath: "wmnds/components/form-elements/dropdown/",
+    componentPath: "tfwmds/components/form-elements/dropdown/",
     njk: true,
-    njkProps: wmndsDropdownProps,
+    njkProps: tfwmdsDropdownProps,
     js: false,
     iframe: false
   })

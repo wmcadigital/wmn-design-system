@@ -1,0 +1,15 @@
+{% raw %}
+{% from "tfwmds/components/disruption-indicator/medium/_medium.njk" import tfwmdsDisruptionIndicatorMedium %}
+
+{{
+  tfwmdsDisruptionIndicatorMedium({
+    contentText: "X15",
+    iconRight: "general-warning-triangle",
+    iconLeft: "modes-isolated-bus",
+    iconRightBtn: false,
+    displayNarrow: false,
+    capitalize: false,
+    classes: "tfwmds-disruption-indicator-medium--error"
+  })
+}}
+{% endraw %}

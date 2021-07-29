@@ -1,0 +1,19 @@
+{
+  "tfwmdsDisruptionIndicatorSmallProps": [
+    {
+      "name": "mode",
+      "type": "string",
+      "description": "<strong>Required.</strong> Specifies the travel mode which the disruption relates to. Accepted values are: <code class='tfwmds-website-inline-code'>bus</code>, <code class='tfwmds-website-inline-code'>coach</code>, <code class='tfwmds-website-inline-code'>cycle</code>, <code class='tfwmds-website-inline-code'>metro</code>, <code class='tfwmds-website-inline-code'>plane</code>, <code class='tfwmds-website-inline-code'>rail</code>, <code class='tfwmds-website-inline-code'>roads</code> and <code class='tfwmds-website-inline-code'>walk</code>"
+    },
+    {
+      "name": "iconRight",
+      "type": "string",
+      "description": "The icon tag which specifies the icon to show to the right of the indicator (see <a href='/styles/icons/' rel='noopener noreferrer nofollow' target='_blank'>icon reference</a>). Default value is <code class='tfwmds-website-inline-code'>general-warning-circle</code>"
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "List of additional classes which will be added to the disruption indicator. A typical use case is modifying the badge colour to indicate severity e.g. <code class='tfwmds-website-inline-code'>tfwmds-disruption-indicator-small--severe</code>"
+    }
+  ]
+}

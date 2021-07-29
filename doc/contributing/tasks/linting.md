@@ -90,7 +90,7 @@ The config files are located at:
 
 ### 1.4.3. File(s) that are linted
 
-- `{root}/src/assets/js/wmn.js`
+- `{root}/src/assets/js/tfwm.js`
 - `{root}/src/**/*.js`
 
 `**/*.min.js` are ignored for linting as these files are presumed to have already been linted, mangled and minified.

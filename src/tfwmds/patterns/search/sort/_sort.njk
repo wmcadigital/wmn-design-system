@@ -1,0 +1,17 @@
+{% macro tfwmdsSearchSort(params) %}
+
+<div class="tfwmds-search-sort tfwmds-fe-group">
+    <label class="tfwmds-fe-label" for="dropdown">
+        <h3>Sort by</h3>
+    </label>
+    <div class="tfwmds-fe-dropdown">
+        <select class="tfwmds-fe-dropdown__select" id="dropdown" name="dropdown">
+            <option value="" selected="selected">Choose from list</option>
+            <option value="1">Relevance</option>
+            <option value="2">Most recent</option>
+            <option value="3">Oldest</option>
+        </select>
+    </div>
+</div>
+
+{% endmacro %}

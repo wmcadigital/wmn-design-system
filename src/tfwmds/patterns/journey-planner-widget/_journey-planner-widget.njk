@@ -1,0 +1,295 @@
+{% macro tfwmdsJourneyPlannerWidget(params) %}
+
+{# Imports of components #}
+{% from "tfwmds/components/content-card/_content-card.njk" import tfwmdsContentCard %}
+{% from "tfwmds/patterns/autocomplete/_autocomplete.njk" import tfwmdsAutocomplete %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/form-elements/dropdown/_dropdown.njk" import tfwmdsDropdown %}
+
+
+{# Set params #}
+{% set formTitle = params.formTitle if params.formTitle else "Plan your journey" %}
+{% set isOpen = " tfwmds-is--open" if params.isOpen %}
+{% set suffix = "--opened" if params.isOpen else "--collapsed" %}
+{% set leaveSuffix = "--leave-opened" if params.isWhenOpen else "--leave-collapsed" %}
+{% set modeSuffix = "--mode-opened" if params.isHowOpen else "--mode-collapsed" %}
+{% set isWhenOpen = " tfwmds-is--open" if params.isWhenOpen %}
+{% set isHowOpen = " tfwmds-is--open" if params.isHowOpen %}
+
+
+<div style="max-width: 288px">
+
+    <div class="tfwmds-journey-planner-widget {{isOpen}}">
+
+        {% call tfwmdsContentCard() %}
+            <div class="tfwmds-p-md">
+
+                <h2>{{formTitle}}</h2>
+
+                <form class="tfwmds-journey-planner-widget__form" action="//journeyplanner.networkwestmidlands.com/Home/HandleWidgetQuery" method="GET" name="jphome"> 
+
+                    <div class="tfwmds-journey-planner-widget__from tfwmds-m-b-md">
+                        {{
+                            tfwmdsAutocomplete({
+                                id: ("from" + suffix + leaveSuffix + modeSuffix),
+                                name: "Origin",
+                                label: {
+                                    contentText: 'From'
+                                },
+                                placeholder: 'Enter station or postcode',
+                                loading: false,
+                                showSuggestions: false,
+                                textSuggestions: true,
+                                isRequired: true
+                            })
+                        }}
+                    </div>
+
+                    <div class="tfwmds-journey-planner-widget__to tfwmds-m-b-md">
+                        <div class="tfwmds-journey-planner-widget__switch">
+                            {{
+                                tfwmdsButton({
+                                    type: "link",
+                                    contentText: "Switch",
+                                    classes: "tfwmds-m-t--lg"
+                                })
+                            }}
+
+                            {{ 
+                                tfwmdsIcon({
+                                    icon: 'general-swap',
+                                    class: 'tfwmds-journey-planner-widget__switch-icon'
+                                }) | safe 
+                            }}
+                        </div>
+                        
+                        {{
+                            tfwmdsAutocomplete({
+                                id: ("to" + suffix + leaveSuffix + modeSuffix),
+                                name: "Destination",
+                                label: {
+                                    contentText: 'To'
+                                },
+                                placeholder: 'Enter station or postcode',
+                                loading: false,
+                                showSuggestions: false,
+                                textSuggestions: true,
+                                isRequired: true
+                            })
+                        }}
+                        
+                    </div>
+                    
+
+                    <div class="tfwmds-journey-planner-widget__when {{isWhenOpen}}">
+                        <div class="tfwmds-journey-planner-widget__when--collapsed">
+                            <div class="tfwmds-grid tfwmds-grid--justify-between">
+                                <h4 class="tfwmds-col-1-2 tfwmds-m-b-none">Leave</h4>
+                                {{ 
+                                    tfwmdsButton({
+                                        type: "link",
+                                        contentText: "Change",
+                                        classes: "tfwmds-m-t--lg"
+                                    })
+                                }}
+                            </div>
+                            <p>Now</p>
+                        </div>
+                        <div class="tfwmds-journey-planner-widget__when--expanded">
+
+                            <div class="tfwmds-journey-planner-widget__when-controller">
+                                {{
+                                    tfwmdsButton({
+                                        type: "link",
+                                        contentText: "Arrival time",
+                                        classes: "tfwmds-m-t--lg"
+                                    })
+                                }}
+                            </div>
+
+                            <h4>Leave</h4>
+                            <input type="hidden" name="journeyTimeType" value="Leaving" aria-label="leave"/>
+
+                            {{
+                                tfwmdsDropdown({
+                                    id: ("day" + suffix + leaveSuffix + modeSuffix),
+                                    name: "day",
+                                    items: [
+                                        {
+                                            value: "today",
+                                            contentText: "Today",
+                                            selected: true,
+                                            disabled: false
+                                        },
+                                        {
+                                            value: "tomorrow",
+                                            contentText: "Tomorrow",
+                                            selected: false,
+                                            disabled: false
+                                        }
+                                    ],
+                                    describedBy: null,
+                                    label: "Day",
+                                    labelClasses: "tfwmds-screenreaders-only",
+                                    classes: null,
+                                    groupClasses: "tfwmds-m-b-sm",
+                                    error: false,
+                                    errorMessage: {
+                                        id: null,
+                                        contentText: "Please select an option",
+                                        contentHTML: null,
+                                        classes: null
+                                    }
+                                })
+                            }}
+
+ 
+                            {{
+                                tfwmdsDropdown({
+                                    id: ("time" + suffix + leaveSuffix + modeSuffix),
+                                    name: "SelectedJourneyTime",
+                                    type: "time",
+                                    describedBy: null,
+                                    label: "Time",
+                                    labelClasses: "tfwmds-screenreaders-only",
+                                    classes: null,
+                                    groupClasses: "tfwmds-m-b-md",
+                                    error: false,
+                                    errorMessage: {
+                                        id: null,
+                                        contentText: "Please select an option",
+                                        contentHTML: null,
+                                        classes: null
+                                    }
+                                })
+                            }} 
+
+                        </div>
+                    </div>
+
+                    <div class="tfwmds-journey-planner-widget__how {{isHowOpen}}">
+                        <div class="tfwmds-journey-planner-widget__how--collapsed">
+                            <div class="tfwmds-grid tfwmds-grid--justify-between">
+                                <h4 class="tfwmds-col-1-2 tfwmds-m-b-none">Travel by</h4>
+                                {{ 
+                                    tfwmdsButton({
+                                        type: "link",
+                                        contentText: "Change",
+                                        classes: "tfwmds-m-t--lg"
+                                    })
+                                }}
+                            </div>
+                            <p>All transport modes</p>
+                        </div>
+                        <div class="tfwmds-journey-planner-widget__how--expanded">
+                            <h4 class="tfwmds-col-1-2 tfwmds-m-b-none">Travel by</h4>
+                            <div class="tfwmds-journey-planner-widget__how-controller">
+                                {{
+                                    tfwmdsButton({
+                                        type: "link",
+                                        contentText: "Select all",
+                                        classes: "tfwmds-m-t--lg"
+                                    })
+                                }}
+                            </div>
+                            <div class="tfwmds-grid tfwmds-grid--spacing-2-md tfwmds-m-t-sm">
+                                <div class="tfwmds-col-1-2">
+                                    <input type="checkbox" class="tfwmds-screenreaders-only" name="useBus" checked aria-label="bus"/>
+                                    {{
+                                        tfwmdsButton({
+                                            iconLeft: "modes-isolated-bus",
+                                            contentText: "Bus",
+                                            type: "mode",
+                                            iconClasses: "tfwmds-btn__coloured-icon--bus",
+                                            classes:"tfwmds-col-1 tfwmds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <div class="tfwmds-col-1-2">
+                                    <input type="checkbox" class="tfwmds-screenreaders-only" name="useTram" checked aria-label="Tram"/>
+                                    {{
+                                        tfwmdsButton({
+                                            iconLeft: "modes-isolated-metro",
+                                            contentText: "Tram",
+                                            type: "mode",
+                                            iconClasses: "tfwmds-btn__coloured-icon--metro",
+                                            classes:"tfwmds-col-1 tfwmds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <div class="tfwmds-col-1-2">
+                                    <input type="checkbox" class="tfwmds-screenreaders-only" name="useTrain" checked aria-label="Train"/>
+                                    {{
+                                        tfwmdsButton({
+                                            iconLeft: "modes-isolated-rail",
+                                            contentText: "Train",
+                                            type: "mode",
+                                            iconClasses: "tfwmds-btn__coloured-icon--train",
+                                            classes:"tfwmds-col-1 tfwmds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <p class="tfwmds-col-1 tfwmds-m-b-sm">Or</p>
+
+                                <div class="tfwmds-col-1-2">
+                                    <input type="radio" class="tfwmds-screenreaders-only" name="altjp" aria-label="walk"/>
+                                    {{
+                                        tfwmdsButton({
+                                            iconLeft: "modes-isolated-walk",
+                                            contentText: "Walk",
+                                            type: "mode",
+                                            iconClasses: "tfwmds-btn__coloured-icon--walk",
+                                            classes:"tfwmds-col-1 tfwmds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                <div class="tfwmds-col-1-2">
+                                    <input type="radio" class="tfwmds-screenreaders-only" name="altjp" aria-label="cycle"/>
+                                    {{
+                                        tfwmdsButton({
+                                            iconLeft: "modes-isolated-cycle",
+                                            contentText: "Cycle",
+                                            type: "mode",
+                                            iconClasses: "tfwmds-btn__coloured-icon--cycle",
+                                            classes:"tfwmds-col-1 tfwmds-m-b-sm"
+                                        })
+                                    }}
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tfwmds-journey-planner-widget__advanced-search">
+                        {{ 
+                            tfwmdsLink({
+                                contentText: "Mobility and advanced search",
+                                link: "http://journeyplanner.networkwestmidlands.com/",
+                                linkTitle: "Go to mobility and advanced search",
+                                classes: "tfwmds-m-t--lg"
+                            })
+                        }}
+                    </div>
+
+                    <div class="tfwmds-journey-planner-widget__submit">
+                        {{
+                            tfwmdsButton({
+                                contentText: "Plan my journey",
+                                classes: "tfwmds-m-t-md",
+                                role: "submit",
+                                iconRight: "general-chevron-right"
+                            })
+                        }}
+                    </div>
+
+                </form>
+            </div>
+        {% endcall %}
+
+    </div>
+</div>
+
+
+{% endmacro %}

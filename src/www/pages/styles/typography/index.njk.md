@@ -49,9 +49,9 @@ The font DM Sans is used with font weight of 400 (regular) and 700 (bold) for he
 
 #### Styles
 
-<div class="wmnds-heading-font">
-<h4 class="wmnds-m-none wmnds-weight-400">400 - Regular<br/></h4>
-<h4 class="wmnds-m-none">700 - Bold</h4>
+<div class="tfwmds-heading-font">
+<h4 class="tfwmds-m-none tfwmds-weight-400">400 - Regular<br/></h4>
+<h4 class="tfwmds-m-none">700 - Bold</h4>
 </div>
 
 {# Noto sans / body copy #}

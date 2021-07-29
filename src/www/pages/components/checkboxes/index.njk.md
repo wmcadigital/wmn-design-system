@@ -24,17 +24,17 @@
 
 {% endmarkdown %}
 
-{% from "wmnds/components/form-elements/checkboxes/_checkboxes.njk" import wmndsCheckboxes %}
+{% from "tfwmds/components/form-elements/checkboxes/_checkboxes.njk" import tfwmdsCheckboxes %}
 {{
   compExample([
-    wmndsCheckboxes({
+    tfwmdsCheckboxes({
       idPrefix: "checkboxes"
     })
   ],
   {
-    componentPath: "wmnds/components/form-elements/checkboxes/",
+    componentPath: "tfwmds/components/form-elements/checkboxes/",
     njk: true,
-    njkProps: wmndsCheckboxesProps,
+    njkProps: tfwmdsCheckboxesProps,
     js: false,
     iframe: false
   })
@@ -46,7 +46,7 @@
 {% endmarkdown %}
 {{
   compExample([
-    wmndsCheckboxes({
+    tfwmdsCheckboxes({
       idPrefix: "error-checkboxes",
       error: true,
       items: [
@@ -66,9 +66,9 @@
     })
   ],
   {
-    componentPath: "wmnds/components/form-elements/checkboxes/",
+    componentPath: "tfwmds/components/form-elements/checkboxes/",
     njk: true,
-    njkProps: wmndsCheckboxesProps,
+    njkProps: tfwmdsCheckboxesProps,
     js: false,
     iframe: false
   })

@@ -1,0 +1,24 @@
+{
+  "tfwmdsTravelModePageBannerProps": [
+    {
+      "name": "title",
+      "type": "string",
+      "description": "<strong>Required.</strong> Title content to use in the banner."
+    },
+    {
+      "name": "contentHTML",
+      "type": "string",
+      "description": "<strong>Required.</strong> HTML content to use in the banner."
+    },
+    {
+      "name": "image",
+      "type": "string",
+      "description": "<strong>Required.</strong> Url for the image to be displayed in the banner."
+    },
+    {
+      "name": "mode",
+      "type": "string",
+      "description": "Transport mode the banner relates to. This will determine the icon and background colour which is displayed. Accepted values are <code class='tfwmds-website-inline-code'>bus</code>, <code class='tfwmds-website-inline-code'>rail</code>, <code class='tfwmds-website-inline-code'>metro</code>, <code class='tfwmds-website-inline-code'>roads</code>, <code class='tfwmds-website-inline-code'>walk</code>, <code class='tfwmds-website-inline-code'>cycle</code> and <code class='tfwmds-website-inline-code'>eScooter</code>. If not set, will default to <code class='tfwmds-website-inline-code'>bus</code>."
+    }
+  ]
+}

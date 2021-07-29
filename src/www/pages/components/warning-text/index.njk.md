@@ -1,6 +1,6 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Warning Text" %}
-{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "tfwmds/components/warning-text/_warning-text.njk" import tfwmdsWarningText %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -38,13 +38,13 @@
 
 {{
   compExample([
-    wmndsWarningText({
+    tfwmdsWarningText({
       contentHTML: "Lorem <a href='#' title='lorem' target='_blank'>ipsum</a> dolar sit..."
     })
   ], {
-    componentPath: "wmnds/components/warning-text/",
+    componentPath: "tfwmds/components/warning-text/",
     njk: true,
-    njkProps: wmndsWarningTextProps,
+    njkProps: tfwmdsWarningTextProps,
     js: false,
     iframe: false
   })
@@ -60,13 +60,13 @@
 
 {{
   compExample([
-    wmndsWarningText({
+    tfwmdsWarningText({
       icon: "general-warning-circle"
     })
   ], {
-    componentPath: "wmnds/components/warning-text/",
+    componentPath: "tfwmds/components/warning-text/",
     njk: true,
-    njkProps: wmndsWarningTextProps,
+    njkProps: tfwmdsWarningTextProps,
     js: false,
     iframe: false
   })
@@ -82,13 +82,13 @@
 
 {{
   compExample([
-    wmndsWarningText({
+    tfwmdsWarningText({
       icon: "general-info"
     })
   ], {
-    componentPath: "wmnds/components/warning-text/",
+    componentPath: "tfwmds/components/warning-text/",
     njk: true,
-    njkProps: wmndsWarningTextProps,
+    njkProps: tfwmdsWarningTextProps,
     js: false,
     iframe: false
   })
@@ -104,13 +104,13 @@
 
 {{
   compExample([
-    wmndsWarningText({
+    tfwmdsWarningText({
       icon: "general-success"
     })
   ], {
-    componentPath: "wmnds/components/warning-text/",
+    componentPath: "tfwmds/components/warning-text/",
     njk: true,
-    njkProps: wmndsWarningTextProps,
+    njkProps: tfwmdsWarningTextProps,
     js: false,
     iframe: false
   })

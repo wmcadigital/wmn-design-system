@@ -1,0 +1,16 @@
+{% raw %}
+{% from "tfwmds/patterns/branded-banner/_branded-banner.njk" import tfwmdsBrandedBanner %}
+
+{{
+  tfwmdsBrandedBanner({
+    title: "<svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg> and tickets",
+    contentCol1: "<p class=\".tfwmds-h3\">We sell lots of tickets for bus, train and tram travel in the West Midlands</p><p>You can also combine different modes of travel to suit your needs. <br>Tickets can last from 1 day to a year.</p>",
+    transportModals: ["Bus", "Train", "Tram", "Park and ride"],
+    ctaButton: {
+      contentText: 'Find a ticket',
+      link: '#',
+      linkTitle: 'Find a ticket'
+    }
+  })
+}}
+{% endraw %}

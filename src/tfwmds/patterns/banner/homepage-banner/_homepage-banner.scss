@@ -1,0 +1,23 @@
+&.tfwmds-homepage-banner {
+  min-height: 325px;
+  padding: $size-lg 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  &__title {
+    @include type-setting(2);
+    display: inline;
+    color: $white;
+    background-color: get-color(primary);
+    box-shadow: 5px 0 0 5px get-color(primary), -5px 0 0 5px get-color(primary);
+  }
+
+  &__title-content {
+    position: relative; // Fix background-color overlapping rows
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

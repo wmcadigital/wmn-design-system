@@ -1,0 +1,38 @@
+{% macro tfwmdsFileDownload(params) %}
+{# Imports #}
+{% from "tfwmds/components/icon/_icon.njk" import tfwmdsIcon %}
+{% from "tfwmds/components/link/link/_link.njk" import tfwmdsLink %}
+{# Set #}
+{% set fileName = params.fileName or 'file name' %}
+{% set fileType = params.fileType or 'filetype' %}
+{% set fileSize =  ", " + params.fileSize if params.fileSize else '' %}
+{% set accessibleClass = " tfwmds-file-download--non-accessible" if params.accessible === false else "" %}
+{% set downloadLinkText = params.downloadLinkText if params.downloadLinkText else "Download '" + fileName + "' (" + fileType + fileSize + ")" %}
+
+
+<div class="tfwmds-file-download{{accessibleClass}}">
+    {{
+        tfwmdsIcon({
+            class: "tfwmds-file-download__icon",
+            icon: "general-file"
+        }) | trim | indent(4)
+    }}
+    <div class="tfwmds-file-download__desc">
+        {{
+            tfwmdsLink({
+                contentText: downloadLinkText,
+                classes: "tfwmds-file-download__link",
+                download: fileName|replace(' ', '_') + '.' + fileType|lower,
+                link: "#"
+            })
+        }}
+        {% if params.accessible === false -%}
+        <p class="tfwmds-file-download__warning">
+            This file may not be suitable for users of assistive technology. <br>
+            <a href="#" class="tfwmds-link">Request an accessible format.</a>
+        </p>
+        {%- endif %}
+    </div>
+</div>
+
+{% endmacro %}

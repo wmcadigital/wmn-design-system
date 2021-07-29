@@ -49,7 +49,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{% from "wmnds/components/button/_button.njk" import wmndsButton as cta %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton as cta %}
 {{
   compExample([
     cta({
@@ -78,9 +78,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   }
@@ -106,9 +106,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   }
@@ -137,7 +137,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as primary -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton as primary -%}
 {{
   compExample([
     primary({
@@ -167,9 +167,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   })
@@ -193,39 +193,39 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as primary -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton as primary -%}
 {{
   compExample([
     primary({
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>", 
+      contentHTML: "Pay with <svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg>",
       type: "primary"
     }),
     primary({
       isActive: true,
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (active)", 
+      contentHTML: "Pay with <svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg> (active)",
       type: "primary"
     }),
     primary({
       isDisabled: true,
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)", 
+      contentHTML: "Pay with <svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg> (disabled)",
       type: "primary"
     }),
     primary({
       iconRight: "general-chevron-right",
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>", 
+      contentHTML: "Pay with <svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg>",
       type: "primary"
     }),
     primary({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)", 
+      contentHTML: "Pay with <svg class=\"tfwmds-swift-logo-inline\"><use xlink:href=\"#tfwmds-swift-full-logo\" href=\"#tfwmds-swift-full-logo\"></use></svg> (disabled)",
       type: "primary"
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   })
@@ -257,7 +257,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as secondary -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton as secondary -%}
 {{
   compExample([
     secondary({
@@ -287,9 +287,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   }
@@ -317,9 +317,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
     {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   })
@@ -345,7 +345,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as destructive -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton as destructive -%}
 {{
   compExample([
     destructive({
@@ -375,9 +375,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
     {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   })
@@ -403,7 +403,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as start -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton as start -%}
 {{
   compExample([
     start({
@@ -433,9 +433,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   })
@@ -462,7 +462,7 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton as mode -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton as mode -%}
 {{
   compExample([
     mode({
@@ -499,9 +499,9 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   })
@@ -529,18 +529,18 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton -%}
 {{
   compExample([
-    wmndsButton({
+    tfwmdsButton({
       contentText: "Button as link",
       type: "link"
     })
   ],
   {
-    componentPath: "wmnds/components/button/",
+    componentPath: "tfwmds/components/button/",
     njk: true,
-    njkProps: wmndsButtonProps,
+    njkProps: tfwmdsButtonProps,
     js: false,
     iframe: false
   }
@@ -566,17 +566,17 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 
 {% endmarkdown %}
 
-{%- from "wmnds/components/button/_button.njk" import wmndsButton -%}
+{%- from "tfwmds/components/button/_button.njk" import tfwmdsButton -%}
 
 {{
   compExample([
-    wmndsButton({
+    tfwmdsButton({
       contentText: "Open all",
       type: "primary"
     }),
-    wmndsButton({
+    tfwmdsButton({
       contentText: "Close all",
-      classes: "wmnds-m-l-xs",
+      classes: "tfwmds-m-l-xs",
       type: "primary"
     })
   ],

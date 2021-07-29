@@ -3,7 +3,7 @@
 {% set section="Patterns" %}
 
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/feedback-loop/_feedback-loop.njk" import wmndsFeedbackLoop %}
+{% from "tfwmds/patterns/feedback-loop/_feedback-loop.njk" import tfwmdsFeedbackLoop %}
 
 {% set metaFields = [{name: 'contentType', value: 'content'}, {name: 'contentName', value: 'PageTitle'}, {name: 'contentLastEditor', value: 'Editor name'}, {name: 'serviceName', value: 'Transport for West Midlands Design system'}, {name: 'contentLastUpdated', value: '2021-03-19T11:18:15.532Z'}] %}
 
@@ -28,7 +28,7 @@
 
 {{
   compExample([
-    wmndsFeedbackLoop({
+    tfwmdsFeedbackLoop({
       id: 'fb',
       metaFields: metaFields,
       formFields: [
@@ -60,9 +60,9 @@
     })
   ],
   {
-    componentPath: "wmnds/patterns/feedback-loop/",
+    componentPath: "tfwmds/patterns/feedback-loop/",
     njk: true,
-    njkProps: wmndsFeedbackLoopProps,
+    njkProps: tfwmdsFeedbackLoopProps,
     js: true
   })
 }}
@@ -71,7 +71,7 @@
 <h3>Open</h3>
 {{
   compExample([
-    wmndsFeedbackLoop({
+    tfwmdsFeedbackLoop({
       isOpen: true,
       id: 'fb-open',
       metaFields: metaFields,
@@ -87,9 +87,9 @@
     })
   ],
   {
-    componentPath: "wmnds/patterns/feedback-loop/",
+    componentPath: "tfwmds/patterns/feedback-loop/",
     njk: false,
-    njkProps: wmndsFeedbackLoopProps,
+    njkProps: tfwmdsFeedbackLoopProps,
     js: true
   })
 }}

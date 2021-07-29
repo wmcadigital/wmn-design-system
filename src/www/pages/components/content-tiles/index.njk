@@ -1,24 +1,24 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle = "Content tiles" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "tfwmds/components/warning-text/_warning-text.njk" import tfwmdsWarningText %}
 
 {% block content %}
 {# Content tile small 1 #}
-{%- from "wmnds/components/content-tiles/normal/_normal.njk" import wmndsContentTilesNormal -%}
+{%- from "tfwmds/components/content-tiles/normal/_normal.njk" import tfwmdsContentTilesNormal -%}
 
 {# Content tile travel tips #}
-{%- from "wmnds/components/content-tiles/travel-tips/travel-tips.njk" import wmndsContentTileTravelTips -%}
+{%- from "tfwmds/components/content-tiles/travel-tips/travel-tips.njk" import tfwmdsContentTileTravelTips -%}
 
 {# Content tile travel updates #}
-{%- from "wmnds/components/content-tiles/travel-updates/travel-updates.njk" import wmndsContentTileTravelUpdates -%}
+{%- from "tfwmds/components/content-tiles/travel-updates/travel-updates.njk" import tfwmdsContentTileTravelUpdates -%}
 
 {# Content tile advice moving #}
-{%- from "wmnds/components/content-tiles/advice-moving/advice-moving.njk" import wmndsContentTileAdviceMoving -%}
+{%- from "tfwmds/components/content-tiles/advice-moving/advice-moving.njk" import tfwmdsContentTileAdviceMoving -%}
 
 {{
- wmndsWarningText ({
-      contentHTML: "<p>This component is no longer in use. Use the <a href=\"/components/content-card\" class=\"wmnds-link\">content card component</a> instead.</p>",
+ tfwmdsWarningText ({
+      contentHTML: "<p>This component is no longer in use. Use the <a href=\"/components/content-card\" class=\"tfwmds-link\">content card component</a> instead.</p>",
       icon: "general-warning-circle"
     })
 }}
@@ -28,7 +28,7 @@
 <h3>General </h3>
 {{
   compExample([
-    wmndsContentTilesNormal({
+    tfwmdsContentTilesNormal({
       copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>'
     })
   ])
@@ -37,8 +37,8 @@
 <h3>General with one link</h3>
 {{
   compExample([
-    wmndsContentTilesNormal({
-      classModifiers: 'wmnds-content-tile--with-one-link',
+    tfwmdsContentTilesNormal({
+      classModifiers: 'tfwmds-content-tile--with-one-link',
       copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
       readMore: true
     })
@@ -48,8 +48,8 @@
 <h3>Yellow modifier</h3>
 {{
   compExample([
-    wmndsContentTilesNormal({
-      classModifiers: 'wmnds-content-tile--yellow wmnds-content-tile--with-one-link',
+    tfwmdsContentTilesNormal({
+      classModifiers: 'tfwmds-content-tile--yellow tfwmds-content-tile--with-one-link',
       copy: '<p>See all major roadworks and events. These could affect your journey, plan ahead.</p>',
       readMore: true
     })
@@ -59,10 +59,10 @@
 <h3>Major Works</h3>
 {{
   compExample([
-    wmndsContentTilesNormal({
-      classModifiers: 'wmnds-content-tile--with-one-link',
+    tfwmdsContentTilesNormal({
+      classModifiers: 'tfwmds-content-tile--with-one-link',
       copy: '
-      <ul class="wmnds-content-tile__list">
+      <ul class="tfwmds-content-tile__list">
         <li><strong>Location:</strong> Birmingham city centre</li>
         <li><strong>Lasts until:</strong> December 2019</li>
       </ul>
@@ -75,7 +75,7 @@
 <h3>Iframe (map)</h3>
 {{
   compExample([
-    wmndsContentTilesNormal({
+    tfwmdsContentTilesNormal({
       copy: '
       <p>Consider using City Road and Dudley Road, past City Hospital to head into Birmingham city centre or connect with the ring road.</p>
       <iframe width="100%" height="500" src="https://www.arcgis.com/apps/View/index.html?appid=1b6f79c50c81421d92da2bd1ccee27e8" frameborder="0" scrolling="no" ></iframe>
@@ -87,8 +87,8 @@
 <h3>Nav</h3>
 {{
   compExample([
-   wmndsContentTilesNormal({
-    classModifiers: 'wmnds-content-tile--nav',
+   tfwmdsContentTilesNormal({
+    classModifiers: 'tfwmds-content-tile--nav',
     title: 'Related content',
     smallTitle: true
    })
@@ -98,8 +98,8 @@
 <h3>Nav with legend</h3>
 {{
   compExample([
-   wmndsContentTilesNormal({
-    classModifiers: 'wmnds-content-tile--nav',
+   tfwmdsContentTilesNormal({
+    classModifiers: 'tfwmds-content-tile--nav',
     title: 'Related content',
     smallTitle: true,
     legend: 'Overview'
@@ -116,21 +116,21 @@
 </ul>
 {{
   compExample([
-    wmndsContentTileTravelTips()
+    tfwmdsContentTileTravelTips()
   ])
 }}
 
 <h2>Content tile travel updates</h2>
 {{
   compExample([
-    wmndsContentTileTravelUpdates()
+    tfwmdsContentTileTravelUpdates()
   ])
 }}
 
 <h2>Content tile advice to keep moving</h2>
 {{
   compExample([
-    wmndsContentTileAdviceMoving()
+    tfwmdsContentTileAdviceMoving()
   ])
 }}
 

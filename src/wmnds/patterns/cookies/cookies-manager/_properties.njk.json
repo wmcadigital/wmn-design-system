@@ -1,9 +1,0 @@
-{
-  "wmndsCookiesManagerProps": [
-    {
-      "name": "showSuccessMessage",
-      "type": "boolean",
-      "description": "If true, it will display a success message. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-    }
-  ]
-}

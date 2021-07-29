@@ -1,0 +1,15 @@
+{% raw %}
+{% from "tfwmds/components/disruption-indicator/large/_large.njk" import tfwmdsDisruptionIndicatorLarge %}
+
+{{
+  tfwmdsDisruptionIndicatorLarge({
+    primaryText: "Minor disruption",
+    contentText: "A38",
+    mode: "train",
+    iconRight: "general-warning-triangle",
+    iconLeft: "modes-isolated-bus",
+    iconRightBtn: false,
+    classes: "tfwmds-disruption-indicator-large--error"
+  })
+}}
+{% endraw %}

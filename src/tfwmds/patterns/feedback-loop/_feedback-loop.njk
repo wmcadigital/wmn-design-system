@@ -1,0 +1,133 @@
+{% macro tfwmdsFeedbackLoop(params) %}
+
+{# Imports of components #}
+{% from "tfwmds/components/form-elements/checkboxes/_checkboxes.njk" import tfwmdsCheckboxes %}
+{% from "tfwmds/components/form-elements/text-input/_text-input.njk" import tfwmdsTextInput %}
+{% from "tfwmds/components/form-elements/textarea/_textarea.njk" import tfwmdsTextarea %}
+{% from "tfwmds/components/form-elements/checkboxes/_checkboxes.njk" import tfwmdsCheckboxes %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+
+{# Set params #}
+{% set _feedbackLoopId = params.id if params.id else "feedback-loop" %} {# this is to pass unique id to this macro, to stop clashing of duplicate IDs with the preview page and the ACTUAL feedback loop in the footer #}
+{% set formTitle = params.formTitle if params.formTitle else 'Help us improve Transport for West Midlands' %}
+{% set isOpen = " tfwmds-is--open" if params.isOpen %}
+
+{% set isUsefulSent = " tfwmds-is--sent" if params.isUsefulSent %}
+{% set usefulSentMessageText = params.usefulSentMessage.contentText if params.usefulSentMessage.contentText else 'Thank you for letting us know' %}
+{% set usefulSentMessageHTML = params.usefulSentMessage.contentHTMl if params.usefulSentMessage.contentHTML else null %}
+{% set _usefulSentMessage = usefulSentMessageHTML | safe if usefulSentMessageHTML else usefulSentMessageText %}
+
+{% set isFormSent = " tfwmds-is--sent" if params.isFormSent %}
+{% set formSentMessageText = params.formSentMessage.contentText if params.formSentMessage.contentText else '' %}
+{% set formSentMessageHTML = params.formSentMessage.contentHTMl if params.formSentMessage.contentHTML else '<span>Thank you for letting us know. If you require urgent help, please contact our <a class="tfwmds-link" href="#">Customer Service</a> team.</span>' %}
+{% set _formSentMessage = formSentMessageText if formSentMessageText else formSentMessageHTML | safe %}
+
+<div class="tfwmds-feedback-loop{{isOpen}}">
+  {% for field in params.metaFields %}
+    {# Prepopulated meta fields #}
+    <input type="hidden" name="{{field.name}}" value="{{field.value}}"/>
+  {% endfor %}
+  <div class="tfwmds-container tfwmds-feedback-loop__questions{{isFormSent}}">
+    <div class="tfwmds-feedback-loop__useful{{isUSefulSent}}">
+      <span>Is this page useful?</span>
+      <button class="tfwmds-btn tfwmds-btn--link tfwmds-m-l-sm">Yes</button>
+      <button class="tfwmds-btn tfwmds-btn--link tfwmds-m-l-sm">No</button>
+      <span class="tfwmds-feedback-loop__sent-msg tfwmds-m-b-none">{{ _usefulSentMessage }}</span>
+    </div>
+    <div class="tfwmds-feedback-loop__wrong">
+      <button class="tfwmds-btn tfwmds-btn--link">Is there anything wrong with this page?</button>
+    </div>
+    <div class="tfwmds-feedback-loop__sent-msg">
+      {{ _formSentMessage }}
+    </div>
+  </div>
+
+  <form class="tfwmds-container tfwmds-feedback-loop__form tfwmds-grid">
+    <input type="hidden" name="contentWrong" value="true">
+    <div class="tfwmds-grid tfwmds-grid--align-center tfwmds-grid--justify-between tfwmds-m-b-md">
+      <legend class="tfwmds-col-auto tfwmds-m-none">
+        <h2 class="tfwmds-h3">{{ formTitle }}</h2>
+      </legend>
+      <button class="tfwmds-btn tfwmds-btn--link tfwmds-col-auto tfwmds-m-l-md">Close</button>
+    </div>
+
+    {% for field in params.formFields %}
+      {# Textarea #}
+      {% if field.type === 'textarea' %}
+      <div class="tfwmds-col-1 tfwmds-col-md-1-2">
+      {{
+        tfwmdsTextarea({
+          id: (_feedbackLoopId + '-textarea-' + loop.index ),
+          name: field.name,
+          placeholder: field.placeholder,
+          required: field.required if field.required else false,
+          label: {
+            contentText: field.labelText,
+            contentHTML: field.labelHTML
+          },
+          formGroup: {
+            classes: 'tfwmds-m-b-md'
+          }
+        })
+      }}
+      </div>
+      {% endif %}
+      {# Input #}
+      {% if field.type === 'input' %}
+      <div class="tfwmds-col-1 tfwmds-col-md-1-3">
+        {{
+        tfwmdsTextInput({
+          id: (_feedbackLoopId + '-input-' + loop.index),
+          name: field.name,
+          placeholder: field.placeholder,
+          required: field.required if field.required else false,
+          label: {
+            contentText: field.labelText,
+            contentHTML: field.labelHTML
+          },
+          formGroup: {
+            classes: 'tfwmds-m-b-md'
+          }
+        })
+      }}
+      </div>
+      {% endif %}
+
+      {# Checkbox #}
+      {% if field.type === 'checkbox' %}
+      <div class="tfwmds-col-1">
+      {{
+        tfwmdsCheckboxes({
+          items: [
+            {
+              id: (_feedbackLoopId + '-checkbox-consent-' + loop.index),
+              contentText: field.labelText,
+              contentHTML: field.labelHTML,
+              required: field.required if field.required else false
+            }
+          ],
+          name: field.name,
+          classes: 'tfwmds-m-b-none',
+          hint: {
+            contentText: ' '
+          }
+        })
+      }}
+      </div>
+      {% endif %}
+
+      <br>
+    {% endfor %}
+
+    {# Submit button #}
+    {{
+      tfwmdsButton({
+        contentText: "Submit",
+        classes: "tfwmds-btn--primary tfwmds-m-t-md",
+        role: "submit"
+      })
+    }}
+  </form>
+</div>
+
+{% endmacro %}

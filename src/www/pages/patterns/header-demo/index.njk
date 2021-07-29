@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-gb" class="wmnds-html">
+<html lang="en-gb" class="tfwmds-html">
   <!-- Head -->
   {% include "www/_partials/_head.njk" %}
   <!-- end: Head -->
 
-  <body class="wmnds-body">
+  <body class="tfwmds-body">
     <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -14,9 +14,9 @@
     <![endif]-->
 
     {# header #}
-    {% from "wmnds/patterns/header-v2/_header-v2.njk" import wmndsHeaderV2 %}
+    {% from "tfwmds/patterns/header-v2/_header-v2.njk" import tfwmdsHeaderV2 %}
     {{
-      wmndsHeaderV2({
+      tfwmdsHeaderV2({
         id: "mega-menu-example",
         search: true,
         searchSuggestions: ["See live departures", "Find a timetable", "Check for disruptions", "Manage my Swift card", "Find ticket prices", "Get a refund", "Update Direct Debit", "Apply for a 16-18 photocard"],
@@ -195,15 +195,15 @@
 
 
     {# main #}
-    <main class="wmnds-container wmnds-container--main">
-      <a class="wmnds-link" href="/patterns/header-v2" onclick="window.close();">Close window</a>
+    <main class="tfwmds-container tfwmds-container--main">
+      <a class="tfwmds-link" href="/patterns/header-v2" onclick="window.close();">Close window</a>
     </main>
     {# main #}
 
     <!-- footer -->
-    {% from "wmnds/patterns/footer/_footer.njk" import wmndsFooter %}
+    {% from "tfwmds/patterns/footer/_footer.njk" import tfwmdsFooter %}
     {{
-      wmndsFooter({
+      tfwmdsFooter({
         bottomMenu: [{
           name: "Privacy & Cookies Policy",
           link: "https://www.wmnetwork.co.uk/privacy-cookies-policy/"

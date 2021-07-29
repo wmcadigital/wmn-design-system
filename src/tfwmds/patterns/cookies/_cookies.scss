@@ -1,0 +1,20 @@
+&.tfwmds-cookies-banner {
+  display: none;
+
+  &__group-buttons {
+    & > *:not(:first-child) {
+      margin-top: $size-md;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      &.tfwmds-grid {
+        flex-flow: row nowrap;
+      }
+
+      & > *:not(:first-child) {
+        margin-top: 0;
+        margin-left: $size-md;
+      }
+    }
+  }
+}

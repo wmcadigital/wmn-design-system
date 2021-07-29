@@ -1,0 +1,138 @@
+// These vars control icon size and the margin right from the icon. By setting here we can ensure the message_info stays indented by same amount as title.
+$tfwmds-msg-icon-size: 35px;
+$tfwmds-msg-icon-margin-right: $size-sm;
+// controls close button width and ensures header padding right is offset correctly
+$tfwmds-msg-close-btn-width: 5rem;
+
+&.tfwmds-msg-summary {
+  position: relative;
+  padding: $size-sm;
+  border: 1px solid get-color(information);
+
+  &__header {
+    display: block;
+    color: inherit;
+  }
+
+  &__icon {
+    width: $tfwmds-msg-icon-size;
+    height: $tfwmds-msg-icon-size;
+    margin-right: $tfwmds-msg-icon-margin-right;
+    fill: get-color(information);
+  }
+
+  &__title {
+    width: calc(100% - (35px + #{$size-sm}));
+    margin: 0.35rem 0;
+
+    @media all and (max-width: $breakpoint-md - 1) {
+      width: 100%;
+      margin: $size-xsm 0;
+    }
+  }
+
+  &__icon,
+  &__title {
+    display: inline-block;
+    color: inherit;
+    vertical-align: middle;
+  }
+
+  &__info {
+    display: block;
+    color: inherit;
+
+    @media all and (min-width: $breakpoint-md) {
+      padding-left: calc(#{$tfwmds-msg-icon-size} + #{$tfwmds-msg-icon-margin-right});
+    }
+  }
+
+  &__close {
+    display: flex;
+    position: absolute;
+    top: $size-sm;
+    right: $size-sm;
+    width: $tfwmds-msg-close-btn-width;
+    height: $tfwmds-msg-icon-size;
+    margin: 0 $size-xs;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: $size-md;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: $size-sm;
+      fill: get-color(primary);
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      & + .tfwmds-msg-summary__header {
+        padding-right: $tfwmds-msg-close-btn-width + $size-md;
+      }
+    }
+  }
+
+  // MESSAGE MODIFIERS - info is the default (above)
+
+  // Success
+  &--success {
+    border-color: get-color(success);
+
+    .tfwmds-msg-summary__icon {
+      fill: get-color(success);
+    }
+  }
+
+  // Sucess fill
+  &--success-fill {
+    border-color: get-color(success);
+    color: $white;
+    background-color: get-color(success);
+
+    .tfwmds-msg-summary__icon {
+      fill: $white;
+    }
+
+    .tfwmds-msg-summary__close {
+      color: $white;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  // Sucess fill no icon
+  &--success-fill-no-icon {
+    border-color: get-color(success);
+    color: $white;
+    background-color: get-color(success);
+
+    .tfwmds-msg-summary__icon {
+      display: none;
+    }
+  }
+
+  // Warning
+  &--warning {
+    border-color: get-color(warning);
+
+    .tfwmds-msg-summary__icon {
+      fill: get-color(warning);
+    }
+  }
+
+  // Warning
+  &--error {
+    border-color: get-color(error);
+
+    .tfwmds-msg-summary__icon {
+      fill: get-color(error);
+    }
+  }
+}

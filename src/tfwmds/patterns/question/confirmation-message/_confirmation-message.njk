@@ -1,0 +1,15 @@
+{% macro tfwmdsConfirmationMessage(params) %}
+
+{% from "tfwmds/components/message/summary/_summary.njk" import tfwmdsMsgSummary %}
+
+{{
+    tfwmdsMsgSummary({
+        type: 'success-fill-no-icon',
+        title: 'Request complete',
+        subtitle: 'You can now start using your Swift card',
+        contentHTML: 'Your reference number is <b>12345</b>',
+        classes: 'tfwmds-text-align-center'
+    })
+}}
+
+{% endmacro %}

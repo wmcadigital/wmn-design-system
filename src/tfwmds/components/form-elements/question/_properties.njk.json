@@ -1,0 +1,9 @@
+{
+  "tfwmdsQuestionProps": [
+    {
+      "name": "contentText",
+      "type": "string",
+      "description": "<strong>Required.</strong> Text to use within the question."
+    }
+  ]
+}

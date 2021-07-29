@@ -2,7 +2,7 @@
 {% set pageTitle = "Using the design system" %}
 {% set section = "Docs" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/components/accordion/_accordion.njk" import wmndsAccordion %}
+{% from "tfwmds/components/accordion/_accordion.njk" import tfwmdsAccordion %}
 
 {% block content %}
 
@@ -26,11 +26,11 @@ If you [installed the design system using the recommended setup](/docs/get-start
 {% endmarkdown %}
 {{
   compExample([
-      wmndsAccordion({
+      tfwmdsAccordion({
         id: "accordion-html"
       })
     ], {
-      componentPath: "wmnds/components/accordion/",
+      componentPath: "tfwmds/components/accordion/",
       njk: false,
       js: false,
       iframe: false
@@ -46,24 +46,24 @@ If you [installed the design system using the recommended setup](/docs/get-start
 
 If you are using the [Prototype Kit](/docs/get-started/prototype-kit/) or you [installed the design system using npm](/docs/get-started/production/#option-2-install-using-npm), you can copy the code from either the HTML markup or Nunjucks markup tab below any examples.
 
-As both of these methods use <a href="https://mozilla.github.io/nunjucks/templating.html" target="_blank" rel="noopener noreferrer" class="wmnds-link">Nunjucks templating</a>, you can use our nunjucks macros (Nunjucks markup tab) and use the Nunjucks properties tab as reference to speed up your development.
+As both of these methods use <a href="https://mozilla.github.io/nunjucks/templating.html" target="_blank" rel="noopener noreferrer" class="tfwmds-link">Nunjucks templating</a>, you can use our nunjucks macros (Nunjucks markup tab) and use the Nunjucks properties tab as reference to speed up your development.
 
 #### Nunjucks macros
 
 A Nunjucks macro is a simple template that generates more complex HTML. However, macros are more sensitive to mistakes than HTML, so it’s worth saving and previewing.
 
-When using Nunjucks macros (Nunjucks markup tab) in the [Prototype Kit](/docs/get-started/prototype-kit/), leave out the first line that starts with <br/><code class="wmnds-website-inline-code">&lcub;&percnt; from ...</code>.
+When using Nunjucks macros (Nunjucks markup tab) in the [Prototype Kit](/docs/get-started/prototype-kit/), leave out the first line that starts with <br/><code class="tfwmds-website-inline-code">&lcub;&percnt; from ...</code>.
 
 {% endmarkdown %}
 {{
   compExample([
-      wmndsAccordion({
+      tfwmdsAccordion({
         id: "accordion-njk"
       })
     ], {
-      componentPath: "wmnds/components/accordion/",
+      componentPath: "tfwmds/components/accordion/",
       njk: true,
-      njkProps: wmndsAccordionProps,
+      njkProps: tfwmdsAccordionProps,
       js: false,
       iframe: false
     }
@@ -82,11 +82,11 @@ You may notice that some components have recommended Javascript tabs, you don't 
 
 {{
   compExample([
-      wmndsAccordion({
+      tfwmdsAccordion({
         id: "accordion-js"
       })
     ], {
-      componentPath: "wmnds/components/accordion/",
+      componentPath: "tfwmds/components/accordion/",
       njk: false,
       js: true,
       iframe: false

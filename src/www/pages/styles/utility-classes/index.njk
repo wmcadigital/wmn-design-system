@@ -17,13 +17,13 @@
   Containers are used to wrap content in a 'container'. The container will have a fixed max size and be centered on the page, it will adjust to 100% width when the page width is less than the container size.
 </p>
 
-<pre class="wmnds-col-1">
+<pre class="tfwmds-col-1">
   <code class="scss" tabindex="0">
-    .wmnds-container /* Container with max-width of 1280px */
+    .tfwmds-container /* Container with max-width of 1280px */
 
     /* This should be used on your main content section and will
     add a margin top to seperate from header/breadcrumb section */
-    .wmnds-container.wmnds-container--main
+    .tfwmds-container.tfwmds-container--main
   </code>
 </pre>
 
@@ -32,31 +32,31 @@
 {# Grid #}
 <h2>Grid</h2>
 <p>
-  The WMN Design System uses its own custom syntax grid system adopted from <a href="https://purecss.io/grids/" target="_blank" class="wmnds-link">Pure CSS Grid</a>. The grid system is already included in the bundled wmnds-components.min.css file so you don't need to include it seperately.
+  The WMN Design System uses its own custom syntax grid system adopted from <a href="https://purecss.io/grids/" target="_blank" class="tfwmds-link">Pure CSS Grid</a>. The grid system is already included in the bundled tfwmds-components.min.css file so you don't need to include it seperately.
 </p>
 
 <p>
-  You can Refer to the <a href="https://purecss.io/grids/" target="_blank" class="wmnds-link">Pure CSS Grid documentation</a> for reference on how to use our grid system, but bear in mind that:
+  You can Refer to the <a href="https://purecss.io/grids/" target="_blank" class="tfwmds-link">Pure CSS Grid documentation</a> for reference on how to use our grid system, but bear in mind that:
 </p>
 <ul>
-  <li><code class="wmnds-website-inline-code">.pure-g</code> becomes <code class="wmnds-website-inline-code">.wmnds-grid</code> in our design system<br><br></li>
-  <li><code class="wmnds-website-inline-code">.pure-u-*</code> becomes <code class="wmnds-website-inline-code">.wmnds-col-*</code> in our design system</li>
+  <li><code class="tfwmds-website-inline-code">.pure-g</code> becomes <code class="tfwmds-website-inline-code">.tfwmds-grid</code> in our design system<br><br></li>
+  <li><code class="tfwmds-website-inline-code">.pure-u-*</code> becomes <code class="tfwmds-website-inline-code">.tfwmds-col-*</code> in our design system</li>
 </ul>
 
 
-<p>You can also use modifier classes on the same element where the class <code class="wmnds-website-inline-code">.wmnds-grid</code> is being used.</p>
-<pre class="wmnds-col-1">
+<p>You can also use modifier classes on the same element where the class <code class="tfwmds-website-inline-code">.tfwmds-grid</code> is being used.</p>
+<pre class="tfwmds-col-1">
   <code class="scss" tabindex="0">
-    .wmnds-grid--justify-between
-    .wmnds-grid--justify-around
-    .wmnds-grid--justify-end
-    .wmnds-grid--justify-center
+    .tfwmds-grid--justify-between
+    .tfwmds-grid--justify-around
+    .tfwmds-grid--justify-end
+    .tfwmds-grid--justify-center
   </code>
 </pre>
 
 <h3>Information for designers</h3>
 <p>
-  The grid is part of the Design System Sketch library or as a <a href="https://github.com/jokinL/Purecss-grid-Sketch" target="_blank" title="Standalone grid Sketch file" class="wmnds-link">standalone template file</a>.
+  The grid is part of the Design System Sketch library or as a <a href="https://github.com/jokinL/Purecss-grid-Sketch" target="_blank" title="Standalone grid Sketch file" class="tfwmds-link">standalone template file</a>.
 </p>
 <h4>Screen sizes</h4>
 <p>
@@ -89,10 +89,10 @@
   Floats an element in the intended direction.
 </p>
 
-<pre class="wmnds-col-1 wmnds-col-md-1-2">
+<pre class="tfwmds-col-1 tfwmds-col-md-1-2">
   <code class="scss" tabindex="0">
-    .wmnds-float-left
-    .wmnds-float-right
+    .tfwmds-float-left
+    .tfwmds-float-right
   </code>
 </pre>
 
@@ -104,11 +104,11 @@
   Aligns text in the intended direction.
 </p>
 
-<pre class="wmnds-col-1 wmnds-col-md-1-2">
+<pre class="tfwmds-col-1 tfwmds-col-md-1-2">
   <code class="scss" tabindex="0">
-    .wmnds-text-align-left
-    .wmnds-text-align-center
-    .wmnds-text-align-right
+    .tfwmds-text-align-left
+    .tfwmds-text-align-center
+    .tfwmds-text-align-right
   </code>
 </pre>
 
@@ -120,10 +120,10 @@
   When you want to hide an element based on if the device width is a desktop or mobile device.
 </p>
 
-<pre class="wmnds-col-1">
+<pre class="tfwmds-col-1">
   <code class="scss" tabindex="0">
-    .wmnds-hide-mobile /* Hide only on mobile devices or smaller (less than 48em)  */
-    .wmnds-hide-desktop /* Hide only on desktop devices or larger (greater than 48em) */
+    .tfwmds-hide-mobile /* Hide only on mobile devices or smaller (less than 48em)  */
+    .tfwmds-hide-desktop /* Hide only on desktop devices or larger (greater than 48em) */
   </code>
 </pre>
 
@@ -136,76 +136,76 @@
 <ul>
   <li>Most components already come with defined spacing. This spacing shouldn't be overwritten.</li>
   <li>Spacing should be used as a last resort to help layout components on a page.</li>
-  <li>You can use <code class="wmnds-website-inline-code">none</code> as a size to enforce zero margin or padding.</li>
+  <li>You can use <code class="tfwmds-website-inline-code">none</code> as a size to enforce zero margin or padding.</li>
 </ul>
 
 <p>
-  The classes are named using the format <code class="wmnds-website-inline-code">.wmnds-{type}-{side}-{size}</code>.
+  The classes are named using the format <code class="tfwmds-website-inline-code">.tfwmds-{type}-{side}-{size}</code>.
 </p>
 {# type #}
 <p>
-  Where <code class="wmnds-website-inline-code">{type}</code> is one of:
+  Where <code class="tfwmds-website-inline-code">{type}</code> is one of:
 </p>
 <ul>
   <li>
-    <code class="wmnds-website-inline-code">m</code> - for classes that set <code class="wmnds-website-inline-code">margin</code>
+    <code class="tfwmds-website-inline-code">m</code> - for classes that set <code class="tfwmds-website-inline-code">margin</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">p</code> - for classes that set <code class="wmnds-website-inline-code">padding</code>
+    <code class="tfwmds-website-inline-code">p</code> - for classes that set <code class="tfwmds-website-inline-code">padding</code>
   </li>
 </ul>
 {# side #}
 <p>
-  Where <code class="wmnds-website-inline-code">{side}</code> is one of:
+  Where <code class="tfwmds-website-inline-code">{side}</code> is one of:
 </p>
 <ul>
   <li>
-    <code class="wmnds-website-inline-code">t</code> - for classes that set <code class="wmnds-website-inline-code">margin-top</code> or <code class="wmnds-website-inline-code">padding-top</code>
+    <code class="tfwmds-website-inline-code">t</code> - for classes that set <code class="tfwmds-website-inline-code">margin-top</code> or <code class="tfwmds-website-inline-code">padding-top</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">r</code> - for classes that set <code class="wmnds-website-inline-code">margin-right</code> or <code class="wmnds-website-inline-code">padding-right</code>
+    <code class="tfwmds-website-inline-code">r</code> - for classes that set <code class="tfwmds-website-inline-code">margin-right</code> or <code class="tfwmds-website-inline-code">padding-right</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">b</code> - for classes that set <code class="wmnds-website-inline-code">margin-bottom</code> or <code class="wmnds-website-inline-code">padding-bottom</code>
+    <code class="tfwmds-website-inline-code">b</code> - for classes that set <code class="tfwmds-website-inline-code">margin-bottom</code> or <code class="tfwmds-website-inline-code">padding-bottom</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">l</code> - for classes that set <code class="wmnds-website-inline-code">margin-left</code> or <code class="wmnds-website-inline-code">padding-left</code>
+    <code class="tfwmds-website-inline-code">l</code> - for classes that set <code class="tfwmds-website-inline-code">margin-left</code> or <code class="tfwmds-website-inline-code">padding-left</code>
   </li>
   <li>
-    blank - for classes that set a <code class="wmnds-website-inline-code">margin</code> or <code class="wmnds-website-inline-code">padding</code> on all 4 sides of the element
+    blank - for classes that set a <code class="tfwmds-website-inline-code">margin</code> or <code class="tfwmds-website-inline-code">padding</code> on all 4 sides of the element
   </li>
 </ul>
 {# size #}
 <p>
-Where <code class="wmnds-website-inline-code">{size}</code> is one of:
+Where <code class="tfwmds-website-inline-code">{size}</code> is one of:
 </p>
 <ul>
   <li>
-    <code class="wmnds-website-inline-code">xs</code> - set size to <code class="wmnds-website-inline-code">0.25rem</code>
+    <code class="tfwmds-website-inline-code">xs</code> - set size to <code class="tfwmds-website-inline-code">0.25rem</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">xsm</code> - set size to <code class="wmnds-website-inline-code">0.5rem</code>
+    <code class="tfwmds-website-inline-code">xsm</code> - set size to <code class="tfwmds-website-inline-code">0.5rem</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">sm</code> - set size to <code class="wmnds-website-inline-code">0.75rem</code>
+    <code class="tfwmds-website-inline-code">sm</code> - set size to <code class="tfwmds-website-inline-code">0.75rem</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">md</code> - set size to <code class="wmnds-website-inline-code">1rem</code>
+    <code class="tfwmds-website-inline-code">md</code> - set size to <code class="tfwmds-website-inline-code">1rem</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">lg</code> - set size to <code class="wmnds-website-inline-code">2rem</code>
+    <code class="tfwmds-website-inline-code">lg</code> - set size to <code class="tfwmds-website-inline-code">2rem</code>
   </li>
   <li>
-    <code class="wmnds-website-inline-code">xl</code> - set size to <code class="wmnds-website-inline-code">3rem</code>
+    <code class="tfwmds-website-inline-code">xl</code> - set size to <code class="tfwmds-website-inline-code">3rem</code>
   </li>
 </ul>
 
 <p>Some examples of using these utility classes...</p>
 <pre>
   <code>
-    .wmnds-m-xs // applies a margin of 0.25rem to all sides
-    .wmnds-p-b-lg // applies a padding-bottom of 2rem
-    .wmnds-m-l-none // sets left margin to 0
+    .tfwmds-m-xs // applies a margin of 0.25rem to all sides
+    .tfwmds-p-b-lg // applies a padding-bottom of 2rem
+    .tfwmds-m-l-none // sets left margin to 0
   </code>
 </pre>
 
@@ -213,26 +213,26 @@ Where <code class="wmnds-website-inline-code">{size}</code> is one of:
 <h3>Grid column spacing</h3>
 
 <p>
-  Spacing can be applied in between <code class="wmnds-website-inline-code">.wmnds-col-*</code> elements by adding a class to the parent <code class="wmnds-website-inline-code">.wmnds-grid</code>.
+  Spacing can be applied in between <code class="tfwmds-website-inline-code">.tfwmds-col-*</code> elements by adding a class to the parent <code class="tfwmds-website-inline-code">.tfwmds-grid</code>.
 </p>
 <p>
-  The classes are named using the format <code class="wmnds-website-inline-code">.wmnds-grid--spacing-{col-count}-{size}</code>.
+  The classes are named using the format <code class="tfwmds-website-inline-code">.tfwmds-grid--spacing-{col-count}-{size}</code>.
 </p>
 <p>
-  Where <code class="wmnds-website-inline-code">{col-count}</code> is the number of columns per row and <code class="wmnds-website-inline-code">{size}</code> is the same as in the spacing utility classes above.
+  Where <code class="tfwmds-website-inline-code">{col-count}</code> is the number of columns per row and <code class="tfwmds-website-inline-code">{size}</code> is the same as in the spacing utility classes above.
 </p>
 <p>
-  Spacing can also be applied responsively using the format <code class="wmnds-website-inline-code">.wmnds-grid--spacing-{breakpoint}-{col-count}-{size}</code>.
+  Spacing can also be applied responsively using the format <code class="tfwmds-website-inline-code">.tfwmds-grid--spacing-{breakpoint}-{col-count}-{size}</code>.
 </p>
 <p>
-  Where <code class="wmnds-website-inline-code">{breakpoint}</code> is one of breakpoint sizes described in the grid section.
+  Where <code class="tfwmds-website-inline-code">{breakpoint}</code> is one of breakpoint sizes described in the grid section.
 </p>
 
 <p>Some examples of using these utility classes...</p>
 <pre>
   <code>
-    .wmnds-grid--spacing-2-md // applies a 1rem spacing between 2 columns
-    .wmnds-grid--spacing-lg-4-lg // applies a 2rem spacing between 4 columns above a screen width of 1024px
+    .tfwmds-grid--spacing-2-md // applies a 1rem spacing between 2 columns
+    .tfwmds-grid--spacing-lg-4-lg // applies a 2rem spacing between 4 columns above a screen width of 1024px
   </code>
 </pre>
 
@@ -243,13 +243,13 @@ Where <code class="wmnds-website-inline-code">{size}</code> is one of:
   Changes background to the intended colour.
 </p>
 
-<pre class="wmnds-col-1 wmnds-col-md-1-2">
-  <code class="wmnds-show-more-ignore scss" tabindex="0">
-    .wmnds-bg-default
-    .wmnds-bg-white
-    .wmnds-bg-disabled-elements
-    .wmnds-bg-planned-disruption
-    .wmnds-bg-transparent
+<pre class="tfwmds-col-1 tfwmds-col-md-1-2">
+  <code class="tfwmds-show-more-ignore scss" tabindex="0">
+    .tfwmds-bg-default
+    .tfwmds-bg-white
+    .tfwmds-bg-disabled-elements
+    .tfwmds-bg-planned-disruption
+    .tfwmds-bg-transparent
   </code>
 </pre>
 

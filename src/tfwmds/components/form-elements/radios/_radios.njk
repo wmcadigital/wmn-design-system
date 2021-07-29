@@ -1,0 +1,71 @@
+{% macro tfwmdsRadios(params) %}
+
+{# Imports #}
+{% from "tfwmds/components/form-elements/error-message/_error-message.njk" import tfwmdsFeErrorMessage %}
+
+{# Set vars #}
+{% set items = params.items if params.items %}
+{% set name = params.name if params.name else "checkbox-example" %}
+{% set hintContentText = params.hint.contentText if params.hint.contentText else "Select all options that apply" %}
+{% set hintContentHTML = params.hint.contentHTML if params.hint.contentHTML else null %}
+{% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
+{% set idPrefix = params.idPrefix if params.idPrefix else name %}
+{% set inlineClass = ' tfwmds-fe-radios--inline' if params.inline %}
+{% set hintId = " " + params.hint.id if params.hint.id %}
+{% set hintClass = " " + params.hint.classes if params.hint.classes %}
+{# Error Message Params #}
+{% set groupErrorClass = " tfwmds-fe-group--error" if params.error %}
+{% set error = true if params.error else false %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select an option" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+
+<div class="tfwmds-fe-group{{groupErrorClass}}">
+    <div class="tfwmds-fe-radios{{inlineClass}}" role="radiogroup">
+      {% if error %}
+        {{
+          tfwmdsFeErrorMessage(
+            {
+              contentText: errorContentText,
+              contentHTML: errorContentHTML,
+              classes: errorClasses,
+              id: errorId
+            }
+          )
+        }}
+      {% endif %}
+      <span class="tfwmds-fe-radios__desc{{hintClass}}" {% if hintId %}id="{{hintId}}"{% endif %}>
+        {{ _hintContent }}
+      </span>
+      {% if items %}
+        {% for item in items %}
+          {# Set item vars #}
+          {% set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
+          {% set inputValue = item.value if item.value else "option" + loop.index | string %}
+          {% set inputId = item.id if item.id else idPrefix + "_" + inputValue %}
+          {% set isNotEditable = (' disabled="disabled"' | safe) if item.disabled === true else "" %}
+          {% set itemContentText = item.contentText if item.contentText else "Select one option" %}
+          {% set itemContentHTML = item.contentHTML if item.contentHTML else null %}
+          {% set _itemContent = itemContentHTML | safe if itemContentHTML else itemContentText %} {# change content based on what user has input #}
+          <label class="tfwmds-fe-radios__container">
+            {{_itemContent}}
+            <input id="{{inputId}}" class="tfwmds-fe-radios__input" value="{{inputValue}}"{{isChecked}} name="{{name}}" type="radio"{{isNotEditable}}/>
+            <span class="tfwmds-fe-radios__checkmark"></span>
+          </label>
+        {% endfor %}
+      {% else %}
+        {% for i in range(1,4) %}
+          {# Set checked state on first item in loop #}
+          {% set isChecked = (' checked="checked"' | safe) if i === 1 %}
+          <label class="tfwmds-fe-radios__container">
+            Option {{i}}
+            <input class="tfwmds-fe-radios__input" value="Option {{i}}"{{isChecked}} name="{{name}}" type="radio"/>
+            <span class="tfwmds-fe-radios__checkmark"></span>
+          </label>
+        {% endfor %}
+      {% endif %}
+    </div>
+</div>
+
+{% endmacro %}

@@ -1,0 +1,83 @@
+{% macro tfwmdsCookiesManager(params) %}
+
+{# Imports of components #}
+{% from "tfwmds/components/form-elements/checkboxes/_checkboxes.njk" import tfwmdsCheckboxes %}
+{% from "tfwmds/components/button/_button.njk" import tfwmdsButton %}
+{% from "tfwmds/components/message/summary/_summary.njk" import tfwmdsMsgSummary %}
+
+{% set successMessageStyling = "" if params.showSuccessMessage else "display: none" %}
+
+
+<div class="tfwmds-p-md tfwmds-cookies-manager">
+  <div class="tfwmds-container tfwmds-col-1 tfwmds-col-sm-1 tfwmds-col-lg-3-4">
+    <h1 class="tfwmds-p-t-lg tfwmds-m-b-lg">Manage Cookies</h1>
+    <div class="tfwmds-cookies-manager__success-message tfwmds-m-b-md" style="{{successMessageStyling}}">
+      {{
+        tfwmdsMsgSummary({
+          type: 'success-fill',
+          title: 'Your cookie settings were saved',
+          contentHTML: '<p>You can change these settings at any time by clicking the link in the page footer.</p>
+            <p class="tfwmds-cookies-manager__previous-page">
+              <a class="tfwmds-link tfwmds-cookies-manager__previous-page" href="" style="color: white">Go back to the page you were looking at</a>
+            </p>'
+        })
+      }}
+    </div>
+    <form class="tfwmds-cookies-manager__form" action="#">
+      <p class="tfwmds-m-b-md">
+        Check your settings below and select the cookies you’re happy with.
+      </p>
+      <p>
+        These settings only apply to wmnetwork.co.uk
+      </p>
+      <div class="tfwmds-cookies-manager__preferences tfwmds-p-b-md tfwmds-p-t-md">
+        {{
+          tfwmdsCheckboxes({
+            classes: "tfwmds-m-none",
+            question: "",
+            hint: {
+              contentText: " "
+            },
+            items: [
+              {
+                checked: true,
+                disabled: true,
+                id: 'essential-cookies',
+                name: 'essential-cookies',
+                titleText: 'Essential cookies',
+                contentText: 'Without these cookies our website won’t work properly. They help you to access secure areas like accounts and tools such as the journey planner.'
+              },
+              {
+                checked: false,
+                id: 'functional-cookies',
+                name: 'functional-cookies',
+                titleText: 'Functional cookies',
+                contentText: 'These cookies help us to personalise our services to suit your needs, like saving your favourite transport services.'
+              },
+              {
+                checked: false,
+                id: 'performance-cookies',
+                name: 'performance-cookies',
+                titleText: 'Performance cookies',
+                contentText: 'These cookies collect information about how you’re using our services, for instance popular pages or errors. We use this information to make decisions when improving our services. We do not use any information collected to identify you as an individual.'
+              }
+            ]
+          })
+        }}
+      </div>
+      <div>
+      {{
+        tfwmdsButton({
+          classses: "tfwmds-cookies-manager__save-preferences tfwmds-col-1 tfwmds-col-sm-1 tfwmds-col-md-12-24",
+          contentText: "Save preferences",
+          role: "submit"
+        })
+      }}
+      </div>
+      <div class="tfwmds-m-t-lg">
+        <p>If you change your mind, <a href="https://www.tfwm.org.uk/policies/privacy-and-cookies-policy/">visit our Policies page</a> to change your cookie preferences.</p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endmacro %}

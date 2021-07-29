@@ -131,7 +131,7 @@ const buildingTemplates = () => {
 const buildingComponentsForLive = () => {
   return src(paths.nunjucks.componentSrc)
     .pipe(plugins.flatten({ includeParents: [4, 4] }))
-    .pipe(plugins.replace('from "wmnds/', 'from "'))
+    .pipe(plugins.replace('from "tfwmds/', 'from "'))
     .pipe(dest(paths.nunjucks.componentOutput));
 };
 

@@ -1,8 +1,8 @@
 {% extends "www/_layouts/layout-left-pane.njk" %}
 {% set pageTitle="Message" %}
 
-{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
-{% from "wmnds/components/message/help/_help.njk" import wmndsMsgHelp %}
+{% from "tfwmds/components/message/summary/_summary.njk" import tfwmdsMsgSummary %}
+{% from "tfwmds/components/message/help/_help.njk" import tfwmdsMsgHelp %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 
 {% block content %}
@@ -31,16 +31,16 @@
 {% endmarkdown %}
 {{
   compExample([
-    wmndsMsgSummary({
+    tfwmdsMsgSummary({
       type: 'info',
       title: 'Information about XXXXXXXXX was successfully updated!',
       contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum text.'
     })
   ],
   {
-    componentPath: "wmnds/components/message/summary/",
+    componentPath: "tfwmds/components/message/summary/",
     njk: true,
-    njkProps: wmndsMsgSummaryProps,
+    njkProps: tfwmdsMsgSummaryProps,
     js: false,
     iframe: false
   })
@@ -56,16 +56,16 @@
 {% endmarkdown %}
 {{
   compExample([
-    wmndsMsgSummary({
+    tfwmdsMsgSummary({
       type: 'success',
       title: 'Success confirmation',
       contentText: 'Details added if needed to confirm action.'
     })
   ],
   {
-    componentPath: "wmnds/components/message/summary/",
+    componentPath: "tfwmds/components/message/summary/",
     njk: true,
-    njkProps: wmndsMsgSummaryProps,
+    njkProps: tfwmdsMsgSummaryProps,
     js: false,
     iframe: false
   })
@@ -82,16 +82,16 @@
 
 {{
   compExample([
-    wmndsMsgSummary({
+    tfwmdsMsgSummary({
       type: 'success-fill',
       title: 'Success confirmation',
       contentText: 'Details added if needed to confirm action.'
     })
   ],
   {
-    componentPath: "wmnds/components/message/summary/",
+    componentPath: "tfwmds/components/message/summary/",
     njk: true,
-    njkProps: wmndsMsgSummaryProps,
+    njkProps: tfwmdsMsgSummaryProps,
     js: false,
     iframe: false
   })
@@ -108,16 +108,16 @@
 
 {{
   compExample([
-    wmndsMsgSummary({
+    tfwmdsMsgSummary({
       type: 'warning',
       title: 'Warning message',
       contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
   ],
   {
-    componentPath: "wmnds/components/message/summary/",
+    componentPath: "tfwmds/components/message/summary/",
     njk: true,
-    njkProps: wmndsMsgSummaryProps,
+    njkProps: tfwmdsMsgSummaryProps,
     js: false,
     iframe: false
   })
@@ -134,16 +134,16 @@
 
 {{
   compExample([
-    wmndsMsgSummary({
+    tfwmdsMsgSummary({
       type: 'error',
       title: 'Error message',
       contentText: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
   ],
   {
-    componentPath: "wmnds/components/message/summary/",
+    componentPath: "tfwmds/components/message/summary/",
     njk: true,
-    njkProps: wmndsMsgSummaryProps,
+    njkProps: tfwmdsMsgSummaryProps,
     js: false,
     iframe: false
   })
@@ -169,7 +169,7 @@
 
 {{
   compExample([
-    wmndsMsgSummary({
+    tfwmdsMsgSummary({
       type: 'info',
       title: 'Information about XXXXXXXXX was successfully updated!',
       dismissable: true,
@@ -177,9 +177,9 @@
     })
   ],
   {
-    componentPath: "wmnds/components/message/summary/",
+    componentPath: "tfwmds/components/message/summary/",
     njk: true,
-    njkProps: wmndsMsgSummaryProps,
+    njkProps: tfwmdsMsgSummaryProps,
     js: false,
     iframe: false
   })
@@ -201,14 +201,14 @@
 
 {{ compExample
   ([
-    wmndsMsgHelp({
+    tfwmdsMsgHelp({
       contentHTML: 'Details added what happened and what to do next. Lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum.'
     })
   ],
   {
-    componentPath: "wmnds/components/message/help/",
+    componentPath: "tfwmds/components/message/help/",
     njk: true,
-    njkProps: wmndsMsgHelpProps,
+    njkProps: tfwmdsMsgHelpProps,
     js: false,
     iframe: false
   })
