@@ -3,7 +3,7 @@
   color: $white;
   background-color: get-color(primary);
 
-  *:not(a):not(button) {
+  *:not(.wmnds-btn) {
     color: inherit;
   }
 
@@ -22,6 +22,7 @@
     svg {
       width: 1em;
       height: 1em;
+      color: inherit;
       fill: currentColor;
       vertical-align: text-top;
     }
