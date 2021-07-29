@@ -1,97 +1,4 @@
 // Get rid of margin for the first header item in main content
-
-[class*="wmnds-"] {
-  h1,
-  h1[class*="wmnds-col"],
-  h2,
-  h2[class*="wmnds-col"],
-  h3,
-  h3[class*="wmnds-col"],
-  h4,
-  h4[class*="wmnds-col"] {
-    font-family: $x-heading-font-family;
-  }
-}
-
-.wmnds-h1[class*="wmnds-col"],
-.wmnds-h1,
-.wmnds-h2[class*="wmnds-col"],
-.wmnds-h2,
-.wmnds-h3[class*="wmnds-col"],
-.wmnds-h3,
-.wmnds-h4[class*="wmnds-col"],
-.wmnds-h4 {
-  font-family: $x-heading-font-family;
-}
-
-[class*="wmnds-"] h1,
-.wmnds-h1 {
-  color: get-color(primary);
-  @include type-setting(1, 0.85);
-  // On desktop devices
-  @media all and (min-width: $breakpoint-md) {
-    @include type-setting(1);
-  }
-}
-
-[class*="wmnds-"] h2,
-[class*="wmnds-"].wmnds-h2 {
-  color: get-color(primary);
-  @include type-setting(2, 0.85);
-  font-weight: bold;
-  // On desktop devices
-  @media all and (min-width: $breakpoint-md) {
-    @include type-setting(2);
-  }
-}
-
-[class*="wmnds-"] h3,
-[class*="wmnds-"].wmnds-h3 {
-  color: inherit;
-  @include type-setting(3);
-  font-weight: bold;
-}
-
-[class*="wmnds-"] h4,
-[class*="wmnds-"].wmnds-h4 {
-  color: inherit;
-  @include type-setting(4);
-  font-weight: bold;
-
-  &.wmnds-weight-400 {
-    font-weight: normal;
-  }
-}
-
-[class*="wmnds-"] h5,
-[class*="wmnds-"].wmnds-h5 {
-  @include type-setting(5);
-  font-weight: bold;
-}
-
-[class*="wmnds-"] h6,
-[class*="wmnds-"].wmnds-h6 {
-  @include type-setting(5);
-  font-weight: normal;
-}
-
-[class*="wmnds-"].wmnds-h2 > *,
-[class*="wmnds-"].wmnds-h3 > *,
-[class*="wmnds-"].wmnds-h4 > *,
-[class*="wmnds-"].wmnds-h5 > * {
-  color: initial;
-  font-weight: initial;
-}
-
-[class*="wmnds-"] * {
-  h1:first-child,
-  h2:first-child,
-  h3:first-child,
-  h4:first-child {
-    margin-top: 0;
-  }
-}
-
 [class*="wmnds-"] {
   div,
   span,
@@ -122,5 +29,97 @@
 
   sub {
     bottom: -0.25em;
+  }
+
+  // Set heading font for heading elements
+  h1,
+  h1[class*="wmnds-col"],
+  h2,
+  h2[class*="wmnds-col"],
+  h3,
+  h3[class*="wmnds-col"],
+  h4,
+  h4[class*="wmnds-col"] {
+    font-family: $x-heading-font-family;
+  }
+
+  h1,
+  &.wmnds-h1 {
+    color: get-color(primary);
+    @include type-setting(1, 0.85);
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(1);
+    }
+  }
+
+  h2,
+  &.wmnds-h2 {
+    color: get-color(primary);
+    @include type-setting(2, 0.85);
+    font-weight: bold;
+    // On desktop devices
+    @media all and (min-width: $breakpoint-md) {
+      @include type-setting(2);
+    }
+  }
+
+  h3,
+  &.wmnds-h3 {
+    color: inherit;
+    @include type-setting(3);
+    font-weight: bold;
+  }
+
+  h4,
+  &.wmnds-h4 {
+    color: inherit;
+    @include type-setting(4);
+    font-weight: bold;
+
+    &.wmnds-weight-400 {
+      font-weight: normal;
+    }
+  }
+
+  h5,
+  &.wmnds-h5 {
+    @include type-setting(5);
+    font-weight: bold;
+  }
+
+  h6,
+  &.wmnds-h6 {
+    @include type-setting(5);
+    font-weight: normal;
+  }
+
+  &.wmnds-h2 > *,
+  &.wmnds-h3 > *,
+  &.wmnds-h4 > *,
+  &.wmnds-h5 > * {
+    color: initial;
+    font-weight: initial;
+  }
+}
+
+// Set heading font for heading elements
+.wmnds-h1[class*="wmnds-col"],
+.wmnds-h1,
+.wmnds-h2[class*="wmnds-col"],
+.wmnds-h2,
+.wmnds-h3[class*="wmnds-col"],
+.wmnds-h3,
+.wmnds-h4[class*="wmnds-col"],
+.wmnds-h4 {
+  font-family: $x-heading-font-family;
+}
+
+* {
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child {
+    margin-top: 0;
   }
 }
