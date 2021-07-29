@@ -201,6 +201,7 @@ $header-height-mobile: 4rem;
   &__search-close-icon {
     width: 1.5rem;
     height: 1.5rem;
+    color: $white;
     fill: currentColor;
   }
 
@@ -645,6 +646,7 @@ $header-height-mobile: 4rem;
       width: 1em;
       height: 1em;
       transform: translateY(-50%);
+      color: inherit;
       fill: currentColor;
     }
 
@@ -714,6 +716,7 @@ $header-height-mobile: 4rem;
 
     &__item {
       display: block;
+      margin-bottom: $size-xsm;
       list-style: none;
     }
   }
@@ -778,6 +781,7 @@ $header-height-mobile: 4rem;
   height: 1.35em;
   margin-right: 0.25em;
   margin-left: 0.15em;
+  color: inherit;
   fill: currentColor;
   line-height: 1.5rem;
   vertical-align: top;
