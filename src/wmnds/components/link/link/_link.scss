@@ -1,8 +1,9 @@
 // Included the a tag too incase dev forgets to add .wmnds-link class.
 // The a:not([class*="wmnds-"]) line makes sure we don't target any wmnds components that are using the a tag such as a button as a link
 // The a[class*="wmnds-col-"] line is to orrived the above not line, as a wmnds-col tag as an 'a' is fine to treat as normal tag
-.wmnds-link {
-  @at-root a:not([class*="wmnds-"]),
+
+&.wmnds-link {
+  @at-root [class*="wmnds-"] a:not([class*="wmnds-"]),
   & {
     color: get-color(cta, 10, dark);
     font-weight: bold;

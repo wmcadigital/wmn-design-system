@@ -18,9 +18,10 @@
         }) | trim | indent(4)
     }}
     <div class="wmnds-file-download__desc">
-        {{    
+        {{
             wmndsLink({
                 contentText: downloadLinkText,
+                classes: "wmnds-file-download__link",
                 download: fileName|replace(' ', '_') + '.' + fileType|lower,
                 link: "#"
             })
