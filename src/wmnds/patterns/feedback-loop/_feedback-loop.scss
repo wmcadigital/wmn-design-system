@@ -1,4 +1,4 @@
-&.wmnds-feedback-loop {
+.wmnds-feedback-loop {
   // Add full-width blue border on desktop large display
   @media all and(min-width: $breakpoint-xl) {
     border-bottom: $size-sm solid get-color(cta);
@@ -20,7 +20,6 @@
   // A bite more spacing on mobile
   &__useful {
     margin-bottom: $size-md;
-    color: $white;
   }
 
   &__form {

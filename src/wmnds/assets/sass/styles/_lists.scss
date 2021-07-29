@@ -2,8 +2,8 @@
 // Included the ol tag too incase dev forgets to add .wmnds-ordered-list class.
 // The ol:not([class*="wmnds-"]) line makes sure we don't target any wmnds components that are using the a tag such as the breadcrumbs
 
-[class*="wmnds-"].wmnds-ordered-list,
-[class*="wmnds-"] ol:not([class*="wmnds-"]) {
+.wmnds-ordered-list,
+.wmnds-html ol:not([class*="wmnds-"]) {
   position: relative;
   counter-reset: item;
   padding-inline-start: $size-lg;
@@ -28,8 +28,7 @@
     line-height: 1.5rem;
   }
 
-  & > li,
-  ol > li {
+  & > li {
     display: block;
     position: relative;
     margin-bottom: $size-xsm;
@@ -59,8 +58,8 @@
 // Included the ol tag too incase dev forgets to add .wmnds-unordered-list class.
 // The ul:not([class*="wmnds-"]) line makes sure we don't target any wmnds components that are using the a tag such as the breadcrumbs
 
-[class*="wmnds-"].wmnds-unordered-list,
-[class*="wmnds-"] ul:not([class*="wmnds-"]) {
+.wmnds-unordered-list,
+.wmnds-html ul:not([class*="wmnds-"]) {
   list-style: none;
   padding-inline-start: $size-lg;
 
@@ -84,8 +83,7 @@
     @include type-setting(0);
   }
 
-  & > li,
-  ul > li {
+  & > li {
     position: relative;
     margin-bottom: $size-xsm;
 

@@ -1,8 +1,7 @@
-&.wmnds-disruption-indicator-small {
+.wmnds-disruption-indicator-small {
   display: inline-block;
   padding: $size-xs;
   border-radius: 2px;
-  color: $white;
   background-color: get-color(warning);
   line-height: 1;
 

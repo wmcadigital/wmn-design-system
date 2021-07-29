@@ -1,4 +1,4 @@
-&.wmnds-file-download {
+.wmnds-file-download {
   display: block;
   align-items: center;
 
@@ -21,7 +21,7 @@
     vertical-align: middle;
   }
 
-  &__warning[class*="wmnds-"] {
+  &__warning {
     margin: $size-xsm 0 0;
   }
 }
