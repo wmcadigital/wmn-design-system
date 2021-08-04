@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.0...v2.0.1) (2021-08-04)
+
+
+### Bug Fixes
+
+* Added new "main" branch name to package json ([#865](https://github.com/wmcadigital/wmn-design-system/issues/865)) ([68f452d](https://github.com/wmcadigital/wmn-design-system/commit/68f452d7e48fb578c0c6d93a1b5161a89721b880))
+* Updated github actions to use new branch names ([#863](https://github.com/wmcadigital/wmn-design-system/issues/863)) ([e61a75f](https://github.com/wmcadigital/wmn-design-system/commit/e61a75fee188f5087031ebacd83a699e0bc828e4))
+
 # [2.0.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.8.0...v2.0.0) (2021-07-29)
 
 
