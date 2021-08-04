@@ -3,14 +3,14 @@ name: 'Lint PR title'
 on:
   pull_request:
     branches:
-      - release
+      - next-release
     types: [opened, edited, synchronize]
 
 jobs:
   lint:
     name: Linting PR title
     runs-on: ubuntu-latest
-    if: "startsWith(github.base_ref, 'release')"
+    if: "startsWith(github.base_ref, 'next-release')"
     steps:
       - uses: amannn/action-semantic-pull-request@v1.2.0
         env:
