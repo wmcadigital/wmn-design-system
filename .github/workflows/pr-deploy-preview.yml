@@ -30,7 +30,7 @@ jobs:
         uses: nwtgck/actions-netlify@v1.1.11
         with:
           publish-dir: './build'
-          production-branch: master
+          production-branch: main
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: 'PR #${{ github.event.number }}'
