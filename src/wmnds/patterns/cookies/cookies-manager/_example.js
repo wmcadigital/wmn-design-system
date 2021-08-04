@@ -16,11 +16,13 @@ const cookiesJS = () => {
 
   // Set cookie based on name, value and expiry date supplied
   const setCookie = (cname, cvalue, exdays) => {
+    const env = process.env.NODE_ENV || 'developement';
+
     const cookieDomain = setCookieDomain();
     const d = new Date();
     d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
     const expires = `expires=${d.toUTCString()}`;
-    const domain = `domain=.${cookieDomain}`;
+    const domain = env === 'development' ? 'domain=localhost' : `domain=.${cookieDomain}`;
     document.cookie = `${cname}=${cvalue};${expires};${domain};path=/`;
   };
 
@@ -126,6 +128,8 @@ const cookiesJS = () => {
     if (!checkCookie('cookies-preference')) {
       showCookieBanner();
       setCookiePolicy(true, false, false);
+
+      console.log(getCookiePolicy().functional);
     }
 
     // verify if we are at Cookies Manager page and update the selected options to match the already created cookie
