@@ -25,7 +25,7 @@ textarea,
   -ms-flex-line-pack: start;
   align-content: flex-start;
 
-  [class*="wmnds-col-"] {
+  & > [class*="wmnds-col-"] {
     display: inline-block;
     zoom: 1;
     letter-spacing: normal;
