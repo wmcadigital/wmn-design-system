@@ -6,10 +6,99 @@
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
 {% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
+{% from "wmnds/components/file-download/_file-download.njk" import wmndsFileDownload %}
 
-
-<div>
-    Timetable
+<div class="wmnds-p-lg wmnds-bg-white">
+    <p class="wmnds-h4 wmnds-m-b-md wmnds-m-t-none">Stourbridge - Wolverhampton via Kingswinford</p>
+    {{
+        wmndsWarningText({
+            contentText: "This is the latest timetable (last updated 2 July 2021)",
+            icon: 'general-info'
+        })
+    }}
+    <p class="wmnds-h4 wmnds-m-b-md">Select day of the week</p>
+    <div class="wmnds-grid wmnds-grid--spacing-3-md">
+        <div class="wmnds-col-auto">
+            {{
+                wmndsButton({
+                    contentText: "Monday to Friday",
+                    type: "secondary",
+                    isActive: true
+                })
+            }}
+        </div>
+        <div class="wmnds-col-auto">
+            {{
+                wmndsButton({
+                    contentText: "Saturday",
+                    type: "secondary"
+                })
+            }}
+        </div>
+        <div class="wmnds-col-auto">
+            {{
+                wmndsButton({
+                    contentText: "Sunday",
+                    type: "secondary"
+                })
+            }}
+        </div>
+    </div>
+    <h4>Select a departure time</h4>
+    <p>Show the route from this stop at the departure time</p>
+    <div class="wmnds-timetable">
+        {% for i in range(0, 14) %}
+        <div class="wmnds-timetable__time">
+            {{
+                wmndsButton({
+                    contentText: ((i + 10) * 100 + 10),
+                    classes: "wmnds-timetable__time-toggle",
+                    type: "secondary"
+                })
+            }}
+            <div class="wmnds-timetable__time-details">
+                <div class="wmnds-timetable__time-details-content">
+                    {{
+                        wmndsButton({
+                            contentText: "Close",
+                            classes: "wmnds-timetable__time-close",
+                            type: "link",
+                            iconRight: "general-cross"
+                        })
+                    }}
+                    <ul class="wmnds-timetable__route wmnds-timetable__route">
+                        {% for j in range(0, 8) %}
+                        <li class="wmnds-timetable__route-item">
+                            <strong class="wmnds-timetable__route-item-time">{{(((i + 10) * 100 + 10) + (j * 3))}}</strong>
+                            <a href="#">Stop {{j + 1}}</a>
+                        </li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {%- endfor %}
+    </div>
+    <div class="wmnds-grid wmnds-grid--justify-between wmnds-m-t-md">
+        <div class="wmnds-col-2-3">
+            {{
+                wmndsFileDownload({
+                    fileType: "pdf",
+                    downloadLinkText: "Download ‘Full Timetable’ (PDF)",
+                    accessible: true
+                })
+            }}
+        </div>
+        <div class="wmnds-col-auto">
+            {{
+                wmndsButton({
+                    contentText: "View full route",
+                    type: "primary"
+                })
+            }}
+        </div>
+    </div>
 </div>
 
 

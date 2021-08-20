@@ -7,6 +7,7 @@ import headerJs from '../wmnds/patterns/header-v2/_example';
 import footerJs from '../wmnds/patterns/footer/_example';
 import accordionsJS from '../wmnds/components/accordion/_example';
 import travelUpdatesWidgetJs from '../wmnds/patterns/travel-updates/_example';
+import timetableJs from '../wmnds/patterns/timetable/_example';
 import searchFilterJs from '../wmnds/patterns/search/search-filter/_example';
 import feedbackLoopsJS from '../wmnds/patterns/feedback-loop/_example';
 import nIcons from '../wmnds/components/icon/n-icon/_example';
@@ -46,6 +47,7 @@ window.addEventListener(
   cookies(),
   feedbackLoopsJS(),
   travelUpdatesWidgetJs(),
+  timetableJs(),
   searchFilterJs(),
   componentExampleIframe(),
   componentExample)

@@ -1,22 +1,114 @@
-&.wmnds-find-a-timetable-widget {
-  &__services {
-    display: none;
+$trs: 0.5s;
+
+.wmnds-timetable {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  &__time {
+    width: calc(100% / 6 - ((1rem * 5) / 6));
+    margin-bottom: 1rem;
+    justify-self: start;
+
+    &:not(:nth-child(6n + 1)) {
+      margin-left: 1rem;
+    }
   }
 
-  &.wmnds-is--open {
-    .wmnds-find-a-timetable-widget__services {
+  &__time-toggle {
+    display: block;
+    width: 100%;
+
+    &.wmnds-is--active {
+      margin-bottom: 1rem;
+
+      & + .wmnds-timetable__time-details {
+        visibility: visible;
+        max-height: none;
+        transition: max-height $trs ease;
+      }
+    }
+  }
+
+  &__time-close {
+    position: absolute;
+    z-index: 10;
+    top: $size-sm;
+    right: 0;
+
+    .wmnds-btn__icon {
+      fill: get-color(primary);
+    }
+  }
+
+  &__time-details {
+    visibility: hidden;
+    max-height: 0;
+  }
+
+  &__time-details-content {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid get-color(text);
+    border-bottom: 1px solid get-color(text);
+  }
+
+  &__route {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__route-item {
+    position: relative;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 2.5rem;
+    overflow: hidden;
+    list-style: none;
+
+    &::before {
+      content: "";
       display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      margin-top: -0.5rem;
+      border-radius: 50%;
+      background-color: get-color(secondary);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0.5rem;
+      height: 100%;
+      margin-left: -1px;
+      border-left: 2px solid get-color(secondary);
+    }
+
+    &:first-child {
+      &::after {
+        top: 50%;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        top: auto;
+        bottom: 50%;
+      }
     }
   }
 
-  &__mode-checkbox {
-    &:focus + .wmnds-btn--mode {
-      background-color: $white;
-      box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
-    }
-
-    &:checked + .wmnds-btn--mode {
-      background-color: get-color(secondary, 50);
-    }
+  &__route-item-time {
+    margin-right: 1.5rem;
   }
 }
