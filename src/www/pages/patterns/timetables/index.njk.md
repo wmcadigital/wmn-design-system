@@ -21,13 +21,13 @@
 
 - Selecting a departure time will display the full route of the bus or tram service from that time
 - Users can choose a day of the week, including bank holidays
-- The <a href="https://designsystem.tfwm.org.uk/components/warning-text/">Warning text</a> component informs users when the timetable was last updated and if there is an upcoming change to the timetable
+- The <a href="/components/warning-text/">Warning text</a> component informs users when the timetable was last updated and if there is an upcoming change to the timetable
 - Users can download a PDF file of the timetable
 - Users can see the service route page for a bus or tram by selecting the ‘View full route’ button
 
 {% endmarkdown %}
 
-{% from "wmnds/patterns/timetable/_bus-tram-timetable.njk" import wmndsBusAndTramTimetable %}
+{% from "wmnds/patterns/timetable/bus-and-tram/_bus-tram-timetable.njk" import wmndsBusAndTramTimetable %}
 {{
     compExample([
         wmndsBusAndTramTimetable()
@@ -78,4 +78,12 @@ Results
 - Users can view bus or tram stop pages by selecting the link
 
 {% endmarkdown %}
+
+{% from "wmnds/patterns/timetable/bus-and-tram-route/_bus-tram-route.njk" import wmndsBusAndTramRoute %}
+{{
+    compExample([
+        wmndsBusAndTramRoute()
+    ])
+}}
+
 {% endblock %}

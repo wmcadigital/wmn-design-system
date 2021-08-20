@@ -80,7 +80,7 @@ $trs: 0.5s;
       height: 1rem;
       margin-top: -0.5rem;
       border-radius: 50%;
-      background-color: get-color(secondary);
+      background-color: get-color(information);
     }
 
     &::after {
@@ -91,7 +91,7 @@ $trs: 0.5s;
       left: 0.5rem;
       height: 100%;
       margin-left: -1px;
-      border-left: 2px solid get-color(secondary);
+      border-left: 2px solid get-color(information);
     }
 
     &:first-child {

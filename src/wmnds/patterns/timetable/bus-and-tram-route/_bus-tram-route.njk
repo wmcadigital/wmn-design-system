@@ -1,0 +1,14 @@
+{% macro wmndsBusAndTramRoute(params) %}
+
+<div class="wmnds-p-lg wmnds-bg-white">
+    <ul class="wmnds-timetable__route">
+        {% for j in range(0, 8) %}
+        <li class="wmnds-timetable__route-item">
+            <a href="#">Stop {{j + 1}}</a>
+        </li>
+        {%- endfor %}
+    </ul>
+</div>
+
+
+{% endmacro %}
