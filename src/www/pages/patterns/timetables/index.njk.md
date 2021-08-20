@@ -21,7 +21,7 @@
 
 - Selecting a departure time will display the full route of the bus or tram service from that time
 - Users can choose a day of the week, including bank holidays
-- The <a href="">Warning text</a> component informs users when the timetable was last updated and if there is an upcoming change to the timetable
+- The <a href="https://designsystem.tfwm.org.uk/components/warning-text/">Warning text</a> component informs users when the timetable was last updated and if there is an upcoming change to the timetable
 - Users can download a PDF file of the timetable
 - Users can see the service route page for a bus or tram by selecting the ‘View full route’ button
 
@@ -34,4 +34,48 @@
     ])
 }}
 
+{% markdown %}
+
+## Train
+
+<h3>What does it do?</h3>
+
+- Directs users to the train operator(s) website so they can view full timetables
+- Helps users to find which train operator(s) run services between two rail stations
+
+<h3>When to use it?</h3>
+
+-On a train station page
+
+<h3>How it works?</h3>
+
+- Users enter their departure and arrival station
+- The results will tell users which operator(s) run services between the two rail stations and link them to the train operator(s) homepage
+
+<h4>Default</h4>
+
+{% endmarkdown %}
+
+[show default train timetable search]
+
+Results
+[show train timetable search results]
+{% markdown %}
+
+## Bus and tram route
+
+<h3>What does it do?</h3>
+
+- Shows the full route for a bus or tram service
+
+<h3>When to use it?</h3>
+
+- On a bus service route page
+- On a tram service route page
+
+<h3>How it works?</h3>
+
+- Users can view bus or tram stop pages by selecting the link
+
+{% endmarkdown %}
 {% endblock %}
