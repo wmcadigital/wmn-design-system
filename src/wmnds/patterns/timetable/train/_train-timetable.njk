@@ -1,0 +1,37 @@
+{% macro wmndsTrainTimetable(params) %}
+
+{# Imports of components #}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
+
+<div class="wmnds-p-lg wmnds-bg-white">
+    <p>You can find full train timetables on the train company’s website. To find which train company runs your service, enter the stations you’ll travel between.</p>
+    <div class="wmnds-col-md-3-4 wmnds-m-b-md">
+        {{
+            wmndsAutocomplete({
+                id: 'trainTimetableFrom_' + params.id,
+                label: {contentText: 'From:', classes: 'wmnds-h4 wmnds-m-t-none'},
+                placeholder: 'Search for a rail station'
+            })
+        }}
+    </div>
+    <div class="wmnds-col-md-3-4 wmnds-m-b-md">
+        {{
+            wmndsAutocomplete({
+                id: 'trainTimetableTo_' + params.id,
+                label: {contentText: 'To:', classes: 'wmnds-h4 wmnds-m-t-none'},
+                placeholder: 'Search for a rail station'
+            })
+        }}
+    </div>
+    {% if params.showResults %}
+        {{
+            wmndsInsetText({
+                contentHTML: "<p><a href='#'>West Midlands Railway</a> and <a href='#'>Chiltern Railways</a> run trains between Birmingham Moor Street and Leamington Spa. Visit their website to view timetables.</p><p class='wmnds-m-b-none'>If you do not know which of these train company’s you travel with, <a href='#'>plan a journey</a>.</p>"
+            })
+        }}
+    {% endif %}
+</div>
+
+
+{% endmacro %}

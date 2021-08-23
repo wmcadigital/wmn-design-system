@@ -52,14 +52,28 @@
 - Users enter their departure and arrival station
 - The results will tell users which operator(s) run services between the two rail stations and link them to the train operator(s) homepage
 
-<h4>Default</h4>
-
 {% endmarkdown %}
 
-[show default train timetable search]
+<h4>Default</h4>
 
-Results
-[show train timetable search results]
+{% from "wmnds/patterns/timetable/train/_train-timetable.njk" import wmndsTrainTimetable %}
+{{
+    compExample([
+        wmndsTrainTimetable()
+    ])
+}}
+
+<h4>Results</h4>
+
+{{
+    compExample([
+        wmndsTrainTimetable({
+            id: 'resultsExample',
+            showResults: true
+        })
+    ])
+}}
+
 {% markdown %}
 
 ## Bus and tram route
