@@ -45,7 +45,7 @@
 
 <h3>When to use it?</h3>
 
--On a train station page
+- On a train station page
 
 <h3>How it works?</h3>
 
