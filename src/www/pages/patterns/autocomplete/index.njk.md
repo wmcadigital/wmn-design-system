@@ -54,7 +54,13 @@ Notice that there is also a <code class="wmnds-website-inline-code">wmnds-loader
       id: "autoComplete",
       query: ''
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/autocomplete/",
+      njk: true,
+      njkProps: wmndsAutocompleteProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% markdown %}
@@ -84,7 +90,13 @@ Below is an example of how the autocomplete looks when a user has typed in 'My q
       query: 'My query',
       loading: true
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/autocomplete/",
+      njk: true,
+      njkProps: wmndsAutocompleteProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% markdown %}
@@ -117,7 +129,13 @@ The most commonly used suggestions will be displayed as text only.
       textSuggestions: true,
       query: 'My query'
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/autocomplete/",
+      njk: true,
+      njkProps: wmndsAutocompleteProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% markdown %}
@@ -139,7 +157,13 @@ As you can see from the code snippet, the main <code class="wmnds-website-inline
       showSuggestions: true,
       query: 'x15'
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/autocomplete/",
+      njk: true,
+      njkProps: wmndsAutocompleteProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% markdown %}
@@ -176,7 +200,13 @@ This state confirms the users selection from the dropdown list of suggestions.
       selected: true,
       selectedItem: 'Oldbury to Dudley'
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/autocomplete/",
+      njk: true,
+      njkProps: wmndsAutocompleteProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% endblock %}
