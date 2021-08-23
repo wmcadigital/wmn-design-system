@@ -179,7 +179,7 @@ As long as you have the ul element with the class <code class="wmnds-website-inl
 {% markdown %}
 {# Selected state #}
 
-### Selected state
+## Selected state
 
 The final state of the autocomplete is selecting a suggestion.
 

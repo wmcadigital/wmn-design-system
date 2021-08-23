@@ -27,14 +27,14 @@
 
 {% if params.selected %}
 <div
-    class="wmnds-autocomplete__selected wmnds-grid wmnds-grid--justify-between wmnds-m-t-xs wmnds-m-b-md"
+    class="wmnds-autocomplete__selected-item wmnds-grid wmnds-grid--justify-between wmnds-m-t-xs wmnds-m-b-md"
   >
-    <strong class="wmnds-col-auto wmnds-autocomplete__selected-summary">{{selectedItem}}</strong>
-    <button type="button" class="wmnds-autocomplete__close">
+    <strong class="wmnds-col-auto wmnds-autocomplete__selected-item-summary">{{selectedItem}}</strong>
+    <button type="button" class="wmnds-autocomplete__selected-item-close">
       {{
         wmndsIcon({
           icon: 'general-cross',
-          class: 'wmnds-autocomplete__close-icon'
+          class: 'wmnds-autocomplete__selected-item-close-icon'
         })
       }}
     </button>
