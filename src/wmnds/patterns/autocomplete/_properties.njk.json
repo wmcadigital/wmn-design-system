@@ -1,0 +1,39 @@
+{
+  "wmndsAutocompleteProps": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> String of text used for the search in the autocomplete."
+    },
+    {
+      "name": "query",
+      "type": "string",
+      "description": "String of text used for the search in the autocomplete."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Text used for the placeholder in the autocomplete input."
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "description": "If true, loading spinner will be visible in the autocomplete."
+    },
+    {
+      "name": "isRequired",
+      "type": "boolean",
+      "description": "Indictes whether an autocomplete response is required"
+    },
+    {
+      "name": "selected",
+      "type": "boolean",
+      "description": "If true, the autocomplete will display in the selected state"
+    },
+    {
+      "name": "selectedItem",
+      "type": "string",
+      "description": "Text to show in the selected state if <code class='wmnds-website-inline-code'>selected</code> is <code class='wmnds-website-inline-code'>true</code>"
+    }
+  ]
+}
