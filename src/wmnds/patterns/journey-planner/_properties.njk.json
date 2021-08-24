@@ -1,19 +1,14 @@
 {
   "wmndsJourneyPlannerProps": [
     {
+      "name": "formTitle",
+      "type": "string",
+      "description": "If empty, form title will be 'Plan your journey' as default."
+    },
+    {
       "name": "isOpen",
       "type": "boolean",
       "description": "If true, journey planner will be expanded. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-    },
-    {
-      "name": "isWhenOpen",
-      "type": "boolean",
-      "description": "If true, journey planner area to define when you want to travel will be expanded. Defaults to <code class='wmnds-website-inline-code'>false</code>."
-    },
-    {
-      "name": "isHowOpen",
-      "type": "boolean",
-      "description": "If true, journey planner area to define how (the mode of travel) do you want to travel will be expanded. Defaults to <code class='wmnds-website-inline-code'>false</code>."
     }
   ]
 }

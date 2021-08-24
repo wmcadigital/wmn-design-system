@@ -7,7 +7,6 @@
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 {% from "wmnds/components/form-elements/dropdown/_dropdown.njk" import wmndsDropdown %}
-{% from "wmnds/components/message/summary/_summary.njk" import wmndsMsgSummary %}
 
 
 {# Set params #}
@@ -29,13 +28,13 @@
 
                 <h2>{{formTitle}}</h2>
 
-                <form class="wmnds-journey-planner-widget__form" action="//journeyplanner.wmnetwork.co.uk/Home/HandleWidgetQuery" method="GET" name="planYourJourneySmallForm">
-                    
+                <form class="wmnds-journey-planner-widget__form" action="//journeyplanner.networkwestmidlands.com/Home/HandleWidgetQuery" method="GET" name="jphome"> 
+
                     <div class="wmnds-journey-planner-widget__from wmnds-m-b-md">
                         {{
                             wmndsAutocomplete({
                                 id: ("from" + suffix + leaveSuffix + modeSuffix),
-                                name: "origin",
+                                name: "Origin",
                                 label: {
                                     contentText: 'From'
                                 },
@@ -69,7 +68,7 @@
                         {{
                             wmndsAutocomplete({
                                 id: ("to" + suffix + leaveSuffix + modeSuffix),
-                                name: "destination",
+                                name: "Destination",
                                 label: {
                                     contentText: 'To'
                                 },
@@ -111,7 +110,7 @@
                             </div>
 
                             <h4>Leave</h4>
-                            <input type="hidden" name="journeyTimeType" value="leave" aria-label="leave"/>
+                            <input type="hidden" name="journeyTimeType" value="Leaving" aria-label="leave"/>
 
                             {{
                                 wmndsDropdown({
@@ -150,7 +149,7 @@
                             {{
                                 wmndsDropdown({
                                     id: ("time" + suffix + leaveSuffix + modeSuffix),
-                                    name: "SelectJourneyTime",
+                                    name: "SelectedJourneyTime",
                                     type: "time",
                                     describedBy: null,
                                     label: "Time",
@@ -209,7 +208,7 @@
                                     }}
                                 </div>
                                 <div class="wmnds-col-1-2">
-                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useTrain" checked aria-label="train"/>
+                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useTram" checked aria-label="Tram"/>
                                     {{
                                         wmndsButton({
                                             iconLeft: "modes-isolated-metro",
@@ -221,7 +220,7 @@
                                     }}
                                 </div>
                                 <div class="wmnds-col-1-2">
-                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useTram" checked aria-label="Tram"/>
+                                    <input type="checkbox" class="wmnds-screenreaders-only" name="useTrain" checked aria-label="Train"/>
                                     {{
                                         wmndsButton({
                                             iconLeft: "modes-isolated-rail",

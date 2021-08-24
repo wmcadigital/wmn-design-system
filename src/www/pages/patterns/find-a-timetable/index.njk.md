@@ -33,9 +33,9 @@
     ], {
       componentPath: "wmnds/patterns/find-a-timetable-widget/",
       njk: true,
-      njkProps: wmndsFindATimetableWidgetProps,
+      njkProps: wmndsFindATimetableProps,
       js: true,
-      iframe: false
+      iframe: true
     }
   )
 }} 
@@ -55,9 +55,9 @@
     ], {
       componentPath: "wmnds/patterns/find-a-timetable-widget/",
       njk: true,
-      njkProps: wmndsFindATimetableWidgetProps,
+      njkProps: wmndsFindATimetableProps,
       js: true,
-      iframe: false
+      iframe: true
     }
   )
 }}
