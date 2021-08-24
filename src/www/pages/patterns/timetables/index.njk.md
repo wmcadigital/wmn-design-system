@@ -31,7 +31,13 @@
 {{
     compExample([
         wmndsBusAndTramTimetable()
-    ])
+    ], {
+      componentPath: "wmnds/patterns/autocomplete/",
+      njk: true,
+      njkProps: wmndsAutocompleteProps,
+      js: false,
+      iframe: true
+    })
 }}
 
 {% markdown %}
