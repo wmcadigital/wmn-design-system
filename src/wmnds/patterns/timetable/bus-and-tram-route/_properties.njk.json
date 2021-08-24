@@ -1,9 +1,9 @@
 {
-  "wmndsTimetableProps": [
+  "wmndsBusAndTramRouteProps": [
     {
-      "name": "",
-      "type": "",
-      "description": ""
+      "name": "stops",
+      "type": "array",
+      "description": "List of stops to show for the route."
     }
   ]
 }

@@ -32,11 +32,11 @@
     compExample([
         wmndsBusAndTramTimetable()
     ], {
-      componentPath: "wmnds/patterns/autocomplete/",
-      njk: true,
-      njkProps: wmndsAutocompleteProps,
-      js: false,
-      iframe: true
+        componentPath: "wmnds/patterns/timetable/bus-and-tram/",
+        njk: true,
+        njkProps: wmndsBusAndTramTimetableProps,
+        js: false,
+        iframe: true
     })
 }}
 
@@ -62,11 +62,17 @@
 
 <h4>Default</h4>
 
-{% from "wmnds/patterns/timetable/train/_train-timetable.njk" import wmndsTrainTimetable %}
+{% from "wmnds/patterns/timetable/train-timetable/_train-timetable.njk" import wmndsTrainTimetable %}
 {{
     compExample([
         wmndsTrainTimetable()
-    ])
+    ], {
+        componentPath: "wmnds/patterns/timetable/train-timetable/",
+        njk: true,
+        njkProps: wmndsTrainTimetableProps,
+        js: false,
+        iframe: false
+    })
 }}
 
 <h4>Results</h4>
@@ -77,7 +83,13 @@
             id: 'resultsExample',
             showResults: true
         })
-    ])
+    ], {
+        componentPath: "wmnds/patterns/timetable/train-timetable/",
+        njk: true,
+        njkProps: wmndsTrainTimetableProps,
+        js: false,
+        iframe: false
+    })
 }}
 
 {% markdown %}
@@ -116,7 +128,13 @@
                 "Goldthorn Road (adj)"
             ]
         })
-    ])
+    ], {
+        componentPath: "wmnds/patterns/timetable/bus-and-tram-route/",
+        njk: true,
+        njkProps: wmndsBusAndTramRouteProps,
+        js: false,
+        iframe: false
+    })
 }}
 
 {% endblock %}

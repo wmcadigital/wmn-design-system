@@ -81,7 +81,7 @@
                         <ul class="wmnds-timetable__route">
                             {% for stop in time.route %}
                             <li class="wmnds-timetable__route-item">
-                                <strong class="wmnds-timetable__route-item-time">{{ stop.departureTime }}</strong>
+                                <strong class="wmnds-timetable__route-item-time">{{ stop.stopDepartureTime }}</strong>
                                 <a href="#">{{ stop.stopName }}</a>
                             </li>
                             {%- endfor %}

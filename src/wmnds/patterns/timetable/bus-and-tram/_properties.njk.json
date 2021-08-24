@@ -1,9 +1,31 @@
 {
-  "wmndsTimetableProps": [
+  "wmndsBusAndTramTimetableProps": [
     {
-      "name": "",
-      "type": "",
-      "description": ""
+      "name": "routeName",
+      "type": "string",
+      "description": "<strong>Required.</strong> The name of the bus or tram route."
+    },
+    {
+      "name": "lastUpdated",
+      "type": "string",
+      "description": "<strong>Required.</strong> Date the timetable was last updated."
+    },
+    {
+      "name": "departureTimes",
+      "type": "array",
+      "description": "Array of objects for departure times. See <code class='wmnds-website-inline-code'>departureTimes</code> below.",
+      "arrayOptions": [
+        {
+          "name": "departureTime",
+          "type": "string",
+          "description": "The start time for the route departure."
+        },
+        {
+          "name": "route",
+          "type": "array",
+          "description": "Array of objects for route stops. Accepted keys are: <code class='wmnds-website-inline-code'>stopDepartureTime</code> and <code class='wmnds-website-inline-code'>stopName</code>."
+        }
+      ]
     }
   ]
 }
