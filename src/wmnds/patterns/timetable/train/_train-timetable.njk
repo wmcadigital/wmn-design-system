@@ -4,23 +4,31 @@
 {% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 {% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
 
+{% set id = params.id if params.id else 'train_timetable'%}
+{% set selected = true if params.showResults else false %}
+{% set autocompleteItems = params.autocompleteItems if params.autocompleteItems else ['Birmingham Moor Street', 'Leamington Spa'] %}
+
 <div class="wmnds-p-lg wmnds-bg-white">
     <p>You can find full train timetables on the train company’s website. To find which train company runs your service, enter the stations you’ll travel between.</p>
     <div class="wmnds-col-md-3-4 wmnds-m-b-md">
         {{
             wmndsAutocomplete({
-                id: 'trainTimetableFrom_' + params.id,
+                id: 'trainTimetableFrom_' + id,
                 label: {contentText: 'From:', classes: 'wmnds-h4 wmnds-m-t-none'},
-                placeholder: 'Search for a rail station'
+                placeholder: 'Search for a rail station',
+                selected: selected,
+                selectedItem: autocompleteItems[0]
             })
         }}
     </div>
     <div class="wmnds-col-md-3-4 wmnds-m-b-md">
         {{
             wmndsAutocomplete({
-                id: 'trainTimetableTo_' + params.id,
+                id: 'trainTimetableTo_' + id,
                 label: {contentText: 'To:', classes: 'wmnds-h4 wmnds-m-t-none'},
-                placeholder: 'Search for a rail station'
+                placeholder: 'Search for a rail station',
+                selected: selected,
+                selectedItem: autocompleteItems[1]
             })
         }}
     </div>
