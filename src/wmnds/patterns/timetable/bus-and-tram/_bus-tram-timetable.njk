@@ -9,11 +9,16 @@
 {% from "wmnds/components/warning-text/_warning-text.njk" import wmndsWarningText %}
 {% from "wmnds/components/file-download/_file-download.njk" import wmndsFileDownload %}
 
+{% set routeName = params.routeName if params.routeName else "Stourbridge - Wolverhampton via Kingswinford" %}
+{% set lastUpdated = params.lastUpdated if params.lastUpdated else "2 July 2021" %}
+{% set departureTimes = params.departureTimes if params.departureTimes %}
+
+
 <div class="wmnds-p-lg wmnds-bg-white">
-    <p class="wmnds-h4 wmnds-m-b-md wmnds-m-t-none">Stourbridge - Wolverhampton via Kingswinford</p>
+    <p class="wmnds-h4 wmnds-m-b-md wmnds-m-t-none">{{ routeName }}</p>
     {{
         wmndsWarningText({
-            contentText: "This is the latest timetable (last updated 2 July 2021)",
+            contentText: "This is the latest timetable (last updated "+ lastUpdated +")",
             icon: 'general-info'
         })
     }}
@@ -53,37 +58,71 @@
     <h4>Select a departure time</h4>
     <p>Show the route from this stop at the departure time</p>
     <div class="wmnds-timetable">
-        {% for i in range(0, 14) %}
-        <div class="wmnds-timetable__time">
-            {{
-                wmndsButton({
-                    contentText: ((i + 10) * 100 + 10),
-                    classes: "wmnds-timetable__time-toggle",
-                    type: "secondary"
-                })
-            }}
-            <div class="wmnds-timetable__time-details">
-                <div class="wmnds-timetable__time-details-content">
-                    {{
-                        wmndsButton({
-                            contentText: "Close",
-                            classes: "wmnds-timetable__time-close",
-                            type: "link",
-                            iconRight: "general-cross"
-                        })
-                    }}
-                    <ul class="wmnds-timetable__route">
-                        {% for j in range(0, 8) %}
-                        <li class="wmnds-timetable__route-item">
-                            <strong class="wmnds-timetable__route-item-time">{{(((i + 10) * 100 + 10) + (j * 3))}}</strong>
-                            <a href="#">Stop {{j + 1}}</a>
-                        </li>
-                        {%- endfor %}
-                    </ul>
+        {% if departureTimes %}
+            {% for time in departureTimes %}
+            <div class="wmnds-timetable__time">
+                {{
+                    wmndsButton({
+                        contentText: time.departureTime,
+                        classes: "wmnds-timetable__time-toggle",
+                        type: "secondary"
+                    })
+                }}
+                <div class="wmnds-timetable__time-details">
+                    <div class="wmnds-timetable__time-details-content">
+                        {{
+                            wmndsButton({
+                                contentText: "Close",
+                                classes: "wmnds-timetable__time-close",
+                                type: "link",
+                                iconRight: "general-cross"
+                            })
+                        }}
+                        <ul class="wmnds-timetable__route">
+                            {% for stop in time.route %}
+                            <li class="wmnds-timetable__route-item">
+                                <strong class="wmnds-timetable__route-item-time">{{ stop.departureTime }}</strong>
+                                <a href="#">{{ stop.stopName }}</a>
+                            </li>
+                            {%- endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        {%- endfor %}
+            {%- endfor %}
+        {% else %}
+            {% for i in range(0, 14) %}
+            <div class="wmnds-timetable__time">
+                {{
+                    wmndsButton({
+                        contentText: ((i + 10) * 100 + 10),
+                        classes: "wmnds-timetable__time-toggle",
+                        type: "secondary"
+                    })
+                }}
+                <div class="wmnds-timetable__time-details">
+                    <div class="wmnds-timetable__time-details-content">
+                        {{
+                            wmndsButton({
+                                contentText: "Close",
+                                classes: "wmnds-timetable__time-close",
+                                type: "link",
+                                iconRight: "general-cross"
+                            })
+                        }}
+                        <ul class="wmnds-timetable__route">
+                            {% for j in range(0, 8) %}
+                            <li class="wmnds-timetable__route-item">
+                                <strong class="wmnds-timetable__route-item-time">{{(((i + 10) * 100 + 10) + (j * 3))}}</strong>
+                                <a href="#">Stop {{j + 1}}</a>
+                            </li>
+                            {%- endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {%- endfor %}
+        {%- endif %}
     </div>
     <div class="wmnds-grid wmnds-grid--justify-between wmnds-m-t-md">
         <div class="wmnds-col-1 wmnds-col-sm-2-3 wmnds-m-b-md">
