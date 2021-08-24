@@ -96,7 +96,20 @@
 {% from "wmnds/patterns/timetable/bus-and-tram-route/_bus-tram-route.njk" import wmndsBusAndTramRoute %}
 {{
     compExample([
-        wmndsBusAndTramRoute()
+        wmndsBusAndTramRoute({
+            stops: [
+                "Wolverhampton Bus Station (Stand L)",
+                "Thornley Street (Stop AV)",
+                "Art Gallery",
+                "Beatties (Stop BF)",
+                "Skinner Street",
+                "Salop Street (Stop CS)",
+                "Church Street (Stop CJ)",
+                "Lea Road (adj)",
+                "Blakenhall, Marston Road (after)",
+                "Goldthorn Road (adj)"
+            ]
+        })
     ])
 }}
 
