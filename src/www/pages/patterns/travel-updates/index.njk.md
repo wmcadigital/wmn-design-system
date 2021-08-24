@@ -19,6 +19,49 @@
 - It uses the small Disruption indicator component to show how severe the disruption is for a transport mode. The disruption service levels are severe, major, minor and good
 - Users can personalise the travel updates widget by adding a specific transport route. This is so users can access disruptions relevant to them straight from the homepage
 
+## Shareable Travel Updates Widget
+
+### How to use it?
+
+- Place the following snippet in your source code (where you want the widget to appear on the page) and you will be able to use TfWM travel widget on your website.
+
+```html
+<div data-widget-host="tfwm-travel-updates-widget"></div>
+<script src="//unpkg.com/tfwm-travel-updates-widget@1.2.0/build/static/js/build.min.js"></script>
+```
+
+- You will need to [inform us that you are going to use travel widget](https://forms.office.com/Pages/ResponsePage.aspx?id=RetZCK7xCk6e-ubWa7tnLz45Weo_RTVDpYxVYcrD8wxURUpCUUZZSVY3MDg4STkwNlAxUFhYTFVBMC4u). This is so we can give access and monitor where the widget is being used.
+
+- It is recommended that you use the latest release of Shareable Travel Updates Widget in your project. Although, visit [Shareable Travel Updates Widget package page](https://www.npmjs.com/package/tfwm-travel-updates-widget) for previous releases.
+
+- You also can check [Shareable Travel Updates Widget repository](https://github.com/wmcadigital/tfwm-travel-updates-widget/) and [report a bug or request a feature](https://github.com/wmcadigital/tfwm-travel-updates-widget/issues/new), if needed.
+
+<div class="wmnds-warning-text ">
+  <svg class="wmnds-warning-text__icon">
+    <use xlink:href="#wmnds-general-warning-circle" href="#wmnds-general-warning-circle"></use>
+  </svg>
+  TfWM design system CSS must be included in your page.
+</div>
+
+<h3>When to use it?</h3>
+
+- The default travel updates widget should be used on the homepage or a page where you offer travel advice
+
+<h3>How it works?</h3>
+
+- The widget shows all current disruptions to bus, train and tram services that have been added to the Disruptions API. It also shows the number of current disruptions on all roads in the West Midlands region.
+
+- Users can view disruption information through the disruptions service by clicking on the disruption link or the ‘View all updates’ button.
+
+- When more than two types of disruptions occur for a transport mode, the disruption indicator will only show the highest level of disruption. There will still be individual disruption links for each disruption severity.
+
+{% endmarkdown %}
+
+<div data-widget-host="tfwm-travel-updates-widget"></div>
+<script src="//unpkg.com/tfwm-travel-updates-widget@1.2.0/build/static/js/build.min.js"></script>
+
+{% markdown %}
+
 ## Default view
 
 ### When to use it?
@@ -72,7 +115,7 @@
     ], {
       componentPath: "wmnds/patterns/travel-updates/",
       njk: false,
-      js: true,
+      js: false,
       iframe: true
     })
 }}
