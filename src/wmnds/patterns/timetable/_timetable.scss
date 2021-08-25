@@ -65,7 +65,9 @@ $trs: 0.5s;
     border-bottom: 1px solid get-color(text);
 
     .wmnds-timetable__route {
+      max-height: 260px;
       padding-right: 5.5rem;
+      overflow-y: auto;
     }
   }
 
