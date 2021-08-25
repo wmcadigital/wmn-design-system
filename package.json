@@ -1,6 +1,6 @@
 {
   "name": "wmn-design-system",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "A library of typography, visual styles and user interface components which are documented for Transport for West Midlands.",
   "homepage": "https://designsystem.wmnetwork.co.uk",
   "author": "WMCA",
@@ -29,6 +29,9 @@
     }
   },
   "release": {
+    "branches": [
+      "main"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -113,9 +116,11 @@
   },
   "dependencies": {
     "@sentry/browser": "^6.2.5",
+    "axios": "^0.21.1",
     "findandreplacedomtext": "^0.4.6",
     "gulp-sass": "^4.1.0",
     "iframe-resizer": "^4.3.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "tfwm-travel-updates-widget": "^1.0.0"
   }
 }

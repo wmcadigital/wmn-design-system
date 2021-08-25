@@ -13,6 +13,8 @@
 {% set label = params.label.contentText if params.label.contentText else "Autocomplete label" %}
 {% set name = params.name if params.name else id %}
 {% set isRequired = params.isRequired if params.isRequired else false %}
+{% set selected = params.selected if params.selected else false %}
+{% set selectedItem = params.selectedItem if params.selectedItem else 'Selected item' %}
 
 {# Label #}
 {{
@@ -23,6 +25,21 @@
   })
 }}
 
+{% if params.selected %}
+<div
+    class="wmnds-autocomplete__selected-item wmnds-grid wmnds-grid--justify-between wmnds-m-t-xs wmnds-m-b-md"
+  >
+    <strong class="wmnds-col-auto wmnds-autocomplete__selected-item-summary">{{selectedItem}}</strong>
+    <button type="button" class="wmnds-autocomplete__selected-item-close">
+      {{
+        wmndsIcon({
+          icon: 'general-cross',
+          class: 'wmnds-autocomplete__selected-item-close-icon'
+        })
+      }}
+    </button>
+  </div>
+{% else %}
 <div class="wmnds-autocomplete wmnds-grid{{isLoading}}">
   {% from "wmnds/components/loader/_loader.njk" import wmndsLoader %}
   {#- Get SVG icon and pass class -#}
@@ -31,16 +48,17 @@
     wmndsIcon({
       icon: 'general-search',
       class: 'wmnds-autocomplete__icon'
-    }) | indent(2) | trim
-  -}}
+    })
+  }}
 
   {# Loading spinner #}
   {{
-    wmndsLoader() | indent(2) | trim
+    wmndsLoader()
   }}
   <!-- Autocomplete input box -->
   <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="{{ name }}" aria-label="{{ placeholder }}"  type="text" id="{{id}}" required="{{isRequired}}" autocomplete="off">
 </div>
+{% endif %}
 
 {#- If showSuggestions is true #}
 {% if params.showSuggestions %}
@@ -62,7 +80,7 @@
         wmndsDisruptionIndicatorMedium({
           classModifiers: 'wmnds-disruption-indicator-medium',
           text: query
-        }) | indent(8) | trim
+        })
       }}
     </div>
     <div class="wmnds-col-1-2 wmnds-col-sm-2-3">

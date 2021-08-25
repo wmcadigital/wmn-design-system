@@ -5,6 +5,6 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 0
-    target-branch: 'release'
+    target-branch: 'next-release'
     commit-message:
       prefix: '[skip netlify]'

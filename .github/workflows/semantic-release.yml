@@ -3,7 +3,7 @@ name: Release npm package
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   release:
@@ -55,13 +55,13 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.SEMVER_GITHUB_TOKEN }}
-      # Deploy build folder to Netlify IF the branch is master
+      # Deploy build folder to Netlify IF the branch is main
       - name: Deploy to Netlify
-        if: github.ref == 'refs/heads/master' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
+        if: github.ref == 'refs/heads/main' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
         uses: nwtgck/actions-netlify@v1.1.11
         with:
           publish-dir: './build'
-          production-branch: master
+          production-branch: main
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: '${{ github.event.head_commit.message }}'

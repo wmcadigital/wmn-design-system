@@ -1,3 +1,39 @@
+# [1.8.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.3...v1.8.0) (2021-07-08)
+
+
+### Bug Fixes
+
+* amending cookies manager html code and fix bug with cookie banner ([#751](https://github.com/wmcadigital/wmn-design-system/issues/751)) ([bd7d3b7](https://github.com/wmcadigital/wmn-design-system/commit/bd7d3b788802a2bf2649919ba94157387e4a2c71))
+* Expand clickable area on header mobile ([#837](https://github.com/wmcadigital/wmn-design-system/issues/837)) ([692cdd4](https://github.com/wmcadigital/wmn-design-system/commit/692cdd4e567fe558db2764c9d084494b05aaaad6)), closes [#828](https://github.com/wmcadigital/wmn-design-system/issues/828) [#828](https://github.com/wmcadigital/wmn-design-system/issues/828)
+* Fixed a prettier issue in header JS ([c81875c](https://github.com/wmcadigital/wmn-design-system/commit/c81875cbf02962c587d27de309bd26e229003bf3))
+* update buy a ticket ([#841](https://github.com/wmcadigital/wmn-design-system/issues/841)) ([420ea80](https://github.com/wmcadigital/wmn-design-system/commit/420ea801dd356d3f7af1d1e46688d5c0f7c0cc5c))
+* Update journey planner components ([#843](https://github.com/wmcadigital/wmn-design-system/issues/843)) ([fec8874](https://github.com/wmcadigital/wmn-design-system/commit/fec88747fe84da058de3cff3c57534b91065282c))
+* Updated CSS so long route names display correctly in travel updates widget ([#830](https://github.com/wmcadigital/wmn-design-system/issues/830)) ([4d27fd4](https://github.com/wmcadigital/wmn-design-system/commit/4d27fd432398d0776e970e65565e2f3a78f89dfd))
+* Updated npm packages ([7da191f](https://github.com/wmcadigital/wmn-design-system/commit/7da191f57b3f0ad5c54973df092a58e6751efe18))
+
+
+### Features
+
+* Adding transport modals to branded banner ([#831](https://github.com/wmcadigital/wmn-design-system/issues/831)) ([4733689](https://github.com/wmcadigital/wmn-design-system/commit/4733689e72b70aa4c1b2d679a6c529d634c625d7))
+
+## [1.7.3](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.2...v1.7.3) (2021-06-14)
+
+
+### Bug Fixes
+
+* Cookies are now set for parent and sub domains of TfWM ([#816](https://github.com/wmcadigital/wmn-design-system/issues/816)) ([28ae6dd](https://github.com/wmcadigital/wmn-design-system/commit/28ae6dd17cd504ecbfef0f8774c6ce6a31a1e177))
+* Fonts now point to absolute URL ([#815](https://github.com/wmcadigital/wmn-design-system/issues/815)) ([79ca2bb](https://github.com/wmcadigital/wmn-design-system/commit/79ca2bb2da41a35eff635198b2776fdbf91fc8a3))
+
+## [1.7.2](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.1...v1.7.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* n-icons now replace text without removing event handlers ([#800](https://github.com/wmcadigital/wmn-design-system/issues/800)) ([546550f](https://github.com/wmcadigital/wmn-design-system/commit/546550f7d374b82a17689ea3cd3930d5e2b9616c))
+* plan your journey font weight ([#802](https://github.com/wmcadigital/wmn-design-system/issues/802)) ([999579a](https://github.com/wmcadigital/wmn-design-system/commit/999579a82678bfc652d685605ffb4a0545e2c8b6))
+* remove deprecated 'addListener' in footer js ([#811](https://github.com/wmcadigital/wmn-design-system/issues/811)) ([acb572b](https://github.com/wmcadigital/wmn-design-system/commit/acb572bc36cac9488d9e535d6e43d843d8e92a68))
+* update travel updates widget styling ([#803](https://github.com/wmcadigital/wmn-design-system/issues/803)) ([fbabc99](https://github.com/wmcadigital/wmn-design-system/commit/fbabc992ed35b7eb3c1912d46bdd68b2eed34ace))
+
 ## [1.7.1](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.0...v1.7.1) (2021-05-20)
 
 
