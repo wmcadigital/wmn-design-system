@@ -250,6 +250,9 @@
         },
         {
           "name": "Search"
+        },
+        {
+          "name": "Timetables"
         }
       ]
     },

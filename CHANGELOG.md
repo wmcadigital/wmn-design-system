@@ -1,3 +1,28 @@
+## [2.0.1](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.0...v2.0.1) (2021-08-04)
+
+
+### Bug Fixes
+
+* Added new "main" branch name to package json ([#865](https://github.com/wmcadigital/wmn-design-system/issues/865)) ([68f452d](https://github.com/wmcadigital/wmn-design-system/commit/68f452d7e48fb578c0c6d93a1b5161a89721b880))
+* Updated github actions to use new branch names ([#863](https://github.com/wmcadigital/wmn-design-system/issues/863)) ([e61a75f](https://github.com/wmcadigital/wmn-design-system/commit/e61a75fee188f5087031ebacd83a699e0bc828e4))
+
+# [2.0.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.8.0...v2.0.0) (2021-07-29)
+
+
+* feat!: Stopped design system CSS leaking on to other websites ([393f1fd](https://github.com/wmcadigital/wmn-design-system/commit/393f1fd97202ee1e4c34e0a8ba344026648423c6))
+
+
+### BREAKING CHANGES
+
+* This change stops our CSS leaking into other peoples websites when using our CSS.
+Things that have been changed are:
+
+Removing generic element selectors such as h1, h2, a etc. and replaced them with a wrapped [class*="wmnds-"], this ensures that we only apply styling to generic elements if it is a child of one of our design system classes
+
+Updated the generic h1, h2, h3, h4, h5, h6 classes so they are now prefixed with wmnds e.g. wmnds-h1, wmnds-h2 etc.
+
+Gone through all components and patterns to ensure any missing styles that were previously inheritted from generic styles are now part of the component styling itself. For instance if we had a p.wmnds-example that was reliant on the general element p margins, that component would have been updated to have the margins on the .wmnds-example class itself.
+
 # [1.8.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.3...v1.8.0) (2021-07-08)
 
 

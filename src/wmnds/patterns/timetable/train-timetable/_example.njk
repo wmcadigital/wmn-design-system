@@ -1,0 +1,11 @@
+{% raw %}
+{% from "wmnds/patterns/timetable/train-timetable/_train-timetable.njk" import wmndsTrainTimetable %}
+
+{{
+   wmndsTrainTimetable({
+      id: 'trainTimetable',
+      showResults: false,
+      autocompleteItems: ['Birmingham Moor Street', 'Leamington Spa']
+   })
+}}
+{% endraw %}

@@ -72,6 +72,7 @@ const journeyPlannerWidgetJS = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
+      // eslint-disable-next-line no-console
       console.error('Geolocation is not supported by this browser.');
     }
   };
@@ -139,6 +140,7 @@ const journeyPlannerWidgetJS = () => {
       })
       .catch(function handleError(error) {
         stopLoading(element);
+        // eslint-disable-next-line no-console
         console.log(error);
       })
       .then(function handleAnyState() {
