@@ -92,6 +92,21 @@
   "eScooter"
 ] %}
 
+{% set iconFacilities = [
+  "seating",
+  "toilets",
+  "baby-changing",
+  "wifi",
+  "step-free-access",
+  "induction-loop",
+  "ramp",
+  "key-scheme",
+  "taxi-rank",
+  "electric-charging",
+  "blue-badge-parking",
+  "shared-occupancy-parking"
+] %}
+
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 {% block content %}
@@ -258,6 +273,25 @@ Find below a list of all our icons and their tags below. To use, don't forget to
         })
       }}
       <p>{{ 'modes-bg-' + icon }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% markdown %}
+
+### Facilities
+
+{% endmarkdown %}
+
+<div class="wmnds-grid website-icons">
+  {% for icon in iconFacilities %}
+    <div class="wmnds-col-1-2 wmnds-col-sm-1-6 text-center">
+      {{
+        wmndsIcon({
+          icon: 'facilities-' + icon
+        })
+      }}
+      <p>{{ 'facilities-' + icon }}</p>
     </div>
   {% endfor %}
 </div>
