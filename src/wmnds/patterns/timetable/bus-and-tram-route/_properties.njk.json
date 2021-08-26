@@ -1,0 +1,9 @@
+{
+  "wmndsBusAndTramRouteProps": [
+    {
+      "name": "stops",
+      "type": "array",
+      "description": "List of stops to show for the route."
+    }
+  ]
+}

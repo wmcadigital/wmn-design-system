@@ -1,0 +1,24 @@
+{% macro wmndsBusAndTramRoute(params) %}
+
+{% set stops = params.stops if params.stops %}
+
+<div class="wmnds-p-md wmnds-p-l-lg wmnds-p-r-lg wmnds-bg-white">
+    <ul class="wmnds-timetable__route">
+        {% if stops %}
+        {% for stop in stops %}
+        <li class="wmnds-timetable__route-item">
+            <a href="#">{{stop}}</a>
+        </li>
+        {%- endfor %}
+        {% else %}
+        {% for j in range(0, 8) %}
+        <li class="wmnds-timetable__route-item">
+            <a href="#">Stop {{j + 1}}</a>
+        </li>
+        {%- endfor %}
+        {%- endif %}
+    </ul>
+</div>
+
+
+{% endmacro %}

@@ -83,6 +83,7 @@ const journeyPlannerJS = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
+      // eslint-disable-next-line no-console
       console.error('Geolocation is not supported by this browser.');
     }
   };

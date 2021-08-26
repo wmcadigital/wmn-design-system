@@ -1,0 +1,25 @@
+{% raw %}
+{% from "wmnds/patterns/timetable/bus-and-tram/_bus-tram-timetable.njk" import wmndsBusAndTramTimetable %}
+
+{{
+   wmndsBusAndTramTimetable({
+      routeName: "Stourbridge - Wolverhampton via Kingswinford",
+      lastUpdated: "2 July 2021",
+      departureTimes: [
+         {
+            departureTime: "1510",
+            route: [
+                  {
+                     stopDepartureTime: "1510",
+                     stopName: "Stourbridge Interchange (Stand C)"
+                  },
+                  {
+                     stopDepartureTime: "1513",
+                     stopName: "The Hollybush (opp)"
+                  }
+            ]
+         }
+      ]
+   })
+}}
+{% endraw %}

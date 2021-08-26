@@ -1,0 +1,19 @@
+{
+  "wmndsTrainTimetableProps": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> String of text used for the id in the autocomplete components."
+    },
+    {
+      "name": "showResults",
+      "type": "boolean",
+      "description": "If true, autocomplete imputs will display in the selected items state with information text below."
+    },
+    {
+      "name": "autocompleteItems",
+      "type": "array",
+      "description": "Array of selected autocomplete items to use as text."
+    }
+  ]
+}
