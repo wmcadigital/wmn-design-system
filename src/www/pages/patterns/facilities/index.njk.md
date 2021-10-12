@@ -3,7 +3,7 @@
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/find-a-timetable-widget/_find-a-timetable-widget.njk" import wmndsFindATimetableWidget %}
+{% from "wmnds/patterns/facilities/_facilities.njk" import wmndsFacilities %}
 
 {% block content %}
 
@@ -28,12 +28,10 @@
 
 {{
   compExample([
-      wmndsFindATimetableWidget()
+      wmndsFacilities()
     ], {
-      componentPath: "wmnds/patterns/find-a-timetable-widget/",
+      componentPath: "wmnds/patterns/facilities/",
       njk: true,
-      njkProps: wmndsFindATimetableProps,
-      js: true,
       iframe: true
     }
   )
@@ -56,15 +54,12 @@
 
 {{
   compExample([
-      wmndsFindATimetableWidget({
-        isOpen: true
+      wmndsFacilities({
+        parkingExample: true
       })
     ], {
-      componentPath: "wmnds/patterns/find-a-timetable-widget/",
-      njk: true,
-      njkProps: wmndsFindATimetableProps,
-      js: true,
-      iframe: true
+      componentPath: "wmnds/patterns/facilities/",
+      njk: true
     }
   )
 }}

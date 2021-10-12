@@ -1,0 +1,45 @@
+.wmnds-facilities {
+  &__title {
+    margin: 0 0 $size-md;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-bottom: $size-lg;
+    }
+  }
+
+  &__section {
+    @media (max-width: $breakpoint-md - 1) {
+      &:not(:last-child) {
+        margin-bottom: $size-lg;
+      }
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    padding: $size-xsm 0;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $size-md;
+    }
+  }
+
+  &__icon {
+    width: $size-lg;
+    height: $size-lg;
+    margin-right: $size-md;
+    fill: get-color(primary);
+    flex: 0 0 $size-lg;
+  }
+}
