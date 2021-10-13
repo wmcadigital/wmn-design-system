@@ -3,7 +3,7 @@ name: Ask a question
 about: Ask a question or for support with the design system
 title: ''
 labels: 'question'
-assignees: 'mrmjprice,KaterinaKir,daylesalmon'
+assignees: 'Jkmnch,sam-plane'
 
 ---
 ## What do you need help with?
