@@ -26,11 +26,25 @@
   }
 
   &__service-description {
-    margin-left: $size-md;
+    flex-grow: 1;
+    align-self: center;
+
+    &:not(:first-child) {
+      margin-left: $size-md;
+    }
   }
 
   &__service-operator {
     display: block;
+  }
+
+  &__service-remove {
+    margin-left: $size-md;
+    text-align: right;
+
+    .wmnds-btn {
+      padding: $size-xsm;
+    }
   }
 
   &__last-updated {
