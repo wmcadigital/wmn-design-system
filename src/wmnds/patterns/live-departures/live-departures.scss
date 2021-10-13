@@ -67,3 +67,39 @@
     }
   }
 }
+
+&.wmnds-live-departures-homepage {
+  hr {
+    margin: $size-md 0;
+  }
+
+  &__train-timetable {
+    width: 100%;
+    margin-bottom: $size-md;
+
+    thead > tr > th {
+      padding-top: 0;
+      font-family: $x-heading-font-family;
+      font-size: 18px;
+
+      &:not(:first-child) {
+        padding-left: $size-sm;
+      }
+    }
+
+    th,
+    td {
+      padding: $size-xsm 0;
+      text-align: right;
+
+      &:first-child {
+        text-align: left;
+      }
+    }
+
+    tbody tr:last-child > th,
+    tbody tr:last-child > td {
+      padding-bottom: 0;
+    }
+  }
+}
