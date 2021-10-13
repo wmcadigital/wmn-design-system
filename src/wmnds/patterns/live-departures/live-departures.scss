@@ -1,14 +1,4 @@
 &.wmnds-live-departures {
-  &__service-name {
-    padding: $size-sm $size-md;
-    border-radius: 5px;
-    color: $white;
-    background-color: get-color(information);
-    font-weight: 700;
-  }
-}
-
-&.wmnds-live-departures-bus {
   padding: $size-md;
   background-color: $white;
 
@@ -17,11 +7,15 @@
   }
 
   &__service {
-    &:not(:last-child) {
-      margin-bottom: $size-md;
-      padding-bottom: $size-md;
-      border-bottom: 1px solid get-color(text, 70);
-    }
+    align-items: center;
+  }
+
+  &__service-name {
+    padding: $size-sm $size-md;
+    border-radius: 5px;
+    color: $white;
+    background-color: get-color(information);
+    font-weight: 700;
   }
 
   &__service-details {
@@ -39,6 +33,12 @@
     display: block;
   }
 
+  &__last-updated {
+    @media (min-width: $breakpoint-md) {
+      text-align: right;
+    }
+  }
+
   &__times {
     display: flex;
     justify-content: space-between;
@@ -46,6 +46,24 @@
 
     @media (max-width: $breakpoint-sm - 1) {
       padding-top: $size-md;
+    }
+  }
+
+  &__time {
+    @media (max-width: $breakpoint-sm - 1) {
+      &:nth-child(3) ~ * {
+        display: none;
+      }
+    }
+  }
+
+  &--bus {
+    .wmnds-live-departures__service {
+      &:not(:last-child) {
+        margin-bottom: $size-md;
+        padding-bottom: $size-md;
+        border-bottom: 1px solid get-color(text, 70);
+      }
     }
   }
 }

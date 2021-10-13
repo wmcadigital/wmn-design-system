@@ -7,53 +7,68 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 
-<div class="wmnds-live-departures-bus">
-    <div class="wmnds-live-departures-bus__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
+<div class="wmnds-live-departures wmnds-live-departures--bus">
+    {% for i in range(0, 5) %}
+    <div class="wmnds-live-departures__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
         <div class="wmnds-col-1 wmnds-col-sm-1-2">
-            <div class="wmnds-live-departures-bus__service-details">
+            <div class="wmnds-live-departures__service-details">
                 <div class="wmnds-live-departures__service-name">16</div>
-                <div class="wmnds-live-departures-bus__service-description">
+                <div class="wmnds-live-departures__service-description">
                     <strong>Wolverhampton</strong>
-                    <span class="wmnds-live-departures-bus__service-operator">National Express West Midlands</span>
+                    <span class="wmnds-live-departures__service-operator">National Express West Midlands</span>
                 </div>
             </div>
         </div>
         <div class="wmnds-col-1 wmnds-col-sm-1-2">
-            <div class="wmnds-live-departures-bus__times">
-                <div class="wmnds-live-departures-bus__time">3 mins</div>
-                <div class="wmnds-live-departures-bus__time">7 mins</div>
-                <div class="wmnds-live-departures-bus__time">28 mins</div>
+            <div class="wmnds-live-departures__times">
+                <div class="wmnds-live-departures__time">3 mins</div>
+                <div class="wmnds-live-departures__time">7 mins</div>
+                <div class="wmnds-live-departures__time">28 mins</div>
             </div>
         </div>
     </div>
-    <div class="wmnds-live-departures-bus__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
-        <div class="wmnds-col-1 wmnds-col-sm-1-2">
-            <div class="wmnds-live-departures-bus__service-details">
-                <div class="wmnds-live-departures__service-name">16</div>
-                <div class="wmnds-live-departures-bus__service-description">
-                    <strong>Dudley</strong>
-                    <span class="wmnds-live-departures-bus__service-operator">National Express West Midlands</span>
-                </div>
-            </div>
-        </div>
-        <div class="wmnds-col-1 wmnds-col-sm-1-2">
-            <div class="wmnds-live-departures-bus__times">
-                <div class="wmnds-live-departures-bus__time">4 mins</div>
-                <div class="wmnds-live-departures-bus__time">14 mins</div>
-                <div class="wmnds-live-departures-bus__time">24 mins</div>
-            </div>
+    {% endfor %}
+</div>
+<hr>
+<div class="wmnds-live-departures wmnds-live-departures--service">
+    <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+        <div class="wmnds-live-departures__service-name">16</div>
+        <div class="wmnds-live-departures__service-description">
+            <div class="wmnds-h3 wmnds-m-none">Stourbridge - Wolverhampton via Kingswinford</div>
         </div>
     </div>
+    <p><a href="#">National Express West Midlands</a> runs this service</p>
+    {{
+        wmndsButton({
+            type: "favourite",
+            contentText: "Add to homepage",
+            iconLeft: "general-star-empty",
+            classes: "wmnds-m-b-md"
+        })
+    }}
+    <hr>
+    <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--spacing-md-2-md wmnds-p-t-md">
+        <div class="wmnds-col-1 wmnds-col-md-auto">
+            <div class="wmnds-h3 wmnds-m-t-none wmnds-m-b-md">Real time departures</div>
+            <p class="wmnds-m-b-md">See when the next 16 bus leaves this stop</p>
+        </div>
+        <div class="wmnds-col-1 wmnds-col-md-auto">
+            <p class="wmnds-live-departures__last-updated">Last updated 9:30am</p>
+        </div>
+    </div>
+    <div class="wmnds-live-departures__times">
+        <div class="wmnds-live-departures__time">4 mins</div>
+        <div class="wmnds-live-departures__time">14 mins</div>
+        <div class="wmnds-live-departures__time">24 mins</div>
+        <div class="wmnds-live-departures__time">34 mins</div>
+        <div class="wmnds-live-departures__time">44 mins</div>
+    </div>
 </div>
-
-<div class="wmnds-live-departures-service">
-    Stourbridge - Wolverhampton via Kingswinford
-</div>
-
+<hr>
 <div class="wmnds-live-departures-homepage">
     My live departures
 </div>
-
+<hr>
 <div class="wmnds-live-departures-train">
     Live departures
 </div>
