@@ -1,0 +1,51 @@
+&.wmnds-live-departures {
+  &__service-name {
+    padding: $size-sm $size-md;
+    border-radius: 5px;
+    color: $white;
+    background-color: get-color(information);
+    font-weight: 700;
+  }
+}
+
+&.wmnds-live-departures-bus {
+  padding: $size-md;
+  background-color: $white;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 1.5rem;
+  }
+
+  &__service {
+    &:not(:last-child) {
+      margin-bottom: $size-md;
+      padding-bottom: $size-md;
+      border-bottom: 1px solid get-color(text, 70);
+    }
+  }
+
+  &__service-details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  &__service-description {
+    margin-left: $size-md;
+  }
+
+  &__service-operator {
+    display: block;
+  }
+
+  &__times {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    @media (max-width: $breakpoint-sm - 1) {
+      padding-top: $size-md;
+    }
+  }
+}

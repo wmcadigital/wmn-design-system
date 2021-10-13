@@ -3,7 +3,7 @@
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/find-a-timetable-widget/_find-a-timetable-widget.njk" import wmndsFindATimetableWidget %}
+{% from "wmnds/patterns/live-departures/_live-departures.njk" import wmndsLiveDepartures %}
 
 {% block content %}
 
@@ -30,9 +30,9 @@
 
 {{
   compExample([
-      wmndsFindATimetableWidget()
+      wmndsLiveDepartures()
     ], {
-      componentPath: "wmnds/patterns/find-a-timetable-widget/",
+      componentPath: "wmnds/patterns/live-departures/",
       njk: true,
       njkProps: wmndsFindATimetableProps,
       js: true,
@@ -49,11 +49,11 @@
 
 {{
   compExample([
-      wmndsFindATimetableWidget({
+      wmndsLiveDepartures({
         isOpen: true
       })
     ], {
-      componentPath: "wmnds/patterns/find-a-timetable-widget/",
+      componentPath: "wmnds/patterns/live-departures/",
       njk: true,
       njkProps: wmndsFindATimetableProps,
       js: true,
