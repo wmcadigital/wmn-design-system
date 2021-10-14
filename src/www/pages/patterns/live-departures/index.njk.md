@@ -3,7 +3,6 @@
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
-{% from "wmnds/patterns/live-departures/_live-departures.njk" import wmndsLiveDepartures %}
 {% from "wmnds/patterns/live-departures/live-departures-bus/_live-departures-bus.njk" import wmndsLiveDeparturesBus %}
 {% from "wmnds/patterns/live-departures/live-departures-service/_live-departures-service.njk" import wmndsLiveDeparturesService %}
 {% from "wmnds/patterns/live-departures/live-departures-train/_live-departures-train.njk" import wmndsLiveDeparturesTrain %}
