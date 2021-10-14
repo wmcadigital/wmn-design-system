@@ -5,6 +5,7 @@
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/live-departures/_live-departures.njk" import wmndsLiveDepartures %}
 {% from "wmnds/patterns/live-departures/live-departures-bus/_live-departures-bus.njk" import wmndsLiveDeparturesBus %}
+{% from "wmnds/patterns/live-departures/live-departures-service/_live-departures-service.njk" import wmndsLiveDeparturesService %}
 
 {% block content %}
 
@@ -76,27 +77,6 @@
 
 {% markdown %}
 
-### Expanded (bus)
-
-{% endmarkdown %}
-
-{{
-  compExample([
-      wmndsLiveDepartures({
-        isOpen: true
-      })
-    ], {
-      componentPath: "wmnds/patterns/live-departures/",
-      njk: true,
-      njkProps: wmndsFindATimetableProps,
-      js: true,
-      iframe: true
-    }
-  )
-}}
-
-{% markdown %}
-
 ## Bus and tram service
 
 <h3>What does it do?</h3>
@@ -115,6 +95,41 @@
 - For bus services we show the operator name as more than one operator can run the same service number
 
 {% endmarkdown %}
+
+<h3>Bus</h3>
+
+{{
+  compExample([
+      wmndsLiveDeparturesService({
+        operator: "National Express West Midlands"
+      })
+    ], {
+      componentPath: "wmnds/patterns/live-departures/live-departures-service/",
+      njkProps: wmndsLiveDeparturesServiceProps,
+      njk: true,
+      iframe: true
+    }
+  )
+}}
+
+<h3>Tram</h3>
+
+{{
+  compExample([
+      wmndsLiveDeparturesService({
+        name: "MM1",
+        destination: "Birmingham - Wolverhampton",
+        lastUpdated: "9:30am",
+        times: [4, 14, 24, 34, 44]
+      })
+    ], {
+      componentPath: "wmnds/patterns/live-departures/live-departures-service/",
+      njkProps: wmndsLiveDeparturesServiceProps,
+      njk: true,
+      iframe: true
+    }
+  )
+}}
 
 {% markdown %}
 
