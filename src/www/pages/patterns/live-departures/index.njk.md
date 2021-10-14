@@ -6,6 +6,7 @@
 {% from "wmnds/patterns/live-departures/_live-departures.njk" import wmndsLiveDepartures %}
 {% from "wmnds/patterns/live-departures/live-departures-bus/_live-departures-bus.njk" import wmndsLiveDeparturesBus %}
 {% from "wmnds/patterns/live-departures/live-departures-service/_live-departures-service.njk" import wmndsLiveDeparturesService %}
+{% from "wmnds/patterns/live-departures/live-departures-train/_live-departures-train.njk" import wmndsLiveDeparturesTrain %}
 {% from "wmnds/patterns/live-departures/live-departures-widget/_live-departures-widget.njk" import wmndsLiveDeparturesWidget %}
 
 {% block content %}
@@ -150,13 +151,41 @@
 - Users can filter live departures to see which train services stop at a specific rail station
 - When a filter has been applied, users can favourite this journey to the live departures widget on the homepage
 
-### Live departures
-
-### Live departures (filtered)
-
-### Live arrivals
+### Live departures/arrivals
 
 {% endmarkdown %}
+
+{{
+  compExample([
+      wmndsLiveDeparturesTrain()
+    ], {
+      componentPath: "wmnds/patterns/live-departures/live-departures-train/",
+      njkProps: wmndsLiveDeparturesTrainProps,
+      njk: true,
+      iframe: true
+    }
+  )
+}}
+
+{% markdown %}
+
+### Live departures/arrivals (filtered)
+
+{% endmarkdown %}
+
+{{
+  compExample([
+      wmndsLiveDeparturesTrain({
+        showFiltered: true
+      })
+    ], {
+      componentPath: "wmnds/patterns/live-departures/live-departures-train/",
+      njkProps: wmndsLiveDeparturesTrainProps,
+      njk: true,
+      iframe: true
+    }
+  )
+}}
 
 {% markdown %}
 

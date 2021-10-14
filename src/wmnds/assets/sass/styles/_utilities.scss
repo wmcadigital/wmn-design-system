@@ -157,13 +157,13 @@ html body [class*="wmnds-"] {
   // Show/hide on desktop devices only
   &.wmnds-hide-mobile {
     @media screen and (max-width: $breakpoint-md) {
-      display: none;
+      display: none !important;
     }
   }
 
   &.wmnds-hide-desktop {
     @media screen and (min-width: $breakpoint-md) {
-      display: none;
+      display: none !important;
     }
   }
 
