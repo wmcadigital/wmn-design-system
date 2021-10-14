@@ -6,6 +6,7 @@
 {% from "wmnds/patterns/live-departures/_live-departures.njk" import wmndsLiveDepartures %}
 {% from "wmnds/patterns/live-departures/live-departures-bus/_live-departures-bus.njk" import wmndsLiveDeparturesBus %}
 {% from "wmnds/patterns/live-departures/live-departures-service/_live-departures-service.njk" import wmndsLiveDeparturesService %}
+{% from "wmnds/patterns/live-departures/live-departures-widget/_live-departures-widget.njk" import wmndsLiveDeparturesWidget %}
 
 {% block content %}
 
@@ -177,8 +178,38 @@
 
 ### Default
 
+{% endmarkdown %}
+
+{{
+  compExample([
+      wmndsLiveDeparturesWidget()
+    ], {
+      componentPath: "wmnds/patterns/live-departures/live-departures-widget/",
+      njkProps: wmndsLiveDeparturesWidgetProps,
+      njk: true,
+      iframe: true
+    }
+  )
+}}
+
+{% markdown %}
+
 ### Edit view
 
 {% endmarkdown %}
+
+{{
+  compExample([
+      wmndsLiveDeparturesWidget({
+        editMode: true
+      })
+    ], {
+      componentPath: "wmnds/patterns/live-departures/live-departures-widget/",
+      njkProps: wmndsLiveDeparturesWidgetProps,
+      njk: true,
+      iframe: true
+    }
+  )
+}}
 
 {% endblock %}

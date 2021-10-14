@@ -6,29 +6,6 @@
 {% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
 <div style="max-width: 640px;">
-    <div class="wmnds-live-departures wmnds-live-departures--bus">
-        {% for i in range(0, 5) %}
-        <div class="wmnds-live-departures__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
-            <div class="wmnds-col-1 wmnds-col-sm-1-2">
-                <div class="wmnds-live-departures__service-details">
-                    <div class="wmnds-live-departures__service-name">16</div>
-                    <div class="wmnds-live-departures__service-description">
-                        <strong>Wolverhampton</strong>
-                        <span class="wmnds-live-departures__service-operator">National Express West Midlands</span>
-                    </div>
-                </div>
-            </div>
-            <div class="wmnds-col-1 wmnds-col-sm-1-2">
-                <div class="wmnds-live-departures__times">
-                    <div class="wmnds-live-departures__time">3 mins</div>
-                    <div class="wmnds-live-departures__time">7 mins</div>
-                    <div class="wmnds-live-departures__time">28 mins</div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <hr>
     <div class="wmnds-live-departures wmnds-live-departures--service">
         <div class="wmnds-live-departures__service-details wmnds-m-b-md">
             <div class="wmnds-live-departures__service-name">16</div>

@@ -3,7 +3,7 @@
   background-color: $white;
 
   @media (min-width: $breakpoint-sm) {
-    &:not(.wmnds-live-departures--homepage) {
+    &:not(.wmnds-live-departures--widget) {
       padding: 1.5rem;
     }
   }
@@ -100,6 +100,7 @@
 
     thead > tr > th {
       padding-top: 0;
+      padding-bottom: $size-xsm;
       font-family: $x-heading-font-family;
       font-size: 18px;
       text-align: right;
