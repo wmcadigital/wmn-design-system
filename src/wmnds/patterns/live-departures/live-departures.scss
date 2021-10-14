@@ -13,11 +13,13 @@
   }
 
   &__service-name {
-    padding: $size-sm $size-md;
+    min-width: 3.2rem;
+    padding: $size-sm $size-xsm;
     border-radius: 5px;
     color: $white;
     background-color: get-color(information);
     font-weight: 700;
+    text-align: center;
   }
 
   &__service-details {

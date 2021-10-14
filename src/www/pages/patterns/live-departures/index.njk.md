@@ -4,6 +4,7 @@
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/live-departures/_live-departures.njk" import wmndsLiveDepartures %}
+{% from "wmnds/patterns/live-departures/live-departures-bus/_live-departures-bus.njk" import wmndsLiveDeparturesBus %}
 
 {% block content %}
 
@@ -30,12 +31,44 @@
 
 {{
   compExample([
-      wmndsLiveDepartures()
+      wmndsLiveDeparturesBus({
+        services: [
+          {
+            name: "16",
+            destination: "Wolverhampton",
+            operator: "National Express West Midlands",
+            times: [3, 7, 28]
+          },
+          {
+            name: "17",
+            destination: "Dudley",
+            operator: "National Express West Midlands",
+            times: [4, 14, 24]
+          },
+          {
+            name: "17A",
+            destination: "Wall Heath",
+            operator: "Diamond",
+            times: [8, 19, 27]
+          },
+          {
+            name: "57",
+            destination: "Wall Heath",
+            operator: "National Express West Midlands",
+            times: [6, 16, 26]
+          },
+          {
+            name: "125",
+            destination: "Bridgnorth",
+            operator: "Diamond",
+            times: [9, 14, 24]
+          }
+        ]
+      })
     ], {
-      componentPath: "wmnds/patterns/live-departures/",
+      componentPath: "wmnds/patterns/live-departures/live-departures-bus/",
+      njkProps: wmndsLiveDeparturesBusProps,
       njk: true,
-      njkProps: wmndsFindATimetableProps,
-      js: true,
       iframe: true
     }
   )
