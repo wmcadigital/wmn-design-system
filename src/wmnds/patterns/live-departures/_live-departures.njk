@@ -1,229 +1,308 @@
 {% macro wmndsLiveDepartures(params) %}
 
 {# Imports of components #}
-{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
 {% from "wmnds/components/button/_button.njk" import wmndsButton %}
-{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
-
-<div class="wmnds-live-departures wmnds-live-departures--bus">
-    {% for i in range(0, 5) %}
-    <div class="wmnds-live-departures__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
-        <div class="wmnds-col-1 wmnds-col-sm-1-2">
-            <div class="wmnds-live-departures__service-details">
-                <div class="wmnds-live-departures__service-name">16</div>
-                <div class="wmnds-live-departures__service-description">
-                    <strong>Wolverhampton</strong>
-                    <span class="wmnds-live-departures__service-operator">National Express West Midlands</span>
+<div style="max-width: 640px;">
+    <div class="wmnds-live-departures wmnds-live-departures--bus">
+        {% for i in range(0, 5) %}
+        <div class="wmnds-live-departures__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                <div class="wmnds-live-departures__service-details">
+                    <div class="wmnds-live-departures__service-name">16</div>
+                    <div class="wmnds-live-departures__service-description">
+                        <strong>Wolverhampton</strong>
+                        <span class="wmnds-live-departures__service-operator">National Express West Midlands</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                <div class="wmnds-live-departures__times">
+                    <div class="wmnds-live-departures__time">3 mins</div>
+                    <div class="wmnds-live-departures__time">7 mins</div>
+                    <div class="wmnds-live-departures__time">28 mins</div>
                 </div>
             </div>
         </div>
-        <div class="wmnds-col-1 wmnds-col-sm-1-2">
-            <div class="wmnds-live-departures__times">
-                <div class="wmnds-live-departures__time">3 mins</div>
-                <div class="wmnds-live-departures__time">7 mins</div>
-                <div class="wmnds-live-departures__time">28 mins</div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-<hr>
-<div class="wmnds-live-departures wmnds-live-departures--service">
-    <div class="wmnds-live-departures__service-details wmnds-m-b-md">
-        <div class="wmnds-live-departures__service-name">16</div>
-        <div class="wmnds-live-departures__service-description">
-            <div class="wmnds-h3 wmnds-m-none">Stourbridge - Wolverhampton via Kingswinford</div>
-        </div>
-    </div>
-    <p><a href="#">National Express West Midlands</a> runs this service</p>
-    {{
-        wmndsButton({
-            type: "favourite",
-            contentText: "Add to homepage",
-            iconLeft: "general-star-empty",
-            classes: "wmnds-m-b-md"
-        })
-    }}
     <hr>
-    <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--spacing-md-2-md wmnds-p-t-md">
-        <div class="wmnds-col-1 wmnds-col-md-auto">
-            <div class="wmnds-h3 wmnds-m-t-none wmnds-m-b-md">Real time departures</div>
-            <p class="wmnds-m-b-md">See when the next 16 bus leaves this stop</p>
-        </div>
-        <div class="wmnds-col-1 wmnds-col-md-auto">
-            <p class="wmnds-live-departures__last-updated">Last updated 9:30am</p>
-        </div>
-    </div>
-    <div class="wmnds-live-departures__times">
-        <div class="wmnds-live-departures__time">4 mins</div>
-        <div class="wmnds-live-departures__time">14 mins</div>
-        <div class="wmnds-live-departures__time">24 mins</div>
-        <div class="wmnds-live-departures__time">34 mins</div>
-        <div class="wmnds-live-departures__time">44 mins</div>
-    </div>
-</div>
-<hr>
-<div class="wmnds-live-departures-homepage wmnds-p-md wmnds-bg-white">
-    <div class="wmnds-h2 wmnds-m-t-none">My live departures</div>
-    <p class="wmnds-m-b-md">Last updated 9:30am</p>
-    <div class="wmnds-live-departures-homepage__bus">
-        <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Bus</div>
-        <div class="wmnds-m-b-md"><a href="#">Stourbridge, Stourbridge Interchange (Stand C)</a></div>
+    <div class="wmnds-live-departures wmnds-live-departures--service">
         <div class="wmnds-live-departures__service-details wmnds-m-b-md">
             <div class="wmnds-live-departures__service-name">16</div>
             <div class="wmnds-live-departures__service-description">
-                <strong>Stourbridge - Wolverhampton via Kingswinford</strong>
+                <div class="wmnds-h3 wmnds-m-none">Stourbridge - Wolverhampton via Kingswinford</div>
             </div>
         </div>
-        <div class="wmnds-live-departures__times wmnds-m-b-md">
+        <p><a href="#">National Express West Midlands</a> runs this service</p>
+        {{
+            wmndsButton({
+                type: "favourite",
+                contentText: "Add to homepage",
+                iconLeft: "general-star-empty",
+                classes: "wmnds-m-b-md"
+            })
+        }}
+        <hr>
+        <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--spacing-md-2-md wmnds-p-t-md">
+            <div class="wmnds-col-1 wmnds-col-md-auto">
+                <div class="wmnds-h3 wmnds-m-t-none wmnds-m-b-md">Real time departures</div>
+                <p class="wmnds-m-b-md">See when the next 16 bus leaves this stop</p>
+            </div>
+            <div class="wmnds-col-1 wmnds-col-md-auto">
+                <p class="wmnds-live-departures__last-updated">Last updated 9:30am</p>
+            </div>
+        </div>
+        <div class="wmnds-live-departures__times">
             <div class="wmnds-live-departures__time">4 mins</div>
             <div class="wmnds-live-departures__time">14 mins</div>
             <div class="wmnds-live-departures__time">24 mins</div>
             <div class="wmnds-live-departures__time">34 mins</div>
+            <div class="wmnds-live-departures__time">44 mins</div>
         </div>
     </div>
     <hr>
-    <div class="wmnds-live-departures-homepage__train">
-        <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Train</div>
-        <div class="wmnds-m-b-md"><a href="#">Birmingham Moor Street</a> to <a href="#">Stourbridge Junction</a></div>
-        <table class="wmnds-live-departures-homepage__train-timetable">
-            <thead>
-                <th>Destination</th>
-                <th>Time</th>
-                <th>Platform</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Kidderminster</th>
-                    <td>08:21</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <th>Worcester Forgate Street</th>
-                    <td>08:25</td>
-                    <td>2</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <hr>
-    <div class="wmnds-live-departures-homepage__tram">
-        <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Tram</div>
-        <div class="wmnds-m-b-md"><a href="#">Birmingham, Town Hall (Platform 2)</a></div>
-        <div class="wmnds-live-departures__service-details wmnds-m-b-md">
-            <div class="wmnds-live-departures__service-name">MM1</div>
-            <div class="wmnds-live-departures__service-description">
-                <strong>Birmingham - Wolverhampton</strong>
+    <div class="wmnds-live-departures wmnds-live-departures--homepage wmnds-p-md wmnds-bg-white">
+        <div class="wmnds-h2 wmnds-m-t-none">My live departures</div>
+        <p class="wmnds-m-b-md">Last updated 9:30am</p>
+        <div class="wmnds-live-departures-homepage__bus">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Bus</div>
+            <div class="wmnds-m-b-md"><a href="#">Stourbridge, Stourbridge Interchange (Stand C)</a></div>
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-name">16</div>
+                <div class="wmnds-live-departures__service-description">
+                    <strong>Stourbridge - Wolverhampton via Kingswinford</strong>
+                </div>
+            </div>
+            <div class="wmnds-live-departures__times wmnds-m-b-md">
+                <div class="wmnds-live-departures__time">4 mins</div>
+                <div class="wmnds-live-departures__time">14 mins</div>
+                <div class="wmnds-live-departures__time">24 mins</div>
+                <div class="wmnds-live-departures__time">34 mins</div>
             </div>
         </div>
-        <div class="wmnds-live-departures__times wmnds-m-b-md">
-            <div class="wmnds-live-departures__time">4 mins</div>
-            <div class="wmnds-live-departures__time">14 mins</div>
-            <div class="wmnds-live-departures__time">24 mins</div>
-            <div class="wmnds-live-departures__time">34 mins</div>
+        <hr>
+        <div class="wmnds-live-departures-homepage__train">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Train</div>
+            <div class="wmnds-m-b-md"><a href="#">Birmingham Moor Street</a> to <a href="#">Stourbridge Junction</a></div>
+            <table class="wmnds-live-departures__train-timetable">
+                <thead>
+                    <th>Destination</th>
+                    <th>Time</th>
+                    <th>Platform</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><strong>Kidderminster</strong></th>
+                        <td>08:21</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Worcester Forgate Street</strong></th>
+                        <td>08:25</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-    <hr>
-    <div class="wmnds-grid wmnds-grid--spacing-2-lg">
-        <div class="wmnds-col-1-2">
-            {{
-                wmndsButton({
-                    type: "secondary",
-                    contentText: "Remove services",
-                    classes: "wmnds-col-1"
-                })
-            }}
-        </div>
-        <div class="wmnds-col-1-2">
-            {{
-                wmndsButton({
-                    contentText: "Find stop or station",
-                    iconRight: "general-chevron-right",
-                    classes: "wmnds-col-1"
-                })
-            }}
-        </div>
-    </div>
-</div>
-<hr>
-<div class="wmnds-live-departures-homepage wmnds-p-md wmnds-bg-white">
-    <div class="wmnds-h2 wmnds-m-t-none">My live departures</div>
-    <p class="wmnds-m-b-md">Last updated 9:30am</p>
-    <div class="wmnds-live-departures-homepage__bus">
-        <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Bus</div>
-        <div class="wmnds-m-b-md"><a href="#">Stourbridge, Stourbridge Interchange (Stand C)</a></div>
-        <div class="wmnds-live-departures__service-details wmnds-m-b-md">
-            <div class="wmnds-live-departures__service-name">16</div>
-            <div class="wmnds-live-departures__service-description">
-                <strong>Stourbridge - Wolverhampton via Kingswinford</strong>
+        <hr>
+        <div class="wmnds-live-departures-homepage__tram">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Tram</div>
+            <div class="wmnds-m-b-md"><a href="#">Birmingham, Town Hall (Platform 2)</a></div>
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-name">MM1</div>
+                <div class="wmnds-live-departures__service-description">
+                    <strong>Birmingham - Wolverhampton</strong>
+                </div>
             </div>
-            <div class="wmnds-live-departures__service-remove">
-                <button class="wmnds-btn wmnds-btn--destructive" type="button">
-                    <svg class="wmnds-btn__icon">
-                        <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
-                    </svg>
-                </button>
+            <div class="wmnds-live-departures__times wmnds-m-b-md">
+                <div class="wmnds-live-departures__time">4 mins</div>
+                <div class="wmnds-live-departures__time">14 mins</div>
+                <div class="wmnds-live-departures__time">24 mins</div>
+                <div class="wmnds-live-departures__time">34 mins</div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="wmnds-live-departures-homepage__train">
-        <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Train</div>
-        <div class="wmnds-live-departures__service-details wmnds-m-b-md">
-            <div class="wmnds-live-departures__service-description">
-                <a href="#">Birmingham Moor Street</a> to <a href="#">Stourbridge Junction</a>
+        <hr>
+        <div class="wmnds-grid wmnds-grid--spacing-2-lg">
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        type: "secondary",
+                        contentText: "Remove services",
+                        classes: "wmnds-col-1"
+                    })
+                }}
             </div>
-            <div class="wmnds-live-departures__service-remove">
-                <button class="wmnds-btn wmnds-btn--destructive" type="button">
-                    <svg class="wmnds-btn__icon">
-                        <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
-                    </svg>
-                </button>
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        contentText: "Find stop or station",
+                        iconRight: "general-chevron-right",
+                        classes: "wmnds-col-1"
+                    })
+                }}
             </div>
         </div>
     </div>
     <hr>
-    <div class="wmnds-live-departures-homepage__tram">
-        <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Tram</div>
-        <div class="wmnds-live-departures__service-details wmnds-m-b-md">
-            <div class="wmnds-live-departures__service-description">
-                <a href="#">Birmingham, Town Hall (Platform 2)</a>
+    <div class="wmnds-live-departures wmnds-live-departures--homepage wmnds-p-md wmnds-bg-white">
+        <div class="wmnds-h2 wmnds-m-t-none">My live departures</div>
+        <p class="wmnds-m-b-md">Last updated 9:30am</p>
+        <div class="wmnds-live-departures-homepage__bus">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Bus</div>
+            <div class="wmnds-m-b-md"><a href="#">Stourbridge, Stourbridge Interchange (Stand C)</a></div>
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-name">16</div>
+                <div class="wmnds-live-departures__service-description">
+                    <strong>Stourbridge - Wolverhampton via Kingswinford</strong>
+                </div>
+                <div class="wmnds-live-departures__service-remove">
+                    <button class="wmnds-btn wmnds-btn--destructive" type="button">
+                        <svg class="wmnds-btn__icon">
+                            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="wmnds-live-departures__service-remove">
-                <button class="wmnds-btn wmnds-btn--destructive" type="button">
-                    <svg class="wmnds-btn__icon">
-                        <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
-                    </svg>
-                </button>
+        </div>
+        <hr>
+        <div class="wmnds-live-departures-homepage__train">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Train</div>
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-description">
+                    <a href="#">Birmingham Moor Street</a> to <a href="#">Stourbridge Junction</a>
+                </div>
+                <div class="wmnds-live-departures__service-remove">
+                    <button class="wmnds-btn wmnds-btn--destructive" type="button">
+                        <svg class="wmnds-btn__icon">
+                            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="wmnds-live-departures-homepage__tram">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Tram</div>
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-description">
+                    <a href="#">Birmingham, Town Hall (Platform 2)</a>
+                </div>
+                <div class="wmnds-live-departures__service-remove">
+                    <button class="wmnds-btn wmnds-btn--destructive" type="button">
+                        <svg class="wmnds-btn__icon">
+                            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="wmnds-grid wmnds-grid--spacing-2-lg">
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        type: "secondary",
+                        contentText: "Cancel",
+                        classes: "wmnds-col-1"
+                    })
+                }}
+            </div>
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        contentText: "Save changes",
+                        classes: "wmnds-col-1"
+                    })
+                }}
             </div>
         </div>
     </div>
     <hr>
-    <div class="wmnds-grid wmnds-grid--spacing-2-lg">
-        <div class="wmnds-col-1-2">
-            {{
-                wmndsButton({
-                    type: "secondary",
-                    contentText: "Cancel",
-                    classes: "wmnds-col-1"
-                })
-            }}
-        </div>
-        <div class="wmnds-col-1-2">
-            {{
-                wmndsButton({
-                    contentText: "Save changes",
-                    classes: "wmnds-col-1"
-                })
-            }}
+    <div class="wmnds-live-departures-train">
+        <div class="wmnds-live-departures-tabs">
+            <input class="wmnds-live-departures-tabs__input wmnds-screenreaders-only" type="radio" value="Live departures" name="trainTabs" id="live-departures" aria-label="Live departures" checked>
+            <label class="wmnds-live-departures-tabs__label" for="live-departures">
+                <span class="wmnds-h3 wmnds-m-none">Live departures</span>
+            </label>
+            <input class="wmnds-live-departures-tabs__input wmnds-screenreaders-only" type="radio" value="Live arrivals" name="trainTabs" id="live-arrivals" aria-label="Live arrivals">
+            <label class="wmnds-live-departures-tabs__label" for="live-arrivals">
+                <span class="wmnds-h3 wmnds-m-none">Live arrivals</span>
+            </label>
+            <div class="wmnds-live-departures wmnds-live-departures-tabs__departures">
+                <div class="wmnds-col-1 wmnds-col-md-3-4">
+                    <label class="wmnds-fe-label wmnds-h4 wmnds-m-t-none" for="autoComplete">Enter your destination to filter departures</label>
+                    <div class="wmnds-autocomplete wmnds-grid">
+                        <svg class="wmnds-autocomplete__icon">
+                        <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
+                        </svg>
+                        <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="" placeholder="Search" name="autoComplete" aria-label="Search" type="text" id="acmplt" required="false" autocomplete="off">
+                    </div>
+                </div>
+                <hr>
+                <p class="wmnds-text-align-right wmnds-m-b-md">Last updated 8:15am</p>
+                <table class="wmnds-table wmnds-live-departures__train-timetable">
+                    <caption class="wmnds-table__caption wmnds-screenreaders-only">
+                        Live departures
+                    </caption>
+                    <thead>
+                        <th scope="col">Train</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Time</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" data-header="Train"><strong>Kidderminster</strong><span>West Midlands Railway</span></th>
+                            <td data-header="Platform">2</td>
+                            <td data-header="Time">08:21</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-header="Train"><strong>Worcester Forgate Street</strong><span>West Midlands Railway</span></th>
+                            <td data-header="Platform">2</td>
+                            <td data-header="Time">08:25</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-header="Train"><strong>Worcester Forgate Street</strong><span>West Midlands Railway</span></th>
+                            <td data-header="Platform"></td>
+                            <td data-header="Time"><strong class="wmnds-live-departures__train-timetable-status">Cancelled</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="wmnds-live-departures wmnds-live-departures-tabs__arrivals">
+                <p class="wmnds-text-align-right wmnds-m-b-md">Last updated 8:15am</p>
+                <table class="wmnds-table wmnds-live-departures__train-timetable wmnds-live-departures__train-timetable--responsive">
+                    <caption class="wmnds-table__caption wmnds-screenreaders-only">
+                        Live arrivals
+                    </caption>
+                    <thead>
+                        <th scope="col">Train</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Time</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th data-header="Train" scope="row"><strong>Kidderminster</strong><span>West Midlands Railway</span></th>
+                            <td data-header="Platform">2</td>
+                            <td data-header="Time">08:21</td>
+                        </tr>
+                        <tr>
+                            <th data-header="Train" scope="row"><strong>Worcester Forgate Street</strong><span>West Midlands Railway</span></th>
+                            <td data-header="Platform">2</td>
+                            <td data-header="Time">08:25</td>
+                        </tr>
+                        <tr>
+                            <th data-header="Train" scope="row"><strong>Worcester Forgate Street</strong><span>West Midlands Railway</span></th>
+                            <td data-header="Platform"></td>
+                            <td data-header="Time">08:36<strong class="wmnds-live-departures__train-timetable-status">6 mins late</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
-<hr>
-<div class="wmnds-live-departures-train">
-    Live departures
 </div>
 
 

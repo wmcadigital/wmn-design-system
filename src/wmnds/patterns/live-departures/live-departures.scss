@@ -3,7 +3,9 @@
   background-color: $white;
 
   @media (min-width: $breakpoint-sm) {
-    padding: 1.5rem;
+    &:not(.wmnds-live-departures--homepage) {
+      padding: 1.5rem;
+    }
   }
 
   &__service {
@@ -43,7 +45,7 @@
     text-align: right;
 
     .wmnds-btn {
-      padding: $size-xsm;
+      padding: $size-sm;
     }
   }
 
@@ -80,40 +82,169 @@
       }
     }
   }
-}
 
-&.wmnds-live-departures-homepage {
   hr {
     margin: $size-md 0;
   }
 
   &__train-timetable {
     width: 100%;
-    margin-bottom: $size-md;
+    margin-bottom: 0;
+    border-collapse: collapse;
+
+    &:not(:last-child) {
+      margin-bottom: $size-md;
+    }
 
     thead > tr > th {
       padding-top: 0;
       font-family: $x-heading-font-family;
       font-size: 18px;
+      text-align: right;
+
+      &:first-child {
+        text-align: left;
+      }
 
       &:not(:first-child) {
         padding-left: $size-sm;
       }
     }
 
-    th,
-    td {
-      padding: $size-xsm 0;
-      text-align: right;
+    tbody {
+      th,
+      td {
+        padding: $size-xsm 0;
+        font-weight: normal;
+        text-align: right;
 
-      &:first-child {
-        text-align: left;
+        &:first-child {
+          text-align: left;
+        }
+      }
+
+      th > strong {
+        display: block;
+      }
+
+      tr:last-child > th,
+      tr:last-child > td {
+        padding-bottom: 0;
       }
     }
 
-    tbody tr:last-child > th,
-    tbody tr:last-child > td {
-      padding-bottom: 0;
+    &-status {
+      display: block;
+      color: get-color(error);
     }
+
+    &.wmnds-table {
+      thead > tr > th {
+        height: auto;
+        padding-right: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      tbody {
+        th,
+        td {
+          padding: $size-md 0;
+        }
+
+        @media (max-width: $breakpoint-md - 1) {
+          tr > th,
+          tr > td {
+            min-height: 2rem;
+            padding-top: $size-xsm;
+            padding-bottom: $size-xsm;
+            padding-left: 8rem;
+            border: 0;
+            text-align: left;
+
+            &:empty {
+              display: none;
+            }
+          }
+
+          tr {
+            padding: $size-xs 0;
+            border-color: get-color(text, 70);
+
+            &:last-child,
+            &:last-child > th:last-child,
+            &:last-child > td:last-child {
+              padding-bottom: 0;
+              border: 0;
+            }
+          }
+
+          tr > th:before,
+          tr > td:before {
+            top: $size-xsm;
+            width: 7rem;
+            transform: none;
+            font-family: $x-heading-font-family;
+          }
+        }
+
+        @media (min-width: $breakpoint-md) {
+          & > tr:not(:last-child) > th,
+          & > tr:not(:last-child) > td {
+            border-bottom: 1px solid get-color(text, 70);
+          }
+
+          tr {
+            &:last-child,
+            &:last-child > th,
+            &:last-child > td {
+              padding-bottom: 0;
+              border: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+&.wmnds-live-departures-tabs {
+  $self: &;
+  position: relative;
+  padding-top: 60px;
+
+  &__label {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 60px;
+    padding: 0 $size-md;
+    color: $white;
+    background-color: get-color(secondary);
+    font-family: $x-heading-font-family;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    &:last-of-type {
+      left: 50%;
+    }
+  }
+
+  &__input:checked + #{ $self }__label {
+    background-color: get-color(primary);
+  }
+
+  &__input ~ #{ $self }__arrivals,
+  &__input ~ #{ $self }__departures {
+    display: none;
+  }
+
+  &__input:first-of-type:checked ~ #{ $self }__departures,
+  &__input:last-of-type:checked ~ #{ $self }__arrivals {
+    display: block;
   }
 }
