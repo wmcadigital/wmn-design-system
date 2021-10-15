@@ -1,0 +1,22 @@
+&.wmnds-find-stop-station-widget {
+  &__services {
+    display: none;
+  }
+
+  &.wmnds-is--open {
+    .wmnds-find-stop-station-widget__services {
+      display: block;
+    }
+  }
+
+  &__mode-checkbox {
+    &:focus + .wmnds-btn--mode {
+      background-color: $white;
+      box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+    }
+
+    &:checked + .wmnds-btn--mode {
+      background-color: get-color(secondary, 50);
+    }
+  }
+}
