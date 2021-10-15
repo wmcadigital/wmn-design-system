@@ -4,6 +4,7 @@
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
 {% from "wmnds/patterns/find-stop-station-widget/_find-stop-station-widget.njk" import wmndsFindStopStationWidget %}
+{% from "wmnds/patterns/find-stop-station-widget/find-stop-station-sidebar/_find-stop-station-sidebar.njk" import wmndsFindStopStationSidebar %}
 {% from "wmnds/patterns/nearest-stop-station/_nearest-stop-station.njk" import wmndsNearestStopStation %}
 
 {% block content %}
@@ -109,6 +110,57 @@
 
 {% endmarkdown %}
 
+<h3>Bus</h3>
+
+{{
+  compExample([
+      wmndsFindStopStationSidebar({
+        id: "sidebarBus",
+        formTitle: "Find a bus stop",
+        mode: "bus"
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/find-stop-station-sidebar/",
+      njk: true,
+      njkProps: wmndsFindStopStationSidebarProps
+    }
+  )
+}}
+
+<h3>Train</h3>
+
+{{
+  compExample([
+      wmndsFindStopStationSidebar({
+        id: "sidebarTrain",
+        formTitle: "Find a train station",
+        mode: 'rail'
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/find-stop-station-sidebar/",
+      njk: true,
+      njkProps: wmndsFindStopStationSidebarProps
+    }
+  )
+}}
+
+<h3>Tram</h3>
+
+{{
+  compExample([
+      wmndsFindStopStationSidebar({
+        id: "sidebarTram",
+        formTitle: "Find a tram stop",
+        mode: "metro"
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/find-stop-station-sidebar/",
+      njk: true,
+      njkProps: wmndsFindStopStationSidebarProps
+    }
+  )
+}}
+
 {% markdown %}
 
 ## Station and stop pages
@@ -130,6 +182,17 @@
 - Users will need to enter a postcode, road name or place of interest
 
 {% endmarkdown %}
+
+{{
+  compExample([
+      wmndsFindStopStationSidebar()
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/find-stop-station-sidebar/",
+      njk: true,
+      njkProps: wmndsFindStopStationSidebarProps
+    }
+  )
+}}
 
 {% markdown %}
 

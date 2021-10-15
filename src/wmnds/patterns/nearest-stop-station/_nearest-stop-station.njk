@@ -2,11 +2,7 @@
 
 {# Imports of components #}
 {% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
-{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
-{% from "wmnds/components/button/_button.njk" import wmndsButton %}
-{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
-{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
 {# Set params #}
 {% set formTitle = params.formTitle if params.formTitle else "Nearest stops or stations" %}

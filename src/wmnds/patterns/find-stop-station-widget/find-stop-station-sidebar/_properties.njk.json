@@ -1,0 +1,19 @@
+{
+  "wmndsFindStopStationSidebarProps": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "<strong>Required.</strong> id for the card components"
+    },
+    {
+      "name": "formTitle",
+      "type": "string",
+      "description": "Content card title text"
+    },
+    {
+      "name": "mode",
+      "type": "string",
+      "description": "Sets the color code for the content card border. Accepted values are 'bus', 'rail' and 'metro'. If not set the default stop or station widget will display."
+    }
+  ]
+}
