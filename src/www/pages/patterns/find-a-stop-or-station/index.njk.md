@@ -3,6 +3,8 @@
 
 {% set section="Patterns" %}
 {% from "www/_partials/component-example/component-example.njk" import compExample %}
+{% from "wmnds/patterns/find-stop-station-widget/_find-stop-station-widget.njk" import wmndsFindStopStationWidget %}
+{% from "wmnds/patterns/nearest-stop-station/_nearest-stop-station.njk" import wmndsNearestStopStation %}
 
 {% block content %}
 
@@ -29,11 +31,61 @@
 
 {% endmarkdown %}
 
+{{
+  compExample([
+      wmndsFindStopStationWidget({
+        contentHTML: "<p>See live departures, disruptions, timetables and nearest stops or stations.</p>"
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/",
+      njk: true,
+      njkProps: wmndsFindStopStationProps
+    }
+  )
+}}
+
 {% markdown %}
 
 ### Expanded (bus)
 
 {% endmarkdown %}
+
+{{
+  compExample([
+      wmndsFindStopStationWidget({
+        isOpen: true,
+        mode: 'bus',
+        contentHTML: "<p>See live departures, disruptions, timetables and nearest stops or stations.</p>"
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/",
+      njk: true,
+      njkProps: wmndsFindStopStationProps
+    }
+  )
+}}
+
+{% markdown %}
+
+### Expanded (train)
+
+{% endmarkdown %}
+
+{{
+  compExample([
+      wmndsFindStopStationWidget({
+        id: 'trainOpen',
+        isOpen: true,
+        mode: 'train',
+        contentHTML: "<p>See live departures, disruptions, timetables and nearest stops or stations.</p>"
+      })
+    ], {
+      componentPath: "wmnds/patterns/find-stop-station-widget/",
+      njk: true,
+      njkProps: wmndsFindStopStationProps
+    }
+  )
+}}
 
 {% markdown %}
 
@@ -98,5 +150,34 @@
 - The nearest three bus stops, train stations or tram stops from the page location will be shown
 
 {% endmarkdown %}
+
+{{
+  compExample([
+      wmndsNearestStopStation({
+        stops: [
+          {
+            mode: "rail",
+            name: "Stourbridge Town",
+            distance: "1 minute walk"
+          },
+          {
+            mode: "bus",
+            name: "Stourbridge, Town Centre",
+            distance: "1 minute walk"
+          },
+          {
+            mode: "metro",
+            name: "Stourbridge, Foster St East (adjacent)",
+            distance: "1 minute walk"
+          }
+        ]
+      })
+    ], {
+      componentPath: "wmnds/patterns/nearest-stop-station/",
+      njk: true,
+      njkProps: wmndsNearestStopStationProps
+    }
+  )
+}}
 
 {% endblock %}

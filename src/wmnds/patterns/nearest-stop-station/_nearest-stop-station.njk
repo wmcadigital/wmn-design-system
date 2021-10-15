@@ -1,0 +1,63 @@
+{% macro wmndsNearestStopStation(params) %}
+
+{# Imports of components #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/form-elements/text-input/_text-input.njk" import wmndsTextInput %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/components/link/as-button/_as-button.njk" import wmndsLinkAsButton %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
+
+{# Set params #}
+{% set formTitle = params.formTitle if params.formTitle else "Nearest stops or stations" %}
+{% set mode = params.mode if params.mode %}
+{% set stops = params.stops if params.stops else [
+    {
+        mode: "rail",
+        name: "Stourbridge Town",
+        distance: "1 minute walk"
+    },
+    {
+        mode: "bus",
+        name: "Stourbridge, Town Centre",
+        distance: "1 minute walk"
+    },
+    {
+        mode: "metro",
+        name: "Stourbridge, Foster St East (adjacent)",
+        distance: "1 minute walk"
+    }
+] %}
+
+
+<div style="max-width: 448px">
+
+    <div class="wmnds-nearest-stop-station">
+
+        {% call wmndsContentCard() %}
+            <div class="wmnds-p-md">
+                <h2>{{formTitle}}</h2>
+                {% for stop in stops %}
+                <div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-nearest-stop-station__stop">
+                    <div class="wmnds-col-auto">
+                        {{
+                            wmndsIcon({
+                                icon: "modes-isolated-" + stop.mode,
+                                class: "wmnds-nearest-stop-station__icon wmnds-nearest-stop-station__icon--" + stop.mode
+                            })
+                        }}
+                    </div>
+                    <div class="wmnds-col-auto">
+                        <div><a href="#">{{stop.name}}</a></div>
+                        <span>{{stop.distance}}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endcall %}
+
+    </div>
+</div>
+
+
+{% endmacro %}
