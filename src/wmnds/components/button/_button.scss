@@ -270,6 +270,28 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     }
   }
 
+  &--favourite {
+    padding: 0;
+    border-radius: 0;
+    color: get-color(text);
+    background: none;
+    font-weight: normal;
+    cursor: pointer;
+
+    .wmnds-btn__icon {
+      margin-right: $size-xsm;
+      fill: get-color(information);
+    }
+
+    &:active,
+    &:target,
+    &:hover,
+    &:focus,
+    &.wmnds-is--active {
+      background: none;
+    }
+  }
+
   // block modifier for full width buttons
   &--block {
     display: block;

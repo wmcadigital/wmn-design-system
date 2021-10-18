@@ -1,0 +1,90 @@
+{
+  "wmndsLiveDeparturesWidgetProps": [
+    {
+      "name": "editMode",
+      "type": "boolean",
+      "description": "Determines whether to show the widget in edit mode"
+    },
+    {
+      "name": "lastUpdated",
+      "type": "string",
+      "description": "The time that the widget was last updated e.g. 9:30am"
+    },
+    {
+      "name": "trainStops",
+      "type": "array",
+      "description": "Array of objects containing the train stop information",
+      "arrayOptions": [
+        {
+          "name": "routeStart",
+          "type": "string",
+          "description": "The first station of the train route"
+        },
+        {
+          "name": "routeEnd",
+          "type": "string",
+          "description": "The end station of the train route"
+        },
+        {
+          "name": "stops",
+          "type": "array",
+          "description": "Array of objects containing the information for the train departures. Objects include the fields 'destination', 'time' and 'platform'."
+        }
+      ]
+    },
+    {
+      "name": "busStops",
+      "type": "array",
+      "description": "Array of objects containing the bus stop information",
+      "arrayOptions": [
+        {
+          "name": "routeName",
+          "type": "string",
+          "description": "The name of the bus service e.g. MM1"
+        },
+        {
+          "name": "route",
+          "type": "string",
+          "description": "The bus route description"
+        },
+        {
+          "name": "stopName",
+          "type": "string",
+          "description": "The bus stop name"
+        },
+        {
+          "name": "times",
+          "type": "array",
+          "description": "Array of departure times to show"
+        }
+      ]
+    },
+    {
+      "name": "tramStops",
+      "type": "array",
+      "description": "Array of objects containing the tram stop information",
+      "arrayOptions": [
+        {
+          "name": "routeName",
+          "type": "string",
+          "description": "The name of the tram service e.g. MM1"
+        },
+        {
+          "name": "route",
+          "type": "string",
+          "description": "The tram route description"
+        },
+        {
+          "name": "stopName",
+          "type": "string",
+          "description": "The tram stop name"
+        },
+        {
+          "name": "times",
+          "type": "array",
+          "description": "Array of departure times to show"
+        }
+      ]
+    }
+  ]
+}

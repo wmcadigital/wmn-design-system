@@ -1,0 +1,55 @@
+{% raw %}
+{% from "wmnds/patterns/live-departures/live-departures-widget/_live-departures-widget.njk" import wmndsLiveDeparturesWidget %}
+{{
+   wmndsLiveDeparturesWidget({
+      editMode: false,
+      lastUpdated: "9:30am",
+      busStops: [
+         {
+            routeName: "16",
+            stopName: "Stourbridge, Stourbridge Interchange (Stand C)",
+            route: "Stourbridge - Wolverhampton via Kingswinford",
+            times: [4, 14, 24, 34]
+         },
+         {
+            routeName: "16",
+            stopName: "Wolverhampton Bus Station (Stand L)",
+            route: "Wolverhampton - Stourbridge via Kingswinford",
+            times: [4, 14, 24, 34]
+         }
+      ],
+      trainStops: [
+         {
+            routeStart: "Birmingham Moor Street",
+            routeEnd: "Stourbridge Junction",
+            stops: [
+                  {
+                     destination: "Kidderminster",
+                     time: "08:21",
+                     platform: 2
+                  },
+                  {
+                     destination: "Worcester Forgate Street",
+                     time: "08:25",
+                     platform: 2
+                  }
+            ]
+         }
+      ],
+      tramStops: [
+         {
+            routeName: "MM1",
+            stopName: "Birmingham, Town Hall (Platform 2)",
+            route: "Birmingham - Wolverhampton",
+            times: [4, 14, 24, 34]
+         },
+         {
+            routeName: "MM1",
+            stopName: "Wolverhampton St George’s",
+            route: "Wolverhampton - Birmingham",
+            times: [4, 14, 24, 34]
+         }
+      ]
+   })
+}}
+{% endraw %}

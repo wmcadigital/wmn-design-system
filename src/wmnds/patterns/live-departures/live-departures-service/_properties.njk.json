@@ -1,0 +1,29 @@
+{
+  "wmndsLiveDeparturesServiceProps": [
+    {
+      "name": "name",
+      "type": "string",
+      "description": "The name of the service e.g. 16"
+    },
+    {
+      "name": "destination",
+      "type": "string",
+      "description": "The bus service destination name"
+    },
+    {
+      "name": "lastUpdated",
+      "type": "string",
+      "description": "The time of last departure update e.g. 9:30am"
+    },
+    {
+      "name": "operator",
+      "type": "string",
+      "description": "The service operator name"
+    },
+    {
+      "name": "times",
+      "type": "array",
+      "description": "Array of departure times to show"
+    }
+  ]
+}
