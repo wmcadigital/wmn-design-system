@@ -1,3 +1,13 @@
+# [2.1.0](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.1...v2.1.0) (2021-08-26)
+
+
+### Features
+
+* add autocomplete selected state ([#875](https://github.com/wmcadigital/wmn-design-system/issues/875)) ([0e892ff](https://github.com/wmcadigital/wmn-design-system/commit/0e892ffca27d8c06c99cd286d68051dc8c85cc44))
+* Add timetable patterns ([#877](https://github.com/wmcadigital/wmn-design-system/issues/877)) ([cbee3f8](https://github.com/wmcadigital/wmn-design-system/commit/cbee3f814a65b2fccec44bbef994cc0730c0bd15))
+* added facilities icons ([#878](https://github.com/wmcadigital/wmn-design-system/issues/878)) ([de557c0](https://github.com/wmcadigital/wmn-design-system/commit/de557c0abcdf8ff595774cb34073c1220eba6745))
+* Adding shareable travel updates widget's documentation. ([#873](https://github.com/wmcadigital/wmn-design-system/issues/873)) ([7110a99](https://github.com/wmcadigital/wmn-design-system/commit/7110a99f4b224eb5b1c2164da25b91ac372f1c2e))
+
 ## [2.0.1](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.0...v2.0.1) (2021-08-04)
 
 
