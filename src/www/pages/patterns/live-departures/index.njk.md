@@ -175,7 +175,39 @@
 {{
   compExample([
       wmndsLiveDeparturesTrain({
-        showFiltered: true
+        showFiltered: true,
+        departures: [
+        {
+            train: "Kidderminster",
+            operator: "West Midlands Railway",
+            status: null,
+            time: "08:21",
+            platform: 2
+        },
+        {
+            train: "Worcester Forgate Street",
+            operator: "West Midlands Railway",
+            platform: 2,
+            time: "08:35"
+        },
+        {
+            train: "Stratford-upon-Avon",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:41"
+        },
+        {
+            train: "Worcester Forgate Street",
+            operator: "West Midlands Railway",
+            status: "Cancelled"
+        },
+        {
+            train: "Stratford-upon-Avon",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:50"
+        }
+    ]
       })
     ], {
       componentPath: "wmnds/patterns/live-departures/live-departures-train/",
