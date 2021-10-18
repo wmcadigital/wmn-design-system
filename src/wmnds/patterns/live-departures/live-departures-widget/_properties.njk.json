@@ -13,7 +13,7 @@
     {
       "name": "trainStops",
       "type": "array",
-      "description": "Array of objects containing the bus stop information",
+      "description": "Array of objects containing the train stop information",
       "arrayOptions": [
         {
           "name": "routeStart",
