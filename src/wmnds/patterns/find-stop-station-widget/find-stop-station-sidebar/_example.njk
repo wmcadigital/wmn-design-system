@@ -1,0 +1,11 @@
+{% raw %}
+{% from "wmnds/patterns/find-stop-station-widget/find-stop-station-sidebar/_find-stop-station-sidebar.njk" import wmndsFindStopStationSidebar %}
+
+{{
+   wmndsFindStopStationSidebar({
+      id: "sidebarBus",
+      formTitle: "Find a bus stop",
+      mode: "bus"
+   })
+}}
+{% endraw %}

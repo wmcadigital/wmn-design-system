@@ -1,0 +1,45 @@
+{% macro wmndsFindStopStationSidebar(params) %}
+
+{# Imports of components #}
+{% from "wmnds/components/content-card/_content-card.njk" import wmndsContentCard %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
+
+{# Set params #}
+{% set id = params.id if params.id else "stopStation" %}
+{% set formTitle = params.formTitle if params.formTitle else "Find a stop or station" %}
+{% set _classes = "wmnds-find-stop-station-sidebar--" + params.mode if params.mode %}
+
+<div style="max-width: 448px">
+
+    <div class="wmnds-find-stop-station-sidebar {{_classes}}">
+
+        {% call wmndsContentCard() %}
+            <div class="wmnds-p-md">
+                <h2>{{formTitle}}</h2>
+                <div class="wmnds-m-b-md">
+                    {{
+                        wmndsAutocomplete({
+                            id: "autocomplete" + id,
+                            label: {
+                                contentText: "Enter a postcode, road name or place of interest"
+                            },
+                            placeholder: "Search"
+                        })
+                    }}
+                </div>
+                {{
+                    wmndsButton({
+                        contentText: "Search",
+                        iconRight: "general-chevron-right",
+                        classes: "wmnds-col-1 wmnds-btn--align-left"
+                    })
+                }}
+            </div>
+        {% endcall %}
+
+    </div>
+</div>
+
+
+{% endmacro %}

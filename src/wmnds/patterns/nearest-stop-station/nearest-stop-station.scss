@@ -1,0 +1,26 @@
+&.wmnds-nearest-stop-station {
+  &__stop {
+    flex-wrap: nowrap;
+
+    &:not(:last-child) {
+      margin-bottom: $size-md;
+    }
+  }
+
+  &__icon {
+    width: $size-lg;
+    height: $size-lg;
+
+    &--bus {
+      fill: get-color(bus);
+    }
+
+    &--rail {
+      fill: get-color(railway);
+    }
+
+    &--metro {
+      fill: get-color(metro);
+    }
+  }
+}
