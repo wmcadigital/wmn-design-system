@@ -1,0 +1,167 @@
+{% macro wmndsFacilities(params) %}
+
+{# Imports of components #}
+{% from "wmnds/components/inset-text/_inset-text.njk" import wmndsInsetText %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+
+{# Set params #}
+{% set parkingExample = true if params.parkingExample %}
+
+{% if parkingExample %}
+<div class="wmnds-facilities wmnds-bg-white wmnds-p-lg">
+    <h3 class="wmnds-facilities__title">Park and ride</h3>
+    <p class="wmnds-p-t-xsm">Owned by <a href="#">West Midlands Combined Authority</a></p>
+    <ul class="wmnds-facilities__list">
+        <li class="wmnds-facilities__list-item">
+            {{
+                wmndsIcon({
+                    icon: 'facilities-taxi-rank',
+                    class: 'wmnds-facilities__icon'
+                })
+            }}
+            Spaces: 310
+        </li>
+        <li class="wmnds-facilities__list-item">
+            {{
+                wmndsIcon({
+                    icon: 'facilities-blue-badge-parking',
+                    class: 'wmnds-facilities__icon'
+                })
+            }}
+            Blue badge spaces: 14
+        </li>
+        <li class="wmnds-facilities__list-item">
+            {{
+                wmndsIcon({
+                    icon: 'facilities-shared-occupancy-parking',
+                    class: 'wmnds-facilities__icon'
+                })
+            }}
+            Shared occupancy spaces: 10
+        </li>
+        <li class="wmnds-facilities__list-item">
+            {{
+                wmndsIcon({
+                    icon: 'facilities-electric-charging',
+                    class: 'wmnds-facilities__icon'
+                })
+            }}
+            Electric charging spaces: 4
+        </li>
+    </ul>
+    {{ 
+        wmndsInsetText({
+            contentText: "Inset text",
+            contentHTML: "Parking is available on a first come, first served basis",
+            classes: "wmnds-m-b-lg"
+        }) 
+    }}
+    <p>West Midlands Combined Authority operates a considerate parking policy to ensure all sites are accessible and used in the most appropriate way.</p>
+    <p class="wmnds-m-b-none">Find information on how <a href="#">Park and Ride</a> works.</p>
+</div>
+{% else %}
+<div class="wmnds-facilities wmnds-grid wmnds-grid--spacing-md-2-md wmnds-bg-white wmnds-p-lg">
+    <div class="wmnds-facilities__section wmnds-col-1-1 wmnds-col-md-1-2">
+        <h3 class="wmnds-facilities__title">Station facilities</h3>
+        <ul class="wmnds-facilities__list">
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-seating',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Seated area
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-toilets',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Toilets
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-baby-changing',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Baby changing
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-wifi',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Wifi
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'modes-isolated-cycle',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Cycle storage
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'modes-isolated-cycle',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Cycle stands: 28
+            </li>
+        </ul>
+    </div>
+    <div class="wmnds-facilities__section wmnds-col-1-1 wmnds-col-md-1-2">
+        <h3 class="wmnds-facilities__title">Accessibility</h3>
+        <ul class="wmnds-facilities__list">
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-step-free-access',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Step-free access
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-ramp',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Ramp for train access
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-induction-loop',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                Induction loop
+            </li>
+            <li class="wmnds-facilities__list-item">
+                {{
+                    wmndsIcon({
+                        icon: 'facilities-key-scheme',
+                        class: 'wmnds-facilities__icon'
+                    })
+                }}
+                National key toilets available
+            </li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+{% endmacro %}
