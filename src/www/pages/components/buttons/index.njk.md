@@ -197,28 +197,28 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {{
   compExample([
     primary({
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>", 
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>",
       type: "primary"
     }),
     primary({
       isActive: true,
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (active)", 
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (active)",
       type: "primary"
     }),
     primary({
       isDisabled: true,
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)", 
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)",
       type: "primary"
     }),
     primary({
       iconRight: "general-chevron-right",
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>", 
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg>",
       type: "primary"
     }),
     primary({
       iconRight: "general-chevron-right",
       isDisabled: true,
-      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)", 
+      contentHTML: "Pay with <svg class=\"wmnds-swift-logo-inline\"><use xlink:href=\"#wmnds-swift-full-logo\" href=\"#wmnds-swift-full-logo\"></use></svg> (disabled)",
       type: "primary"
     })
   ],
@@ -545,6 +545,43 @@ Icons should only be used where it is deemed absolutely necessary to communicate
     iframe: false
   }
   )
+}}
+
+{% markdown %}
+
+## Add to homepage
+
+<h3>What does it do?</h3>
+
+- Allows users to add transport services to the <a href="https://designsystem.tfwm.org.uk/patterns/live-departures/">Live departures widget</a> and the <a href="https://designsystem.tfwm.org.uk/patterns/travel-updates/">Travel updates widget</a> on the homepage from the timetable and disruption services
+- Users can remove the services they have favourited
+
+<h3>When to use it?</h3>
+
+- When a user can add a transport service or route to a personalised widget on the homepage
+
+{% endmarkdown %}
+
+{{
+  compExample([
+    wmndsButton({
+      contentText: "Add to homepage",
+      type: "favourite",
+      iconLeft: "general-star-empty"
+    }),
+    wmndsButton({
+      contentText: "Remove from homepage",
+      type: "favourite",
+      iconLeft: "general-star"
+    })
+  ],
+  {
+    componentPath: "wmnds/components/button/",
+    njk: true,
+    njkProps: wmndsButtonProps,
+    js: false,
+    iframe: false
+  })
 }}
 
 {% markdown %}
