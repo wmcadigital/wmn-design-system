@@ -1,0 +1,26 @@
+{
+  "wmndsNearestStopStationProps": [
+    {
+      "name": "stops",
+      "type": "array",
+      "description": "Array of three objects containing nearest stop information",
+      "arrayOptions": [
+        {
+          "name": "mode",
+          "type": "string",
+          "description": "Accepted modes are 'bus', 'rail', 'metro'"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Name of the stop or station"
+        },
+        {
+          "name": "distance",
+          "type": "string",
+          "description": "The distance of the stop or station from the current stop"
+        }
+      ]
+    }
+  ]
+}

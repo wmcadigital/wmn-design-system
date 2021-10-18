@@ -1,0 +1,19 @@
+&.wmnds-find-stop-station-sidebar {
+  &--bus {
+    .wmnds-content-card {
+      border-bottom-color: get-color(bus);
+    }
+  }
+
+  &--rail {
+    .wmnds-content-card {
+      border-bottom-color: get-color(railway);
+    }
+  }
+
+  &--metro {
+    .wmnds-content-card {
+      border-bottom-color: get-color(metro);
+    }
+  }
+}
