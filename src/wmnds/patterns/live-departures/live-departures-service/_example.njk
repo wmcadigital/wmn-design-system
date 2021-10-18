@@ -1,0 +1,12 @@
+{% raw %}
+{% from "wmnds/patterns/live-departures/live-departures-service/_live-departures-service.njk" import wmndsLiveDeparturesService %}
+{{
+   wmndsLiveDeparturesService({
+      name: "MM1",
+      operator: null,
+      destination: "Birmingham - Wolverhampton",
+      lastUpdated: "9:30am",
+      times: [4, 14, 24, 34, 44]
+   })
+}}
+{% endraw %}

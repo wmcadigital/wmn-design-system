@@ -1,0 +1,31 @@
+{
+  "wmndsLiveDeparturesBusProps": [
+    {
+      "name": "service",
+      "type": "array",
+      "description": "Array of objects containing the bus service information",
+      "arrayOptions": [
+        {
+          "name": "name",
+          "type": "string",
+          "description": "The name of the bus service e.g. 16"
+        },
+        {
+          "name": "destination",
+          "type": "string",
+          "description": "The bus service destination name"
+        },
+        {
+          "name": "operator",
+          "type": "string",
+          "description": "The bus service operator name"
+        },
+        {
+          "name": "times",
+          "type": "array",
+          "description": "Array of departure times to show"
+        }
+      ]
+    }
+  ]
+}

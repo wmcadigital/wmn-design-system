@@ -1,0 +1,214 @@
+{% macro wmndsLiveDeparturesWidget(params) %}
+
+{% set editMode = true if params.editMode else false %}
+{% set lastUpdated = params.lastUpdated if params.lastUpdated else "9:30am" %}
+{% set busStops = params.busStops if params.busStops else [
+    {
+        routeName: "16",
+        stopName: "Stourbridge, Stourbridge Interchange (Stand C)",
+        route: "Stourbridge - Wolverhampton via Kingswinford",
+        times: [4, 14, 24, 34]
+    },
+    {
+        routeName: "16",
+        stopName: "Wolverhampton Bus Station (Stand L)",
+        route: "Wolverhampton - Stourbridge via Kingswinford",
+        times: [4, 14, 24, 34]
+    }
+] %}
+{% set trainStops = params.trainStops if params.trainStops else [
+    {
+        routeStart: "Birmingham Moor Street",
+        routeEnd: "Stourbridge Junction",
+        stops: [
+            {
+                destination: "Kidderminster",
+                time: "08:21",
+                platform: 2
+            },
+            {
+                destination: "Worcester Forgate Street",
+                time: "08:25",
+                platform: 2
+            }
+        ]
+    }
+] %}
+{% set tramStops = params.tramStops if params.tramStops else [
+    {
+        routeName: "MM1",
+        stopName: "Birmingham, Town Hall (Platform 2)",
+        route: "Birmingham - Wolverhampton",
+        times: [4, 14, 24, 34]
+    },
+    {
+        routeName: "MM1",
+        stopName: "Wolverhampton St George’s",
+        route: "Wolverhampton - Birmingham",
+        times: [4, 14, 24, 34]
+    }
+] %}
+
+{% set busStops = [busStops[0]] if editMode else busStops %}
+{% set tramStops = [tramStops[0]] if editMode else tramStops %}
+
+{# import components #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+
+<div style="max-width: 640px;">
+    <div class="wmnds-live-departures wmnds-live-departures--widget wmnds-p-md wmnds-bg-white">
+        <div class="wmnds-h2 wmnds-m-t-none">My live departures</div>
+        <p class="wmnds-m-b-md">Last updated 9:30am</p>
+        {% if busStops.length > 0 %}
+        <div class="wmnds-live-departures-widget__bus">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Bus</div>
+            {% for stop in busStops %}
+            <div class="wmnds-m-b-md"><a href="#">{{ stop.stopName }}</a></div>
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-name">{{ stop.routeName }}</div>
+                <div class="wmnds-live-departures__service-description">
+                    <strong>{{ stop.route }}</strong>
+                </div>
+                {% if editMode %}
+                <div class="wmnds-live-departures__service-remove">
+                    <button class="wmnds-btn wmnds-btn--destructive" title="Remove service" type="button">
+                        <svg class="wmnds-btn__icon">
+                            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+                        </svg>
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+            {% if editMode === false %}
+            <div class="wmnds-live-departures__times wmnds-m-b-md">
+                {% for time in stop.times %}
+                <div class="wmnds-live-departures__time">{{ time }} mins</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <hr>
+        {% endif %}
+        {% if trainStops.length > 0 %}
+        <div class="wmnds-live-departures-widget__train">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Train</div>
+            {% for trainStop in trainStops %}
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-description">
+                    <a href="#">{{ trainStop.routeStart }}</a> to <a href="#">{{ trainStop.routeEnd }}</a>
+                </div>
+                {% if editMode %}
+                <div class="wmnds-live-departures__service-remove">
+                    <button class="wmnds-btn wmnds-btn--destructive" title="Remove service" type="button">
+                        <svg class="wmnds-btn__icon">
+                            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+                        </svg>
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+            {% if editMode === false %}
+            <table class="wmnds-live-departures__train-timetable">
+                <caption class="wmnds-screenreaders-only">Train timetable</caption>
+                <thead>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Platform</th>
+                </thead>
+                <tbody>
+                    {% for stop in trainStop.stops %}
+                    <tr>
+                        <th scope="row"><strong>{{ stop.destination }}</strong></th>
+                        <td>{{ stop.time }}</td>
+                        <td>{{ stop.platform }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <hr>
+        {% endif %}
+        {% if tramStops.length > 0 %}
+        <div class="wmnds-live-departures-widget__tram">
+            <div class="wmnds-h3 wmnds-m-t-md wmnds-m-b-md">Tram</div>
+            {% for stop in tramStops %}
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-description">
+                    <a href="#">{{ stop.stopName }}</a>
+                </div>
+                {% if editMode %}
+                <div class="wmnds-live-departures__service-remove">
+                    <button class="wmnds-btn wmnds-btn--destructive" title="Remove service" type="button">
+                        <svg class="wmnds-btn__icon">
+                            <use xlink:href="#wmnds-general-trash" href="#wmnds-general-trash"></use>
+                        </svg>
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+            {% if editMode === false %}
+            <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+                <div class="wmnds-live-departures__service-name">{{ stop.routeName }}</div>
+                <div class="wmnds-live-departures__service-description">
+                    <strong>{{ stop.route }}</strong>
+                </div>
+            </div>
+            <div class="wmnds-live-departures__times wmnds-m-b-md">
+                {% for time in stop.times %}
+                <div class="wmnds-live-departures__time">{{ time }} mins</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <hr>
+        {% endif %}
+        <div class="wmnds-grid wmnds-grid--spacing-2-lg">
+            {% if editMode === false %}
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        type: "secondary",
+                        contentText: "Remove services",
+                        classes: "wmnds-col-1"
+                    })
+                }}
+            </div>
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        contentText: "Find stop or station",
+                        iconRight: "general-chevron-right",
+                        classes: "wmnds-col-1"
+                    })
+                }}
+            </div>
+            {% else %}
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        type: "secondary",
+                        contentText: "Cancel",
+                        classes: "wmnds-col-1"
+                    })
+                }}
+            </div>
+            <div class="wmnds-col-1-2">
+                {{
+                    wmndsButton({
+                        contentText: "Save changes",
+                        classes: "wmnds-col-1"
+                    })
+                }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endmacro %}
