@@ -1,0 +1,50 @@
+{% macro wmndsLiveDeparturesBus(params) %}
+
+{% set services = params.services if params.services else [
+    {
+        name: "16",
+        destination: "Wolverhampton",
+        operator: "National Express West Midlands",
+        times: [3, 7, 28]
+    },
+    {
+        name: "16",
+        destination: "Wolverhampton",
+        operator: "National Express West Midlands",
+        times: [3, 7, 28]
+    },
+    {
+        name: "16",
+        destination: "Wolverhampton",
+        operator: "National Express West Midlands",
+        times: [3, 7, 28]
+    }
+] %}
+
+<div style="max-width: 640px;">
+    <div class="wmnds-live-departures wmnds-live-departures--bus">
+        {% for service in services %}
+        <div class="wmnds-live-departures__service wmnds-grid wmnds-grid--spacing-sm-2-md wmnds-grid--justify-between">
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                <div class="wmnds-live-departures__service-details">
+                    <div class="wmnds-live-departures__service-name">{{ service.name }}</div>
+                    <div class="wmnds-live-departures__service-description">
+                        <strong>{{ service.destination }}</strong>
+                        <span class="wmnds-live-departures__service-operator">{{ service.operator }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wmnds-col-1 wmnds-col-sm-1-2">
+                <div class="wmnds-live-departures__times">
+                    {% for time in service.times %}
+                    <div class="wmnds-live-departures__time">{{ time }} mins</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endmacro %}

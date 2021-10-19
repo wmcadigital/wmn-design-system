@@ -1,0 +1,75 @@
+{% raw %}
+{% from "wmnds/patterns/live-departures/live-departures-train/_live-departures-train.njk" import wmndsLiveDeparturesTrain %}
+{{
+   wmndsLiveDeparturesTrain({
+      showFiltered: false,
+      lastUpdated: "09:30am",
+      departures: [
+         {
+            train: "Kidderminster",
+            operator: "West Midlands Railway",
+            status: null,
+            time: "08:21",
+            platform: 2
+         },
+         {
+            train: "London Marylebone",
+            operator: "Chiltern Railways",
+            platform: 1,
+            time: "08:25"
+         },
+         {
+            train: "Stratford-upon-Avon",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:31"
+         },
+         {
+            train: "Worcester Forgate Street",
+            operator: "West Midlands Railway",
+            status: "Cancelled"
+         },
+         {
+            train: "Dorridge",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:40"
+         }
+      ],
+      arrivals: [
+         {
+            train: "Kidderminster",
+            operator: "West Midlands Railway",
+            status: null,
+            time: "08:21",
+            platform: 2
+         },
+         {
+            train: "London Marylebone",
+            operator: "Chiltern Railways",
+            platform: 1,
+            time: "08:25"
+         },
+         {
+            train: "Stratford-upon-Avon",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:31"
+         },
+         {
+            train: "Worcester Forgate Street",
+            operator: "West Midlands Railway",
+            platform: 2,
+            time: "08:36",
+            status: "6 mins late"
+         },
+         {
+            train: "Dorridge",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:40"
+         }
+      ]
+   })
+}}
+{% endraw %}

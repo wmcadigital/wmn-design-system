@@ -3,7 +3,7 @@
     {
       "name": "type",
       "type": "string",
-      "description": "Type of the button. As default it is <code class='wmnds-website-inline-code'>null</code>. Available types: <code class='wmnds-website-inline-code'>link</code>, <code class='wmnds-website-inline-code'>primary</code>, <code class='wmnds-website-inline-code'>secondary</code>, <code class='wmnds-website-inline-code'>destructive</code>, <code class='wmnds-website-inline-code'>start</code>, <code class='wmnds-website-inline-code'>mode</code> "
+      "description": "Type of the button. As default it is <code class='wmnds-website-inline-code'>null</code>. Available types: <code class='wmnds-website-inline-code'>link</code>, <code class='wmnds-website-inline-code'>primary</code>, <code class='wmnds-website-inline-code'>secondary</code>, <code class='wmnds-website-inline-code'>destructive</code>, <code class='wmnds-website-inline-code'>start</code>, <code class='wmnds-website-inline-code'>mode</code>, <code class='wmnds-website-inline-code'>favourite</code> "
     },
     {
       "name": "contentText",

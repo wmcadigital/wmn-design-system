@@ -1,0 +1,25 @@
+{% raw %}
+{% from "wmnds/patterns/nearest-stop-station/_nearest-stop-station.njk" import wmndsNearestStopStation %}
+
+{{
+   wmndsNearestStopStation({
+      stops: [
+         {
+         mode: "rail",
+         name: "Stourbridge Town",
+         distance: "1 minute walk"
+         },
+         {
+         mode: "bus",
+         name: "Stourbridge, Town Centre",
+         distance: "1 minute walk"
+         },
+         {
+         mode: "metro",
+         name: "Stourbridge, Foster St East (adjacent)",
+         distance: "1 minute walk"
+         }
+      ]
+   })
+}}
+{% endraw %}

@@ -1,0 +1,50 @@
+{% macro wmndsLiveDeparturesService(params) %}
+
+{% set name = params.name if params.name else "16" %}
+{% set destination = params.destination if params.destination else "Stourbridge - Wolverhampton via Kingswinford" %}
+{% set operator = params.operator if params.operator else null %}
+{% set times = params.times if params.times else [4, 14, 24, 34, 44] %}
+{% set lastUpdated = params.lastUpdated if params.lastUpdated else "9:30am" %}
+{% set isTram = true if name | lower == "mm1" else false %}
+
+{# import components #}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+
+<div style="max-width: 640px;">
+    <div class="wmnds-live-departures wmnds-live-departures--service">
+        <div class="wmnds-live-departures__service-details wmnds-m-b-md">
+            <div class="wmnds-live-departures__service-name">{{ name }}</div>
+            <div class="wmnds-live-departures__service-description">
+                <div class="wmnds-h3 wmnds-m-none">{{ destination }}</div>
+            </div>
+        </div>
+        {% if operator %}
+        <p><a href="#">{{ operator }}</a> runs this service</p>
+        {% endif %}
+        {{
+            wmndsButton({
+                type: "favourite",
+                contentText: "Add to homepage",
+                iconLeft: "general-star-empty"
+            })
+        }}
+        <hr>
+        <div class="wmnds-grid wmnds-grid--justify-between wmnds-grid--spacing-md-2-md">
+            <div class="wmnds-col-1 wmnds-col-md-auto">
+                <div class="wmnds-h3 wmnds-m-t-none wmnds-m-b-md">Real time departures</div>
+                <p class="wmnds-m-b-md">See when the next {% if isTram %}tram{% else %}{{ name + ' bus' }}{% endif %} leaves this stop</p>
+            </div>
+            <div class="wmnds-col-1 wmnds-col-md-auto">
+                <p class="wmnds-live-departures__last-updated">Last updated {{ lastUpdated }}</p>
+            </div>
+        </div>
+        <div class="wmnds-live-departures__times">
+            {% for time in times %}
+            <div class="wmnds-live-departures__time">{{ time }} mins</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endmacro %}
