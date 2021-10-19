@@ -1,3 +1,13 @@
+# [2.2.0](https://github.com/wmcadigital/wmn-design-system/compare/v2.1.0...v2.2.0) (2021-10-19)
+
+
+### Features
+
+*  add stops and stations patterns ([#887](https://github.com/wmcadigital/wmn-design-system/issues/887)) ([39e2b43](https://github.com/wmcadigital/wmn-design-system/commit/39e2b433309cb179b6f78914e336970ca346df06)), closes [#875](https://github.com/wmcadigital/wmn-design-system/issues/875) [#877](https://github.com/wmcadigital/wmn-design-system/issues/877) [#878](https://github.com/wmcadigital/wmn-design-system/issues/878) [#873](https://github.com/wmcadigital/wmn-design-system/issues/873)
+* add facilities pattern ([#886](https://github.com/wmcadigital/wmn-design-system/issues/886)) ([c2f5de2](https://github.com/wmcadigital/wmn-design-system/commit/c2f5de2e7aadeba3cfd2ed5a281612550975e401)), closes [#875](https://github.com/wmcadigital/wmn-design-system/issues/875) [#877](https://github.com/wmcadigital/wmn-design-system/issues/877) [#878](https://github.com/wmcadigital/wmn-design-system/issues/878) [#873](https://github.com/wmcadigital/wmn-design-system/issues/873)
+* add favourite action ([#888](https://github.com/wmcadigital/wmn-design-system/issues/888)) ([01a9fdb](https://github.com/wmcadigital/wmn-design-system/commit/01a9fdb6ced59d2a1fb69c57138977a4efbc7c90))
+* add live departures patterns ([#885](https://github.com/wmcadigital/wmn-design-system/issues/885)) ([0d87697](https://github.com/wmcadigital/wmn-design-system/commit/0d876971375ef4ec61094c551898f0caa9c0d17e))
+
 # [2.1.0](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.1...v2.1.0) (2021-08-26)
 
 
