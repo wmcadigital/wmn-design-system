@@ -3,7 +3,7 @@ name: Propose something new
 about: Propose a style, component or pattern for the Transport for West Midlands Design System
 title: ''
 labels: 'feature_request'
-assignees: 'mrmjprice,KaterinaKir'
+assignees: 'Jkmnch,sam-wmca'
 ---
 
 <!--
@@ -28,5 +28,5 @@ If you need help putting your proposal together, you can message Design Team usi
 
 <!--
 When you have submitted your proposal, it will automatically get sent to the backlog to be reviewed.
-If this proposal is urgent, you should contact @KaterinaKir, @mrmjprice or @daylesalmon
+If this proposal is urgent, you should contact @Jkmnch or @sam-plane.
 -->
