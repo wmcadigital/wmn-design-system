@@ -245,6 +245,12 @@
     background-color: get-color(primary);
   }
 
+  &__input:focus + #{ $self }__label {
+    z-index: 1;
+    outline: 0;
+    box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
+  }
+
   &__input ~ #{ $self }__arrivals,
   &__input ~ #{ $self }__departures {
     display: none;
