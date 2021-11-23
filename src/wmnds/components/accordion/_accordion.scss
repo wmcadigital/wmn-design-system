@@ -26,11 +26,13 @@
     display: inline-block;
     width: calc(100% - 32px);
     padding-right: $size-md;
+    color: get-color(text);
     vertical-align: middle;
 
     > h4,
     .wmnds-accordion__heading-text {
       margin-bottom: 0;
+      color: currentColor;
     }
   }
 
