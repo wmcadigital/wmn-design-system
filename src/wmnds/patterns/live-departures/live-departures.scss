@@ -59,7 +59,7 @@
 
   &__times {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: nowrap;
 
     @media (max-width: $breakpoint-sm - 1) {
@@ -68,6 +68,10 @@
   }
 
   &__time {
+    max-width: calc(100% / 3);
+    flex-grow: 1;
+    flex-basis: 20%;
+
     @media (max-width: $breakpoint-sm - 1) {
       &:nth-child(3) ~ * {
         display: none;
