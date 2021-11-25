@@ -73,6 +73,51 @@
     iframe: false
   })
 }}
+
+{% markdown %}
+
+## Checkboxes as secondary button
+
+<h3>What does it do?</h3>
+
+- Allows users select one or more options by clicking the [button](/components/button)
+
+<h3>When to use it?</h3>
+
+- When there is limited vertical space
+
+{% endmarkdown %}
+
+{{
+  compExample([
+    wmndsCheckboxes({
+      idPrefix: "error-checkboxes2",
+      error: true,
+      items: [
+        {
+          contentText: "Option 1",
+          value: "option1"
+        },
+        {
+          contentText: "Option 2",
+          value: "option2"
+        },
+        {
+          contentText: "Option 3",
+          value: "option3"
+        }
+      ]
+    })
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/checkboxes/",
+    njk: true,
+    njkProps: wmndsCheckboxesProps,
+    js: false,
+    iframe: false
+  })
+}}
+
 {# End Checkboxes #}
 
 {% endblock %}
