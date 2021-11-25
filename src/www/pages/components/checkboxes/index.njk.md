@@ -87,34 +87,52 @@
 - When there is limited vertical space
 
 {% endmarkdown %}
-
+{% from "wmnds/components/form-elements/checkboxes/checkbox-buttons/_checkbox-buttons.njk" import wmndsCheckboxButtons %}
 {{
   compExample([
-    wmndsCheckboxes({
-      idPrefix: "error-checkboxes2",
-      error: true,
+    wmndsCheckboxButtons({
+      idPrefix: "checkboxButtons",
       items: [
         {
-          contentText: "Option 1",
-          value: "option1"
+          contentText: "Mon",
+          value: "Mon"
         },
         {
-          contentText: "Option 2",
-          value: "option2"
+          contentText: "Tue",
+          value: "Tue"
         },
         {
-          contentText: "Option 3",
-          value: "option3"
+          contentText: "Wed",
+          value: "Wed"
+        },
+        {
+          contentText: "Thu",
+          value: "Thu"
+        },
+        {
+          contentText: "Fri",
+          value: "Fri",
+          checked: true
+        },
+        {
+          contentText: "Sat",
+          value: "Sat",
+          checked: true
+        },
+        {
+          contentText:  "Sun",
+          value: "Sun",
+          checked: true
         }
       ]
     })
   ],
   {
-    componentPath: "wmnds/components/form-elements/checkboxes/",
+    componentPath: "wmnds/components/form-elements/checkboxes/checkbox-buttons/",
     njk: true,
-    njkProps: wmndsCheckboxesProps,
+    njkProps: wmndsCheckboxButtonsProps,
     js: false,
-    iframe: false
+    iframe: true
   })
 }}
 
