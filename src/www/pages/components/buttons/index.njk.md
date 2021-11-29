@@ -604,30 +604,6 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 {% endmarkdown %}
 
 {%- from "wmnds/components/button/_button.njk" import wmndsButton -%}
-{#
-
-<div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-m-b-md">
-  <div class="wmnds-col-1-3"><a href="#0" class="wmnds-btn">Anchor test text going to second line</a></div>
-  <div class="wmnds-col-1-3"><button class="wmnds-btn">Button test text going to second line</button></div>
-</div>
-
-<div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-m-b-md">
-  <div class="wmnds-col-1-3"><a href="#0" class="wmnds-btn wmnds-text-align-left wmnds-col-1">Anchor test</a></div>
-  <div class="wmnds-col-1-3"><button class="wmnds-btn wmnds-text-align-left wmnds-col-1">Button test</button></div>
-</div>
-
-<div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-m-b-md">
-  <div class="wmnds-col-1-3"><a href="#0" class="wmnds-btn wmnds-text-align-left">Anchor test text going to second line <svg class="wmnds-btn__icon wmnds-btn__icon--right"><use xlink:href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></a></div>
-  <div class="wmnds-col-1-3">
-    <button class="wmnds-btn wmnds-text-align-left">Button test text going to second line <svg class="wmnds-btn__icon wmnds-btn__icon--right"><use xlink:href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button></div>
-</div>
-
-<div class="wmnds-grid wmnds-grid--spacing-2-md wmnds-m-b-md">
-  <div class="wmnds-col-1-3"><a href="#0" class="wmnds-btn wmnds-text-align-left wmnds-btn--link"><svg class="wmnds-btn__icon wmnds-btn__icon--left"><use xlink:href="#wmnds-general-sync" href="#wmnds-general-sync"></use></svg> Back</a></div>
-  <div class="wmnds-col-1-3"><button class="wmnds-btn wmnds-text-align-right">Button test text going to second line</button></div>
-</div>
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem molestiae adipisci voluptatum repudiandae in? Obcaecati, <a href="#" class="wmnds-btn wmnds-btn--link">mollitia</a> expedita! Consequatur iure quaerat maiores nisi iusto, tempore fugit. Ad in eligendi veritatis, deleniti vitae optio iure consequuntur. Sed, mollitia obcaecati. Repudiandae laudantium recusandae cumque sunt ullam veniam obcaecati, laboriosam at saepe qui alias? #}
 
 {{
   compExample([
