@@ -1,0 +1,109 @@
+{% macro wmndsNumberInput(params) %}
+
+{# Imports #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
+
+{# Params #}
+{% set id = params.id if params.id else "input" %}
+{% set name = params.name if params.name else id %}
+{% set type = params.type if params.type else "text" %}
+{% set required = params.required if params.required else false %}
+{% set classes = " " + params.classes if params.classes %} {# set paramClass to params.classNames if any #}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set inputErrorClass = " wmnds-fe-input--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please enter a value" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+{% set disabled = params.disabled if params.disabled else null %}
+{% set maxLength = params.maxLength if params.maxLength else null %}
+{% set placeholder = params.placeholder if params.placeholder else null %}
+{% set value = params.value if params.value else "" %}
+{# Params of label #}
+{% set labelContentText = params.label.contentText if params.label.contentText else "Form label" %}
+{% set labelContentHTML = params.label.contentHTML if params.label.contentHTML else null %}
+{% set labelClasses = params.label.classes if params.label.classes else null %}
+{# Params of formGroup #}
+{% set formGroupClasses = " " + params.formGroup.classes if params.formGroup.classes else null %}
+
+<div class="wmnds-fe-group{{groupErrorClass}}{{formGroupClasses}}">
+  <div class="wmnds-fe-number-input">
+    {{
+      wmndsFormLabel({
+        contentText: labelContentText,
+        contentHTML: labelContentHTML,
+        classes: labelClasses,
+        for: id
+      }) 
+    }}
+    {% if params.error %}
+      {{
+        wmndsFeErrorMessage(
+          {
+            contentText: errorContentText,
+            contentHTML: errorContentHTML,
+            classes: errorClasses,
+            id: errorId
+          }
+        )
+      }}
+    {% endif %}
+    {% if params.error %}
+      {{
+        wmndsFeErrorMessage(
+          {
+            contentText: errorContentText,
+            contentHTML: errorContentHTML,
+            classes: errorClasses,
+            id: errorId
+          }
+        )
+      }}
+    {% endif %}
+    <div class="wmnds-fe-number-input__container wmnds-grid wmnds-grid--spacing-3-lg">
+      <div class="wmmds-col-auto">
+        <button
+          type="button"
+          class="wmnds-fe-number-input__control"
+          title="Decrease search radius"
+        >
+          {{ 
+            wmndsIcon({
+              icon: 'general-minimise',
+              class: 'wmnds-accordion__icon'
+            })
+          }}
+        </button>
+      </div>
+      <div class="wmnds-col-auto">
+        <input
+          class="wmnds-fe-number-input__input{{inputErrorClass}}{{classes}}"
+          type="number"
+          name="{{name}}" 
+          value="{{value}}"
+          {% if placeholder %} placeholder="{{placeholder}}" {% endif %}
+          {% if required %} required="true" {% endif %} 
+        />
+      </div>
+      <div class="wmmds-col-auto">
+        <button
+          type="button"
+          class="wmnds-fe-number-input__control"
+          title="Increase search radius"
+        >
+          {{ 
+            wmndsIcon({
+              icon: 'general-expand',
+              class: 'wmnds-accordion__icon'
+            })
+          }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}

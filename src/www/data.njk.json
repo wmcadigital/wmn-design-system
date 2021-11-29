@@ -188,6 +188,9 @@
               "name": "Form label"
             },
             {
+              "name": "Number input"
+            },
+            {
               "name": "Progress indicator"
             },
             {

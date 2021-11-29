@@ -1,0 +1,45 @@
+&.wmnds-fe-number-input {
+  &__container {
+    flex-wrap: nowrap;
+  }
+
+  &__input {
+    @include type-setting(0);
+    width: 100%;
+    padding: $size-sm;
+    border: 1px solid get-color(primary);
+    color: get-color(text);
+    text-align: center;
+
+    &--error {
+      border: 2px solid get-color(error);
+    }
+  }
+
+  &__control {
+    width: 50px;
+    height: 50px;
+    padding: $size-sm;
+    border: 0;
+    border-radius: 6px;
+    background-color: get-color("secondary");
+
+    &:not([disabled]) {
+      cursor: pointer;
+
+      &:hover {
+        background-color: get-color("secondary", 20, dark);
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $white;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+    }
+  }
+}
