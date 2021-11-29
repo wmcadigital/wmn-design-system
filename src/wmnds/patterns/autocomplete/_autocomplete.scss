@@ -1,4 +1,4 @@
-.wmnds-autocomplete {
+&.wmnds-autocomplete {
   // The container for autocomplete
   display: inline-block;
   position: relative;
@@ -77,4 +77,40 @@
       margin-right: 15px;
     }
   }
+}
+
+// Selected autocomplete styling
+.wmnds-autocomplete__selected-item {
+  width: 100%;
+  height: 50px;
+  padding-right: 0;
+  padding-left: $size-sm;
+  border: 1px solid get-color(primary);
+  align-content: center;
+}
+
+.wmnds-autocomplete__selected-item-summary {
+  display: block;
+  width: 100%;
+  align-self: center;
+
+  @media (min-width: 360px) {
+    max-width: calc(100% - (115px));
+    margin-top: 0;
+    margin-right: $size-md;
+  }
+}
+
+.wmnds-autocomplete__selected-item-close {
+  padding: $size-sm;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.wmnds-autocomplete__selected-item-close-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: get-color(secondary);
 }

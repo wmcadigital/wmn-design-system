@@ -4,7 +4,7 @@ const headerJs = () => {
 
   const mobileMenu = window.matchMedia('(max-width: 767px)');
 
-  /* 
+  /*
       Mega menu helper functions
   */
 
@@ -165,7 +165,7 @@ const headerJs = () => {
 
         // handle sub menu open/close
         topLevelMenuBtn.forEach(menuBtn => {
-          menuBtn.addEventListener('click', () => {
+          const handleSubMenus = () => {
             mobileMenuIsOpen.primary = !mobileMenuIsOpen.primary;
             const targetListItem = menuBtn.parentNode;
             if (mobileMenuIsOpen.primary) {
@@ -176,7 +176,9 @@ const headerJs = () => {
               targetListItem.classList.remove('open');
               headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
             }
-          });
+          };
+          menuBtn.previousElementSibling.addEventListener('click', handleSubMenus);
+          menuBtn.addEventListener('click', handleSubMenus);
         });
 
         // mobile collapse for third level menus
@@ -184,7 +186,7 @@ const headerJs = () => {
           '.wmnds-mega-menu__sub-menu-item .wmnds-mega-menu__collapse-toggle'
         );
         collapseMenus.forEach(collapseToggle => {
-          collapseToggle.addEventListener('click', () => {
+          const handleThirdLevelMenus = () => {
             const panel = collapseToggle.nextElementSibling;
             collapseToggle.classList.toggle('open');
             if (panel.style.maxHeight) {
@@ -192,7 +194,11 @@ const headerJs = () => {
             } else {
               panel.style.maxHeight = `${panel.scrollHeight}px`;
             }
-          });
+          };
+          if (collapseToggle.previousElementSibling.tagName !== 'A') {
+            collapseToggle.previousElementSibling.addEventListener('click', handleThirdLevelMenus);
+          }
+          collapseToggle.addEventListener('click', handleThirdLevelMenus);
         });
       }
     }
@@ -272,8 +278,9 @@ const headerJs = () => {
 
       // if top level link doesn't have a mega-menu child add class to menu to hide overlay when hovered
       // has to be added/removed on mouseover to cover menus that have a mix of items with/without mega menus
-      const isTopLevelWithMenu = topLevelListItem.querySelectorAll('.wmnds-mega-menu__container')
-        .length;
+      const isTopLevelWithMenu = topLevelListItem.querySelectorAll(
+        '.wmnds-mega-menu__container'
+      ).length;
 
       if (isTopLevelWithMenu) {
         topLevelLink.addEventListener('mouseover', () => {

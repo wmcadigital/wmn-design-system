@@ -1,0 +1,189 @@
+{% macro wmndsLiveDeparturesTrain(params) %}
+
+{% set showFiltered = true if params.showFiltered else false %}
+{% set lastUpdated = params.lastUpdated if params.lastUpdated else "9:30am" %}
+{% set departures = params.departures if params.departures else [
+        {
+            train: "Kidderminster",
+            operator: "West Midlands Railway",
+            status: null,
+            time: "08:21",
+            platform: 2
+        },
+        {
+            train: "London Marylebone",
+            operator: "Chiltern Railways",
+            platform: 1,
+            time: "08:25"
+        },
+        {
+            train: "Stratford-upon-Avon",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:31"
+        },
+        {
+            train: "Worcester Forgate Street",
+            operator: "West Midlands Railway",
+            status: "Cancelled"
+        },
+        {
+            train: "Dorridge",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:40"
+        }
+    ]
+%}
+{% set arrivals = params.arrivals if params.arrivals else [
+        {
+            train: "Kidderminster",
+            operator: "West Midlands Railway",
+            status: null,
+            time: "08:21",
+            platform: 2
+        },
+        {
+            train: "London Marylebone",
+            operator: "Chiltern Railways",
+            platform: 1,
+            time: "08:25"
+        },
+        {
+            train: "Stratford-upon-Avon",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:31"
+        },
+        {
+            train: "Worcester Forgate Street",
+            operator: "West Midlands Railway",
+            platform: 2,
+            time: "08:36",
+            status: "6 mins late"
+        },
+        {
+            train: "Dorridge",
+            operator: "West Midlands Railway",
+            platform: 1,
+            time: "08:40"
+        }
+    ]
+%}
+{% set _autoCompleteClasses = "wmnds-autocomplete__selected-item wmnds-grid--justify-between" if showFiltered else "wmnds-autocomplete" %}
+
+{# import components #}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/button/_button.njk" import wmndsButton %}
+
+<div style="max-width: 640px;">
+    <div class="wmnds-live-departures-train">
+        <div class="wmnds-live-departures-tabs">
+            <input class="wmnds-live-departures-tabs__input wmnds-screenreaders-only" type="radio" value="Live departures" name="trainTabs" id="live-departures" aria-label="Live departures" checked>
+            <label class="wmnds-live-departures-tabs__label" for="live-departures">
+                <span class="wmnds-h3 wmnds-m-none">Live departures</span>
+            </label>
+            <input class="wmnds-live-departures-tabs__input wmnds-screenreaders-only" type="radio" value="Live arrivals" name="trainTabs" id="live-arrivals" aria-label="Live arrivals">
+            <label class="wmnds-live-departures-tabs__label" for="live-arrivals">
+                <span class="wmnds-h3 wmnds-m-none">Live arrivals</span>
+            </label>
+            <div class="wmnds-live-departures wmnds-live-departures-tabs__departures">
+                <div class="wmnds-col-1 wmnds-col-md-3-4">
+                    <label class="wmnds-fe-label wmnds-h4 wmnds-m-t-none" for="autoComplete">Enter your destination to filter departures</label>
+                    <div class="wmnds-grid {{_autoCompleteClasses}}">
+                        {% if showFiltered %}
+                        <strong class="wmnds-col-auto wmnds-autocomplete__selected-item-summary">Stourbridge Junction</strong>
+                        <button type="button" class="wmnds-autocomplete__selected-item-close">
+                            <svg class="wmnds-autocomplete__selected-item-close-icon">
+                                <title>Close</title>
+                                <use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use>
+                            </svg>
+                        </button>
+                        {% else %}
+                        <svg class="wmnds-autocomplete__icon">
+                        <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
+                        </svg>
+                        <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="" placeholder="Search" name="autoComplete" aria-label="Search" type="text" id="acmplt" required="false" autocomplete="off">
+                        {% endif %}
+                    </div>
+                </div>
+                <hr class="wmnds-hide-mobile">
+                <div class="wmnds-grid wmnds-m-b-md{% if showFiltered %} wmnds-m-t-md{% endif %}">
+                    <div class="wmnds-col-1 wmnds-col-md-1-2">
+                    {% if showFiltered %}
+                    {{
+                        wmndsButton({
+                            type: "favourite",
+                            contentText: "Add to homepage",
+                            iconLeft: "general-star-empty"
+                        })
+                    }}
+                    {% endif %}
+                    </div>
+                    <hr class="wmnds-col-1 wmnds-hide-desktop">
+                    <div class="wmnds-col-1 wmnds-col-md-1-2">
+                        <p class="wmnds-text-align-right wmnds-m-b-none">Last updated {{ lastUpdated }}</p>
+                    </div>
+                </div>
+                <table class="wmnds-table wmnds-live-departures__train-timetable">
+                    <caption class="wmnds-table__caption wmnds-screenreaders-only">
+                        Live departures
+                    </caption>
+                    <thead>
+                        <th scope="col">Train</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Time</th>
+                    </thead>
+                    <tbody>
+                        {% for departure in departures %}
+                        <tr>
+                            <th scope="row" data-header="Train"><strong>{{ departure.train }}</strong><span>{{ departure.operator }}</span></th>
+                            <td data-header="Platform">{% if departure.platform %}{{ departure.platform }}{% endif %}</td>
+                            <td data-header="Time">
+                                {% if departure.time %}
+                                {{ departure.time }}
+                                {% endif %}
+                                {% if departure.status %}
+                                <strong class="wmnds-live-departures__train-timetable-status">{{ departure.status }}</strong>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="wmnds-live-departures wmnds-live-departures-tabs__arrivals">
+                <p class="wmnds-text-align-right wmnds-m-b-md">Last updated {{ lastUpdated }}</p>
+                <table class="wmnds-table wmnds-live-departures__train-timetable wmnds-live-departures__train-timetable--responsive">
+                    <caption class="wmnds-table__caption wmnds-screenreaders-only">
+                        Live arrivals
+                    </caption>
+                    <thead>
+                        <th scope="col">Train</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Time</th>
+                    </thead>
+                    <tbody>
+                        {% for arrival in arrivals %}
+                        <tr>
+                            <th scope="row" data-header="Train"><strong>{{ arrival.train }}</strong><span>{{ arrival.operator }}</span></th>
+                            <td data-header="Platform">{% if arrival.platform %}{{ arrival.platform }}{% endif %}</td>
+                            <td data-header="Time">
+                                {% if arrival.time %}
+                                {{ arrival.time }}
+                                {% endif %}
+                                {% if arrival.status %}
+                                <strong class="wmnds-live-departures__train-timetable-status">{{ arrival.status }}</strong>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endmacro %}

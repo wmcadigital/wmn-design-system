@@ -52,7 +52,7 @@
                                 wmndsLinkAsButton({
                                     type: "mode",
                                     contentText: "Train",
-                                    link: "https://www.wmnetwork.co.uk/plan-your-journey/timetables/#/?mode=Train",
+                                    link: "https://legacy.wmnetwork.co.uk/timetables/#/?mode=Train",
                                     linkTarget: "_blank",
                                     classes:"wmnds-col-1 wmnds-m-b-sm",
                                     iconLeft: "modes-isolated-rail"
@@ -66,7 +66,7 @@
                                 wmndsLinkAsButton({
                                     type: "mode",
                                     contentText: "Tram",
-                                    link: "https://www.wmnetwork.co.uk/plan-your-journey/timetables/#/?mode=Tram&serviceNo=MM1&limit=6#%2F",
+                                    link: "https://legacy.wmnetwork.co.uk/timetables/#/?mode=Tram&serviceNo=MM1&limit=6",
                                     linkTarget: "_blank",
                                     classes:"wmnds-col-1 wmnds-m-b-sm",
                                     iconLeft: "modes-isolated-metro"
@@ -93,7 +93,14 @@
                                 }
                             })
                         }}
-                        <input type="submit" hidden="true"/>
+                        {{
+                            wmndsButton({
+                                classes: "wmnds-col-1 wmnds-col-sm-1-2 wmnds-btn--align-left",
+                                role: "submit",
+                                contentText: "Find a timetable",
+                                iconRight: "general-chevron-right"
+                            })
+                        }}
                     </div>
                     {% endif %}
 

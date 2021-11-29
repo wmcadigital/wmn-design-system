@@ -1,4 +1,4 @@
-.wmnds-inset-text {
+&.wmnds-inset-text {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -17,5 +17,4 @@
   p {
     margin-bottom: $size-sm;
   }
-
 }

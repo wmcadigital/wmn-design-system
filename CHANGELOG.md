@@ -1,3 +1,74 @@
+# [2.1.0](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.1...v2.1.0) (2021-08-26)
+
+
+### Features
+
+* add autocomplete selected state ([#875](https://github.com/wmcadigital/wmn-design-system/issues/875)) ([0e892ff](https://github.com/wmcadigital/wmn-design-system/commit/0e892ffca27d8c06c99cd286d68051dc8c85cc44))
+* Add timetable patterns ([#877](https://github.com/wmcadigital/wmn-design-system/issues/877)) ([cbee3f8](https://github.com/wmcadigital/wmn-design-system/commit/cbee3f814a65b2fccec44bbef994cc0730c0bd15))
+* added facilities icons ([#878](https://github.com/wmcadigital/wmn-design-system/issues/878)) ([de557c0](https://github.com/wmcadigital/wmn-design-system/commit/de557c0abcdf8ff595774cb34073c1220eba6745))
+* Adding shareable travel updates widget's documentation. ([#873](https://github.com/wmcadigital/wmn-design-system/issues/873)) ([7110a99](https://github.com/wmcadigital/wmn-design-system/commit/7110a99f4b224eb5b1c2164da25b91ac372f1c2e))
+
+## [2.0.1](https://github.com/wmcadigital/wmn-design-system/compare/v2.0.0...v2.0.1) (2021-08-04)
+
+
+### Bug Fixes
+
+* Added new "main" branch name to package json ([#865](https://github.com/wmcadigital/wmn-design-system/issues/865)) ([68f452d](https://github.com/wmcadigital/wmn-design-system/commit/68f452d7e48fb578c0c6d93a1b5161a89721b880))
+* Updated github actions to use new branch names ([#863](https://github.com/wmcadigital/wmn-design-system/issues/863)) ([e61a75f](https://github.com/wmcadigital/wmn-design-system/commit/e61a75fee188f5087031ebacd83a699e0bc828e4))
+
+# [2.0.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.8.0...v2.0.0) (2021-07-29)
+
+
+* feat!: Stopped design system CSS leaking on to other websites ([393f1fd](https://github.com/wmcadigital/wmn-design-system/commit/393f1fd97202ee1e4c34e0a8ba344026648423c6))
+
+
+### BREAKING CHANGES
+
+* This change stops our CSS leaking into other peoples websites when using our CSS.
+Things that have been changed are:
+
+Removing generic element selectors such as h1, h2, a etc. and replaced them with a wrapped [class*="wmnds-"], this ensures that we only apply styling to generic elements if it is a child of one of our design system classes
+
+Updated the generic h1, h2, h3, h4, h5, h6 classes so they are now prefixed with wmnds e.g. wmnds-h1, wmnds-h2 etc.
+
+Gone through all components and patterns to ensure any missing styles that were previously inheritted from generic styles are now part of the component styling itself. For instance if we had a p.wmnds-example that was reliant on the general element p margins, that component would have been updated to have the margins on the .wmnds-example class itself.
+
+# [1.8.0](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.3...v1.8.0) (2021-07-08)
+
+
+### Bug Fixes
+
+* amending cookies manager html code and fix bug with cookie banner ([#751](https://github.com/wmcadigital/wmn-design-system/issues/751)) ([bd7d3b7](https://github.com/wmcadigital/wmn-design-system/commit/bd7d3b788802a2bf2649919ba94157387e4a2c71))
+* Expand clickable area on header mobile ([#837](https://github.com/wmcadigital/wmn-design-system/issues/837)) ([692cdd4](https://github.com/wmcadigital/wmn-design-system/commit/692cdd4e567fe558db2764c9d084494b05aaaad6)), closes [#828](https://github.com/wmcadigital/wmn-design-system/issues/828) [#828](https://github.com/wmcadigital/wmn-design-system/issues/828)
+* Fixed a prettier issue in header JS ([c81875c](https://github.com/wmcadigital/wmn-design-system/commit/c81875cbf02962c587d27de309bd26e229003bf3))
+* update buy a ticket ([#841](https://github.com/wmcadigital/wmn-design-system/issues/841)) ([420ea80](https://github.com/wmcadigital/wmn-design-system/commit/420ea801dd356d3f7af1d1e46688d5c0f7c0cc5c))
+* Update journey planner components ([#843](https://github.com/wmcadigital/wmn-design-system/issues/843)) ([fec8874](https://github.com/wmcadigital/wmn-design-system/commit/fec88747fe84da058de3cff3c57534b91065282c))
+* Updated CSS so long route names display correctly in travel updates widget ([#830](https://github.com/wmcadigital/wmn-design-system/issues/830)) ([4d27fd4](https://github.com/wmcadigital/wmn-design-system/commit/4d27fd432398d0776e970e65565e2f3a78f89dfd))
+* Updated npm packages ([7da191f](https://github.com/wmcadigital/wmn-design-system/commit/7da191f57b3f0ad5c54973df092a58e6751efe18))
+
+
+### Features
+
+* Adding transport modals to branded banner ([#831](https://github.com/wmcadigital/wmn-design-system/issues/831)) ([4733689](https://github.com/wmcadigital/wmn-design-system/commit/4733689e72b70aa4c1b2d679a6c529d634c625d7))
+
+## [1.7.3](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.2...v1.7.3) (2021-06-14)
+
+
+### Bug Fixes
+
+* Cookies are now set for parent and sub domains of TfWM ([#816](https://github.com/wmcadigital/wmn-design-system/issues/816)) ([28ae6dd](https://github.com/wmcadigital/wmn-design-system/commit/28ae6dd17cd504ecbfef0f8774c6ce6a31a1e177))
+* Fonts now point to absolute URL ([#815](https://github.com/wmcadigital/wmn-design-system/issues/815)) ([79ca2bb](https://github.com/wmcadigital/wmn-design-system/commit/79ca2bb2da41a35eff635198b2776fdbf91fc8a3))
+
+## [1.7.2](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.1...v1.7.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* n-icons now replace text without removing event handlers ([#800](https://github.com/wmcadigital/wmn-design-system/issues/800)) ([546550f](https://github.com/wmcadigital/wmn-design-system/commit/546550f7d374b82a17689ea3cd3930d5e2b9616c))
+* plan your journey font weight ([#802](https://github.com/wmcadigital/wmn-design-system/issues/802)) ([999579a](https://github.com/wmcadigital/wmn-design-system/commit/999579a82678bfc652d685605ffb4a0545e2c8b6))
+* remove deprecated 'addListener' in footer js ([#811](https://github.com/wmcadigital/wmn-design-system/issues/811)) ([acb572b](https://github.com/wmcadigital/wmn-design-system/commit/acb572bc36cac9488d9e535d6e43d843d8e92a68))
+* update travel updates widget styling ([#803](https://github.com/wmcadigital/wmn-design-system/issues/803)) ([fbabc99](https://github.com/wmcadigital/wmn-design-system/commit/fbabc992ed35b7eb3c1912d46bdd68b2eed34ace))
+
 ## [1.7.1](https://github.com/wmcadigital/wmn-design-system/compare/v1.7.0...v1.7.1) (2021-05-20)
 
 

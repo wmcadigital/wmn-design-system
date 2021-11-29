@@ -22,7 +22,7 @@ $header-height-mobile: 4rem;
 }
 
 @media screen and (max-width: $breakpoint-md) {
-  html {
+  @at-root html {
     &.mobile-menu-open {
       position: fixed;
       width: 100%;
@@ -42,7 +42,7 @@ $header-height-mobile: 4rem;
   }
 }
 
-.wmnds-header {
+&.wmnds-header {
   display: block;
   padding: $size-md 0;
   background-color: get-color(primary);
@@ -156,7 +156,7 @@ $header-height-mobile: 4rem;
 }
 
 // mega menu styling
-.wmnds-mega-menu {
+&.wmnds-mega-menu {
   // all sizes navigation styles
   display: flex;
   letter-spacing: normal;
@@ -194,12 +194,14 @@ $header-height-mobile: 4rem;
   &__search-icon {
     width: 1.25rem;
     height: 1.25rem;
+    color: $white;
     fill: currentColor;
   }
 
   &__search-close-icon {
     width: 1.5rem;
     height: 1.5rem;
+    color: $white;
     fill: currentColor;
   }
 
@@ -221,7 +223,7 @@ $header-height-mobile: 4rem;
 
 // mobile only mega menu styles
 @media screen and (max-width: $breakpoint-md - 1) {
-  .wmnds-mega-menu {
+  &.wmnds-mega-menu {
     padding: $size-xs 0;
     align-items: center;
 
@@ -233,13 +235,14 @@ $header-height-mobile: 4rem;
       padding: 0 1.35rem;
       border-color: $white;
       color: $white;
+      line-height: normal;
     }
 
     &__close-icon {
       display: none;
       width: 1.5rem;
       height: 1.5rem;
-      fill: currentColor;
+      fill: $white;
     }
 
     &__scroll-controller {
@@ -472,15 +475,15 @@ $header-height-mobile: 4rem;
 }
 
 // mega menu header modifier
-.wmnds-header--mega-menu {
+&.wmnds-header--mega-menu {
   position: relative;
-  z-index: 1000;
+  z-index: 15000;
   padding: 0;
 
   @media screen and (max-width: $breakpoint-md - 1) {
     height: $header-height-mobile;
 
-    .wmnds-mega-menu {
+    [class*="wmnds-"].wmnds-mega-menu {
       height: $header-height-mobile;
     }
 
@@ -517,7 +520,7 @@ $header-height-mobile: 4rem;
 
 // desktop navigation styles
 @media screen and (min-width: $breakpoint-md) {
-  .wmnds-mega-menu {
+  [class*="wmnds-"].wmnds-mega-menu {
     &::after {
       content: "";
       display: block;
@@ -644,6 +647,7 @@ $header-height-mobile: 4rem;
       width: 1em;
       height: 1em;
       transform: translateY(-50%);
+      color: inherit;
       fill: currentColor;
     }
 
@@ -667,7 +671,7 @@ $header-height-mobile: 4rem;
 }
 
 @media screen and (max-width: $breakpoint-md - 1) {
-  .wmnds-mega-menu__search-container {
+  [class*="wmnds-"].wmnds-mega-menu__search-container {
     visibility: hidden;
     position: absolute;
     top: 100%;
@@ -676,7 +680,7 @@ $header-height-mobile: 4rem;
     opacity: 0;
   }
 
-  .wmnds-header--search-open {
+  [class*="wmnds-"].wmnds-header--search-open {
     position: fixed;
     top: 0;
     width: 100%;
@@ -697,7 +701,7 @@ $header-height-mobile: 4rem;
   }
 }
 
-.wmnds-search-container {
+&.wmnds-search-container {
   margin: 0 auto;
   padding: $size-md;
 
@@ -713,6 +717,7 @@ $header-height-mobile: 4rem;
 
     &__item {
       display: block;
+      margin-bottom: $size-xsm;
       list-style: none;
     }
   }
@@ -729,24 +734,24 @@ $header-height-mobile: 4rem;
     color: $white;
     background-color: get-color(primary);
 
-    .wmnds-search-heading {
+    [class*="wmnds-"].wmnds-search-heading {
       color: currentColor;
     }
 
-    .wmnds-search-bar__input {
+    [class*="wmnds-"].wmnds-search-bar__input {
       border: 0;
     }
 
-    .wmnds-search-bar__btn {
+    [class*="wmnds-"].wmnds-search-bar__btn {
       background-color: get-color(secondary);
     }
 
-    .wmnds-link {
+    [class*="wmnds-"].wmnds-link {
       color: $white;
     }
   }
   @media screen and (min-width: $breakpoint-sm) {
-    .wmnds-search-list {
+    [class*="wmnds-"].wmnds-search-list {
       display: flex;
       flex-wrap: wrap;
 
@@ -759,7 +764,7 @@ $header-height-mobile: 4rem;
     max-width: 40rem;
     padding: $size-lg $size-md;
 
-    .wmnds-link {
+    [class*="wmnds-"].wmnds-link {
       color: get-color(primary);
       text-decoration: none;
 
@@ -771,12 +776,13 @@ $header-height-mobile: 4rem;
   }
 }
 
-.wmnds-swift-icon {
+&.wmnds-swift-icon {
   display: inline-block;
   width: 3.5em;
   height: 1.35em;
   margin-right: 0.25em;
   margin-left: 0.15em;
+  color: inherit;
   fill: currentColor;
   line-height: 1.5rem;
   vertical-align: top;
@@ -795,7 +801,7 @@ $header-height-mobile: 4rem;
 }
 
 // code example fix for overlay
-.wmnds-website-code-example {
+&.wmnds-website-code-example {
   .wmnds-mega-menu::before {
     position: absolute;
   }

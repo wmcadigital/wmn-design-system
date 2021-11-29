@@ -12,7 +12,7 @@
             <legend class="wmnds-buy-a-ticket__label">Which modes of transport will you use?</legend>
             <div class="wmnds-grid wmnds-grid--spacing-3-sm wmnds-grid--spacing-sm-3-md">
                 <label class="wmnds-col-1-3">
-                    <input type="checkbox" class="wmnds-buy-a-ticket__mode-checkbox wmnds-screenreaders-only" name="useBus">
+                    <input type="checkbox" class="wmnds-buy-a-ticket__mode-checkbox wmnds-screenreaders-only" name="useBus" value="allowBus">
                     <div class="wmnds-btn wmnds-btn--mode wmnds-btn--block">
                         {{
                             wmndsIcon({
@@ -24,7 +24,7 @@
                     </div>
                 </label>
                 <label class="wmnds-col-1-3">
-                    <input type="checkbox" class="wmnds-buy-a-ticket__mode-checkbox wmnds-screenreaders-only" name="useTrain">
+                    <input type="checkbox" class="wmnds-buy-a-ticket__mode-checkbox wmnds-screenreaders-only" name="useTrain" value="allowTrain">
                     <div class="wmnds-btn wmnds-btn--mode wmnds-btn--block">
                         {{
                             wmndsIcon({
@@ -36,7 +36,7 @@
                     </div>
                 </label>
                 <label class="wmnds-col-1-3">
-                    <input type="checkbox" class="wmnds-buy-a-ticket__mode-checkbox wmnds-screenreaders-only" name="useTram">
+                    <input type="checkbox" class="wmnds-buy-a-ticket__mode-checkbox wmnds-screenreaders-only" name="useTram" value="allowMetro">
                     <div class="wmnds-btn wmnds-btn--mode wmnds-btn--block">
                         {{
                             wmndsIcon({
@@ -54,7 +54,7 @@
     {{
         wmndsDropdown({
             id: 'buyATicketPassengerType',
-            name: 'PassengerType',
+            name: 'passengerType',
             groupClasses: 'wmnds-m-b-md wmnds-p-b-xsm',
             label: "Who will be travelling?",
             labelClasses: 'wmnds-buy-a-ticket__label',
@@ -66,16 +66,24 @@
                     disabled: true
                 },
                 {
-                    contentText: 'Option 1',
-                    value: 'option1'
+                    contentText: 'Adult',
+                    value: 'Adult'
                 },
                 {
-                    contentText: 'Option 2',
-                    value: 'option2'
+                    contentText: 'Child',
+                    value: 'Child'
                 },
                 {
-                    contentText: 'Option 3',
-                    value: 'option3'
+                    contentText: 'Student',
+                    value: 'Student'
+                },
+                {
+                    contentText: 'Group / Family',
+                    value: 'Family'
+                },
+                {
+                    contentText: 'Concession',
+                    value: 'Concessionary'
                 }
             ]
         })
@@ -84,7 +92,7 @@
     {{
         wmndsDropdown({
             id: "buyATicketDuration",
-            name: "Duration",
+            name: "timeBand",
             groupClasses: 'wmnds-m-b-md wmnds-p-b-xsm',
             label: "How long will the ticket last for?",
             labelClasses: 'wmnds-buy-a-ticket__label',
@@ -96,16 +104,20 @@
                     disabled: true
                 },
                 {
-                    contentText: 'Option 1',
-                    value: 'option1'
+                    contentText: 'A day',
+                    value: 'Pay on day / 1 day'
                 },
                 {
-                    contentText: 'Option 2',
-                    value: 'option2'
+                    contentText: 'Less than a month',
+                    value: 'Less than a month'
                 },
                 {
-                    contentText: 'Option 3',
-                    value: 'option3'
+                    contentText: 'About a month',
+                    value: 'About a month'
+                },
+                {
+                    contentText: 'Longer than a month',
+                    value: 'Longer than a month'
                 }
             ]
         })

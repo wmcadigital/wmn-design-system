@@ -1,0 +1,13 @@
+{% raw %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
+
+{{
+  compExample([
+    wmndsAutocomplete({
+      id: 'selectedState',
+      selected: false,
+      selectedItem: '',
+    })
+  ])
+}}
+{% endraw %}

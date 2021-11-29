@@ -1,0 +1,13 @@
+{% raw %}
+{% from "wmnds/patterns/timetable/bus-and-tram/_bus-tram-timetable.njk" import wmndsBusAndTramRoute %}
+
+{{
+   wmndsBusAndTramRoute({
+      stops: [
+         "Wolverhampton Bus Station (Stand L)",
+         "Thornley Street (Stop AV)",
+         "Art Gallery"
+      ]
+   })
+}}
+{% endraw %}

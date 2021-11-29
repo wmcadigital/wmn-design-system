@@ -228,7 +228,13 @@
           "name": "Content cards"
         },
         {
+          "name": "Facilities"
+        },
+        {
           "name": "Feedback loop"
+        },
+        {
+          "name": "Find a stop or station"
         },
         {
           "name": "Find a timetable"
@@ -243,6 +249,9 @@
           "name": "Journey planner"
         },
         {
+          "name": "Live departures"
+        },
+        {
           "name": "Travel updates"
         },
         {
@@ -250,6 +259,9 @@
         },
         {
           "name": "Search"
+        },
+        {
+          "name": "Timetables"
         }
       ]
     },

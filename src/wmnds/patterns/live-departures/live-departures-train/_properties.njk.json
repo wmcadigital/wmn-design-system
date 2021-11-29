@@ -1,0 +1,78 @@
+{
+  "wmndsLiveDeparturesTrainProps": [
+    {
+      "name": "showFiltered",
+      "type": "boolean",
+      "description": "Determines whether to show in filtered mode"
+    },
+    {
+      "name": "lastUpdated",
+      "type": "string",
+      "description": "The time that the departures were last updated e.g. 9:30am"
+    },
+    {
+      "name": "departures",
+      "type": "array",
+      "description": "Array of objects containing the departures information",
+      "arrayOptions": [
+        {
+          "name": "train",
+          "type": "string",
+          "description": "The train destination"
+        },
+        {
+          "name": "operator",
+          "type": "string",
+          "description": "The train operator name"
+        },
+        {
+          "name": "platform",
+          "type": "string",
+          "description": "The platform number"
+        },
+        {
+          "name": "time",
+          "type": "string",
+          "description": "The departure time"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "The departure status e.g. '6 mins late', 'Cancelled'"
+        }
+      ]
+    },
+    {
+      "name": "arrivals",
+      "type": "array",
+      "description": "Array of objects containing the arrivals information",
+      "arrayOptions": [
+        {
+          "name": "train",
+          "type": "string",
+          "description": "The train destination"
+        },
+        {
+          "name": "operator",
+          "type": "string",
+          "description": "The train operator name"
+        },
+        {
+          "name": "platform",
+          "type": "string",
+          "description": "The platform number"
+        },
+        {
+          "name": "time",
+          "type": "string",
+          "description": "The arrival time"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "The arrival status e.g. '6 mins late', 'Cancelled'"
+        }
+      ]
+    }
+  ]
+}

@@ -39,14 +39,14 @@
 {{
   compExample([
     "<ol class='wmnds-ordered-list'>
-        <li class='h2'>Level 2
+        <li class='wmnds-h2'>Level 2
           <ol>
-            <li class='h3'>Level 3
+            <li class='wmnds-h3'>Level 3
               <ol>
-                <li class='h4'>Level 4</li>
-                <li class='h4'>Level 4
+                <li class='wmnds-h4'>Level 4</li>
+                <li class='wmnds-h4'>Level 4
                   <ol>
-                    <li class='h5'>Level 5
+                    <li class='wmnds-h5'>Level 5
                       <ol>
                         <li>Text</li>
                         <ul>
@@ -58,13 +58,13 @@
                   </li>
                   </ol>
                 </li>
-                <li class='h4'>Level 4</li>
+                <li class='wmnds-h4'>Level 4</li>
               </ol>
             </li>
-            <li class='h3'>Level 3</li>
+            <li class='wmnds-h3'>Level 3</li>
           </ol>
       </li>
-      <li class='h2'>Level 2</li>
+      <li class='wmnds-h2'>Level 2</li>
     </ol>
     <br/><br/>
     <ol class='wmnds-ordered-list'>
@@ -125,14 +125,14 @@
 compExample([
 "<ul class='wmnds-unordered-list'>
 
-  <li class='h2'>Level 2
+  <li class='wmnds-h2'>Level 2
     <ul>
-      <li class='h3'>Level 3
+      <li class='wmnds-h3'>Level 3
         <ul>
-          <li class='h4'>Level 4</li>
-          <li class='h4'>Level 4
+          <li class='wmnds-h4'>Level 4</li>
+          <li class='wmnds-h4'>Level 4
             <ul>
-              <li class='h5'>Level 5
+              <li class='wmnds-h5'>Level 5
                 <ul>
                   <li>Text</li>
                   <ol class='wmnds-ordered-list'>
@@ -149,13 +149,13 @@ compExample([
               </li>
             </ul>
           </li>
-          <li class='h4'>Level 4</li>
+          <li class='wmnds-h4'>Level 4</li>
         </ul>
       </li>
-      <li class='h3'>Level 3</li>
+      <li class='wmnds-h3'>Level 3</li>
     </ul>
   </li>
-  <li class='h2'>Level 2</li>
+  <li class='wmnds-h2'>Level 2</li>
 </ul>
 
 <br/><br/>
