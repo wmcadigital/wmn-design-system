@@ -39,7 +39,7 @@
             name: "16",
             destination: "Wolverhampton",
             operator: "National Express West Midlands",
-            times: [3, 7, 28]
+            times: [3, 7]
           },
           {
             name: "17",
