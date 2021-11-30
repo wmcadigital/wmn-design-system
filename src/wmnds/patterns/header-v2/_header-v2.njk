@@ -12,6 +12,7 @@
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 {% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
 {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
+{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
 <!-- Skip to content link -->
 {{
@@ -141,7 +142,28 @@
             </button>
             <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
               <div class="wmnds-search-container">
-                {{wmndsSearchbar()}}
+                {% if params.wmndsSearch %}
+                  {{
+                    wmndsAutocomplete(
+                      params.wmndsSearch
+                    )
+                  }}
+                  <ul class="wmnds-autocomplete-suggestions">
+                    <li class="wmnds-autocomplete-suggestions__li" title="Search result 1" tabindex="0">
+                      This is <strong>my query</strong> result 1
+                    </li>
+                    <li class="wmnds-autocomplete-suggestions__li" title="Search result 2" tabindex="0">
+                      This is <strong>my query</strong> result 2
+                    </li>
+                    <li class="wmnds-autocomplete-suggestions__li" title="Search result 3" tabindex="0">
+                      This is <strong>my query</strong> result 3
+                    </li>
+                  </ul>
+                {% else %}
+                  {{
+                    wmndsSearchbar(params.search)
+                  }}
+                {% endif %}
                 {% if(params.searchSuggestions) %}
                   <p class="wmnds-search-heading wmnds-h1">I want to...</p>
                   <div class="wmnds-grid">
