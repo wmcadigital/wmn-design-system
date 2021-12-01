@@ -20,7 +20,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   text-decoration: none;
   cursor: pointer;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   &:hover {
     background-color: get-color(cta, 30, dark);
