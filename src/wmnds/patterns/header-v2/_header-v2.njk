@@ -148,17 +148,8 @@
                       params.wmndsSearch
                     )
                   }}
-                  <ul class="wmnds-autocomplete-suggestions">
-                    <li class="wmnds-autocomplete-suggestions__li" title="Search result 1" tabindex="0">
-                      This is <strong>my query</strong> result 1
-                    </li>
-                    <li class="wmnds-autocomplete-suggestions__li" title="Search result 2" tabindex="0">
-                      This is <strong>my query</strong> result 2
-                    </li>
-                    <li class="wmnds-autocomplete-suggestions__li" title="Search result 3" tabindex="0">
-                      This is <strong>my query</strong> result 3
-                    </li>
-                  </ul>
+                  <div id="wmndsSearchSuggestions" class="wmnds-autocomplete-suggestions" style="display: none;">
+                  </div>
                 {% else %}
                   {{
                     wmndsSearchbar(params.search)
