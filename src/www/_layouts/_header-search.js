@@ -84,7 +84,7 @@ const headerSearchJS = () => {
             const suggestionHref =
               page.href ||
               `/${page.grandparent ? `${url(page.grandparent)}/` : ''}${
-                page.parent ? `${url(page.parent)}/` : ''
+                page.parent && page.grandparent !== 'Components' ? `${url(page.parent)}/` : ''
               }${url(page.name)}/`;
 
             const suggestionLink = document.createElement('a');
