@@ -20,7 +20,7 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   text-decoration: none;
   cursor: pointer;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   &:hover {
     background-color: get-color(cta, 30, dark);
@@ -288,12 +288,15 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   }
 
   &--favourite {
+    min-height: 0;
     padding: 0;
     border-radius: 0;
     color: get-color(text);
     background: none;
     font-weight: normal;
+    line-height: 1;
     cursor: pointer;
+    align-items: center;
 
     .wmnds-btn__icon {
       margin-right: $size-xsm;
