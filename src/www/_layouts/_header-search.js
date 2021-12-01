@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import pageData from '../data.njk.json';
 
 const headerSearchJS = () => {
@@ -9,8 +8,8 @@ const headerSearchJS = () => {
       if (!navItem.subnavItems) {
         return navItem;
       }
-      const childMenus = navItem.subnavItems.map(({ name, href, subnavItems, unlinked }) => {
-        const linkedChildMenu = !unlinked ? [{ name, href, parent: navItem.name }] : [];
+      const childMenus = navItem.subnavItems.map(({ name, href, subnavItems, unlinked, tags }) => {
+        const linkedChildMenu = !unlinked ? [{ name, href, tags, parent: navItem.name }] : [];
         if (!subnavItems) {
           return linkedChildMenu;
         }
@@ -21,6 +20,7 @@ const headerSearchJS = () => {
             name: grandChildItem.name,
             parent: name,
             grandparent: navItem.name,
+            tags: grandChildItem.tags,
             href: grandChildItem.href
           }))
         ];
@@ -34,9 +34,12 @@ const headerSearchJS = () => {
       if (!menu.href) {
         delete newMenu.href;
       }
+      if (!menu.tags) {
+        delete newMenu.tags;
+      }
       return newMenu;
     });
-  console.log(pages);
+
   if (autoComplete) {
     autoComplete.addEventListener('keydown', e => {
       if (e.key === ' ') e.target.value = `${e.target.value} `;
@@ -47,15 +50,12 @@ const headerSearchJS = () => {
       if (query.length > 2) {
         const matchedPages = pages.filter(page => {
           let hasMatch = false;
-          if (page.name.toLowerCase().includes(e.target.value.toLowerCase())) {
-            hasMatch = true;
-          }
-          if (page.parent && page.parent.toLowerCase().includes(e.target.value.toLowerCase())) {
-            hasMatch = true;
-          }
           if (
-            page.grandparent &&
-            page.grandparent.toLowerCase().includes(e.target.value.toLowerCase())
+            page.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+            (page.parent && page.parent.toLowerCase().includes(e.target.value.toLowerCase())) ||
+            (page.grandparent &&
+              page.grandparent.toLowerCase().includes(e.target.value.toLowerCase())) ||
+            (page.tags && page.tags.toLowerCase().includes(e.target.value.toLowerCase()))
           ) {
             hasMatch = true;
           }
