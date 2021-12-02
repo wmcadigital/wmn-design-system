@@ -1,0 +1,14 @@
+{% raw %}
+{% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
+
+{{
+   wmndsBanner({
+      contentText: null,
+      contentHTML: "This is a new service - your <a href='#'>feedback</a> will help us to improve it.",
+      emergency: false,
+      onPage: false,
+      phase: false,
+      phaseText: null
+   })
+}}
+{% endraw %}

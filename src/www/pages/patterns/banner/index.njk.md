@@ -14,8 +14,16 @@
 
 {{
   compExample([
-    wmndsBanner()
-  ])
+    wmndsBanner({
+      contentHTML: "This is a new service - your <a href='#/'>feedback</a> will help us to improve it."
+    })
+  ], {
+      componentPath: "wmnds/patterns/banner/",
+      njk: true,
+      njkProps: wmndsBannerProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% markdown %}
@@ -57,7 +65,13 @@
     wmndsBanner({
       phase: true
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/banner/",
+      njk: true,
+      njkProps: wmndsBannerProps,
+      js: false,
+      iframe: false
+    })
 }}
 
 {% markdown %}
@@ -105,9 +119,16 @@
 {{
   compExample([
     wmndsBanner({
+      contentText: "Emergency notification title",
       emergency: true
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/banner/",
+      njk: true,
+      njkProps: wmndsBannerProps,
+      js: false,
+      iframe: true
+    })
 }}
 
 {% markdown %}
@@ -120,10 +141,17 @@
 {{
   compExample([
     wmndsBanner({
+      contentText: "Emergency notification title",
       emergency: true,
       onPage: true
     })
-  ])
+  ], {
+      componentPath: "wmnds/patterns/banner/",
+      njk: true,
+      njkProps: wmndsBannerProps,
+      js: false,
+      iframe: false
+    })
 }}
 {% markdown %}
 

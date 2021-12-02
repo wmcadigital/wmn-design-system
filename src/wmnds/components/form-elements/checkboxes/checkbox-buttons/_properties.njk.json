@@ -1,0 +1,115 @@
+{
+  "wmndsCheckboxButtonsProps": [
+    {
+      "name": "items",
+      "type": "array",
+      "description": "<strong>Required.</strong> Array of checkbox items objects. See <code class='wmnds-website-inline-code'>items</code> below.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Specific id attribute for the checkbox item. If omitted, then component global <code class='wmnds-website-inline-code'>idPrefix</code> option will be applied."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within each checkbox item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within each checkbox item label. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "<strong>Required.</strong> Value for the checkbox input."
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "description": "If true, checkbox will be checked."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "If true, checkbox will be disabled."
+        }
+      ]
+    },
+    {
+      "name": "hint",
+      "type": "object",
+      "description": "Options for the hint component (e.g. text). See <code class='wmnds-website-inline-code'>hint</code> options below.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Optional id attribute to add to the hint span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentHTML</code> is set, this is not required. Text to use within the hint. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> If <code class='wmnds-website-inline-code'>contentText</code> is set, this is not required. HTML to use within the hint. If <code class='wmnds-website-inline-code'>contentHTML</code> is provided, the <code class='wmnds-website-inline-code'>contentText</code> argument will be ignored."
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the hint span tag."
+        }
+      ]
+    },
+    {
+      "name": "idPrefix",
+      "type": "string",
+      "description": "String to prefix id for each checkbox item if no id is specified on each item. If not passed, fall back to using the name option instead."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "<strong>Required.</strong> Name attribute for all checkbox items."
+    },
+    {
+      "name": "classes",
+      "type": "string",
+      "description": "Classes to add to the checkboxes container."
+    },
+    {
+      "name": "error",
+      "type": "boolean",
+      "description": "If true, errorMessage will show. Defaults to <code class='wmnds-website-inline-code'>false</code>."
+    },
+    {
+      "name": "errorMessage",
+      "type": "object",
+      "description": "Options for the error message component. See <code class='wmnds-website-inline-code'>errorMessage</code> options below.",
+      "arrayOptions": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Id attribute to add to the error message span tag."
+        },
+        {
+          "name": "contentText",
+          "type": "string",
+          "description": "<strong>Required.</strong> Text to use within the error message. If <code class='wmnds-website-inline-code'>contentHTML</code> is supplied, this is ignored."
+        },
+        {
+          "name": "contentHTML",
+          "type": "string",
+          "description": "<strong>Required.</strong> HTML to use within the error message"
+        },
+        {
+          "name": "classes",
+          "type": "string",
+          "description": "Classes to add to the error message span tag."
+        }
+      ]
+    }
+  ]
+}

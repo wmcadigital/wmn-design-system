@@ -17,6 +17,7 @@
 {% set selectedItem = params.selectedItem if params.selectedItem else 'Selected item' %}
 
 {# Label #}
+{% if not params.hideLabel %}
 {{
   wmndsFormLabel({
     for: id,
@@ -24,6 +25,7 @@
     classes: params.label.classes
   })
 }}
+{% endif %}
 
 {% if params.selected %}
 <div
