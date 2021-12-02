@@ -5,9 +5,10 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 // default button styles aka cta btn
 &.wmnds-btn {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
   position: relative;
-  padding: $size-sm;
+  min-height: 50px;
+  padding: $size-xs $size-xsm;
   transition: $btn-transition;
   border: 1px solid transparent;
   border-radius: $btn-border-radius;
@@ -15,9 +16,11 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   background-color: get-color(cta);
   font-size: 1rem;
   font-weight: bold;
-  text-align: center;
+  line-height: 1.3rem;
   text-decoration: none;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: get-color(cta, 30, dark);
@@ -37,7 +40,12 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     width: 22px;
     height: 22px;
     fill: $white;
-    vertical-align: top;
+    flex: 0 0 22px;
+  }
+
+  // button icon left style
+  &__icon--left {
+    margin-right: $size-xs;
   }
 
   .wmnds-swift-logo-inline {
@@ -47,7 +55,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
   // button icon right style
   &__icon--right {
     margin-left: $size-sm;
-    float: right;
   }
 
   // Dark background variant
@@ -205,6 +212,16 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
       fill: get-color(primary);
     }
 
+    &:not(.wmnds-text-align-left),
+    &:not(.wmnds-text-align-center),
+    &:not(.wmnds-text-align-right) {
+      justify-content: flex-start;
+
+      .wmnds-btn__icon--right {
+        margin-left: auto;
+      }
+    }
+
     .wmnds-btn__coloured-icon {
       &--bus {
         fill: get-color(bus);
@@ -295,7 +312,6 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
 
   // block modifier for full width buttons
   &--block {
-    display: block;
     width: 100%;
   }
 
@@ -304,9 +320,23 @@ $btn-transition: ease-in-out background-color 0.2s, ease-in-out border 0.2s;
     text-align: left;
   }
 
+  // include helpers for button alignment
+  &.wmnds-text-align-left {
+    justify-content: flex-start;
+  }
+
+  &.wmnds-text-align-center {
+    justify-content: center;
+  }
+
+  &.wmnds-text-align-right {
+    justify-content: flex-end;
+  }
+
   // Show button like a normal link modifier
   &--link {
     display: inline;
+    min-height: 0;
     padding: 0;
     border-radius: 0;
     color: get-color(cta, 10, dark);
