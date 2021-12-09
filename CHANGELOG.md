@@ -1,3 +1,21 @@
+# [2.4.0](https://github.com/wmcadigital/wmn-design-system/compare/v2.3.1...v2.4.0) (2021-12-09)
+
+
+### Bug Fixes
+
+* add number input id ([#902](https://github.com/wmcadigital/wmn-design-system/issues/902)) ([61bc550](https://github.com/wmcadigital/wmn-design-system/commit/61bc550bd562a29802b3ebe81c64a48e9587117b))
+* button alignment ([#897](https://github.com/wmcadigital/wmn-design-system/issues/897)) ([f9b0cd7](https://github.com/wmcadigital/wmn-design-system/commit/f9b0cd75a7b5edaddfd174c8e666d6cf95f3406b))
+* Live departures styling fixes ([#893](https://github.com/wmcadigital/wmn-design-system/issues/893)) ([47ecf9b](https://github.com/wmcadigital/wmn-design-system/commit/47ecf9bdb11bcb82431d49253ed68e04bc0ab157))
+
+
+### Features
+
+* add banner documentation ([#899](https://github.com/wmcadigital/wmn-design-system/issues/899)) ([3c23fb2](https://github.com/wmcadigital/wmn-design-system/commit/3c23fb28b35971ae12f47dd09623726baa156332))
+* add checkbox buttons component ([#896](https://github.com/wmcadigital/wmn-design-system/issues/896)) ([6640bea](https://github.com/wmcadigital/wmn-design-system/commit/6640beaefbdd547e357592fe3db968d2415439ed))
+* add number input component ([#898](https://github.com/wmcadigital/wmn-design-system/issues/898)) ([cc39230](https://github.com/wmcadigital/wmn-design-system/commit/cc39230126a40961658a4802bcff3b914e6ce3b8))
+* add search function ([#900](https://github.com/wmcadigital/wmn-design-system/issues/900)) ([d7a6346](https://github.com/wmcadigital/wmn-design-system/commit/d7a634698b01721c13cd42f3c57ecf156669078c))
+* show matched tags in search suggestion ([#903](https://github.com/wmcadigital/wmn-design-system/issues/903)) ([be7c7ba](https://github.com/wmcadigital/wmn-design-system/commit/be7c7ba50330ec4d2d0e1625e47e02bb17baabbe))
+
 ## [2.3.1](https://github.com/wmcadigital/wmn-design-system/compare/v2.3.0...v2.3.1) (2021-12-09)
 
 
