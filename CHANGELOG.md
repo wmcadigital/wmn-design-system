@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/wmcadigital/wmn-design-system/compare/v2.3.0...v2.3.1) (2021-12-09)
+
+
+### Reverts
+
+* Revert "Next release (#901)" (#907) ([4448e2e](https://github.com/wmcadigital/wmn-design-system/commit/4448e2eba8f9522f0986892b2e3059f61c834415)), closes [#901](https://github.com/wmcadigital/wmn-design-system/issues/901) [#907](https://github.com/wmcadigital/wmn-design-system/issues/907)
+
 # [2.2.0](https://github.com/wmcadigital/wmn-design-system/compare/v2.1.0...v2.2.0) (2021-10-19)
 
 
