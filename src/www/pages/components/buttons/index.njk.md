@@ -28,6 +28,10 @@ Icons should only be used where it is deemed absolutely necessary to communicate
 - The button width on desktop should be proportional with the text inside the button. Desktop buttons are aligned to the left edge of the content container.
 - Buttons are full-width on mobile. This is so users can easily tap on a button without stretching their thumb.
 
+### Button Alignment
+
+- The quickest option for button alignment is to use the text alignment utility classes <code class="wmnds-website-inline-code">.wmnds-text-align-left</code>, <code class="wmnds-website-inline-code">.wmnds-text-align-center</code> and <code class="wmnds-website-inline-code">.wmnds-text-align-right</code>. You may need to consider custom styles for more specific use cases.
+
 ## Call to action buttons
 
 <h3>What does it do?</h3>

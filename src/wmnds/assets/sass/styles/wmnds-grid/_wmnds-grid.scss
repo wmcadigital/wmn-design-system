@@ -21,13 +21,16 @@
     -ms-flex-line-pack: start;
     align-content: flex-start;
 
-    [class*="wmnds-col-"] {
-      display: inline-block;
+    & > [class*="wmnds-col-"] {
       zoom: 1;
       letter-spacing: normal;
       word-spacing: normal;
       text-rendering: auto;
       vertical-align: top;
+
+      &:not(.wmnds-btn) {
+        display: inline-block;
+      }
     }
   }
 }
