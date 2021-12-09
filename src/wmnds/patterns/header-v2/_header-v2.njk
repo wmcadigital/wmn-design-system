@@ -12,7 +12,6 @@
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
 {% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
 {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
-{% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
 <!-- Skip to content link -->
 {{
@@ -142,19 +141,7 @@
             </button>
             <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
               <div class="wmnds-search-container">
-                {% if params.wmndsSearch %}
-                  {{
-                    wmndsAutocomplete(
-                      params.wmndsSearch
-                    )
-                  }}
-                  <div id="wmndsSearchSuggestions" class="wmnds-autocomplete-suggestions" style="display: none;">
-                  </div>
-                {% else %}
-                  {{
-                    wmndsSearchbar(params.search)
-                  }}
-                {% endif %}
+                {{wmndsSearchbar()}}
                 {% if(params.searchSuggestions) %}
                   <p class="wmnds-search-heading wmnds-h1">I want to...</p>
                   <div class="wmnds-grid">

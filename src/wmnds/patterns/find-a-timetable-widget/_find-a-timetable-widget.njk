@@ -35,7 +35,7 @@
 
                         <label class="wmnds-col-1-3">
                             <input type="checkbox" class="wmnds-find-a-timetable-widget__mode-checkbox wmnds-screenreaders-only" name="mode" value="Bus" {{ isChecked }}>
-                            <div class="wmnds-btn wmnds-btn--mode wmnds-btn--block wmnds-text-align-center">
+                            <div class="wmnds-btn wmnds-btn--mode wmnds-btn--block">
                                 {{
                                     wmndsIcon({
                                         icon: 'modes-isolated-bus',
@@ -54,7 +54,7 @@
                                     contentText: "Train",
                                     link: "https://legacy.wmnetwork.co.uk/timetables/#/?mode=Train",
                                     linkTarget: "_blank",
-                                    classes:"wmnds-col-1 wmnds-m-b-sm wmnds-text-align-center",
+                                    classes:"wmnds-col-1 wmnds-m-b-sm",
                                     iconLeft: "modes-isolated-rail"
                                 })
                             }}
@@ -68,7 +68,7 @@
                                     contentText: "Tram",
                                     link: "https://legacy.wmnetwork.co.uk/timetables/#/?mode=Tram&serviceNo=MM1&limit=6",
                                     linkTarget: "_blank",
-                                    classes:"wmnds-col-1 wmnds-m-b-sm wmnds-text-align-center",
+                                    classes:"wmnds-col-1 wmnds-m-b-sm",
                                     iconLeft: "modes-isolated-metro"
                                 })
                             }}
