@@ -1,0 +1,92 @@
+{% macro wmndsCheckboxButtons(params) %}
+
+{# Imports #}
+{% from "wmnds/components/form-elements/form-label/_form-label.njk" import wmndsFormLabel %}
+{% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
+{% from "wmnds/components/form-elements/error-message/_error-message.njk" import wmndsFeErrorMessage %}
+
+{% set items = params.items if params.items %}
+{% set groupClass = " " + params.classes if params.classes %}
+{% set name = params.name if params.name else "checkbox-example" %}
+{% set hintContentText = params.hint.contentText if params.hint.contentText else "Select all options that apply" %}
+{% set hintContentHTML = params.hint.contentHTML if params.hint.contentHTML else null %}
+{% set _hintContent = hintContentHTML | safe if hintContentHTML else hintContentText %} {# change content based on what user has input #}
+{% set hasDescription = false if _hintContent === "" else true %}
+{% set idPrefix = params.idPrefix if params.idPrefix else name %}
+{# Error Message Params #}
+{% set groupErrorClass = " wmnds-fe-group--error" if params.error %}
+{% set errorContentText = params.errorMessage.contentText if params.errorMessage.contentText else "Please select at least one option" %}
+{% set errorContentHTML = params.errorMessage.contentHTML if params.errorMessage.contentHTML else null %}
+{% set errorClasses = " " + params.errorMessage.classes if params.errorMessage.classes else null %}
+{% set errorId = params.errorMessage.id if params.errorMessage.id else null %}
+
+<div class="wmnds-fe-group{{groupClass}}{{groupErrorClass}}">
+    <div class="wmnds-fe-checkbox-buttons">
+      {% if params.error %}
+        {{
+          wmndsFeErrorMessage(
+            {
+              contentText: errorContentText,
+              contentHTML: errorContentHTML,
+              classes: errorClasses,
+              id: errorId
+            }
+          )
+        }}
+      {% endif %}
+      {% if hasDescription %}
+      <span class="wmnds-fe-checkbox-buttons__desc{{params.hint.classes}}" {% if params.hint.id %}id="{{params.hint.id}}"{% endif %}>
+      {{ _hintContent }}
+      </span>
+      {% endif %}
+      {% if items %}
+        <div class="wmnds-fe-checkbox-buttons__container">
+        {%- for item in items %}
+          {% set isChecked = (' checked="checked"' | safe) if item.checked === true  else "" %}
+          {% set inputValue = item.value if item.value else null %}
+          {% set inputId = item.id if item.id else idPrefix + "_" + inputValue %}
+          {% set inputName = item.name if item.name else idPrefix + "_" + inputValue %}
+          {% set isRequired = (' required="true"' | safe) if item.required else null %}
+          {% set isNotEditable = (' disabled="disabled"' | safe) if item.disabled === true else "" %}
+          {% set disabledClass = (' wmnds-btn--disabled' | safe) if item.disabled === true else "" %}
+          {% set itemContentText = item.contentText if item.contentText else "Select all options that apply" %}
+          {% set itemContentHTML = item.contentHTML if item.contentHTML else null %}
+          {% set _itemContent = itemContentHTML | safe if itemContentHTML else itemContentText %} {# change content based on what user has input #}
+            <input
+              id="{{inputId}}"
+              class="wmnds-screenreaders-only wmnds-fe-checkbox-buttons__input"
+              value="{{inputValue}}"
+              name="{{inputName}}"
+              type="checkbox"
+              {{isChecked}}
+              {{isRequired}}
+              {{isNotEditable}}
+            />
+            <label for="{{inputId}}" class="wmnds-fe-checkbox-button wmnds-btn wmnds-btn--secondary{{disabledClass}}">
+              {{_itemContent}}
+            </label>
+        {% endfor %}
+        </div>
+      {% else %} 
+        {% for i in range(1,4) %}
+        {# Set checked state on first item in loop #}
+        {% set isChecked = (' checked="checked"' | safe) if i === 1 %}
+        {% set inputId = idPrefix + "_option" + i | string %}
+          <input
+            id="{{inputId}}"
+            class="wmnds-screenreaders-only wmnds-fe-checkbox-buttons__input"
+            value="{{inputValue}}"
+            name="{{inputName}}"
+            type="checkbox"
+            {{isChecked}}
+            {{isRequired}}
+            {{isNotEditable}}
+          />
+          <label for="{{inputId}}" class="wmnds-fe-checkbox-button wmnds-btn wmnds-btn--secondary{{disabledClass}}">
+            Option {{i}}
+          </label>
+        {% endfor %}
+      {% endif %}
+    </div>
+</div>
+{% endmacro %}

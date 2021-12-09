@@ -73,6 +73,69 @@
     iframe: false
   })
 }}
+
+{% markdown %}
+
+## Checkboxes as secondary button
+
+<h3>What does it do?</h3>
+
+- Allows users select one or more options by clicking the [button](/components/button)
+
+<h3>When to use it?</h3>
+
+- When there is limited vertical space
+
+{% endmarkdown %}
+{% from "wmnds/components/form-elements/checkboxes/checkbox-buttons/_checkbox-buttons.njk" import wmndsCheckboxButtons %}
+{{
+  compExample([
+    wmndsCheckboxButtons({
+      idPrefix: "checkboxButtons",
+      items: [
+        {
+          contentText: "Mon",
+          value: "Mon"
+        },
+        {
+          contentText: "Tue",
+          value: "Tue"
+        },
+        {
+          contentText: "Wed",
+          value: "Wed"
+        },
+        {
+          contentText: "Thu",
+          value: "Thu"
+        },
+        {
+          contentText: "Fri",
+          value: "Fri",
+          checked: true
+        },
+        {
+          contentText: "Sat",
+          value: "Sat",
+          checked: true
+        },
+        {
+          contentText:  "Sun",
+          value: "Sun",
+          checked: true
+        }
+      ]
+    })
+  ],
+  {
+    componentPath: "wmnds/components/form-elements/checkboxes/checkbox-buttons/",
+    njk: true,
+    njkProps: wmndsCheckboxButtonsProps,
+    js: false,
+    iframe: true
+  })
+}}
+
 {# End Checkboxes #}
 
 {% endblock %}
