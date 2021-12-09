@@ -9,8 +9,7 @@
           "unlinked": true,
           "subnavItems": [
             {
-              "name": "Get started",
-              "tags": "using styles, using components, using patterns"
+              "name": "Get started"
             }
           ]
         },
@@ -25,18 +24,15 @@
             },
             {
               "name": "Production",
-              "href": "/docs/get-started/production",
-              "tags": "npm, compilation, compile, packages"
+              "href": "/docs/get-started/production"
             },
             {
               "name": "Mobile application",
-              "href": "/docs/get-started/mobile-application/",
-              "tags": "react native, app"
+              "href": "/docs/get-started/mobile-application/"
             },
             {
               "name": "Design",
-              "href": "/docs/get-started/design/",
-              "tags": "sketch library"
+              "href": "/docs/get-started/design/"
             }
           ]
         },
@@ -47,8 +43,7 @@
           "subnavItems": [
             {
               "name": "Using the design system",
-              "href": "/docs/get-started/using-the-design-system/",
-              "tags": "react native, app"
+              "href": "/docs/get-started/using-the-design-system/"
             }
           ]
         },
@@ -62,9 +57,7 @@
               "href": "/user-research/"
             },
             {
-              "name": "Releases",
-              "href": "/docs/releases/",
-              "tags": "versioning, npm, github"
+              "name": "Releases"
             }
           ]
         }
@@ -74,12 +67,10 @@
       "name": "Styles",
       "subnavItems": [
         {
-          "name": "A to Z content style guide",
-          "tags": "language, writing"
+          "name": "A to Z content style guide"
         },
         {
-          "name": "Colour palettes",
-          "tags": "accessibility, color, brand"
+          "name": "Colour palettes"
         },
         {
           "name": "Icons"
@@ -94,8 +85,7 @@
           "name": "Lists"
         },
         {
-          "name": "Maps",
-          "tags": "ESRI, ArcGIS"
+          "name": "Maps"
         },
         {
           "name": "Friendly links (short URLs)",
@@ -103,16 +93,13 @@
         },
         {
           "name": "SEO",
-          "href": "/styles/seo/",
-          "tags": "umbraco"
+          "href": "/styles/seo/"
         },
         {
-          "name": "Typography",
-          "tags": "fonts, headings"
+          "name": "Typography"
         },
         {
-          "name": "Utility classes",
-          "tags": "containers, grid, floats, alignment, spacing"
+          "name": "Utility classes"
         }
       ]
     },
@@ -125,16 +112,13 @@
           "icon": null,
           "subnavItems": [
             {
-              "name": "Accordion",
-              "tags": "collapse, expand"
+              "name": "Accordion"
             },
             {
-              "name": "Breadcrumb",
-              "tags": "navigation"
+              "name": "Breadcrumb"
             },
             {
-              "name": "Buttons",
-              "tags": "pay with swift, mode, favourite, call to action, cta"
+              "name": "Buttons"
             },
             {
               "name": "Content card"
@@ -143,54 +127,43 @@
               "name": "Content tiles"
             },
             {
-              "name": "Details",
-              "tags": "expand"
+              "name": "Details"
             },
             {
-              "name": "Disruption indicators",
-              "tags": "badge"
+              "name": "Disruption indicators"
             },
             {
               "name": "File download"
             },
             {
-              "name": "Inset text",
-              "tags": "quote, callout"
+              "name": "Inset text"
             },
             {
               "name": "In-text step"
             },
             {
-              "name": "Links",
-              "tags": "back link, go back, chevron, call to action, cta"
+              "name": "Links"
             },
             {
-              "name": "Loader",
-              "tags": "loading"
+              "name": "Loader"
             },
             {
-              "name": "Message",
-              "tags": "information, success, error, help"
+              "name": "Message"
             },
             {
-              "name": "Phase indicator",
-              "tags": "beta, badge"
+              "name": "Phase indicator"
             },
             {
-              "name": "Sign in",
-              "tags": "swift"
+              "name": "Sign in"
             },
             {
-              "name": "Table",
-              "tags": "tables"
+              "name": "Table"
             },
             {
-              "name": "Ticket summary message",
-              "tags": "you can, you must"
+              "name": "Ticket summary message"
             },
             {
-              "name": "Warning text",
-              "tags": "error, info, success"
+              "name": "Warning text"
             }
           ]
         },
@@ -200,24 +173,19 @@
           "icon": null,
           "subnavItems": [
             {
-              "name": "Checkboxes",
-              "tags": "checkbox buttons"
+              "name": "Checkboxes"
             },
             {
               "name": "Date Input"
             },
             {
-              "name": "Dropdown",
-              "tags": "select"
+              "name": "Dropdown"
             },
             {
               "name": "File upload"
             },
             {
               "name": "Form label"
-            },
-            {
-              "name": "Number input"
             },
             {
               "name": "Progress indicator"
@@ -232,8 +200,7 @@
               "name": "Textarea"
             },
             {
-              "name": "Text Input",
-              "tags": "textbox"
+              "name": "Text Input"
             }
           ]
         }
@@ -243,72 +210,58 @@
       "name": "Patterns",
       "subnavItems": [
         {
-          "name": "Autocomplete",
-          "tags": "search, suggestions"
+          "name": "Autocomplete"
         },
         {
-          "name": "Banner",
-          "tags": "homepage, phase banner, emergency, travel mode"
+          "name": "Banner"
         },
         {
-          "name": "Buy a ticket",
-          "tags": "widget"
+          "name": "Buy a ticket"
         },
         {
           "name": "Cookies"
         },
         {
-          "name": "Contact details",
-          "tags": "address"
+          "name": "Contact details"
         },
         {
           "name": "Content cards"
         },
         {
-          "name": "Facilities",
-          "tags": "parking, station"
+          "name": "Facilities"
         },
         {
           "name": "Feedback loop"
         },
         {
-          "name": "Find a stop or station",
-          "tags": "widget, nearest stop, nearest station "
+          "name": "Find a stop or station"
         },
         {
-          "name": "Find a timetable",
-          "tags": "widget"
+          "name": "Find a timetable"
         },
         {
           "name": "Footer"
         },
         {
-          "name": "Header",
-          "tags": "mega menu"
+          "name": "Header"
         },
         {
-          "name": "Journey planner",
-          "tags": "widget"
+          "name": "Journey planner"
         },
         {
-          "name": "Live departures",
-          "tags": "widget, bus, train, tram, station, stop, arrivals"
+          "name": "Live departures"
         },
         {
-          "name": "Travel updates",
-          "tags": "widget"
+          "name": "Travel updates"
         },
         {
-          "name": "Question form",
-          "tags": "confirmation"
+          "name": "Question form"
         },
         {
-          "name": "Search",
-          "tags": "search bar, filter, search result, pagination"
+          "name": "Search"
         },
         {
-          "name": "Timetables",
-          "tags": "route"
+          "name": "Timetables"
         }
       ]
     },

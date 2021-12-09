@@ -5,11 +5,8 @@
 {% from "wmnds/components/icon/_icon.njk" import wmndsIcon %}
 
 {# Set vars #}
-{% set link = params.link if params.link %}
-{% set linkTitle = params.linkTitle if params.linkTitle %}
-{% set contentText = params.contentText if params.contentText else "This is a new service - your feedback will help us to improve it." %}
-{% set contentHTML = params.contentHTML if params.contentHTML else null %}
-{% set _content = contentHTML | safe if contentHTML else contentText %} {# change content based on what user has input #}
+{% set link = params.link if params.link %} {# set button text #}
+{% set linkTitle = params.linkTitle if params.linkTitle %} {# set button text #}
 {# Emergency vars #}
 {% set emergencyModifier = " wmnds-banner-container--emergency" if params.emergency %}
 {% set emergencyTitle = params.emergencyTitle or "Emergency notification title" %}
@@ -24,11 +21,11 @@
          wmndsIcon({
             class: "wmnds-banner-container__emergency-icon-error",
             icon: "general-warning-triangle"
-         })
+         }) | indent(8) | trim
       }}
       </div>
       <div class="{{titleColClass}} wmnds-col-1 wmnds-banner-container__emergency-title-col">
-         <h2 class="wmnds-h4 wmnds-m-b-none">{{_content}}</h2>
+         <h2 class="wmnds-h4 wmnds-m-b-none">{{emergencyTitle}}</h2>
       </div>
       {% if not params.onPage -%}
       <div class="wmnds-col-xl-10-24 wmnds-col-1 wmnds-banner-container__emergency-link-col">
@@ -38,7 +35,7 @@
                wmndsIcon({
                   class: "wmnds-banner-container__emergency-icon wmnds-m-l-sm",
                   icon: "general-chevron-right"
-               })
+               }) | indent(12) | trim
             }}
          </a>
       </div>
@@ -50,7 +47,7 @@
             wmndsIcon({
                class: "wmnds-banner-container__emergency-icon wmnds-m-l-sm",
                icon: "general-cross"
-            })
+            }) | indent(12) | trim
          }}
          </button>
       </div>
@@ -60,9 +57,7 @@
       {% if params.phase -%}
       <div class="wmnds-banner-container__phase-wrapper">
          {{
-            wmndsPhaseIndicator({
-               indicatorText: params.phaseText
-            })
+            wmndsPhaseIndicator() | indent(6) | trim
          }}
       </div>
       {% endif -%}

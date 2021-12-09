@@ -31,7 +31,7 @@
     padding: $size-lg $size-xs;
 
     .wmnds-btn {
-      width: 100%;
+      display: block;
       color: get-color(primary);
       background-color: $white;
     }

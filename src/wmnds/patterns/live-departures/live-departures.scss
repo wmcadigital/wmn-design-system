@@ -59,7 +59,7 @@
 
   &__times {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: nowrap;
 
     @media (max-width: $breakpoint-sm - 1) {
@@ -68,10 +68,6 @@
   }
 
   &__time {
-    max-width: calc(100% / 3);
-    flex-grow: 1;
-    flex-basis: 20%;
-
     @media (max-width: $breakpoint-sm - 1) {
       &:nth-child(3) ~ * {
         display: none;
@@ -243,12 +239,6 @@
 
   &__input:checked + #{ $self }__label {
     background-color: get-color(primary);
-  }
-
-  &__input:focus + #{ $self }__label {
-    z-index: 1;
-    outline: 0;
-    box-shadow: 0 0 0 2px $white, 0 0 0 4px get-color(secondary);
   }
 
   &__input ~ #{ $self }__arrivals,

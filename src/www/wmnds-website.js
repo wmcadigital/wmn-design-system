@@ -11,7 +11,6 @@ import timetableJs from '../wmnds/patterns/timetable/bus-and-tram/_example';
 import searchFilterJs from '../wmnds/patterns/search/search-filter/_example';
 import feedbackLoopsJS from '../wmnds/patterns/feedback-loop/_example';
 import nIcons from '../wmnds/components/icon/n-icon/_example';
-import headerSearchJS from './_layouts/_header-search';
 
 import { componentExample, componentExampleIframe } from './_partials/component-example';
 
@@ -50,7 +49,6 @@ window.addEventListener(
   travelUpdatesWidgetJs(),
   timetableJs(),
   searchFilterJs(),
-  headerSearchJS(),
   componentExampleIframe(),
   componentExample)
 );
