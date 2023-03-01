@@ -1,6 +1,6 @@
 &.wmnds-feedback-loop {
   // Add full-width blue border on desktop large display
-  @media all and(min-width: $breakpoint-xl) {
+  @media all and (min-width: $breakpoint-xl) {
     border-bottom: $size-sm solid get-color(cta);
   }
 
@@ -74,7 +74,7 @@
 }
 
 // When on desktop then the feedback-loop should appear on one line
-@media all and(min-width: $breakpoint-md) {
+@media all and (min-width: $breakpoint-md) {
   .wmnds-feedback-loop {
     &__useful {
       margin: 0;

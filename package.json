@@ -72,7 +72,7 @@
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
-    "dompurify": "^2.2.7",
+    "dompurify": "^2.4.1",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -100,6 +100,7 @@
     "gulp-react-native-stylesheet-css": "^1.4.4",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^3.0.0",
@@ -112,16 +113,15 @@
     "prettier": "^2.2.1",
     "sass": "^1.32.8",
     "semantic-release": "^17.4.2",
-    "webpack-stream": "^6.1.2"
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
     "@sentry/browser": "^6.2.5",
     "array-flat-polyfill": "^1.0.1",
     "axios": "^0.21.1",
     "findandreplacedomtext": "^0.4.6",
-    "gulp-sass": "^4.1.0",
     "iframe-resizer": "^4.3.1",
     "path": "^0.12.7",
-    "tfwm-travel-updates-widget": "^1.0.0"
+    "tfwm-travel-updates-widget": "^1.2.0"
   }
 }
