@@ -114,8 +114,8 @@ This makes it easier to keep track of different contexts.
 To ensure code quality and consistency in our Sass files we check that certain
 style rules are followed using a project [YAML file](../../../config/.sass-lint.yml)
 
-As we're using node-sass parser to parse our scss files, the package of choice
-is [sass-lint](https://github.com/sasstools/sass-lint).
+As we're using sass parser to parse our scss files, the package of choice
+is [sass](https://github.com/sasstools/sass).
 
 See [testing and linting](../testing-and-linting.md) for more information.
 

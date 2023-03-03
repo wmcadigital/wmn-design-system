@@ -40,7 +40,7 @@
   &--mobile-app {
     display: none;
 
-    @media screen and(min-width: $breakpoint-md) {
+    @media screen and (min-width: $breakpoint-md) {
       display: block;
     }
   }
