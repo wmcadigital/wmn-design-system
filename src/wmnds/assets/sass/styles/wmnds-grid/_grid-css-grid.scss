@@ -1,0 +1,36 @@
+// Creates a css-grid layout for content cards
+.wmnds-css-grid {
+  display: inline;
+
+  &-4-col {
+    display: grid;
+    grid-gap: $size-lg;
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  }
+
+  &-3-col {
+    display: grid;
+    grid-gap: $size-lg;
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  }
+
+  &-2-col {
+    display: grid;
+    grid-gap: $size-lg;
+    grid-template-columns: repeat(auto-fit, minmax(448px, 1fr));
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    }
+  }
+
+  &-block {
+    &--double {
+      grid-column: auto / span 2;
+
+      @media (max-width: $breakpoint-sm) {
+        grid-column: auto / span 1;
+      }
+    }
+  }
+}
