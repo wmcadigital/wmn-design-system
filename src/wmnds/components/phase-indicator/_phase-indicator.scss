@@ -7,7 +7,7 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  @media screen and(min-width: $breakpoint-md) {
+  @media screen and (min-width: $breakpoint-md) {
     padding: $size-xs $size-sm;
   }
 }

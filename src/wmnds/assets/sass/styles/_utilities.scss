@@ -25,6 +25,12 @@
       flex-grow: 1;
     }
   }
+
+  // Positions
+  &.wmnds-sticky {
+    position: sticky;
+    top: 0;
+  }
 }
 
 html body [class*="wmnds-"] {

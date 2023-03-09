@@ -60,7 +60,7 @@ linear-gradient(-45deg, transparent 75%, get-color(background, 20, dark) 75%);
   }
 
   // Make the table have a bit more room on desktop
-  @media all and(min-width: $breakpoint-md) {
+  @media all and (min-width: $breakpoint-md) {
     th:nth-child(1) {
       width: 200px;
     }
