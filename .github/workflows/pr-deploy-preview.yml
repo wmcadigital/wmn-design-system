@@ -27,7 +27,7 @@ jobs:
           npm ci
           npm run build:all
       - name: Deploy netlify preview
-        uses: nwtgck/actions-netlify@v1.2
+        uses: nwtgck/actions-netlify@v2
         with:
           publish-dir: './build'
           production-branch: main
