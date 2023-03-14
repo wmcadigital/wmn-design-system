@@ -12,7 +12,7 @@ jobs:
     name: Can merge to branch
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Checking if branch is allowed...
         if: "github.base_ref == 'main' && github.head_ref != 'next-release'"
         run: |
