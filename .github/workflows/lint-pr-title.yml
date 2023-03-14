@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     if: "startsWith(github.base_ref, 'next-release')"
     steps:
-      - uses: amannn/action-semantic-pull-request@v1.2.0
+      - uses: amannn/action-semantic-pull-request@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
