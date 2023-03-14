@@ -13,17 +13,17 @@ jobs:
     steps:
       # Checkout branch
       - name: Checkout branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       # Setup node environment
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: '18.x'
       # Dry run a release to check if one if necessary
       - name: Check for new release
-        uses: cycjimmy/semantic-release-action@v2.5.0
+        uses: cycjimmy/semantic-release-action@v3
         id: dry_release
         with:
           dry_run: true
@@ -35,7 +35,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # Get modules from cache
       - name: Cache Node.js modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
