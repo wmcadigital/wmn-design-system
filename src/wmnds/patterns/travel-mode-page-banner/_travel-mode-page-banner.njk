@@ -22,11 +22,16 @@
 {% elif mode == "eScooter" %}
   {% set _logoFolder = "WM eScooter" %}
   {% set _logoAlt = "West Midlands eScooter" %}
+{% elif mode == "cyclewalk" %}
+  {% set _logoFolder = "WM Cycle + Walk" %}
+  {% set _logoAlt = "West Midlands eScooter" %}
+  {% set _modeClass = " wmnds-travel-mode-page-banner--cycle" | lower if mode %} {# Set correct modifier class #}
 {% else %}
   {# If no mode is selected(or is bus), then default to bus #}
   {% set _logoFolder = "WM Bus" %}
   {% set _logoAlt = "West Midlands Bus" %}
   {% set mode = "bus" %} {# Fallback for mode #}
+  {% set _modeClass = " wmnds-travel-mode-page-banner--" + mode | lower if mode %} {# Set correct modifier class #}
 {% endif %}
 
 {# These variables are set after the if statement to make sure we get the fallback mode: bus if the user hasn't selected a mode or misstyped the mode param #}
@@ -34,7 +39,6 @@
 {% set title = params.title if params.title else mode  | capitalize + " in the West Midlands" %} {# Set title else fallback to "mode in West Midlands") #}
 {% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
 {% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
-{% set _modeClass = " wmnds-travel-mode-page-banner--" + mode | lower if mode %} {# Set correct modifier class #}
 
 <div class="wmnds-travel-mode-page-banner{{_modeClass}}">
   <div class="wmnds-container">
@@ -48,10 +52,22 @@
         {% endif %}
       </div>
       <div class="wmnds-travel-mode-page-banner__logos">
-        {% if mode %}
+        {% if mode != "cyclewalk" %}
           {{
             wmndsIcon({
               icon: "modes-bg-" + mode
+            })
+          }}
+        {% endif %}
+        {% if mode == "cyclewalk" %}
+          {{
+            wmndsIcon({
+              icon: "modes-bg-cycle"
+            })
+          }}
+          {{
+            wmndsIcon({
+              icon: "modes-bg-walk"
             })
           }}
         {% endif %}
