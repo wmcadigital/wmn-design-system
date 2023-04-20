@@ -20,7 +20,7 @@
 ## How it works?
 * This will direct users to the timetables page
 * Users can only select one travel mode
-* Users will need to enter a service number if they select bus. If train or tram are selected, then users can go straight to the timetables page through the [Call to action button](https://designsystem.wmnetwork.co.uk/components/buttons/).
+* Users will need to enter a service number if they select bus. If train or tram are selected, then users can go straight to the timetables page through the [Call to action button](https://designsystem.tfwm.org.uk/components/buttons/).
 
 
 ### Default

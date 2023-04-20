@@ -28,9 +28,9 @@
 {% markdown %} 
   * The widget is collapsed by default. The widget expands to show the full journey information when the user selects the 'Add details' button. The additional travel details can be hidden when a user clicks on the 'Hide details' button
   * The 'From' and 'To' fields use the autocomplete feature for train stations and postcodes. Users can also use their current location to automatically choose their departure or arrival location
-  * The ‘From’ and ’To’ fields can be switched at any time through the Switch [link button](https://designsystem.wmnetwork.co.uk/components/buttons/)
+  * The ‘From’ and ’To’ fields can be switched at any time through the Switch [link button](https://designsystem.tfwm.org.uk/components/buttons/)
   * Users can choose a specific transport mode as well as change their departure or arrival time
-  * The ‘Plan my journey’ [Call to action button](https://designsystem.wmnetwork.co.uk/components/buttons/) will send users to the full journey planner service with information on their selected journey
+  * The ‘Plan my journey’ [Call to action button](https://designsystem.tfwm.org.uk/components/buttons/) will send users to the full journey planner service with information on their selected journey
 
 {% endmarkdown %}
 
@@ -91,7 +91,7 @@
 - The ‘From’ and ’To’ fields can be switched at any time through the Switch button
 - Users can choose a specific transport mode as well as change their departure or arrival time
 - The ‘Mobility and advanced search’ link will direct users to the journey planner service where they can enter advanced filters
-- The ‘Plan my journey’ [Call to action button](https://designsystem.wmnetwork.co.uk/components/buttons/) will send users to the full journey planner service with information on their selected journey
+- The ‘Plan my journey’ [Call to action button](https://designsystem.tfwm.org.uk/components/buttons/) will send users to the full journey planner service with information on their selected journey
 
 #### Collapsed
 

@@ -35,7 +35,7 @@
 {% endif %}
 
 {# These variables are set after the if statement to make sure we get the fallback mode: bus if the user hasn't selected a mode or misstyped the mode param #}
-{% set _logo = "https://designsystem.wmnetwork.co.uk/img/logos/" + _logoFolder + "/Landscape/White.png" %} {# Set logo to the correct one based on if statements above. Set to designsystem.wmnetwork.co.uk so anyone using prototype kit or using via npm can use our logos #}
+{% set _logo = "https://designsystem.tfwm.org.uk/img/logos/" + _logoFolder + "/Landscape/White.png" %} {# Set logo to the correct one based on if statements above. Set to designsystem.tfwm.org.uk so anyone using prototype kit or using via npm can use our logos #}
 {% set title = params.title if params.title else mode  | capitalize + " in the West Midlands" %} {# Set title else fallback to "mode in West Midlands") #}
 {% set contentHTML = params.contentHTML | safe if params.contentHTML else null %}
 {% set image = params.image if params.image else "/img/component-images/banner/bus-banner-img.png" %}
