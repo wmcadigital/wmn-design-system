@@ -1,6 +1,6 @@
 // Vars
 @import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"; // Google Fonts
-@import "vars";
+@import "vars-dark";
 // Mixins
 @import "mixins";
 
@@ -9,7 +9,7 @@
 
 // Component Styles
 [class*="wmnds-"] {
-  @import "../../components/components"; // Import all pattern styles
+  @import "../../components/components-dark"; // Import all pattern styles
 
   // Pattern Styles
   @import "../../patterns/patterns"; // Import all pattern styles

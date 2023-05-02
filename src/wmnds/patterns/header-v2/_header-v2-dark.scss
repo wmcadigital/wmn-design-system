@@ -1,0 +1,809 @@
+//transition variables
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$menu-transition: opacity 0.15s 0.1s ease, transform 0.25s 0.1s $ease-out-cubic;
+$icon-transition: transform 0.25s $ease-out-cubic;
+$collapse-transition: max-height 0.25s $ease-out-cubic;
+$overlay-transition: opacity 0.2s ease-out;
+$link-transition: background-color 0.2s ease-out;
+
+//header variables
+$header-height-mobile: 4rem;
+
+@mixin menu-visible($visible) {
+  @if $visible {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  } @else {
+    visibility: hidden;
+    transform: translateY(-$size-lg);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  @at-root html {
+    &.mobile-menu-open {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+
+      // row-reverse ensures close icon is on the right
+      .wmnds-mega-menu {
+        flex-direction: row-reverse;
+
+        &__search-btn {
+          margin-right: $size-sm;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+&.wmnds-header {
+  display: block;
+  padding: $size-md 0;
+  background-color: get-color(primary);
+  text-align: left;
+
+  // Skip link styling
+  &__skip-link {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: $size-md;
+    clip: rect(0 0 0 0);
+    color: $white;
+    background-color: get-color(cta);
+
+    &:visited {
+      color: $white;
+    }
+
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      clip: auto;
+      box-shadow: none;
+    }
+  }
+
+  // Logo styles
+  &__logo-link {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-right: $size-sm;
+    overflow: hidden;
+    vertical-align: middle;
+
+    @media screen and (min-width: $breakpoint-md) {
+      width: auto;
+    }
+  }
+
+  &__logo {
+    width: 120px;
+    max-width: 120px;
+    height: 34px;
+    float: left;
+  }
+
+  // To vertical align the logo's and nav
+  &__vertical-align,
+  .wmnds-phase-indicator {
+    vertical-align: middle;
+  }
+
+  // Title variant
+  &__title {
+    @include type-setting(3);
+    margin-bottom: 0;
+    color: $white;
+
+    @media all and (min-width: $breakpoint-sm) {
+      max-width: calc(100% - 12.5rem); // Give some padding for the logos on the left
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  // Nav links
+  &__links {
+    display: block;
+    margin: 0;
+    padding: 0;
+    float: right;
+
+    @media screen and (min-width: $breakpoint-md) {
+      text-align: right;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0 $size-xs;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      margin: 0 $size-sm;
+    }
+
+    .wmnds-link {
+      color: $white;
+    }
+  }
+
+  // App specific header styles
+  &--mobile-app {
+    .wmnds-header__main-links {
+      display: none;
+
+      @media screen and (min-width: $breakpoint-md) {
+        display: inline-block;
+      }
+    }
+
+    .wmnds-header__back-btn {
+      @media screen and (min-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+  }
+}
+
+// mega menu styling
+&.wmnds-mega-menu {
+  // all sizes navigation styles
+  display: flex;
+  letter-spacing: normal;
+
+  &__primary-menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  &__primary-menu,
+  &__sub-menu,
+  &__sub-menu-child-menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__primary-menu-item,
+  &__sub-menu-item,
+  &__sub-menu-child-item {
+    margin: 0;
+    list-style: none;
+  }
+
+  &__primary-menu-link {
+    display: flex;
+    border: 0;
+    color: currentColor;
+    background-color: transparent;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+
+  &__search-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $white;
+    fill: currentColor;
+  }
+
+  &__search-close-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $white;
+    fill: currentColor;
+  }
+
+  &__search-close-icon {
+    display: none;
+  }
+
+  &__mobile-toggle,
+  &__link-arrow-icon,
+  &__link-arrow-icon-btn,
+  &__collapse-toggle {
+    display: none;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}
+
+// mobile only mega menu styles
+@media screen and (max-width: $breakpoint-md - 1) {
+  &.wmnds-mega-menu {
+    padding: $size-xs 0;
+    align-items: center;
+
+    &__mobile-toggle {
+      display: block;
+      z-index: 100;
+      height: 2.25rem;
+      min-height: 0;
+      padding: 0 1.35rem;
+      border-color: $white;
+      color: $white;
+      line-height: normal;
+    }
+
+    &__close-icon {
+      display: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $white;
+    }
+
+    &__scroll-controller {
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: $header-height-mobile;
+      transition: $menu-transition;
+      opacity: 0;
+    }
+
+    &__primary-menu {
+      height: 100%;
+      padding-bottom: 30vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: $white;
+      flex-direction: column;
+
+      .wmnds-mega-menu__primary-menu-item,
+      .wmnds-mega-menu__sub-menu-item {
+        border-bottom: 1px solid get-color(background);
+      }
+    }
+
+    &__container {
+      position: absolute;
+      top: $header-height-mobile;
+      left: 100%;
+      width: 100%;
+      height: calc(100% - #{$header-height-mobile});
+      padding-bottom: 30vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      transition: $menu-transition;
+      opacity: 0;
+      background-color: $white;
+
+      .wmnds-container {
+        padding: 0;
+      }
+    }
+
+    &__primary-menu-link,
+    &__sub-menu-link {
+      @include type-setting(4);
+      display: flex;
+      margin: 0;
+      padding: $size-md;
+      text-align: left;
+      justify-content: flex-start;
+      align-items: center;
+
+      &:focus {
+        box-shadow: inset 0 0 0 2px get-color(secondary), inset 0 0 0 4px $white;
+      }
+    }
+
+    &__primary-menu-link {
+      width: 100%;
+
+      .wmnds-mega-menu__link-arrow-icon {
+        pointer-events: none;
+      }
+    }
+
+    &__primary-menu-item {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      &.open {
+        z-index: 100;
+
+        .wmnds-mega-menu__link-arrow-icon-btn {
+          display: flex;
+          position: absolute;
+          z-index: 100;
+          top: 0;
+          left: 0;
+          max-width: 60%;
+          height: $header-height-mobile;
+          border: 0;
+          color: $white;
+          background-color: get-color(primary);
+          justify-content: flex-start;
+          align-items: center;
+
+          &::after {
+            @include type-setting(4);
+            content: attr(data-label);
+            margin: 0;
+          }
+
+          .wmnds-mega-menu__link-arrow-icon {
+            margin-right: $size-sm;
+            transform: rotate(180deg);
+            color: currentColor;
+          }
+        }
+
+        .wmnds-mega-menu__container {
+          transform: translateX(-100%);
+          opacity: 1;
+        }
+      }
+    }
+
+    &__link-arrow-icon-btn {
+      display: block;
+      height: 3.5rem;
+      padding: 0.5rem 1rem;
+      border: 0;
+      background-color: transparent;
+    }
+
+    &__link-arrow-icon {
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+      transition: $icon-transition;
+      color: get-color(primary);
+      fill: currentColor;
+    }
+
+    &__sub-menu-item {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .wmnds-mega-menu__sub-menu-link {
+        flex-grow: 1;
+      }
+
+      .wmnds-mega-menu__collapse-toggle {
+        display: block;
+        height: 3.5rem;
+        margin-right: 0.25rem;
+        padding: 0.5rem 1rem;
+        border: 0;
+        background-color: transparent;
+      }
+
+      .wmnds-mega-menu__link-arrow-icon {
+        transform: rotate(90deg);
+      }
+
+      .wmnds-mega-menu__sub-menu-child-menu {
+        flex-basis: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    }
+
+    &__sub-menu-link {
+      color: get-color(text);
+      text-decoration: none;
+
+      &-icon {
+        display: none;
+      }
+    }
+
+    &__sub-menu-child-menu {
+      position: relative;
+      max-height: 0;
+      margin: 0 $size-md;
+      overflow: hidden;
+      transition: $collapse-transition;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100% - #{$size-sm});
+        border-left: 1px solid get-color(text, 80);
+      }
+    }
+
+    &__collapse-toggle {
+      &.open {
+        & + .wmnds-mega-menu__sub-menu-child-menu {
+          display: block;
+        }
+
+        .wmnds-mega-menu__link-arrow-icon {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &__sub-menu-child-item {
+      &:not(:last-child) {
+        padding-bottom: $size-md;
+      }
+
+      &:last-child {
+        margin-bottom: $size-md;
+      }
+    }
+
+    &__sub-menu-child-link {
+      padding: 0 $size-md;
+      color: get-color(text);
+      font-size: $size-md;
+      text-decoration: none;
+    }
+
+    &__search-btn {
+      position: relative;
+      margin-left: $size-sm;
+      padding-right: $size-xsm;
+      padding-left: $size-xsm;
+      color: $white;
+    }
+
+    &__search-icon {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+// mega menu header modifier
+&.wmnds-header--mega-menu {
+  position: relative;
+  z-index: 15000;
+  padding: 0;
+
+  @media screen and (max-width: $breakpoint-md - 1) {
+    height: $header-height-mobile;
+
+    [class*="wmnds-"].wmnds-mega-menu {
+      height: $header-height-mobile;
+    }
+
+    &:not(.wmnds-header--mega-menu-open) {
+      .wmnds-mega-menu__scroll-controller {
+        overflow: hidden;
+      }
+    }
+
+    &-open {
+      .wmnds-mega-menu__scroll-controller {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .wmnds-mega-menu__mobile-toggle {
+        padding: 0 0.5rem;
+        border: 0;
+        font-size: 0;
+
+        .wmnds-mega-menu__close-icon {
+          display: block;
+        }
+      }
+    }
+
+    &-submenu-open {
+      .wmnds-header__logo-link {
+        display: none;
+      }
+    }
+  }
+}
+
+// desktop navigation styles
+@media screen and (min-width: $breakpoint-md) {
+  [class*="wmnds-"].wmnds-mega-menu {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: get-color(primary);
+    }
+
+    // page overlay for when mega menu is open
+    &::before {
+      content: "";
+      visibility: hidden;
+      position: fixed;
+      z-index: -5;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      transition: $overlay-transition;
+      opacity: 0;
+      background-color: $black;
+      pointer-events: none;
+    }
+
+    &.active {
+      &::before {
+        visibility: visible;
+        opacity: 0.5;
+      }
+    }
+
+    &__primary-menu-item {
+      &.active {
+        .wmnds-mega-menu__primary-menu-link {
+          color: get-color(text);
+          background-color: get-color(background);
+        }
+
+        .wmnds-mega-menu__container {
+          @include menu-visible(true);
+        }
+      }
+    }
+
+    &__primary-menu-link {
+      min-height: 100%;
+      margin: 0;
+      padding: 1rem 1.5rem;
+      transition: $link-transition;
+      color: $white;
+      font-family: $x-heading-font-family;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: get-color(background);
+      }
+    }
+
+    &__container {
+      display: block;
+      position: absolute;
+      z-index: -2;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      transition: $menu-transition;
+      background-color: $white;
+      @include menu-visible(false);
+    }
+
+    &__sub-menu {
+      display: flex;
+      width: 100%;
+      padding: 2.5rem 0;
+      flex-wrap: wrap;
+
+      &--has-child-menus {
+        padding: 2.5rem 0 1.5rem;
+
+        .wmnds-mega-menu__sub-menu-item {
+          margin: 0 0 $size-md;
+        }
+
+        .wmnds-mega-menu__sub-menu-link {
+          position: relative;
+          margin-bottom: $size-sm;
+          padding-left: $size-lg;
+          color: get-color(primary);
+          font-size: 1.125rem;
+          font-weight: 700;
+          text-decoration: none;
+        }
+
+        .wmnds-mega-menu__sub-menu-link-icon {
+          display: block;
+        }
+      }
+    }
+
+    &__sub-menu-item {
+      margin-bottom: 0;
+      padding-right: $size-md;
+      padding-left: $size-lg;
+      list-style: none;
+      flex-basis: 25%;
+      flex-grow: 0;
+
+      &:not(:nth-child(4n)) {
+        border-right: 1px solid get-color(text, 80);
+      }
+    }
+
+    &__sub-menu-link-icon {
+      display: none;
+      position: absolute;
+      top: 0.6em;
+      left: 0;
+      width: 1em;
+      height: 1em;
+      transform: translateY(-50%);
+      color: inherit;
+      fill: currentColor;
+    }
+
+    &__sub-menu-child-menu {
+      padding-left: $size-lg;
+    }
+
+    &__sub-menu-link,
+    &__sub-menu-child-link {
+      display: block;
+      margin-bottom: $size-sm;
+      color: get-color(text);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md - 1) {
+  [class*="wmnds-"].wmnds-mega-menu__search-container {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow: visible;
+    opacity: 0;
+  }
+
+  [class*="wmnds-"].wmnds-header--search-open {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .wmnds-mega-menu__search-container {
+      visibility: visible;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .wmnds-mega-menu__search-icon {
+      display: none;
+    }
+
+    .wmnds-mega-menu__search-close-icon {
+      display: block;
+    }
+  }
+}
+
+&.wmnds-search-container {
+  margin: 0 auto;
+  padding: $size-md;
+
+  .wmnds-search-heading {
+    margin: $size-lg 0;
+    font-family: $x-heading-font-family;
+    font-weight: 700;
+  }
+
+  .wmnds-search-list {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: block;
+      margin-bottom: $size-xsm;
+      list-style: none;
+    }
+  }
+
+  .wmnds-link {
+    &__chevron {
+      fill: get-color(secondary);
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md - 1) {
+    max-height: calc(100vh - #{$header-height-mobile});
+    overflow-y: auto;
+    color: $white;
+    background-color: get-color(primary);
+
+    [class*="wmnds-"].wmnds-search-heading {
+      color: currentColor;
+    }
+
+    [class*="wmnds-"].wmnds-search-bar__input {
+      border: 0;
+    }
+
+    [class*="wmnds-"].wmnds-search-bar__btn {
+      background-color: get-color(secondary);
+    }
+
+    [class*="wmnds-"].wmnds-link {
+      color: $white;
+    }
+  }
+  @media screen and (min-width: $breakpoint-sm) {
+    [class*="wmnds-"].wmnds-search-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__item {
+        padding-right: 1em;
+      }
+    }
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: 40rem;
+    padding: $size-lg $size-md;
+
+    [class*="wmnds-"].wmnds-link {
+      color: get-color(primary);
+      text-decoration: none;
+
+      &:hover {
+        color: get-color(primary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+&.wmnds-swift-icon {
+  display: inline-block;
+  width: 3.5em;
+  height: 1.35em;
+  margin-right: 0.25em;
+  margin-left: 0.15em;
+  color: inherit;
+  fill: currentColor;
+  line-height: 1.5rem;
+  vertical-align: top;
+  @media screen and (min-width: $breakpoint-md) {
+    width: 3.2em;
+  }
+}
+
+.demo-content {
+  display: flex;
+  height: 50vh;
+  min-height: 400px;
+  background-color: get-color(secondary, 80);
+  justify-content: center;
+  align-items: center;
+}
+
+// code example fix for overlay
+&.wmnds-website-code-example {
+  .wmnds-mega-menu::before {
+    position: absolute;
+  }
+}
