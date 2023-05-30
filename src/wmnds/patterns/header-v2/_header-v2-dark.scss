@@ -560,7 +560,7 @@ $header-height-mobile: 4rem;
       &.active {
         .wmnds-mega-menu__primary-menu-link {
           color: get-color(text);
-          background-color: get-color(background);
+          background-color: $white;
         }
 
         .wmnds-mega-menu__container {
@@ -582,7 +582,8 @@ $header-height-mobile: 4rem;
 
       &:hover,
       &:focus {
-        background-color: get-color(background);
+        color: get-color(text);
+        background-color: $white;
       }
     }
 
