@@ -30,6 +30,13 @@
   &.wmnds-sticky {
     position: sticky;
     top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    @media screen and (max-width: $breakpoint-md) {
+      position: initial;
+      max-height: fit-content;
+    }
   }
 }
 
