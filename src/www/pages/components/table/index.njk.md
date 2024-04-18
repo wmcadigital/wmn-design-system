@@ -85,6 +85,57 @@
     iframe: false
   })
 }}
+
+{{
+  compExample([
+    wmndsTable({
+      caption: "Table caption",
+      title: "Table title",
+      firstCellIsHeader: true,
+      head: [
+        {
+          contentText: "Longer Header 1"
+        },
+        {
+          contentText: "Longer Header 2"
+        },
+        {
+          contentText: "Longer Header 3"
+        }
+      ],
+      tableRows: [
+          [
+            {
+              contentText: "Longer Cell 1"
+            },
+            {
+              contentText: "Longer Cell 2"
+            },
+            {
+              contentText: "longer Cell 3"
+            }
+          ],
+          [
+            {
+              contentText: "Longer Cell 1"
+            },
+            {
+              contentText: "Longer Cell 2"
+            },
+            {
+              contentText: "Longer Cell 3"
+            }
+          ]
+        ]
+    })
+  ], {
+    componentPath: "wmnds/components/table/",
+    njk: true,
+    njkProps: wmndsTableProps,
+    js: true,
+    iframe: false
+  })
+}}
 {# End Table #}
 
 {# Table #}
