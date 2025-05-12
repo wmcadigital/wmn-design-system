@@ -146,19 +146,28 @@ const headerJs = () => {
           }
         });
 
+        const showSearch = () => {
+          mobileMenuIsOpen.search = !mobileMenuIsOpen.search;
+          if (mobileMenuIsOpen.search) {
+            mobileMenuIsOpen.menu = false;
+            headerEl.classList.remove(
+              'wmnds-header--mega-menu-open',
+              'wmnds-header--mega-menu-submenu-open'
+            );
+            document.querySelector('html').classList.remove('mobile-menu-open');
+            headerEl.classList.add('wmnds-header--search-open');
+          } else {
+            headerEl.classList.remove('wmnds-header--search-open');
+          }
+        };
+
         if (searchBtn) {
           searchBtn.addEventListener('click', () => {
-            mobileMenuIsOpen.search = !mobileMenuIsOpen.search;
-            if (mobileMenuIsOpen.search) {
-              mobileMenuIsOpen.menu = false;
-              headerEl.classList.remove(
-                'wmnds-header--mega-menu-open',
-                'wmnds-header--mega-menu-submenu-open'
-              );
-              document.querySelector('html').classList.remove('mobile-menu-open');
-              headerEl.classList.add('wmnds-header--search-open');
-            } else {
-              headerEl.classList.remove('wmnds-header--search-open');
+            showSearch();
+          });
+          searchBtn.addEventListener('keyup', event => {
+            if (event.key === 'Enter' || event.key === 32) {
+              showSearch();
             }
           });
         }
@@ -251,28 +260,33 @@ const headerJs = () => {
 
       const handleKeydown = (e, key) => {
         e.stopPropagation();
-        // if key pressed is enter, space bar or down arrow
-        if (key === 13 || key === 32 || key === 40) {
-          // enter
-          // check if link exists
-          if (key === 13) {
-            if (!topLevelLink.tagName === 'a' || !topLevelLink.getAttribute('href')) {
+        const searchInput = document.querySelector('.wmnds-search-bar__input');
+        if (searchInput !== document.activeElement) {
+          if (key === 13 || key === 32 || key === 40) {
+            // Enter, Spacebar, or Down Arrow
+            if (key === 13 || key === 32) {
+              // Enter or Spacebar
+              if (topLevelLink.tagName === 'A' && topLevelLink.getAttribute('href')) {
+                // Trigger the link's default behavior
+                topLevelLink.click();
+              } else {
+                openSubMenu(e);
+              }
+            } else {
               openSubMenu(e);
             }
-          } else {
-            openSubMenu(e);
+          } else if (key === 37) {
+            // Left Arrow
+            const prevLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'prev');
+            if (prevLink) prevLink.focus();
+          } else if (key === 39) {
+            // Right Arrow
+            const nextLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'next');
+            if (nextLink) nextLink.focus();
+          } else if (key === 27) {
+            // Escape
+            setMenuActive(topLevelListItem, false, topLevelLink);
           }
-        } else if (key === 37) {
-          // left arrow
-          const prevLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'prev');
-          if (prevLink) prevLink.focus();
-        } else if (key === 39) {
-          // right arrow
-          const nextLink = getMenuLink(topLevelLinkIndex, topLevelLinks, 'next');
-          if (nextLink) nextLink.focus();
-        } else if (key === 27) {
-          // if escape pressed
-          setMenuActive(topLevelListItem, false, topLevelLink);
         }
       };
 
@@ -374,6 +388,53 @@ const headerJs = () => {
           )
       );
     }
+
+    // add aria-expanded to top level menu buttons
+    document.addEventListener('DOMContentLoaded', function handleDOMContentLoaded() {
+      const menuButtons = document.querySelectorAll('[aria-haspopup="true"]');
+
+      menuButtons.forEach(button => {
+        const menuId = button.getAttribute('aria-controls');
+        const mainMenu = document.getElementById(menuId);
+
+        button.addEventListener('mouseenter', () => {
+          button.setAttribute('aria-expanded', 'true');
+          if (mainMenu) mainMenu.hidden = false;
+        });
+
+        button.addEventListener('mouseleave', () => {
+          button.setAttribute('aria-expanded', 'false');
+          if (mainMenu) mainMenu.hidden = true;
+        }); // Optional: hide menu when mouse leaves the submenu
+
+        if (mainMenu) {
+          mainMenu.addEventListener('mouseleave', () => {
+            button.setAttribute('aria-expanded', 'false');
+            mainMenu.hidden = true;
+          });
+        }
+      });
+    });
+
+    // open links with enter and space keys
+    document.querySelectorAll('[role="link"]').forEach(el => {
+      el.addEventListener('keydown', function handleKeydown(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault(); // Prevent scrolling on Space
+          const url = this.getAttribute('href');
+          if (url) {
+            window.location.href = url;
+          }
+        }
+      });
+
+      el.addEventListener('click', function handleClick() {
+        const url = this.getAttribute('href');
+        if (url) {
+          window.location.href = url;
+        }
+      });
+    });
   });
 };
 

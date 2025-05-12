@@ -1,9 +1,12 @@
 {% macro wmndsIcon(params) %}
 
-<svg {% if params.class %}class="{{params.class}}"{% endif %}>
-  {% if params.title %}
-    <title>{{ params.title }}</title>
-  {% endif %}
+{% set title = params.title if params.title else "" %} {# set content #}
+{% set desc = params.title if params.title else "" %} {# set content #}
+{% set hidden = params.hidden if params.hidden else "false" %} {# set content #}
+
+<svg {% if params.class %}class="{{params.class}}"{% endif %} aria-labelledby="{% if params.title %}svgTitle{% endif %} {% if params.desc %}svgDesc{% endif %}" aria-hidden="{{hidden}}" role="img">
+ {% if params.title %}<title id="svgTitle">{{title}}</title>{% endif %}
+ {% if params.desc %}<desc id="svgDesc">{{desc}}</desc>{% endif %}
   <use xlink:href="#wmnds-{{params.icon}}" href="#wmnds-{{params.icon}}"></use>
 </svg>
 
