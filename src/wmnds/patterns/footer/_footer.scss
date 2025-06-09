@@ -172,9 +172,11 @@
   &__social-media {
     display: flex;
     padding: 0;
+    flex-wrap: wrap;
 
     li {
       display: block;
+      margin-bottom: 1rem;
 
       &:not(:last-child) {
         a {

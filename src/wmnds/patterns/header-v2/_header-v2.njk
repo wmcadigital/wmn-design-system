@@ -33,7 +33,7 @@
     <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
       <div class="wmnds-header__vertical-align wmnds-col-auto">
         <!-- Logo -->
-        <a role="link" class="wmnds-header__logo-link {{class}}" href="/{{ds}}" title="{{name}} Design System">
+        <a role="link" class="wmnds-header__logo-link {{class}}" href="/" title="{{name}} Design System">
           <img class="wmnds-header__logo" alt="Transport for West Midlands logo" src="/img/logo.svg" />
         </a>
       </div>
@@ -61,7 +61,7 @@
                 {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name %}
                   <!-- allow primary (level 1) item to link if specified -->
                   {% if params.linkTopLevel %}
-                    <a role="link" href="/{{params.ds}}/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
+                    <a role="link" href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
                       {{navItemIcon}}{{ navItemContent }}
                     </a>
                   <!-- if not linked use a button -->
@@ -85,7 +85,7 @@
                             {% else %}
                               {% set _tag = 'a' %}
                               {# Set href if specified, else set an auto generated href #}
-                              {% set _hrefSubnav = subnavItem.href if subnavItem.href else "/" + ds + "/" + navItem.name + "/" + subnavItem.name  + "/"%}
+                              {% set _hrefSubnav = subnavItem.href if subnavItem.href else "/" + navItem.name + "/" + subnavItem.name  + "/"%}
                               {# Set href attribute for link #}
                               {% set _attributes = " href=\"" + _hrefSubnav | lower | replace(" ", "-") + "\"" if _hrefSubnav else "" %}
                             {% endif %}
@@ -109,7 +109,7 @@
                                 {# Set href if it is set else fallback to auto generated link #}
                                 {% set _hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else _hrefString | lower | replace(" ", "-") %}
                                 <li class="wmnds-mega-menu__sub-menu-child-item">
-                                  <a role="link" href="{{ds}}/{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}2</a>
+                                  <a role="link" href="{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
                                 </li>
                                 {% endfor %}
                               </ul>
@@ -131,7 +131,7 @@
           <!-- End scrollable container -->
           {% if(params.search) %}
           <div class="wmnds-mega-menu__primary-menu-item wmnds-mega-menu__search">
-            <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn">
+            <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn" aria-haspopup="true" aria-expanded="false" aria-controls="wmnds-mega-menu__search-container" role="menuitem">
               <svg class="wmnds-mega-menu__search-icon">
                 <title>Search</title>
                 <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
@@ -198,14 +198,6 @@
       </div>
     </div>
 
-    {% if (params.ciaArea == true) %}
-      {% if (params.ds== "cia") %}
-        <div class="wmnds-cia-area">
-          This is a Change into Action Birmingham page. <a role="link" href="">Change your area</a>
-        </div>
-      {% endif %}
-    {% endif %}
-
     {% if params.banner or params.breadcrumbs %}
       <div class="wmnds-container">
         {% if params.banner %}
@@ -230,8 +222,7 @@
               contentText: params.breadcrumbs.section or "Components",
               unlinkedItem: false if breadcrumbList else true
             }, breadcrumbList],
-            label: params.label,
-            ds: ds
+            label: params.label
           })
         }}
       {% endif %}
