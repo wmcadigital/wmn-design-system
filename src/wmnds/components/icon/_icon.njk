@@ -1,12 +1,13 @@
 {% macro wmndsIcon(params) %}
 
-{% set title = params.title if params.title else "" %} {# set content #}
-{% set desc = params.title if params.title else "" %} {# set content #}
-{% set hidden = params.hidden if params.hidden else "false" %} {# set content #}
+{% set title = params.title if params.title else "" %}
+{% set desc = params.desc if params.desc else "" %}
+{% set hidden = params.hidden if params.hidden else "false" %}
+{% set uniqueId = params.uniqueId if params.uniqueId else (range(100000, 999999) | random) %}
 
-<svg {% if params.class %}class="{{params.class}}"{% endif %} aria-labelledby="{% if params.title %}svgTitle{% endif %} {% if params.desc %}svgDesc{% endif %}" aria-hidden="{{hidden}}" role="img">
- {% if params.title %}<title id="svgTitle">{{title}}</title>{% endif %}
- {% if params.desc %}<desc id="svgDesc">{{desc}}</desc>{% endif %}
+<svg {% if params.class %}class="{{params.class}}"{% endif %} aria-labelledby="{% if params.title %}svgTitle-{{uniqueId}}{% endif %}{% if params.desc %} svgDesc-{{env}}{% endif %}" aria-hidden="{{hidden}}" role="img">
+ {% if params.title %}<title id="svgTitle-{{uniqueId}}">{{title}}</title>{% endif %}
+ {% if params.desc %}<desc id="svgDesc-{{uniqueId}}">{{desc}}</desc>{% endif %}
   <use xlink:href="#wmnds-{{params.icon}}" href="#wmnds-{{params.icon}}"></use>
 </svg>
 

@@ -174,15 +174,26 @@ const headerJs = () => {
 
         // handle sub menu open/close
         topLevelMenuBtn.forEach(menuBtn => {
+          // Ensure aria-expanded is set initially
+          menuBtn.setAttribute('aria-expanded', 'false');
           const handleSubMenus = () => {
-            mobileMenuIsOpen.primary = !mobileMenuIsOpen.primary;
             const targetListItem = menuBtn.parentNode;
-            if (mobileMenuIsOpen.primary) {
-              targetListItem.classList.add('open');
-              targetListItem.querySelector('.wmnds-mega-menu__sub-menu-link').focus();
+            const isOpen = targetListItem.classList.toggle('open');
+            // Set aria-expanded on the button for mobile accordion
+            menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            // Optionally close other open menus if only one should be open at a time
+            topLevelMenuBtn.forEach(otherBtn => {
+              if (otherBtn !== menuBtn) {
+                otherBtn.parentNode.classList.remove('open');
+                otherBtn.setAttribute('aria-expanded', 'false');
+              }
+            });
+            // Focus first submenu link if opening
+            const subMenu = targetListItem.querySelector('.wmnds-mega-menu__sub-menu-link');
+            if (isOpen && subMenu) subMenu.focus();
+            if (isOpen) {
               headerEl.classList.add('wmnds-header--mega-menu-submenu-open');
             } else {
-              targetListItem.classList.remove('open');
               headerEl.classList.remove('wmnds-header--mega-menu-submenu-open');
             }
           };
@@ -198,6 +209,12 @@ const headerJs = () => {
           const handleThirdLevelMenus = () => {
             const panel = collapseToggle.nextElementSibling;
             collapseToggle.classList.toggle('open');
+            // Set aria-expanded based on open state
+            if (collapseToggle.classList.contains('open')) {
+              collapseToggle.setAttribute('aria-expanded', 'true');
+            } else {
+              collapseToggle.setAttribute('aria-expanded', 'false');
+            }
             if (panel.style.maxHeight) {
               panel.style.maxHeight = null;
             } else {
@@ -297,27 +314,42 @@ const headerJs = () => {
       ).length;
 
       if (isTopLevelWithMenu) {
+        // Show the megamenu when the top level nav is rolled over (mouseover), not just on click
         topLevelLink.addEventListener('mouseover', () => {
           if (!menuDelay) {
-            // if no menuDelay is active just open the menu
             setMenuActive(topLevelListItem);
           } else {
-            // if menuDelay is active, clear all timeouts and start a new one
             clearTimeout(enterTimeOut);
             clearTimeout(leaveTimeOut);
 
             enterTimeOut = setTimeout(() => {
-              // enter timeout completed, open menu and kill delay
               menuDelay = false;
               setMenuActive(topLevelListItem);
             }, delayTime);
           }
+          // Set aria-expanded="true" on the nearest button if the link is rolled over and active
+          const button = topLevelListItem.querySelector(
+            'button, .wmnds-mega-menu__link-arrow-icon-btn'
+          );
+          if (topLevelListItem.classList.contains('active') && button) {
+            button.setAttribute('aria-expanded', 'true');
+          }
         });
+
+        topLevelLink.addEventListener('mouseout', () => {
+          // Set aria-expanded="false" on the nearest button if the link is not rolled over
+          const button = topLevelListItem.querySelector(
+            'button, .wmnds-mega-menu__link-arrow-icon-btn'
+          );
+          if (button) {
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+
         topLevelListItem
           .querySelector('.wmnds-mega-menu__container')
           .addEventListener('mouseover', () => {
             if (menuDelay) {
-              // if container is rehovered before timeout is done, clear all timeouts kill the delay
               clearTimeout(enterTimeOut);
               clearTimeout(leaveTimeOut);
               menuDelay = false;
@@ -325,10 +357,15 @@ const headerJs = () => {
           });
         topLevelListItem.addEventListener('mouseleave', () => {
           menuDelay = true;
-          // leave timeout is active
           leaveTimeOut = setTimeout(() => {
-            // leave timeout completed, close menu
             setMenuActive(topLevelListItem, false);
+            // Set aria-expanded="false" on the nearest button when menu is closed
+            const button = topLevelListItem.querySelector(
+              'button, .wmnds-mega-menu__link-arrow-icon-btn'
+            );
+            if (button) {
+              button.setAttribute('aria-expanded', 'false');
+            }
             menuDelay = false;
           }, delayTime);
         });
@@ -388,33 +425,6 @@ const headerJs = () => {
           )
       );
     }
-
-    // add aria-expanded to top level menu buttons
-    document.addEventListener('DOMContentLoaded', function handleDOMContentLoaded() {
-      const menuButtons = document.querySelectorAll('[aria-haspopup="true"]');
-
-      menuButtons.forEach(button => {
-        const menuId = button.getAttribute('aria-controls');
-        const mainMenu = document.getElementById(menuId);
-
-        button.addEventListener('mouseenter', () => {
-          button.setAttribute('aria-expanded', 'true');
-          if (mainMenu) mainMenu.hidden = false;
-        });
-
-        button.addEventListener('mouseleave', () => {
-          button.setAttribute('aria-expanded', 'false');
-          if (mainMenu) mainMenu.hidden = true;
-        }); // Optional: hide menu when mouse leaves the submenu
-
-        if (mainMenu) {
-          mainMenu.addEventListener('mouseleave', () => {
-            button.setAttribute('aria-expanded', 'false');
-            mainMenu.hidden = true;
-          });
-        }
-      });
-    });
 
     // open links with enter and space keys
     document.querySelectorAll('[role="link"]').forEach(el => {

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // CREATES .wmnds-grid--spacing classes
 
 //  HOW IT WORKS
@@ -30,13 +32,13 @@
       // The first and last items in the list will always have no padding on the outer facing sides
       &:first-child,
       &:nth-child(#{$col-count}n + 1) {
-        padding-right: $spacing-value * (($col-count - 1) / $col-count);
+        padding-right: $spacing-value * math.div(($col-count - 1), $col-count);
         padding-left: 0;
       }
 
       &:nth-child(#{$col-count}n) {
         padding-right: 0;
-        padding-left: $spacing-value * (($col-count - 1) / $col-count);
+        padding-left: $spacing-value * math.div(($col-count - 1), $col-count);
       }
 
       // Loops through the inner cols (from right to left) increasing the padding right,
@@ -44,8 +46,8 @@
       @if $col-count - 2 > 0 {
         @for $i from 1 through $col-count - 2 {
           &:nth-child(#{$col-count}n - #{$i}) {
-            padding-right: $spacing-value * ($i / $col-count);
-            padding-left: $spacing-value * (1 - (($i + 1) / $col-count));
+            padding-right: $spacing-value * math.div($i, $col-count);
+            padding-left: $spacing-value * (1 - math.div(($i + 1), $col-count));
           }
         }
       }
