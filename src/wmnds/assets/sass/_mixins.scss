@@ -90,7 +90,7 @@
   $shade: if($shade == dark, $black, $white);
   $color: map-get($palettes, $color);
 
-  @return mix($shade, $color, $percent);
+  @return mix($shade, $color, $percent * 1%);
 }
 
 // repeater() notes

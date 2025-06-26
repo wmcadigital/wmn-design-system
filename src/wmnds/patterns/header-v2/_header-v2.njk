@@ -10,7 +10,6 @@
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
-{% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
 {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
 {% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
@@ -26,9 +25,6 @@
 }}
 <!-- Main header section -->
 <header>
-  {{
-    wmndsCookiesBanner()
-  }}
   <div class="wmnds-header{{appClass}}{{menuClass}}">
     <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
       <div class="wmnds-header__vertical-align wmnds-col-auto">
@@ -45,7 +41,7 @@
         </h1>
       {% else %}
         <!-- Mega menu nav items-->
-        <nav id="{{params.id}}" class="wmnds-mega-menu" aria-label="Main navigation":>
+        <nav id="{{params.id}}" class="wmnds-mega-menu" aria-label="Main navigation">
           <!-- Mobile toggle button -->
           <button class="wmnds-mega-menu__mobile-toggle wmnds-btn wmnds-btn--secondary wmnds-hide-desktop" aria-expanded="false" aria-controls="{{params.id}}-primary-menu">Menu
             <svg class="wmnds-mega-menu__close-icon"><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
