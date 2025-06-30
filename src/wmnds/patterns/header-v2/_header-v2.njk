@@ -54,16 +54,17 @@
                 <li class="wmnds-mega-menu__primary-menu-item">
                 <!-- Show swift logo in nav if is swift & tickets link -->
                 {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon', title: 'Swift Logo', desc: 'A small shape in the style of a bird with the word swift next to it', hidden: 'true'}) if navItem.name === "Swift and tickets" else "" %}
+                {% set navItemIconProfile = wmndsIcon({icon: 'general-user', class: 'wmnds-profile-icon', title: 'Profile', desc: 'Silhouette of a head', hidden: 'true'}) if navItem.name === "Profile" else "" %}
                 {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name %}
                   <!-- allow primary (level 1) item to link if specified -->
                   {% if params.linkTopLevel %}
                     <a role="link" href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
-                      {{navItemIcon}}{{ navItemContent }}
+                      {{navItemIcon}}{{navItemIconProfile}}{{ navItemContent }}
                     </a>
                   <!-- if not linked use a button -->
                   {% else %}
                     <button target="_self" class="wmnds-mega-menu__primary-menu-link" aria-label="{{navItem.name}}" aria-haspopup="true" aria-expanded="false" aria-controls="{{params.id}}-container" role="menuitem">
-                      {{navItemIcon}}{{ navItemContent }}
+                      {{navItemIcon}}{{navItemIconProfile}}<span class="wmnds-top-level-link">{{ navItemContent }}</span>
                     </button>
                   {% endif %}
                   {% if navItem.subnavItems %}
@@ -93,11 +94,11 @@
                                   <use xlink:href="#wmnds-{{subnavItem.icon}}" href="#wmnds-{{subnavItem.icon}}"></use>
                                 </svg>
                                 {% endif %}
-                                {{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon', title: 'Swift'}) | indent(6) | trim) | safe}}</{{_tag}}>
+                                <span>{{subnavItem.name| replace("Swift", wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon wmnds-hide-mobile', title: 'Swift'}) | indent(6) | trim) | safe}}</{{_tag}}></span>
                                 {% if subnavItem.subnavItems %}
                                 <!-- collapse button for mobile nav level 3 menu items -->
                               <button class="wmnds-mega-menu__collapse-toggle" aria-expanded="false" aria-label="Toggle {{subnavItem.name}} menu" aria-controls="{{params.id}}-submenu-child-menu"><svg class="wmnds-mega-menu__link-arrow-icon"><use xlink-href="#wmnds-general-chevron-right" href="#wmnds-general-chevron-right"></use></svg></button>
-                              <!-- Start submenu child (level 3) list -->
+                             <!-- Start submenu child (level 3) list -->
                               <ul id="{{params.id}}-submenu-child-menu-{{ subnavItem.name | lower | replace(" ", "-") }}-{{ loop.index }}" class="wmnds-mega-menu__sub-menu-child-menu">
                                 {% for subnavChildItem in subnavItem.subnavItems %}
                                 {# Set auto generated href string for fallback - ignore 2nd level nav name if it is unlinked #}
@@ -112,6 +113,13 @@
                               <!-- End submenu child (level 3) list -->
                               {% endif %}
                             </li>
+                            {% if subnavItem.name == "Child accounts" %}
+                            <li class="wmnds-mega-menu__sub-menu-item">
+                              <a href="#" title="This is a call to action link" target="_self" class="wmnds-btn wmnds-text-align-center wmnds-col-1 wmnds-m-md">
+                                Login
+                              </a>
+                            </li>
+                            {% endif %}
                           {% endfor %}
                         </ul>
                         <!-- End submenu (level 2) -->

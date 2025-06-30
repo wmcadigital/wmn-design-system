@@ -29,6 +29,27 @@ const headerJs = () => {
     return menuLink;
   };
 
+  /**
+   * Hide a target div on desktop if any .wmnds-top-level-link includes "Profile"
+   * @param {string} divSelector - CSS selector for the div to hide
+   */
+  const hideDivIfProfileOnDesktop = divSelector => {
+    const links = document.querySelectorAll(divSelector);
+    links.forEach(link => {
+      if (link.textContent.trim().includes('Profile')) {
+        link.classList.add('wmnds-hide-desktop');
+      } else {
+        link.classList.remove('wmnds-hide-desktop');
+      }
+    });
+  };
+
+  // Example usage: hide a div with class .profile-target-div on desktop if Profile link exists
+  // Call on load and on resize to ensure correct behavior
+  const callHideDivIfProfile = () => hideDivIfProfileOnDesktop('.wmnds-top-level-link');
+  callHideDivIfProfile();
+  window.addEventListener('resize', callHideDivIfProfile);
+
   // takes a menu element and allows moving between focus via tabbing/arrows
   const setKeyboardNavigation = (subMenuContainer, subMenuQuery, onFirst, onLast) => {
     // array of all links in menu container

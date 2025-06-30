@@ -85,6 +85,7 @@
   compExample([
     wmndsHeaderV2({
       id: "mega-menu-example",
+      profile: true,
       search: true,
       searchSuggestions: ["See live departures", "Find a timetable", "Check for disruptions", "Manage my Swift card", "Find ticket prices", "Get a refund", "Update Direct Debit", "Apply for a 16-18 photocard"],
       navItems: [{
@@ -253,6 +254,61 @@
         },
         {
           name: "Report a problem with a shelter or stop"
+        }]
+      },{
+        name: "Profile",
+        subnavItems: [
+        {
+          name: "Account settings",
+          icon: "general-account-settings",
+          subnavItems: [{
+            name: "Account home"
+          },
+          {
+            name: "Personal details"
+          },
+          {
+            name: "Change your password"
+          },
+          {
+            name: "Privacy settings"
+          },
+          {
+            name: "Close your account"
+          }]
+        },
+        {
+          name: "Payment methods",
+          icon: "general-wallet"
+        },
+        {
+          name: "Apply for or manage discounts and free travel passes",
+          icon: "general-present",
+          subnavItems: [{
+            name: "Swift child photocard"
+          },
+          {
+            name: "Swift 16-18 photocard"
+          },
+          {
+            name: "Student pass"
+          },
+          {
+            name: "Finding or starting a new job"
+          },
+          {
+            name: "Disabled person’s pass"
+          },
+          {
+            name: "Older person’s pass"
+          },
+          {
+            name: "Redeem code"
+          }]
+        },
+        {
+          name: "Child accounts",
+          icon: "general-child-account"
         }]
       }],
       megaMenu: true,

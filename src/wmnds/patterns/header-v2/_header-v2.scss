@@ -185,10 +185,14 @@ $header-height-mobile: 4rem;
   &__primary-menu-link {
     display: flex;
     border: 0;
-    color: currentColor;
+    color: $white;
     background-color: transparent;
     line-height: 1.5;
     text-decoration: none;
+
+    @media screen and (max-width: ($breakpoint-md - 1)) {
+      color: get-color(text);
+    }
   }
 
   &__search-icon {
@@ -222,7 +226,7 @@ $header-height-mobile: 4rem;
 }
 
 // mobile only mega menu styles
-@media screen and (max-width: $breakpoint-md - 1) {
+@media screen and (max-width: ($breakpoint-md - 1)) {
   &.wmnds-mega-menu {
     padding: $size-xs 0;
     align-items: center;
@@ -293,6 +297,7 @@ $header-height-mobile: 4rem;
     &__sub-menu-link {
       @include type-setting(4);
       display: flex;
+      width: calc(100% - 100px);
       margin: 0;
       padding: $size-md;
       text-align: left;
@@ -400,6 +405,10 @@ $header-height-mobile: 4rem;
         flex-grow: 0;
         flex-shrink: 0;
       }
+
+      span {
+        width: fit-content;
+      }
     }
 
     &__sub-menu-link {
@@ -407,7 +416,15 @@ $header-height-mobile: 4rem;
       text-decoration: none;
 
       &-icon {
-        display: none;
+        display: block;
+        position: relative;
+        top: 0.7em;
+        width: 1.6em;
+        height: 1.6em;
+        margin-right: 0.5em;
+        transform: translateY(-50%);
+        color: inherit;
+        fill: currentColor;
       }
     }
 
@@ -789,6 +806,18 @@ $header-height-mobile: 4rem;
   @media screen and (min-width: $breakpoint-md) {
     width: 3.2em;
   }
+}
+
+&.wmnds-profile-icon {
+  display: inline-block;
+  width: 1.8em;
+  height: 1.35em;
+  margin-right: 0;
+  margin-left: 0;
+  color: inherit;
+  fill: currentColor;
+  line-height: 1.5rem;
+  vertical-align: top;
 }
 
 .demo-content {
