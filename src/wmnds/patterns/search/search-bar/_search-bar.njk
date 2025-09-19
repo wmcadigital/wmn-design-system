@@ -1,12 +1,16 @@
 {% macro wmndsSearchbar(params) %}
 
 {% set id = params.id if params.id else "searchBar" %}
-{% set placeholder = params.placeholder if params.placeholder else "Search for tickets, timetables, travel advice…" %}
+{% set placeholder = params.placeholder if params.placeholder else "Search for news, campaigns, events…" %}
+{% set label = params.label if params.label else "Search" %}
 
-<form id="{{id}}_form" class="wmnds-search-bar">
-    <input id="{{id}}_input" aria-label="Search" type="text" class="wmnds-search-bar__input wmnds-fe-input" placeholder="{{placeholder}}">
-    <button class="wmnds-search-bar__btn" type="submit">
-        <svg><title>Search</title><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
-    </button>
+<form id="{{id}}_form">
+    <label for="{{id}}_input" class="wmnds-search-bar__label visible-hidden">{{ label }}</label>
+    <div class="wmnds-search-bar">
+        <input id="{{id}}_input" aria-label="{{ label }}" type="text" class="wmnds-search-bar__input wmnds-fe-input" placeholder="{{placeholder}}">
+        <button class="wmnds-search-bar__btn" type="submit">
+            <svg><title>Search</title><use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use></svg>
+        </button>
+    </div>
 </form>
 {% endmacro %}

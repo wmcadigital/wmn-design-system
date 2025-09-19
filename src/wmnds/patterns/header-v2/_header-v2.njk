@@ -147,19 +147,9 @@
             </button>
             <div class="wmnds-mega-menu__container wmnds-mega-menu__search-container">
               <div class="wmnds-search-container">
-                {% if params.wmndsSearch %}
-                  {{
-                    wmndsAutocomplete(
-                      params.wmnadsSearch
-                    )
-                  }}
-                  <div id="wmnadsSearchSuggestions" class="wmnds-autocomplete-suggestions" style="display: none;">
-                  </div>
-                {% else %}
                   {{
                     wmndsSearchbar(params.search)
                   }}
-                {% endif %}
                 {% if(params.searchSuggestions) %}
                   <p class="wmnds-search-heading wmnds-h1">I want to...</p>
                   <div class="wmnds-grid">
