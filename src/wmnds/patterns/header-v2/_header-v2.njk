@@ -10,7 +10,6 @@
 {% from "wmnds/components/link/link/_link.njk" import wmndsLink %}
 {% from "wmnds/patterns/banner/_banner.njk" import wmndsBanner %}
 {% from "wmnds/components/breadcrumb/_breadcrumb.njk" import wmndsBreadcrumb %}
-{% from "wmnds/patterns/cookies/cookies-banner/_cookies-banner.njk" import wmndsCookiesBanner %}
 {% from "wmnds/patterns/search/search-bar/_search-bar.njk" import wmndsSearchbar %}
 {% from "wmnds/patterns/autocomplete/_autocomplete.njk" import wmndsAutocomplete %}
 
@@ -19,20 +18,18 @@
   wmndsLink({
     link: '#wmnds-main-content',
     linkTitle: 'Skip to main content',
+    text: 'Skip to main content',
     contentText: 'Skip to main content',
-    classes: 'wmnds-header__skip-link'
+    classes: 'wmnds-link wmnds-header__skip-link'
   })
 }}
 <!-- Main header section -->
 <header>
-  {{
-    wmndsCookiesBanner()
-  }}
   <div class="wmnds-header{{appClass}}{{menuClass}}">
     <div class="wmnds-container wmnds-grid wmnds-grid--align-center wmnds-grid--justify-between">
       <div class="wmnds-header__vertical-align wmnds-col-auto">
         <!-- Logo -->
-        <a class="wmnds-header__logo-link" href="/" title="Transport for West Midlands Design System">
+        <a role="link" class="wmnds-header__logo-link {{class}}" href="/" title="{{name}} Design System">
           <img class="wmnds-header__logo" alt="Transport for West Midlands logo" src="/img/logo.svg" />
         </a>
       </div>
@@ -40,11 +37,11 @@
       {% if params.withTitle %}
         <!-- Header title -->
         <h1 class="wmnds-header__title wmnds-col-1 wmnds-col-sm-auto">
-          Reinstate your Direct Debit<br>(COVID-19)
+          {{params.title}}
         </h1>
       {% else %}
         <!-- Mega menu nav items-->
-        <nav id="{{params.id}}" class="wmnds-mega-menu">
+        <nav id="{{params.id}}" class="wmnds-mega-menu" aria-label="Main navigation">
           <!-- Mobile toggle button -->
           <button class="wmnds-mega-menu__mobile-toggle wmnds-btn wmnds-btn--secondary wmnds-hide-desktop" aria-expanded="false" aria-controls="{{params.id}}-primary-menu">Menu
             <svg class="wmnds-mega-menu__close-icon"><use xlink:href="#wmnds-general-cross" href="#wmnds-general-cross"></use></svg>
@@ -52,20 +49,20 @@
           <!-- Container for mega menu - allows scrolling on mobile nav -->
           <div id="{{params.id}}-primary-menu" class="wmnds-mega-menu__scroll-controller">
             <!-- Start primary (level 1) navigation -->
-            <ul class="wmnds-mega-menu__primary-menu">
+            <ul class="wmnds-mega-menu__primary-menu" role="menubar">
               {% for navItem in navItems %}
                 <li class="wmnds-mega-menu__primary-menu-item">
                 <!-- Show swift logo in nav if is swift & tickets link -->
-                {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon', title: 'Swift'}) if navItem.name === "Swift and tickets" else "" %}
+                {% set navItemIcon = wmndsIcon({icon: 'swift-full-logo', class: 'wmnds-swift-icon', title: 'Swift Logo', desc: 'A small shape in the style of a bird with the word swift next to it', hidden: 'true'}) if navItem.name === "Swift and tickets" else "" %}
                 {% set navItemContent = " and tickets" if navItem.name === "Swift and tickets" else navItem.name %}
                   <!-- allow primary (level 1) item to link if specified -->
-                  {% if params.linkTopLevel %}{{navItemIcon}}
-                    <a href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
+                  {% if params.linkTopLevel %}
+                    <a role="link" href="/{{ navItem.name | lower | replace(" ", "-") }}/" title="{{ navItem.name }} page" target="_self" class="wmnds-mega-menu__primary-menu-link" >
                       {{navItemIcon}}{{ navItemContent }}
                     </a>
                   <!-- if not linked use a button -->
                   {% else %}
-                    <button target="_self" class="wmnds-mega-menu__primary-menu-link" >
+                    <button target="_self" class="wmnds-mega-menu__primary-menu-link" aria-label="{{navItem.name}}" aria-haspopup="true" aria-expanded="false" aria-controls="{{params.id}}-container" role="menuitem">
                       {{navItemIcon}}{{ navItemContent }}
                     </button>
                   {% endif %}
@@ -76,7 +73,7 @@
                     <div id="{{params.id}}-container-{{ loop.index }}" class="wmnds-mega-menu__container">
                       <div class="wmnds-container">
                         <!-- Start submenu (level 2) -->
-                        <ul class="wmnds-mega-menu__sub-menu">
+                        <ul class="wmnds-mega-menu__sub-menu" aria-label="{{ navItem.name }} submenu">
                           {% for subnavItem in navItem.subnavItems %}
                             {% if subnavItem.unlinked %}
                               {% set _tag = 'button' %}
@@ -89,7 +86,7 @@
                               {% set _attributes = " href=\"" + _hrefSubnav | lower | replace(" ", "-") + "\"" if _hrefSubnav else "" %}
                             {% endif %}
                             <li class="wmnds-mega-menu__sub-menu-item">
-                              <{{_tag}}{{_attributes | safe}} class="wmnds-mega-menu__sub-menu-link{{_classes}}">
+                              <{{_tag}}{{_attributes | safe}} role="link" class="wmnds-mega-menu__sub-menu-link{{_classes}}">
                                 {% if subnavItem.icon %}
                                 <!-- Show submenu (level 2) item icon if specified -->
                                 <svg class="wmnds-mega-menu__sub-menu-link-icon">
@@ -108,7 +105,7 @@
                                 {# Set href if it is set else fallback to auto generated link #}
                                 {% set _hrefSubnavChild = subnavChildItem.href if subnavChildItem.href else _hrefString | lower | replace(" ", "-") %}
                                 <li class="wmnds-mega-menu__sub-menu-child-item">
-                                  <a href="{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
+                                  <a role="link" href="{{_hrefSubnavChild}}" class="wmnds-mega-menu__sub-menu-child-link">{{subnavChildItem.name | capitalize}}</a>
                                 </li>
                                 {% endfor %}
                               </ul>
@@ -130,7 +127,7 @@
           <!-- End scrollable container -->
           {% if(params.search) %}
           <div class="wmnds-mega-menu__primary-menu-item wmnds-mega-menu__search">
-            <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn">
+            <button class="wmnds-mega-menu__primary-menu-link wmnds-mega-menu__search-btn" aria-label="Search" aria-haspopup="true" aria-expanded="false" aria-controls="wmnds-mega-menu__search-container" role="menuitem">
               <svg class="wmnds-mega-menu__search-icon">
                 <title>Search</title>
                 <use xlink:href="#wmnds-general-search" href="#wmnds-general-search"></use>
@@ -145,10 +142,10 @@
                 {% if params.wmndsSearch %}
                   {{
                     wmndsAutocomplete(
-                      params.wmndsSearch
+                      params.wmnadsSearch
                     )
                   }}
-                  <div id="wmndsSearchSuggestions" class="wmnds-autocomplete-suggestions" style="display: none;">
+                  <div id="wmnadsSearchSuggestions" class="wmnds-autocomplete-suggestions" style="display: none;">
                   </div>
                 {% else %}
                   {{
@@ -162,7 +159,7 @@
                       <ul class="wmnds-search-list">
                       {% for i in range(0, 4) %}
                         <li class="wmnds-search-list__item">
-                          <a href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
+                          <a role="link" href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
                             {{wmndsIcon({
                               class: 'wmnds-link__chevron wmnds-link__chevron--right',
                               icon: 'general-chevron-right'
@@ -176,7 +173,7 @@
                       <ul class="wmnds-search-list">
                       {% for i in range(4, params.searchSuggestions.length) %}
                         <li class="wmnds-search-list__item">
-                          <a href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
+                          <a role="link" href="#" class="wmnds-link wmnds-link--with-chevron">{{params.searchSuggestions[i]}}
                             {{wmndsIcon({
                               class: 'wmnds-link__chevron wmnds-link__chevron--right',
                               icon: 'general-chevron-right'
@@ -197,21 +194,20 @@
       </div>
     </div>
 
-
     {% if params.banner or params.breadcrumbs %}
       <div class="wmnds-container">
         {% if params.banner %}
           <!-- Phase banner -->
           {{
             wmndsBanner ({
-              link: 'https://github.com/wmcadigital/wmn-design-system/issues',
+              link: 'https://github.com/wmcadigital/wmca-design-system/issues',
               linkTitle: 'WMN Design System Github',
               phase: true
             })
           }}
         {% endif %}
 
-        {% if params.breadcrumbs and params.breadcrumbs.hideBreadcrumb != true %}
+        {% if (params.breadcrumbs.pageTitle != 'Homepage Template') and (params.breadcrumbs.pageTitle != 'West Midlands Combined Authority Design System') and (params.breadcrumbs.pageTitle != 'Transport for West Midlands Design System') and (params.breadcrumbs.pageTitle != 'Safer Travel Design System') and (params.breadcrumbs.pageTitle != 'Midlands Connect Design System') and (params.breadcrumbs.pageTitle != 'Change Into Action Design System') and (params.breadcrumbs.pageTitle != 'West Midlands Rail Executive Design System') and (params.breadcrumbs.pageTitle != 'Ring and Ride Design System') %}
         {% set breadcrumbList = null if params.breadcrumbs.section === params.breadcrumbs.pageTitle else {
               contentText: params.breadcrumbs.pageTitle
             } %}
@@ -233,7 +229,7 @@
 {% if params.megaMenuDemo %}
   <!-- Content space for example purposes only. DO NOT INCLUDE -->
   <div class="demo-content">
-    <p>Example content <br> <a href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
+    <p>Example content <br> <a role="link" href="/patterns/header-demo" target="_blank">View full page example (opens in new window)</a></p>
   </div>
   <!-- END DO NOT INCLUDE -->
 {% endif %}

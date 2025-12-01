@@ -15,6 +15,7 @@
 {% set isRequired = params.isRequired if params.isRequired else false %}
 {% set selected = params.selected if params.selected else false %}
 {% set selectedItem = params.selectedItem if params.selectedItem else 'Selected item' %}
+{% set uniqueId = params.uniqueId if params.uniqueId else (range(100000, 999999) | random) %}
 
 {# Label #}
 {% if not params.hideLabel %}
@@ -58,7 +59,7 @@
     wmndsLoader()
   }}
   <!-- Autocomplete input box -->
-  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="{{ name }}" aria-label="{{ placeholder }}"  type="text" id="{{id}}" required="{{isRequired}}" autocomplete="off">
+  <input class="wmnds-fe-input wmnds-autocomplete__input wmnds-col-1" value="{{ query }}" placeholder="{{ placeholder }}" name="{{ name }}" aria-label="{{ placeholder }}"  type="text" id="{{id}}-{{uniqueId}}" required="{{isRequired}}" autocomplete="off">
 </div>
 {% endif %}
 

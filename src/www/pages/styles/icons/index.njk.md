@@ -60,8 +60,12 @@
 
 {% set iconSocial = [
   "facebook",
-  "twitter",
-  "instagram"
+  "x",
+  "instagram",
+  "email",
+  "linkedIn",
+  "youtube",
+  "tiktok"
 ] %}
 
 {% set iconModesIsolated = [

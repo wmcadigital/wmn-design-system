@@ -1,9 +1,13 @@
 {% macro wmndsIcon(params) %}
 
-<svg {% if params.class %}class="{{params.class}}"{% endif %}>
-  {% if params.title %}
-    <title>{{ params.title }}</title>
-  {% endif %}
+{% set title = params.title if params.title else "" %}
+{% set desc = params.desc if params.desc else "" %}
+{% set hidden = params.hidden if params.hidden else "false" %}
+{% set uniqueId = params.uniqueId if params.uniqueId else (range(100000, 999999) | random) %}
+
+<svg {% if params.class %}class="{{params.class}}"{% endif %} aria-labelledby="{% if params.title %}svgTitle-{{uniqueId}}{% endif %}{% if params.desc %} svgDesc-{{env}}{% endif %}" aria-hidden="{{hidden}}" role="img">
+ {% if params.title %}<title id="svgTitle-{{uniqueId}}">{{title}}</title>{% endif %}
+ {% if params.desc %}<desc id="svgDesc-{{uniqueId}}">{{desc}}</desc>{% endif %}
   <use xlink:href="#wmnds-{{params.icon}}" href="#wmnds-{{params.icon}}"></use>
 </svg>
 

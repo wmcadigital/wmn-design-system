@@ -11,7 +11,7 @@
   &-3-col {
     display: grid;
     grid-gap: $size-lg;
-    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   &-2-col {

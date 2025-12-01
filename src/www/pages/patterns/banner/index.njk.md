@@ -200,6 +200,22 @@
     iframe: true
   })
 }}
+<br />
+{{
+  compExample([
+    wmndsTravelModePageBanner({
+      mode: "cyclewalk",
+      title: "Cycling and walking in the West Midlands",
+      contentHTML: "<p>Cycling and walking is great exercise. There are plenty of places to explore in the West Midlands.</p>"
+    })
+  ], {
+    componentPath: "wmnds/patterns/travel-mode-page-banner/",
+    njk: true,
+    njkProps: wmndsTravelModePageBannerProps,
+    js: false,
+    iframe: true
+  })
+}}
 
 {% markdown %}
 
