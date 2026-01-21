@@ -1,4 +1,5 @@
 [class*="wmnds-"] {
+
   // ensures sticky footer
   &.wmnds-body {
     display: flex;
@@ -42,7 +43,7 @@
 
 html body [class*="wmnds-"] {
   &.wmnds-grid {
-    & > * {
+    &>* {
       box-sizing: border-box;
     }
 
@@ -124,6 +125,7 @@ html body [class*="wmnds-"] {
 
   &.wmnds,
   &.wmnds {
+
     // Generate all margin classes
     &-m {
       @include x-mar-pad("");
@@ -254,5 +256,26 @@ html body [class*="wmnds-"] {
     margin-top: -0.175em;
     fill: currentColor;
     vertical-align: middle;
+  }
+}
+
+//Hide visually apart from screen readers
+.visible-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  white-space: nowrap;
+
+  &:focus {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    clip: auto;
   }
 }

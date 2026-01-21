@@ -85,6 +85,7 @@
   compExample([
     wmndsHeaderV2({
       id: "mega-menu-example",
+      profile: true,
       search: true,
       searchSuggestions: ["See live departures", "Find a timetable", "Check for disruptions", "Manage my Swift card", "Find ticket prices", "Get a refund", "Update Direct Debit", "Apply for a 16-18 photocard"],
       navItems: [{
@@ -254,7 +255,9 @@
         {
           name: "Report a problem with a shelter or stop"
         }]
-      }],
+      },{
+        name: "Profile"
+    }],
       megaMenu: true,
       megaMenuDemo: true
     })
