@@ -60,7 +60,7 @@ GOV.UK has detailed information about [how to display contact details](https://d
             organisation: "Transport for West Midlands",
             alertMessage: "We are currently experiencing problems with our <br>telephone systems and cannot answer calls",
             alertIcon: "general-warning-triangle",
-            email: "customerservice@tfwm.org.uk",
+            email: "customerservices@tfwm.org.uk",
             telephone: "0345 303 6760",
             workingHours: "Monday to Tuesday and Thursday to Friday, 9am - 5pm, <br>Wednesday, 9.30am - 5pm"
         })
