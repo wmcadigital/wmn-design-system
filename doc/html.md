@@ -118,34 +118,6 @@ features supported by a browser.
 Starting with version 3 Modernizr can be customized using the [modernizr-config.json](https://github.com/h5bp/html5-boilerplate/blob/master/modernizr-config.json) and the
 [Modernizr command line utility](https://www.npmjs.com/package/modernizr-cli).
 
-## What About Polyfills?
-
-If you need to include [polyfills](https://remysharp.com/2010/10/08/what-is-a-polyfill)
-in your project, you must make sure those load before any other JavaScript. If you're
-using a polyfill CDN service, like [cdn.polyfill.io](https://cdn.polyfill.io/),
-just put it before the other scripts in the bottom of the page:
-
-```html
-    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-</body>
-```
-
-If you like to just include the polyfills yourself, you could include them in
-`js/plugins.js`. When you have a bunch of polyfills to load in, you could
-also create a `polyfills.js` file in the `js/vendor` directory or include the files
-individually and combine them using a build tool. Always ensure that the polyfills
-are all loaded before any other JavaScript.
-
-There are some misconceptions about Modernizr and polyfills. It's important
-to understand that Modernizr just handles feature checking, not polyfilling
-itself. The only thing Modernizr does regarding polyfills is that the team
-maintains [a huge list of cross Browser polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills).
-
 ### jQuery CDN for jQuery
 
 The jQuery CDN version of the jQuery JavaScript library is referenced towards
