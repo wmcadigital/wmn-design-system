@@ -58,7 +58,7 @@ jobs:
       # Deploy build folder to Netlify IF the branch is main
       - name: Deploy to Netlify
         if: github.ref == 'refs/heads/main' && !startsWith(github.event.head_commit.message, 'ci:') && !contains(github.event.head_commit.message, '[skip netlify]')
-        uses: nwtgck/actions-netlify@v2
+        uses: nwtgck/actions-netlify@v1.1.11
         with:
           publish-dir: './build'
           production-branch: main
